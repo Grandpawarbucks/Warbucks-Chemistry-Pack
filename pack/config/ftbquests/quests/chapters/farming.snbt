@@ -7,7 +7,7 @@
 		id: "botanypots:terracotta_hopper_botany_pot"
 		count: 1
 	}
-	default_quest_shape: ""
+	default_quest_shape: "circle"
 	default_hide_dependency_lines: false
 	quests: [
 		{
@@ -89,5 +89,15 @@
 		}
 	]
 	quest_links: [ ]
-	images: [ ]
+	images: [
+		{
+			id: "50C448D16CC74A06"
+			x: 2.5d
+			y: -2.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/farming.png"
+		}
+	]
 }

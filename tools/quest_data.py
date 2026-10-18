@@ -202,7 +202,7 @@ CHAPTERS = [
             "How: blazes spawn in Nether Fortresses. Explorer's Compass can point you to one."]),
         Q("t2_wart", 4, 1, [item("minecraft:nether_wart", 8)], deps=["t2_nether"], xp=25, desc=[
             "The base reagent for almost every potion. It grows on soul sand in fortresses; replant it at home."]),
-        Q("t2_quartz", 4, 3, [item("minecraft:quartz", 16)], "Nether Quartz", deps=["t2_nether"], xp=25, desc=[
+        Q("t2_quartz", 8, -2, [item("minecraft:quartz", 16)], "Nether Quartz", deps=["t2_nether"], xp=25, desc=[
             "Silicon dioxide, SiO₂. You'll need it for the Infusion Pylon, and much later for silicon."]),
         Q("t2_brewing", 6, 0, [item("minecraft:brewing_stand")], "The Brewer's Art", deps=["t2_blaze", "t2_wart"], xp=75, desc=[
             "Look up &ePotion of Flying&r in JEI (it comes from Apothic Attributes). That's your road back to the sky.",
@@ -219,7 +219,7 @@ CHAPTERS = [
             "The &eInfusion Pylon&r needs Nether quartz and blackstone, plus &ehydrogen&r from your Dissolver. Fire and chemistry together.",
             "Put an activated Potion of Flying filter in it and you get creative-style flight anywhere.",
             "How: the pylon's chunk must stay loaded, so force-load it with FTB Chunks (press M, right-click the chunk)."]),
-        Q("t2_ars", 6, 3, [item("ars_nouveau:worn_notebook"), item("ars_nouveau:source_gem", 4)], "Whispers of Magic", deps=["t2_nether"], xp=50, desc=[
+        Q("t2_ars", 2, 2, [item("ars_nouveau:worn_notebook"), item("ars_nouveau:source_gem", 4)], "Whispers of Magic", deps=["t2_nether"], xp=50, desc=[
             "Light magic suits a demigod. The Worn Notebook teaches Ars Nouveau spellcrafting.",
             "Its Ritual of Flight is another way to fly near your base. See the Divine Gifts chapter."]),
     ]),

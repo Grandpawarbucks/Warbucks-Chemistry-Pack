@@ -29,6 +29,9 @@ test/ore_scan.py              # count ore blocks by mod in test/server/world
 python3 test/parse_logs.py <dir> --client   # summarize a client log folder
 python3 test/gen_modlist.py   # regenerate docs/MODLIST.md
 python3 test/build_id_index.py   # index all item/block/dimension ids (run after a smoke test)
+python3 tools/build_deposits.py  # regenerate ore-deposit worldgen (pack/kubejs/data)
+<pillow-python> tools/build_art.py # regenerate title/loading art + quest banners (needs Pillow + macOS Avenir font)
+python3 test/build_quest_preview.py # browsable quest book mock -> test/preview/index.html (local only)
 python3 tools/build_quests.py    # regenerate the FTB Quests book from tools/build_quests.py (fails on unknown ids)
 ```
 Results go to `test/results/<run>-<timestamp>/`. The smoke test fails on missing dependencies, mixin errors, KubeJS errors, recipe errors, duplicate registrations, worldgen errors or crash reports.

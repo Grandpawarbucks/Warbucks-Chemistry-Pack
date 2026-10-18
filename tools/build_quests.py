@@ -122,9 +122,19 @@ def build():
             if q.desc:
                 lang[f"quest.{qid}.quest_desc"] = q.desc
             total += 1
+        # Banner (tools/build_art.py) above the chapter's top-left quest; 960x160 art = 6 x 1 grid cells.
+        minx = min(q.x for q in c.quests)
+        miny = min(q.y for q in c.quests)
+        images = [{"id": hexid(f"image:{c.key}:banner"), "x": float(minx + 2.5), "y": float(miny - 2.0),
+                   "width": 6.0, "height": 1.0, "rotation": 0.0, "image": f"warbucks:textures/quests/{c.key}.png"}]
+        if c.key == "welcome":  # the pack logo (1220x360) under the banner area
+            images.append({"id": hexid("image:welcome:logo"), "x": float(minx + 3.0), "y": float(miny - 4.25),
+                           "width": 7.0, "height": 2.07, "rotation": 0.0, "image": "warbucks:textures/quests/logo.png"})
         chapter = {"id": cid, "group": group_ids[c.group], "order_index": order[c.group], "filename": c.key,
-                   "icon": {"id": c.icon, "count": 1}, "default_quest_shape": "", "default_hide_dependency_lines": False,
-                   "quests": quests, "quest_links": [], "images": []}
+                   "icon": {"id": c.icon, "count": 1},
+                   "default_quest_shape": "rsquare" if c.group == "main" else "circle",
+                   "default_hide_dependency_lines": False,
+                   "quests": quests, "quest_links": [], "images": images}
         order[c.group] += 1
         (OUT / "chapters" / f"{c.key}.snbt").write_text(snbt(chapter) + "\n")
 

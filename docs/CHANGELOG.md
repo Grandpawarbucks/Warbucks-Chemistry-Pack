@@ -4,6 +4,20 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Pack aesthetic (title screen, loading screen, quest banners)
+- Added FancyMenu 3.9.14 (+ Konkrete, Melody) and Drippy Loading Screen 3.1.5.
+- New `tools/build_art.py` (Pillow) generates:
+  - `config/fancymenu/assets/background.png`: a starfield over a faint periodic table, with molecule rings.
+  - `logo.png`: WARBUCKS spelled in real element tiles (W, Ar, B, U, C, K, S) with CHEMISTRY in gold.
+  - 17 chapter banners in `kubejs/assets/warbucks/textures/quests/`, each with a tier tile or a fitting element.
+- FancyMenu layouts (format from ATM10's public config):
+  - Title screen: custom background and logo; the vanilla logo, splash text and Realms are hidden.
+  - Loading screen: background, logo and a cyan progress bar.
+  - Window title "Warbucks Chemistry".
+- Quest book: every chapter shows its banner, the Welcome chapter shows the logo, main chapters use rounded-square nodes and side chapters circles. Divine Ascent re-laid out so no lines cross the map.
+- New `test/build_quest_preview.py`: a local, clickable HTML mock of the quest book, plus static chapter renders (not committed, because they contain mod textures).
+- 181 mods. Smoke test passes. **The client-side look still needs checking in-game.**
+
 ### 2026-10-18: Ore deposits
 - New `tools/build_deposits.py` generates vanilla-format worldgen into `pack/kubejs/data/` (no extra mod):
   - MI's scattered tin, lead, bauxite, nickel, antimony, uranium and tungsten ore cut to 35%.

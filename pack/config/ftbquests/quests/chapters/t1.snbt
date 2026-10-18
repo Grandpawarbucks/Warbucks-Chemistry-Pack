@@ -7,7 +7,7 @@
 		id: "modern_industrialization:coke"
 		count: 1
 	}
-	default_quest_shape: ""
+	default_quest_shape: "rsquare"
 	default_hide_dependency_lines: false
 	quests: [
 		{
@@ -471,5 +471,15 @@
 		}
 	]
 	quest_links: [ ]
-	images: [ ]
+	images: [
+		{
+			id: "1C5FAE6A6C1C7310"
+			x: 2.5d
+			y: -4.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/t1.png"
+		}
+	]
 }

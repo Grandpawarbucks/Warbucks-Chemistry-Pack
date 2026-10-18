@@ -7,7 +7,7 @@
 		id: "akashictome:tome"
 		count: 1
 	}
-	default_quest_shape: ""
+	default_quest_shape: "circle"
 	default_hide_dependency_lines: false
 	quests: [
 		{
@@ -326,5 +326,15 @@
 		}
 	]
 	quest_links: [ ]
-	images: [ ]
+	images: [
+		{
+			id: "66974994A403E184"
+			x: 2.5d
+			y: -2.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/qol.png"
+		}
+	]
 }

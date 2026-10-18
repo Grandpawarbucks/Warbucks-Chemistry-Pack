@@ -7,7 +7,7 @@
 		id: "modern_industrialization:polyethylene_bucket"
 		count: 1
 	}
-	default_quest_shape: ""
+	default_quest_shape: "rsquare"
 	default_hide_dependency_lines: false
 	quests: [
 		{
@@ -414,5 +414,15 @@
 		}
 	]
 	quest_links: [ ]
-	images: [ ]
+	images: [
+		{
+			id: "2FA1F2006FE14F91"
+			x: 2.5d
+			y: -4.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/t5.png"
+		}
+	]
 }

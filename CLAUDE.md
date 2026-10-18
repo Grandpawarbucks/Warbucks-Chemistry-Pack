@@ -64,6 +64,9 @@
 - Chemistry mechanics (2026-10-18): phase4_chemistry.js + startup_scripts/chemistry_items.js (byproducts,
   Haber/Ostwald, PGM line, energy cores, capstone Seed of a New World, Demigod Token shop).
   ChemLib fluid ids are <name>_fluid (verified at runtime). GTMOGS ore veins rejected (broken KubeJS).
+- Aesthetic (2026-10-18): FancyMenu + Drippy layouts in pack/config/fancymenu; art from tools/build_art.py
+  (needs Pillow: use a venv). Banners in pack/kubejs/assets/warbucks/textures/quests. Ore deposits from
+  tools/build_deposits.py (calibrated with test/ore_scan.py). 181 mods.
 - Phase 5 quests: v4 (162 quests, 17 chapters incl. Welcome + QoL; tokens on every quest, step-by-step per user request) pending user review.
   QUESTS ARE GENERATED: edit tools/quest_data.py (content; helpers in tools/questlib.py), then run `python3 test/build_id_index.py` (after a smoke test) and
   `python3 tools/build_quests.py`. Never hand-edit pack/config/ftbquests/quests (it gets overwritten).

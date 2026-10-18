@@ -7,7 +7,7 @@
 		id: "pylons:infusion_pylon"
 		count: 1
 	}
-	default_quest_shape: ""
+	default_quest_shape: "rsquare"
 	default_hide_dependency_lines: false
 	quests: [
 		{
@@ -153,8 +153,8 @@
 		}
 		{
 			id: "75644D12ABEA0664"
-			x: 4.0d
-			y: 3.0d
+			x: 8.0d
+			y: -2.0d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -336,8 +336,8 @@
 		}
 		{
 			id: "04AB64EC70146236"
-			x: 6.0d
-			y: 3.0d
+			x: 2.0d
+			y: 2.0d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -379,5 +379,15 @@
 		}
 	]
 	quest_links: [ ]
-	images: [ ]
+	images: [
+		{
+			id: "261D8EDF2FB9E175"
+			x: 2.5d
+			y: -4.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/t2.png"
+		}
+	]
 }

@@ -7,7 +7,7 @@
 		id: "minecraft:nether_star"
 		count: 1
 	}
-	default_quest_shape: ""
+	default_quest_shape: "rsquare"
 	default_hide_dependency_lines: false
 	quests: [
 		{
@@ -166,5 +166,24 @@
 		}
 	]
 	quest_links: [ ]
-	images: [ ]
+	images: [
+		{
+			id: "64EA6B5BC9A940C8"
+			x: 2.5d
+			y: -3.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/welcome.png"
+		}
+		{
+			id: "5C02A206CED00D77"
+			x: 3.0d
+			y: -5.25d
+			width: 7.0d
+			height: 2.07d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/logo.png"
+		}
+	]
 }
