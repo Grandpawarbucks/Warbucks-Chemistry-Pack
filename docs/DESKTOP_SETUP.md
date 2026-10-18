@@ -40,7 +40,38 @@ git add -A; git commit -m "..."; git push
 ```
 Your play instance (section A) picks up pushed changes on its next launch, usually within a few minutes, because GitHub caches raw files briefly.
 
+### The custom mod (Warbucks Core, `mod/`)
+```powershell
+cd mod; .\gradlew.bat build; cd ..        # jar in mod\build\libs\
+```
+To ship a new version: bump `mod_version` in `mod/gradle.properties`, build, then
+```powershell
+gh release create warbuckscore-v1.0.1 mod\build\libs\warbuckscore-1.0.1.jar --title "Warbucks Core 1.0.1" --notes "..."
+cd pack; packwiz url add "Warbucks Core" https://github.com/Grandpawarbucks/Warbucks-Chemistry-Pack/releases/download/warbuckscore-v1.0.1/warbuckscore-1.0.1.jar -y; cd ..
+```
+Mod textures: `python mod/tools/textures.py` (needs Pillow: `pip install pillow`, ideally in a venv). Same for `tools/build_art.py`.
+
+### Generated files you rebuild
+| After you change... | Run |
+|---|---|
+| quests (`tools/quests/*.py`) | `python tools/build_quests.py` (check first with `--check`) |
+| the mod list | add a row to `docs/modlist-meta.tsv`, then `python test/gen_modlist.py` |
+| mods that add blocks | `python test/build_id_index.py` (needs a test server's mods folder), then `python tools/build_dissolver.py` |
+`test/ids.tsv` (every valid item/entity/biome id) is committed, so quests build on Windows without running a server.
+
+### The live server (VPS)
+Warbucks runs on the VPS as `warbucks.service` and pulls the pack from GitHub each time it starts (see `docs/SERVER.md`).
+After you push, restart it to update, but check `list` for players first. The SSH key on the Mac is Mac-only:
+add your Windows PC's own public key to the VPS (`ssh-keygen -t ed25519`, then append `~/.ssh/id_ed25519.pub` to the
+server's `/root/.ssh/authorized_keys` from a machine that already has access). Connection details are deliberately
+not in this public repo.
+
+### Moving Claude to this PC
+Claude sessions stay on the machine they ran on, so start a NEW session on Windows: open this folder in the Claude
+desktop app's Code tab and say "continue from the CLAUDE.md handoff". `CLAUDE.md` (read automatically) holds the rules
+and the current state. Copy the private memory notes from the Mac's `handoff/` folder (git-ignored) and ask the new
+session to install them as its memory.
+
 ### Known limits on Windows
-- The test loop (`test/smoke.sh`, `worldgen.sh`, `client-sync.sh`) is bash with macOS details (`sed -i ''`, named pipes). It runs on the Mac. On Windows, push your change and run the smoke test from the Mac, or ask Claude on the desktop to add a PowerShell version of the test loop.
-- `test/build_id_index.py` reads the vanilla jar from Prism's macOS library path and the test server's mods folder; `test/ids.tsv` isn't in git. To rebuild quests on Windows, copy `test/ids.tsv` from the Mac, or port that path.
+- The test loop (`test/smoke.sh`, `worldgen.sh`, `client-sync.sh`) is bash with macOS details (`sed -i ''`, named pipes). Until it's ported, run it under WSL (Ubuntu) or Git Bash with GNU sed adjustments; the first job on Windows should be a PowerShell port of `smoke.sh`.
 - CLAUDE.md is the project brief for Claude on either machine. Private details (server connection) are deliberately NOT in this public repo.

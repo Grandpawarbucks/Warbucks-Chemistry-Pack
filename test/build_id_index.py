@@ -8,11 +8,14 @@ Used by tools/build_quests.py to refuse unknown ids.
 import glob
 import json
 import pathlib
+import sys
 import re
 import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-VANILLA = pathlib.Path.home() / "Library/Application Support/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
+_PRISM = {"darwin": "Library/Application Support/PrismLauncher", "win32": "AppData/Roaming/PrismLauncher"}.get(
+    sys.platform, ".local/share/PrismLauncher")
+VANILLA = pathlib.Path.home() / _PRISM / "libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 VANILLA_DIMS = ["minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"]
 
 
