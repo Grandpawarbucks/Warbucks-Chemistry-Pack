@@ -57,6 +57,23 @@
 - Difficulty: ATM10-like (moderate gating, not expert-mode).
 - The user is comfortable editing configs and KubeJS scripts.
 
+## HANDOFF (2026-10-18, Mac → Windows desktop)
+Development moves to the user's Windows desktop. Start there with `git pull`, then read this file and
+docs/DESKTOP_SETUP.md. The user carries private memory notes (VPS rules) over in the git-ignored `handoff/` folder.
+State at handoff: everything committed and pushed. 221 mods, 1,172 quests, smoke test passing; Warbucks LIVE on the VPS.
+Open items / next steps, in order:
+1. Port the test loop to Windows (PowerShell smoke.sh, or run it under WSL). Until then quest/KubeJS changes can't be
+   smoke-tested on Windows.
+2. LIVE SERVER: the VPS still runs the pack from before commit 6bcd2bb (no Warbucks Core, dissolver table or tooltips).
+   `systemctl restart warbucks` pulls the latest, but check `list` for 0 players and ask the user first.
+3. Spectrometer: needs an in-game test (right-click near ores). The Terraformer was tested on a server.
+4. GregTech decision pending: docs/research/gtceu.md. GTCEu Modern on 1.21.1 is only a stale beta (7.0.2) or 8.0
+   snapshots. Recommendation A: keep MI and port GT-style chemistry lines (rare earths, platinum, alumina, polymers)
+   with MI's own KubeJS API (MIMachineEvents / MIMaterialEvents, checked with javap). Ask the user which option.
+5. Review items: AdvancedAE Flight Card and Ars Ritual of Flight aren't chemistry-gated; More Machine UU-Matter is
+   ungated; dissolver stone recipes give trace metals (copied from Alchemistry's own stone recipe), so decide whether to keep them.
+6. Phase 6 final test pass (client launch, worldgen, JEI sanity, quest completion).
+
 ## Current state (update every session)
 - Phase 1 design: approved (docs/PROGRESSION.md v2). Space = Ad Astra; extra dimension = Deeper and Darker.
 - Phase 2 mod list: IN PROGRESS. 134 mods; smoke + worldgen (r=256) passing; ATM10 left-out list done.
