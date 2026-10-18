@@ -170,6 +170,39 @@ def banner(key, title, tag, color, z=0):
     return out
 
 
+def quest_tile(size=256):
+    """Seamless quest-book background tile: navy lab grid with faint element ghosts and a molecule."""
+    img = Image.new("RGBA", (size, size), (10, 20, 34, 255))
+    d = ImageDraw.Draw(img)
+    step = size // 8
+    for i in range(0, size, step):  # grid lines land on the tile edges, so tiles join seamlessly
+        d.line([(i, 0), (i, size)], fill=(30, 62, 78, 255), width=1)
+        d.line([(0, i), (size, i)], fill=(30, 62, 78, 255), width=1)
+    for i in range(0, size, step * 4):
+        d.line([(i, 0), (i, size)], fill=(40, 88, 102, 255), width=2)
+        d.line([(0, i), (size, i)], fill=(40, 88, 102, 255), width=2)
+    f = font(int(step * 0.55), 1)
+    for (gx, gy, sym) in ((1, 1, "H"), (5, 2, "C"), (2, 5, "O"), (6, 6, "N")):
+        x, y = gx * step, gy * step
+        d.text((x + (step - d.textlength(sym, font=f)) / 2, y + step * 0.12), sym, font=f, fill=(46, 96, 108, 255))
+    cx, cy, r = size * 0.62, size * 0.38, step * 0.9  # a benzene-like ring between the cells
+    pts = [(cx + r * math.cos(math.radians(60 * k + 30)), cy + r * math.sin(math.radians(60 * k + 30))) for k in range(7)]
+    d.line(pts, fill=(54, 112, 120, 255), width=2)
+    return img
+
+
+def token_texture():
+    """16x16 pixel-art Demigod Token: gold coin, darker rim, cyan centre (the spark of divinity)."""
+    img = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.ellipse([1, 1, 14, 14], fill=(176, 120, 30, 255))          # rim
+    d.ellipse([2, 2, 13, 13], fill=(242, 181, 68, 255))          # face
+    d.ellipse([3, 3, 9, 7], fill=(255, 226, 140, 255))           # highlight
+    d.ellipse([6, 6, 9, 9], fill=(79, 209, 197, 255))            # cyan centre
+    d.point([(7, 7)], fill=(220, 255, 250, 255))
+    return img
+
+
 def main():
     from quest_data import CHAPTERS  # noqa: E402  (needs test/ids.tsv like the quest build)
     fm = ROOT / "pack/config/fancymenu/assets"
@@ -178,6 +211,11 @@ def main():
     logo().save(fm / "logo.png", optimize=True)
     qdir = ROOT / "pack/kubejs/assets/warbucks/textures/quests"
     qdir.mkdir(parents=True, exist_ok=True)
+    quest_tile().save(qdir / "background.png", optimize=True)
+    logo().save(qdir / "logo.png", optimize=True)
+    tdir = ROOT / "pack/kubejs/assets/kubejs/textures/item"  # KubeJS' default texture path for kubejs:<item>
+    tdir.mkdir(parents=True, exist_ok=True)
+    token_texture().save(tdir / "demigod_token.png", optimize=True)
     # Banner tiles: tier chapters show T0-T7; the rest show a real element that fits the chapter.
     tags = {"welcome": ("H", 1), "start": ("He", 2), "t0": ("T0", 0), "t1": ("T1", 1), "t2": ("T2", 2),
             "t3": ("T3", 3), "t4": ("T4", 4), "t5": ("T5", 5), "t6": ("T6", 6), "t7": ("T7", 7),

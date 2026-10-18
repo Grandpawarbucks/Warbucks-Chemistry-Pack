@@ -4,6 +4,11 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Visual fixes from the first client launch
+- The client log was clean, apart from one missing texture: the Demigod Token pointed at a texture that doesn't exist (`minecraft:item/sunflower`). It now has its own 16x16 coin texture (`kubejs/assets/kubejs/textures/item/demigod_token.png`).
+- World select (and 27 other menus) now show the pack background: FancyMenu universal layout plus ATM10's menu list (minus Embeddium/KeyBind Bundles; plus Create World).
+- The quest book now has a background: an FTB Quests theme (`kubejs/assets/ftbquests/ftb_quests_theme.txt`) with a seamless navy lab-grid tile, cyan borders and gold hover text.
+
 ### 2026-10-18: Pack aesthetic (title screen, loading screen, quest banners)
 - Added FancyMenu 3.9.14 (+ Konkrete, Melody) and Drippy Loading Screen 3.1.5.
 - New `tools/build_art.py` (Pillow) generates:

@@ -13,7 +13,7 @@ StartupEvents.registry('item', event => {
   event.create('ammonium_hexachloroplatinate').displayName('Ammonium Hexachloroplatinate').texture('minecraft:item/sugar')
 
   // --- Demigod Token: quest-reward currency, spent on convenience items ---
-  event.create('demigod_token').displayName('Demigod Token').texture('minecraft:item/sunflower').rarity('uncommon')
+  event.create('demigod_token').displayName('Demigod Token').rarity('uncommon') // texture: kubejs/assets/kubejs/textures/item/demigod_token.png
 
   // --- Endgame energy cores (the Monifactory "energy core" idea, chemistry flavoured) ---
   event.create('energy_core_empty').displayName('Empty Energy Core').texture('minecraft:item/ender_eye').maxStackSize(16)
