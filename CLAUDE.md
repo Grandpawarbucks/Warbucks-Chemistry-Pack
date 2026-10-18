@@ -94,7 +94,8 @@
   Editing pattern: parse JSON, remove the original, re-add under kubejs:phase3/... (see phase3_compat.js).
 - Dedicated server kit: server/ (install.sh, start.sh auto-updates from GitHub, warbucks.service), docs/SERVER.md.
   User decision 2026-10-18: Warbucks REPLACES ATM10 as the live server on the VPS (/opt/warbucks); whitelist on,
-  auto-update, daily backups (7 kept), Normal difficulty. Stopping ATM10 still needs the user's OK + 0 players.
+  auto-update, daily backups (7 kept), Normal difficulty. LIVE since 2026-10-18 19:08: warbucks.service enabled on
+  port 25565; atm10.service stopped + disabled (folder untouched, re-enable to switch back).
 - Remote test server: the user's VPS (connection details are kept in local Claude memory, NOT in this public repo).
   Live ATM10 runs there; stopping it needs explicit user OK + 0 players. Default: test locally.
 - Gate in Phase 4: Just Dire Things flight items and Powah parts (chemical intermediates).

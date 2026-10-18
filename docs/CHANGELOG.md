@@ -17,6 +17,9 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
   - A fresh install from the GitHub URL reached Done with 203 server mods.
   - `stop` exits cleanly.
   - A second start only updates the pack.
+- **Live:** Warbucks replaced ATM10 on the VPS (user decision). `warbucks.service` is enabled. ATM10 stopped with 0 players
+  online and is disabled; its folder is untouched. First start: Done in 7.6s, 38 chapters / 1,168 quests,
+  0 failed recipes; log check passes.
 
 ### 2026-10-18: Empty starting inventory
 - New players no longer get join gifts. Switched off in pack/config:
