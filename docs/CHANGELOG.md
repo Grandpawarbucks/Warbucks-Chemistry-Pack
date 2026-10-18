@@ -4,6 +4,13 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Ore deposits
+- New `tools/build_deposits.py` generates vanilla-format worldgen into `pack/kubejs/data/` (no extra mod):
+  - MI's scattered tin, lead, bauxite, nickel, antimony, uranium and tungsten ore cut to 35%.
+  - New rare **deposits**: in 1 of every 16–30 chunks, 2–9 large ore blobs cluster in a narrow depth band.
+- Measured (radius 384, 2,401 chunks): totals 66–78% of before, but concentrated. Tin: median chunk 35 ores, deposit chunks 500–700. Lead: 54 vs about 830.
+- Worldgen check passes.
+
 ### 2026-10-18: GitHub, chemistry mechanics, quest book v4
 - **Public GitHub repo:** https://github.com/Grandpawarbucks/Warbucks-Chemistry-Pack. Server details were scrubbed and the history restarted fresh; the full history is kept locally only.
 - New `launcher/Warbucks-Chemistry-Prism.zip`, an importable Prism instance that updates itself from GitHub on every launch (tested: installs all 177 mods from the GitHub URL). New `docs/DESKTOP_SETUP.md` covers playing and developing on Windows.

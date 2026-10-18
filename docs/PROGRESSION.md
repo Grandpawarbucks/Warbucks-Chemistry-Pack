@@ -133,6 +133,9 @@ Seven tiers. Each one lists the chemistry concept, the divine milestone (the sto
 | Storage network | **AE2** (Tom's Simple Storage as the early network) | Refined Storage not included |
 | Reactors | **Mekanism** fission (primary), MI nuclear as an alternative | To be balanced in Phase 4 |
 
+### Ore deposits (2026-10-18)
+Scattered MI ore is reduced to 35%, and rich deposits (500–900 ores in one chunk) appear in about 1 of every 16–30 chunks, at a metal-specific depth (`tools/build_deposits.py`). Prospecting with Jade, Ultimine and exploration pays off; byproducts and 3–5x processing make up the difference.
+
 ## 7. Phase 4 integration (KubeJS, 2026-10-18)
 
 MI's tier ladder is the spine. Its hulls already need chemical intermediates: LV analog circuit + steel (coke); MV electronic circuit (aluminum) + silicon battery; HV digital circuit (**polyethylene**) + sodium battery; EV processing unit (**PVC**) + cadmium battery; IV quantum circuit + plutonium battery. `pack/kubejs/server_scripts/phase4_integration.js` hooks the other mods onto it:
