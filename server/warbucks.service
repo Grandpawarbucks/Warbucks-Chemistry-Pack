@@ -1,0 +1,19 @@
+# systemd unit (Linux). Install: cp server/warbucks.service /etc/systemd/system/ && systemctl enable --now warbucks
+# Console: sudo -u minecraft tmux attach -t warbucks   (detach with Ctrl+B then D)
+[Unit]
+Description=Warbucks Chemistry Minecraft server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+User=minecraft
+WorkingDirectory=/opt/warbucks
+ExecStart=/usr/bin/tmux new-session -d -s warbucks /opt/warbucks/start.sh
+ExecStop=/bin/bash -c '/usr/bin/tmux send-keys -t warbucks "stop" Enter; for i in $(seq 1 180); do /usr/bin/tmux has-session -t warbucks 2>/dev/null || exit 0; sleep 1; done'
+TimeoutStopSec=200
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

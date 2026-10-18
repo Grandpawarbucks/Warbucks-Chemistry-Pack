@@ -12,6 +12,7 @@ A chemistry and technology modpack for **NeoForge 21.1.262 / Minecraft 1.21.1**.
 |---|---|
 | `pack/` | packwiz pack, the source of truth for mods (`pack.toml`, `index.toml`, `mods/*.pw.toml`) |
 | `pack/kubejs/`, `pack/config/` | Pack overrides (KubeJS scripts, configs). Inside `pack/` so packwiz ships them. |
+| `server/` | Dedicated server kit (see docs/SERVER.md). |
 | `test/` | Test scripts. Server files and results are git-ignored. |
 | `docs/` | Design and docs. `MODLIST.md` is generated from `modlist-meta.tsv`. |
 

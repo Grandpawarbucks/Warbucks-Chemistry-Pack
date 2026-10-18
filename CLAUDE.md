@@ -92,6 +92,9 @@
   Next: Phase 6 final test pass (launch, worldgen, JEI sanity, quest completion, dedicated server on VPS with user OK).
 - KubeJS 7 (2101.7.x) API confirmed via javap: event.findRecipes/remove/custom; recipe.json; recipe.getId().
   Editing pattern: parse JSON, remove the original, re-add under kubejs:phase3/... (see phase3_compat.js).
+- Dedicated server kit: server/ (install.sh, start.sh auto-updates from GitHub, warbucks.service), docs/SERVER.md.
+  User decision 2026-10-18: Warbucks REPLACES ATM10 as the live server on the VPS (/opt/warbucks); whitelist on,
+  auto-update, daily backups (7 kept), Normal difficulty. Stopping ATM10 still needs the user's OK + 0 players.
 - Remote test server: the user's VPS (connection details are kept in local Claude memory, NOT in this public repo).
   Live ATM10 runs there; stopping it needs explicit user OK + 0 players. Default: test locally.
 - Gate in Phase 4: Just Dire Things flight items and Powah parts (chemical intermediates).

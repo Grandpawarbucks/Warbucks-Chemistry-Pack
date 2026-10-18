@@ -4,6 +4,20 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Dedicated server kit
+- New `server/` kit (see docs/SERVER.md):
+  - `install.sh`: sets up the server folder.
+  - `start.sh`: pulls the pack from GitHub on every start, installs or upgrades NeoForge automatically, restarts after a crash.
+  - `server.properties`: whitelist on, `allow-flight=true`, Normal difficulty, 10 players.
+  - `user_jvm_args.txt`: 8–12 GB.
+  - `warbucks.service`: systemd unit plus tmux.
+- Daily full backups, 7 kept (Simple Backups, `pack/config/simplebackups-common.toml`).
+- The test server now also uses `allow-flight=true`.
+- Tested on this Mac:
+  - A fresh install from the GitHub URL reached Done with 203 server mods.
+  - `stop` exits cleanly.
+  - A second start only updates the pack.
+
 ### 2026-10-18: Empty starting inventory
 - New players no longer get join gifts. Switched off in pack/config:
   - Modern Industrialization guidebook (on first join and on respawn)

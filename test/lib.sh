@@ -49,6 +49,7 @@ prepare_server() {
   set_prop server-ip 127.0.0.1
   set_prop spawn-protection 0
   set_prop view-distance 6
+  set_prop allow-flight true  # as on the real server (server/server.properties)
   # Use the pack's JVM args (from docs/README.md) for the test server too.
   cp "$TEST_DIR/jvm_args.txt" "$SERVER/user_jvm_args.txt"
 }
