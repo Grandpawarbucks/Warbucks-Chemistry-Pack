@@ -1,0 +1,46 @@
+# Quest writing guide (Warbucks Chemistry: The Demigod's Codex)
+
+Each chapter is one file in `tools/quests/<key>.py` defining `CHAPTER = Chapter(...)`.
+Validate with `python3 tools/build_quests.py --check` (writes nothing). The real build is run by the maintainer.
+
+## Hard rules
+1. **Never change or remove an existing quest key** (`Q("t1_steel", ...)`). Quest IDs are derived from keys, so changing one wipes player progress. Rewording titles and descriptions is fine.
+2. **Only use ids that exist.** Look them up: `grep -P '^modid:item_name\t' test/ids.tsv`. Item tasks use `item("id", count)`, dimensions use `dim("id")`, tips and story use `tick()`. `--check` fails on unknown ids.
+3. **Don't invent mechanics or recipes.** If unsure how something is made, read the recipe JSON in the mod jar (`unzip -p test/server/mods/<jar> data/<ns>/recipe/<path>.json`) or say "check JEI". Chemistry facts must be real and correct.
+4. Only edit your assigned chapter files. Don't run the full build, don't commit, don't touch `pack/`.
+5. Multiblocks: point players to where the 3D layout is shown: **JEI** (press R/U), the **MI guidebook**, or **Just Enough Mekanism Multiblocks** in JEI. No hand-drawn diagrams.
+
+## Every quest gets
+- `subtitle="..."`: one short line (≤ 60 characters) shown under the title.
+- A structured `desc` of 3–7 lines, using only the sections that apply, in this order:
+  - `"&6...&r"`: story line (milestones and chapter start/end only; see Story)
+  - `"&eWhat:&r ..."`: what the thing is and why the player wants it
+  - `"&eChemistry:&r ..."`: the real science (reaction, formula, why it works). Skip it for pure tools and QoL.
+  - `"&eHow:&r ..."`: concrete steps (machine, inputs, where to find things, JEI pointers)
+  - `"&eTip:&r ..."`: one practical tip (automation, common mistake, efficiency)
+  Keep lines readable: 1–2 sentences each. Plain words. Use real formulas (H₂SO₄, NaCl, C₂H₄) where they help.
+
+## Smaller steps
+Split big leaps into one quest per new machine or intermediate (e.g. sulfur → SO₂ → SO₃ → H₂SO₄, each its own quest with its own machine). New quest keys use the chapter prefix (e.g. `t3_so2`). Wire `deps` so the line reads left to right. Keep existing quests as the milestones.
+
+## Optional side quests
+Bonus content off the main line: collections, challenges, fun facts, alternative routes. Mark them `optional=True` and give `tokens=1` (or 2 for hard ones). Place them above or below the main line (different y), never in the main flow. Main-line quests never depend on optional ones.
+
+## Story and lore
+The player is a demigod who woke without their power and regains it by mastering chemistry. Each chapter should have:
+- a gold `&6` line at its first quest (a memory returning, written as the demigod remembering);
+- a gold `&6` payoff line at its milestone(s).
+Tone: wonder and quiet confidence, a little wry; never purple prose. 1–2 lines, not paragraphs. No new characters or lore beyond "the demigod remembering what they once were".
+
+## Layout
+`x`/`y` are grid cells; keep about 2 cells between quests horizontally and 1–2 vertically. Avoid overlapping quests and lines that cross the whole chapter. Milestones may use `size=1.5`/`2.0` and `shape="hexagon"`/`"gear"`.
+
+## Pack facts to respect (gates set in KubeJS; see docs/PROGRESSION.md §6–7)
+- Tech spine = Modern Industrialization tiers: LV analog circuit, MV electronic circuit (aluminum), HV digital circuit (polyethylene), EV processing unit (PVC), IV quantum.
+- Ore processing caps at 2x per ore block before acids. Mekanism gives 3x (O₂), 4x (HCl), 5x (H₂SO₄). Byproducts come from Mekanism dirty dust in the MI Centrifuge.
+- Ore deposits: scattered MI ore is reduced; rich deposits sit at metal-specific depths.
+- Flight: Infusion Pylon + Potion of Flying needs hydrogen from the Alchemistry Dissolver. Iron Jetpack coils need MI LV/MV/HV/EV circuits. The Angel Ring needs an HV digital circuit.
+- Gated by MI circuits: Mekanism control circuits, AE2 Inscriber (Turbo hull) and Controller (digital circuit), Powah Energizing Orb (MV), Flux Core (EV), Ad Astra NASA Workbench (EV hull), Extended Crafting tables (MV/HV/EV), HNN Simulation Chamber and Loot Fabricator (MV), Create Alternator and New Age Generator Coil (LV), New Age reactor rods (EV), Mystical Agriculture tier 3/4/5 seeds (LV/MV/HV).
+- Blocked: MA seeds and Occultism miners for uranium, uraninite, osmium, fluorite, silicon, steel, aluminum, graphite, platinum, iridium, tungsten (Occultism) and refined obsidian/glowstone (MA).
+- Custom chemistry (MI machines): Haber-Bosch (N₂ + 3H₂ → 2NH₃), Ostwald (NH₃ → HNO₃), NH₃ + HCl → NH₄Cl, the PGM line (anode sludge from nickel/copper electrolysis → aqua regia → chloroplatinic acid + residue → ammonium hexachloroplatinate → calcine to platinum; residue centrifuged into Ir/Os/Rh/Ru), uraninite = uranium dust + O₂ (Chemical Reactor), energy cores, Seed of a New World (9x9 Ultimate Table).
+- Demigod Tokens are quest rewards; shop recipes are in JEI (search "Demigod Token").

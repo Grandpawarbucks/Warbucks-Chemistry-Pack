@@ -12,6 +12,7 @@ if not _IDS_FILE.exists():
     raise SystemExit("test/ids.tsv missing: run test/smoke.sh, then python3 test/build_id_index.py")
 IDS = {line.split("\t")[0] for line in _IDS_FILE.read_text().splitlines()}
 ERRORS = []
+MAIN, SIDE = "main", "side"
 
 
 def check(id_):
@@ -39,8 +40,9 @@ class Q:
     """One quest. x/y are grid positions in the chapter; deps are other quest keys (any chapter)."""
 
     def __init__(self, key, x, y, tasks, title=None, desc=(), deps=(), xp=0, items=(),
-                 subtitle=None, size=None, shape=None, tokens=None):
+                 subtitle=None, size=None, shape=None, tokens=None, optional=False):
         self.key, self.x, self.y, self.tasks = key, x, y, tasks
+        self.optional = optional  # optional side quest: shown, but not needed to progress
         self.tokens = tokens  # None = chapter default (doubled for milestone quests, size >= 1.5)
         self.title, self.desc, self.deps, self.xp = title, list(desc), list(deps), xp
         self.items = [(check(i), n) for i, n in items]

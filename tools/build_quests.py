@@ -66,6 +66,12 @@ def build():
                     errors.append(f"dependency {d} (from {q.key})")
     if errors:
         sys.exit("Unknown ids/dependencies:\n  " + "\n  ".join(sorted(set(errors))))
+    dup = [k for k in keys if sum(1 for c in CHAPTERS for q in c.quests if q.key == k) > 1]
+    if dup:
+        sys.exit("Duplicate quest keys: " + ", ".join(sorted(set(dup))))
+    if "--check" in sys.argv:
+        print(f"OK: {len(CHAPTERS)} chapters, {len(keys)} quests, all ids and dependencies valid (nothing written)")
+        return
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -109,6 +115,8 @@ def build():
                 entry["shape"] = q.shape
             if q.size:
                 entry["size"] = float(q.size)
+            if q.optional:
+                entry["optional"] = True
             if q.deps:
                 entry["dependencies"] = [keys[d] for d in q.deps]
             entry["tasks"] = tasks
