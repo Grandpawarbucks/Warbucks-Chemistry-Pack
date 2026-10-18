@@ -199,7 +199,7 @@
 | FastWorkbench | Crafting table speedups | — | yes | [Modrinth](https://modrinth.com/mod/5NYPwQRn) | `FastWorkbench-1.21.1-9.1.3.jar` |
 | FerriteCore | Memory usage | — | yes | [Modrinth](https://modrinth.com/mod/uXXizFIs) | `ferritecore-7.0.3-neoforge.jar` |
 | ImmediatelyFast | Rendering | — | yes | [Modrinth](https://modrinth.com/mod/5ZwdcRci) | client; `ImmediatelyFast-NeoForge-1.6.15+1.21.1.jar` |
-| Invasive Optimizations | General performance optimizations | — | yes | [Modrinth](https://modrinth.com/mod/pynl8zUh) | Has OPTIONAL Create integration (flagged; inactive here since there's no Create); `invasiveopts-1.0.25.jar` |
+| Invasive Optimizations | General performance optimizations | — | yes | [Modrinth](https://modrinth.com/mod/pynl8zUh) | Has optional Create integration (now active: Create is in the pack); `invasiveopts-1.0.25.jar` |
 | Iris Shaders | Shader support (optional) | — | yes | [Modrinth](https://modrinth.com/mod/YL57xq9U) | client; `iris-neoforge-1.8.14-beta.1+mc1.21.1.jar` |
 | Load My F***ing Tags | Fixes tag-loading failures | — | yes | [Modrinth](https://modrinth.com/mod/67kVxsaO) | File is labelled 1.21.9 but listed for 1.21.1; loads OK; `lmft-1.1.1+1.21.9-neoforge.jar` |
 | Model Gap Fix | Fixes item model gaps | — | yes | [Modrinth](https://modrinth.com/mod/QdG47OkI) | client; last update 2024-08; `modelfix-1.21-1.10.jar` |
