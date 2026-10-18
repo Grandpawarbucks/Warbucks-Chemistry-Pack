@@ -42,11 +42,35 @@
 			]
 		}
 		{
-			id: "022F679599389147"
+			id: "14851AEFE672966D"
 			x: 2.0d
-			y: -1.0d
+			y: 0.0d
 			dependencies: [
 				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "047A6211950B29B1"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "26CA5C27A32EC7E0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "022F679599389147"
+			x: 4.0d
+			y: -1.0d
+			dependencies: [
+				"14851AEFE672966D"
 			]
 			tasks: [
 				{
@@ -67,10 +91,10 @@
 		}
 		{
 			id: "745DBEEE9AE746C7"
-			x: 2.0d
+			x: 4.0d
 			y: 1.0d
 			dependencies: [
-				"54E4F62471779F14"
+				"14851AEFE672966D"
 			]
 			tasks: [
 				{
@@ -90,11 +114,35 @@
 			]
 		}
 		{
-			id: "32306651C1085697"
-			x: 4.0d
+			id: "268396713B9B58E9"
+			x: 6.0d
 			y: -1.0d
 			dependencies: [
 				"022F679599389147"
+			]
+			tasks: [
+				{
+					id: "4DDDCE0E4C660582"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "58E623B5D2F79133"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32306651C1085697"
+			x: 8.0d
+			y: -1.0d
+			dependencies: [
+				"268396713B9B58E9"
 			]
 			tasks: [
 				{
@@ -115,7 +163,7 @@
 		}
 		{
 			id: "19F5D52D281D058B"
-			x: 4.0d
+			x: 6.0d
 			y: 1.0d
 			dependencies: [
 				"745DBEEE9AE746C7"
@@ -138,14 +186,38 @@
 			]
 		}
 		{
+			id: "006E1D3530E698E7"
+			x: 8.0d
+			y: 1.0d
+			dependencies: [
+				"19F5D52D281D058B"
+			]
+			tasks: [
+				{
+					id: "5264CED59D4AD2B8"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "285B729FEBA1F8A4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "61103C80A99526F9"
-			x: 6.0d
+			x: 10.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"32306651C1085697"
-				"19F5D52D281D058B"
+				"006E1D3530E698E7"
 			]
 			tasks: [
 				{
@@ -164,13 +236,63 @@
 				}
 			]
 		}
+		{
+			id: "5F462A144226867C"
+			x: 4.0d
+			y: -3.0d
+			optional: true
+			dependencies: [
+				"14851AEFE672966D"
+			]
+			tasks: [
+				{
+					id: "44088471F82F1F31"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "06F1C19084E9486F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5EFC77C0525603E5"
+			x: 6.0d
+			y: 3.0d
+			optional: true
+			dependencies: [
+				"745DBEEE9AE746C7"
+			]
+			tasks: [
+				{
+					id: "48338EB9C6B02D90"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7DBDC565793F497D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	quest_links: [ ]
 	images: [
 		{
 			id: "64EA6B5BC9A940C8"
 			x: 2.5d
-			y: -3.0d
+			y: -5.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -179,7 +301,7 @@
 		{
 			id: "5C02A206CED00D77"
 			x: 3.0d
-			y: -5.25d
+			y: -7.25d
 			width: 7.0d
 			height: 2.07d
 			rotation: 0.0d

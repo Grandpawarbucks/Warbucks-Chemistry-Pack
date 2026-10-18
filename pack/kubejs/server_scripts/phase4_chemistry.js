@@ -118,7 +118,7 @@ ServerEvents.recipes(event => {
   // 4. CAPSTONE: Seed of a New World (9x9, Extended Crafting Ultimate Table)
   // One intermediate from every tier: coke (T1), synthesized water and hydrogen (Alchemistry),
   // sulfuric acid (T3), polyethylene (T4), processing units (T5), oganesson (full periodic
-  // table), plutonium and polonium (nuclear), and four Antimatter Cores (T7).
+  // table), plutonium and polonium (nuclear), and eight Antimatter Cores (T7).
   // ==========================================================================================
   event.custom({
     type: 'extendedcrafting:shaped_table',

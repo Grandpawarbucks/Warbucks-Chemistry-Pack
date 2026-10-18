@@ -165,7 +165,7 @@ MI's tier ladder is the spine. Its hulls already need chemical intermediates: LV
 **Flight** (`phase4_flight.js`, Option 2: every flight source is a chemistry milestone):
 | Source | When | Gate |
 |---|---|---|
-| Infusion Pylon + Potion of Flying | End of Ch. II | Needs `chemlib:hydrogen` (Dissolver only) + Nether quartz and blackstone |
+| Infusion Pylon + Potion of Flying | End of Ch. II | Pylon needs `chemlib:hydrogen` (Dissolver only) + Nether quartz and blackstone. Potion of Flying = Levitation + 2 hydrogen (crafted), so no End trip is needed. |
 | Iron Jetpacks | LV → EV | Basic/Advanced/Elite/Ultimate coils need MI analog/electronic/digital circuits / processing unit |
 | Angel Ring | HV+ | MI digital circuit + Elytra + Nether Stars |
 | Just Dire Things flight upgrade | After the End | End Crystals (unchanged) |

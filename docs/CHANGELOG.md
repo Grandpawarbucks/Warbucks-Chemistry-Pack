@@ -4,6 +4,30 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Quest book v7: detailed (587 quests)
+- Five parallel writers expanded every chapter following `tools/quests/STYLE.md`; each quest is now one file per chapter in `tools/quests/`.
+  - Every quest has a subtitle and a structured description: What / Chemistry / How / Tip.
+  - Smaller steps throughout.
+  - 118 optional side quests (off the main line, 1–2 tokens).
+  - Gold "memory returning" story lines at each chapter's opening and milestones.
+- Quests: 213 → 609. No existing quest keys changed, so player progress is kept.
+- Progression bugs found by reading the real mod recipes, and fixed:
+  - Item pipes need steel gears, so they moved to Chapter II.
+  - The steam cutter needs lubricant.
+  - The steam boiler needs the Iron Hammer / fire-clay chain.
+  - Coal dissolves into graphite, and wood into cellulose.
+  - The Chapter V order was impossible (the Electrolyzer and Chemical Reactor need an electronic circuit and aluminum); dependencies re-sequenced.
+  - The Nether has no sulfur (it comes from lignite or lava).
+  - Boron and noble gases can't be dissolved early (Fusion Chamber only).
+  - Desh is on the Moon, not Mars.
+  - The Apotheosis reforging table needs netherite.
+  - The Potion Filter needs 2 Extra Long potions, not 7.5.
+- **Flight fix:** Apothic's Potion of Flying needs popped chorus fruit (End only), which broke "flight after the Nether". New recipe in `phase4_flight.js`: Potion of Levitation + 2 hydrogen → Potion of Flying (potion ids checked at runtime).
+- TelePastries' Twilight Cake now needs an MI digital circuit (HV), matching the Twilight Forest gate.
+- The capstone uses **8** Antimatter Cores (the comments and docs said 4).
+- The Chapter IV/VI Electric Blast Furnace overlap is resolved (VI is now stainless steel only, after IV's EBF).
+- Server: "Loaded 21 chapters, 609 quests"; KubeJS 0 failed; smoke test passes.
+
 ### 2026-10-18: Compact Machines room templates
 - In-game: "No Room Templates are registered!" Compact Machines 7 ships its templates as an optional built-in datapack that's off by default.
 - Copied that pack's data (8 room templates, their recipes and advancements; MIT licence) into `pack/kubejs/data/compactmachines/`, so the templates are always on, in every world and on servers. Verified on the server: all 8 templates are registered.

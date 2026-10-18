@@ -1,27 +1,153 @@
 """Quest chapter: power. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
 from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
 
+# Layout: y=-2 combustion, y=-4 nuclear, y=0 storage (Mekanism -> induction -> Flux),
+# y=2 MI steam and EU, y=4 Powah, y=6 renewables. Optional quests sit at the row ends / off-row.
 CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         ["Energy is chemistry too: combustion, gas burning, fission and fusion."], SIDE, [
-    Q("pw_iron_gen", 0, 0, [item("generatorgalore:iron_generator")], "First FE", deps=["t1_power"], xp=40, desc=[
-        "Generator Galore's generators burn fuel (and, at higher tiers, stranger things) for FE."]),
-    Q("pw_gold_gen", 2, -1, [item("generatorgalore:gold_generator")], deps=["pw_iron_gen"], xp=60, desc=["A faster generator."]),
-    Q("pw_heat", 2, 1, [item("mekanismgenerators:heat_generator")], "Heat Generator", deps=["pw_iron_gen", "t3_infuser"], xp=60, desc=[
-        "Mekanism's starter generator burns fuel, and gets a bonus from lava next to it."]),
-    Q("pw_cube", 4, 1, [item("mekanism:basic_energy_cube")], "Store It", deps=["pw_heat"], xp=60, desc=[
-        "Energy cubes buffer power. Upgrade them through the circuit tiers."]),
-    Q("pw_gas", 4, -1, [item("mekanismgenerators:gas_burning_generator")], "Burning Hydrogen", deps=["t4_separator"], xp=150, desc=[
-        "2H₂ + O₂ → 2H₂O + energy. Feed it hydrogen from your electrolysis line: water in, power out, water back. It's the cleanest combustion there is."]),
-    Q("pw_solar", 6, 1, [item("mekanismgenerators:solar_generator"), item("powah:solar_panel_starter")], "Photovoltaics", deps=["t4_mv"], xp=100, desc=[
-        "Silicon solar cells turn light straight into electricity: semiconductors at work."]),
-    Q("pw_diesel", 6, -1, [item("modern_industrialization:mv_diesel_generator")], "Diesel Generators", deps=["t5_diesel"], xp=150, desc=[
-        "Burn the diesel from your distillation tower. Scale up to HV and the Large Diesel Generator for real factories."]),
-    Q("pw_large_diesel", 8, -1, [item("modern_industrialization:large_diesel_generator")], deps=["pw_diesel", "t5_hv"], xp=250),
-    Q("pw_powah", 8, 1, [item("powah:reactor_basic", 36)], "Powah Reactor", deps=["t4_uraninite"], xp=250, desc=[
-        "A multiblock reactor fuelled by the uraninite you oxidised yourself."]),
-    Q("pw_turbine", 10, -1, [item("mekanismgenerators:turbine_casing", 16)], "Industrial Turbine", deps=["t6_fission"], xp=300, desc=[
-        "Fission makes heat; a turbine turns the steam into enormous amounts of power."]),
-    Q("pw_fusion", 12, 0, [item("mekanismgenerators:fusion_reactor_controller")], "Fusion", deps=["pw_turbine", "t6_waste"], xp=1000, size=1.75, shape="hexagon", desc=[
-        "&6The power of a star.&r Deuterium and tritium fuse into helium, releasing more energy than any chemical reaction.",
-        "How: deuterium from heavy water, tritium from lithium (Mekanism). Check JEI and Just Enough Mekanism Multiblocks."]),
+    Q("pw_iron_gen", 0, 0, [item("generatorgalore:iron_generator")], "First FE", subtitle="Burn something, get power", deps=["t1_power"], xp=40, desc=[
+        "&6You remember holding lightning. For now, a box that burns coal will do.&r",
+        "&eWhat:&r Generator Galore's generators burn fuel for FE (Forge Energy), the power most mods share.",
+        "&eChemistry:&r burning is oxidation: C + O₂ → CO₂ releases the energy stored in carbon's bonds.",
+        "&eHow:&r feed it coal or charcoal and connect a cable or put a machine next to it.",
+        "&eTip:&r this chapter is a side path. Pick the power lines that suit your base."]),
+
+    # --- Combustion (y = -2) -----------------------------------------------------------------
+    Q("pw_gold_gen", 2, -2, [item("generatorgalore:gold_generator")], "A Faster Burn", subtitle="Same fuel, more FE per tick", deps=["pw_iron_gen"], xp=60, desc=[
+        "&eWhat:&r the next Generator Galore tier: it burns fuel faster and makes more FE per tick.",
+        "&eHow:&r upgrade from the iron generator (check JEI for the recipe).",
+        "&eTip:&r a faster burn needs a steadier fuel supply. Pipe in charcoal from a tree farm."]),
+    Q("pw_gg_collection", 2, -4, [item("generatorgalore:diamond_generator"), item("generatorgalore:culinary_generator"), item("generatorgalore:magmatic_generator"), item("generatorgalore:halitosis_generator")],
+      "Generator Collector", subtitle="Four odd ways to make FE", deps=["pw_gold_gen"], xp=200, optional=True, tokens=2, desc=[
+        "&eWhat:&r a diamond-tier generator plus three that burn strange fuels.",
+        "&eHow:&r each one's tooltip and JEI page show what it burns. The Halitosis Generator wants dragon's breath, so plan an End trip.",
+        "&eTip:&r the Culinary Generator eats spare food. Hook it to a farm's overflow."]),
+    Q("pw_bio", 0, -2, [item("mekanismgenerators:bio_generator")], "Bio Fuel", subtitle="Crops into power", deps=["pw_heat"], xp=100, optional=True, tokens=1, desc=[
+        "&eWhat:&r Mekanism's Bio-Generator burns Bio Fuel.",
+        "&eChemistry:&r plants store sunlight as sugars and cellulose. Burning them releases it, and the CO₂ is the same CO₂ the plant took in.",
+        "&eHow:&r crush seeds and crops into Bio Fuel in a Mekanism Crusher."]),
+    Q("pw_gas", 4, -2, [item("mekanismgenerators:gas_burning_generator")], "Burning Hydrogen", subtitle="The cleanest combustion there is", deps=["t4_separator"], xp=150, desc=[
+        "&eWhat:&r the Gas-Burning Generator turns flammable gas into FE.",
+        "&eChemistry:&r 2H₂ + O₂ → 2H₂O + energy. The only exhaust is water.",
+        "&eHow:&r pipe hydrogen from your Electrolytic Separator in with pressurized tubes.",
+        "&eTip:&r electrolysis costs more energy than burning hydrogen returns. Use it to store spare power, not to make it."]),
+    Q("pw_diesel", 6, -2, [item("modern_industrialization:mv_diesel_generator")], "Diesel Generators", subtitle="Petrochemical power", deps=["t5_diesel"], xp=150, desc=[
+        "&eWhat:&r MI generators that burn the fuels from your distillation tower.",
+        "&eChemistry:&r diesel is a mix of hydrocarbons around C₁₂ to C₂₀. Long chains pack lots of C-H bonds, and lots of energy.",
+        "&eHow:&r pipe diesel into the generator and cable it to your machines."]),
+    Q("pw_large_diesel", 8, -2, [item("modern_industrialization:large_diesel_generator")], "Large Diesel Generator", subtitle="Factory-scale combustion", deps=["pw_diesel", "t5_hv"], xp=250, desc=[
+        "&eWhat:&r a multiblock diesel generator for real factories.",
+        "&eHow:&r the 3D layout is in JEI and the MI guidebook. It needs fluid input and energy output hatches.",
+        "&eTip:&r refined fuels (like boosted diesel) burn for more EU per bucket. Check JEI."]),
+
+    # --- Storage (y = 0) ---------------------------------------------------------------------
+    Q("pw_heat", 2, 0, [item("mekanismgenerators:heat_generator")], "Heat Generator", subtitle="Mekanism's starter generator", deps=["pw_iron_gen", "t3_infuser"], xp=60, desc=[
+        "&eWhat:&r Mekanism's first generator. It burns fuel and turns heat into FE.",
+        "&eHow:&r place lava next to it for a passive bonus, and feed it fuel for more.",
+        "&eTip:&r lava from a pump makes this a decent passive generator early on."]),
+    Q("pw_cube", 4, 0, [item("mekanism:basic_energy_cube")], "Store It", subtitle="A buffer for your grid", deps=["pw_heat"], xp=60, desc=[
+        "&eWhat:&r energy cubes hold FE so short spikes don't stall your machines.",
+        "&eHow:&r put one between your generators and machines. Configure its sides with the Configurator.",
+        "&eTip:&r cubes upgrade in place: craft the next tier around the old one."]),
+    Q("pw_adv_cube", 6, 0, [item("mekanism:advanced_energy_cube")], "Bigger Cubes", subtitle="Each tier needs the matching circuit", deps=["pw_cube", "t4_mv"], xp=100, desc=[
+        "&eWhat:&r the Advanced Energy Cube holds and moves much more energy.",
+        "&eHow:&r it needs an Advanced Control Circuit, which in this pack needs an &eMI electronic circuit&r (MV).",
+        "&eTip:&r Elite and Ultimate cubes follow the HV and EV circuits."]),
+    Q("pw_brine", 8, 0, [item("mekanism:thermal_evaporation_controller"), item("mekanism:brine_bucket")], "Evaporation Ponds", subtitle="Sunlight and heat concentrate brine", deps=["pw_adv_cube"], xp=150, desc=[
+        "&eWhat:&r the Thermal Evaporation Plant boils water down into brine, and brine down into liquid lithium.",
+        "&eChemistry:&r real lithium comes from salt flats: brine sits in ponds until the water evaporates and the salts concentrate.",
+        "&eHow:&r a multiblock tower of Thermal Evaporation Blocks, Valves and one Controller. See Just Enough Mekanism Multiblocks in JEI.",
+        "&eTip:&r taller towers and more heat run faster. Feed it plain water."]),
+    Q("pw_lithium", 10, 0, [item("mekanism:dust_lithium", 8)], "Lithium", subtitle="The battery metal", deps=["pw_brine"], xp=150, desc=[
+        "&eWhat:&r lithium dust, for induction cells (and later, tritium).",
+        "&eChemistry:&r lithium is the lightest metal and gives up its electron easily, which is why lithium-ion batteries store so much energy for their weight.",
+        "&eHow:&r run brine through the plant again for liquid lithium. Turn it into gas in a Rotary Condensentrator, then crystallise it in a Chemical Crystallizer.",
+        "&eTip:&r check JEI with &eR&r on Lithium Dust to confirm each step."]),
+    Q("pw_induction", 12, 0, [item("mekanism:induction_casing", 16), item("mekanism:induction_port"), item("mekanism:basic_induction_cell"), item("mekanism:basic_induction_provider")],
+      "Induction Matrix", subtitle="One multiblock battery for the whole base", deps=["pw_lithium"], xp=300, size=1.5, shape="hexagon", desc=[
+        "&6Power stored, waiting, obedient. This feels familiar.&r",
+        "&eWhat:&r a hollow multiblock battery. Cells inside set how much it stores; providers set how fast it charges and discharges.",
+        "&eHow:&r casings form the shell (Structural Glass works for the walls), ports move energy in and out. Layout: Just Enough Mekanism Multiblocks.",
+        "&eTip:&r switch one port to output with the Configurator. Start small; you can rebuild it larger later."]),
+    Q("pw_flux_storage", 14, 0, [item("fluxnetworks:basic_flux_storage"), item("fluxnetworks:flux_plug"), item("fluxnetworks:flux_point")], "Wireless Grid", subtitle="Power anywhere, no cables", deps=["pw_induction", "t6_pu"], xp=300, desc=[
+        "&eWhat:&r Flux Networks sends power through the air: Plugs take it in, Points give it out, Storage buffers it.",
+        "&eHow:&r the Flux Core needs an &eMI processing unit&r (EV) in this pack. Link all devices to one network in their GUI.",
+        "&eTip:&r put a Flux Plug on your induction matrix's output port and every Point on the network draws from it."]),
+
+    # --- MI steam and EU (y = 2) ---------------------------------------------------------------
+    Q("pw_mi_storage", 2, 2, [item("modern_industrialization:lv_storage_unit")], "EU Storage", subtitle="A battery for MI's grid", deps=["t3_hull"], xp=60, desc=[
+        "&eWhat:&r MI's storage unit holds EU, Modern Industrialization's electricity.",
+        "&eHow:&r built from redstone batteries, battery alloy plates and an LV hull. Put it between your turbine and your machines.",
+        "&eTip:&r a buffer lets your steam turbine keep running while machines are idle."]),
+    Q("pw_mv_turbine", 4, 2, [item("modern_industrialization:mv_steam_turbine")], "MV Steam Turbine", subtitle="More steam, more EU", deps=["pw_mi_storage", "t4_mv"], xp=100, desc=[
+        "&eWhat:&r a bigger steam turbine that outputs MV power.",
+        "&eChemistry:&r a turbine converts the energy of hot, expanding steam into rotation, then a generator turns rotation into current.",
+        "&eHow:&r assemble it from an MV hull, aluminum rotors and large motors (check JEI)."]),
+    Q("pw_transformer", 6, 2, [item("modern_industrialization:lv_mv_transformer")], "Transformers", subtitle="Step voltage between tiers", deps=["pw_mv_turbine"], xp=75, desc=[
+        "&eWhat:&r a transformer moves energy between two neighbouring voltage tiers (LV and MV here).",
+        "&eHow:&r place it between an MV cable and your LV machines (or the other way round). Check which face is which in its tooltip.",
+        "&eTip:&r real grids do the same: high voltage for transmission, low voltage at the socket."]),
+    Q("pw_hv_turbine", 8, 2, [item("modern_industrialization:hv_steam_turbine")], "HV Steam Turbine", subtitle="High-voltage steam", deps=["pw_transformer", "t5_hv"], xp=150, desc=[
+        "&eWhat:&r the HV steam turbine, for HV machine lines.",
+        "&eHow:&r check JEI for the recipe. Feed it from a large boiler.",
+        "&eTip:&r more steam than one turbine can eat? Add a second turbine on the same steam line."]),
+    Q("pw_large_turbine", 10, 2, [item("modern_industrialization:large_steam_turbine")], "Large Steam Turbine", subtitle="Power-station scale", deps=["pw_hv_turbine", "t6_pu"], xp=300, desc=[
+        "&eWhat:&r MI's multiblock steam turbine. It eats steam by the thousands of mB and makes serious EU.",
+        "&eHow:&r the controller needs an HV steam turbine, a processing unit (EV) and a highly advanced hull. Layout: JEI or the MI guidebook.",
+        "&eTip:&r pair it with a large boiler or a reactor's steam output."]),
+
+    # --- Powah (y = 4) -------------------------------------------------------------------------
+    Q("pw_energized", 2, 4, [item("powah:steel_energized", 8)], "Energized Steel", subtitle="Iron and gold, charged together", deps=["t4_uraninite"], xp=100, desc=[
+        "&eWhat:&r Powah's basic alloy, made by the Energizing Orb.",
+        "&eHow:&r place Energizing Rods aimed at the orb and power them. Put 1 iron + 1 gold in the orb for 2 Energized Steel.",
+        "&eTip:&r more rods (and better rods) charge faster."]),
+    Q("pw_powah_cell", 4, 4, [item("powah:energy_cell_basic")], "Powah Energy Cells", subtitle="Stack your storage", deps=["pw_energized"], xp=100, desc=[
+        "&eWhat:&r Powah's energy storage block, with tiers from Starter to Nitro.",
+        "&eHow:&r iron, a dielectric casing and Powah capacitors. Higher tiers use better capacitors and crystals (check JEI).",
+        "&eTip:&r cells pass power through each other, so a wall of them makes one big buffer."]),
+    Q("pw_thermo", 6, 4, [item("powah:thermo_generator_starter")], "Thermo Generator", subtitle="Power from a temperature difference", deps=["pw_powah_cell"], xp=100, desc=[
+        "&eWhat:&r a generator that needs a hot block underneath and a coolant fed in.",
+        "&eChemistry:&r thermoelectric plates make current from a temperature difference (the Seebeck effect). Hotter below and colder inside means more power.",
+        "&eHow:&r place it on lava or magma and pipe water in."]),
+    Q("pw_powah", 8, 4, [item("powah:reactor_basic", 36)], "Powah Reactor", subtitle="Uraninite-fuelled multiblock", deps=["pw_thermo"], xp=250, desc=[
+        "&eWhat:&r a multiblock reactor fuelled by the uraninite you oxidised yourself.",
+        "&eChemistry:&r uraninite is UO₂. Its uranium releases heat as it fissions; the reactor turns that heat into FE.",
+        "&eHow:&r place the reactor blocks in a stack and they form one reactor (check JEI). Feed it uraninite.",
+        "&eTip:&r fuel, temperature and coolant all show in its GUI. Watch the temperature as you scale up."]),
+
+    # --- Renewables (y = 6) -------------------------------------------------------------------
+    Q("pw_solar", 4, 6, [item("mekanismgenerators:solar_generator"), item("powah:solar_panel_starter")], "Photovoltaics", subtitle="Light straight into electricity", deps=["t4_mv"], xp=100, desc=[
+        "&eWhat:&r solar panels from Mekanism and Powah.",
+        "&eChemistry:&r silicon solar cells use a p-n junction: a photon knocks an electron loose and the junction pushes it into a current.",
+        "&eHow:&r place them under open sky. They stop at night and slow in rain.",
+        "&eTip:&r pair solar with an energy cube to cover the night."]),
+    Q("pw_adv_solar", 6, 6, [item("mekanismgenerators:advanced_solar_generator")], "Advanced Solar", subtitle="A bigger array", deps=["pw_solar"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r Mekanism's Advanced Solar Generator, a larger array with much more output.",
+        "&eHow:&r check JEI for the recipe. Give it space: it's bigger than one block.",
+        "&eTip:&r like the basic panel, it only works in daylight. Buffer it with a cube."]),
+    Q("pw_wind", 8, 6, [item("mekanismgenerators:wind_generator")], "Wind Power", subtitle="Build it high", deps=["pw_solar"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r Mekanism's Wind Generator. It works day and night.",
+        "&eHow:&r it makes more power the higher it's placed. Build it on a mountain or a tall tower.",
+        "&eTip:&r it needs open space around it, so leave room."]),
+
+    # --- Nuclear (y = -4) ----------------------------------------------------------------------
+    Q("pw_fission_safety", 10, -4, [item("mekanismgenerators:fission_reactor_logic_adapter", 2)], "Reactor Safety", subtitle="Build the off-switch first", deps=["t6_fission"], xp=200, desc=[
+        "&eWhat:&r Logic Adapters let redstone read the reactor and switch it off.",
+        "&eChemistry:&r a fission reactor makes heat by splitting heavy nuclei. If heat can't escape fast enough, the reactor takes damage; at 100% it melts down.",
+        "&eHow:&r set one adapter to emit a signal on damage or high temperature (pick the mode in its GUI) and wire it to another in Activation mode.",
+        "&eTip:&r start at a low burn rate (0.1 mB/t), keep coolant flowing, and drain waste and heated coolant constantly."]),
+    Q("pw_turbine", 12, -4, [item("mekanismgenerators:turbine_casing", 16)], "Industrial Turbine", subtitle="Steam into enormous power", deps=["pw_fission_safety"], xp=300, desc=[
+        "&eWhat:&r Mekanism's multiblock turbine. Feed it steam from fission or a boiler and it makes huge amounts of FE.",
+        "&eHow:&r casings, valves, vents, rotors with blades, a rotational complex, a pressure disperser and electromagnetic coils. Layout: Just Enough Mekanism Multiblocks.",
+        "&eTip:&r a Saturating Condenser turns spent steam back into water, closing the loop."]),
+    Q("pw_dt_fuel", 14, -4, [item("mekanism:solar_neutron_activator"), item("mekanismgenerators:hohlraum")], "D-T Fuel", subtitle="Deuterium and tritium", deps=["pw_turbine", "pw_lithium"], xp=300, desc=[
+        "&eWhat:&r fusion fuel: deuterium and tritium, the two heavy isotopes of hydrogen.",
+        "&eChemistry:&r deuterium comes from heavy water (D₂O). Tritium is bred from lithium by neutrons: ⁶Li + n → ³H + ⁴He.",
+        "&eHow:&r electrolyse heavy water for deuterium; put lithium in the Solar Neutron Activator for tritium. Combine them into D-T fuel in the Chemical Infuser, then fill a Hohlraum with it (a chemical tank's item slot works; see its tooltip).",
+        "&eTip:&r heavy water comes from a Mekanism Electric Pump with a Filter Upgrade."]),
+    Q("pw_fusion", 16, -4, [item("mekanismgenerators:fusion_reactor_controller")], "Fusion", subtitle="The power of a star", deps=["pw_dt_fuel", "t6_waste"], xp=1000, size=1.75, shape="hexagon", desc=[
+        "&6The power of a star, in a box you built. This is what you were.&r",
+        "&eWhat:&r Mekanism's fusion reactor, the top of the power tree.",
+        "&eChemistry:&r D + T → ⁴He + n + 17.6 MeV, millions of times more energy per kilogram than any chemical reaction.",
+        "&eHow:&r a filled Hohlraum in the controller, then a burst from a Laser through a Laser Amplifier to ignite it. Layout: Just Enough Mekanism Multiblocks."]),
 ])

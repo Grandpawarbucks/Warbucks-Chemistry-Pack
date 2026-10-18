@@ -22,6 +22,24 @@ ServerEvents.recipes(event => {
     { q: 'minecraft:quartz_slab', h: 'chemlib:hydrogen', i: 'minecraft:iron_bars',
       d: 'minecraft:emerald_block', b: 'minecraft:polished_blackstone' })
 
+  // --- Potion of Flying without the End ----------------------------------------------------
+  // Apothic Attributes brews Flying from Levitation + popped chorus fruit, which only grows in
+  // the End. The design puts flight right after the Nether, so add a chemistry route: a Potion of
+  // Levitation (phantom membrane, then fermented spider eye; no End needed) plus hydrogen, the
+  // lightest gas, crafts a Potion of Flying. Longer versions still come from brewing as normal.
+  // Potion ids were checked on the running server (apothic_attributes:levitation / :flying).
+  event.custom({
+    type: 'minecraft:crafting_shapeless',
+    category: 'misc',
+    ingredients: [
+      { type: 'neoforge:components', items: 'minecraft:potion',
+        components: { 'minecraft:potion_contents': { potion: 'apothic_attributes:levitation' } } },
+      { item: 'chemlib:hydrogen' },
+      { item: 'chemlib:hydrogen' }
+    ],
+    result: { id: 'minecraft:potion', components: { 'minecraft:potion_contents': { potion: 'apothic_attributes:flying' } } }
+  }).id('kubejs:phase4/flight/potion_of_flying_from_hydrogen')
+
   // --- Iron Jetpacks -----------------------------------------------------------------------
   // Every jetpack tier's cells and thrusters use one of four coils (Iron Jetpacks picks the coil
   // from the jetpack's tier; even the wooden jetpack needs a basic coil). Each coil's wooden rod

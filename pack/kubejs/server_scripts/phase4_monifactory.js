@@ -40,6 +40,15 @@ ServerEvents.recipes(event => {
       B: 'extendedcrafting:ultimate_component', A: 'extendedcrafting:ultimate_catalyst',
       S: 'modern_industrialization:processing_unit' })
 
+  // --- TelePastries ----------------------------------------------------------------------
+  // The Twilight Cake (cake + flowers) would skip the Twilight Forest's place in progression
+  // (it unlocks at HV in the quest book). The bottom-centre poppy becomes an MI digital circuit
+  // (HV, polyethylene); the cake and the other flowers stay.
+  reshape('telepastries:twilight_cake', 'telepastries:twilight_cake',
+    ['YRY', 'RCR', 'YDY'],
+    { C: 'minecraft:cake', R: 'minecraft:poppy', Y: 'minecraft:dandelion',
+      D: 'modern_industrialization:digital_circuit' })
+
   // Not changed on purpose: Packaged Auto (needs AE2, which is already HV-gated), Compact
-  // Machines, Cable Facades and TelePastries (convenience, no progression skip).
+  // Machines, Cable Facades and the other TelePastries cakes (convenience, no progression skip).
 })

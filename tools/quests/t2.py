@@ -4,35 +4,142 @@ from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
 CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
         ["Walk through fire, brew in the dark, and take back the sky.",
          "Flight needs the Nether and your first Alchemistry machine: fire and chemistry together."], MAIN, [
-    Q("t2_obsidian", 0, 0, [item("minecraft:obsidian", 10), item("minecraft:flint_and_steel")], "A Door of Fire", deps=["gs_ironpick"], xp=30, desc=[
-        "A Nether portal is a 4x5 frame of obsidian, lit with flint and steel.",
-        "How: you need a diamond pickaxe to mine obsidian, or pour water over a lava source to make it in place."]),
-    Q("t2_nether", 2, 0, [dim("minecraft:the_nether")], "Into the Fire", deps=["t2_obsidian"], xp=100, desc=[
-        "The Nether is a chemistry lab: sulfur, quartz (SiO₂) and blaze powder all come from here.",
-        "How: bring food, armour and blocks. NetherPortalFix keeps portals linked properly."]),
-    Q("t2_blaze", 4, -1, [item("minecraft:blaze_rod", 4)], deps=["t2_nether"], xp=50, desc=[
-        "Blaze powder fuels brewing, alchemy's oldest form of applied chemistry.",
-        "How: blazes spawn in Nether Fortresses. Explorer's Compass can point you to one."]),
-    Q("t2_wart", 4, 1, [item("minecraft:nether_wart", 8)], deps=["t2_nether"], xp=25, desc=[
-        "The base reagent for almost every potion. It grows on soul sand in fortresses; replant it at home."]),
-    Q("t2_quartz", 8, -2, [item("minecraft:quartz", 16)], "Nether Quartz", deps=["t2_nether"], xp=25, desc=[
-        "Silicon dioxide, SiO₂. You'll need it for the Infusion Pylon, and much later for silicon."]),
-    Q("t2_brewing", 6, 0, [item("minecraft:brewing_stand")], "The Brewer's Art", deps=["t2_blaze", "t2_wart"], xp=75, desc=[
-        "Look up &ePotion of Flying&r in JEI (it comes from Apothic Attributes). That's your road back to the sky.",
-        "How: awkward potion first (water bottle + nether wart), then follow the JEI recipe."]),
-    Q("t2_filter", 8, 0, [item("pylons:potion_filter")], "Potion Filter", deps=["t2_brewing"], xp=75, desc=[
-        "Drink a potion, then right-click a Potion Filter to store the effect.",
-        "A filter needs &e1 hour&r of an effect to activate (about 7.5 extended potions). Combine filters with the same effect by holding one in each hand and right-clicking."]),
-    Q("t2_hydrogen", 8, 2, [item("chemlib:hydrogen", 8)], "Lighter than Air", deps=["t1_dissolver"], xp=75, desc=[
-        "Hydrogen is the lightest element. Balloons filled with it carried the first people into the sky in 1783.",
-        "Your flight pylon needs it, and only the &eDissolver&r can pull it out of matter as an item.",
-        "How: dissolve water, plants or wood and collect the hydrogen."]),
-    Q("t2_pylon", 10, 0, [item("pylons:infusion_pylon")], "Wings of a God", deps=["t2_filter", "t2_quartz", "t2_hydrogen"], xp=500, size=2.0, shape="hexagon", items=[("minecraft:experience_bottle", 32)], desc=[
-        "&6The sky is yours again.&r",
-        "The &eInfusion Pylon&r needs Nether quartz and blackstone, plus &ehydrogen&r from your Dissolver. Fire and chemistry together.",
-        "Put an activated Potion of Flying filter in it and you get creative-style flight anywhere.",
-        "How: the pylon's chunk must stay loaded, so force-load it with FTB Chunks (press M, right-click the chunk)."]),
-    Q("t2_ars", 2, 2, [item("ars_nouveau:worn_notebook"), item("ars_nouveau:source_gem", 4)], "Whispers of Magic", deps=["t2_nether"], xp=50, desc=[
-        "Light magic suits a demigod. The Worn Notebook teaches Ars Nouveau spellcrafting.",
-        "Its Ritual of Flight is another way to fly near your base. See the Divine Gifts chapter."]),
+    # --- Main line: portal and Nether ---
+    Q("t2_obsidian", 0, 0, [item("minecraft:obsidian", 10), item("minecraft:flint_and_steel")], "A Door of Fire", deps=["gs_ironpick"], xp=30,
+      subtitle="Ten blocks of obsidian and a spark", desc=[
+        "&6You remember the sky. Not looking up at it: standing in it.&r",
+        "&eWhat:&r a Nether portal is a 4x5 frame of obsidian (corners optional), lit with flint and steel.",
+        "&eChemistry:&r obsidian is volcanic glass. Lava cooled so fast its atoms never had time to form crystals.",
+        "&eHow:&r mine obsidian with a diamond pickaxe, or pour water over still lava to make it in place.",
+        "&eTip:&r a bucket of water and a bucket of lava let you cast the frame block by block."]),
+    Q("t2_nether", 2, 0, [dim("minecraft:the_nether")], "Into the Fire", deps=["t2_obsidian"], xp=100,
+      subtitle="A dimension of quartz, fire and soul sand", desc=[
+        "&eWhat:&r the Nether is a chemistry lab: quartz (SiO₂), blaze powder and nether wart all come from here.",
+        "&eHow:&r bring food, armour, blocks and a way home. NetherPortalFix keeps portals linked properly.",
+        "&eTip:&r water evaporates instantly here and beds explode. Bring a respawn plan, not a bed."]),
+    Q("t2_blaze", 4, -1, [item("minecraft:blaze_rod", 4)], "Blaze Rods", deps=["t2_nether"], xp=50,
+      subtitle="Fuel for the brewing stand", desc=[
+        "&eWhat:&r blaze rods craft the brewing stand, and blaze powder fuels it.",
+        "&eHow:&r blazes spawn around spawners in Nether Fortresses. Explorer's Compass can point you to one.",
+        "&eTip:&r snowballs hurt blazes, and fire resistance makes the fight easy."]),
+    Q("t2_wart", 4, 1, [item("minecraft:nether_wart", 8)], "Nether Wart", deps=["t2_nether"], xp=25,
+      subtitle="The base of almost every potion", desc=[
+        "&eWhat:&r the base reagent for almost every potion.",
+        "&eHow:&r it grows on soul sand in fortress stairwells. Bring some soul sand home and replant it; it grows in the Overworld too.",
+        "&eTip:&r one stack of wart grown at home covers every brew in this chapter."]),
+    Q("t2_quartz", 10, -3, [item("minecraft:quartz", 16)], "Nether Quartz", deps=["t2_nether"], xp=25,
+      subtitle="Silicon dioxide, straight from the rock", desc=[
+        "&eWhat:&r Nether quartz ore is everywhere in Nether netherrack. The Infusion Pylon needs it.",
+        "&eChemistry:&r quartz is silicon dioxide, SiO₂. Much later you'll reduce it with carbon to get pure silicon for circuits.",
+        "&eTip:&r keep a spare stack. Quartz dust plus coke becomes silicon in Chapter V."]),
+    Q("t2_blackstone", 10, -1, [item("minecraft:blackstone", 16)], "Blackstone", deps=["t2_nether"], xp=25,
+      subtitle="Dark volcanic stone for the pylon", desc=[
+        "&eWhat:&r the Infusion Pylon is framed in blackstone.",
+        "&eChemistry:&r blackstone is a basalt-like volcanic rock, rich in dark iron and magnesium minerals.",
+        "&eHow:&r it fills basalt deltas and bastion remnants. Any pickaxe mines it."]),
+
+    # --- Main line: brewing chain to Potion of Flying ---
+    Q("t2_brewing", 6, 0, [item("minecraft:brewing_stand")], "The Brewer's Art", deps=["t2_blaze", "t2_wart"], xp=75,
+      subtitle="Applied chemistry, the old-fashioned way", desc=[
+        "&eWhat:&r a brewing stand turns water bottles into potions, one ingredient at a time.",
+        "&eChemistry:&r brewing is extraction and reaction: each ingredient changes what's dissolved in the bottle.",
+        "&eHow:&r 1 blaze rod + 3 cobblestone. Blaze powder in the top-left slot fuels 20 brews.",
+        "&eTip:&r look up &ePotion of Flying&r in JEI (from Apothic Attributes). The next quests walk the whole chain."]),
+    Q("t2_awkward", 8, 0, [tick()], "The Awkward Potion", deps=["t2_brewing"], xp=30,
+      subtitle="Water bottle + nether wart", desc=[
+        "&eWhat:&r the Awkward Potion does nothing by itself, but almost every potion starts from it.",
+        "&eHow:&r fill glass bottles with water, put three in the stand, add nether wart on top.",
+        "&eTip:&r brew three at a time. Every ingredient affects all three bottles at once."]),
+    Q("t2_slowfall", 10, 0, [item("minecraft:phantom_membrane", 4)], "Slow Falling", deps=["t2_awkward"], xp=50,
+      subtitle="Awkward + phantom membrane", desc=[
+        "&eWhat:&r step 1 toward flight. Awkward Potion + phantom membrane = Potion of Slow Falling.",
+        "&eHow:&r phantoms appear at night when someone in the world hasn't slept for three or more days. Fight them on a roof.",
+        "&eTip:&r one membrane brews three bottles, so four membranes go a long way."]),
+    Q("t2_levitation", 12, 0, [item("minecraft:fermented_spider_eye", 4)], "Levitation", deps=["t2_slowfall"], xp=50,
+      subtitle="Slow Falling + fermented spider eye", desc=[
+        "&eWhat:&r step 2. Slow Falling + fermented spider eye = Potion of Levitation (Apothic Attributes).",
+        "&eChemistry:&r fermentation is yeast turning sugar into alcohol and acids. Here it 'corrupts' the effect into its opposite.",
+        "&eHow:&r fermented spider eye = spider eye + sugar + brown mushroom (shapeless)."]),
+    Q("t2_chorus", 14, 0, [item("chemlib:hydrogen", 2)], "Lifting Gas", deps=["t2_levitation", "t2_hydrogen"], xp=100,
+      subtitle="Levitation + hydrogen = Flying", desc=[
+        "&eWhat:&r step 3. In this pack, Flying is made with &ehydrogen&r instead of End chorus fruit, so you can fly before the End.",
+        "&eChemistry:&r hydrogen (H₂) is the lightest gas there is, about 14 times lighter than air. It lifted the first passenger balloons in 1783.",
+        "&eHow:&r get hydrogen from the Alchemistry Dissolver (dissolve water or plants). You need 2 per Flying potion.",
+        "&eTip:&r the brewing-stand route (popped chorus fruit) still works too, once you reach the End."]),
+    Q("t2_flying", 16, 0, [tick()], "Potion of Flying", deps=["t2_chorus"], xp=75,
+      subtitle="8 minutes of flight in a bottle", desc=[
+        "&eWhat:&r the Potion of Flying gives creative-style flight for 8 minutes.",
+        "&eHow:&r in a crafting grid: 1 Potion of Levitation + 2 hydrogen (check JEI). Tick this when you've made one.",
+        "&eTip:&r don't drink it yet. The next step makes it last far longer."]),
+    Q("t2_longflying", 18, 0, [item("minecraft:redstone", 8)], "Extended Flight", deps=["t2_flying"], xp=75,
+      subtitle="Redstone, twice: 15 minutes, then 30", desc=[
+        "&eWhat:&r redstone stretches a potion's duration. Flying + redstone = Long Flying (15 min). Add redstone again for Extra Long Flying (30 min).",
+        "&eHow:&r brew redstone into your Flying potions, then into the Long ones.",
+        "&eTip:&r a Potion Filter needs a full hour, which is just &etwo Extra Long&r potions. Brew at least two."]),
+    Q("t2_filter", 20, 0, [item("pylons:potion_filter")], "Potion Filter", deps=["t2_longflying"], xp=75,
+      subtitle="Store an effect in a filter", desc=[
+        "&eWhat:&r a Potion Filter holds a potion effect for the Infusion Pylon.",
+        "&eHow:&r drink a potion, then right-click the filter to store the effect. It activates once it holds &e1 hour&r of that effect.",
+        "&eTip:&r combine two filters with the same effect by holding one in each hand and right-clicking."]),
+    Q("t2_filter_full", 22, 0, [tick()], "A Full Hour", deps=["t2_filter"], xp=75,
+      subtitle="Charge the filter to one hour", desc=[
+        "&eWhat:&r the filter shows how much effect time it holds. It needs 60 minutes of Flying to work in a pylon.",
+        "&eHow:&r two Extra Long Flying (30 min each), four Long Flying (15 min), or about eight regular potions.",
+        "&eTip:&r drink and load one potion at a time, so none of the effect runs out first."]),
+    Q("t2_hydrogen", 20, 2, [item("chemlib:hydrogen", 8)], "Lighter than Air", deps=["t1_dissolver"], xp=75,
+      subtitle="The lightest element, from your Dissolver", desc=[
+        "&eWhat:&r your flight pylon needs hydrogen, and only the &eDissolver&r can pull it out of matter as an item.",
+        "&eChemistry:&r H is element 1: one proton, one electron. Hydrogen balloons carried people aloft in 1783.",
+        "&eHow:&r dissolve water, plants or wood and collect the hydrogen.",
+        "&eTip:&r feed the Dissolver from a hopper and it runs while you're in the Nether."]),
+    Q("t2_pylon", 24, 0, [item("pylons:infusion_pylon")], "Wings of a God", deps=["t2_filter_full", "t2_quartz", "t2_blackstone", "t2_hydrogen"], xp=500, size=2.0, shape="hexagon", items=[("minecraft:experience_bottle", 32)],
+      subtitle="Permanent flight, built from fire and hydrogen", desc=[
+        "&6The sky is yours again. You had forgotten how small the world looks from here.&r",
+        "&eWhat:&r the &eInfusion Pylon&r applies a filter's effect to you anywhere. With a Flying filter, that's creative-style flight.",
+        "&eHow:&r craft it from Nether quartz, blackstone and &ehydrogen&r from your Dissolver (see JEI), place it, and put the full filter inside.",
+        "&eTip:&r the pylon only works while its chunk is loaded. Force-load it (see the next quest)."]),
+    Q("t2_chunkload", 26, 0, [tick()], "Keep It Running", deps=["t2_pylon"], xp=50,
+      subtitle="Force-load the pylon's chunk", desc=[
+        "&eWhat:&r if the pylon's chunk unloads, your flight stops. Over a long trip that means a long fall.",
+        "&eHow:&r open the FTB Chunks map (press M), claim the chunk with the pylon, then right-click it again to force-load it.",
+        "&eTip:&r force-load your Dissolver and brewing setup too, so they keep working while you travel."]),
+
+    # --- Optional side quests (above and below the main line) ---
+    Q("t2_fortress", 4, -3, [item("minecraft:nether_brick", 32)], "Fortress Found", deps=["t2_nether"], xp=40, optional=True, tokens=1,
+      subtitle="Bring home a piece of a fortress", desc=[
+        "&eWhat:&r Nether Fortresses hold blazes, wither skeletons and nether wart.",
+        "&eHow:&r Explorer's Compass points to structures. Mine nether bricks from the fortress walls.",
+        "&eTip:&r build a small portal near the fortress and your next trip is much shorter."]),
+    Q("t2_fireres", 6, -3, [item("minecraft:magma_cream", 4)], "Fire Resistance", deps=["t2_brewing"], xp=40, optional=True, tokens=1,
+      subtitle="Awkward + magma cream", desc=[
+        "&eWhat:&r Fire Resistance makes lava and blaze fire harmless. Swimming in lava becomes a shortcut.",
+        "&eHow:&r magma cubes drop magma cream in basalt deltas, or craft it from blaze powder + slimeball. Brew it into an Awkward Potion.",
+        "&eTip:&r add redstone for an 8-minute version before any lava-heavy trip."]),
+    Q("t2_ghast", 8, -3, [item("minecraft:ghast_tear", 2)], "Ghast Tears", deps=["t2_nether"], xp=60, optional=True, tokens=1,
+      subtitle="Regeneration, from a crying ghast", desc=[
+        "&eWhat:&r ghast tears brew Regeneration and drop rarely, since the ghast must die over solid ground.",
+        "&eHow:&r reflect a fireball back with a punch or arrow, then catch the tear before it burns in lava.",
+        "&eTip:&r a bow and patience beat chasing ghasts across lava lakes."]),
+    Q("t2_debris", 12, -3, [item("minecraft:ancient_debris", 2)], "Ancient Debris", deps=["t2_nether"], xp=100, optional=True, tokens=2,
+      subtitle="The rarest ore in the Nether", desc=[
+        "&eWhat:&r ancient debris smelts into netherite scrap, the base of netherite gear.",
+        "&eHow:&r it hides deep in the Nether (around Y 8-22) and resists explosions, so bed or TNT mining works.",
+        "&eTip:&r try the Dissolver on a scrap later and see what this 'element' really is."]),
+    Q("t2_sourcelink", 2, 3, [item("ars_nouveau:volcanic_sourcelink")], "Fire into Source", deps=["t2_ars"], xp=60, optional=True, tokens=1,
+      subtitle="Burn fuel to make magical Source", desc=[
+        "&eWhat:&r the Volcanic Sourcelink turns burning fuel into Source, the energy behind Ars Nouveau.",
+        "&eHow:&r craft it from source gems, gold and a lava bucket, place it near a Source Jar and give it fuel. The Worn Notebook explains the details.",
+        "&eTip:&r it suits a Nether-themed base: blaze rods and lava-adjacent fuels keep it going."]),
+    Q("t2_archwood", 4, 3, [item("ars_nouveau:blue_archwood_log", 8)], "Archwood", deps=["t2_ars"], xp=40, optional=True, tokens=1,
+      subtitle="Magic trees in the archwood forests", desc=[
+        "&eWhat:&r archwood is Ars Nouveau's magic wood, used for its jars, tables and rituals.",
+        "&eHow:&r look for brightly coloured trees in archwood forests; any colour works, but this quest wants blue.",
+        "&eTip:&r archwood saplings grow at home, so a few logs become a farm."]),
+
+    # --- Magic branch (kept from v1) ---
+    Q("t2_ars", 2, 2, [item("ars_nouveau:worn_notebook"), item("ars_nouveau:source_gem", 4)], "Whispers of Magic", deps=["t2_nether"], xp=50,
+      subtitle="Light magic suits a demigod", desc=[
+        "&eWhat:&r the Worn Notebook teaches Ars Nouveau spellcrafting. Source gems are its basic magical material.",
+        "&eHow:&r the notebook is a book + lapis lazuli (shapeless). Source gems come from the Imbuement Chamber (lapis or amethyst + Source).",
+        "&eTip:&r its Ritual of Flight is a second way to fly near your base. See the Divine Gifts chapter."]),
 ])
