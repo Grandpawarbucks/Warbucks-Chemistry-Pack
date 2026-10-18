@@ -5,6 +5,10 @@ file = "config/Mekanism/world.toml"
 hash = "5a14eaec2a3db43d5208b559db86bda82c291c5d0e03e671601f846b5b8cc86f"
 
 [[files]]
+file = "config/ProjectE/custom_emc.json"
+hash = "528c5d83fb30426a0a4792077a1679a45264c4777cba0dadf72100e5b1b5209b"
+
+[[files]]
 file = "config/almostunified/debug.json"
 hash = "435ad46870d033c8652097d64c6ec592907e5ab6f1877240532a6a1743d4fca5"
 
@@ -521,8 +525,17 @@ file = "kubejs/server_scripts/phase4_occultism.js"
 hash = "e9de4cf545b2e1abd9e94b617a7fe76dc34235a74d36e62bb6b85e0336be3362"
 
 [[files]]
+file = "kubejs/server_scripts/phase4_projecte.js"
+hash = "7f4bb4f67f62cbc25f0b5c03a1f8f2590a50015f906674f8d47ddc9f99096760"
+
+[[files]]
 file = "kubejs/startup_scripts/chemistry_items.js"
 hash = "66cd02eb9c513e9a90669be133b663f7203814c983834fcd7ec254f55392c74b"
+
+[[files]]
+file = "mods/ad-astra-giselle-addon.pw.toml"
+hash = "76b0b436c7a47689c9a9eaf1b064dfb27b3a79347323839e4be0d78a3296d705"
+metafile = true
 
 [[files]]
 file = "mods/ad-astra.pw.toml"
@@ -640,8 +653,23 @@ hash = "657a01a86bbf8617e4726c77df08f708e43a3db12db74b837eebd8eb1d93faae"
 metafile = true
 
 [[files]]
+file = "mods/ars-additions.pw.toml"
+hash = "08f46822b355882721807489cbf64a7e8ac03efc1476136e60acbc8dd7dc2880"
+metafile = true
+
+[[files]]
+file = "mods/ars-elemental.pw.toml"
+hash = "8e9f867e9c0ff53e08e779ae54fd1bbead92f1d7323b75369e64ade719d5d7c1"
+metafile = true
+
+[[files]]
 file = "mods/ars-nouveau.pw.toml"
-hash = "9645a2d42361e38b0747c43f5e82a7f74cd4f06940cad02d6591e7c81835f733"
+hash = "21dfd3b22c8fd9ea0b89f53460169693258b31dbcbdb3b6fea73c76d29fd1b84"
+metafile = true
+
+[[files]]
+file = "mods/artemis-laboratory-blocks.pw.toml"
+hash = "8d4cc35ce41b9fa166dbe3ee29473fb2c3b026c7ac82396e00fdf2afe31f24c2"
 metafile = true
 
 [[files]]
@@ -705,6 +733,11 @@ hash = "e42363c32c9b6323eea977283c928cec373bfc415534ec92e9c3367ee8c54256"
 metafile = true
 
 [[files]]
+file = "mods/chat-heads.pw.toml"
+hash = "80455b28c3010ad153ccabc2998cb445b9854b26b386628243a9c8160b8d7e8e"
+metafile = true
+
+[[files]]
 file = "mods/chemlib.pw.toml"
 hash = "51558d30edf03bd03a74e072f78327308c9dd6de670172b15e872e60d2942ac7"
 metafile = true
@@ -757,6 +790,11 @@ metafile = true
 [[files]]
 file = "mods/controlling.pw.toml"
 hash = "65c8086d2ec3d39acc7bd36c7a0306ccc43b602b38fa07d13291bc478ef7dfff"
+metafile = true
+
+[[files]]
+file = "mods/copycats.pw.toml"
+hash = "4892513825f87217b6cc3f4d3ec4dcd3965b96dede8cc10d6578c4769102ae8e"
 metafile = true
 
 [[files]]
@@ -852,6 +890,16 @@ metafile = true
 [[files]]
 file = "mods/enchantment-descriptions.pw.toml"
 hash = "88b9e727611f06350c407aeb4ccb41207b5058fef127abe0ff24c13505618aaf"
+metafile = true
+
+[[files]]
+file = "mods/entangled.pw.toml"
+hash = "88cf96c7d670dda6a4a06f28a6e9625cc5ca0a08bceeeed88694b7c44deeb249"
+metafile = true
+
+[[files]]
+file = "mods/entityculling.pw.toml"
+hash = "426238488c9ffd843f661f8bc74aa8e585fa6b4d342c43c4ba4cb8451298b725"
 metafile = true
 
 [[files]]
@@ -980,6 +1028,11 @@ hash = "108739f2fdaa6a885a3217ae692b2521ab10b8e71fa1222c67274ea0562649a5"
 metafile = true
 
 [[files]]
+file = "mods/gateways-to-eternity.pw.toml"
+hash = "677912b683eeda568c6e81d235c2411461c1d212608b5440a79d5abbd2c5fc1d"
+metafile = true
+
+[[files]]
 file = "mods/geckolib.pw.toml"
 hash = "35779b39ddc06059ec483b33de2ecfdc3adb95c0a49e69b6701fb0024827e2f5"
 metafile = true
@@ -1075,6 +1128,11 @@ hash = "bfdc9d198e69d32ab9bff94fe73a5c7e8d71c93089d602ad77d1f2d3bfb3f352"
 metafile = true
 
 [[files]]
+file = "mods/jade-addons-forge.pw.toml"
+hash = "24d27cb3caf022e154386e473bcca80e15d6ce18fa8e1367b6f9b4dc1594b446"
+metafile = true
+
+[[files]]
 file = "mods/jade.pw.toml"
 hash = "4de3e4a1a49e332c1ad313283e0403c4273b628d634c17a9ff0c9da3d6b67f9a"
 metafile = true
@@ -1097,6 +1155,11 @@ metafile = true
 [[files]]
 file = "mods/just-enough-mekanism-multiblocks.pw.toml"
 hash = "f1ea6ce3347c52e404cb9cc542cf94c93999f441b6215970db1b6ef98605402f"
+metafile = true
+
+[[files]]
+file = "mods/just-zoom.pw.toml"
+hash = "54ae4d1b65e66b6670b227f50bae76dcef26ac1ffbd2e47f75cce4007153b774"
 metafile = true
 
 [[files]]
@@ -1195,6 +1258,11 @@ hash = "c9f9996ced5f4abf2ab982bb2521bef1798cf1fc6d6ebc435e38075894921efe"
 metafile = true
 
 [[files]]
+file = "mods/mekanism-extras.pw.toml"
+hash = "69486ec13c1760ed233275a6cd92219a435826806e4a668131cc06e7ec3b5d07"
+metafile = true
+
+[[files]]
 file = "mods/mekanism-generators.pw.toml"
 hash = "0ec2ceb5602df266d2e07bdc0bc409cdd3d325a6b5136554787779cdf8057a27"
 metafile = true
@@ -1206,7 +1274,7 @@ metafile = true
 
 [[files]]
 file = "mods/mekanism.pw.toml"
-hash = "42061fd570a0b7a8063c0860056c6391593190caa0f12d3b49105e52a56817fe"
+hash = "290b13afab94146d1159d821b73c8c98f5299b4df75fd28e826f9fd409e9bb40"
 metafile = true
 
 [[files]]
@@ -1300,6 +1368,11 @@ hash = "d7f360ebb9f009d6dc0b368cd8fa399bdff70c0f6ef931687b2a35137f72715d"
 metafile = true
 
 [[files]]
+file = "mods/ping-wheel.pw.toml"
+hash = "650330109d21831664d2ff597c7a90200eda69a1efaca4e9b0b6b6297ac3c364"
+metafile = true
+
+[[files]]
 file = "mods/pipez.pw.toml"
 hash = "03c2188c7c5aa4407964fd3bb20074b52eb2adf8897c3a22897cc037446450ce"
 metafile = true
@@ -1322,6 +1395,11 @@ metafile = true
 [[files]]
 file = "mods/prickle.pw.toml"
 hash = "c99c5bac469e8d6ece5aae80f08635e3bbb8367f0c586b6288573c725faefe69"
+metafile = true
+
+[[files]]
+file = "mods/projecte.pw.toml"
+hash = "bdca798ffe4124bf43ea13f1fa5f0593a7539762240edb56c47b1976b413ebc4"
 metafile = true
 
 [[files]]
@@ -1512,6 +1590,11 @@ metafile = true
 [[files]]
 file = "mods/towns-and-towers.pw.toml"
 hash = "a9afe82b3d1b4975dd9f8b3272898450aeb29365678b3779059977301f88c101"
+metafile = true
+
+[[files]]
+file = "mods/trade-cycling.pw.toml"
+hash = "b2dcebb6846f2835104715e6baf93a54fb6e606f2731b2fbfa35c3dd22c01874"
 metafile = true
 
 [[files]]

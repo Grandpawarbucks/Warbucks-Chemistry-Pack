@@ -13,7 +13,10 @@
   live in. Biome mods are welcome.
 - Design direction (reset 2026-10-18): Chemistry + technology, with light magic
   where it fits. Inspired by GregTech and Monifactory, but no long grinds:
-  every tier should feel worth it, not padded. NO ProjectE.
+  every tier should feel worth it, not padded. ProjectE: allowed only as 'lite'
+  (user decision 2026-10-18): Philosopher's Stone needs oganesson; no Condensers/Collectors/Relays;
+  metals/gems/dusts/Nether Star have 0 EMC via pack/config/ProjectE/custom_emc.json (verified with
+  test/emc_check.sh). NOTE: ProjectE custom-conversion datapack files can't hold 0; only custom_emc.json can.
 - Decisions (2026-10-18 Q&A):
   - Tech backbone: Modern Industrialization.
   - Disassembly: once a player has built the machine (Alchemistry Dissolver /
@@ -71,7 +74,7 @@
   tools/build_deposits.py (calibrated with test/ore_scan.py). 181 mods.
 - 2026-10-18 later: 197 mods (Towns&Towers, Regions Unexplored, YUNG's, Farmer's Delight, Occultism [gated:
   phase4_occultism.js], MoreMachine, SS in Motion, JourneyMap, Chunky). Quest book v5 = 200 quests, 20 chapters.
-  Create re-added (early mechanical tier, phase4_create.js) -> 205 mods; quest book v6 = 213 quests, 21 chapters.
+  Create re-added (early mechanical tier, phase4_create.js) -> 220 mods; quest book v6 = 213 quests, 21 chapters.
 - Quest book v7 (589 quests, 119 optional): one file per chapter in tools/quests/, style in tools/quests/STYLE.md;
   validate with `python3 tools/build_quests.py --check`. Flying potion = levitation + 2 chemlib:hydrogen (phase4_flight.js).
 - Phase 5 quests (history): v4 (162 quests, 17 chapters incl. Welcome + QoL; tokens on every quest, step-by-step per user request) pending user review.

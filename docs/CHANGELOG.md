@@ -4,6 +4,25 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Gap-analysis mods, ProjectE "lite"
+- Added (user picks):
+  - Magic: ProjectE (lite), Ars Elemental, Ars Additions.
+  - Endgame: Gateways to Eternity, Mekanism Extras.
+  - Space chemistry: Ad Astra Giselle Addon.
+  - Building and logistics: Copycats+, Entangled, Artemis' Laboratory Blocks.
+  - QoL: Jade Addons, Entity Culling, Trade Cycling, Just Zoom, Chat Heads, Ping Wheel.
+- Declined: Immersive Aircraft. "Building Sticks" = ATM10's Construction Sticks, already in the pack.
+- **ProjectE "lite"** (`kubejs/server_scripts/phase4_projecte.js`, `config/ProjectE/custom_emc.json`):
+  - The Philosopher's Stone needs oganesson.
+  - Condensers, Collectors and Relays are removed.
+  - Metals, gems, dusts, Nether Star, Dragon Egg and Beacon have no EMC.
+  - Verified with real EMC values (new `test/emc_check.sh`): 8,159 → 3,881 items with EMC. Ingots, gems and anything made from them have none; building blocks keep theirs.
+  - Lessons learned:
+    - ProjectE only maps EMC on datapack sync, so a headless server needs `/reload`.
+    - Custom-conversion datapack files reject 0; only `custom_emc.json` accepts it.
+- Known-harmless: Mekanism Extras loot tables for unregistered factory tiers.
+- 220 mods. Smoke test passes.
+
 ### 2026-10-18: Crafting On A Stick
 - Added Crafting On A Stick 1.21.0.6 (portable crafting table, stonecutter, smithing table, anvil, grindstone, loom, cartography table).
 - Quests: "Crafting on a Stick" (QoL) and the optional "A Whole Workshop". Book: 589 quests. 205 mods. Smoke test passes.

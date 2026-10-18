@@ -43,7 +43,6 @@ These are only dependencies of ATM10 mods we don't include. The "used by" column
 ### Building mods considered and left out
 | Mod | Reason |
 |---|---|
-| Copycats+ | Create addon |
 | Chipped | No update in 2 years (2024-10); Rechiseled covers block variants |
 | LittleTiles | 1.21.1 build is a pre-release; heavy |
 | Decorative Blocks | No NeoForge 1.21.1 build |
@@ -53,6 +52,8 @@ These are only dependencies of ATM10 mods we don't include. The "used by" column
 |---|---|
 | Tinkers' Construct | No NeoForge 1.21.1 build (newest is 1.20.1 Forge); Silent Gear is used instead |
 | Paxels (standalone) | Last update 2024-10; Mekanism Tools provides paxels |
+| Immersive Aircraft | Declined by the user (2026-10-18) |
+| "Building Sticks" | ATM10's stick mod is Construction Sticks, which is already in the pack |
 
 ### Monifactory review (2026-10-18)
 | Mod / feature | Reason |

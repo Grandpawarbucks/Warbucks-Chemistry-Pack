@@ -16,7 +16,7 @@ t0=$SECONDS
 start_server
 if wait_for 'Done \([0-9.]+s\)!' 300; then started=1; else started=0; fi
 elapsed=$((SECONDS - t0))
-[[ $started == 1 ]] && sleep 5
+[[ $started == 1 ]] && sleep ${POST_DONE_WAIT:-5}
 stop_server
 
 out="$(collect_logs smoke)"
