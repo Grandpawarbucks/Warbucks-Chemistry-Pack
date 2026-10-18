@@ -35,7 +35,7 @@ These are only dependencies of ATM10 mods we don't include. The "used by" column
 | PonderJS | **Excluded:** ATM gets Ponder bundled inside Create |
 
 ### ATM10 content intentionally excluded
-- **Create and all Create addons:** Create Crafts & Additions, Enchantment Industry, Dragons Plus, Copycats+, Bells & Whistles, Hypertube, Aquatic Ambitions, Rechiseled: Create, Sophisticated Create integrations, Ars Creo.
+- **Create addons not added** (Create itself was re-added 2026-10-18 by user decision): Copycats+, Bells & Whistles, Hypertube, Aquatic Ambitions, Rechiseled: Create, Sophisticated Create integrations, Ars Creo.
 - **ATM-specific content:** Allthemodium, AllTheOres, AllTheCompressed, AllTheTweaks, ATM gear, ATM: Compat.
 - **Refined Storage and its addons:** AE2 is the only storage network.
 - **Redundant tech:** Extreme Reactors, Oritech, Ender IO (beta), Immersive Engineering (stale), Actually Additions, RFTools Power, Generator Galore, XNet, Mekanistic Routers, Industrial Foregoing, PneumaticCraft.
@@ -65,3 +65,9 @@ These are only dependencies of ATM10 mods we don't include. The "used by" column
 | The Lost Cities | Declined by the user |
 | William Wythers' Overhauled Overworld | Declined by the user (BOP is enough) |
 | GregTech Modern Ore Generation: Standalone (GTMOGS) | KubeJS integration broken (per its README), disables all vanilla ore gen, newest commit "breaks datagen"; last release 2025-10 |
+
+### Create addons without a NeoForge 1.21.1 build
+| Mod | Reason |
+|---|---|
+| Destroy (Create chemistry) | No NeoForge 1.21.1 build |
+| Create: Steam 'n' Rails | No NeoForge 1.21.1 build |

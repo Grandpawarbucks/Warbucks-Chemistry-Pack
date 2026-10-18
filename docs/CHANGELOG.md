@@ -4,6 +4,17 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Create re-added as the early mechanical tier
+- **User decision: Create is back** (reverses the original "No Create" rule; CLAUDE.md updated, mod target raised to about 210–215).
+- Added Create 6.0.10, Crafts & Additions, Enchantment Industry (+ Dragons Plus), Create: Connected, Create: New Age and Create Deco. Destroy and Steam 'n' Rails have no 1.21.1 build.
+- New `kubejs/server_scripts/phase4_create.js`:
+  - Crushing ore yields capped at 2x.
+  - The Alternator and New Age Generator Coil need an MI analog circuit (LV).
+  - New Age reactor rods need an MI processing unit (EV).
+- New quest side chapter "The Mechanical Age" (13 quests, Zn banner). Book: 21 chapters, 213 quests.
+- Known-harmless: Create: Connected's dye-depot loot tables, the Create Deco placard recipe, and Enchantment Industry's Reliquary XP-fluid data map.
+- Worldgen: Create zinc ore and New Age thorium ore generate; no errors. 204 mods. Smoke passes (3 attempts; fix: reactor-rod pattern padding).
+
 ### 2026-10-18: Suggested mods (user picks)
 - Added:
   - World: Towns and Towers, Regions Unexplored, YUNG's Better Dungeons/Mineshafts/Strongholds.

@@ -30,9 +30,11 @@
     anywhere (no claim-only restriction). Pylons on 1.21.1 has NO Flight Pylon block.
 - Technology: Strong automation and industrial tech supporting the chemistry
   (power, fluid/gas logistics, item transport, storage, autocrafting).
-- No Create: No Create, no Create addons (including Destroy, Create: New Age,
-  Create Crafts & Additions, etc.), and no mod that requires Create as a
-  dependency. Optional Create integration is fine, but flag it.
+- Create (CHANGED 2026-10-18, user decision, reverses the original "No Create" rule): Create is
+  allowed as an EARLY MECHANICAL TIER that feeds into MI. Addons: Crafts & Additions, Enchantment
+  Industry, Create: Connected, New Age, Deco. Create ore processing obeys the same caps as everything
+  else before acids (<= 2x per ore block, <= 1.5x per raw ore); its power and electric parts are gated by MI
+  circuits (pack/kubejs/server_scripts/phase4_create.js). Destroy and Steam 'n' Rails have no 1.21.1 build.
 - QoL: The FTB suite (Library, Teams, Quests, Chunks, Ultimine, Essentials,
   Ranks, Filter System, XMod Compat, and others that fit), plus standard QoL
   (JEI or EMI, Jade, AppleSkin, Mouse Tweaks, inventory sorting, etc.).
@@ -69,7 +71,7 @@
   tools/build_deposits.py (calibrated with test/ore_scan.py). 181 mods.
 - 2026-10-18 later: 197 mods (Towns&Towers, Regions Unexplored, YUNG's, Farmer's Delight, Occultism [gated:
   phase4_occultism.js], MoreMachine, SS in Motion, JourneyMap, Chunky). Quest book v5 = 200 quests, 20 chapters.
-  OPEN DECISION: user asked to add Create + some addons back (reverses 'No Create'); scoping questions pending.
+  Create re-added (early mechanical tier, phase4_create.js) -> 204 mods; quest book v6 = 213 quests, 21 chapters.
 - Phase 5 quests: v4 (162 quests, 17 chapters incl. Welcome + QoL; tokens on every quest, step-by-step per user request) pending user review.
   QUESTS ARE GENERATED: edit tools/quest_data.py (content; helpers in tools/questlib.py), then run `python3 test/build_id_index.py` (after a smoke test) and
   `python3 tools/build_quests.py`. Never hand-edit pack/config/ftbquests/quests (it gets overwritten).
@@ -116,7 +118,7 @@
 - Don't invent mods, recipes, item IDs, or config options. If you're unsure,
   check.
 - Prefer actively maintained mods. Note when a mod's last update is old.
-- Aim for 100–200 mods and justify anything heavy.
+- Aim for ~210–215 mods (raised from 100–200 on 2026-10-18 for Create) and justify anything heavy.
 - Keep docs/MODLIST.md and docs/CHANGELOG.md current with every change.
 - Ask up to 3 clarifying questions when something is ambiguous.
 - Before ending any session, update CLAUDE.md and /docs so the next session

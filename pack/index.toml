@@ -49,12 +49,16 @@ file = "config/ftbquests/quests/chapter_groups.snbt"
 hash = "483689fed3238b8a610b30a4b8026a734ae84a2e85e2e8109829b249c3abd152"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/create.snbt"
+hash = "cf6bcc68aaac920fd8110bb0690b7c5e47f6dddd121bb53106ef5043e4856803"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/factory.snbt"
 hash = "6ca95fcccfed7bc7ee84805efa606e2bb837a8c1d62147eec259de0f9c3fe643"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/farming.snbt"
-hash = "f113ae4780362926d201f1342bd6a217399b73c88cd12cde7a7d1c49ad8ab2a7"
+hash = "6ada0993f04a23506863e23d802dcb9b692d18b29ea04953c3b862f06fd7dc53"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/logic.snbt"
@@ -62,7 +66,7 @@ hash = "704f2b8f2752207935025e1a8c54078f15f4f31f9f8e9f0d6052a0f9e669b6d3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/magic.snbt"
-hash = "6acc7375200e222ffa493e4898c52b5614ec2ce5372a84c9666b93506066796d"
+hash = "55b64fece30cc20ca0ab8d16f6fdea19ffbe4f53142567ec1c7cfcd5aed81061"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/periodic.snbt"
@@ -82,7 +86,7 @@ hash = "914dca87c54a695e15c38d5ef3ada5b879919abc09dfb91efb188a968c552f1b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/storage.snbt"
-hash = "c3bcd62fc6766381f00c2ff040effb76dda265f33f712bee9cd435eb8f01b734"
+hash = "1a9f76062c8f282a4c837bb45c82ce11d48c85bfda86d191bcb9d45aa2b7e9c3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/t0.snbt"
@@ -126,7 +130,7 @@ hash = "69c3be2a9dbab9b649a97cbb3f96041495062bf9dee383bce3c38238d37452aa"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/worlds.snbt"
-hash = "822baec44f8954a2d6782b1353eb884b0c7d0ae97a94e7ac58a109386a39298d"
+hash = "15ed24589d128361d21e56f03d243e339f7b68c6350bbfb007d9fd605ab1e8cf"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -134,7 +138,7 @@ hash = "d15749f6e9f9d280a0be18baff4bf225e28271f305196edcc670c78d225d8891"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "b2ba9e97d5b480583131f997f1cfbcb90eb55707b25e1d32c222af6c0ea45bca"
+hash = "32cafd9a5da5dfa332d06bce8d22325de32c38f2e5ad49b146b0a82a992f8bf4"
 
 [[files]]
 file = "kubejs/assets/ftbquests/ftb_quests_theme.txt"
@@ -147,6 +151,10 @@ hash = "cab9bf24ccb44cf0fb1a85c836bfe9b617af0abe38460429fdf862cbaebd4b20"
 [[files]]
 file = "kubejs/assets/warbucks/textures/quests/background.png"
 hash = "5bb40623d3fc7404b42df7b0858189191ba53ce5807f7f2fc3fffeb581fa12e8"
+
+[[files]]
+file = "kubejs/assets/warbucks/textures/quests/create.png"
+hash = "1ae7032b957c09c7526f7f1df9bf8e3171740e1955feb87e5464db16c6cd74f4"
 
 [[files]]
 file = "kubejs/assets/warbucks/textures/quests/factory.png"
@@ -391,6 +399,10 @@ hash = "db7fd3e5ebfb59c4da06798c1055895ff08182b4cd9d6ff2397ed4cec4934775"
 [[files]]
 file = "kubejs/server_scripts/phase4_chemistry.js"
 hash = "8c2a54b3bcfc79f2446fc1f0c0210edfd0ef526e0e14f94e7b2a5ce04bb55a6a"
+
+[[files]]
+file = "kubejs/server_scripts/phase4_create.js"
+hash = "c465435e97e9241344f400df9a19c39ac6043c09fe29e58c438535eab3b5ad42"
 
 [[files]]
 file = "kubejs/server_scripts/phase4_flight.js"
@@ -659,6 +671,41 @@ metafile = true
 [[files]]
 file = "mods/crafting-tweaks.pw.toml"
 hash = "b63999aa63a273098f42e22d8d5018c8617b8e2babdffc752d9aad3eefaaa76d"
+metafile = true
+
+[[files]]
+file = "mods/create-connected.pw.toml"
+hash = "6ac362d60bc8b13e03a5b6b9cdf9c7676f65d3e89e87c66f18514e7ee164cdb0"
+metafile = true
+
+[[files]]
+file = "mods/create-deco.pw.toml"
+hash = "67a405e6307f900d168deaa954a4309c3b44a6025e4efd7b8e774b6f9d3a69cd"
+metafile = true
+
+[[files]]
+file = "mods/create-dragons-plus.pw.toml"
+hash = "dcbb37e828a2f915e64a2ef839a742761a553a2e3b923b000ffba95db7503ac3"
+metafile = true
+
+[[files]]
+file = "mods/create-enchantment-industry.pw.toml"
+hash = "5f76bdf0fe120e62cc3ae298e911727fa45c70dd191fd9c2b213029c7601576c"
+metafile = true
+
+[[files]]
+file = "mods/create-new-age.pw.toml"
+hash = "39499039e11a6e0f50542d80af94c172342fdb686f3a59d5ee4457d978a54e75"
+metafile = true
+
+[[files]]
+file = "mods/create.pw.toml"
+hash = "dcaf5f2e28db0b9a127d0167456832341045ddc9aec058c3d9fcf53f618d2404"
+metafile = true
+
+[[files]]
+file = "mods/createaddition.pw.toml"
+hash = "e5052e0fcba9af1e3c6c0734829b441bc5a23012108bf203ca01825ca12ff6b1"
 metafile = true
 
 [[files]]

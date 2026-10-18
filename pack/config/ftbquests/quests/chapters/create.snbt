@@ -1,0 +1,562 @@
+{
+	id: "4F72E72B760CB007"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 6
+	filename: "create"
+	icon: {
+		id: "create:cogwheel"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "026C969E02786C1B"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "3DC57FA583BAFF5F"
+					type: "item"
+					item: {
+						id: "create:andesite_alloy"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "3320E0F13C66F37F"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "135C591ADA3845E9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3B8CA867BEED2744"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"026C969E02786C1B"
+			]
+			tasks: [
+				{
+					id: "03E62F27FCD49183"
+					type: "item"
+					item: {
+						id: "create:shaft"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "36030632A3DA10BE"
+					type: "item"
+					item: {
+						id: "create:cogwheel"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "244339BEDF0F65E6"
+					type: "item"
+					item: {
+						id: "create:water_wheel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "450AF3C592DAAB11"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5B6960153697B6F0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "34342A28CCEA9E01"
+			x: 4.0d
+			y: -1.0d
+			dependencies: [
+				"3B8CA867BEED2744"
+			]
+			tasks: [
+				{
+					id: "295C059DE7F37911"
+					type: "item"
+					item: {
+						id: "create:mechanical_press"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "64794D380A9C21D7"
+					type: "item"
+					item: {
+						id: "create:basin"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "258BC16585A7B36D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7236D6905587FCBC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6616482D84CB76CA"
+			x: 6.0d
+			y: -1.0d
+			dependencies: [
+				"34342A28CCEA9E01"
+				"324D521459A0712A"
+			]
+			tasks: [
+				{
+					id: "28DE6B47EABC94D5"
+					type: "item"
+					item: {
+						id: "create:mechanical_mixer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4E14A3B0EAD931B6"
+					type: "item"
+					item: {
+						id: "create:blaze_burner"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4FA2357406877A0F"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "078B5D84D54B22A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6629EEE3B93734E8"
+			x: 4.0d
+			y: 1.0d
+			dependencies: [
+				"3B8CA867BEED2744"
+			]
+			tasks: [
+				{
+					id: "2CA90FD7FD166758"
+					type: "item"
+					item: {
+						id: "create:millstone"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1D08159A1713A0B5"
+					type: "item"
+					item: {
+						id: "create:crushing_wheel"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "541E57CAEB1EAD04"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "48AE0F64E4633A19"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "16A9DFC1FA028ABC"
+			x: 6.0d
+			y: 1.0d
+			dependencies: [
+				"6629EEE3B93734E8"
+			]
+			tasks: [
+				{
+					id: "24BD5B065718633D"
+					type: "item"
+					item: {
+						id: "create:encased_fan"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "731910AB74701917"
+					type: "item"
+					item: {
+						id: "create:crushed_raw_iron"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "7AA20BA12EA27837"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6814C45978953D21"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "77E50022B90D19F9"
+			x: 8.0d
+			y: 0.0d
+			size: 1.5d
+			dependencies: [
+				"6616482D84CB76CA"
+			]
+			tasks: [
+				{
+					id: "31162F370624C947"
+					type: "item"
+					item: {
+						id: "create:zinc_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "47FE143F2B9DD7B4"
+					type: "item"
+					item: {
+						id: "create:brass_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "0599167F1E776A02"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6E43E7ABF4D55C9A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "77FA7755F842A8D2"
+			x: 10.0d
+			y: 0.0d
+			dependencies: [
+				"77E50022B90D19F9"
+			]
+			tasks: [
+				{
+					id: "34EF48C3B1E6A9A8"
+					type: "item"
+					item: {
+						id: "create:precision_mechanism"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "231EE7D78F38FE2C"
+					type: "item"
+					item: {
+						id: "create:mechanical_crafter"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2F8C3D829B25DBB2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "72C6365DF9277D23"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "79D324D3D42641AD"
+			x: 12.0d
+			y: -1.0d
+			dependencies: [
+				"77FA7755F842A8D2"
+				"55AF98DD41956199"
+			]
+			tasks: [
+				{
+					id: "52CA1010074D2BFA"
+					type: "item"
+					item: {
+						id: "createaddition:alternator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1A7CB94D6B29271E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "32D18F3FE1DB9A39"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2B4C4B280D8E7AC8"
+			x: 12.0d
+			y: 1.0d
+			dependencies: [
+				"79D324D3D42641AD"
+			]
+			tasks: [
+				{
+					id: "4997CEE3D0818E98"
+					type: "item"
+					item: {
+						id: "createaddition:electric_motor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C209BD16240A565"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3C995B27B0875B1F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4B937C395BAB0201"
+			x: 14.0d
+			y: -1.0d
+			dependencies: [
+				"79D324D3D42641AD"
+			]
+			tasks: [
+				{
+					id: "60236DDFF0451679"
+					type: "item"
+					item: {
+						id: "create_new_age:generator_coil"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1E616439CD170090"
+					type: "item"
+					item: {
+						id: "create_new_age:basic_energiser"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3606CF1505DF7363"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "78560472F6310C4D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4A4E6C320C2A7399"
+			x: 16.0d
+			y: -1.0d
+			dependencies: [
+				"4B937C395BAB0201"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "3CA54EE50E76D57D"
+					type: "item"
+					item: {
+						id: "create_new_age:thorium"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "5EBF6FB1AA887C54"
+					type: "item"
+					item: {
+						id: "create_new_age:reactor_rod"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3AEB16AEFDC76C69"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "5FC1F68D998536A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "22860F179A18DF0F"
+			x: 14.0d
+			y: 1.0d
+			dependencies: [
+				"77FA7755F842A8D2"
+			]
+			tasks: [
+				{
+					id: "0917DE4D1DAD07F4"
+					type: "item"
+					item: {
+						id: "create_enchantment_industry:blaze_enchanter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "060D5C8F0E2861B6"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4DB829D58B23CD05"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [
+		{
+			id: "4E7902145179E4BA"
+			x: 2.5d
+			y: -3.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/create.png"
+		}
+	]
+}

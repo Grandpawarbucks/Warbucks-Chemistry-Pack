@@ -173,6 +173,11 @@ MI's tier ladder is the spine. Its hulls already need chemical intermediates: LV
 
 Previously left as-is: the Infusion Pylon (already needs Nether quartz and blackstone, so flight comes after the Nether), the Just Dire Things flight upgrade (needs End Crystals), and the Twilight Forest portal (no recipe; gated by quests in Phase 5).
 
+**Create (early mechanical tier, added 2026-10-18 by user decision)** (`phase4_create.js`):
+- Crushing-wheel ore recipes are capped at 2x per ore block (12 deepslate/modded recipes trimmed).
+- The Crafts & Additions Alternator and the New Age Generator Coil (rotation → FE) need an MI analog circuit (LV).
+- New Age reactor rods need an MI processing unit (EV).
+
 ## 8. Open items
 
 1. Verify in-game (JEI) that the Potion of Flying brewing recipe exists and that the Infusion Pylon accepts it.
