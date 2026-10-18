@@ -44,6 +44,10 @@ def main():
     scan(VANILLA, rows)
     for jar in glob.glob(str(ROOT / "test/server/mods/*.jar")):
         scan(jar, rows)
+    # Items registered by the pack's own KubeJS startup scripts: event.create('name')
+    for js in glob.glob(str(ROOT / "pack/kubejs/startup_scripts/*.js")):
+        for name in re.findall(r"event\.create\('([a-z0-9_]+)'\)", pathlib.Path(js).read_text()):
+            rows.add((f"kubejs:{name}", "item", "(KubeJS)"))
     out = ROOT / "test/ids.tsv"
     out.write_text("".join(f"{i}\t{t}\t{n}\n" for i, t, n in sorted(rows)))
     print(f"Wrote {out} ({len(rows)} ids)")

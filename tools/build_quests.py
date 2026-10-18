@@ -98,6 +98,10 @@ def build():
                     tasks.append({"id": tid, "type": "checkmark"})
             if q.xp:
                 rewards.append({"id": hexid(f"reward:{q.key}:xp"), "type": "xp", "xp": q.xp})
+            tokens = q.tokens if q.tokens is not None else c.tokens * (2 if (q.size or 1) >= 1.5 else 1)
+            if tokens:
+                rewards.append({"id": hexid(f"reward:{q.key}:tokens"), "type": "item",
+                                "item": {"id": "kubejs:demigod_token", "count": tokens}})
             for i, (rid, n) in enumerate(q.items):
                 rewards.append({"id": hexid(f"reward:{q.key}:{i}"), "type": "item", "item": {"id": rid, "count": n}})
             entry = {"id": qid, "x": float(q.x), "y": float(q.y)}

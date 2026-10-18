@@ -4,6 +4,25 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: GitHub, chemistry mechanics, quest book v4
+- **Public GitHub repo:** https://github.com/Grandpawarbucks/Warbucks-Chemistry-Pack. Server details were scrubbed and the history restarted fresh; the full history is kept locally only.
+- New `launcher/Warbucks-Chemistry-Prism.zip`, an importable Prism instance that updates itself from GitHub on every launch (tested: installs all 177 mods from the GitHub URL). New `docs/DESKTOP_SETUP.md` covers playing and developing on Windows.
+- New `kubejs/startup_scripts/chemistry_items.js`: 9 items (PGM line intermediates, Demigod Token, energy cores, Seed of a New World).
+- New `kubejs/server_scripts/phase4_chemistry.js` (30 recipes):
+  - **Ore byproducts:** Mekanism dirty dust → MI Centrifuge gives the main dust plus a geologically real bonus (lead → silver, osmium → iridium and others).
+  - **Haber-Bosch** (ammonia) and **Ostwald** (nitric acid), using ChemLib fluids (ids checked at runtime: `chemlib:*_fluid`).
+  - **Platinum line** (5 steps): anode sludge → aqua regia → ammonium hexachloroplatinate → calcine; the residue centrifuges into iridium, osmium, rhodium and ruthenium.
+  - **Energy cores:** empty → charged (about 3M EU in the MI Assembler) → Antimatter Core.
+  - **Capstone:** Seed of a New World, a 9x9 Ultimate Table recipe with an intermediate from every tier.
+  - **Demigod Token shop:** 10 convenience trades.
+- **Quest book v4:** 17 chapters, 162 quests.
+  - New Welcome chapter and Quality of Life side chapter.
+  - New quests for byproducts, Haber-Bosch, Ostwald, the platinum line, energy cores and the Seed.
+  - "A New World" now requires the Seed.
+  - Generous, tier-scaled rewards: Demigod Tokens on every quest (512 total; 1/quest early up to 8 in Creation, doubled for milestones), plus milestone items (metals, circuits, free first machines, XP).
+- **Ore veins (GTMOGS) not added:** its KubeJS support is broken (per its README), it turns off all vanilla ore generation, and its newest commit "breaks datagen". A safer alternative is proposed.
+- 177 mods. KubeJS: 149 added, 133 removed, 0 failed. Smoke test passes.
+
 ### 2026-10-18: Flight gating (Option 2), Angel Ring, Iron Jetpacks
 - Added Angel Ring (CurseForge; ⚠️ the only 1.21.1 file is 3.0.0 beta.3; deps Flight API, HaydenAPI) and Iron Jetpacks 8.0.11 (13 months old).
 - New `kubejs/server_scripts/phase4_flight.js`:

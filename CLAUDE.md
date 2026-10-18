@@ -61,7 +61,10 @@
   pack/kubejs/data/powah/neoforge/biome_modifier/. Phase 4: DONE (phase4_integration.js, phase4_mysticalagriculture.js; PROGRESSION.md §7). User confirmed the recipes in JEI. 163 mods. 
 - Monifactory review (2026-10-18): added HNN, Extended Crafting, PackagedAuto(+ExCrafting), Compact Machines,
   Cable Facades, TelePastries (gated in phase4_monifactory.js). Flight gating done (Angel Ring + Iron Jetpacks added). 177 mods.
-- Phase 5 quests: v3 (141 quests, 15 chapters, step-by-step per user request) pending user review.
+- Chemistry mechanics (2026-10-18): phase4_chemistry.js + startup_scripts/chemistry_items.js (byproducts,
+  Haber/Ostwald, PGM line, energy cores, capstone Seed of a New World, Demigod Token shop).
+  ChemLib fluid ids are <name>_fluid (verified at runtime). GTMOGS ore veins rejected (broken KubeJS).
+- Phase 5 quests: v4 (162 quests, 17 chapters incl. Welcome + QoL; tokens on every quest, step-by-step per user request) pending user review.
   QUESTS ARE GENERATED: edit tools/quest_data.py (content; helpers in tools/questlib.py), then run `python3 test/build_id_index.py` (after a smoke test) and
   `python3 tools/build_quests.py`. Never hand-edit pack/config/ftbquests/quests (it gets overwritten).
   If the user edits quests in-game, copy those changes back into build_quests.py first.

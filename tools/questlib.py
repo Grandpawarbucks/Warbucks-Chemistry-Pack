@@ -39,14 +39,16 @@ class Q:
     """One quest. x/y are grid positions in the chapter; deps are other quest keys (any chapter)."""
 
     def __init__(self, key, x, y, tasks, title=None, desc=(), deps=(), xp=0, items=(),
-                 subtitle=None, size=None, shape=None):
+                 subtitle=None, size=None, shape=None, tokens=None):
         self.key, self.x, self.y, self.tasks = key, x, y, tasks
+        self.tokens = tokens  # None = chapter default (doubled for milestone quests, size >= 1.5)
         self.title, self.desc, self.deps, self.xp = title, list(desc), list(deps), xp
         self.items = [(check(i), n) for i, n in items]
         self.subtitle, self.size, self.shape = subtitle, size, shape
 
 
 class Chapter:
-    def __init__(self, key, title, icon, subtitle, group, quests):
+    def __init__(self, key, title, icon, subtitle, group, quests, tokens=1):
+        self.tokens = tokens  # Demigod Tokens per quest in this chapter (tier-scaled reward)
         self.key, self.title, self.icon = key, title, check(icon)
         self.subtitle, self.group, self.quests = subtitle, group, quests

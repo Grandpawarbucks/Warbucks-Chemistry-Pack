@@ -1,7 +1,7 @@
 {
 	id: "45FF88D8CD5549A4"
 	group: "2DCF10F76EBF2A74"
-	order_index: 8
+	order_index: 9
 	filename: "t7"
 	icon: {
 		id: "ad_astra:tier_1_rocket"
@@ -33,6 +33,14 @@
 					id: "4CB0756AD10C84AA"
 					type: "xp"
 					xp: 400
+				}
+				{
+					id: "6508215D16ED7459"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
 				}
 			]
 		}
@@ -69,6 +77,14 @@
 					type: "xp"
 					xp: 200
 				}
+				{
+					id: "45BBD48296A10904"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
 			]
 		}
 		{
@@ -100,6 +116,14 @@
 					id: "703B9843D44FE754"
 					type: "xp"
 					xp: 600
+				}
+				{
+					id: "4AFF98BA9CD99915"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 16
+					}
 				}
 			]
 		}
@@ -139,17 +163,106 @@
 					type: "xp"
 					xp: 1000
 				}
+				{
+					id: "61794530C54C0815"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "39868F66D40B59DD"
+			x: 6.0d
+			y: -2.0d
+			size: 1.5d
+			dependencies: [
+				"1E6BA9227B6B280F"
+			]
+			tasks: [
+				{
+					id: "0A7085322F91D6F3"
+					type: "item"
+					item: {
+						id: "kubejs:energy_core"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "74C6FDF7264B71C7"
+					type: "item"
+					item: {
+						id: "kubejs:antimatter_core"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2273F6C79002B2D5"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "670AFC453BBCAE39"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "3A6618C9323E34D8"
+			x: 8.0d
+			y: -1.0d
+			shape: "hexagon"
+			size: 2.0d
+			dependencies: [
+				"39868F66D40B59DD"
+				"6C2882437A5C659C"
+				"2C2ECADD0D0886BB"
+			]
+			tasks: [
+				{
+					id: "07262907CA3764AC"
+					type: "item"
+					item: {
+						id: "kubejs:seed_of_a_new_world"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6D952C64FDA9F797"
+					type: "xp"
+					xp: 3000
+				}
+				{
+					id: "4845341967996C62"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 16
+					}
+				}
 			]
 		}
 		{
 			id: "699C8548A909219F"
-			x: 6.0d
+			x: 10.0d
 			y: 0.0d
 			shape: "gear"
 			size: 2.5d
 			dependencies: [
-				"1E6BA9227B6B280F"
-				"6C2882437A5C659C"
+				"3A6618C9323E34D8"
 			]
 			tasks: [
 				{
@@ -162,6 +275,14 @@
 					id: "003AF95C55A82F00"
 					type: "xp"
 					xp: 2000
+				}
+				{
+					id: "38AE30B5198E7162"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 50
+					}
 				}
 			]
 		}

@@ -300,4 +300,5 @@ These are only dependencies of ATM10 mods we don't include. The "used by" column
 | Bountiful | 1.21.1 build is beta |
 | The Lost Cities | Declined by the user |
 | William Wythers' Overhauled Overworld | Declined by the user (BOP is enough) |
+| GregTech Modern Ore Generation: Standalone (GTMOGS) | KubeJS integration broken (per its README), disables all vanilla ore gen, newest commit "breaks datagen"; last release 2025-10 |
 

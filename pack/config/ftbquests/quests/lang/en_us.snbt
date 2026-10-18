@@ -2,6 +2,45 @@
 	file.0000000000000001.title: "Warbucks Chemistry: The Demigod's Codex"
 	chapter_group.2DCF10F76EBF2A74.title: "The Demigod's Path"
 	chapter_group.6B6FDD4F9A66BB50.title: "Divine Workshop"
+	chapter.4335527ACA7CF750.title: "Welcome"
+	chapter.4335527ACA7CF750.chapter_subtitle: [
+		"Read this first: who you are, how this world works, and how to use this book."
+	]
+	quest.54E4F62471779F14.title: "Welcome, Demigod"
+	quest.54E4F62471779F14.quest_desc: [
+		"&6Welcome to Warbucks Chemistry.&r"
+		"You're a demigod who has lost your power. You'll win it back by mastering chemistry: taking matter apart into its elements and building it back up."
+		"This book is your guide. Follow the lines from quest to quest; each one tells you &ewhat&r to do and &ehow&r to do it."
+		"How: click the checkmark to collect your first reward."
+	]
+	quest.022F679599389147.title: "How Progression Works"
+	quest.022F679599389147.quest_desc: [
+		"The pack has 8 tiers. Each one is unlocked by a &echemistry milestone&r, not just more metal:"
+		"Fire and bronze → coke and steel → hydrogen and flight → electricity → acids → oil and plastics → silicon, PVC and the atom → antimatter."
+		"Modern Industrialization's voltage tiers (LV, MV, HV, EV) are the spine. Other mods (Mekanism, AE2, Powah and more) unlock alongside them."
+		"If a recipe looks different from what you remember, it's been gated on purpose. JEI always shows the real recipe."
+	]
+	quest.745DBEEE9AE746C7.title: "Your Toolkit"
+	quest.745DBEEE9AE746C7.quest_desc: [
+		"&eR&r / &eU&r over an item: recipes / uses (JEI). &eM&r: map and chunk claiming (FTB Chunks)."
+		"&e`&r (hold) while mining: vein mine (FTB Ultimine). Look at a block: Jade shows what it is and what it's doing."
+		"Inventory sorting, crafting-grid tweaks and the trash slot are in your inventory screen; check Controls for their keys."
+	]
+	quest.32306651C1085697.title: "Demigod Tokens"
+	quest.32306651C1085697.quest_desc: [
+		"Most quests give &eDemigod Tokens&r. Spend them on convenience items by crafting: torches, food, XP, iron, coke, rubber, osmium, backpack upgrades and a Warp Stone."
+		"How: search &eDemigod Token&r in JEI and press U to see the whole shop."
+		"Bigger milestones pay more tokens, and later tiers pay more than early ones."
+	]
+	quest.19F5D52D281D058B.title: "Playing Together"
+	quest.19F5D52D281D058B.quest_desc: [
+		"On a server, make a team so you share quest progress and claimed land."
+		"How: &e/ftbteams party create <name>&r, then invite friends with &e/ftbteams party invite <player>&r."
+	]
+	quest.61103C80A99526F9.title: "Begin"
+	quest.61103C80A99526F9.quest_desc: [
+		"That's everything. Open &eGetting Started&r and take your first step."
+	]
 	chapter.1CE4EAE5C8575E5D.title: "Getting Started"
 	chapter.1CE4EAE5C8575E5D.chapter_subtitle: [
 		"You wake in a world you didn't make, with a god's patience and none of a god's power."
@@ -407,6 +446,12 @@
 		"Uraninite is UO₂. Make it by oxidising uranium dust with oxygen in MI's &eChemical Reactor&r."
 		"Powah's reactors run on it, and Powah's Energizing Orb needs an MV circuit."
 	]
+	quest.5610598250CF6B1D.title: "Ore Byproducts"
+	quest.5610598250CF6B1D.quest_desc: [
+		"Real ores are never pure. Send Mekanism's &edirty dust&r through MI's &eCentrifuge&r instead of the Enrichment Chamber and you get the same dust plus a chance at a bonus metal:"
+		"iron → nickel, copper → gold, gold → silver, &elead → silver&r (galena is the world's main silver ore), tin → tungsten, osmium → iridium, uranium → lead (decay)."
+		"How: route dirty dust to a Centrifuge. Rare metals start arriving as a bonus."
+	]
 	quest.6CD23CD722EC696F.title: "The Undergarden"
 	quest.6CD23CD722EC696F.quest_desc: [
 		"A realm beneath the world. Its portal catalyst needs a bucket of sulfuric acid."
@@ -495,6 +540,23 @@
 		"Reprocess nuclear waste: neutron capture has turned some of it into &eplutonium&r and &epolonium&r."
 		"Real alchemy. Lead to gold was never the hard part."
 	]
+	quest.1D1660D4E4098CF6.title: "Haber-Bosch"
+	quest.1D1660D4E4098CF6.quest_desc: [
+		"N₂ + 3H₂ → 2NH₃. The &eHaber-Bosch&r process makes ammonia from air and hydrogen. It feeds half the world's food through fertiliser."
+		"How: nitrogen + hydrogen in MI's Chemical Reactor. Fill a bucket from the output tank."
+	]
+	quest.703A5F9E92E332B9.title: "Ostwald Process"
+	quest.703A5F9E92E332B9.quest_desc: [
+		"NH₃ + 2O₂ → HNO₃ + H₂O. Burning ammonia over a catalyst gives &enitric acid&r."
+	]
+	quest.45087080B517BD44.title: "The Platinum Line"
+	quest.45087080B517BD44.quest_desc: [
+		"Platinum-group metals hide in the sludge left by refining nickel and copper."
+		"1. &eElectrolyzer&r: nickel or copper dust → dust + PGM sludge (25%)."
+		"2. &eAqua regia&r (3 HCl : 1 HNO₃) in the Chemical Reactor dissolves platinum as chloroplatinic acid. Iridium, osmium, rhodium and ruthenium don't dissolve: they're left as residue."
+		"3. &eAmmonium chloride&r (NH₃ + HCl) precipitates ammonium hexachloroplatinate. 4. Heat it in the &eBlast Furnace&r: pure platinum."
+		"5. Centrifuge the residue for iridium, osmium, rhodium and ruthenium."
+	]
 	quest.3720EEA89BCDC92F.title: "Wireless Power"
 	quest.3720EEA89BCDC92F.quest_desc: [
 		"Flux Networks moves energy without cables. The Flux Core needs a processing unit."
@@ -530,6 +592,17 @@
 	quest.1E6BA9227B6B280F.quest_desc: [
 		"The Supercritical Phase Shifter turns polonium into &eantimatter&r: matter with every charge reversed."
 		"It's the most energy-dense substance there is."
+	]
+	quest.39868F66D40B59DD.title: "Energy Cores"
+	quest.39868F66D40B59DD.quest_desc: [
+		"A stainless-steel shell with polonium and a processing unit becomes an &eEmpty Energy Core&r. Charge it in MI's Assembler (about 3 million EU)."
+		"Add antimatter and a quantum circuit and it becomes an &eAntimatter Core&r: the most concentrated energy you can hold."
+	]
+	quest.3A6618C9323E34D8.title: "Seed of a New World"
+	quest.3A6618C9323E34D8.quest_desc: [
+		"&6The endgame goal.&r A 9x9 recipe on the Ultimate Table that needs something from every tier:"
+		"coke, synthesized water and hydrogen, sulfuric acid, polyethylene, stainless steel, processing units, oganesson, plutonium, polonium, Nether Stars, four Antimatter Cores, and a Dragon Egg at the centre."
+		"Check JEI for the exact layout."
 	]
 	quest.699C8548A909219F.title: "A New World"
 	quest.699C8548A909219F.quest_desc: [
@@ -624,6 +697,47 @@
 	quest.37B1429C3FDEB817.title: "Teleporting Cake"
 	quest.37B1429C3FDEB817.quest_desc: [
 		"TelePastries: eat a slice to travel to that cake's dimension. Refill it with the right ingredient."
+	]
+	chapter.58F2F526022035F5.title: "Quality of Life"
+	chapter.58F2F526022035F5.chapter_subtitle: [
+		"Small things that make a big difference."
+	]
+	quest.7861E90E0F778D26.title: "One Book to Rule Them All"
+	quest.7861E90E0F778D26.quest_desc: [
+		"The Akashic Tome merges every mod's guidebook into one item."
+		"How: craft it, then right-click it with other guidebooks to add them."
+	]
+	quest.24E1DFE3C86BAB94.title: "Find Anything"
+	quest.24E1DFE3C86BAB94.quest_desc: [
+		"Nature's Compass finds biomes; Explorer's Compass finds structures (Nether Fortresses, Ancient Cities, villages)."
+	]
+	quest.417C968CF0B6DB90.title: "No More Mob Spawns"
+	quest.417C968CF0B6DB90.quest_desc: [
+		"The Mega Torch stops hostile mobs spawning in a huge radius. Great around your base."
+	]
+	quest.2CDD3C38275B155C.title: "Graves"
+	quest.2CDD3C38275B155C.quest_desc: [
+		"If you die, Corail Tombstone keeps your items in a grave where you fell. Walk back and open it to recover everything."
+	]
+	quest.4BC3CD31C26ED641.title: "Backpack Upgrades"
+	quest.4BC3CD31C26ED641.quest_desc: [
+		"Pickup and magnet upgrades pull items straight into your backpack. There's also feeding, crafting, smelting and more (check JEI)."
+	]
+	quest.5B094C907C8047AF.title: "Waystones"
+	quest.5B094C907C8047AF.quest_desc: [
+		"Place waystones at your important locations and teleport between them."
+	]
+	quest.171C251ED5512ABD.title: "Building Gadgets"
+	quest.171C251ED5512ABD.quest_desc: [
+		"Place and copy whole structures with FE-powered gadgets."
+	]
+	quest.7AD94AAAA5254B9E.title: "Effortless Building"
+	quest.7AD94AAAA5254B9E.quest_desc: [
+		"Mirror, array and line building modes for big builds. The randomizer places a random mix of blocks."
+	]
+	quest.6DE92B29EF0F35A9.title: "Backups"
+	quest.6DE92B29EF0F35A9.quest_desc: [
+		"Simple Backups saves your world automatically. On a server, backups live in the server's backups folder."
 	]
 	chapter.34560F2FAB74139C.title: "Storage and Logistics"
 	chapter.34560F2FAB74139C.chapter_subtitle: [

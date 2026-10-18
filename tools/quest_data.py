@@ -13,10 +13,38 @@ BOOK_TITLE = "Warbucks Chemistry: The Demigod's Codex"
 
 CHAPTERS = [
     # =========================================================================================
+    Chapter("welcome", "Welcome", "minecraft:nether_star",
+            ["Read this first: who you are, how this world works, and how to use this book."], MAIN, [
+        Q("wel_hello", 0, 0, [tick()], "Welcome, Demigod", size=2.0, shape="gear", tokens=3, items=[("comforts:sleeping_bag_white", 1)], desc=[
+            "&6Welcome to Warbucks Chemistry.&r",
+            "You're a demigod who has lost your power. You'll win it back by mastering chemistry: taking matter apart into its elements and building it back up.",
+            "This book is your guide. Follow the lines from quest to quest; each one tells you &ewhat&r to do and &ehow&r to do it.",
+            "How: click the checkmark to collect your first reward."]),
+        Q("wel_progress", 2, -1, [tick()], "How Progression Works", deps=["wel_hello"], desc=[
+            "The pack has 8 tiers. Each one is unlocked by a &echemistry milestone&r, not just more metal:",
+            "Fire and bronze → coke and steel → hydrogen and flight → electricity → acids → oil and plastics → silicon, PVC and the atom → antimatter.",
+            "Modern Industrialization's voltage tiers (LV, MV, HV, EV) are the spine. Other mods (Mekanism, AE2, Powah and more) unlock alongside them.",
+            "If a recipe looks different from what you remember, it's been gated on purpose. JEI always shows the real recipe."]),
+        Q("wel_keys", 2, 1, [tick()], "Your Toolkit", deps=["wel_hello"], desc=[
+            "&eR&r / &eU&r over an item: recipes / uses (JEI). &eM&r: map and chunk claiming (FTB Chunks).",
+            "&e`&r (hold) while mining: vein mine (FTB Ultimine). Look at a block: Jade shows what it is and what it's doing.",
+            "Inventory sorting, crafting-grid tweaks and the trash slot are in your inventory screen; check Controls for their keys."]),
+        Q("wel_tokens", 4, -1, [tick()], "Demigod Tokens", deps=["wel_progress"], tokens=5, desc=[
+            "Most quests give &eDemigod Tokens&r. Spend them on convenience items by crafting: torches, food, XP, iron, coke, rubber, osmium, backpack upgrades and a Warp Stone.",
+            "How: search &eDemigod Token&r in JEI and press U to see the whole shop.",
+            "Bigger milestones pay more tokens, and later tiers pay more than early ones."]),
+        Q("wel_team", 4, 1, [tick()], "Playing Together", deps=["wel_keys"], desc=[
+            "On a server, make a team so you share quest progress and claimed land.",
+            "How: &e/ftbteams party create <name>&r, then invite friends with &e/ftbteams party invite <player>&r."]),
+        Q("wel_ready", 6, 0, [tick()], "Begin", deps=["wel_tokens", "wel_team"], size=1.5, shape="hexagon", desc=[
+            "That's everything. Open &eGetting Started&r and take your first step."]),
+    ]),
+
+    # =========================================================================================
     Chapter("start", "Getting Started", "minecraft:oak_sapling",
             ["You wake in a world you didn't make, with a god's patience and none of a god's power.",
              "These first steps get you fed, armed, rested and ready for chemistry."], MAIN, [
-        Q("gs_wake", 0, 0, [tick()], "The Awakening", size=2.0, shape="gear", xp=10, desc=[
+        Q("gs_wake", 0, 0, [tick()], "The Awakening", size=2.0, shape="gear", xp=10, deps=["wel_ready"], desc=[
             "&6You remember being more than this.&r The memory is fading, but one idea stays clear:",
             "&eeverything is made of elements, and elements can be taken apart and put back together.&r",
             "",
@@ -64,7 +92,7 @@ CHAPTERS = [
         Q("gs_silent", 14, 2, [item("silentgear:blueprint_paper"), item("silentgear:pickaxe")], "Tools from Parts", deps=["gs_paxel"], xp=40, desc=[
             "Silent Gear builds tools from parts. Each part's stats come from its &ematerial&r, so better chemistry means better tools.",
             "How: make Blueprint Paper, craft a Pickaxe Blueprint, then craft a pickaxe head and rod. The Tools and Comfort chapter goes deeper."]),
-        Q("gs_ready", 14, 0, [tick()], "Ready for Chemistry", size=1.5, shape="hexagon", deps=["gs_claim", "gs_bucket"], xp=50, desc=[
+        Q("gs_ready", 14, 0, [tick()], "Ready for Chemistry", size=1.5, shape="hexagon", deps=["gs_claim", "gs_bucket"], xp=50, items=[("minecraft:copper_ingot", 16), ("modern_industrialization:tin_ingot", 8)], desc=[
             "&6Fed, armed, sheltered.&r Now the real work begins: fire, ore, alloys, and the slow road back to divinity.",
             "How: click to open Chapter I."]),
     ]),
@@ -93,7 +121,7 @@ CHAPTERS = [
         Q("t0_casing", 6, 0, [item("modern_industrialization:bronze_machine_casing")], "Bronze Machine Casing", deps=["t0_bronze"], xp=40, desc=[
             "The block every steam machine is built around. You'll also need one for the Dissolver in Chapter II.",
             "How: bronze plates around a furnace-like core (check JEI)."]),
-        Q("t0_boiler", 8, 0, [item("modern_industrialization:bronze_boiler")], "Steam Power", deps=["t0_casing"], xp=75, size=1.5, desc=[
+        Q("t0_boiler", 8, 0, [item("modern_industrialization:bronze_boiler")], "Steam Power", deps=["t0_casing"], xp=75, size=1.5, items=[("minecraft:charcoal", 32), ("modern_industrialization:bronze_furnace", 1)], desc=[
             "Burn fuel, boil water, and the expanding steam does work. Welcome to the industrial revolution.",
             "How: place the boiler, give it water and fuel (coal or charcoal), and place steam machines next to it. Steam flows into adjacent machines or through MI fluid pipes."]),
         Q("t0_pump", 8, 2, [item("modern_industrialization:bronze_water_pump")], "Endless Water", deps=["t0_boiler"], xp=40, desc=[
@@ -130,7 +158,7 @@ CHAPTERS = [
         Q("t1_blast", 4, 0, [item("modern_industrialization:steam_blast_furnace")], "The Steam Blast Furnace", deps=["t1_coke"], xp=75, desc=[
             "A multiblock that gets hot enough to melt iron and dissolve carbon into it.",
             "How: check the structure in JEI, then feed it steam."]),
-        Q("t1_steel", 6, 0, [item("modern_industrialization:steel_ingot", 16)], "Steel", deps=["t1_blast"], xp=100, size=1.5, desc=[
+        Q("t1_steel", 6, 0, [item("modern_industrialization:steel_ingot", 16)], "Steel", deps=["t1_blast"], xp=100, size=1.5, items=[("modern_industrialization:steel_ingot", 16)], desc=[
             "Iron with a small, controlled amount of carbon (about 0.2-2%) is &esteel&r: strong, tough, and the backbone of every machine to come.",
             "Too much carbon and you get brittle cast iron. Chemistry is about the right ratio.",
             "How: mix iron dust with coke dust, then melt it in the blast furnace (check JEI for the exact recipe)."]),
@@ -141,7 +169,7 @@ CHAPTERS = [
         Q("t1_power", 8, 2, [item("generatorgalore:iron_generator")], "Forge Energy", deps=["t1_steel"], xp=50, desc=[
             "Some machines run on &eFE&r (Forge Energy) instead of steam. You'll need it for the Dissolver.",
             "How: Generator Galore's Iron Generator burns fuel into FE. A Mekanism Heat Generator or Powah Furnator also works."]),
-        Q("t1_dissolver", 10, -1, [item("alchemistry:dissolver")], "The Dissolver", deps=["t1_steel", "t1_power"], xp=150, size=1.75, shape="hexagon", desc=[
+        Q("t1_dissolver", 10, -1, [item("alchemistry:dissolver")], "The Dissolver", deps=["t1_steel", "t1_power"], xp=150, size=1.75, shape="hexagon", items=[("minecraft:experience_bottle", 16)], desc=[
             "&6Your first divine gift returns.&r",
             "The Dissolver breaks any item into the &eelements and compounds&r it's made of.",
             "How: it needs steel plates and a Bronze Machine Casing. Power it with FE, insert anything, and collect the elements."]),
@@ -186,7 +214,7 @@ CHAPTERS = [
             "Hydrogen is the lightest element. Balloons filled with it carried the first people into the sky in 1783.",
             "Your flight pylon needs it, and only the &eDissolver&r can pull it out of matter as an item.",
             "How: dissolve water, plants or wood and collect the hydrogen."]),
-        Q("t2_pylon", 10, 0, [item("pylons:infusion_pylon")], "Wings of a God", deps=["t2_filter", "t2_quartz", "t2_hydrogen"], xp=500, size=2.0, shape="hexagon", desc=[
+        Q("t2_pylon", 10, 0, [item("pylons:infusion_pylon")], "Wings of a God", deps=["t2_filter", "t2_quartz", "t2_hydrogen"], xp=500, size=2.0, shape="hexagon", items=[("minecraft:experience_bottle", 32)], desc=[
             "&6The sky is yours again.&r",
             "The &eInfusion Pylon&r needs Nether quartz and blackstone, plus &ehydrogen&r from your Dissolver. Fire and chemistry together.",
             "Put an activated Potion of Flying filter in it and you get creative-style flight anywhere.",
@@ -212,7 +240,7 @@ CHAPTERS = [
             "A simple battery. The LV hull needs two."]),
         Q("t3_analog", 4, 0, [item("modern_industrialization:analog_circuit", 2)], "Analog Circuit", deps=["t3_components"], xp=75, desc=[
             "Your first circuit. Mekanism's Basic Control Circuit also needs one, so MI and Mekanism advance together."]),
-        Q("t3_hull", 6, 1, [item("modern_industrialization:basic_machine_hull")], "LV Machine Hull", deps=["t3_analog", "t3_battery"], xp=150, size=1.5, desc=[
+        Q("t3_hull", 6, 1, [item("modern_industrialization:basic_machine_hull")], "LV Machine Hull", deps=["t3_analog", "t3_battery"], xp=150, size=1.5, items=[("modern_industrialization:analog_circuit", 4), ("modern_industrialization:electric_macerator", 1)], desc=[
             "&eLV&r (Low Voltage) is the first electric tier. Every LV machine is built on this hull.",
             "How: steel machine casing + analog circuit + 2 redstone batteries + tin cable."]),
         Q("t3_turbine", 8, -1, [item("modern_industrialization:lv_steam_turbine")], "Steam to Electricity", deps=["t3_hull"], xp=100, desc=[
@@ -253,7 +281,7 @@ CHAPTERS = [
         Q("t4_oxidizer", 2, 2, [item("mekanism:chemical_oxidizer"), item("mekanism:chemical_infuser")], "The Contact Process, Part 1", deps=["t4_separator"], xp=150, desc=[
             "Burn sulfur into &eSO₂&r in the Chemical Oxidizer, then combine it with oxygen into &eSO₃&r in the Chemical Infuser.",
             "How: sulfur comes from the Nether, or from macerating lignite coal."]),
-        Q("t4_acid", 4, 1, [item("modern_industrialization:sulfuric_acid_bucket")], "Sulfuric Acid", deps=["t4_oxidizer", "t4_reactor"], xp=250, size=1.75, shape="hexagon", desc=[
+        Q("t4_acid", 4, 1, [item("modern_industrialization:sulfuric_acid_bucket")], "Sulfuric Acid", deps=["t4_oxidizer", "t4_reactor"], xp=250, size=1.75, shape="hexagon", items=[("modern_industrialization:sulfuric_acid_bucket", 2)], desc=[
             "SO₃ + H₂O → &eH₂SO₄&r. Sulfuric acid is the most-produced chemical on Earth for a reason.",
             "How: make it in Mekanism or MI and fill one bucket."]),
         Q("t4_ore3", 6, -1, [item("mekanism:purification_chamber")], "3x Ore: Oxygen", deps=["t4_acid"], xp=150, desc=[
@@ -264,12 +292,16 @@ CHAPTERS = [
         Q("t4_ore5", 10, -1, [item("mekanism:chemical_dissolution_chamber"), item("mekanism:chemical_washer"), item("mekanism:chemical_crystallizer")], "5x Ore: Dissolution", deps=["t4_ore4"], xp=300, size=1.5, desc=[
             "Dissolve ore in sulfuric acid into a slurry, wash it, and crystallise it: &e5x&r.",
             "This is &ehydrometallurgy&r, the way most of the world's copper is really refined."]),
-        Q("t4_mv", 6, 2, [item("modern_industrialization:electronic_circuit"), item("modern_industrialization:advanced_machine_hull")], "MV: Aluminum", deps=["t4_electrolyzer"], xp=250, size=1.5, desc=[
+        Q("t4_mv", 6, 2, [item("modern_industrialization:electronic_circuit"), item("modern_industrialization:advanced_machine_hull")], "MV: Aluminum", deps=["t4_electrolyzer"], xp=250, size=1.5, items=[("modern_industrialization:electronic_circuit", 4)], desc=[
             "Aluminum is the most common metal in the crust, but it's locked tightly to oxygen in bauxite. It only became cheap once electrolysis could free it.",
             "How: process bauxite (MI ore) into aluminum (check JEI), then build electronic circuits and the &eMV hull&r."]),
         Q("t4_uraninite", 8, 2, [item("powah:energizing_orb"), item("powah:uraninite", 4)], "Uranium Dioxide", deps=["t4_mv", "t4_reactor"], xp=150, desc=[
             "Uraninite is UO₂. Make it by oxidising uranium dust with oxygen in MI's &eChemical Reactor&r.",
             "Powah's reactors run on it, and Powah's Energizing Orb needs an MV circuit."]),
+        Q("t4_byproduct", 12, -1, [item("modern_industrialization:centrifuge"), item("modern_industrialization:silver_dust", 4)], "Ore Byproducts", deps=["t4_ore5"], xp=200, desc=[
+            "Real ores are never pure. Send Mekanism's &edirty dust&r through MI's &eCentrifuge&r instead of the Enrichment Chamber and you get the same dust plus a chance at a bonus metal:",
+            "iron → nickel, copper → gold, gold → silver, &elead → silver&r (galena is the world's main silver ore), tin → tungsten, osmium → iridium, uranium → lead (decay).",
+            "How: route dirty dust to a Centrifuge. Rare metals start arriving as a bonus."]),
         Q("t4_undergarden", 4, 4, [item("undergarden:catalyst"), dim("undergarden:undergarden")], "The Undergarden", deps=["t4_acid"], xp=300, desc=[
             "A realm beneath the world. Its portal catalyst needs a bucket of sulfuric acid.",
             "How: build a stone-brick portal frame and right-click it with the catalyst."]),
@@ -296,9 +328,9 @@ CHAPTERS = [
         Q("t5_ebf", 6, -2, [item("modern_industrialization:electric_blast_furnace"), item("modern_industrialization:stainless_steel_ingot", 8)], "Stainless Steel", deps=["t5_distill"], xp=200, desc=[
             "Steel alloyed with chromium and nickel resists corrosion, so it can handle acids and hot fluids.",
             "How: the Electric Blast Furnace makes it. HV parts need it."]),
-        Q("t5_hv", 8, 0, [item("modern_industrialization:digital_circuit"), item("modern_industrialization:turbo_machine_hull")], "HV: Digital Circuits", deps=["t5_pe", "t5_ebf"], xp=300, size=1.5, desc=[
+        Q("t5_hv", 8, 0, [item("modern_industrialization:digital_circuit"), item("modern_industrialization:turbo_machine_hull")], "HV: Digital Circuits", deps=["t5_pe", "t5_ebf"], xp=300, size=1.5, items=[("modern_industrialization:digital_circuit", 2)], desc=[
             "Digital circuit boards are laminated with polyethylene. The &eHV hull&r follows, with a &esodium&r battery made from your salt chemistry."]),
-        Q("t5_ae2", 10, 0, [item("ae2:inscriber"), item("ae2:controller")], "The God's Archive", deps=["t5_hv"], xp=400, size=1.75, shape="hexagon", desc=[
+        Q("t5_ae2", 10, 0, [item("ae2:inscriber"), item("ae2:controller")], "The God's Archive", deps=["t5_hv"], xp=400, size=1.75, shape="hexagon", items=[("ae2:drive", 1)], desc=[
             "&6Your memory, rebuilt as a network.&r",
             "Applied Energistics 2 is gated by petrochemistry: the Inscriber needs a Turbo hull and the ME Controller a digital circuit.",
             "How: Tom's Simple Storage was your early network. AE2 takes over from here (see Storage and Logistics)."]),
@@ -315,7 +347,7 @@ CHAPTERS = [
             "Computer chips need silicon purer than 99.9999999%. A single crystal is grown from molten silicon and sliced into wafers."]),
         Q("t6_pvc", 0, 0, [item("modern_industrialization:polyvinyl_chloride_bucket")], "PVC", deps=["t5_hv", "t4_salt"], xp=250, desc=[
             "Ethylene plus chlorine makes vinyl chloride, which polymerises into &ePVC&r. Petrochemistry meets chlor-alkali chemistry."]),
-        Q("t6_pu", 2, -1, [item("modern_industrialization:processing_unit"), item("modern_industrialization:highly_advanced_machine_hull")], "EV: Processing Units", deps=["t6_pvc", "t6_silicon"], xp=400, size=1.5, desc=[
+        Q("t6_pu", 2, -1, [item("modern_industrialization:processing_unit"), item("modern_industrialization:highly_advanced_machine_hull")], "EV: Processing Units", deps=["t6_pvc", "t6_silicon"], xp=400, size=1.5, items=[("modern_industrialization:processing_unit", 2)], desc=[
             "Processing units are insulated with PVC and built on silicon. The &eEV hull&r follows."]),
         Q("t6_centrifuge", 4, -2, [item("mekanism:isotopic_centrifuge")], "Isotope Separation", deps=["t6_pu"], xp=300, desc=[
             "Uranium-235 and uranium-238 behave identically in reactions. Only mass tells them apart.",
@@ -326,12 +358,23 @@ CHAPTERS = [
         Q("t6_waste", 8, -2, [item("mekanism:pellet_plutonium"), item("mekanism:pellet_polonium")], "Transmutation by Neutron", deps=["t6_fission"], xp=500, size=1.5, desc=[
             "Reprocess nuclear waste: neutron capture has turned some of it into &eplutonium&r and &epolonium&r.",
             "Real alchemy. Lead to gold was never the hard part."]),
+        Q("t6_haber", 0, 2, [item("chemlib:ammonia_bucket")], "Haber-Bosch", deps=["t4_reactor", "t5_hv"], xp=250, desc=[
+            "N₂ + 3H₂ → 2NH₃. The &eHaber-Bosch&r process makes ammonia from air and hydrogen. It feeds half the world's food through fertiliser.",
+            "How: nitrogen + hydrogen in MI's Chemical Reactor. Fill a bucket from the output tank."]),
+        Q("t6_ostwald", 2, 3, [item("chemlib:nitric_acid_bucket")], "Ostwald Process", deps=["t6_haber"], xp=250, desc=[
+            "NH₃ + 2O₂ → HNO₃ + H₂O. Burning ammonia over a catalyst gives &enitric acid&r."]),
+        Q("t6_pgm", 4, 3, [item("kubejs:pgm_sludge", 4), item("kubejs:chloroplatinic_acid", 2), item("modern_industrialization:platinum_dust", 4)], "The Platinum Line", deps=["t6_ostwald"], xp=500, size=1.5, desc=[
+            "Platinum-group metals hide in the sludge left by refining nickel and copper.",
+            "1. &eElectrolyzer&r: nickel or copper dust → dust + PGM sludge (25%).",
+            "2. &eAqua regia&r (3 HCl : 1 HNO₃) in the Chemical Reactor dissolves platinum as chloroplatinic acid. Iridium, osmium, rhodium and ruthenium don't dissolve: they're left as residue.",
+            "3. &eAmmonium chloride&r (NH₃ + HCl) precipitates ammonium hexachloroplatinate. 4. Heat it in the &eBlast Furnace&r: pure platinum.",
+            "5. Centrifuge the residue for iridium, osmium, rhodium and ruthenium."]),
         Q("t6_flux", 4, 1, [item("fluxnetworks:flux_core")], "Wireless Power", deps=["t6_pu"], xp=200, desc=[
             "Flux Networks moves energy without cables. The Flux Core needs a processing unit."]),
         Q("t6_chambers", 6, 0, [item("alchemistry:fission_chamber_controller"), item("alchemistry:fusion_chamber_controller")], "Element Transmutation", deps=["t6_pu"], xp=500, size=1.5, desc=[
             "Alchemistry's fission chamber splits one element into two lighter ones; the fusion chamber merges two into a heavier one.",
             "With both, &eevery element&r is within reach."]),
-        Q("t6_table", 8, 0, [item("chemlib:uranium", 16), item("chemlib:oganesson")], "The Complete Periodic Table", deps=["t6_chambers"], xp=1000, size=2.0, shape="gear", desc=[
+        Q("t6_table", 8, 0, [item("chemlib:uranium", 16), item("chemlib:oganesson")], "The Complete Periodic Table", deps=["t6_chambers"], xp=1000, size=2.0, shape="gear", items=[("kubejs:energy_core_empty", 1)], desc=[
             "&6Element 118, oganesson.&r It barely exists in reality, but you made one.",
             "Every block in this world can now be built from chemicals. You're close to what you once were."]),
     ]),
@@ -349,7 +392,14 @@ CHAPTERS = [
         Q("t7_antimatter", 4, 0, [item("mekanism:sps_casing", 4), item("mekanism:pellet_antimatter")], "Antimatter", deps=["t7_rocket", "t6_waste"], xp=1000, size=1.75, shape="hexagon", desc=[
             "The Supercritical Phase Shifter turns polonium into &eantimatter&r: matter with every charge reversed.",
             "It's the most energy-dense substance there is."]),
-        Q("t7_creation", 6, 0, [tick()], "A New World", deps=["t7_antimatter", "t6_table"], xp=2000, size=2.5, shape="gear", desc=[
+        Q("t7_cores", 6, -2, [item("kubejs:energy_core"), item("kubejs:antimatter_core")], "Energy Cores", deps=["t7_antimatter"], xp=1000, size=1.5, desc=[
+            "A stainless-steel shell with polonium and a processing unit becomes an &eEmpty Energy Core&r. Charge it in MI's Assembler (about 3 million EU).",
+            "Add antimatter and a quantum circuit and it becomes an &eAntimatter Core&r: the most concentrated energy you can hold."]),
+        Q("t7_seed", 8, -1, [item("kubejs:seed_of_a_new_world")], "Seed of a New World", deps=["t7_cores", "t6_table", "mf_ult_table"], xp=3000, size=2.0, shape="hexagon", desc=[
+            "&6The endgame goal.&r A 9x9 recipe on the Ultimate Table that needs something from every tier:",
+            "coke, synthesized water and hydrogen, sulfuric acid, polyethylene, stainless steel, processing units, oganesson, plutonium, polonium, Nether Stars, four Antimatter Cores, and a Dragon Egg at the centre.",
+            "Check JEI for the exact layout."]),
+        Q("t7_creation", 10, 0, [tick()], "A New World", deps=["t7_seed"], xp=2000, size=2.5, shape="gear", tokens=50, desc=[
             "&6You took the world apart, element by element, and learned to build it again.&r",
             "Fire, steel, acid, oil, silicon, the atom, antimatter. Every tier was a lesson in chemistry, and you mastered them all.",
             "The worlds out there are blank canvases now. Go make them yours."]),
@@ -410,6 +460,29 @@ CHAPTERS = [
         Q("mf_cake", 4, 4, [item("telepastries:overworld_cake")], "Teleporting Cake", deps=["t2_nether"], xp=40, desc=[
             "TelePastries: eat a slice to travel to that cake's dimension. Refill it with the right ingredient."]),
     ]),
+    Chapter("qol", "Quality of Life", "akashictome:tome",
+            ["Small things that make a big difference."], SIDE, [
+        Q("q_tome", 0, 0, [item("akashictome:tome")], "One Book to Rule Them All", deps=["gs_table"], xp=20, desc=[
+            "The Akashic Tome merges every mod's guidebook into one item.",
+            "How: craft it, then right-click it with other guidebooks to add them."]),
+        Q("q_compass", 2, 0, [item("naturescompass:naturescompass"), item("explorerscompass:explorerscompass")], "Find Anything", deps=["gs_iron"], xp=30, desc=[
+            "Nature's Compass finds biomes; Explorer's Compass finds structures (Nether Fortresses, Ancient Cities, villages)."]),
+        Q("q_torch", 4, 0, [item("torchmaster:megatorch")], "No More Mob Spawns", deps=["gs_iron"], xp=40, desc=[
+            "The Mega Torch stops hostile mobs spawning in a huge radius. Great around your base."]),
+        Q("q_grave", 6, 0, [tick()], "Graves", deps=["gs_iron"], xp=10, desc=[
+            "If you die, Corail Tombstone keeps your items in a grave where you fell. Walk back and open it to recover everything."]),
+        Q("q_bp_up", 0, 2, [item("sophisticatedbackpacks:pickup_upgrade"), item("sophisticatedbackpacks:magnet_upgrade")], "Backpack Upgrades", deps=["gs_backpack"], xp=40, desc=[
+            "Pickup and magnet upgrades pull items straight into your backpack. There's also feeding, crafting, smelting and more (check JEI)."]),
+        Q("q_waystone", 2, 2, [item("waystones:waystone")], "Waystones", deps=["gs_iron"], xp=40, desc=[
+            "Place waystones at your important locations and teleport between them."]),
+        Q("q_gadget", 4, 2, [item("buildinggadgets2:gadget_building")], "Building Gadgets", deps=["t3_hull"], xp=40, desc=[
+            "Place and copy whole structures with FE-powered gadgets."]),
+        Q("q_effortless", 6, 2, [item("effortlessbuilding:randomizer_tool")], "Effortless Building", deps=["gs_table"], xp=20, desc=[
+            "Mirror, array and line building modes for big builds. The randomizer places a random mix of blocks."]),
+        Q("q_backups", 8, 1, [tick()], "Backups", deps=["gs_iron"], xp=10, desc=[
+            "Simple Backups saves your world automatically. On a server, backups live in the server's backups folder."]),
+    ]),
+
     Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:backpack",
             ["A god needs somewhere to keep things."], SIDE, [
         Q("s_barrel", 0, 0, [item("sophisticatedstorage:barrel")], deps=["gs_backpack"], xp=25, desc=[
@@ -464,3 +537,8 @@ CHAPTERS = [
             "Farming is a convenience here, not a shortcut."]),
     ]),
 ]
+
+# Demigod Tokens per quest, scaled by tier (milestone quests, size >= 1.5, pay double).
+TOKENS = {"welcome": 1, "start": 1, "t0": 1, "t1": 2, "t2": 2, "t3": 3, "t4": 3, "t5": 4, "t6": 5, "t7": 8}
+for _c in CHAPTERS:
+    _c.tokens = TOKENS.get(_c.key, 1)

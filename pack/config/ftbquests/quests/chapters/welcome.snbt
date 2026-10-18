@@ -1,0 +1,170 @@
+{
+	id: "4335527ACA7CF750"
+	group: "2DCF10F76EBF2A74"
+	order_index: 0
+	filename: "welcome"
+	icon: {
+		id: "minecraft:nether_star"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "54E4F62471779F14"
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+			tasks: [
+				{
+					id: "3431BF0454E09CE5"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "72C6A9A27BBAC66D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+				{
+					id: "158A5AABBFF65C0A"
+					type: "item"
+					item: {
+						id: "comforts:sleeping_bag_white"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "022F679599389147"
+			x: 2.0d
+			y: -1.0d
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "74F3CB916B560BD0"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "59B9393C6393D0C6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "745DBEEE9AE746C7"
+			x: 2.0d
+			y: 1.0d
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "5319E4740EAE7FA8"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "797D1B9C30A2CD3E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32306651C1085697"
+			x: 4.0d
+			y: -1.0d
+			dependencies: [
+				"022F679599389147"
+			]
+			tasks: [
+				{
+					id: "2EDBE071EC70ED83"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7C748632D42BE06A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 5
+					}
+				}
+			]
+		}
+		{
+			id: "19F5D52D281D058B"
+			x: 4.0d
+			y: 1.0d
+			dependencies: [
+				"745DBEEE9AE746C7"
+			]
+			tasks: [
+				{
+					id: "4E69F88A35DF2836"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "267718C61DE6AFA9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "61103C80A99526F9"
+			x: 6.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"32306651C1085697"
+				"19F5D52D281D058B"
+			]
+			tasks: [
+				{
+					id: "05FA26D4F1CB4D1E"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "2F10C065D831C5DF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}
