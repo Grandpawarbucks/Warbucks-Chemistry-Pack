@@ -75,8 +75,15 @@
 - 2026-10-18 later: 197 mods (Towns&Towers, Regions Unexplored, YUNG's, Farmer's Delight, Occultism [gated:
   phase4_occultism.js], MoreMachine, SS in Motion, JourneyMap, Chunky). Quest book v5 = 200 quests, 20 chapters.
   Create re-added (early mechanical tier, phase4_create.js) -> 220 mods; quest book v6 = 213 quests, 21 chapters.
-- Quest book v7 (589 quests, 119 optional): one file per chapter in tools/quests/, style in tools/quests/STYLE.md;
-  validate with `python3 tools/build_quests.py --check`. Flying potion = levitation + 2 chemlib:hydrogen (phase4_flight.js).
+- Quest book v8 (1,168 quests, 38 chapters, 7 category groups set by LAYOUT in tools/quest_data.py): one file per
+  chapter in tools/quests/, style in tools/quests/STYLE.md (engine v8: kill/structure/biome/anytag/anyof tasks, hidden/
+  secret/any_dep, loot=/choice= reward tables in tools/quests/_tables.py, links, {@pagebreak}). Validate with
+  `python3 tools/build_quests.py --check` (or `QUEST_ONLY=a,b ...--check` for a few chapters). End goal = Seed chapter,
+  then Creation. Tokens: Demigod Token + Greater (=9); shop in phase4_chemistry.js §5 (convenience only).
+  Balance fixes in phase5_balance.js (Mekanism 4x/5x machines at MV circuits; no Reliquary metal duplication).
+  Open review items: AdvancedAE Flight Card and Ars Ritual of Flight aren't chemistry-gated (both late or area-limited);
+  Mekanism More Machine UU-Matter replicator is ungated (late game); Entangled/Integrated Tunnels/Rechiseled ids are
+  missing from test/ids.tsv (their quests use checkmarks). Flying potion = levitation + 2 chemlib:hydrogen (phase4_flight.js).
 - Phase 5 quests (history): v4 (162 quests, 17 chapters incl. Welcome + QoL; tokens on every quest, step-by-step per user request) pending user review.
   QUESTS ARE GENERATED: edit tools/quest_data.py (content; helpers in tools/questlib.py), then run `python3 test/build_id_index.py` (after a smoke test) and
   `python3 tools/build_quests.py`. Never hand-edit pack/config/ftbquests/quests (it gets overwritten).

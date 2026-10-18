@@ -141,5 +141,5 @@ CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
       subtitle="Light magic suits a demigod", desc=[
         "&eWhat:&r the Worn Notebook teaches Ars Nouveau spellcrafting. Source gems are its basic magical material.",
         "&eHow:&r the notebook is a book + lapis lazuli (shapeless). Source gems come from the Imbuement Chamber (lapis or amethyst + Source).",
-        "&eTip:&r its Ritual of Flight is a second way to fly near your base. See the Divine Gifts chapter."]),
+        "&eTip:&r its Ritual of Flight is a second way to fly near your base. See the Ars Nouveau page (Magic and Relics)."]),
 ])

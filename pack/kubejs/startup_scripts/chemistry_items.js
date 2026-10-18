@@ -14,6 +14,8 @@ StartupEvents.registry('item', event => {
 
   // --- Demigod Token: quest-reward currency, spent on convenience items ---
   event.create('demigod_token').displayName('Demigod Token').rarity('uncommon') // texture: kubejs/assets/kubejs/textures/item/demigod_token.png
+  // Worth 9 Demigod Tokens (2-way crafting in phase4_chemistry.js); pays for the big shop trades.
+  event.create('greater_demigod_token').displayName('Greater Demigod Token').rarity('rare') // texture: greater_demigod_token.png
 
   // --- Endgame energy cores (the Monifactory "energy core" idea, chemistry flavoured) ---
   event.create('energy_core_empty').displayName('Empty Energy Core').texture('minecraft:item/ender_eye').maxStackSize(16)

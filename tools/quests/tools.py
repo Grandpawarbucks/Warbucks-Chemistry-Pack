@@ -1,5 +1,5 @@
 """Quest chapter: tools. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
         ["Better tools from better materials, and a soft place to land."], SIDE, [
@@ -165,4 +165,64 @@ CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
         "&eWhat:&r a mining laser that breaks blocks at range. Upgrades add 3x3 (and bigger) size, efficiency, magnet and void filters.",
         "&eHow:&r iron, gold, diamond and redstone (check JEI). Charge it with FE.",
         "&eTip:&r a void filter for stone and dirt keeps your inventory clean on long ore runs."]),
-])
+
+    # --- More Silent Gear (y=15.5) -------------------------------------------------------------
+    Q("tc_sg_parts", 0, 15.5, [item("silentgear:binding"), item("silentgear:grip")], "Bindings and Grips", deps=["gs_silent"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: parts that change a tool's stats", desc=[
+        "&eWhat:&r bindings and grips are optional Silent Gear parts. Each adds its material's traits and stats to the tool.",
+        "&eHow:&r make the Binding and Grip blueprints, then craft the parts from string, vines, leather or wool (check JEI). Add them to a tool in a crafting grid.",
+        "&eTip:&r the Material Book (or JEI) shows every material's traits. Hover a part to see what it adds."]),
+    Q("tc_sg_coating", 2, 15.5, [item("silentgear:coating_smithing_template")], "Coatings", deps=["tc_sg_parts", "tc_grader"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: plate a tool in a better material", desc=[
+        "&eWhat:&r a coating covers a finished tool's main part in another material, like diamond or netherite, changing its stats and colour.",
+        "&eChemistry:&r real tools are coated too: drill bits get a thin layer of titanium nitride (TiN) or diamond to stay sharp much longer.",
+        "&eHow:&r craft the coating smithing template (check JEI), then apply the coating material at a smithing table."]),
+    Q("tc_sg_ring", 4, 15.5, [anyof(["silentgear:ring", "silentgear:bracelet", "silentgear:necklace"], 1)], "Silent Jewellery", deps=["tc_sg_parts"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: rings, bracelets and necklaces", desc=[
+        "&eWhat:&r Silent Gear jewellery carries material traits as curios: a ring of a lucky or magnetic material gives you that trait while worn.",
+        "&eHow:&r a ring shank, bracelet band or necklace chain plus a gem setting, made with the matching blueprint (check JEI).",
+        "&eTip:&r try different metals and gems. The traits list on each material shows what jewellery will do."]),
+    Q("tc_sg_armor", 6, 15.5, [anyof(["silentgear:helmet", "silentgear:chestplate", "silentgear:leggings", "silentgear:boots"], 4)], "Armour from Parts", deps=["tc_sg_parts", "tc_crimson_steel"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: a full set of Silent Gear armour", desc=[
+        "&eWhat:&r Silent Gear armour is built from plates of any material, so your best alloy becomes your best armour.",
+        "&eHow:&r helmet, chestplate, legging and boot plates from their blueprints, then assemble each piece (check JEI). Any four pieces.",
+        "&eTip:&r crimson steel and azure electrum plates have strong traits; check the Material Book before choosing."]),
+
+    # --- Just Dire Things (y=17.5) -------------------------------------------------------------
+    Q("tc_jdt_goo", 0, 17.5, [item("justdirethings:gooblock_tier1")], "Primordial Goo", deps=["gs_iron"], xp=25,
+      subtitle="Just Dire Things: goo that changes blocks", desc=[
+        "&6You remember a slime that turned stone into anything you asked. This one is less clever, but it tries.&r",
+        "&eWhat:&r Just Dire Things goo converts the blocks it touches. Tier 1 goo turns an iron block into raw ferricore ore.",
+        "&eHow:&r clay, sugar, rotten flesh and dirt (check JEI). Place an iron block against the goo and wait (JEI shows how long).",
+        "&eTip:&r JEI's goo tab shows every conversion and which goo tier it needs."]),
+    Q("tc_jdt_ferricore", 2, 17.5, [item("justdirethings:ferricore_ingot", 8), item("justdirethings:ferricore_wrench")], "Ferricore", deps=["tc_jdt_goo"], xp=40,
+      subtitle="The first goo metal", desc=[
+        "&eWhat:&r ferricore is the first Just Dire Things metal: tools, the Pocket Generator, machines and upgrade blanks.",
+        "&eHow:&r mine the raw ferricore ore the goo makes and smelt it (check JEI).",
+        "&eTip:&r the Ferricore Wrench rotates and picks up JDT machines."]),
+    Q("tc_jdt_blazegold", 4, 17.5, [item("justdirethings:gooblock_tier2"), item("justdirethings:blazegold_ingot", 4)], "Blazegold", deps=["tc_jdt_ferricore", "t2_nether"], xp=60,
+      subtitle="Tier 2 goo and a Nether metal", desc=[
+        "&eWhat:&r tier 2 goo turns gold blocks into raw blazegold ore. Blazegold makes the next tier of JDT tools and machines.",
+        "&eHow:&r upgrade tier 1 goo with blaze powder, redstone and Nether wart (check JEI), then feed it gold blocks.",
+        "&eTip:&r goo only converts blocks touching it, so surround it with several gold blocks at once."]),
+    Q("tc_jdt_celestigem", 6, 17.5, [item("justdirethings:gooblock_tier3"), item("justdirethings:celestigem", 4)], "Celestigem", deps=["tc_jdt_blazegold", "w_dragon"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: tier 3 goo and a gem from diamond", desc=[
+        "&eWhat:&r tier 3 goo turns diamond blocks into celestigem ore. Celestigem tools take powerful upgrades.",
+        "&eHow:&r upgrade tier 2 goo with ender pearls, end stone and dragon's breath (check JEI).",
+        "&eTip:&r JDT's flight upgrade needs End Crystals, so portable flight here comes after the End, as the pack intends."]),
+    Q("tc_jdt_eclipse", 8, 17.5, [item("justdirethings:gooblock_tier4"), item("justdirethings:eclipsealloy_ingot", 2)], "Eclipse Alloy", deps=["tc_jdt_celestigem", "w_ancient"], xp=150,
+      optional=True, tokens=2, subtitle="Optional: tier 4 goo eats netherite", desc=[
+        "&eWhat:&r tier 4 goo turns netherite blocks into eclipse alloy ore, JDT's top material.",
+        "&eHow:&r upgrade tier 3 goo with sculk, a sculk shrieker and echo shards from an Ancient City (check JEI). Then sacrifice a netherite block.",
+        "&eTip:&r it's expensive. Decide which eclipse alloy tool you want before you start."]),
+    Q("tc_jdt_pocket", 1, 19, [item("justdirethings:pocket_generator")], "Pocket Generator", deps=["tc_jdt_ferricore"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: charge tools on the go", desc=[
+        "&eWhat:&r the Pocket Generator burns fuel in your inventory and charges your FE items.",
+        "&eHow:&r ferricore, a furnace, coal and a redstone block (check JEI).",
+        "&eChemistry:&r burning coal is oxidation: C + O₂ → CO₂ releases about 394 kJ per mole of carbon as heat."]),
+    Q("tc_jdt_portal", 7, 19, [item("justdirethings:portalgun")], "Thinking with Portals", deps=["tc_jdt_celestigem"], xp=100,
+      secret=True, loot="secret", subtitle="Secret: now you're thinking", desc=[
+        "&6You remember stepping between places without walking. You'd forgotten how much fun it was.&r",
+        "&eWhat:&r the Portal Gun shoots two linked portals onto walls. Walk in one, come out the other.",
+        "&eTip:&r there is an upgraded Portal Gun too; JEI has its recipe."]),
+], links=[("gs_silent", -2, 0), ("t3_infuser", -2, 5.5), ("t3_analog", -2, 9.5), ("gs_iron", -2, 17.5)])

@@ -153,17 +153,71 @@ ServerEvents.recipes(event => {
 
   // ==========================================================================================
   // 5. DEMIGOD TOKEN SHOP (quest rewards; convenience only, never tier-skipping)
+  // Rules (Phase 5 token overhaul): the shop sells raw feedstocks and comforts, never machines,
+  // circuits or anything that skips a tier. Three price bands:
+  //   small  1-3 tokens        everyday supplies
+  //   medium 4-8 tokens        raw ores and mob drops you would otherwise farm
+  //   large  Greater Tokens    rare comforts (1 Greater Token = 9 Demigod Tokens)
+  // Every trade is a shapeless recipe; search "Demigod Token" in JEI to see them all.
   // ==========================================================================================
-  const shop = (cost, result, count, name) =>
-    event.shapeless(Item.of(result, count), Array(cost).fill('kubejs:demigod_token')).id(`kubejs:shop/${name}`)
+  const T = 'kubejs:demigod_token', G = 'kubejs:greater_demigod_token'
+  const shop = (cost, result, count, name, coin) =>
+    event.shapeless(Item.of(result, count), Array(cost).fill(coin || T)).id(`kubejs:shop/${name}`)
+  // Change: 9 tokens <-> 1 Greater Token.
+  event.shapeless(G, Array(9).fill(T)).id('kubejs:shop/greater_token')
+  event.shapeless(Item.of(T, 9), [G]).id('kubejs:shop/greater_token_change')
+
+  // Small band (1-3)
   shop(1, 'minecraft:torch', 32, 'torches')
   shop(1, 'minecraft:bread', 16, 'bread')
   shop(1, 'minecraft:experience_bottle', 8, 'xp')
+  shop(1, 'minecraft:bone_meal', 32, 'bone_meal')
+  shop(1, 'minecraft:sand', 64, 'sand')
+  shop(1, 'minecraft:gravel', 64, 'gravel')
+  shop(1, 'minecraft:clay_ball', 32, 'clay')
   shop(2, 'minecraft:iron_ingot', 16, 'iron')
   shop(2, `${MI}:coke`, 16, 'coke')
   shop(2, `${MI}:rubber_sheet`, 16, 'rubber')
+  shop(2, `${MI}:fire_clay_dust`, 16, 'fire_clay')
+  shop(2, `${MI}:salt_dust`, 32, 'salt')
+  shop(2, 'minecraft:string', 16, 'string')
+  shop(2, 'minecraft:leather', 16, 'leather')
   shop(2, 'comforts:sleeping_bag_white', 1, 'sleeping_bag')
   shop(3, 'mekanism:ingot_osmium', 8, 'osmium')
   shop(3, 'sophisticatedbackpacks:upgrade_base', 2, 'backpack_upgrade_base')
+  shop(3, 'minecraft:gunpowder', 16, 'gunpowder')
+  shop(3, 'minecraft:slime_ball', 16, 'slime')
+  shop(3, 'minecraft:redstone', 32, 'redstone')
+  shop(3, 'minecraft:lapis_lazuli', 16, 'lapis')
+  // Medium band (4-8): raw ores (still need your own processing line) and mob drops
   shop(4, 'waystones:warp_stone', 1, 'warp_stone')
+  shop(4, 'minecraft:raw_copper', 32, 'raw_copper')
+  shop(4, `${MI}:raw_tin`, 16, 'raw_tin')
+  shop(4, `${MI}:raw_lead`, 16, 'raw_lead')
+  shop(4, `${MI}:bauxite_dust`, 16, 'bauxite')
+  shop(4, 'minecraft:quartz', 32, 'quartz')
+  shop(4, 'minecraft:glowstone_dust', 32, 'glowstone')
+  shop(5, `${MI}:raw_nickel`, 16, 'raw_nickel')
+  shop(5, 'minecraft:ender_pearl', 8, 'ender_pearls')
+  shop(5, 'minecraft:phantom_membrane', 4, 'phantom_membrane')
+  shop(5, 'minecraft:amethyst_shard', 16, 'amethyst')
+  shop(6, 'minecraft:blaze_rod', 8, 'blaze_rods')
+  shop(6, 'minecraft:ghast_tear', 4, 'ghast_tears')
+  shop(6, 'ae2:certus_quartz_crystal', 16, 'certus')
+  shop(6, 'ars_nouveau:source_gem', 8, 'source_gems')
+  shop(7, `${MI}:raw_titanium`, 8, 'raw_titanium')
+  shop(7, 'minecraft:name_tag', 2, 'name_tags')
+  shop(8, `${MI}:raw_tungsten`, 8, 'raw_tungsten')
+  shop(8, 'minecraft:prismarine_shard', 32, 'prismarine')
+  // Large band (Greater Tokens)
+  shop(1, 'minecraft:golden_apple', 4, 'golden_apples', G)
+  shop(1, 'minecraft:diamond', 4, 'diamonds', G)
+  shop(1, 'minecraft:emerald', 16, 'emeralds', G)
+  shop(1, 'minecraft:saddle', 1, 'saddle', G)
+  shop(2, 'minecraft:shulker_shell', 2, 'shulker_shells', G)
+  shop(2, 'minecraft:heart_of_the_sea', 1, 'heart_of_the_sea', G)
+  shop(2, 'minecraft:netherite_scrap', 1, 'netherite_scrap', G)
+  shop(3, 'minecraft:totem_of_undying', 1, 'totem', G)
+  shop(3, 'minecraft:echo_shard', 4, 'echo_shards', G)
+  shop(4, 'minecraft:enchanted_golden_apple', 1, 'notch_apple', G)
 })

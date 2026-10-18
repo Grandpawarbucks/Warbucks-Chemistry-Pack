@@ -1,7 +1,7 @@
 {
 	id: "6A576761B258CEBA"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 5
+	group: "4801EE691EF63116"
+	order_index: 2
 	filename: "logic"
 	icon: {
 		id: "computercraft:computer_advanced"
@@ -674,7 +674,7 @@
 		}
 		{
 			id: "00A54A06239849EA"
-			x: 6.0d
+			x: 7.0d
 			y: 3.0d
 			optional: true
 			dependencies: [
@@ -1048,17 +1048,362 @@
 				}
 			]
 		}
+		{
+			id: "5A5E16639EDFAC93"
+			x: 0.0d
+			y: -2.0d
+			optional: true
+			dependencies: [
+				"140C58A0A3A11DB7"
+			]
+			tasks: [
+				{
+					id: "4D15C8B85378F21C"
+					type: "item"
+					item: {
+						id: "computercraft:printer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7494C0BD556B5E3F"
+					type: "item"
+					item: {
+						id: "computercraft:disk_drive"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A3877177FD556D2"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2C613D41B449D424"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6BDC8F1C446B5D65"
+			x: 2.0d
+			y: -3.5d
+			optional: true
+			dependencies: [
+				"5B44262E5F932D07"
+			]
+			tasks: [
+				{
+					id: "034C0A1E16721BD1"
+					type: "item"
+					item: {
+						id: "computercraft:turtle_advanced"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "13246C3168417550"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "079A93BA2FEEEB53"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7D39CBFAE0AE3E52"
+			x: 6.0d
+			y: -4.0d
+			optional: true
+			dependencies: [
+				"02AEF5F6A8349814"
+			]
+			tasks: [
+				{
+					id: "31E784A3FE7938F0"
+					type: "item"
+					item: {
+						id: "advancedperipherals:geo_scanner"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "35A087F2182149D4"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "705C4F5EED32F94B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6CC389628C143887"
+			x: 8.0d
+			y: -4.0d
+			optional: true
+			dependencies: [
+				"02AEF5F6A8349814"
+			]
+			tasks: [
+				{
+					id: "0EECF2F179A904E8"
+					type: "item"
+					item: {
+						id: "advancedperipherals:chat_box"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5C6C748A8BEB849D"
+					type: "item"
+					item: {
+						id: "advancedperipherals:player_detector"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "445C46CDDC897E17"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "648C6ADF22A3F9CB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "41E9EE7CC03DE9F3"
+			x: 10.0d
+			y: -4.0d
+			optional: true
+			dependencies: [
+				"02AEF5F6A8349814"
+			]
+			tasks: [
+				{
+					id: "0D80CE340729678C"
+					type: "item"
+					item: {
+						id: "advancedperipherals:inventory_manager"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "75957BF7A2012FDB"
+					type: "item"
+					item: {
+						id: "advancedperipherals:memory_card"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "41BC75E6F58D3EDD"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "13D442AC615A0F77"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5B66E9C98951DF71"
+			x: 8.0d
+			y: 2.0d
+			dependencies: [
+				"0B6B6A7EEDAF93D8"
+			]
+			tasks: [
+				{
+					id: "3B2620314B8C2B15"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7805855511B02FB3"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "086E4B16FD641B9B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "132AB0ACC55773F4"
+			x: 10.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"5B66E9C98951DF71"
+			]
+			tasks: [
+				{
+					id: "410D63DC81504266"
+					type: "item"
+					item: {
+						id: "integratedterminals:terminal_storage_portable"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6448CADD72D38494"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "3879E8C5FEFF50F4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "698304026FBC82C1"
+			x: 12.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"5B66E9C98951DF71"
+			]
+			tasks: [
+				{
+					id: "48C5154A6E3B0019"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "55EB93E0823F4700"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "03D2ED031DBB58FB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "648179C70EA53466"
+			x: 0.0d
+			y: 4.0d
+			optional: true
+			dependencies: [
+				"34D0F3A6001E73F8"
+			]
+			tasks: [
+				{
+					id: "546576A64BA6A770"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "6022A2DB696B0C2D"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0136C4A3BEEA6B49"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "750AC182A921C84A"
 			x: 2.5d
-			y: -4.0d
+			y: -6.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/logic.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "699DEE0D73AB5326"
+			linked_quest: "392A7909301184E2"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			id: "3B2764D1C62869ED"
+			linked_quest: "45849083414E98A3"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			id: "1B4674F9CFA092EB"
+			linked_quest: "3391DEB52E24862E"
+			x: -2.0d
+			y: 6.0d
 		}
 	]
 }

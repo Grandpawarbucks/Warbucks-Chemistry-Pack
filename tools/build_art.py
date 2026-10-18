@@ -153,7 +153,8 @@ def logo():
 
 TIER_COLORS = {"welcome": GOLD, "start": (120, 200, 120), "t0": (205, 127, 50), "t1": (150, 160, 170),
                "t2": (240, 120, 60), "t3": (90, 170, 255), "t4": (190, 230, 90), "t5": (60, 60, 60),
-               "t6": (170, 120, 255), "t7": (255, 90, 160)}
+               "t6": (170, 120, 255), "t7": (255, 90, 160), "seed": GOLD, "creation": (255, 90, 160),
+               "hunting": (200, 60, 60), "market": GOLD, "completionist": (170, 120, 255)}
 
 
 def banner(key, title, tag, color, z=0):
@@ -203,6 +204,18 @@ def token_texture():
     return img
 
 
+def greater_token_texture():
+    """16x16 Greater Demigod Token (= 9 tokens): platinum coin, violet rim, gold centre star."""
+    img = Image.new("RGBA", (16, 16), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    d.ellipse([0, 0, 15, 15], fill=(96, 60, 170, 255))           # violet rim
+    d.ellipse([1, 1, 14, 14], fill=(200, 205, 225, 255))         # platinum face
+    d.ellipse([2, 2, 9, 7], fill=(240, 244, 255, 255))           # highlight
+    d.polygon([(7.5, 4), (9, 7), (12, 7.5), (9, 8.5), (7.5, 12), (6, 8.5), (3, 7.5), (6, 7)], fill=(242, 181, 68, 255))
+    d.point([(7, 7), (8, 8)], fill=(255, 240, 190, 255))
+    return img
+
+
 def main():
     from quest_data import CHAPTERS  # noqa: E402  (needs test/ids.tsv like the quest build)
     fm = ROOT / "pack/config/fancymenu/assets"
@@ -216,12 +229,18 @@ def main():
     tdir = ROOT / "pack/kubejs/assets/kubejs/textures/item"  # KubeJS' default texture path for kubejs:<item>
     tdir.mkdir(parents=True, exist_ok=True)
     token_texture().save(tdir / "demigod_token.png", optimize=True)
+    greater_token_texture().save(tdir / "greater_demigod_token.png", optimize=True)
     # Banner tiles: tier chapters show T0-T7; the rest show a real element that fits the chapter.
     tags = {"welcome": ("H", 1), "start": ("He", 2), "t0": ("T0", 0), "t1": ("T1", 1), "t2": ("T2", 2),
             "t3": ("T3", 3), "t4": ("T4", 4), "t5": ("T5", 5), "t6": ("T6", 6), "t7": ("T7", 7),
             "tools": ("Fe", 26), "factory": ("C", 6), "qol": ("Ar", 18), "storage": ("Si", 14),
             "magic": ("Au", 79), "worlds": ("O", 8), "farming": ("N", 7),
-            "periodic": ("Og", 118), "power": ("U", 92), "logic": ("Ge", 32), "create": ("Zn", 30)}
+            "periodic": ("Og", 118), "power": ("U", 92), "logic": ("Ge", 32), "create": ("Zn", 30),
+            "seed": ("Pu", 94), "creation": ("Cr", 24), "lab_notes": ("Cl", 17), "mekanism": ("Os", 76),
+            "ae2": ("Fl", 114), "building": ("Ca", 20), "ars": ("Ag", 47), "apotheosis": ("Ra", 88),
+            "relics": ("Ir", 77), "occultism": ("Hg", 80), "projecte": ("Pb", 82), "twilight": ("Tl", 81),
+            "space": ("Ti", 22), "explore": ("Mg", 12), "hunting": ("As", 33), "mystical": ("P", 15),
+            "market": ("Au", 79), "completionist": ("Lr", 103)}
     for c in CHAPTERS:
         title = c.title.split(". ", 1)[-1]
         sym, z = tags.get(c.key, ("Ws", 0))

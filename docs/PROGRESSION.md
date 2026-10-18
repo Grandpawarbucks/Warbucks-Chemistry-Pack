@@ -178,8 +178,20 @@ Previously left as-is: the Infusion Pylon (already needs Nether quartz and black
 - The Crafts & Additions Alternator and the New Age Generator Coil (rotation → FE) need an MI analog circuit (LV).
 - New Age reactor rods need an MI processing unit (EV).
 
+**Balance fixes from quest book v8** (`phase5_balance.js`):
+- Mekanism Chemical Injection Chamber (was Elite) and Dissolution Chamber, Washer and Crystallizer (were Ultimate) take
+  Advanced control circuits (MV), so the 4x/5x ore chain sits at MV behind HCl and H₂SO₄ as designed.
+- Reliquary Alkahestry crafting for iron, gold, copper, tin, silver, steel, diamond, emerald, lapis and Nether Star is
+  removed (no metal duplication, matching ProjectE lite).
+
+**End goal and tokens (quest book v8):** the Seed of a New World is the finale (its own chapter), followed by an
+optional Creation chapter. Demigod Tokens (and Greater Tokens = 9) come from quests and buy convenience in three
+price bands; they never buy machines, circuits or tier skips.
+
 ## 8. Open items
 
 1. Verify in-game (JEI) that the Potion of Flying brewing recipe exists and that the Infusion Pylon accepts it.
 2. How to gate portals to the chemistry tiers (KubeJS catalyst items, or quest-only).
+6. Review: AdvancedAE Flight Card (late, needs quantum alloy) and the Ars Ritual of Flight (area-limited) aren't
+   chemistry-gated; More Machine's UU-Matter replicator is ungated (late game). Decide whether to gate them.
 5. Alchemistry coverage: write KubeJS dissolver/combiner rules for modded blocks (BOP woods and stones, MI materials, dimension blocks). List anything left uncovered.

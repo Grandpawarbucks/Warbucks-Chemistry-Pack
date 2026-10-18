@@ -118,7 +118,7 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&6Everything you ever owned, known at once. You remember having a mind like that.&r",
         "&eWhat:&r Applied Energistics 2 stores items as data and crafts on demand.",
         "&eHow:&r the ME Controller needs a digital circuit, an engineering processor, fluix and smooth sky stone.",
-        "&eTip:&r Tom's Simple Storage was your early network. AE2 takes over from here (see Storage and Logistics)."]),
+        "&eTip:&r Tom's Simple Storage was your early network. AE2 takes over from here (see the Applied Energistics page in Engineering)."]),
     Q("t5_cells", 22, 0, [item("ae2:item_storage_cell_1k", 2), item("ae2:fluid_storage_cell_1k")], "First Storage Cells", deps=["t5_ae2"], xp=150,
       subtitle="Where the archive keeps its memories", desc=[
         "&eWhat:&r storage cells go into an ME Drive. Fluid cells hold your acids and fuels as data too.",
@@ -126,7 +126,7 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eTip:&r a few fluid cells beat a wall of tanks for small stocks of rare chemicals."]),
     Q("t5_twilight", 16, 3, [dim("twilightforest:twilight_forest")], "The Twilight Forest", deps=["t5_hv"], xp=300,
       subtitle="A realm of permanent dusk", desc=[
-        "&eWhat:&r a dimension of bosses, strange woods and unique metals (see Other Worlds).",
+        "&eWhat:&r a dimension of bosses, strange woods and unique metals (see the Twilight Forest page in Exploration).",
         "&eHow:&r dig a 2x2 pool of water ringed with flowers, stand in it, and throw in a diamond.",
         "&eTip:&r set a waystone near the portal before you explore."]),
     # ---------------------------------------------------------------- synthetic rubber

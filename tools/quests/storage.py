@@ -69,53 +69,55 @@ CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:ba
         "&eWhat:&r Laser Nodes move items, fluids and energy between machines without cables.",
         "&eHow:&r place nodes on machines, link them with the Laser Wrench, and add cards to set what moves (check JEI).",
         "&eTip:&r one node can serve all six faces of a block, great for compact chemical setups."]),
+    Q("s_entangled", 6, 7, [tick()], "Entangled", deps=["gs_iron", "s_barrel"], xp=40,
+      subtitle="One inventory, two places", desc=[
+        "&eWhat:&r an Entangled Block is a window into another inventory: bind it to a chest or machine, and anything put in the Entangled Block goes into the bound block, even across dimensions.",
+        "&eHow:&r ender pearls, obsidian and a wooden chest (check JEI). Right-click the target with the Entangled Binder (pearls, obsidian and a diamond), then right-click the Entangled Block. Click the checkmark when one is working.",
+        "&eTip:&r put one next to a remote ore processor and pipe the output straight home. Both chunks must be loaded."]),
+    Q("s_ss_minecart", 8, 7, [item("sophisticatedstorageinmotion:storage_minecart")], "Storage in Motion", deps=["s_ss_tier"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: Sophisticated chests on rails and water", desc=[
+        "&eWhat:&r Sophisticated Storage in Motion puts upgradeable chests and barrels on minecarts, boats and rafts, upgrades and all.",
+        "&eHow:&r combine a minecart with a Sophisticated chest or barrel (check JEI). Boats and rafts work the same way.",
+        "&eTip:&r a hopper upgrade on a storage minecart makes a simple ore train between your mine and base."]),
 
-    # --- Applied Energistics 2 (y=9.5) ---------------------------------------------------------
-    Q("s_ae_drive", 0, 9.5, [item("ae2:drive"), item("ae2:terminal")], "AE2 Storage", deps=["t5_ae2"], xp=150,
-      subtitle="Drives, terminals and the god's archive", desc=[
-        "&6You remember a mind that held every name of every thing. The archive is waking.&r",
-        "&eWhat:&r ME Drives hold storage cells; terminals let you see and search everything.",
-        "&eHow:&r connect the drive and a terminal to your ME Controller with cables (check JEI).",
-        "&eTip:&r keep power stable: an Energy Cell buffers the network."]),
-    Q("s_ae_cell", 2, 9.5, [item("ae2:cell_component_1k", 2), item("ae2:item_storage_cell_1k")], "Storage Cells", deps=["s_ae_drive"], xp=75,
-      subtitle="Bytes for your items", desc=[
-        "&eWhat:&r cells are where the network actually stores things. Bigger components (4k, 16k, 64k, 256k) hold more.",
-        "&eChemistry:&r certus and fluix are fictional, but the logic processors behind them echo real chips: doped silicon (Si).",
-        "&eHow:&r craft components from processors and certus quartz, then put one in a cell housing (check JEI)."]),
-    Q("s_ae_craft", 4, 9.5, [item("ae2:crafting_terminal")], "Autocrafting", deps=["s_ae_cell"], xp=150,
-      subtitle="Whole chemical chains in one click", desc=[
-        "&eWhat:&r pattern providers plus molecular assemblers turn whole chemical chains into one click.",
-        "&eHow:&r a Crafting Terminal, some crafting storage, and patterns encoded in a Pattern Encoding Terminal (check JEI).",
-        "&eTip:&r processing patterns can drive MI machines too: send the inputs, wait for the outputs."]),
-    Q("s_exae", 6, 9.5, [item("extendedae:ex_pattern_provider"), item("extendedae:ex_drive")], "ExtendedAE", deps=["s_ae_craft"], xp=150,
-      subtitle="Bigger providers and drives", desc=[
-        "&eWhat:&r ExtendedAE adds larger versions of AE2 blocks: the Extended Pattern Provider holds many more patterns, the Extended Drive many more cells.",
-        "&eHow:&r made in ExtendedAE's Crystal Assembler from the normal blocks (check JEI).",
-        "&eTip:&r one extended provider can feed a whole row of chemical reactors."]),
-    Q("s_mega", 2, 11.5, [item("megacells:sky_steel_ingot", 4), item("megacells:item_storage_cell_1m")], "MEGA Cells", deps=["s_ae_cell"], xp=200,
-      subtitle="Sky steel and million-byte cells", desc=[
-        "&eWhat:&r MEGA Cells adds 1M to 256M cells, bulk cells and bigger crafting storage.",
-        "&eChemistry:&r sky steel is made by dropping charged certus, iron and sky stone into lava: heat drives the alloying, like a tiny smelter.",
-        "&eHow:&r throw the ingredients into a lava pool for sky steel, then build the 1M component (check JEI)."]),
-    Q("s_appmek", 4, 11.5, [item("appmek:chemical_storage_cell_1k")], "Gas in the Network", deps=["s_ae_cell", "t4_mv"], xp=150,
-      subtitle="Store Mekanism chemicals in AE2", desc=[
-        "&eWhat:&r Applied Mekanistics lets AE2 store and move Mekanism chemicals: H₂, O₂, Cl₂, HCl, SO₂ and the rest.",
-        "&eChemistry:&r a 1k cell holds a lot of gas because the network stores amounts, not tanks. Real gases need pressure vessels.",
-        "&eHow:&r a chemical cell housing (osmium, quartz glass, redstone) + a 1k component. Import buses on chemical tanks fill it.",
-        "&eTip:&r processing patterns can pull stored SO₂ and O₂ straight from the cell to feed your sulfuric acid line."]),
-    Q("s_appflux", 6, 11.5, [item("appflux:charged_redstone", 4), item("appflux:fe_1k_cell")], "Energy in a Cell", deps=["s_ae_cell"], xp=150,
-      subtitle="Applied Flux stores FE in AE2", desc=[
-        "&eWhat:&r Applied Flux stores FE in AE2 cells and moves it through the network with Flux Accessors.",
-        "&eHow:&r redstone crystal (redstone block, fluix and glowstone dropped in water) → charge it in the AE2 Charger → FE cell core and housing (check JEI).",
-        "&eTip:&r the housing needs insulating resin, which needs silicon: a little chemistry even here."]),
-    Q("s_ae_wireless", 1, 8, [item("ae2:wireless_crafting_terminal")], "Wireless Access", deps=["s_ae_drive"], xp=75,
-      optional=True, tokens=1, subtitle="Optional: your network in your pocket", desc=[
-        "&eWhat:&r reach your ME network from anywhere in range of a Wireless Access Point.",
-        "&eHow:&r check JEI. AE2 Wireless Terminals adds a universal terminal; the Infinity Booster Card removes the range limit.",
-        "&eTip:&r put the access point near the middle of your base for the best coverage."]),
-    Q("s_requester", 5, 8, [item("merequester:requester")], "ME Requester", deps=["s_ae_craft"], xp=75,
-      optional=True, tokens=1, subtitle="Optional: keep stock topped up", desc=[
-        "&eWhat:&r the ME Requester keeps a set amount of an item in stock by ordering crafts automatically.",
-        "&eHow:&r check JEI. Set \"keep 64 HDPE\" and it never runs out.",
-        "&eTip:&r it needs autocrafting patterns for whatever it keeps in stock."]),
-])
+    # --- More Sophisticated Storage (y=-1.5) ---------------------------------------------------
+    Q("s_ss_stack", 3, -1.5, [item("sophisticatedstorage:stack_upgrade_tier_1")], "Stack Upgrades", deps=["s_ss_tier"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: more items in every slot", desc=[
+        "&eWhat:&r stack upgrades multiply how many items fit in each slot of a chest or barrel. Higher tiers multiply more.",
+        "&eHow:&r an upgrade base and storage blocks (check JEI). Insert it in an upgrade slot.",
+        "&eTip:&r a barrel with a few stack upgrades holds a whole mine's worth of cobblestone or raw ore."]),
+
+    # --- More Functional Storage (y=2) ---------------------------------------------------------
+    Q("s_fs_upgrade", 6, 2, [item("functionalstorage:diamond_upgrade")], "Drawer Upgrades", deps=["s_fs_controller"], xp=40,
+      subtitle="Copper, gold, diamond, netherite", desc=[
+        "&eWhat:&r storage upgrades multiply a drawer's capacity. Each tier (copper, gold, diamond, netherite) holds more.",
+        "&eHow:&r craft the upgrades in order (check JEI) and right-click the drawer to open its upgrade slots.",
+        "&eTip:&r the Iron Downgrade does the reverse, limiting a drawer to a single stack per slot."]),
+    Q("s_fs_puller", 8, 2, [item("functionalstorage:puller_upgrade"), item("functionalstorage:pusher_upgrade")], "Pullers and Pushers", deps=["s_fs_upgrade"], xp=40,
+      subtitle="Drawers that move items themselves", desc=[
+        "&eWhat:&r utility upgrades: the Puller pulls items from the block it faces, the Pusher pushes items into it. No pipes needed.",
+        "&eHow:&r check JEI. Put one in a drawer's utility slot and set its direction in the drawer's menu.",
+        "&eTip:&r a drawer with a Puller behind a macerator collects all the dust without a single pipe."]),
+    Q("s_fs_fluid", 10, 2, [item("functionalstorage:fluid_1")], "Fluid Drawers", deps=["s_fs_upgrade"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: drawers for liquids", desc=[
+        "&eWhat:&r fluid drawers store a fluid instead of items, and show it on the front.",
+        "&eChemistry:&r handy for small stocks of acids: one drawer of H₂SO₄, one of HCl, one of HNO₃. A real lab keeps acids in separate, labelled containers too.",
+        "&eHow:&r check JEI. Pipes and MI fluid pipes can fill and drain them; the storage upgrades work on them too."]),
+    Q("s_fs_ender", 7, 3.5, [item("functionalstorage:ender_drawer")], "Ender Drawer", deps=["s_fs_upgrade"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: one drawer, many places", desc=[
+        "&eWhat:&r every Ender Drawer with the same frequency shares one inventory, wherever it is.",
+        "&eHow:&r check JEI. Link drawers with the Linking Tool to give them the same frequency.",
+        "&eTip:&r put one at your mine and one at your smelters to send ore home."]),
+
+    # --- More Tom's Simple Storage (y=4) -------------------------------------------------------
+    Q("s_toms_cable", 2, 4, [item("toms_storage:inventory_cable", 16), item("toms_storage:inventory_cable_connector")], "Inventory Cables", deps=["s_toms"], xp=30,
+      subtitle="Reach chests across the room", desc=[
+        "&eWhat:&r inventory cables carry the Inventory Connector's reach to chests that aren't touching it.",
+        "&eHow:&r run cables from the connector and put a Cable Connector on each chest or drawer (check JEI).",
+        "&eTip:&r framed cables can wear any block's texture, so they hide in walls."]),
+    Q("s_toms_wireless", 4, 4, [item("toms_storage:adv_wireless_terminal")], "Wireless Terminal", deps=["s_toms_craft"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: your early network, anywhere", desc=[
+        "&eWhat:&r the Advanced Wireless Terminal opens your Tom's network from a long way off.",
+        "&eHow:&r check JEI, then right-click it on a Storage Terminal to bind it.",
+        "&eTip:&r it's the cheapest remote storage access until AE2."]),
+], links=[("gs_backpack", -2, 0), ("t3_hull", -2, 7), ("t5_ae2", -2, 4)])

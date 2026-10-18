@@ -1,0 +1,769 @@
+{
+	id: "5BBA2E199EC82256"
+	group: "517E2EE5EE2E76FF"
+	order_index: 1
+	filename: "apotheosis"
+	icon: {
+		id: "apotheosis:gem_dust"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "0823E0B0B994DD08"
+			x: 0.0d
+			y: 3.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "6F259A716ED39EF5"
+					type: "item"
+					item: {
+						id: "apotheosis:gem_dust"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "3B51A7647EB7F7BB"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "22CA953D81053D52"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6E58E2BD59CFAE57"
+			x: 2.0d
+			y: 3.0d
+			dependencies: [
+				"0823E0B0B994DD08"
+			]
+			tasks: [
+				{
+					id: "5723FE4E1604CFB9"
+					type: "item"
+					item: {
+						id: "apotheosis:simple_reforging_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5ED00F9FF84489E9"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5007E78FB8D20B8C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "57C95E565D3B2119"
+			x: 4.0d
+			y: 3.0d
+			dependencies: [
+				"6E58E2BD59CFAE57"
+			]
+			tasks: [
+				{
+					id: "76335FDC70FCA02E"
+					type: "item"
+					item: {
+						id: "apotheosis:salvaging_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "38D6DF45FAF9250E"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "138951787EFCA74A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "629C34B0AC068654"
+			x: 6.0d
+			y: 3.0d
+			dependencies: [
+				"57C95E565D3B2119"
+			]
+			tasks: [
+				{
+					id: "295054EC4D789B74"
+					type: "item"
+					item: {
+						id: "apotheosis:gem_cutting_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1457A6B193A228C5"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2A53DFBD13CAFF93"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "153E1F2212F6740C"
+			x: 8.0d
+			y: 3.0d
+			size: 1.5d
+			dependencies: [
+				"629C34B0AC068654"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "1492AC2762FE527F"
+					type: "item"
+					item: {
+						id: "apotheosis:reforging_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "232C3B687F41A752"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4B36BA398156406A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "563D61599C12CF41"
+			x: 1.0d
+			y: 4.5d
+			optional: true
+			dependencies: [
+				"0823E0B0B994DD08"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "38629E35C178DF6D"
+					type: "item"
+					item: {
+						id: "apothic_enchanting:hellshelf"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "64D212B248B26698"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2699C1E191E6E54E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "12EF5F7791329CED"
+			x: 7.0d
+			y: 4.5d
+			optional: true
+			dependencies: [
+				"629C34B0AC068654"
+			]
+			tasks: [
+				{
+					id: "5C118D47742C377E"
+					type: "item"
+					item: {
+						id: "apotheosis:sigil_of_socketing"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A98E11AF309028A"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "52BD20BE1ADA556F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0C78BE8ECFF1CD59"
+			x: 9.0d
+			y: 4.5d
+			optional: true
+			dependencies: [
+				"153E1F2212F6740C"
+			]
+			tasks: [
+				{
+					id: "45E85721BEF1F61B"
+					type: "item"
+					item: {
+						id: "apotheosis:augmenting_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "64C13A1BEC979618"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "43E42CDE07B68750"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "124C0733D11EE060"
+			x: 0.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "1A3C025D3F5D81C2"
+					type: "item"
+					item: {
+						id: "minecraft:spawner"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "297609A1A072F60C"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "622180BFBC2051E6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4175DD97D428CAF7"
+			x: 2.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"124C0733D11EE060"
+				"0823E0B0B994DD08"
+			]
+			tasks: [
+				{
+					id: "7CE5627CC6EC29C4"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(apotheosis:spawner_rune)item(apotheosis:burning_spawner_rune)item(apotheosis:redstone_control_spawner_rune)item(apotheosis:ignore_players_spawner_rune)item(apotheosis:silent_spawner_rune)item(apotheosis:youthful_spawner_rune))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "745F4003E365AF9C"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "10749BAB0CA7A2AE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "29B876259D4B5686"
+			x: 0.0d
+			y: 1.5d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "75F9D798E02AA60F"
+					type: "kill"
+					entity: "minecraft:zombie"
+					value: 50L
+				}
+			]
+			rewards: [
+				{
+					id: "5941EA13CE417B10"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1D70BB34629A1CFE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6C30704D9BAD01FC"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "1F426EE32EDF30C4"
+			x: 2.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"0823E0B0B994DD08"
+				"7271A237054B8116"
+			]
+			tasks: [
+				{
+					id: "5028B25926FF6BAA"
+					type: "item"
+					item: {
+						id: "apotheosis:potion_charm"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C55F8F42C50A28D"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "06054B2CD3DAB6A7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "645E6EA4F2C67FAB"
+			x: 4.0d
+			y: 1.5d
+			dependencies: [
+				"57C95E565D3B2119"
+			]
+			tasks: [
+				{
+					id: "4A5E924CD151C6C6"
+					type: "item"
+					item: {
+						id: "apotheosis:luminous_crystal_shard"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "3792B7420A4CD933"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "15C9DFF9DFE87176"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "30908A094F9B094F"
+			x: 6.0d
+			y: 1.5d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "54C333892200AAEF"
+					type: "item"
+					item: {
+						id: "gateways:gate_pearl"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "78A08C520D7DF304"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "293B84EA1DB29D8D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "29DC8827585EFBB8"
+			x: 8.0d
+			y: 1.5d
+			dependencies: [
+				"30908A094F9B094F"
+			]
+			tasks: [
+				{
+					id: "471B94E7B10DBFB4"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "1C1BB7EF92E960E9"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "795F2518225DCC7B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "5719654EEB7C50B0"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "0E850BA9288D13B8"
+			x: 7.0d
+			y: 6.0d
+			optional: true
+			dependencies: [
+				"12EF5F7791329CED"
+			]
+			tasks: [
+				{
+					id: "5477C4CDD5B64A58"
+					type: "item"
+					item: {
+						id: "apotheosis:sigil_of_withdrawal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "47EB68180B82181F"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2E5C71E006C49E2F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "074EDD3891190AD6"
+			x: 11.0d
+			y: 4.5d
+			optional: true
+			dependencies: [
+				"153E1F2212F6740C"
+			]
+			tasks: [
+				{
+					id: "14B63C359D5181F6"
+					type: "item"
+					item: {
+						id: "apotheosis:sigil_of_enhancement"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "63059E8E9BCE5230"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "4DB6066F5419E63A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0DA470EE8E63A89F"
+			x: 2.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"563D61599C12CF41"
+			]
+			tasks: [
+				{
+					id: "25828DC03D7CD7A3"
+					type: "item"
+					item: {
+						id: "apothic_enchanting:infused_hellshelf"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0572929E26451CA5"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4776929E11B8D2F6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "67476A5068C80199"
+			x: 4.0d
+			y: 7.0d
+			dependencies: [
+				"0DA470EE8E63A89F"
+			]
+			tasks: [
+				{
+					id: "4CE86BFDA6D2B50C"
+					type: "item"
+					item: {
+						id: "apothic_enchanting:library"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C629061F7DF5427"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "623442A03DF5D494"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2103D96D8A9B8008"
+			x: 6.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"0DA470EE8E63A89F"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "6C7FB135A1FD2C70"
+					type: "item"
+					item: {
+						id: "apothic_enchanting:endshelf"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4887756DB097E430"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0A0A64ED3B6674C0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "742D6F656F7BFD9B"
+			x: 2.0d
+			y: 8.5d
+			optional: true
+			dependencies: [
+				"563D61599C12CF41"
+			]
+			tasks: [
+				{
+					id: "5C1BC2A05614C343"
+					type: "item"
+					item: {
+						id: "apothic_enchanting:scrap_tome"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7BF07E6F16FAE1F8"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0595C34FBCE3CA1D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "54674D82B9495273"
+			x: 2.5d
+			y: -2.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/apotheosis.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "2A6AD4C3296F1344"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: -2.0d
+			y: 3.0d
+		}
+	]
+}

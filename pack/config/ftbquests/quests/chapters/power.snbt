@@ -1,7 +1,7 @@
 {
 	id: "1C6E26542D7508E5"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 4
+	group: "4801EE691EF63116"
+	order_index: 0
 	filename: "power"
 	icon: {
 		id: "mekanismgenerators:gas_burning_generator"
@@ -1146,8 +1146,407 @@
 				}
 			]
 		}
+		{
+			id: "42A8C9D5A8EBF106"
+			x: 4.0d
+			y: -4.0d
+			optional: true
+			dependencies: [
+				"75F490C611174982"
+			]
+			tasks: [
+				{
+					id: "0E87997DD891E08A"
+					type: "item"
+					item: {
+						id: "generatorgalore:iron_to_gold_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "749C18F5DD9C4683"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "08CDF636A1372281"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "491B66EA7719A9CD"
+			x: 6.0d
+			y: -4.0d
+			optional: true
+			dependencies: [
+				"75F490C611174982"
+				"1A42564839595307"
+			]
+			tasks: [
+				{
+					id: "506E6D2A10D9C266"
+					type: "item"
+					item: {
+						id: "generatorgalore:iron_generator_8x"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3FB7772338CD0032"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "65934DD594FCE6AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0316471653C2202B"
+			x: 8.0d
+			y: -4.0d
+			optional: true
+			invisible: true
+			dependencies: [
+				"3F4B647DA140B71A"
+			]
+			tasks: [
+				{
+					id: "759701A055064203"
+					type: "item"
+					item: {
+						id: "generatorgalore:netherstar_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1F47ED38D0BFD71C"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "09553341ED64CCD0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "62CD2ECF4627351C"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "394211D5B3DB95C1"
+			x: 10.0d
+			y: 4.0d
+			dependencies: [
+				"354774525777C4A9"
+				"324D521459A0712A"
+			]
+			tasks: [
+				{
+					id: "3EB7112B0BD5D3E3"
+					type: "item"
+					item: {
+						id: "powah:crystal_blazing"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "59843998D2D13F32"
+					type: "item"
+					item: {
+						id: "powah:energy_cell_blazing"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "30A1B74511CB7748"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "2C18B2E9FF76C852"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5540CD98C595C363"
+			x: 12.0d
+			y: 4.0d
+			dependencies: [
+				"394211D5B3DB95C1"
+			]
+			tasks: [
+				{
+					id: "4285903EE31EB155"
+					type: "item"
+					item: {
+						id: "powah:crystal_niotic"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "3A7E3F683071E2EA"
+					type: "item"
+					item: {
+						id: "powah:energy_cell_niotic"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "168D605F074C1B35"
+					type: "xp"
+					xp: 125
+				}
+				{
+					id: "4792FD1FEACFF96A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7972888C428AA464"
+			x: 14.0d
+			y: 4.0d
+			dependencies: [
+				"5540CD98C595C363"
+			]
+			tasks: [
+				{
+					id: "278704FDFC55D70B"
+					type: "item"
+					item: {
+						id: "powah:crystal_spirited"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "3CBE056D9FB3DA70"
+					type: "item"
+					item: {
+						id: "powah:energy_cell_spirited"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "056779670D7DA01D"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0A084A829B9C4DAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "34546079D90320A3"
+			x: 15.0d
+			y: 5.5d
+			optional: true
+			dependencies: [
+				"7972888C428AA464"
+			]
+			tasks: [
+				{
+					id: "1325A26EF3F9C1DB"
+					type: "item"
+					item: {
+						id: "powah:crystal_nitro"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "1AFAB33EF8B735C7"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "69523D8F0C3F2B28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "30316683DE199107"
+			x: 11.0d
+			y: 5.5d
+			optional: true
+			dependencies: [
+				"0D7A0B7F7ED74F1F"
+			]
+			tasks: [
+				{
+					id: "3DD29300E5BEDDC1"
+					type: "item"
+					item: {
+						id: "powah:ender_cell_basic"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1073A4DBE9994F12"
+					type: "item"
+					item: {
+						id: "powah:player_transmitter_basic"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "553E44BD58E3579F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "4BA80674D8D60387"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "17B72E750B2DA75E"
+			x: 13.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"392C4F4FA0F31627"
+			]
+			tasks: [
+				{
+					id: "1FA923198935A39C"
+					type: "item"
+					item: {
+						id: "fluxnetworks:herculean_flux_storage"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5798BA8AA231A732"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "78F6C12B3FC1DB89"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "59B570AD2FBBC34F"
+			x: 15.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"392C4F4FA0F31627"
+			]
+			tasks: [
+				{
+					id: "19313BFC22C7E619"
+					type: "item"
+					item: {
+						id: "fluxnetworks:flux_controller"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2B1B69B18E79062A"
+					type: "item"
+					item: {
+						id: "fluxnetworks:flux_configurator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "327F5D5F6337AAB1"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "11023CE92E3CD5A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "39203E4D1F5F75C4"
@@ -1157,6 +1556,32 @@
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/power.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "59C25929A0E6FF20"
+			linked_quest: "54E6526368208022"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			id: "06C4465DD4F025B8"
+			linked_quest: "3720EEA89BCDC92F"
+			x: 14.0d
+			y: -2.0d
+		}
+		{
+			id: "30C477141DB9E589"
+			linked_quest: "4F41C5095B66BC1F"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			id: "7C717D203FD49A27"
+			linked_quest: "79D73BB7E003DB38"
+			x: 8.0d
+			y: -6.0d
 		}
 	]
 }

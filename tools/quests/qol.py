@@ -1,5 +1,5 @@
 """Quest chapter: qol. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, anyof, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         ["Small things that make a big difference."], SIDE, [
@@ -96,25 +96,112 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         "&eHow:&r try a scroll-wheel drag over stacks, the sort button, and the trash slot by your hotbar. Click the checkmark when done.",
         "&eTip:&r Polymorph shows a button when two recipes share a grid; click it to pick the one you want."]),
 
-    # --- Building (y=9) ------------------------------------------------------------------------
-    Q("q_effortless", 0, 9, [item("effortlessbuilding:randomizer_tool")], "Effortless Building", deps=["gs_table"], xp=20,
-      subtitle="Mirror, array and line building", desc=[
-        "&eWhat:&r Effortless Building adds mirror, array and line modes for big builds.",
-        "&eHow:&r open its menu (check Controls) and pick a mode. The randomizer places a random mix of the blocks you load into it.",
-        "&eTip:&r the randomizer with stone, andesite and cobblestone makes natural-looking walls."]),
-    Q("q_gadget", 2, 9, [item("buildinggadgets2:gadget_building")], "Building Gadgets", deps=["t3_hull"], xp=40,
-      subtitle="Place whole surfaces with FE", desc=[
-        "&eWhat:&r FE-powered gadgets that place, swap, copy and remove blocks in bulk.",
-        "&eHow:&r iron, redstone, lapis and a diamond (check JEI). Charge it in an energy cube.",
-        "&eTip:&r link the gadget to a chest or backpack so it pulls blocks from storage."]),
-    Q("q_gadget_copy", 1, 10.5, [item("buildinggadgets2:gadget_copy_paste"), item("buildinggadgets2:template_manager")], "Copy and Paste", deps=["q_gadget"], xp=60,
-      optional=True, tokens=1, subtitle="Optional: copy a whole build", desc=[
-        "&eWhat:&r copy an area and paste it elsewhere; the Template Manager saves copies to share.",
-        "&eHow:&r check JEI. Great for repeating a chemical reactor cell or a row of machines.",
-        "&eTip:&r templates can be shared with friends on the server."]),
-    Q("q_gadget_exchange", 3, 10.5, [item("buildinggadgets2:gadget_exchanging")], "Exchanging Gadget", deps=["q_gadget"], xp=40,
-      optional=True, tokens=1, subtitle="Optional: swap blocks in place", desc=[
-        "&eWhat:&r replaces blocks in an area with another block, keeping the shape.",
-        "&eHow:&r check JEI. Perfect for turning a cobble shell into something pretty.",
-        "&eTip:&r it uses the blocks in your inventory, so carry enough."]),
-])
+    # --- More basics (y=-1.5) ------------------------------------------------------------------
+    Q("ql_feral", 3, -1.5, [item("torchmaster:feral_flare_lantern")], "Feral Flare Lantern", deps=["q_torch", "t2_nether"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: light a whole cave at once", desc=[
+        "&eWhat:&r the lantern places invisible light sources in the dark spots around it, so a cave or a big hall lights up without a single torch.",
+        "&eHow:&r gold ingots, glass and glowstone dust (check JEI). Place it in the middle of the room.",
+        "&eTip:&r great for a clean-looking factory floor. It still lets mobs spawn in spots it can't reach."]),
+    Q("ql_tomb", 6, -3, [tick()], "Grave Tricks", deps=["q_grave"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: more from Corail Tombstone", desc=[
+        "&eWhat:&r Corail Tombstone does more than store your items: it adds scrolls, tablets and the Ankh of Prayer, plus a book that makes items soulbound.",
+        "&eHow:&r search 'tombstone' in JEI to browse them. Click the checkmark when you've had a look.",
+        "&eTip:&r by default only you can open your grave, so a death on a server doesn't mean losing your gear to someone else."]),
+    Q("ql_lootr", 8, -1.5, [tick()], "Loot for Everyone", deps=["gs_iron"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: every player gets their own chest loot", desc=[
+        "&eWhat:&r with Lootr, structure chests (dungeons, temples, villages, mineshafts) hold separate loot for each player.",
+        "&eHow:&r open any generated chest. You get your own roll; your friends still get theirs. Click the checkmark when you've seen one.",
+        "&eTip:&r on a server, nobody has to race to a dungeon first."]),
+
+    # --- More backpack upgrades (y=2 / 3.5) ----------------------------------------------------
+    Q("ql_bp_stack", 4, 2, [item("sophisticatedbackpacks:stack_upgrade_tier_1")], "Stack Upgrade", deps=["q_bp_iron"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: more items per slot", desc=[
+        "&eWhat:&r a stack upgrade multiplies how many items each backpack slot holds. Higher tiers multiply more.",
+        "&eHow:&r check JEI; each tier is built from the one before it.",
+        "&eTip:&r stack upgrades make a backpack the best place to carry dust and ingots between machines."]),
+    Q("ql_bp_tools", 6, 2, [item("sophisticatedbackpacks:tool_swapper_upgrade")], "Tool Swapper", deps=["ql_bp_stack"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: the right tool, automatically", desc=[
+        "&eWhat:&r swaps the tool in your hand for the best one in your backpack when you start mining a block or hitting a mob.",
+        "&eHow:&r check JEI, then put it in an upgrade slot and fill the backpack with tools.",
+        "&eTip:&r pairs well with a paxel; it switches to shears or a sword only when needed."]),
+    Q("ql_bp_refill", 5, 3.5, [item("sophisticatedbackpacks:refill_upgrade")], "Refill Upgrade", deps=["ql_bp_stack"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: never run out of torches", desc=[
+        "&eWhat:&r keeps chosen hotbar items topped up from the backpack: torches, blocks, food.",
+        "&eHow:&r check JEI. Set the items to refill in the upgrade's tab.",
+        "&eTip:&r refill building blocks while bridging and you'll never stop to open your inventory."]),
+    Q("ql_stick_anvil", 10, 3.5, [item("crafting_on_a_stick:anvil"), item("crafting_on_a_stick:grindstone")], "Pocket Anvil", deps=["q_stick_more"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: repair and disenchant anywhere", desc=[
+        "&eWhat:&r pocket versions of the anvil and grindstone, opened with right-click.",
+        "&eHow:&r each one is its block plus a stick (check JEI).",
+        "&eTip:&r the pocket anvil wears down like a placed one, so carry a spare for long trips."]),
+
+    # --- Controls and commands (x=10..14) ------------------------------------------------------
+    Q("ql_ultimine", 10, 0, [tick()], "FTB Ultimine", deps=["gs_stone"], xp=15,
+      subtitle="Break a whole vein in one swing", desc=[
+        "&eWhat:&r Ultimine breaks every connected matching block at once: a full ore vein, a tree, a strip of stone.",
+        "&eHow:&r hold the Ultimine key (default &e`&r, the key left of 1) and break a block. Arrow keys up and down change the shape. Click the checkmark when you've tried it.",
+        "&eTip:&r it can cost extra hunger, so eat first. Shapes include tunnels and flat planes for clearing space."]),
+    Q("ql_team", 12, 0, [tick()], "Form a Team", deps=["gs_table"], xp=15,
+      subtitle="Share quests, claims and loot", desc=[
+        "&eWhat:&r FTB Teams groups players into a party. Teammates share quest progress and claimed chunks.",
+        "&eHow:&r open the Teams screen from the button on your inventory screen (or use /ftbteams) and create a party, then invite friends. Click the checkmark when done.",
+        "&eTip:&r playing alone? A solo party still lets you set chunk permissions for visitors."]),
+    Q("ql_home", 14, 0, [tick()], "Homes and /back", deps=["ql_team"], xp=15,
+      subtitle="FTB Essentials teleport commands", desc=[
+        "&eWhat:&r FTB Essentials adds /sethome and /home (one home by default), /back to return to where you died or last teleported, /spawn, and /tpa to ask to teleport to a friend.",
+        "&eHow:&r stand at your base and type /sethome, then try /home from somewhere else. Click the checkmark when done.",
+        "&eTip:&r each command has a short cooldown. /back after a death walks you straight to your grave."]),
+    Q("ql_zoom", 10, 2, [tick()], "Just Zoom", deps=["gs_table"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: a spyglass without the spyglass", desc=[
+        "&eWhat:&r Just Zoom lets you zoom in on the distance with a key, no item needed.",
+        "&eHow:&r find its key under Options → Controls, and hold it to zoom (its options are in the Mods menu). Click the checkmark when you've tried it.",
+        "&eTip:&r handy for spotting structures, meteorites and villages from a hilltop."]),
+    Q("ql_ping", 12, 2, [tick()], "Ping Wheel", deps=["ql_team"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: point things out to friends", desc=[
+        "&eWhat:&r Ping Wheel puts a marker on the spot you look at, visible to the other players nearby.",
+        "&eHow:&r find its keys under Options → Controls. Look at something and ping it. Click the checkmark when done.",
+        "&eTip:&r ping an ore deposit or a dangerous mob instead of typing coordinates."]),
+    Q("ql_chatheads", 14, 2, [tick()], "Chat Heads", deps=["ql_team"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: see who's talking", desc=[
+        "&eWhat:&r Chat Heads shows each player's face next to their messages in chat.",
+        "&eHow:&r nothing to set up; it works as soon as someone talks. Click the checkmark when you've seen it.",
+        "&eTip:&r its options are in the Mods menu if you want to change how heads are shown."]),
+    Q("ql_trade", 12, 4, [item("minecraft:emerald", 16)], "Trade Cycling", deps=["gs_iron"], xp=30,
+      optional=True, tokens=1, subtitle="Reroll a villager's offers", desc=[
+        "&eWhat:&r Trade Cycling adds a button to the villager trade screen that rerolls the offers of a villager nobody has traded with yet.",
+        "&eHow:&r give a villager a job block, open its trades and press the cycle button until the offer you want appears. Earn 16 emeralds by trading.",
+        "&eTip:&r once you trade, the offers lock. Cycle a librarian until it sells the enchanted book you need."]),
+    Q("ql_baron", 12, 5.5, [item("minecraft:emerald_block", 4)], "Merchant Prince", deps=["ql_trade"], xp=40,
+      secret=True, loot="secret", subtitle="Secret: a demigod with a market stall", desc=[
+        "&eWhat:&r four emerald blocks: 36 emeralds. The villagers have noticed you.",
+        "&eChemistry:&r emerald is beryl, Be₃Al₂Si₆O₁₈, coloured green by traces of chromium.",
+        "&eTip:&r every Warp Stone needs an emerald, so a good trading hall pays for your travel network."]),
+    Q("ql_belt", 14, 4, [item("toolbelt:belt")], "Tool Belt", deps=["gs_iron"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: tools on a quick wheel", desc=[
+        "&eWhat:&r the Tool Belt holds tools outside your hotbar and opens as a radial menu so you can swap fast.",
+        "&eHow:&r leather and string (check JEI). Keep it in your inventory; find its key under Options → Controls.",
+        "&eTip:&r put the wrench, the config card and your paxel on the belt."]),
+    Q("ql_pouch", 16, 4, [item("toolbelt:pouch", 2)], "Belt Pouches", deps=["ql_belt"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: more slots on the belt", desc=[
+        "&eWhat:&r each pouch adds a slot to your tool belt.",
+        "&eHow:&r craft pouches, then craft them together with the belt (check JEI).",
+        "&eTip:&r a full belt keeps your hotbar free for blocks and food."]),
+
+    # --- More getting around (y=7) -------------------------------------------------------------
+    Q("ql_waystones", 3, 7, [anyof(["waystones:waystone", "waystones:mossy_waystone", "waystones:sandy_waystone", "waystones:deepslate_waystone",
+                                    "waystones:blackstone_waystone", "waystones:end_stone_waystone"], 4)], "A Waystone Network", deps=["q_waystone"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: four more waystones", desc=[
+        "&eWhat:&r one waystone is a landmark; four make a network. Base, mine, Nether portal and a far-off biome.",
+        "&eHow:&r any four waystones of any style (check JEI for the variants), or bring back ones found in villages.",
+        "&eTip:&r name each one clearly ('Bauxite Mine -40') so the list stays readable."]),
+    Q("ql_warpstone", 5, 7, [item("waystones:warp_stone")], "Warp Stone", deps=["ql_waystones"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: warp from anywhere", desc=[
+        "&eWhat:&r a reusable item that opens the waystone menu wherever you stand. It recharges after each use.",
+        "&eHow:&r amethyst shards, ender pearls and an emerald (check JEI). It's also in the Demigod Token shop.",
+        "&eTip:&r with a Warp Stone, warp scrolls become backup only."]),
+    Q("ql_waypoints", 7, 7, [tick()], "Waypoints", deps=["q_map"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: never lose a deposit again", desc=[
+        "&eWhat:&r JourneyMap waypoints mark places on the minimap and in the world, with distance shown on screen.",
+        "&eHow:&r open the full map (&eJ&r) and right-click a spot to add a waypoint, or use JourneyMap's waypoint key (see Controls). Click the checkmark when you've made one.",
+        "&eTip:&r JourneyMap makes a death waypoint for you; share waypoints with teammates in chat."]),
+], links=[("gs_table", -3, 0), ("gs_iron", -3, 2), ("gs_backpack", -3, 3.5), ("gs_stone", 10, -1.5)])

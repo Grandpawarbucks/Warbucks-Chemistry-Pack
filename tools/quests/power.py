@@ -1,5 +1,5 @@
 """Quest chapter: power. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
 # Layout: y=-2 combustion, y=-4 nuclear, y=0 storage (Mekanism -> induction -> Flux),
 # y=2 MI steam and EU, y=4 Powah, y=6 renewables. Optional quests sit at the row ends / off-row.
@@ -150,4 +150,60 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eWhat:&r Mekanism's fusion reactor, the top of the power tree.",
         "&eChemistry:&r D + T → ⁴He + n + 17.6 MeV, millions of times more energy per kilogram than any chemical reaction.",
         "&eHow:&r a filled Hohlraum in the controller, then a burst from a Laser through a Laser Amplifier to ignite it. Layout: Just Enough Mekanism Multiblocks."]),
-])
+
+    # --- More Generators Galore (y=-4, x=4..8) -------------------------------------------------
+    Q("pw_gg_upgrade", 4, -4, [item("generatorgalore:iron_to_gold_upgrade")], "Upgrade in Place", deps=["pw_gold_gen"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: upgrade a generator without breaking it", desc=[
+        "&eWhat:&r Generators Galore upgrade kits turn a placed generator into the next tier, keeping its fuel and connections.",
+        "&eHow:&r gold ingots, an item frame and a redstone block for iron → gold (check JEI for the others). Right-click the placed generator.",
+        "&eTip:&r the tree branches: gold leads to diamond or to the food-burning Culinary Generator."]),
+    Q("pw_gg_8x", 6, -4, [item("generatorgalore:iron_generator_8x")], "Eight Times the Burn", deps=["pw_gold_gen", "w_ancient"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: compressed generators", desc=[
+        "&eWhat:&r 8x generators burn fuel eight times as fast and make eight times the FE in one block.",
+        "&eHow:&r eight generators of a tier around an echo shard (check JEI). Echo shards come from Ancient City chests.",
+        "&eTip:&r a 64x version exists too, for when space matters more than echo shards."]),
+    Q("pw_gg_star", 8, -4, [item("generatorgalore:netherstar_generator")], "Burning a Star", deps=["pw_gg_collection"], xp=100,
+      secret=True, loot="secret", subtitle="Secret: fuel fit for a god", desc=[
+        "&6You remember lighting stars. Burning one feels like a waste, and also like coming home.&r",
+        "&eWhat:&r the Nether Star Generator burns Nether Stars for an enormous amount of FE.",
+        "&eChemistry:&r real stars run on fusion: hydrogen nuclei fuse into helium (4 ¹H → ⁴He) and a little mass becomes a lot of energy, E = mc²."]),
+
+    # --- More Powah (y=4, x>=10) ---------------------------------------------------------------
+    Q("pw_blazing", 10, 4, [item("powah:crystal_blazing", 8), item("powah:energy_cell_blazing")], "Blazing Crystals", deps=["pw_powah", "t2_blaze"], xp=100,
+      subtitle="Powah's second tier: energized blaze", desc=[
+        "&eWhat:&r every Powah tier is built from a crystal made in the Energizing Orb. Blazing crystals unlock the blazing tier of cells, generators and cables.",
+        "&eHow:&r energize a blaze rod (or four blaze powder) with 120,000 FE. Then craft blazing-tier parts (check JEI).",
+        "&eTip:&r feed the energizing rods from your biggest power source; crystals charge faster with more rods."]),
+    Q("pw_niotic", 12, 4, [item("powah:crystal_niotic", 4), item("powah:energy_cell_niotic")], "Niotic Crystals", deps=["pw_blazing"], xp=125,
+      subtitle="Energized diamond", desc=[
+        "&eWhat:&r the niotic tier. Reactors and generators get much stronger.",
+        "&eChemistry:&r diamond is pure carbon in a rigid lattice where every atom bonds to four others. Pumping energy into it is Powah's magic, but diamond really does conduct heat better than any metal.",
+        "&eHow:&r energize a diamond with 300,000 FE (check JEI)."]),
+    Q("pw_spirited", 14, 4, [item("powah:crystal_spirited", 4), item("powah:energy_cell_spirited")], "Spirited Crystals", deps=["pw_niotic"], xp=150,
+      subtitle="Energized emerald", desc=[
+        "&eWhat:&r the spirited tier, one step below the top.",
+        "&eChemistry:&r emerald is the mineral beryl, Be₃Al₂Si₆O₁₈. A trace of chromium (Cr³⁺) replacing some aluminum gives it its green colour.",
+        "&eHow:&r energize an emerald with 1,000,000 FE (check JEI). A villager trading hall pays off here."]),
+    Q("pw_nitro", 15, 5.5, [item("powah:crystal_nitro", 16)], "Nitro Crystals", deps=["pw_spirited"], xp=250,
+      optional=True, tokens=2, subtitle="Optional: Powah's top tier", desc=[
+        "&eWhat:&r nitro crystals build the strongest Powah reactors and cells.",
+        "&eHow:&r energize a Nether Star, two redstone blocks and a blazing crystal block with 20,000,000 FE. One craft makes sixteen.",
+        "&eTip:&r save your Nether Stars for this; the Wither is the only reliable source (check JEI for a Hostile Neural Networks wither model)."]),
+    Q("pw_ender", 11, 5.5, [item("powah:ender_cell_basic"), item("powah:player_transmitter_basic")], "Ender Power", deps=["pw_powah_cell"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: wireless Powah energy", desc=[
+        "&eWhat:&r Ender Cells share one energy pool across your base; the Player Transmitter charges the items in your inventory.",
+        "&eHow:&r both need an Ender Core (an eye of ender, dielectric casing and a tiny capacitor, energized). Check JEI, and link them with a Binding Card.",
+        "&eTip:&r a player transmitter keeps jetpacks and the MekaSuit charged while you work."]),
+
+    # --- More Flux Networks (y=1.5) ------------------------------------------------------------
+    Q("pw_flux_big", 13, 1.5, [item("fluxnetworks:herculean_flux_storage")], "Herculean Storage", deps=["pw_flux_storage"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: a much bigger flux battery", desc=[
+        "&eWhat:&r Herculean (and then Gargantuan) Flux Storage holds far more energy in one block, shared with the whole flux network.",
+        "&eHow:&r Basic Flux Storage blocks around glass panes (check JEI). Gargantuan is the same with Herculean blocks.",
+        "&eTip:&r flux storage keeps its energy when broken, so you can carry charged batteries to a new base."]),
+    Q("pw_flux_controller", 15, 1.5, [item("fluxnetworks:flux_controller"), item("fluxnetworks:flux_configurator")], "Flux Controller", deps=["pw_flux_storage"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: charge yourself from the network", desc=[
+        "&eWhat:&r the Flux Controller sends network energy wirelessly into players' inventories. The Configurator copies settings between flux devices.",
+        "&eHow:&r flux blocks, a Flux Core and flux dust (check JEI). The Flux Core needs an MI processing unit in this pack.",
+        "&eTip:&r turn charging off for your armor slots if it fights with other chargers."]),
+], links=[("t1_power", -2, 0), ("t6_flux", 14, -2), ("t4_uraninite", 0, 4), ("t6_fission", 8, -6)])

@@ -1,7 +1,7 @@
 {
 	id: "71E6C109F4D846B5"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 0
+	group: "4801EE691EF63116"
+	order_index: 4
 	filename: "tools"
 	icon: {
 		id: "silentgear:pickaxe"
@@ -1058,8 +1058,451 @@
 				}
 			]
 		}
+		{
+			id: "6B1EAD376672743D"
+			x: 0.0d
+			y: 15.5d
+			optional: true
+			dependencies: [
+				"384F1C4A2EF051A0"
+			]
+			tasks: [
+				{
+					id: "301F329DB42C780D"
+					type: "item"
+					item: {
+						id: "silentgear:binding"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "27D79AA3EEDAF55C"
+					type: "item"
+					item: {
+						id: "silentgear:grip"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "724E6FE07A77FC50"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "75BB6A162B794CC2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1109E5DB21C9B41E"
+			x: 2.0d
+			y: 15.5d
+			optional: true
+			dependencies: [
+				"6B1EAD376672743D"
+				"566563CC2C37BED0"
+			]
+			tasks: [
+				{
+					id: "23217E922D4F8628"
+					type: "item"
+					item: {
+						id: "silentgear:coating_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "367C760A1641276C"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1CF96BC174EFF7C2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "66CF5CE277F89ABA"
+			x: 4.0d
+			y: 15.5d
+			optional: true
+			dependencies: [
+				"6B1EAD376672743D"
+			]
+			tasks: [
+				{
+					id: "67774C2D25F22F6D"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(silentgear:ring)item(silentgear:bracelet)item(silentgear:necklace))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7790BFB824B8F34E"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "53F1190AF53CE0D8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5FAAB59A05382846"
+			x: 6.0d
+			y: 15.5d
+			optional: true
+			dependencies: [
+				"6B1EAD376672743D"
+				"4E659FFA072CD2C6"
+			]
+			tasks: [
+				{
+					id: "7AD927046A2DB90C"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(silentgear:helmet)item(silentgear:chestplate)item(silentgear:leggings)item(silentgear:boots))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6A21E0F7BBA816B1"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6ABACBA8C3F3CA98"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "02AA8F5B0AF7AF4F"
+			x: 0.0d
+			y: 17.5d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "2279580FA5B83CDB"
+					type: "item"
+					item: {
+						id: "justdirethings:gooblock_tier1"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4287E9B238537D0F"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "041246E59851327E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "402EC67BB19B609F"
+			x: 2.0d
+			y: 17.5d
+			dependencies: [
+				"02AA8F5B0AF7AF4F"
+			]
+			tasks: [
+				{
+					id: "7C171B1A2DB5C649"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "7E809E48F6CB328B"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_wrench"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7386C6D491F4F49D"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1934798220C3AACA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "370EC935014D4805"
+			x: 4.0d
+			y: 17.5d
+			dependencies: [
+				"402EC67BB19B609F"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "3F3509AC25B9FFB2"
+					type: "item"
+					item: {
+						id: "justdirethings:gooblock_tier2"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2D1E81D92A76277E"
+					type: "item"
+					item: {
+						id: "justdirethings:blazegold_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6A37DCD81852822F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "162AA7A04DAAEDD0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "43871B3E70259309"
+			x: 6.0d
+			y: 17.5d
+			optional: true
+			dependencies: [
+				"370EC935014D4805"
+				"478C654ED802C25B"
+			]
+			tasks: [
+				{
+					id: "598A2F4140AEDA4C"
+					type: "item"
+					item: {
+						id: "justdirethings:gooblock_tier3"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "23052700F0654FC1"
+					type: "item"
+					item: {
+						id: "justdirethings:celestigem"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "46F2ED513D1F39C0"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "18CCD15D48B05ACB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "03A450539601C94E"
+			x: 8.0d
+			y: 17.5d
+			optional: true
+			dependencies: [
+				"43871B3E70259309"
+				"1A42564839595307"
+			]
+			tasks: [
+				{
+					id: "7D2FF7E61E1C8D59"
+					type: "item"
+					item: {
+						id: "justdirethings:gooblock_tier4"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2802CDC1F15F4A30"
+					type: "item"
+					item: {
+						id: "justdirethings:eclipsealloy_ingot"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "02AE89316A863BAD"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "5A42576B6A9235EF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0377341C1CFB93F6"
+			x: 1.0d
+			y: 19.0d
+			optional: true
+			dependencies: [
+				"402EC67BB19B609F"
+			]
+			tasks: [
+				{
+					id: "162B2A9C1F2F7A9B"
+					type: "item"
+					item: {
+						id: "justdirethings:pocket_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "05074CF7E42E6C4F"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "79378D59213FA126"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1940B63A57F962D5"
+			x: 7.0d
+			y: 19.0d
+			optional: true
+			invisible: true
+			dependencies: [
+				"43871B3E70259309"
+			]
+			tasks: [
+				{
+					id: "59ABFB99EF4DC2B4"
+					type: "item"
+					item: {
+						id: "justdirethings:portalgun"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "70AD3502634757E6"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "65A854FD0DAA8336"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "56FC496AF55C14AC"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "32E2A2983896EAAD"
@@ -1069,6 +1512,32 @@
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/tools.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "67C50045CBB4F666"
+			linked_quest: "384F1C4A2EF051A0"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			id: "24FA60BAE045B6FB"
+			linked_quest: "42B76D3BDE21F0DC"
+			x: -2.0d
+			y: 5.5d
+		}
+		{
+			id: "3D6815EB355FA289"
+			linked_quest: "55AF98DD41956199"
+			x: -2.0d
+			y: 9.5d
+		}
+		{
+			id: "1182C0597FDF49F3"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: -2.0d
+			y: 17.5d
 		}
 	]
 }

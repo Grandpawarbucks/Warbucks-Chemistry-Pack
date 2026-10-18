@@ -148,4 +148,85 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
         "&eWhat:&r iron(III) oxide, Fe₂O₃: rust, and also hematite, the most common iron ore.",
         "&eChemistry:&r 4Fe + 3O₂ → 2Fe₂O₃. A blast furnace runs this backwards, using carbon to pull the oxygen off.",
         "&eHow:&r Combiner: 2 iron + 3 oxygen."]),
+
+    # --- Complete groups (y = -4) and full f-block (x = 18), all optional ---------------------
+    Q("pt_alkali_all", 2, -4, [item("chemlib:lithium"), item("chemlib:sodium"), item("chemlib:potassium"), item("chemlib:rubidium"), item("chemlib:cesium"), item("chemlib:francium")],
+      "Group 1, Complete", subtitle="Every alkali metal, lithium to francium", deps=["pt_alkali", "pt_noble"], xp=250, optional=True, tokens=2, desc=[
+        "&eWhat:&r all six alkali metals: Li, Na, K, Rb, Cs and Fr.",
+        "&eChemistry:&r reactivity climbs down the group: the outer electron sits further from the nucleus and is lost more easily. Caesium explodes in water.",
+        "&eHow:&r press &eU&r on rubidium and caesium in JEI for Dissolver sources. Francium is rare in both reality and here; the Fusion Chamber can build it.",
+        "&eTip:&r real francium has a half-life of about 22 minutes. Yours keeps."]),
+    Q("pt_alkaline_all", 4, -4, [item("chemlib:beryllium"), item("chemlib:magnesium"), item("chemlib:calcium"), item("chemlib:strontium"), item("chemlib:barium"), item("chemlib:radium")],
+      "Group 2, Complete", subtitle="Beryllium to radium", deps=["pt_alkaline", "pt_noble"], xp=250, optional=True, tokens=2, desc=[
+        "&eWhat:&r all six alkaline earth metals: Be, Mg, Ca, Sr, Ba and Ra.",
+        "&eChemistry:&r strontium salts burn red and barium salts green: that's how fireworks get their colours. Radium glows from its own radioactivity.",
+        "&eHow:&r JEI (&eU&r) shows Dissolver sources for strontium, barium and radium; the Fusion Chamber fills any gaps."]),
+    Q("pt_boron_group", 6, -4, [item("chemlib:boron"), item("chemlib:aluminum"), item("chemlib:gallium"), item("chemlib:indium"), item("chemlib:thallium")],
+      "The Boron Group", subtitle="Group 13: three valence electrons", deps=["pt_post_transition", "pt_noble"], xp=250, optional=True, tokens=1, desc=[
+        "&eWhat:&r boron, aluminum, gallium, indium and thallium.",
+        "&eChemistry:&r boron is a metalloid; the rest are metals. Borosilicate glass (with B₂O₃) survives sudden heat, which is why lab glassware uses it.",
+        "&eHow:&r boron needs the Fusion Chamber (5 = 1 + 4: hydrogen + beryllium). Check JEI for thallium.",
+        "&eTip:&r thallium is very toxic in reality. In a chest it's harmless."]),
+    Q("pt_carbon_group", 8, -4, [item("chemlib:carbon"), item("chemlib:silicon"), item("chemlib:germanium"), item("chemlib:tin"), item("chemlib:lead")],
+      "The Carbon Group", subtitle="Group 14: from diamond to lead", deps=["pt_metalloids", "pt_post_transition"], xp=200, optional=True, tokens=1, desc=[
+        "&eWhat:&r carbon, silicon, germanium, tin and lead, all with four valence electrons.",
+        "&eChemistry:&r the group runs from a non-metal (carbon) through metalloids (Si, Ge) to metals (Sn, Pb). Same outer shell, very different behaviour.",
+        "&eHow:&r all five come from the Dissolver: coal or graphite, sand, Nether bricks, diorite and lead ingots (check JEI)."]),
+    Q("pt_pnictogens", 10, -4, [item("chemlib:nitrogen"), item("chemlib:phosphorus"), item("chemlib:arsenic"), item("chemlib:antimony"), item("chemlib:bismuth")],
+      "The Pnictogens", subtitle="Group 15: nitrogen to bismuth", deps=["pt_nonmetals", "pt_metalloids"], xp=200, optional=True, tokens=1, desc=[
+        "&eWhat:&r nitrogen, phosphorus, arsenic, antimony and bismuth.",
+        "&eChemistry:&r five valence electrons, so they often form three bonds (NH₃, PH₃). Bismuth crystals grow in stepped 'hopper' shapes with a rainbow oxide film.",
+        "&eHow:&r JEI (&eU&r) shows Dissolver sources for antimony and bismuth."]),
+    Q("pt_halogens_all", 12, -4, [item("chemlib:fluorine"), item("chemlib:chlorine"), item("chemlib:bromine"), item("chemlib:iodine"), item("chemlib:astatine")],
+      "Group 17, Complete", subtitle="All five halogens, astatine included", deps=["pt_halogens", "pt_noble"], xp=250, optional=True, tokens=2, desc=[
+        "&eWhat:&r the four common halogens plus astatine, one of the rarest natural elements on Earth.",
+        "&eChemistry:&r down the group the halogens go from gas (F₂, Cl₂) to liquid (Br₂) to solid (I₂): bigger molecules attract each other more strongly.",
+        "&eHow:&r astatine has a few Dissolver sources (press &eU&r in JEI), or build it in the Fusion Chamber."]),
+    Q("pt_noble_all", 14, -4, [item("chemlib:helium"), item("chemlib:neon"), item("chemlib:argon"), item("chemlib:krypton"), item("chemlib:xenon"), item("chemlib:radon")],
+      "Group 18, Complete", subtitle="Every natural noble gas", deps=["pt_noble", "pt_heavy_noble"], xp=300, optional=True, tokens=2, desc=[
+        "&eWhat:&r helium through radon, the whole right-hand column.",
+        "&eChemistry:&r from 1960 to 1983 the metre was defined by the orange light of krypton-86. Xenon lights car headlamps and drives ion engines in spacecraft.",
+        "&eHow:&r nothing dissolves into the light ones: fuse them in the Fusion Chamber (krypton is 36: try neon + iron). Xenon and radon come from dragon's breath."]),
+    Q("pt_lanthanides_all", 18, -1, [item("chemlib:" + e) for e in ("lanthanum", "cerium", "praseodymium", "neodymium", "promethium", "samarium", "europium", "gadolinium",
+                                                                    "terbium", "dysprosium", "holmium", "erbium", "thulium", "ytterbium", "lutetium")],
+      "All Fifteen Lanthanides", subtitle="Lanthanum to lutetium", deps=["pt_rare_earth"], xp=500, optional=True, tokens=2, desc=[
+        "&eWhat:&r the full lanthanide row, the first line of the f-block.",
+        "&eChemistry:&r europium makes the red in old TV screens and the anti-forgery glow in euro notes. Promethium has no stable isotope at all.",
+        "&eHow:&r a few have Dissolver sources (press &eU&r); the Fusion Chamber builds the rest by adding proton numbers.",
+        "&eTip:&r a challenge, not a requirement. Work through them as spare elements pile up."]),
+    Q("pt_actinides_all", 18, 3, [item("chemlib:" + e) for e in ("actinium", "thorium", "protactinium", "uranium", "neptunium", "plutonium", "americium", "curium",
+                                                                 "berkelium", "californium", "einsteinium", "fermium", "mendelevium", "nobelium", "lawrencium")],
+      "All Fifteen Actinides", subtitle="Actinium to lawrencium", deps=["pt_actinides"], xp=600, optional=True, tokens=2, desc=[
+        "&eWhat:&r the full actinide row. Everything past uranium is man-made.",
+        "&eChemistry:&r einsteinium and fermium were first found in the debris of the first hydrogen bomb test in 1952. Americium sits in household smoke detectors.",
+        "&eHow:&r the Fusion Chamber: gold (79) plus a light element reaches actinium and beyond (check JEI for the pairs)."]),
+
+    # --- More compounds (y = 6 / 8), optional; two secrets ----------------------------------
+    Q("pt_limestone", 2, 6, [item("chemlib:calcium_carbonate", 4)], "Limestone", subtitle="CaCO₃: shells, chalk and marble", deps=["pt_co2", "pt_alkaline"], xp=125, optional=True, tokens=1, desc=[
+        "&eWhat:&r calcium carbonate, the mineral in limestone, chalk, marble and seashells.",
+        "&eChemistry:&r heat it and it splits: CaCO₃ → CaO + CO₂. That quicklime is the start of cement and mortar.",
+        "&eHow:&r Combiner: first carbonate (1 carbon + 3 oxygen), then 1 calcium + 1 carbonate."]),
+    Q("pt_saltpeter", 8, 6, [item("chemlib:potassium_nitrate", 4)], "Saltpeter", subtitle="KNO₃: fertiliser and black powder", deps=["pt_ammonia", "pt_alkali"], xp=125, optional=True, tokens=1, desc=[
+        "&eWhat:&r potassium nitrate, the oxidiser in gunpowder and a classic fertiliser.",
+        "&eChemistry:&r black powder is roughly 75% KNO₃, 15% charcoal and 10% sulfur. The nitrate brings its own oxygen, so it burns without air.",
+        "&eHow:&r Combiner: nitrate (1 nitrogen + 3 oxygen), then 1 potassium + 1 nitrate.",
+        "&eTip:&r the Combiner also turns potassium nitrate, sulfur and graphite into gunpowder (check JEI)."]),
+    Q("pt_aspirin", 6, 8, [item("chemlib:acetylsalicylic_acid", 2)], "Aspirin", subtitle="C₉H₈O₄, from willow bark to pill", deps=["pt_ethanol"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r acetylsalicylic acid, the world's best-known painkiller.",
+        "&eChemistry:&r willow bark contains salicin, used against pain for thousands of years. Adding an acetyl group (1897) made it gentler on the stomach.",
+        "&eHow:&r Combiner: 9 carbon + 8 hydrogen + 4 oxygen."]),
+    Q("pt_permanganate", 10, 8, [item("chemlib:potassium_permanganate", 2)], "Permanganate", subtitle="KMnO₄: the purple oxidiser", deps=["pt_lye"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r potassium permanganate, deep purple crystals and a strong oxidiser.",
+        "&eChemistry:&r manganese here is in its +7 oxidation state and eager to take electrons back. The purple fades as it reacts, so chemists use it as its own indicator.",
+        "&eHow:&r Combiner: 1 potassium + 1 manganese + 4 oxygen."]),
+    Q("pt_caffeine", 8, 8, [item("chemlib:caffeine")], "Morning Coffee", subtitle="Secret: C₈H₁₀N₄O₂", deps=["pt_ammonia"], xp=100, secret=True, loot="secret", desc=[
+        "&6Even a demigod likes a cup in the morning. You remember that much without trying.&r",
+        "&eWhat:&r caffeine, built atom by atom: 8 carbon, 10 hydrogen, 4 nitrogen, 2 oxygen.",
+        "&eChemistry:&r it blocks adenosine receptors in the brain, the signal that tells you you're tired.",
+        "&eTip:&r plants make caffeine as an insecticide. You drink it on purpose."]),
+    Q("pt_han_purple", 12, 8, [item("chemlib:han_purple")], "Han Purple", subtitle="Secret: an ancient synthetic pigment", deps=["pt_salt"], xp=150, secret=True, loot="secret", desc=[
+        "&eWhat:&r han purple, BaCuSi₂O₆, a barium copper silicate.",
+        "&eChemistry:&r Chinese artisans made it more than 2,000 years ago by firing barium, copper and silica minerals together. It colours figures in the Terracotta Army.",
+        "&eHow:&r Combiner: 1 barium + 1 copper + 2 silicon + 6 oxygen.",
+        "&eTip:&r one of the first synthetic pigments in history. You just repeated an ancient experiment."]),
 ])

@@ -1,5 +1,5 @@
 """Quest chapter: logic. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
 # Layout: y=0 ComputerCraft, y=-2 turtles + AE2 automation, y=2 Integrated Dynamics,
 # y=4 SFM + Logistics Networks, y=6 LaserIO. Capstone at the right end of y=0.
@@ -78,7 +78,7 @@ CHAPTER = Chapter("logic", "Automation and Logic", "computercraft:computer_advan
         "&eWhat:&r the Variable Store holds variable cards so the whole network can use them; the Labeller names them.",
         "&eHow:&r put cards in the store and reference them from any writer or display panel on the network.",
         "&eTip:&r name cards after what they measure ('H2 tank %'). You'll thank yourself later."]),
-    Q("lg_id_tip", 6, 3, [tick()], "Challenge: The Self-Stopping Separator", subtitle="Your first closed loop", deps=["lg_id_store"], xp=150, optional=True, tokens=1, desc=[
+    Q("lg_id_tip", 7, 3, [tick()], "Challenge: The Self-Stopping Separator", subtitle="Your first closed loop", deps=["lg_id_store"], xp=150, optional=True, tokens=1, desc=[
         "&eWhat:&r make a Mekanism Electrolytic Separator turn itself off when its hydrogen tank is 90% full, and back on below 50%.",
         "&eHow:&r a Reader on the tank → a comparison in the Logic Programmer → a Redstone Writer on the separator (set it to redstone control in its GUI).",
         "&eTip:&r the gap between 50% and 90% (hysteresis) stops it flickering on and off.",
@@ -119,4 +119,64 @@ CHAPTER = Chapter("logic", "Automation and Logic", "computercraft:computer_advan
         "&eWhat:&r overclockers make LaserIO move more, faster.",
         "&eHow:&r overclocker cards go in a card's upgrade slot; overclocker nodes go in the node.",
         "&eTip:&r most lines don't need it. Add it when a machine starves."]),
-])
+
+    # --- More ComputerCraft (y=-2 / -3.5) ------------------------------------------------------
+    Q("lg_printer", 0, -2, [item("computercraft:printer"), item("computercraft:disk_drive")], "Printers and Disks", deps=["lg_computer"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: save programs, print lab notes", desc=[
+        "&eWhat:&r a Disk Drive lets you save programs on floppy disks and carry them between computers. A Printer prints text onto paper.",
+        "&eHow:&r check JEI. Put a disk in the drive and it appears as &edisk/&r in the computer's files.",
+        "&eTip:&r print a list of your reactions and their inputs and bind the pages into a book: a real lab notebook."]),
+    Q("lg_turtle_adv", 2, -3.5, [item("computercraft:turtle_advanced")], "Advanced Turtle", deps=["lg_turtle"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: a golden robot with a colour screen", desc=[
+        "&eWhat:&r advanced turtles have colour screens and can be clicked, which makes menus easy.",
+        "&eHow:&r an advanced computer with gold instead of iron around it (check JEI). Give it a pickaxe to make a Mining Turtle.",
+        "&eTip:&r run &eexcavate 16&r on a mining turtle and it digs a 16x16 hole down to bedrock, bringing everything back."]),
+
+    # --- More Advanced Peripherals (y=-4) ------------------------------------------------------
+    Q("lg_ap_geo", 6, -4, [item("advancedperipherals:geo_scanner")], "Geo Scanner", deps=["lg_peripherals"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: find ores with a program", desc=[
+        "&eWhat:&r the Geo Scanner lists every block around it within a radius, including ores, for your computer to read.",
+        "&eChemistry:&r real geologists find ore bodies by measuring gravity, magnetism and how rocks conduct electricity, rather than digging blind.",
+        "&eHow:&r check JEI. Put it next to a computer (or in a pocket computer) and call &escan(8)&r.",
+        "&eTip:&r write a program that counts ore blocks by type: it's a quick way to check a deposit before setting up a mine."]),
+    Q("lg_ap_chat", 8, -4, [item("advancedperipherals:chat_box"), item("advancedperipherals:player_detector")], "Chat Box and Player Detector", deps=["lg_peripherals"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: a base that talks back", desc=[
+        "&eWhat:&r the Chat Box lets a computer send chat messages; the Player Detector tells it who is nearby.",
+        "&eHow:&r check JEI. Place them next to a computer.",
+        "&eTip:&r have the base warn everyone in chat when a tank of hydrogen is nearly full or an induction matrix is running low."]),
+    Q("lg_ap_inventory", 10, -4, [item("advancedperipherals:inventory_manager"), item("advancedperipherals:memory_card")], "Inventory Manager", deps=["lg_peripherals"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: programs that use your inventory", desc=[
+        "&eWhat:&r the Inventory Manager lets a computer move items into and out of your own inventory, once you bind it with a Memory Card.",
+        "&eHow:&r right-click the Memory Card to bind it to yourself, then put it in the manager (check JEI).",
+        "&eTip:&r a button that refills your hotbar with torches and food from storage is a classic first program."]),
+
+    # --- Integrated family (y=2, x>=8) ---------------------------------------------------------
+    Q("lg_tunnels", 8, 2, [tick()], "Integrated Tunnels", deps=["lg_id_store"], xp=60,
+      subtitle="Move items, fluids and energy with logic", desc=[
+        "&eWhat:&r Integrated Tunnels adds importer, exporter and interface parts for Integrated Dynamics cables: items, fluids and energy move along the network, controlled by variables.",
+        "&eHow:&r craft an Item Importer and an Item Exporter (check JEI), put them on cables at a chest and a machine, and give the exporter a variable card that says what to move. Click the checkmark when it works.",
+        "&eTip:&r a fluid exporter with a boolean variable from a tank reader only fills the reactor when it's below half."]),
+    Q("lg_terminals", 10, 2, [item("integratedterminals:terminal_storage_portable")], "Integrated Terminals", deps=["lg_tunnels"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: a storage terminal for ID networks", desc=[
+        "&eWhat:&r Integrated Terminals adds a Storage Terminal part that shows everything connected to an Integrated Dynamics network, plus a portable version.",
+        "&eHow:&r a Storage Terminal part between two crystalized menril chunks makes the portable terminal (check JEI).",
+        "&eTip:&r the Crafting Job Terminal shows what Integrated Crafting is working on."]),
+    Q("lg_crafting", 12, 2, [tick()], "Integrated Crafting", deps=["lg_tunnels"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: autocrafting without AE2", desc=[
+        "&eWhat:&r Integrated Crafting adds a Crafting Interface: give it recipe variables and it crafts on demand through the ID network, much like AE2 patterns.",
+        "&eHow:&r craft a Crafting Interface (check JEI), write recipes into variable cards with the Logic Programmer, and put them in the interface. Click the checkmark when one craft works.",
+        "&eTip:&r it's a cheaper autocrafter than AE2 for small chains, like rubber sheets or redstone batteries."]),
+
+    # --- SFM program (y=4) ---------------------------------------------------------------------
+    Q("lg_sfm_program", 0, 4, [tick()], "Your First SFM Program", deps=["lg_sfm"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: four lines that move items", desc=[
+        "&eWhat:&r Super Factory Manager runs small text programs written on a disk. Labels name the blocks it talks to.",
+        "&eHow:&r label a chest &ea&r and a furnace &eb&r with the Label Gun, then write this program on the disk and put it in the manager. Click the checkmark when items start moving.",
+        "{@pagebreak}",
+        "&eProgram:&r",
+        "EVERY 20 TICKS DO",
+        "    INPUT FROM a",
+        "    OUTPUT TO b",
+        "END",
+        "&eTip:&r add a side, like &eOUTPUT TO b TOP SIDE&r, to choose which face of the block is used. The manager's built-in examples cover fluids and energy too."]),
+], links=[("t3_hull", -2, 0), ("t5_ae2", 6, -2), ("s_laser", -2, 6)])

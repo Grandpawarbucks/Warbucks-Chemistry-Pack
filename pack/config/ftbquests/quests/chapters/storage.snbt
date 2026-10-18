@@ -1,7 +1,7 @@
 {
 	id: "34560F2FAB74139C"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 7
+	group: "4801EE691EF63116"
+	order_index: 5
 	filename: "storage"
 	icon: {
 		id: "sophisticatedbackpacks:backpack"
@@ -439,160 +439,27 @@
 			]
 		}
 		{
-			id: "33690DED4CD25646"
-			x: 0.0d
-			y: 9.5d
-			dependencies: [
-				"45849083414E98A3"
-			]
-			tasks: [
-				{
-					id: "2BCB5A3F7870519E"
-					type: "item"
-					item: {
-						id: "ae2:drive"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "18D90FA20910E8C4"
-					type: "item"
-					item: {
-						id: "ae2:terminal"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5F052BE154BD543B"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "54D0D815DFFCE53F"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "58932D295CE4DB3B"
-			x: 2.0d
-			y: 9.5d
-			dependencies: [
-				"33690DED4CD25646"
-			]
-			tasks: [
-				{
-					id: "321D8BAA8DF76D9C"
-					type: "item"
-					item: {
-						id: "ae2:cell_component_1k"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "6E157C3F412EB8DE"
-					type: "item"
-					item: {
-						id: "ae2:item_storage_cell_1k"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7DB03F37F9E8E44D"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "4E74A9ED85827FC1"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "76110B693DBF6FF2"
-			x: 4.0d
-			y: 9.5d
-			dependencies: [
-				"58932D295CE4DB3B"
-			]
-			tasks: [
-				{
-					id: "68446AB7B38B8CEB"
-					type: "item"
-					item: {
-						id: "ae2:crafting_terminal"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "568463DE39921348"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "75F91F332F47F20A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "33967F89E0530A95"
+			id: "01F07AC7CEBA34C1"
 			x: 6.0d
-			y: 9.5d
+			y: 7.0d
 			dependencies: [
-				"76110B693DBF6FF2"
+				"1C5E43BCEDA7593F"
+				"44D2496540C5F6FE"
 			]
 			tasks: [
 				{
-					id: "4340A33F3436270C"
-					type: "item"
-					item: {
-						id: "extendedae:ex_pattern_provider"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "14A2A66A7CDA2B92"
-					type: "item"
-					item: {
-						id: "extendedae:ex_drive"
-						count: 1
-					}
-					count: 1L
+					id: "18441DE3D40A0237"
+					type: "checkmark"
 				}
 			]
 			rewards: [
 				{
-					id: "38277F436C9F92F4"
+					id: "7CBC8AB3779F119B"
 					type: "xp"
-					xp: 150
+					xp: 40
 				}
 				{
-					id: "496149A327528ECC"
+					id: "7E536F997A30B8C4"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -602,140 +469,19 @@
 			]
 		}
 		{
-			id: "740C1D9B0EE26F7C"
-			x: 2.0d
-			y: 11.5d
-			dependencies: [
-				"58932D295CE4DB3B"
-			]
-			tasks: [
-				{
-					id: "0511414D9B4EEAB4"
-					type: "item"
-					item: {
-						id: "megacells:sky_steel_ingot"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "0B4FC0B47A4C1CDE"
-					type: "item"
-					item: {
-						id: "megacells:item_storage_cell_1m"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "6826451D154E7E80"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "1F793AD650BE5954"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "6ABB15806114CC83"
-			x: 4.0d
-			y: 11.5d
-			dependencies: [
-				"58932D295CE4DB3B"
-				"17832D4C895DEFF7"
-			]
-			tasks: [
-				{
-					id: "4CFC3D28AB6423C4"
-					type: "item"
-					item: {
-						id: "appmek:chemical_storage_cell_1k"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5D59384784AB0C99"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "36FE291E72AB7FD3"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "4B1B2296A5EDEB45"
-			x: 6.0d
-			y: 11.5d
-			dependencies: [
-				"58932D295CE4DB3B"
-			]
-			tasks: [
-				{
-					id: "7D7DAD7AD7663B0E"
-					type: "item"
-					item: {
-						id: "appflux:charged_redstone"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "2F831CAEA3542902"
-					type: "item"
-					item: {
-						id: "appflux:fe_1k_cell"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "6D1BD45DE3283080"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "28DB4D096E40E5AE"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "72A62F77A5D7C0CE"
-			x: 1.0d
-			y: 8.0d
+			id: "24A467FAA663A7EF"
+			x: 8.0d
+			y: 7.0d
 			optional: true
 			dependencies: [
-				"33690DED4CD25646"
+				"4C812FEC12C477A4"
 			]
 			tasks: [
 				{
-					id: "3EBCC1BB4A52AC70"
+					id: "33D5E3F64563036D"
 					type: "item"
 					item: {
-						id: "ae2:wireless_crafting_terminal"
+						id: "sophisticatedstorageinmotion:storage_minecart"
 						count: 1
 					}
 					count: 1L
@@ -743,12 +489,12 @@
 			]
 			rewards: [
 				{
-					id: "4895595D6485D31C"
+					id: "76658DAE72E2DD27"
 					type: "xp"
-					xp: 75
+					xp: 40
 				}
 				{
-					id: "7619CD7D2688CA2B"
+					id: "78A0A61898C6AD06"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -758,19 +504,19 @@
 			]
 		}
 		{
-			id: "3E6BB0338E3344C9"
-			x: 5.0d
-			y: 8.0d
+			id: "14C4F705E5EB614F"
+			x: 3.0d
+			y: -1.5d
 			optional: true
 			dependencies: [
-				"76110B693DBF6FF2"
+				"4C812FEC12C477A4"
 			]
 			tasks: [
 				{
-					id: "26A5AF5C49A86DDD"
+					id: "0407D071744D0F80"
 					type: "item"
 					item: {
-						id: "merequester:requester"
+						id: "sophisticatedstorage:stack_upgrade_tier_1"
 						count: 1
 					}
 					count: 1L
@@ -778,12 +524,237 @@
 			]
 			rewards: [
 				{
-					id: "1E1341488191DB4A"
+					id: "2B4A1EB44B6FAFAA"
 					type: "xp"
-					xp: 75
+					xp: 40
 				}
 				{
-					id: "7409C3A2BF0D8421"
+					id: "70B24B0ED0152BD3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "317575EF2934BE98"
+			x: 6.0d
+			y: 2.0d
+			dependencies: [
+				"129185B0D2C7C75A"
+			]
+			tasks: [
+				{
+					id: "1FEA2CCE17EE4F68"
+					type: "item"
+					item: {
+						id: "functionalstorage:diamond_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4E5046800960CB1C"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "7795C6AA329682BB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6A53B6D2F371F859"
+			x: 8.0d
+			y: 2.0d
+			dependencies: [
+				"317575EF2934BE98"
+			]
+			tasks: [
+				{
+					id: "24654C5DFC69CDCA"
+					type: "item"
+					item: {
+						id: "functionalstorage:puller_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0B23FEB8243C75BB"
+					type: "item"
+					item: {
+						id: "functionalstorage:pusher_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0B72A7D9B151650A"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1A854E18962FD650"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "46990CC570367505"
+			x: 10.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"317575EF2934BE98"
+			]
+			tasks: [
+				{
+					id: "7DBAA447F683BE5B"
+					type: "item"
+					item: {
+						id: "functionalstorage:fluid_1"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "346AB8F479314899"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6F83CE5FC3FA154A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6E40C57F90C4FE3B"
+			x: 7.0d
+			y: 3.5d
+			optional: true
+			dependencies: [
+				"317575EF2934BE98"
+			]
+			tasks: [
+				{
+					id: "677313363B7D261F"
+					type: "item"
+					item: {
+						id: "functionalstorage:ender_drawer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "07BDEBD36B0D862F"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0901795DFF63FF9C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "198E6DA2BCC8985F"
+			x: 2.0d
+			y: 4.0d
+			dependencies: [
+				"73F96D08F9DD5275"
+			]
+			tasks: [
+				{
+					id: "4341D082B5EDA824"
+					type: "item"
+					item: {
+						id: "toms_storage:inventory_cable"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "379D1574C8BBDE97"
+					type: "item"
+					item: {
+						id: "toms_storage:inventory_cable_connector"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "731F87B7BE915037"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "55ABE23C77B7B5EA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "74EA12F84EA1A34D"
+			x: 4.0d
+			y: 4.0d
+			optional: true
+			dependencies: [
+				"36279DAC568E66FC"
+			]
+			tasks: [
+				{
+					id: "1D75641F64AEB73B"
+					type: "item"
+					item: {
+						id: "toms_storage:adv_wireless_terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "75C02ADFFB5D7E70"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "75912AF944BF5957"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -793,16 +764,35 @@
 			]
 		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "4688FEC30093C75C"
 			x: 2.5d
-			y: -2.0d
+			y: -3.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/storage.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "3954D904043D7A10"
+			linked_quest: "30347A69744DE975"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			id: "780194C13785EEC5"
+			linked_quest: "392A7909301184E2"
+			x: -2.0d
+			y: 7.0d
+		}
+		{
+			id: "6A14C964CC715CA9"
+			linked_quest: "45849083414E98A3"
+			x: -2.0d
+			y: 4.0d
 		}
 	]
 }

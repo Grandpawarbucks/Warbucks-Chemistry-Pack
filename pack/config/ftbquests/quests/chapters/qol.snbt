@@ -1,7 +1,7 @@
 {
 	id: "58F2F526022035F5"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 2
+	group: "71650C5783BBAA4C"
+	order_index: 0
 	filename: "qol"
 	icon: {
 		id: "akashictome:tome"
@@ -597,18 +597,517 @@
 			]
 		}
 		{
-			id: "7AD94AAAA5254B9E"
-			x: 0.0d
-			y: 9.0d
+			id: "1F2CF66554D65C93"
+			x: 3.0d
+			y: -1.5d
+			optional: true
+			dependencies: [
+				"417C968CF0B6DB90"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "02E94A70CDF713BF"
+					type: "item"
+					item: {
+						id: "torchmaster:feral_flare_lantern"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "16A21A76DEFC5091"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "69D6AD28E6FA8847"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5B9CAB5D9BAADF57"
+			x: 6.0d
+			y: -3.0d
+			optional: true
+			dependencies: [
+				"2CDD3C38275B155C"
+			]
+			tasks: [
+				{
+					id: "2F0F819FC0662CE8"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "49C76B6D18164C15"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "2B342BBF2EFF0343"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7A2E8D54084A7224"
+			x: 8.0d
+			y: -1.5d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "6F59C3BC82EB7145"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7A57381C4D5D1800"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "442997EC390EC563"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "014F5E0E68AA6574"
+			x: 4.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"288CF747C2D939F7"
+			]
+			tasks: [
+				{
+					id: "5AC33E06E548ACFD"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:stack_upgrade_tier_1"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4B12194F7C692BD2"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "2CFC5E3981D11A98"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "74B98B27BE564EAD"
+			x: 6.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"014F5E0E68AA6574"
+			]
+			tasks: [
+				{
+					id: "025D26B213152207"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:tool_swapper_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "37A161AB11483202"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "759C3E61D5A702B5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1572A9CFC13F6605"
+			x: 5.0d
+			y: 3.5d
+			optional: true
+			dependencies: [
+				"014F5E0E68AA6574"
+			]
+			tasks: [
+				{
+					id: "0BAC4E33CA22342E"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:refill_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "57D7251F55DB74DA"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "31AABDEF6E3A5AC9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32CFD45D94EE955E"
+			x: 10.0d
+			y: 3.5d
+			optional: true
+			dependencies: [
+				"0168A13FA2435F4D"
+			]
+			tasks: [
+				{
+					id: "5E66C60B5889D3B9"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:anvil"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "03F5326214DFC64E"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:grindstone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4D4477BB2AD88A24"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "15CBA89188C0030A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "295E46752750C4C1"
+			x: 10.0d
+			y: 0.0d
+			dependencies: [
+				"1E339D434FEA09CE"
+			]
+			tasks: [
+				{
+					id: "6ED12E5E10E77274"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "483DA8F53F951C3F"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "208A6729180E9806"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "24582FFEF0C9CA48"
+			x: 12.0d
+			y: 0.0d
 			dependencies: [
 				"310586A0CE86D7B4"
 			]
 			tasks: [
 				{
-					id: "7B55A68EF5D31E98"
+					id: "1178317CEC6E0655"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "0AB83D288E6D85DB"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "7E2390D3F5C84933"
 					type: "item"
 					item: {
-						id: "effortlessbuilding:randomizer_tool"
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0A6808C7A052CA16"
+			x: 14.0d
+			y: 0.0d
+			dependencies: [
+				"24582FFEF0C9CA48"
+			]
+			tasks: [
+				{
+					id: "2FD88C58982F8870"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "302F66DB2929AD2D"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "43C30E27F41625CB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3419EC047902045A"
+			x: 10.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "786F9314896702E9"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "0987EDDE7AD61370"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "1A7357CABA2C2CAF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "213AD19CC7D30A37"
+			x: 12.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"24582FFEF0C9CA48"
+			]
+			tasks: [
+				{
+					id: "3054AE3006F4BDA4"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "4A339C8CB8E78825"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "73F1B0E36E1406B9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1E27CF7DD38A14C8"
+			x: 14.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"24582FFEF0C9CA48"
+			]
+			tasks: [
+				{
+					id: "37A068DA1A1C1078"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "0BBC68222760C452"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "7043EDF82BC07A86"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "69F41022F3C27254"
+			x: 12.0d
+			y: 4.0d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "22FAD4688DFEBDF9"
+					type: "item"
+					item: {
+						id: "minecraft:emerald"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "1B18A9A6FBDDF7FD"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "0C021272A01D1BA9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "370448FDEA00C30C"
+			x: 12.0d
+			y: 5.5d
+			optional: true
+			invisible: true
+			dependencies: [
+				"69F41022F3C27254"
+			]
+			tasks: [
+				{
+					id: "1C1FD37B57BE9717"
+					type: "item"
+					item: {
+						id: "minecraft:emerald_block"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "12F0C49175AFBC70"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "138FA4B020C4C567"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7CC689E3AEAB08FA"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "2570EB0A8AF93C47"
+			x: 14.0d
+			y: 4.0d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "4F419B7362745F01"
+					type: "item"
+					item: {
+						id: "toolbelt:belt"
 						count: 1
 					}
 					count: 1L
@@ -616,12 +1115,12 @@
 			]
 			rewards: [
 				{
-					id: "5B0B2741ED330D55"
+					id: "56EA74BF6FAF1B83"
 					type: "xp"
 					xp: 20
 				}
 				{
-					id: "17E8352BED11A8AB"
+					id: "61C41857192A6CEE"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -631,75 +1130,32 @@
 			]
 		}
 		{
-			id: "171C251ED5512ABD"
-			x: 2.0d
-			y: 9.0d
-			dependencies: [
-				"392A7909301184E2"
-			]
-			tasks: [
-				{
-					id: "190053E52C826225"
-					type: "item"
-					item: {
-						id: "buildinggadgets2:gadget_building"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "30272B71463C76EB"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "2824CCB33F5F7CE3"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "34C2506F0D77DBC7"
-			x: 1.0d
-			y: 10.5d
+			id: "7DAD39B76BA322EE"
+			x: 16.0d
+			y: 4.0d
 			optional: true
 			dependencies: [
-				"171C251ED5512ABD"
+				"2570EB0A8AF93C47"
 			]
 			tasks: [
 				{
-					id: "5BA5E3244FB4D9B1"
+					id: "2DE00F62A9012C7A"
 					type: "item"
 					item: {
-						id: "buildinggadgets2:gadget_copy_paste"
+						id: "toolbelt:pouch"
 						count: 1
 					}
-					count: 1L
-				}
-				{
-					id: "0EC4AD2F56592D4A"
-					type: "item"
-					item: {
-						id: "buildinggadgets2:template_manager"
-						count: 1
-					}
-					count: 1L
+					count: 2L
 				}
 			]
 			rewards: [
 				{
-					id: "0CE020750E14118F"
+					id: "482B16B7456F4419"
 					type: "xp"
-					xp: 60
+					xp: 20
 				}
 				{
-					id: "04FC90B52DF70142"
+					id: "01E495F1448CD101"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -709,19 +1165,57 @@
 			]
 		}
 		{
-			id: "78B3985AFEC9753C"
+			id: "7966EBF899C9AB72"
 			x: 3.0d
-			y: 10.5d
+			y: 7.0d
 			optional: true
 			dependencies: [
-				"171C251ED5512ABD"
+				"5B094C907C8047AF"
 			]
 			tasks: [
 				{
-					id: "2A004234AD688740"
+					id: "6FD26650EE934F75"
 					type: "item"
 					item: {
-						id: "buildinggadgets2:gadget_exchanging"
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(waystones:waystone)item(waystones:mossy_waystone)item(waystones:sandy_waystone)item(waystones:deepslate_waystone)item(waystones:blackstone_waystone)item(waystones:end_stone_waystone))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0AB27F2FC2509AE2"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6EFC9C4FEB220E50"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2367545F51E52EA0"
+			x: 5.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"7966EBF899C9AB72"
+			]
+			tasks: [
+				{
+					id: "271B56E6ACFE13AF"
+					type: "item"
+					item: {
+						id: "waystones:warp_stone"
 						count: 1
 					}
 					count: 1L
@@ -729,12 +1223,42 @@
 			]
 			rewards: [
 				{
-					id: "2BE9AF5EE0E1C41E"
+					id: "11E5AF47B878AF8A"
 					type: "xp"
 					xp: 40
 				}
 				{
-					id: "51CBE92DD6C0AE7B"
+					id: "424A59AD6349642B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4C714AF8B234F7FB"
+			x: 7.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"17EB435344732ED5"
+			]
+			tasks: [
+				{
+					id: "34FB0A26FDB9D7B9"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "6306A04B05045C01"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "56D1AF228BC6430A"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -744,16 +1268,41 @@
 			]
 		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "66974994A403E184"
 			x: 2.5d
-			y: -3.5d
+			y: -5.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/qol.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "6AD10A6910337881"
+			linked_quest: "310586A0CE86D7B4"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			id: "3A2D64DE8A7082FA"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: -3.0d
+			y: 2.0d
+		}
+		{
+			id: "5096A25CF289A356"
+			linked_quest: "30347A69744DE975"
+			x: -3.0d
+			y: 3.5d
+		}
+		{
+			id: "5A06A80ABF54E9C4"
+			linked_quest: "1E339D434FEA09CE"
+			x: 10.0d
+			y: -1.5d
 		}
 	]
 }

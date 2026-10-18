@@ -29,12 +29,15 @@ def scan(jar, out):
             except ValueError:
                 continue
             for key, value in data.items():
-                k = re.match(r"^(item|block|fluid)\.([a-z0-9_]+)\.([a-z0-9_/]+)$", key)
+                k = re.match(r"^(item|block|fluid|entity)\.([a-z0-9_]+)\.([a-z0-9_/]+)$", key)
                 if k:
                     out.add((f"{k.group(2)}:{k.group(3)}", k.group(1), value))
         d = re.match(r"data/([^/]+)/dimension/([a-z0-9_/]+)\.json$", name)
         if d:
             out.add((f"{d.group(1)}:{d.group(2)}", "dimension", ""))
+        w = re.match(r"data/([^/]+)/worldgen/(structure|biome)/([a-z0-9_/]+)\.json$", name)
+        if w:
+            out.add((f"{w.group(1)}:{w.group(3)}", w.group(2), ""))
 
 
 def main():

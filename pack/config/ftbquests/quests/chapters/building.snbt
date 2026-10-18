@@ -1,0 +1,1459 @@
+{
+	id: "283C125EDC24C8C3"
+	group: "4801EE691EF63116"
+	order_index: 7
+	filename: "building"
+	icon: {
+		id: "framedblocks:framed_hammer"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "7AD94AAAA5254B9E"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "7B55A68EF5D31E98"
+					type: "item"
+					item: {
+						id: "effortlessbuilding:randomizer_tool"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5B0B2741ED330D55"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "17E8352BED11A8AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0EBF44825F21BDC2"
+			x: 2.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "3EDD7C1D569E68DF"
+					type: "item"
+					item: {
+						id: "constructionstick:wooden_stick"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "53C78C8763920886"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "2BD6E7FB82E5635C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "046BE5DF3A379E58"
+			x: 4.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"0EBF44825F21BDC2"
+			]
+			tasks: [
+				{
+					id: "0725B6C3EB58F256"
+					type: "item"
+					item: {
+						id: "constructionstick:diamond_stick"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1668F8F0449A1DC6"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "33351DC38FDF792D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "256D3D0FC72501EE"
+			x: 6.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "3D5618565F4A6D1C"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "594EC42FE71CBD1A"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "314FFB1478B15A6F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "171C251ED5512ABD"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "190053E52C826225"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_building"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "30272B71463C76EB"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2824CCB33F5F7CE3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "34C2506F0D77DBC7"
+			x: 1.0d
+			y: 3.5d
+			optional: true
+			dependencies: [
+				"171C251ED5512ABD"
+			]
+			tasks: [
+				{
+					id: "5BA5E3244FB4D9B1"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_copy_paste"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0EC4AD2F56592D4A"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:template_manager"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0CE020750E14118F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "04FC90B52DF70142"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "78B3985AFEC9753C"
+			x: 3.0d
+			y: 3.5d
+			optional: true
+			dependencies: [
+				"171C251ED5512ABD"
+			]
+			tasks: [
+				{
+					id: "2A004234AD688740"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_exchanging"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2BE9AF5EE0E1C41E"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "51CBE92DD6C0AE7B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6264FFAD4D805503"
+			x: 2.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"171C251ED5512ABD"
+			]
+			tasks: [
+				{
+					id: "40DEE9A960CE6076"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_destruction"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A7FD3FCB7C0A918"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5E0874E464D40B7B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "17B2684DCFCAF116"
+			x: 0.0d
+			y: 5.0d
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "18CA274B6EE441A5"
+					type: "item"
+					item: {
+						id: "framedblocks:framed_cube"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "51B28F1B0E86E65A"
+					type: "item"
+					item: {
+						id: "framedblocks:framed_hammer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "494727E77DAC65A2"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "0B66039216B6BBFE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "43AAE4F773290CA0"
+			x: 2.0d
+			y: 5.0d
+			optional: true
+			dependencies: [
+				"17B2684DCFCAF116"
+			]
+			tasks: [
+				{
+					id: "0B175BFDBE7DFCBC"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(framedblocks:framed_slope)item(framedblocks:framed_corner_slope)item(framedblocks:framed_stairs)item(framedblocks:framed_slab)item(framedblocks:framed_panel)item(framedblocks:framed_pillar)item(framedblocks:framed_prism))"
+						}
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "625F8D7922FC85CC"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "5DBC93E641B26A9A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "493C7E73D1EA248B"
+			x: 4.0d
+			y: 5.0d
+			optional: true
+			dependencies: [
+				"43AAE4F773290CA0"
+			]
+			tasks: [
+				{
+					id: "302782E06A77D147"
+					type: "item"
+					item: {
+						id: "framedblocks:framed_secret_storage"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5CBE44AE836280BF"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "62152ED642D3DCCB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0882494FACF73614"
+			x: 0.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "6B9C0F5900AB9EE0"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(handcrafted:oak_chair)item(handcrafted:spruce_chair)item(handcrafted:birch_chair)item(handcrafted:jungle_chair)item(handcrafted:acacia_chair)item(handcrafted:dark_oak_chair)item(handcrafted:mangrove_chair)item(handcrafted:cherry_chair)item(handcrafted:bamboo_chair)item(handcrafted:crimson_chair)item(handcrafted:warped_chair))"
+						}
+					}
+					count: 2L
+				}
+				{
+					id: "7CB57CE0064176E2"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(handcrafted:oak_table)item(handcrafted:spruce_table)item(handcrafted:birch_table)item(handcrafted:jungle_table)item(handcrafted:acacia_table)item(handcrafted:dark_oak_table)item(handcrafted:mangrove_table)item(handcrafted:cherry_table)item(handcrafted:bamboo_table)item(handcrafted:crimson_table)item(handcrafted:warped_table))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "795203892FEF4F33"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "04815A6C9E916059"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "255AF1E86B0F49B5"
+			x: 2.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"0882494FACF73614"
+			]
+			tasks: [
+				{
+					id: "1D01E53B2FEF3BA5"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(handcrafted:oak_couch)item(handcrafted:spruce_couch)item(handcrafted:birch_couch)item(handcrafted:jungle_couch)item(handcrafted:acacia_couch)item(handcrafted:dark_oak_couch)item(handcrafted:mangrove_couch)item(handcrafted:cherry_couch)item(handcrafted:bamboo_couch)item(handcrafted:crimson_couch)item(handcrafted:warped_couch))"
+						}
+					}
+					count: 2L
+				}
+				{
+					id: "184EC3E75B5E7D21"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(handcrafted:oak_desk)item(handcrafted:spruce_desk)item(handcrafted:birch_desk)item(handcrafted:jungle_desk)item(handcrafted:acacia_desk)item(handcrafted:dark_oak_desk)item(handcrafted:mangrove_desk)item(handcrafted:cherry_desk)item(handcrafted:bamboo_desk)item(handcrafted:crimson_desk)item(handcrafted:warped_desk))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "79B1C3C47C0BE582"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "691E52AE2A2CB075"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4E82A4FFCC6F1EEF"
+			x: 4.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"0882494FACF73614"
+			]
+			tasks: [
+				{
+					id: "18F0DB8E2A82626C"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwfurnitures:oak_wardrobe)item(mcwfurnitures:spruce_wardrobe)item(mcwfurnitures:birch_wardrobe)item(mcwfurnitures:jungle_wardrobe)item(mcwfurnitures:acacia_wardrobe)item(mcwfurnitures:dark_oak_wardrobe)item(mcwfurnitures:mangrove_wardrobe)item(mcwfurnitures:cherry_wardrobe)item(mcwfurnitures:crimson_wardrobe)item(mcwfurnitures:warped_wardrobe)item(mcwfurnitures:oak_drawer)item(mcwfurnitures:spruce_drawer)item(mcwfurnitures:birch_drawer)item(mcwfurnitures:jungle_drawer)item(mcwfurnitures:acacia_drawer)item(mcwfurnitures:dark_oak_drawer)item(mcwfurnitures:mangrove_drawer)item(mcwfurnitures:cherry_drawer)item(mcwfurnitures:crimson_drawer)item(mcwfurnitures:warped_drawer)item(mcwfurnitures:oak_kitchen_cabinet)item(mcwfurnitures:spruce_kitchen_cabinet)item(mcwfurnitures:birch_kitchen_cabinet)item(mcwfurnitures:jungle_kitchen_cabinet)item(mcwfurnitures:acacia_kitchen_cabinet)item(mcwfurnitures:dark_oak_kitchen_cabinet)item(mcwfurnitures:mangrove_kitchen_cabinet)item(mcwfurnitures:cherry_kitchen_cabinet)item(mcwfurnitures:crimson_kitchen_cabinet)item(mcwfurnitures:warped_kitchen_cabinet))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "22126072E5E06F8D"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "6A34D680D5615163"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5E740E65B6A4BD53"
+			x: 0.0d
+			y: 9.0d
+			optional: true
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "2BFB0AD553FB2518"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwdoors:oak_barn_door)item(mcwdoors:spruce_barn_door)item(mcwdoors:birch_barn_door)item(mcwdoors:jungle_barn_door)item(mcwdoors:acacia_barn_door)item(mcwdoors:dark_oak_barn_door)item(mcwdoors:mangrove_barn_door)item(mcwdoors:cherry_barn_door)item(mcwdoors:bamboo_barn_door)item(mcwdoors:crimson_barn_door)item(mcwdoors:warped_barn_door)item(mcwdoors:oak_modern_door)item(mcwdoors:spruce_modern_door)item(mcwdoors:birch_modern_door)item(mcwdoors:jungle_modern_door)item(mcwdoors:acacia_modern_door)item(mcwdoors:dark_oak_modern_door)item(mcwdoors:mangrove_modern_door)item(mcwdoors:cherry_modern_door)item(mcwdoors:bamboo_modern_door)item(mcwdoors:crimson_modern_door)item(mcwdoors:warped_modern_door)item(mcwdoors:oak_glass_door)item(mcwdoors:spruce_glass_door)item(mcwdoors:birch_glass_door)item(mcwdoors:jungle_glass_door)item(mcwdoors:acacia_glass_door)item(mcwdoors:dark_oak_glass_door)item(mcwdoors:mangrove_glass_door)item(mcwdoors:cherry_glass_door)item(mcwdoors:bamboo_glass_door)item(mcwdoors:crimson_glass_door)item(mcwdoors:warped_glass_door)item(mcwdoors:oak_cottage_door)item(mcwdoors:birch_cottage_door)item(mcwdoors:jungle_cottage_door)item(mcwdoors:acacia_cottage_door)item(mcwdoors:dark_oak_cottage_door)item(mcwdoors:mangrove_cottage_door)item(mcwdoors:cherry_cottage_door)item(mcwdoors:bamboo_cottage_door)item(mcwdoors:crimson_cottage_door)item(mcwdoors:warped_cottage_door))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "4A67B1EC23A2BBFA"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "00FA64C0D3117F5A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "06248880B960989A"
+			x: 2.0d
+			y: 9.0d
+			optional: true
+			dependencies: [
+				"5E740E65B6A4BD53"
+			]
+			tasks: [
+				{
+					id: "6BE62D68B2B9D49F"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwtrpdoors:oak_barn_trapdoor)item(mcwtrpdoors:spruce_barn_trapdoor)item(mcwtrpdoors:birch_barn_trapdoor)item(mcwtrpdoors:jungle_barn_trapdoor)item(mcwtrpdoors:acacia_barn_trapdoor)item(mcwtrpdoors:dark_oak_barn_trapdoor)item(mcwtrpdoors:mangrove_barn_trapdoor)item(mcwtrpdoors:cherry_barn_trapdoor)item(mcwtrpdoors:bamboo_barn_trapdoor)item(mcwtrpdoors:crimson_barn_trapdoor)item(mcwtrpdoors:warped_barn_trapdoor)item(mcwtrpdoors:oak_glass_trapdoor)item(mcwtrpdoors:spruce_glass_trapdoor)item(mcwtrpdoors:birch_glass_trapdoor)item(mcwtrpdoors:jungle_glass_trapdoor)item(mcwtrpdoors:acacia_glass_trapdoor)item(mcwtrpdoors:dark_oak_glass_trapdoor)item(mcwtrpdoors:mangrove_glass_trapdoor)item(mcwtrpdoors:cherry_glass_trapdoor)item(mcwtrpdoors:bamboo_glass_trapdoor)item(mcwtrpdoors:crimson_glass_trapdoor)item(mcwtrpdoors:warped_glass_trapdoor)item(mcwtrpdoors:oak_classic_trapdoor)item(mcwtrpdoors:spruce_classic_trapdoor)item(mcwtrpdoors:birch_classic_trapdoor)item(mcwtrpdoors:jungle_classic_trapdoor)item(mcwtrpdoors:acacia_classic_trapdoor)item(mcwtrpdoors:dark_oak_classic_trapdoor)item(mcwtrpdoors:mangrove_classic_trapdoor)item(mcwtrpdoors:cherry_classic_trapdoor)item(mcwtrpdoors:bamboo_classic_trapdoor)item(mcwtrpdoors:crimson_classic_trapdoor)item(mcwtrpdoors:warped_classic_trapdoor))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0CF2E9BD3DB706D3"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "7AB16D5345CD483C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "30251E31D4E975EF"
+			x: 4.0d
+			y: 9.0d
+			optional: true
+			dependencies: [
+				"5E740E65B6A4BD53"
+			]
+			tasks: [
+				{
+					id: "25CD986A878CA4B6"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwwindows:oak_window)item(mcwwindows:spruce_window)item(mcwwindows:birch_window)item(mcwwindows:jungle_window)item(mcwwindows:acacia_window)item(mcwwindows:dark_oak_window)item(mcwwindows:mangrove_window)item(mcwwindows:cherry_window)item(mcwwindows:oak_pane_window)item(mcwwindows:spruce_pane_window)item(mcwwindows:birch_pane_window)item(mcwwindows:jungle_pane_window)item(mcwwindows:acacia_pane_window)item(mcwwindows:dark_oak_pane_window)item(mcwwindows:mangrove_pane_window)item(mcwwindows:cherry_pane_window)item(mcwwindows:crimson_pane_window)item(mcwwindows:warped_pane_window)item(mcwwindows:oak_four_window)item(mcwwindows:spruce_four_window)item(mcwwindows:birch_four_window)item(mcwwindows:jungle_four_window)item(mcwwindows:acacia_four_window)item(mcwwindows:dark_oak_four_window)item(mcwwindows:mangrove_four_window)item(mcwwindows:cherry_four_window))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0E1A29A891408AE1"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "12A8AA56A1F6B5C6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0730AC23E95DCD5A"
+			x: 6.0d
+			y: 9.0d
+			optional: true
+			dependencies: [
+				"5E740E65B6A4BD53"
+			]
+			tasks: [
+				{
+					id: "24CBAD29F49575BA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwroofs:oak_roof)item(mcwroofs:spruce_roof)item(mcwroofs:birch_roof)item(mcwroofs:jungle_roof)item(mcwroofs:acacia_roof)item(mcwroofs:dark_oak_roof)item(mcwroofs:mangrove_roof)item(mcwroofs:cherry_roof)item(mcwroofs:bamboo_roof)item(mcwroofs:crimson_roof)item(mcwroofs:warped_roof)item(mcwroofs:oak_steep_roof)item(mcwroofs:spruce_steep_roof)item(mcwroofs:birch_steep_roof)item(mcwroofs:jungle_steep_roof)item(mcwroofs:acacia_steep_roof)item(mcwroofs:dark_oak_steep_roof)item(mcwroofs:mangrove_steep_roof)item(mcwroofs:cherry_steep_roof)item(mcwroofs:bamboo_steep_roof)item(mcwroofs:crimson_steep_roof)item(mcwroofs:warped_steep_roof)item(mcwroofs:stone_roof)item(mcwroofs:cobblestone_roof)item(mcwroofs:blackstone_roof)item(mcwroofs:deepslate_roof)item(mcwroofs:andesite_roof))"
+						}
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "79B2EE78B58B09A4"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "10FE2165EBCA900F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1C66E75AABEB8A04"
+			x: 8.0d
+			y: 9.0d
+			optional: true
+			dependencies: [
+				"5E740E65B6A4BD53"
+			]
+			tasks: [
+				{
+					id: "413A4F6DE66E2783"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwfences:oak_picket_fence)item(mcwfences:spruce_picket_fence)item(mcwfences:birch_picket_fence)item(mcwfences:jungle_picket_fence)item(mcwfences:acacia_picket_fence)item(mcwfences:dark_oak_picket_fence)item(mcwfences:mangrove_picket_fence)item(mcwfences:cherry_picket_fence)item(mcwfences:bamboo_picket_fence)item(mcwfences:crimson_picket_fence)item(mcwfences:warped_picket_fence)item(mcwfences:oak_stockade_fence)item(mcwfences:spruce_stockade_fence)item(mcwfences:birch_stockade_fence)item(mcwfences:jungle_stockade_fence)item(mcwfences:acacia_stockade_fence)item(mcwfences:dark_oak_stockade_fence)item(mcwfences:mangrove_stockade_fence)item(mcwfences:cherry_stockade_fence)item(mcwfences:bamboo_stockade_fence)item(mcwfences:crimson_stockade_fence)item(mcwfences:warped_stockade_fence)item(mcwfences:oak_wired_fence)item(mcwfences:spruce_wired_fence)item(mcwfences:birch_wired_fence)item(mcwfences:jungle_wired_fence)item(mcwfences:acacia_wired_fence)item(mcwfences:dark_oak_wired_fence)item(mcwfences:mangrove_wired_fence)item(mcwfences:cherry_wired_fence)item(mcwfences:bamboo_wired_fence)item(mcwfences:crimson_wired_fence)item(mcwfences:warped_wired_fence)item(mcwfences:oak_hedge)item(mcwfences:spruce_hedge)item(mcwfences:birch_hedge)item(mcwfences:jungle_hedge)item(mcwfences:acacia_hedge)item(mcwfences:dark_oak_hedge)item(mcwfences:mangrove_hedge)item(mcwfences:cherry_hedge))"
+						}
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "39447ADD281F0EF9"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "55A0EEC6312DAE08"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7E1544D1ED3E2D20"
+			x: 0.0d
+			y: 11.0d
+			optional: true
+			dependencies: [
+				"1E339D434FEA09CE"
+			]
+			tasks: [
+				{
+					id: "35169E1F28D697CB"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwpaths:cobblestone_basket_weave_paving)item(mcwpaths:andesite_basket_weave_paving)item(mcwpaths:brick_basket_weave_paving)item(mcwpaths:sandstone_basket_weave_paving)item(mcwpaths:cobblestone_honeycomb_paving)item(mcwpaths:andesite_honeycomb_paving)item(mcwpaths:brick_honeycomb_paving)item(mcwpaths:sandstone_honeycomb_paving)item(mcwpaths:cobblestone_diamond_paving)item(mcwpaths:andesite_diamond_paving)item(mcwpaths:brick_diamond_paving)item(mcwpaths:sandstone_diamond_paving)item(mcwpaths:stone_flagstone)item(mcwpaths:andesite_flagstone)item(mcwpaths:brick_flagstone)item(mcwpaths:sandstone_flagstone))"
+						}
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "0199BA3BE353B559"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "110E1251F899E439"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2B01CBA33D88B363"
+			x: 2.0d
+			y: 11.0d
+			optional: true
+			dependencies: [
+				"7E1544D1ED3E2D20"
+			]
+			tasks: [
+				{
+					id: "7095251FD1F13E09"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwbridges:rope_oak_bridge)item(mcwbridges:rope_spruce_bridge)item(mcwbridges:rope_birch_bridge)item(mcwbridges:rope_jungle_bridge)item(mcwbridges:rope_acacia_bridge)item(mcwbridges:rope_dark_oak_bridge)item(mcwbridges:rope_mangrove_bridge)item(mcwbridges:rope_cherry_bridge)item(mcwbridges:rope_crimson_bridge)item(mcwbridges:rope_warped_bridge)item(mcwbridges:stone_brick_bridge)item(mcwbridges:cobblestone_bridge)item(mcwbridges:brick_bridge)item(mcwbridges:iron_bridge)item(mcwbridges:sandstone_bridge))"
+						}
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "564214D3FFA59BAA"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "1C2FC0EF01FA0CB4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7D8A60F5C4CE08DA"
+			x: 4.0d
+			y: 11.0d
+			optional: true
+			dependencies: [
+				"38196E0094811FC0"
+			]
+			tasks: [
+				{
+					id: "11F94D235209EA03"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mcwlights:classic_street_lamp)item(mcwlights:double_street_lamp)item(mcwlights:chain_lantern)item(mcwlights:bell_lantern)item(mcwlights:cross_lantern)item(mcwlights:tavern_lantern)item(mcwlights:garden_light)item(mcwlights:wall_lamp)item(mcwlights:iron_chandelier)item(mcwlights:golden_chandelier)item(mcwlights:copper_chandelier))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "61504B63554D73BC"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "510A222A36A42D61"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2483BE5777A45DF0"
+			x: 6.0d
+			y: 11.0d
+			optional: true
+			dependencies: [
+				"7D8A60F5C4CE08DA"
+				"6939E4AEBA9EF3ED"
+			]
+			tasks: [
+				{
+					id: "69C4FAD896DBAED1"
+					type: "item"
+					item: {
+						id: "mcwlights:lava_lamp"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3DCC27847EAB8AFF"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "361406B15B9A7937"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "263D8CF775631953"
+			x: 0.0d
+			y: 13.0d
+			optional: true
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "35765D9F7D5B3C72"
+					type: "item"
+					item: {
+						id: "supplementaries:jar"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "4FD11FB0587895BC"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "69F9EDE07557AA69"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "03F0CB824882681C"
+			x: 2.0d
+			y: 13.0d
+			optional: true
+			dependencies: [
+				"263D8CF775631953"
+			]
+			tasks: [
+				{
+					id: "4AE5B3AD72935801"
+					type: "item"
+					item: {
+						id: "supplementaries:rope"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "72B41C1E7C7D95CB"
+					type: "item"
+					item: {
+						id: "supplementaries:sack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "23C172B2E66D0563"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "16E81C9EE4F90FC1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3916B5092992AE39"
+			x: 4.0d
+			y: 13.0d
+			optional: true
+			dependencies: [
+				"263D8CF775631953"
+			]
+			tasks: [
+				{
+					id: "608EBCDCC96D9AF7"
+					type: "item"
+					item: {
+						id: "supplementaries:soap"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "169CA26B5443A599"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "1DC8F7AF77F3ADB4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "27402D05976252E6"
+			x: 6.0d
+			y: 13.5d
+			optional: true
+			invisible: true
+			dependencies: [
+				"3916B5092992AE39"
+			]
+			tasks: [
+				{
+					id: "74F3853FA8DAF5A5"
+					type: "item"
+					item: {
+						id: "supplementaries:bubble_blower"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "53FCF10E024C3D39"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "300291C4A9C3D28A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "4ED951D91C4865A2"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "0390136B315C41D8"
+			x: 0.0d
+			y: 15.0d
+			optional: true
+			dependencies: [
+				"7784CD3C06844B0C"
+			]
+			tasks: [
+				{
+					id: "21058AF4506538B3"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(createdeco:yellow_andesite_lamp)item(createdeco:red_andesite_lamp)item(createdeco:green_andesite_lamp)item(createdeco:blue_andesite_lamp)item(createdeco:yellow_brass_lamp)item(createdeco:red_brass_lamp)item(createdeco:green_brass_lamp)item(createdeco:blue_brass_lamp)item(createdeco:yellow_copper_lamp)item(createdeco:red_copper_lamp)item(createdeco:green_copper_lamp)item(createdeco:blue_copper_lamp)item(createdeco:yellow_iron_lamp)item(createdeco:red_iron_lamp)item(createdeco:green_iron_lamp)item(createdeco:blue_iron_lamp)item(createdeco:yellow_zinc_lamp)item(createdeco:red_zinc_lamp)item(createdeco:green_zinc_lamp)item(createdeco:blue_zinc_lamp))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "1613142A5FC0D4BF"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "635093E8A9859250"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5569DB7CD62C242F"
+			x: 2.0d
+			y: 15.0d
+			optional: true
+			dependencies: [
+				"0390136B315C41D8"
+			]
+			tasks: [
+				{
+					id: "7DFD9F514AC7B40E"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(createdeco:andesite_hull)item(createdeco:brass_hull)item(createdeco:copper_hull)item(createdeco:iron_hull)item(createdeco:zinc_hull)item(createdeco:industrial_iron_hull))"
+						}
+					}
+					count: 4L
+				}
+				{
+					id: "6F9DB224295A1FFB"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(createdeco:andesite_support)item(createdeco:brass_support)item(createdeco:copper_support)item(createdeco:iron_support)item(createdeco:zinc_support)item(createdeco:industrial_iron_support))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6FA1D479CE15DEB4"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "5F378E66A72D73F6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05D2EE647B7C6620"
+			x: 4.0d
+			y: 15.0d
+			optional: true
+			dependencies: [
+				"4075A74B2774D3BD"
+			]
+			tasks: [
+				{
+					id: "6ED4E29CDED95051"
+					type: "item"
+					item: {
+						id: "copycats:copycat_block"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "7C249F30547E97C5"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(copycats:copycat_slope)item(copycats:copycat_stairs)item(copycats:copycat_board)item(copycats:copycat_beam)item(copycats:copycat_slice)item(copycats:copycat_vertical_slope))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0ECAAC9DCB4ED4B9"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "1E331386590DB4A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1C1D96F956C3898C"
+			x: 0.0d
+			y: 17.0d
+			dependencies: [
+				"75644D12ABEA0664"
+			]
+			tasks: [
+				{
+					id: "76980A4E03338C74"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:laboratory_block"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "0E12953F7875420F"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "08C0EA0873EB74A5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "231AB73D5B98BE94"
+			x: 2.0d
+			y: 17.0d
+			optional: true
+			dependencies: [
+				"1C1D96F956C3898C"
+			]
+			tasks: [
+				{
+					id: "5D519FF5D8228022"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:glowstone_particles"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "77DCB9DBC0800934"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:glowing_laboratory_block"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "5329D3F267797305"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "4B506C1998296A58"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "302DFA9D7E8161B1"
+			x: 4.0d
+			y: 17.0d
+			optional: true
+			dependencies: [
+				"1C1D96F956C3898C"
+			]
+			tasks: [
+				{
+					id: "3EC5B7185569F151"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(laboratoryblocks:clear_laboratory_screen)item(laboratoryblocks:text_laboratory_screen)item(laboratoryblocks:wave_laboratory_screen)item(laboratoryblocks:quantum_laboratory_screen)item(laboratoryblocks:glowing_clear_laboratory_screen)item(laboratoryblocks:glowing_text_laboratory_screen)item(laboratoryblocks:glowing_wave_laboratory_screen)item(laboratoryblocks:glowing_quantum_laboratory_screen))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "42816020C98AA422"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "02C2A90488211423"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7827D1263B738EE4"
+			x: 6.0d
+			y: 17.0d
+			optional: true
+			dependencies: [
+				"1C1D96F956C3898C"
+			]
+			tasks: [
+				{
+					id: "6B550B8F163DD782"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:laboratory_fan"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7552B333B9FB9846"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:laboratory_vent"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "4DC32F835AD8CB95"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "19649E377868E001"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "63B9D8367D6914A8"
+			x: 8.0d
+			y: 17.0d
+			optional: true
+			dependencies: [
+				"1C1D96F956C3898C"
+			]
+			tasks: [
+				{
+					id: "4976F8A46429E446"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(laboratoryblocks:laboratory_door)item(laboratoryblocks:glass_laboratory_door)item(laboratoryblocks:mesh_laboratory_door))"
+						}
+					}
+					count: 2L
+				}
+				{
+					id: "7424E674CFB4F605"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:laboratory_glass"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "176BB2C196D86A35"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "11B5EAB5292A793E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4D60C7C6C5F73477"
+			x: 10.0d
+			y: 17.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"231AB73D5B98BE94"
+				"302DFA9D7E8161B1"
+				"7827D1263B738EE4"
+				"63B9D8367D6914A8"
+			]
+			tasks: [
+				{
+					id: "3A12B0E66528A606"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "47D619B9E2B5CCBD"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "662C8A600A0C2072"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "5B748D2867568C5A"
+			x: 2.5d
+			y: -2.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/building.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "238AE4C292918C63"
+			linked_quest: "310586A0CE86D7B4"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			id: "68849E6599EEDA46"
+			linked_quest: "392A7909301184E2"
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			id: "7A970B55270608F5"
+			linked_quest: "7784CD3C06844B0C"
+			x: -2.0d
+			y: 15.0d
+		}
+		{
+			id: "164AB13FA54E7B1D"
+			linked_quest: "75644D12ABEA0664"
+			x: -2.0d
+			y: 17.0d
+		}
+	]
+}

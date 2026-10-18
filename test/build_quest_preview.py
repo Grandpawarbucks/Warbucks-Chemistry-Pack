@@ -84,14 +84,21 @@ def main():
                     tasks.append({"kind": "item", "id": t[1], "n": t[2], "name": NAMES.get(t[1], t[1]), "icon": icon(t[1])})
                 elif t[0] == "dimension":
                     tasks.append({"kind": "dim", "id": t[1], "name": "Visit " + t[1].split(":")[1].replace("_", " ").title()})
+                elif t[0] == "kill":
+                    tasks.append({"kind": "kill", "id": t[1], "name": f"Kill {t[2]}x " + NAMES.get(t[1], t[1].split(":")[1].replace("_", " ").title())})
+                elif t[0] in ("structure", "biome"):
+                    tasks.append({"kind": t[0], "id": t[1], "name": f"Find {t[0]}: " + t[1].split(":")[1].split("/")[-1].replace("_", " ").title()})
+                elif t[0] == "filter":
+                    tasks.append({"kind": "filter", "id": t[1], "name": f"{t[2]}x any of: {t[1]}"})
                 else:
                     tasks.append({"kind": "check", "name": "Checkmark"})
             first_icon = next((t["icon"] for t in tasks if t.get("icon")), None)
             tokens = q.tokens if q.tokens is not None else c.tokens * (2 if (q.size or 1) >= 1.5 else 1)
             rewards = ([f"{tokens} Demigod Token" + ("s" if tokens != 1 else "")] if tokens else []) + \
-                      ([f"{q.xp} XP"] if q.xp else []) + [f"{n}x {NAMES.get(i, i)}" for i, n in q.items]
+                      ([f"{q.xp} XP"] if q.xp else []) + [f"{n}x {NAMES.get(i, i)}" for i, n in q.items] + \
+                      ([f"Loot roll: {q.loot}"] if q.loot else []) + ([f"Choose one: {q.choice}"] if q.choice else [])
             qs.append({"key": q.key, "x": q.x, "y": q.y, "size": q.size or 1.0, "shape": q.shape or ("rsquare" if c.group == "main" else "circle"),
-                       "title": strip_codes(names[q.key]), "desc": [fmt(d) for d in q.desc], "deps": q.deps,
+                       "title": strip_codes(names[q.key]), "desc": [fmt(d) if d != "{@pagebreak}" else "<hr>" for d in q.desc], "deps": q.deps,
                        "tasks": tasks, "rewards": rewards, "icon": first_icon})
         banner = ROOT / f"pack/kubejs/assets/warbucks/textures/quests/{c.key}.png"
         chapters.append({"key": c.key, "title": c.title, "group": GROUPS[c.group], "sub": [fmt(s) for s in c.subtitle],

@@ -1,10 +1,10 @@
 {
 	id: "355E4A964218121E"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 10
+	group: "37409AEB3F7AB09E"
+	order_index: 0
 	filename: "farming"
 	icon: {
-		id: "botanypots:terracotta_hopper_botany_pot"
+		id: "farmersdelight:cooking_pot"
 		count: 1
 	}
 	default_quest_shape: "circle"
@@ -122,6 +122,79 @@
 			]
 		}
 		{
+			id: "6AAF559710229117"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
+				"2CFFEDC4683607CF"
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "26952E315D6BA08F"
+					type: "item"
+					item: {
+						id: "farmersdelight:pasta_with_meatballs"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "471B18E4361B3C63"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6959263DB292FEAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6E91CE0ADEA5ADA6"
+			x: 8.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"6AAF559710229117"
+			]
+			tasks: [
+				{
+					id: "003A3A61E5FFD296"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(farmersdelight:meals)"
+						}
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "3EC68920D63C98F4"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "16CB4ACFFF488934"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "26CA44769AF76A9D"
 			x: 1.0d
 			y: -1.5d
@@ -166,6 +239,40 @@
 			]
 		}
 		{
+			id: "2FB463350074B333"
+			x: 3.0d
+			y: -1.5d
+			dependencies: [
+				"1CD576F80AC49B5F"
+			]
+			tasks: [
+				{
+					id: "66B43AF858FAED04"
+					type: "item"
+					item: {
+						id: "farmersdelight:stove"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0C73A9660A646023"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "2B4A9966A1AB44DD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "1DF7F1133046DEB1"
 			x: 5.0d
 			y: -1.5d
@@ -201,9 +308,302 @@
 			]
 		}
 		{
+			id: "188A4BC2D2682264"
+			x: 7.0d
+			y: -1.5d
+			optional: true
+			dependencies: [
+				"1DF7F1133046DEB1"
+			]
+			tasks: [
+				{
+					id: "0CCEF1CA74E89C24"
+					type: "item"
+					item: {
+						id: "farmersdelight:roast_chicken_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2DF05F6EADF2A243"
+					type: "item"
+					item: {
+						id: "farmersdelight:shepherds_pie_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4ED35F41FC4842B7"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1F7615D9B9FBE0AC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "68C63D9C708CAB99"
+			x: 1.0d
+			y: -3.0d
+			optional: true
+			dependencies: [
+				"26CA44769AF76A9D"
+			]
+			tasks: [
+				{
+					id: "630743E521C409CA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(farmersdelight:mushroom_colonies)"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "5C005B08FEC59E36"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "3E260889F03F0776"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05CA20DAF3D6CE4E"
+			x: 3.0d
+			y: -3.0d
+			dependencies: [
+				"2FB463350074B333"
+			]
+			tasks: [
+				{
+					id: "43AF14583D215BE6"
+					type: "item"
+					item: {
+						id: "farmersdelight:skillet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "38EBE9D5209D5811"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "714F8CAFA6E6BCC4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "056B1AE78D5B1CCF"
+			x: 5.0d
+			y: -3.0d
+			dependencies: [
+				"05CA20DAF3D6CE4E"
+			]
+			tasks: [
+				{
+					id: "317CD0FF6B7A7073"
+					type: "item"
+					item: {
+						id: "farmersdelight:fried_egg"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "7C3F8AB80CC8B690"
+					type: "item"
+					item: {
+						id: "farmersdelight:cooked_bacon"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "531D7069CC36A2C3"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "4E78DBD28C7D5010"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6D7BCF15F3CF7687"
+			x: 1.0d
+			y: 1.5d
+			dependencies: [
+				"61BB360C973E0F7F"
+			]
+			tasks: [
+				{
+					id: "7A56907FF64BFB2F"
+					type: "item"
+					item: {
+						id: "farmersdelight:tomato"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "0FA27C728648C65C"
+					type: "item"
+					item: {
+						id: "farmersdelight:onion"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "718EBA505FC09990"
+					type: "item"
+					item: {
+						id: "farmersdelight:cabbage"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "37B3F3F011B634BF"
+					type: "item"
+					item: {
+						id: "farmersdelight:rice"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2C238EE6976B3F45"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "1EC2748AC86C315D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2D35837B42389FD6"
+			x: 3.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "4222AD2C1E09CE89"
+					type: "item"
+					item: {
+						id: "farmersdelight:rope"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "780D5EDF56D87F47"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "0B67E9A9BA0111A3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "726507D0921F20DA"
+			x: 5.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "3F9BB473ABE515F6"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:crops)"
+						}
+					}
+					count: 128L
+				}
+			]
+			rewards: [
+				{
+					id: "5E0DD87DB097D8F3"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "1A44C3C1035B6AA7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "3890E7B5FA9CA044"
 			x: 0.0d
-			y: 2.0d
+			y: 3.0d
 			dependencies: [
 				"2181236B6834BFDF"
 			]
@@ -235,27 +635,27 @@
 			]
 		}
 		{
-			id: "7592FE8784DA7D0E"
-			x: 0.0d
-			y: 4.0d
+			id: "1449CF00D49726FD"
+			x: 2.0d
+			y: 4.5d
 			dependencies: [
-				"3890E7B5FA9CA044"
+				"2181236B6834BFDF"
 			]
 			tasks: [
 				{
-					id: "484EE37D51261944"
+					id: "7B27472343A10140"
 					type: "item"
 					item: {
-						id: "mysticalagriculture:infusion_altar"
+						id: "minecraft:lead"
 						count: 1
 					}
-					count: 1L
+					count: 2L
 				}
 				{
-					id: "72F5FACB87AE4304"
+					id: "47842F50A0582B60"
 					type: "item"
 					item: {
-						id: "mysticalagriculture:inferium_essence"
+						id: "minecraft:wheat"
 						count: 1
 					}
 					count: 16L
@@ -263,12 +663,12 @@
 			]
 			rewards: [
 				{
-					id: "3B13B458DCD55134"
+					id: "7399572024559115"
 					type: "xp"
-					xp: 50
+					xp: 20
 				}
 				{
-					id: "4B24AC2AE4C6A28F"
+					id: "45DF811E17F4A8BC"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -278,61 +678,29 @@
 			]
 		}
 		{
-			id: "476972F4A69AE2B6"
-			x: 2.0d
-			y: 4.0d
-			dependencies: [
-				"7592FE8784DA7D0E"
-			]
-			tasks: [
-				{
-					id: "52C78B265171FB23"
-					type: "item"
-					item: {
-						id: "mysticalagriculture:prosperity_shard"
-						count: 1
-					}
-					count: 8L
-				}
-				{
-					id: "42E2945E13C20E80"
-					type: "item"
-					item: {
-						id: "mysticalagriculture:prosperity_seed_base"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "456FBA9AA7B9F57B"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "38402390BFCB731C"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "53DFFD39635750E6"
+			id: "797F266229BD1FB2"
 			x: 4.0d
-			y: 4.0d
+			y: 4.5d
+			optional: true
 			dependencies: [
-				"476972F4A69AE2B6"
+				"1449CF00D49726FD"
+				"61BB360C973E0F7F"
 			]
 			tasks: [
 				{
-					id: "410D12D8160311D9"
+					id: "1AABB12159897C64"
 					type: "item"
 					item: {
-						id: "mysticalagriculture:infusion_crystal"
+						id: "farmersdelight:horse_feed"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "558414920DDCDBF6"
+					type: "item"
+					item: {
+						id: "farmersdelight:dog_food"
 						count: 1
 					}
 					count: 1L
@@ -340,12 +708,12 @@
 			]
 			rewards: [
 				{
-					id: "64DC24CEC98B8213"
+					id: "6E35552748CEF252"
 					type: "xp"
-					xp: 40
+					xp: 30
 				}
 				{
-					id: "68AF0E09A635E6BD"
+					id: "191F8A267431D3DD"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -355,31 +723,49 @@
 			]
 		}
 		{
-			id: "05F6FABCA51A5D27"
-			x: 6.0d
-			y: 4.0d
+			id: "383BB756C9C76954"
+			x: 0.0d
+			y: 6.0d
 			dependencies: [
-				"53DFFD39635750E6"
+				"29BEA270C571B58C"
 			]
 			tasks: [
 				{
-					id: "4275D7C57C71F2AD"
+					id: "53B177A562D08B4B"
 					type: "item"
 					item: {
-						id: "mysticalagriculture:prudentium_essence"
+						id: "chemlib:urea"
 						count: 1
 					}
-					count: 8L
+					count: 1L
+				}
+				{
+					id: "62A56D89C50F4AC7"
+					type: "item"
+					item: {
+						id: "chemlib:diammonium_phosphate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4FD655CFDE2D215E"
+					type: "item"
+					item: {
+						id: "chemlib:potassium_nitrate"
+						count: 1
+					}
+					count: 1L
 				}
 			]
 			rewards: [
 				{
-					id: "5FD06D14BC202841"
+					id: "1B4D0ED28E0DD11F"
 					type: "xp"
-					xp: 40
+					xp: 60
 				}
 				{
-					id: "3B66975FE143279B"
+					id: "1114401212106978"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -389,67 +775,33 @@
 			]
 		}
 		{
-			id: "63BC9482303C7949"
-			x: 8.0d
-			y: 4.0d
+			id: "201E746EF18C024B"
+			x: 2.0d
+			y: 6.0d
 			dependencies: [
-				"05F6FABCA51A5D27"
-				"55AF98DD41956199"
+				"383BB756C9C76954"
+				"256D9F2CFA36ADE2"
+				"4377040E34093CBC"
 			]
 			tasks: [
 				{
-					id: "7E5B82B262E383F8"
+					id: "6807046FB74D2F85"
 					type: "item"
 					item: {
-						id: "mysticalagriculture:tertium_essence"
+						id: "extended_industrialization:npk_fertilizer_bucket"
 						count: 1
 					}
-					count: 8L
+					count: 1L
 				}
 			]
 			rewards: [
 				{
-					id: "25F898C100BA19E4"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "4571FFB73DD7FABC"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "429B4A2ABF9C8710"
-			x: 10.0d
-			y: 4.0d
-			dependencies: [
-				"63BC9482303C7949"
-				"17832D4C895DEFF7"
-			]
-			tasks: [
-				{
-					id: "1C41CC79561C527B"
-					type: "item"
-					item: {
-						id: "mysticalagriculture:imperium_essence"
-						count: 1
-					}
-					count: 8L
-				}
-			]
-			rewards: [
-				{
-					id: "32D23D36D85A6684"
+					id: "54A7DA0551A248C9"
 					type: "xp"
 					xp: 100
 				}
 				{
-					id: "6337AE9DA0843335"
+					id: "3EE31DEE28CE4997"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -459,21 +811,55 @@
 			]
 		}
 		{
-			id: "329417D2B6B5EF41"
-			x: 12.0d
-			y: 4.0d
-			shape: "hexagon"
-			size: 1.5d
+			id: "42489EAAE4800867"
+			x: 4.0d
+			y: 6.0d
 			dependencies: [
-				"429B4A2ABF9C8710"
-				"6D18179563EC6FB4"
+				"55AF98DD41956199"
+				"2082C655C0D3F03A"
 			]
 			tasks: [
 				{
-					id: "18305BC3701233D4"
+					id: "2E2E1F6F89601455"
 					type: "item"
 					item: {
-						id: "mysticalagriculture:supremium_essence"
+						id: "extended_industrialization:steam_farmer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5957254DA91773E5"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "04330F3E4DE3765D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4388A334EC12570D"
+			x: 7.0d
+			y: 3.0d
+			optional: true
+			invisible: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "0A0CA9F293CB3089"
+					type: "item"
+					item: {
+						id: "farmersdelight:rotten_tomato"
 						count: 1
 					}
 					count: 8L
@@ -481,110 +867,61 @@
 			]
 			rewards: [
 				{
-					id: "17681D889A1DC804"
+					id: "58B1A5C3FB0991F8"
 					type: "xp"
-					xp: 200
+					xp: 25
 				}
 				{
-					id: "5B1B2E04106D30B2"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "12AA4108F02395E9"
-			x: 1.0d
-			y: 5.5d
-			optional: true
-			dependencies: [
-				"7592FE8784DA7D0E"
-			]
-			tasks: [
-				{
-					id: "10247CBB096CD6A6"
-					type: "item"
-					item: {
-						id: "mysticalagriculture:inferium_growth_accelerator"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "1B7F099392F2E537"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "7A08CD565D19689E"
+					id: "64ECF716ACB0806C"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
 						count: 1
 					}
 				}
-			]
-		}
-		{
-			id: "4D32DDE3DA6B6767"
-			x: 13.0d
-			y: 5.5d
-			optional: true
-			dependencies: [
-				"329417D2B6B5EF41"
-			]
-			tasks: [
 				{
-					id: "4E731C00E2B79229"
-					type: "item"
-					item: {
-						id: "mysticalagriculture:awakening_altar"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2B84F1973A7533BE"
-					type: "item"
-					item: {
-						id: "mysticalagriculture:awakened_supremium_essence"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "5C5E98702163B184"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "051C5CF91B7160FF"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
+					id: "6764721D3AF8BC52"
+					type: "random"
+					table_id: 8682264593899658817L
 				}
 			]
 		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "50C448D16CC74A06"
 			x: 2.5d
-			y: -3.5d
+			y: -5.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/farming.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "502781B0E665BBEE"
+			linked_quest: "2181236B6834BFDF"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			id: "29CC5B80CEC2E324"
+			linked_quest: "29BEA270C571B58C"
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			id: "1C41240E7E0F6BD6"
+			linked_quest: "256D9F2CFA36ADE2"
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			id: "79590D33A354F653"
+			linked_quest: "1D1660D4E4098CF6"
+			x: -1.5d
+			y: 7.5d
 		}
 	]
 }

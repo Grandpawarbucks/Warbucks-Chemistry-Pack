@@ -44,3 +44,29 @@ Tone: wonder and quiet confidence, a little wry; never purple prose. 1–2 lines
 - Blocked: MA seeds and Occultism miners for uranium, uraninite, osmium, fluorite, silicon, steel, aluminum, graphite, platinum, iridium, tungsten (Occultism) and refined obsidian/glowstone (MA).
 - Custom chemistry (MI machines): Haber-Bosch (N₂ + 3H₂ → 2NH₃), Ostwald (NH₃ → HNO₃), NH₃ + HCl → NH₄Cl, the PGM line (anode sludge from nickel/copper electrolysis → aqua regia → chloroplatinic acid + residue → ammonium hexachloroplatinate → calcine to platinum; residue centrifuged into Ir/Os/Rh/Ru), uraninite = uranium dust + O₂ (Chemical Reactor), energy cores, Seed of a New World (9x9 Ultimate Table).
 - Demigod Tokens are quest rewards; shop recipes are in JEI (search "Demigod Token").
+
+## New task types and quest options (engine v8)
+Import what you need: `from questlib import Q, Chapter, item, dim, tick, kill, structure, biome, anytag, anyof`.
+- `kill("minecraft:zombie", 25)`: kill 25 of that mob. Entity ids are in `test/ids.tsv` (type `entity`).
+- `structure("minecraft:ancient_city")`: stand inside a structure. `biome("minecraft:cherry_grove")`: visit a biome.
+  Find ids with `grep -P '\tstructure\t' test/ids.tsv` / `grep -P '\tbiome\t' test/ids.tsv`. Only use structures that actually generate in this pack.
+- `anytag("minecraft:logs", 16)`: any 16 items from an item tag. `anyof(["a:x", "b:y"], 4)`: any of several items.
+  Use these instead of forcing one exact variant (e.g. any wool, any sapling, any Mekanism tier).
+- Quest options on `Q(...)`:
+  - `hidden=True`: not shown until its dependencies are visible (spoiler-free next steps).
+  - `secret=True`: invisible until completed. Secret quests are fun discoveries (a rare biome, a strange mob, a joke).
+    Give them a dependency so they can't be done before the chapter opens; reward `loot="secret"`.
+  - `any_dep=True`: unlocks when ANY ONE dependency is done (use for alternative routes, e.g. "any generator").
+  - `loot="t3"`: one random roll from a reward table. `choice="pick_mid"`: the player picks one item.
+    Tables are in `tools/quests/_tables.py`: t0..t7, hunt, boss (2 rolls), pick_early, pick_mid, pick_late, secret.
+    Tier milestones in t0..t7 get their tier's loot automatically; don't add it there.
+- Deep-dive pages: put the string `"{@pagebreak}"` as its own line in `desc` to start a new page in the quest
+  window. Use it for long explanations (page 1 = the normal short quest, page 2+ = the deep dive).
+- Quest links: `Chapter(..., links=[("t3_ebf", x, y)])` shows a quest from another chapter as a clickable shortcut.
+  Use links to connect a mod page to where that mod enters the main path.
+
+## Mod pages
+Side chapters are "pages", one per mod or mod family, grouped by category (see LAYOUT in `tools/quest_data.py`).
+The group is set there by key; the group argument in `Chapter(...)` is ignored, so just pass `SIDE`.
+A page's first quest should depend on the main-path quest where the mod becomes available, and the page should carry a
+`links=[...]` entry back to that quest.

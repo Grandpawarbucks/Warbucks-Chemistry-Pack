@@ -1,7 +1,7 @@
 {
 	id: "477FA5F1CFD1E7A9"
-	group: "6B6FDD4F9A66BB50"
-	order_index: 9
+	group: "4045A6EE7751118B"
+	order_index: 0
 	filename: "worlds"
 	icon: {
 		id: "deeperdarker:heart_of_the_deep"
@@ -41,11 +41,47 @@
 			]
 		}
 		{
-			id: "478C654ED802C25B"
+			id: "587A409CC5EF5395"
 			x: 2.0d
 			y: 0.0d
 			dependencies: [
 				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "5F7BB4D860B84CCB"
+					type: "kill"
+					entity: "minecraft:ender_dragon"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "66C189E473CBF757"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "654944EFC5F3F019"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6CDB969C605426AD"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "478C654ED802C25B"
+			x: 2.0d
+			y: -2.0d
+			dependencies: [
+				"587A409CC5EF5395"
 			]
 			tasks: [
 				{
@@ -75,11 +111,42 @@
 			]
 		}
 		{
-			id: "786DC9EAB0FB870A"
+			id: "288DC19CA85DA3E9"
 			x: 4.0d
 			y: 0.0d
 			dependencies: [
+				"587A409CC5EF5395"
+			]
+			tasks: [
+				{
+					id: "7FEA7176C245BF77"
+					type: "structure"
+					structure: "minecraft:end_city"
+				}
+			]
+			rewards: [
+				{
+					id: "0EF5FA83114EAE43"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "7290EEC067E7C6E2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "786DC9EAB0FB870A"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
 				"478C654ED802C25B"
+				"288DC19CA85DA3E9"
 			]
 			tasks: [
 				{
@@ -118,9 +185,85 @@
 			]
 		}
 		{
+			id: "272CE62B5A0B766A"
+			x: 6.0d
+			y: -2.0d
+			optional: true
+			dependencies: [
+				"786DC9EAB0FB870A"
+			]
+			tasks: [
+				{
+					id: "7D094D3E9A776188"
+					type: "item"
+					item: {
+						id: "minecraft:firework_rocket"
+						count: 1
+					}
+					count: 32L
+				}
+			]
+			rewards: [
+				{
+					id: "1FF2B660E06AB0AD"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5C3D36BF77DE6996"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "62AB5E194AA2C276"
+			x: 0.0d
+			y: -2.0d
+			optional: true
+			invisible: true
+			dependencies: [
+				"587A409CC5EF5395"
+			]
+			tasks: [
+				{
+					id: "2CC54CEBD0825CBC"
+					type: "item"
+					item: {
+						id: "minecraft:dragon_egg"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4D04B0D8041C2BC2"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "68E485994D2BE72B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1F1089929C2953F3"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
 			id: "1A42564839595307"
 			x: 0.0d
-			y: 2.5d
+			y: 3.5d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -147,11 +290,47 @@
 			]
 		}
 		{
-			id: "47E37212E3AD9C51"
+			id: "3A05164A9C113523"
 			x: 2.0d
-			y: 2.5d
+			y: 3.5d
 			dependencies: [
 				"1A42564839595307"
+			]
+			tasks: [
+				{
+					id: "5C422F0C0B7DDEC2"
+					type: "kill"
+					entity: "minecraft:warden"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "133598496841FA02"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "7089F6662662DB76"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7777E2832C8AD819"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "47E37212E3AD9C51"
+			x: 4.0d
+			y: 3.5d
+			dependencies: [
+				"3A05164A9C113523"
 			]
 			tasks: [
 				{
@@ -187,8 +366,8 @@
 		}
 		{
 			id: "67E57795C7B28D27"
-			x: 4.0d
-			y: 2.5d
+			x: 6.0d
+			y: 3.5d
 			dependencies: [
 				"47E37212E3AD9C51"
 			]
@@ -220,9 +399,80 @@
 			]
 		}
 		{
+			id: "7D4873404550BDD4"
+			x: 4.0d
+			y: 5.5d
+			dependencies: [
+				"47E37212E3AD9C51"
+			]
+			tasks: [
+				{
+					id: "23C298A54AB192C9"
+					type: "structure"
+					structure: "deeperdarker:ancient_temple"
+				}
+			]
+			rewards: [
+				{
+					id: "6888DA026A0904C8"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "7433C6C8CCFD27C1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F1E8758CCEAA1C1"
+			x: 6.0d
+			y: 5.5d
+			optional: true
+			dependencies: [
+				"47E37212E3AD9C51"
+			]
+			tasks: [
+				{
+					id: "48E11ED431122D60"
+					type: "biome"
+					biome: "deeperdarker:echoing_forest"
+				}
+				{
+					id: "3476C7DC15F9F689"
+					type: "biome"
+					biome: "deeperdarker:overcast_columns"
+				}
+				{
+					id: "3BB35C350E27FB3B"
+					type: "biome"
+					biome: "deeperdarker:blooming_caverns"
+				}
+			]
+			rewards: [
+				{
+					id: "348BB9EC7C431C25"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "27494EE98C2648E6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "33C65B50A9A09FDB"
-			x: 3.0d
-			y: 4.0d
+			x: 8.0d
+			y: 1.5d
 			optional: true
 			dependencies: [
 				"47E37212E3AD9C51"
@@ -257,8 +507,8 @@
 		}
 		{
 			id: "2E4E2442F4D9031D"
-			x: 5.0d
-			y: 4.0d
+			x: 8.0d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"67E57795C7B28D27"
@@ -293,7 +543,7 @@
 		{
 			id: "4832FB99F0BF6921"
 			x: 0.0d
-			y: 6.0d
+			y: 8.0d
 			dependencies: [
 				"6CD23CD722EC696F"
 			]
@@ -345,7 +595,7 @@
 		{
 			id: "233CEF5C6F7B9E72"
 			x: 2.0d
-			y: 6.0d
+			y: 8.0d
 			dependencies: [
 				"4832FB99F0BF6921"
 			]
@@ -377,12 +627,53 @@
 			]
 		}
 		{
-			id: "3618066084A5EC94"
+			id: "54EE1E70147EBAAF"
 			x: 4.0d
-			y: 6.0d
-			size: 1.5d
+			y: 8.0d
 			dependencies: [
 				"233CEF5C6F7B9E72"
+			]
+			tasks: [
+				{
+					id: "36A9E22626D50CF2"
+					type: "structure"
+					structure: "undergarden:catacombs"
+				}
+				{
+					id: "01864A92C8F00E23"
+					type: "kill"
+					entity: "undergarden:forgotten_guardian"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1D5A13FCBDD15509"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "2F60F5D672878002"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7E4528E4AD5B844A"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "3618066084A5EC94"
+			x: 6.0d
+			y: 8.0d
+			size: 1.5d
+			dependencies: [
+				"54EE1E70147EBAAF"
 			]
 			tasks: [
 				{
@@ -412,65 +703,33 @@
 			]
 		}
 		{
-			id: "14B8FA65B7C3829D"
-			x: 0.0d
-			y: 8.5d
-			dependencies: [
-				"4B6B18DEE9511230"
-			]
-			tasks: [
-				{
-					id: "3F5F3B50795E98ED"
-					type: "item"
-					item: {
-						id: "twilightforest:naga_scale"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "022AC90DDCE7346A"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "67B505E46660E81A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1B55EFB33077AC2C"
+			id: "47243C7EB987EF94"
 			x: 2.0d
-			y: 8.5d
+			y: 10.0d
+			optional: true
 			dependencies: [
-				"14B8FA65B7C3829D"
+				"4832FB99F0BF6921"
 			]
 			tasks: [
 				{
-					id: "5AFF6912071E2BE1"
-					type: "item"
-					item: {
-						id: "twilightforest:lich_trophy"
-						count: 1
-					}
-					count: 1L
+					id: "323C9F96A1249E53"
+					type: "structure"
+					structure: "undergarden:forgotten_vestige"
+				}
+				{
+					id: "2F44A59D81066A17"
+					type: "structure"
+					structure: "undergarden:denizen_camp"
 				}
 			]
 			rewards: [
 				{
-					id: "5A1283418CF74107"
+					id: "0BF2F522E154C670"
 					type: "xp"
-					xp: 300
+					xp: 120
 				}
 				{
-					id: "4C0F52E2202EA4AF"
+					id: "12A642E796BD1071"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -480,763 +739,38 @@
 			]
 		}
 		{
-			id: "7BC4ACBC5EAAC5BD"
-			x: 4.0d
-			y: 8.5d
-			dependencies: [
-				"1B55EFB33077AC2C"
-			]
-			tasks: [
-				{
-					id: "1E7A2C443515AC3E"
-					type: "item"
-					item: {
-						id: "twilightforest:minoshroom_trophy"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5F7DBE1533B1315F"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "32C59246B7A12E47"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "39A9D5474A8012E0"
-			x: 6.0d
-			y: 8.5d
-			dependencies: [
-				"7BC4ACBC5EAAC5BD"
-			]
-			tasks: [
-				{
-					id: "50454579751BF19A"
-					type: "item"
-					item: {
-						id: "twilightforest:hydra_trophy"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "1E3B94F8B63B1783"
-					type: "item"
-					item: {
-						id: "twilightforest:fiery_blood"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "63DCD52716AA2849"
-					type: "xp"
-					xp: 400
-				}
-				{
-					id: "278B60D8088D5A3C"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5CB8CFE1F0ED4E1C"
-			x: 8.0d
-			y: 8.5d
-			dependencies: [
-				"39A9D5474A8012E0"
-			]
-			tasks: [
-				{
-					id: "7F5722E363773D62"
-					type: "item"
-					item: {
-						id: "twilightforest:ironwood_ingot"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "42F5501D181D0E98"
-					type: "item"
-					item: {
-						id: "twilightforest:knightmetal_ingot"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "672524D35FB16F08"
-					type: "item"
-					item: {
-						id: "twilightforest:fiery_ingot"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "0E5900BD609B7D03"
-					type: "xp"
-					xp: 250
-				}
-				{
-					id: "41F95C507468CF02"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "2BC7F933F44AED54"
-			x: 10.0d
-			y: 8.5d
-			dependencies: [
-				"5CB8CFE1F0ED4E1C"
-			]
-			tasks: [
-				{
-					id: "2541DE6508DC5909"
-					type: "item"
-					item: {
-						id: "twilightforest:knight_phantom_trophy"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5DC720CD9E15FE8E"
-					type: "xp"
-					xp: 400
-				}
-				{
-					id: "40DE2A1C6E93A455"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "24EB5B9F3C30D2F1"
-			x: 12.0d
-			y: 8.5d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"2BC7F933F44AED54"
-			]
-			tasks: [
-				{
-					id: "2F02DA5B3C01BD01"
-					type: "item"
-					item: {
-						id: "twilightforest:ur_ghast_trophy"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "78B21059D7E97EFD"
-					type: "xp"
-					xp: 500
-				}
-				{
-					id: "34A2A468A6162FC0"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "656D7C4735C0CFA8"
+			id: "60F7318695B23F85"
 			x: 4.0d
 			y: 10.0d
-			dependencies: [
-				"1B55EFB33077AC2C"
-			]
-			tasks: [
-				{
-					id: "49672C51D4FF7BD5"
-					type: "item"
-					item: {
-						id: "twilightforest:alpha_yeti_trophy"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "007E566D6F2E21C0"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "5E83696750BBF746"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "53A416978B641844"
-			x: 6.0d
-			y: 10.0d
-			dependencies: [
-				"656D7C4735C0CFA8"
-			]
-			tasks: [
-				{
-					id: "7E6D7DD095A7E949"
-					type: "item"
-					item: {
-						id: "twilightforest:snow_queen_trophy"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5DDD40DA3FEE8223"
-					type: "xp"
-					xp: 400
-				}
-				{
-					id: "2308A43197B83AA3"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0DD53DE3BCAD93CA"
-			x: 1.0d
-			y: 7.0d
 			optional: true
 			dependencies: [
-				"14B8FA65B7C3829D"
+				"4832FB99F0BF6921"
 			]
 			tasks: [
 				{
-					id: "02047735C96E6830"
-					type: "item"
-					item: {
-						id: "twilightforest:uncrafting_table"
-						count: 1
-					}
-					count: 1L
+					id: "30E340BF08824172"
+					type: "biome"
+					biome: "undergarden:forgotten_field"
+				}
+				{
+					id: "1A898CD24DFD79E4"
+					type: "biome"
+					biome: "undergarden:frostfields"
+				}
+				{
+					id: "437F55B9E8C88835"
+					type: "biome"
+					biome: "undergarden:smog_spires"
 				}
 			]
 			rewards: [
 				{
-					id: "3164D62DB8ACD566"
+					id: "4A5FEB70FDF0EDC0"
 					type: "xp"
-					xp: 75
+					xp: 120
 				}
 				{
-					id: "1E1CE45CCB82A464"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "6D0121AD6AFBB06A"
-			x: 0.0d
-			y: 12.0d
-			optional: true
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "7E3BEE1E6FA83C8B"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "0CCDF5A0487116FB"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "3051B2144C31BC69"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "68B5AC09A423AA4D"
-			x: 2.0d
-			y: 12.0d
-			optional: true
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "351CD8717FF7E664"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "504FC9AD20DC5972"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "45C9E1229080B49D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "61922A7A4397905F"
-			x: 4.0d
-			y: 12.0d
-			optional: true
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "45F3CD8175F8D1A9"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "736B950F970F2010"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "126BCB44A3DCB6DD"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "742D7993CB0086CB"
-			x: 0.0d
-			y: 14.0d
-			dependencies: [
-				"0C1DD95BA033EAB3"
-			]
-			tasks: [
-				{
-					id: "3622C4BB2617256E"
-					type: "item"
-					item: {
-						id: "ad_astra:raw_desh"
-						count: 1
-					}
-					count: 8L
-				}
-			]
-			rewards: [
-				{
-					id: "1B7D69A1CB587605"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "52156B900DC468B9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "635A241489681170"
-			x: 2.0d
-			y: 14.0d
-			dependencies: [
-				"742D7993CB0086CB"
-			]
-			tasks: [
-				{
-					id: "4EF6E01F5C8BC66B"
-					type: "dimension"
-					dimension: "ad_astra:mars"
-				}
-				{
-					id: "7DDE41737093DE29"
-					type: "item"
-					item: {
-						id: "ad_astra:tier_2_rocket"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "1F1B99F307BE6F86"
-					type: "xp"
-					xp: 500
-				}
-				{
-					id: "4B8F4A17BF1E0441"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1751F7DCDA2801ED"
-			x: 4.0d
-			y: 14.0d
-			dependencies: [
-				"635A241489681170"
-			]
-			tasks: [
-				{
-					id: "3A8935D2F778E882"
-					type: "item"
-					item: {
-						id: "ad_astra:raw_ostrum"
-						count: 1
-					}
-					count: 8L
-				}
-			]
-			rewards: [
-				{
-					id: "009CAC91866C5052"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "5ABE7FD51037E65D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "7E7B71100CC2752B"
-			x: 6.0d
-			y: 14.0d
-			dependencies: [
-				"1751F7DCDA2801ED"
-			]
-			tasks: [
-				{
-					id: "4CAC2A64D6050DF1"
-					type: "item"
-					item: {
-						id: "ad_astra:netherite_space_suit"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "62ED18D81B7CB72F"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "42A32F37AEE04114"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0371D774272DB515"
-			x: 8.0d
-			y: 14.0d
-			dependencies: [
-				"7E7B71100CC2752B"
-			]
-			tasks: [
-				{
-					id: "09DF8C4300EFB4E4"
-					type: "dimension"
-					dimension: "ad_astra:venus"
-				}
-				{
-					id: "14220B063075566B"
-					type: "item"
-					item: {
-						id: "ad_astra:tier_3_rocket"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7CF6920D6D114FF6"
-					type: "xp"
-					xp: 600
-				}
-				{
-					id: "5919CF89D1EEDEC9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1CA5613802C3B7C6"
-			x: 10.0d
-			y: 14.0d
-			dependencies: [
-				"0371D774272DB515"
-			]
-			tasks: [
-				{
-					id: "16885C14E2E6680D"
-					type: "item"
-					item: {
-						id: "ad_astra:desh_ingot"
-						count: 1
-					}
-					count: 8L
-				}
-				{
-					id: "6941CD964113D014"
-					type: "item"
-					item: {
-						id: "ad_astra:ostrum_ingot"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "328E75FE6BD37922"
-					type: "item"
-					item: {
-						id: "ad_astra:calorite_ingot"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "6FA2D810A7A77A0B"
-					type: "xp"
-					xp: 600
-				}
-				{
-					id: "1131531FC47B1337"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "537431DD08EA991F"
-			x: 12.0d
-			y: 14.0d
-			shape: "hexagon"
-			size: 1.75d
-			dependencies: [
-				"1CA5613802C3B7C6"
-			]
-			tasks: [
-				{
-					id: "1D10A53DFE253F17"
-					type: "dimension"
-					dimension: "ad_astra:glacio"
-				}
-				{
-					id: "3290C4605BDBB9B1"
-					type: "item"
-					item: {
-						id: "ad_astra:tier_4_rocket"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "535D75A0877D319C"
-					type: "xp"
-					xp: 800
-				}
-				{
-					id: "454AD1D108E4AEE9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "40442645A8B5A09C"
-			x: 1.0d
-			y: 15.5d
-			optional: true
-			dependencies: [
-				"742D7993CB0086CB"
-			]
-			tasks: [
-				{
-					id: "185D926F2306B4F9"
-					type: "item"
-					item: {
-						id: "ad_astra:cheese"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "48032627BB81E900"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "6C393E7923535AEA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0304AF411C0ADEBE"
-			x: 5.0d
-			y: 15.5d
-			optional: true
-			dependencies: [
-				"635A241489681170"
-			]
-			tasks: [
-				{
-					id: "60FC509C70CE7DD6"
-					type: "item"
-					item: {
-						id: "ad_astra:oxygen_distributor"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7E48D5530A5250FD"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "7B1D9211C12EAC9C"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "72A1114536C4C6FA"
-			x: 9.0d
-			y: 15.5d
-			optional: true
-			dependencies: [
-				"0371D774272DB515"
-			]
-			tasks: [
-				{
-					id: "441C0C92A0447CD0"
-					type: "dimension"
-					dimension: "ad_astra:mercury"
-				}
-			]
-			rewards: [
-				{
-					id: "57B2C90DABC89ABE"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "1D1A3FB336030240"
+					id: "652B5B0259675E79"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1246,16 +780,29 @@
 			]
 		}
 	]
-	quest_links: [ ]
 	images: [
 		{
 			id: "7208713374E58AC5"
 			x: 2.5d
-			y: -2.0d
+			y: -4.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/worlds.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "5833462B6ACF821A"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			id: "28638BC8ECDFEABF"
+			linked_quest: "6CD23CD722EC696F"
+			x: -2.0d
+			y: 8.0d
 		}
 	]
 }

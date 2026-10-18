@@ -89,53 +89,7 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
         "&eWhat:&r a charged core, upgraded with antimatter and a quantum circuit.",
         "&eHow:&r MI Assembler at 2048 EU/t for 6000 ticks: charged Energy Core + 4 antimatter pellets + 1 quantum circuit.",
         "&eTip:&r the Seed needs eight. Start a production line, not a one-off."]),
-    # ---------------------------------------------------------------- the Seed's checklist
-    Q("t7_seed_basics", 20, -6, [item(MI + "coke", 4), item("chemlib:water", 8), item("chemlib:hydrogen", 4)], "Fire, Water, Hydrogen", deps=["t7_cores"], xp=200,
-      subtitle="Seed checklist: where it all began", desc=[
-        "&eWhat:&r the Seed's corners and edges hold the first things you learned: coke from your coke oven, and water and hydrogen synthesized as chemicals.",
-        "&eHow:&r 4 coke, 8 ChemLib water and 4 ChemLib hydrogen (from the Alchemistry Dissolver and Combiner).",
-        "&eTip:&r all three are cheap now. Make spares."]),
-    Q("t7_seed_acid", 20, -4, [item(MI + "sulfuric_acid_bucket", 8)], "Eight Buckets of Acid", deps=["t7_cores"], xp=200,
-      subtitle="Seed checklist: the Acid Age", desc=[
-        "&eHow:&r fill buckets from your sulfuric acid tanks.",
-        "&eWhat:&r 8 buckets of sulfuric acid, the chemical that unlocked 5x ore processing.",
-        "&eTip:&r buckets don't stack. Clear inventory space first."]),
-    Q("t7_seed_pe", 20, -2, [item(MI + "polyethylene_bucket", 16)], "Sixteen Buckets of Plastic", deps=["t7_cores"], xp=200,
-      subtitle="Seed checklist: the Oil Age", desc=[
-        "&eHow:&r polymerise ethylene in the Chemical Reactor, as in Petrochemistry.",
-        "&eWhat:&r 16 buckets of polyethylene, the most of any ingredient.",
-        "&eTip:&r fill them straight from your polymerisation reactor's output."]),
-    Q("t7_seed_cores", 20, 0, [item("kubejs:antimatter_core", 8)], "Eight Antimatter Cores", deps=["t7_cores"], xp=500, size=1.25,
-      subtitle="Seed checklist: the hardest part", desc=[
-        "&eWhat:&r eight Antimatter Cores ring the centre of the recipe.",
-        "&eHow:&r that's 32 antimatter pellets, 32 polonium pellets and 8 quantum circuits in total.",
-        "&eTip:&r a second SPS halves the wait."]),
-    Q("t7_seed_tech", 20, 2, [item(MI + "processing_unit", 8), item(MI + "stainless_steel_plate", 4)], "Circuits and Steel", deps=["t7_cores"], xp=200,
-      subtitle="Seed checklist: the machine ages", desc=[
-        "&eWhat:&r 8 processing units and 4 stainless steel plates.",
-        "&eHow:&r both come from lines you already run. Queue them in your assemblers.",
-        "&eTip:&r processing units are slow to make, so start these early."]),
-    Q("t7_seed_nuclear", 20, 4, [item("chemlib:oganesson", 8), item(MEK + "pellet_plutonium", 4), item(MEK + "pellet_polonium", 4)], "Heavy Elements", deps=["t7_cores", "t6_table"], xp=300,
-      subtitle="Seed checklist: the atomic age", desc=[
-        "&eWhat:&r 8 oganesson, 4 plutonium pellets and 4 polonium pellets.",
-        "&eHow:&r oganesson from the Fusion Chamber; pellets from your reactor's waste.",
-        "&eTip:&r automate the fusion chamber for oganesson; eight by hand is slow."]),
-    Q("t7_seed_stars", 20, 6, [item("minecraft:nether_star", 4), item("minecraft:dragon_egg")], "Stars and an Egg", deps=["t7_cores"], xp=300,
-      subtitle="Seed checklist: trophies of the old world", desc=[
-        "&eWhat:&r 4 Nether Stars, and the Dragon Egg at the very centre.",
-        "&eHow:&r summon and defeat the Wither four times; kill the Ender Dragon for the egg.",
-        "&eTip:&r there's only one Dragon Egg per world. On a server, agree who crafts the Seed."]),
-    Q("t7_seed", 22, 0, [item("kubejs:seed_of_a_new_world")], "Seed of a New World", deps=["t7_cores", "t6_table", "mf_ult_table", "t7_seed_basics", "t7_seed_acid", "t7_seed_pe", "t7_seed_cores", "t7_seed_tech", "t7_seed_nuclear", "t7_seed_stars"],
-      xp=3000, size=2.0, shape="hexagon", subtitle="The endgame goal", desc=[
-        "&6Every lesson, in one 9x9 grid.&r",
-        "&eWhat:&r a recipe on the Ultimate Table that needs something from every tier.",
-        "&eHow:&r 4 coke, 8 water, 4 hydrogen, 8 sulfuric acid, 16 polyethylene, 8 processing units, 4 stainless plates, 8 oganesson, 4 plutonium, 4 polonium, 4 Nether Stars, 8 Antimatter Cores, and the Dragon Egg at the centre.",
-        "&eTip:&r check JEI for the exact layout before you fill the table."]),
-    Q("t7_creation", 25, 0, [tick()], "A New World", deps=["t7_seed"], xp=2000, size=2.5, shape="gear", tokens=50,
-      subtitle="The demigod, restored", desc=[
-        "&6You took the world apart, element by element, and learned to build it again.&r",
-        "Fire, steel, acid, oil, silicon, the atom, antimatter. Every tier was a lesson in chemistry, and you mastered them all.",
-        "&6The worlds out there are blank canvases now. Go make them yours.&r"]),
+    # The Seed's checklist, the Seed itself and t7_creation moved to tools/quests/seed.py and creation.py.
     # ---------------------------------------------------------------- optional side quests
     Q("t7_opt_cheese", 6, -4, [item(AA + "cheese")], "Made of Cheese", deps=["t7_rocket"], xp=50,
       optional=True, tokens=1, subtitle="Optional: test an old rumour", desc=[
@@ -167,4 +121,4 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
         "&eWhat:&r Mekanism's late-game machine uses antimatter to rebuild one item into another.",
         "&eHow:&r check JEI for the recipe and for what it can transmute.",
         "&eTip:&r it uses antimatter as fuel, so it needs your SPS running."]),
-])
+], links=[("t7_seed", 21, 0)])

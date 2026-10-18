@@ -4,6 +4,33 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Quest book v8: end goal, categories, hunting (1,168 quests)
+- **Quest engine:** new task types: kill counts, structure, biome, and "any of" items or tags (FTB Filter System smart filters).
+  Also new:
+  - quest flags: hidden, secret (always optional) and alternative-route ("any one dependency");
+  - quest links between chapters;
+  - reward tables: random loot and choose-one;
+  - `{@pagebreak}` deep-dive pages;
+  - `QUEST_ONLY=` partial checks.
+  Tier milestones in T0–T7 also roll that tier's loot table.
+- **Book layout:** 7 category groups (The Demigod's Path, Chemistry Lab, Engineering, Magic and Relics, Exploration,
+  Farming and Food, Collections) with one page per mod family. 38 chapters, 1,168 quests (up from 589); 433 optional, 26 secret, 74 kill quests.
+  - Split: Divine Gifts → Ars Nouveau / Apotheosis / Relics / Occultism; Other Worlds → Worlds / Twilight Forest / Space;
+    Storage → Storage / Applied Energistics; Farming → Farming and Food / Mystical Agriculture. Quest keys unchanged, so progress is kept.
+  - New chapters:
+    - **The end goal:** The Seed of a New World (finale around the 9x9 capstone), then Creation (post-Seed goals).
+    - **Chemistry:** Lab Notebook (30 chemistry deep dives), Mekanism.
+    - **Other:** ProjectE (lite), Building, Exploration (structures and biomes), Monster Hunting (kill counts, bosses), Completionist, The Demigod's Market.
+- **Token shop overhaul:**
+  - New Greater Demigod Token (= 9 tokens, exchanged both ways).
+  - Three price bands: small (1–3), medium (4–8, raw ores and mob drops) and large (paid in Greater Tokens).
+  - Convenience only: the shop never sells machines, circuits or tier skips.
+  - 14 reward tables: one per tier, plus hunt, boss, three pick-one tables and secret.
+- **Balance fixes** (`kubejs/server_scripts/phase5_balance.js`):
+  - Mekanism Chemical Injection Chamber, Dissolution Chamber, Washer and Crystallizer need Advanced (MV) circuits instead of Elite/Ultimate. The 4x/5x ore chain now sits at MV, as designed, behind the acids.
+  - Reliquary Alkahestry no longer duplicates metals, gems or Nether Stars, matching the ProjectE-lite rules.
+- 220 mods. Smoke test passes (FTB Quests: 38 chapters, 1,168 quests, 14 reward tables).
+
 ### 2026-10-18: Gap-analysis mods, ProjectE "lite"
 - Added (user picks):
   - Magic: ProjectE (lite), Ars Elemental, Ars Additions.

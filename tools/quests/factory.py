@@ -1,5 +1,5 @@
 """Quest chapter: factory. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("factory", "Mob Data and Big Crafting", "hostilenetworks:sim_chamber",
         ["Monifactory-inspired machinery: simulate mobs, craft on giant tables, and fold whole factories into a block."], SIDE, [
@@ -124,4 +124,46 @@ CHAPTER = Chapter("factory", "Mob Data and Big Crafting", "hostilenetworks:sim_c
         "&eWhat:&r a cake that sends you to the End.",
         "&eHow:&r a cake surrounded by eyes of ender. Refill it with eyes of ender.",
         "&eTip:&r leave it in your base so the End is one bite away."]),
-])
+
+    # --- More mob data (y=-1.5 / -3) -----------------------------------------------------------
+    Q("mf_kill_blaze", 1, -1.5, [kill("minecraft:blaze", 30)], "Training Data: Blazes", deps=["mf_model", "t2_nether"], xp=60,
+      optional=True, tokens=1, loot="hunt", subtitle="Optional: kill 30 blazes with a model loaded", desc=[
+        "&eWhat:&r every kill with a matching model in your Deep Learner adds data. Blaze models are worth it: blaze rods feed brewing, Powah and Create's Blaze Burners.",
+        "&eHow:&r put a blaze data model in the Deep Learner, keep it in your inventory, and hunt blazes at a Nether Fortress.",
+        "&eTip:&r a blaze model at a high tier turns the Simulation Chamber into an endless rod farm."]),
+    Q("mf_kill_ender", 5, -1.5, [kill("minecraft:enderman", 30)], "Training Data: Endermen", deps=["mf_model"], xp=60,
+      optional=True, tokens=1, loot="hunt", subtitle="Optional: kill 30 endermen with a model loaded", desc=[
+        "&eWhat:&r ender pearls go into Entangled blocks, AE2 seeds, Powah ender cells and teleporting. An enderman model makes them renewable.",
+        "&eHow:&r load an enderman data model and hunt them at night, in warped forests, or in the End.",
+        "&eTip:&r wear a carved pumpkin, or look at their feet, so they don't attack you first."]),
+    Q("mf_predictions", 5, -3, [item("hostilenetworks:overworld_prediction", 4), item("hostilenetworks:nether_prediction", 4), item("hostilenetworks:end_prediction", 4)], "Three Worlds of Data", deps=["mf_sim", "w_end"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: predictions from every dimension", desc=[
+        "&eWhat:&r each simulation gives a prediction for the mob's home dimension as well as the drop. Overworld, Nether and End predictions are used in recipes and Fabrication Directives.",
+        "&eHow:&r run simulations of one mob from each dimension, such as a zombie, a blaze and an enderman.",
+        "&eTip:&r predictions stack up fast; send them to storage with a pipe."]),
+    Q("mf_data_center", 9, -1.5, [item("hostilenetworks:data_center"), item("hostilenetworks:data_center_io_port")], "The Data Center", deps=["mf_fab"], xp=300,
+      optional=True, tokens=2, subtitle="Optional: 25 simulations at once", desc=[
+        "&6You remember watching a million lives at once. This is a pale copy, but a useful one.&r",
+        "&eWhat:&r the Data Center runs up to 25 Self Aware data models at the same time, each making one drop per cycle.",
+        "&eHow:&r a Sim Chamber, a Loot Fabricator, a Nether Star, echo shards and obsidian. Build a 7x7x7 hollow shell: obsidian floor, black stained glass walls and ceiling, with the controller in a bottom wall facing out (JEI shows the rules).",
+        "&eTip:&r IO ports in the shell let pipes feed inputs and pull the drops. A Fabrication Directive picks which drop each slot makes."]),
+
+    # --- More Extended Crafting (y=4) ----------------------------------------------------------
+    Q("mf_flux_crafter", 2, 4, [item("extendedcrafting:flux_crafter"), item("extendedcrafting:flux_alternator", 2)], "Flux Crafting", deps=["mf_basic_table"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: crafting powered by FE", desc=[
+        "&eWhat:&r the Flux Crafter runs special recipes using FE delivered by nearby Flux Alternators, like the Flux Star.",
+        "&eHow:&r gold and redstone ingots (check JEI). Place alternators around the crafter and power them.",
+        "&eTip:&r JEI's Flux Crafter tab lists every recipe and the FE each one needs."]),
+    Q("mf_auto_table", 11, 4, [item("extendedcrafting:basic_auto_table")], "Auto Tables", deps=["mf_crystaltine"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: tables that craft by themselves", desc=[
+        "&eWhat:&r Auto Tables remember a recipe and craft it with FE whenever the ingredients are inside. Each table size has its own.",
+        "&eHow:&r a crafting table of the same size plus crystaltine components (check JEI).",
+        "&eTip:&r the Ultimate Auto Table is also the heart of Packaged ExCrafting's Ultimate Crafter (see the Applied Energistics page)."]),
+
+    # --- More Compact Machines (y=8) -----------------------------------------------------------
+    Q("mf_cm_machine", 7, 8, [item("compactmachines:machine", 4)], "A Room for Every Line", deps=["mf_cm_room"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: four compact machines", desc=[
+        "&eWhat:&r one compact machine per chemical line keeps your base tidy: a sulfuric acid room, a chlorine room, a petrochemical room.",
+        "&eHow:&r craft more machines (check JEI for the sizes) and enter each with the Personal Shrinking Device.",
+        "&eTip:&r a room only runs while the chunk with its machine block is loaded, so claim and force-load your factory."]),
+], links=[("t4_mv", -2, 0), ("t1_steel", -2, 2.5), ("t3_hull", -2, 6.5), ("t5_ae2", -2, 4)])

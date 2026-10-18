@@ -1,5 +1,5 @@
 """Quest chapter: create. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
 # Layout: y=0 kinetic spine (alloy -> brass -> precision), y=-2 pressing/mixing, y=2 ores and
 # electron tubes; electricity from x=20 (y=-1 Crafts & Additions, y=-3 New Age, y=1/3 motor and XP).
@@ -147,4 +147,31 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r the Printer copies written and enchanted books, paid for in liquid XP.",
         "&eHow:&r check JEI and the Ponder for the setup.",
         "&eTip:&r find a good enchanted book once, then print it as often as your XP lasts."]),
-])
+
+    # --- More Create: Connected (y=4) ----------------------------------------------------------
+    Q("cr_battery", 6, 4, [item("create_connected:kinetic_battery")], "Kinetic Battery", deps=["cr_connected"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: store rotation for later", desc=[
+        "&eWhat:&r the Kinetic Battery charges from rotation and gives it back later, so a windmill's power isn't wasted when nothing is running.",
+        "&eHow:&r check JEI and its Ponder scene (hold W over it). Put it on a shaft line to charge it.",
+        "&eTip:&r a charged battery can be picked up and moved, like a wind-up spring."]),
+
+    # --- Biofuel (y=-4) ------------------------------------------------------------------------
+    Q("cr_biofuel", 12, -4, [item("createaddition:seed_oil_bucket"), item("createaddition:bioethanol_bucket")], "Bioethanol", deps=["cr_mixer"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: fuel from fermented plants", desc=[
+        "&eWhat:&r Crafts & Additions makes liquid fuel from plants: seed oil, then biomass, then bioethanol, which burns in a Liquid Blaze Burner.",
+        "&eChemistry:&r real bioethanol comes from yeast fermenting sugar: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂. Plant oils are triglycerides, long carbon chains that store a lot of energy.",
+        "&eHow:&r compact seeds in a press and basin for seed oil; mix crops with seed oil over heat for biomass; mix biomass, sugar and cinder flour for bioethanol (check JEI).",
+        "&eTip:&r it's a renewable fuel for Create steam engines that never touches your oil wells."]),
+
+    # --- More electricity (x>=22) --------------------------------------------------------------
+    Q("cr_tesla", 26, 0.5, [item("createaddition:tesla_coil")], "Tesla Coil", deps=["cr_accumulator"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: charge items with lightning", desc=[
+        "&eWhat:&r the Tesla Coil charges FE items on belts or depots below it, and zaps anything that walks under it.",
+        "&eHow:&r a mechanical crafting recipe with brass, a capacitor, electron tubes and a copper spool (check JEI). Power it with FE.",
+        "&eTip:&r put a belt of jetpacks or gadgets under it for an automatic charging station."]),
+    Q("cr_stirling", 22, -5, [item("create_new_age:stirling_engine"), item("create_new_age:basic_solar_heating_plate")], "Heat Engines", deps=["cr_newage"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: rotation from sunlight and heat", desc=[
+        "&eWhat:&r New Age moves heat through heat pipes. Solar heating plates collect it from sunlight; a Stirling Engine turns it into slow rotation, and a Boiler Heater uses it in place of a blaze burner.",
+        "&eChemistry:&r a real Stirling engine heats and cools a sealed gas. Hot gas expands and pushes a piston; cooled gas contracts and pulls it back. No fuel burns inside it.",
+        "&eHow:&r heat pipes, iron and glass for the plate; a copper block, heat pipes and a shaft for the engine (check JEI and the Ponder scenes)."]),
+], links=[("gs_iron", -2, 0), ("t3_analog", 20, -3), ("t6_pu", 26, -5)])

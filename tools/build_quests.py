@@ -15,7 +15,7 @@ import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from questlib import ROOT, ERRORS as errors, check  # noqa: E402
-from quest_data import CHAPTERS, GROUPS, BOOK_TITLE  # noqa: E402
+from quest_data import CHAPTERS, GROUPS, BOOK_TITLE, REWARD_TABLES, ONLY  # noqa: E402
 
 OUT = ROOT / "pack/config/ftbquests/quests"
 DOC = ROOT / "docs/QUESTS.md"
@@ -47,8 +47,14 @@ def snbt(v, indent=0):
     if isinstance(v, dict):
         if not v:
             return "{ }"
-        return "{\n" + "\n".join(f"{inner}{k}: {snbt(x, indent + 1)}" for k, x in v.items()) + "\n" + pad + "}"
+        return "{\n" + "\n".join(f"{inner}{key(k)}: {snbt(x, indent + 1)}" for k, x in v.items()) + "\n" + pad + "}"
     raise TypeError(v)
+
+
+def key(k):
+    """SNBT keys with characters outside [A-Za-z0-9_.+-] (e.g. "ftbfiltersystem:filter") must be quoted."""
+    import re
+    return k if re.fullmatch(r"[A-Za-z0-9_.+-]+", k) else snbt(k)
 
 
 class Long(int):
@@ -64,6 +70,18 @@ def build():
             for d in q.deps:
                 if d not in keys:
                     errors.append(f"dependency {d} (from {q.key})")
+            for tkey in (q.loot, q.choice):
+                if tkey and tkey not in REWARD_TABLES:
+                    errors.append(f"reward table {tkey} (from {q.key})")
+        for lk, _, _ in c.links:
+            if lk not in keys:
+                errors.append(f"quest link {lk} (in chapter {c.key})")
+    if ONLY:  # partial check: deps on quests in chapters that weren't loaded are fine if the key exists somewhere
+        import re
+        known = {k for f in (ROOT / "tools/quests").glob("*.py") for k in re.findall(r'Q\(\s*"([^"]+)"', f.read_text())}
+        errors[:] = [e for e in errors if not (e.startswith(("dependency ", "quest link ")) and e.split()[-3 if e.startswith("dependency") else 2] in known)]
+        if "--check" not in sys.argv:
+            sys.exit("QUEST_ONLY is for --check only")
     if errors:
         sys.exit("Unknown ids/dependencies:\n  " + "\n  ".join(sorted(set(errors))))
     dup = [k for k in keys if sum(1 for c in CHAPTERS for q in c.quests if q.key == k) > 1]
@@ -100,6 +118,15 @@ def build():
                     tasks.append({"id": tid, "type": "item", "item": {"id": t[1], "count": 1}, "count": Long(t[2])})
                 elif t[0] == "dimension":
                     tasks.append({"id": tid, "type": "dimension", "dimension": t[1]})
+                elif t[0] == "kill":
+                    tasks.append({"id": tid, "type": "kill", "entity": t[1], "value": Long(t[2])})
+                elif t[0] == "structure":
+                    tasks.append({"id": tid, "type": "structure", "structure": t[1]})
+                elif t[0] == "biome":
+                    tasks.append({"id": tid, "type": "biome", "biome": t[1]})
+                elif t[0] == "filter":
+                    tasks.append({"id": tid, "type": "item", "item": {"id": "ftbfiltersystem:smart_filter", "count": 1,
+                                  "components": {"ftbfiltersystem:filter": t[1]}}, "count": Long(t[2])})
                 else:
                     tasks.append({"id": tid, "type": "checkmark"})
             if q.xp:
@@ -108,6 +135,10 @@ def build():
             if tokens:
                 rewards.append({"id": hexid(f"reward:{q.key}:tokens"), "type": "item",
                                 "item": {"id": "kubejs:demigod_token", "count": tokens}})
+            for kind, tkey in (("random", q.loot), ("choice", q.choice)):
+                if tkey:
+                    rewards.append({"id": hexid(f"reward:{q.key}:{kind}"), "type": kind,
+                                    "table_id": Long(int(hexid("table:" + tkey), 16))})
             for i, (rid, n) in enumerate(q.items):
                 rewards.append({"id": hexid(f"reward:{q.key}:{i}"), "type": "item", "item": {"id": rid, "count": n}})
             entry = {"id": qid, "x": float(q.x), "y": float(q.y)}
@@ -117,6 +148,12 @@ def build():
                 entry["size"] = float(q.size)
             if q.optional:
                 entry["optional"] = True
+            if q.hidden:
+                entry["hide_until_deps_visible"] = True
+            if q.secret:
+                entry["invisible"] = True
+            if q.any_dep:
+                entry["dependency_requirement"] = "one_completed"
             if q.deps:
                 entry["dependencies"] = [keys[d] for d in q.deps]
             entry["tasks"] = tasks
@@ -142,14 +179,24 @@ def build():
                    "icon": {"id": c.icon, "count": 1},
                    "default_quest_shape": "rsquare" if c.group == "main" else "circle",
                    "default_hide_dependency_lines": False,
-                   "quests": quests, "quest_links": [], "images": images}
+                   "quests": quests, "images": images,
+                   "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly)}
+                                   for lk, lx, ly in c.links]}
         order[c.group] += 1
         (OUT / "chapters" / f"{c.key}.snbt").write_text(snbt(chapter) + "\n")
 
-    if errors:
-        sys.exit("Unknown ids:\n  " + "\n  ".join(sorted(set(errors))))
+    (OUT / "reward_tables").mkdir(exist_ok=True)
+    for i, (tkey, t) in enumerate(REWARD_TABLES.items()):
+        tid = hexid("table:" + tkey)
+        lang[f"reward_table.{tid}.title"] = t["title"]
+        table = {"id": tid, "order_index": i, "loot_size": t.get("loot_size", 1), "use_title": True,
+                 "rewards": [{"id": hexid(f"tablereward:{tkey}:{j}"), "item": {"id": item, "count": n},
+                              **({"weight": float(w)} if w != 1 else {})}
+                             for j, (item, n, w) in enumerate(t["entries"])]}
+        (OUT / "reward_tables" / f"{tkey}.snbt").write_text(snbt(table) + "\n")
     (OUT / "lang" / "en_us.snbt").write_text(snbt(lang) + "\n")
     write_doc(total)
+    print(f"Reward tables: {len(REWARD_TABLES)}")
     print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {OUT.relative_to(ROOT)} (+ {DOC.relative_to(ROOT)})")
 
 
@@ -171,6 +218,12 @@ def write_doc(total):
                         tasks.append(f"{t[2]}x `{t[1]}`" if t[2] > 1 else f"`{t[1]}`")
                     elif t[0] == "dimension":
                         tasks.append(f"visit `{t[1]}`")
+                    elif t[0] == "kill":
+                        tasks.append(f"kill {t[2]}x `{t[1]}`")
+                    elif t[0] in ("structure", "biome"):
+                        tasks.append(f"find {t[0]} `{t[1]}`")
+                    elif t[0] == "filter":
+                        tasks.append(f"{t[2]}x any of `{t[1]}`")
                     else:
                         tasks.append("checkmark")
                 title = q.title or (q.tasks[0][1] if q.tasks[0][0] == "item" else q.key)
