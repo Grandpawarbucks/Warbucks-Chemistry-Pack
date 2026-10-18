@@ -1,0 +1,354 @@
+{
+	id: "6A576761B258CEBA"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 5
+	filename: "logic"
+	icon: {
+		id: "computercraft:computer_advanced"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "140C58A0A3A11DB7"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "26DF526920C9542B"
+					type: "item"
+					item: {
+						id: "computercraft:computer_normal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6941A2F0EA3EAFDB"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "22DBF2008CBAF5C9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5B44262E5F932D07"
+			x: 2.0d
+			y: -1.0d
+			dependencies: [
+				"140C58A0A3A11DB7"
+			]
+			tasks: [
+				{
+					id: "39073502055ACAF2"
+					type: "item"
+					item: {
+						id: "computercraft:turtle_normal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6CE0E0F5974DEE90"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "02527BCC74E169C1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "02AEF5F6A8349814"
+			x: 2.0d
+			y: 1.0d
+			dependencies: [
+				"140C58A0A3A11DB7"
+				"45849083414E98A3"
+			]
+			tasks: [
+				{
+					id: "1AD3851EE5C78791"
+					type: "item"
+					item: {
+						id: "advancedperipherals:energy_detector"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1480E26196AD9A13"
+					type: "item"
+					item: {
+						id: "advancedperipherals:me_bridge"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2F1424EE79D15139"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "2E15529908FDFD15"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "00C7FF03D1B02894"
+			x: 0.0d
+			y: 3.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "7808FC6AC0E90C78"
+					type: "item"
+					item: {
+						id: "integrateddynamics:cable"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "6D14EDFD4CBFBD35"
+					type: "item"
+					item: {
+						id: "integrateddynamics:logic_programmer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "005C4C938A82D450"
+					type: "item"
+					item: {
+						id: "integrateddynamics:variable"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "13950FA8F18CEB33"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "2AF13936E4506AF1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "34D0F3A6001E73F8"
+			x: 2.0d
+			y: 3.0d
+			dependencies: [
+				"00C7FF03D1B02894"
+			]
+			tasks: [
+				{
+					id: "4F18F4865DB81046"
+					type: "item"
+					item: {
+						id: "sfm:manager"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6F7FDE2194AEE158"
+					type: "item"
+					item: {
+						id: "sfm:cable"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "49A4EBB5CD7AC384"
+					type: "item"
+					item: {
+						id: "sfm:disk"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3223FD303E1C7F2F"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3DDD8177AC5DCFF8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0239845B19FBECF7"
+			x: 4.0d
+			y: 3.0d
+			dependencies: [
+				"34D0F3A6001E73F8"
+			]
+			tasks: [
+				{
+					id: "656C58E5D765AF03"
+					type: "item"
+					item: {
+						id: "logisticsnetworks:logistics_node"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "153936596C1F9B50"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "41379898522130A3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "408A259A993527E2"
+			x: 4.0d
+			y: 1.0d
+			dependencies: [
+				"3391DEB52E24862E"
+			]
+			tasks: [
+				{
+					id: "4FAAD5D7DD3D11C1"
+					type: "item"
+					item: {
+						id: "laserio:card_item"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "5414199FA16DF82D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7F8BB3C4ED9FD83F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "21A977445D70545D"
+			x: 6.0d
+			y: 1.0d
+			dependencies: [
+				"45849083414E98A3"
+				"02AEF5F6A8349814"
+			]
+			tasks: [
+				{
+					id: "696F8B5580C07FA9"
+					type: "item"
+					item: {
+						id: "ae2:pattern_provider"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4DCD4E3928FCEF5C"
+					type: "item"
+					item: {
+						id: "ae2:molecular_assembler"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0CE59BFE92503AB8"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "6F99B8EA4830969E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [
+		{
+			id: "750AC182A921C84A"
+			x: 2.5d
+			y: -3.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/logic.png"
+		}
+	]
+}

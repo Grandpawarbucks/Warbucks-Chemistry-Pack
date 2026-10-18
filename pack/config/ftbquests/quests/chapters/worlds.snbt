@@ -1,7 +1,7 @@
 {
 	id: "477FA5F1CFD1E7A9"
 	group: "6B6FDD4F9A66BB50"
-	order_index: 5
+	order_index: 8
 	filename: "worlds"
 	icon: {
 		id: "deeperdarker:heart_of_the_deep"
@@ -79,13 +79,349 @@
 				}
 			]
 		}
+		{
+			id: "67E57795C7B28D27"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"47E37212E3AD9C51"
+			]
+			tasks: [
+				{
+					id: "7327A1E654426BC0"
+					type: "item"
+					item: {
+						id: "deeperdarker:reinforced_echo_shard"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6403BBB15BCB0D6E"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "15A09435A2C4ABA7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4832FB99F0BF6921"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"6CD23CD722EC696F"
+			]
+			tasks: [
+				{
+					id: "100A867DC9C30498"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "10F559DB65F9AA8E"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "3BD5ADD7D4FFF53F"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_crystal"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "72B95DDF24B9136B"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "07ED2E2F918C5F11"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "14B8FA65B7C3829D"
+			x: 4.0d
+			y: 0.0d
+			dependencies: [
+				"4B6B18DEE9511230"
+			]
+			tasks: [
+				{
+					id: "3F5F3B50795E98ED"
+					type: "item"
+					item: {
+						id: "twilightforest:naga_scale"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "022AC90DDCE7346A"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "67B505E46660E81A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1B55EFB33077AC2C"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
+				"14B8FA65B7C3829D"
+			]
+			tasks: [
+				{
+					id: "5AFF6912071E2BE1"
+					type: "item"
+					item: {
+						id: "twilightforest:lich_trophy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A1283418CF74107"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "4C0F52E2202EA4AF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5CB8CFE1F0ED4E1C"
+			x: 6.0d
+			y: 2.0d
+			dependencies: [
+				"1B55EFB33077AC2C"
+			]
+			tasks: [
+				{
+					id: "7F5722E363773D62"
+					type: "item"
+					item: {
+						id: "twilightforest:ironwood_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "42F5501D181D0E98"
+					type: "item"
+					item: {
+						id: "twilightforest:knightmetal_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "672524D35FB16F08"
+					type: "item"
+					item: {
+						id: "twilightforest:fiery_ingot"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0E5900BD609B7D03"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "41F95C507468CF02"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "635A241489681170"
+			x: 8.0d
+			y: -1.0d
+			dependencies: [
+				"0C1DD95BA033EAB3"
+			]
+			tasks: [
+				{
+					id: "4EF6E01F5C8BC66B"
+					type: "dimension"
+					dimension: "ad_astra:mars"
+				}
+				{
+					id: "7DDE41737093DE29"
+					type: "item"
+					item: {
+						id: "ad_astra:tier_2_rocket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1F1B99F307BE6F86"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "4B8F4A17BF1E0441"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0371D774272DB515"
+			x: 10.0d
+			y: -1.0d
+			dependencies: [
+				"635A241489681170"
+			]
+			tasks: [
+				{
+					id: "09DF8C4300EFB4E4"
+					type: "dimension"
+					dimension: "ad_astra:venus"
+				}
+				{
+					id: "14220B063075566B"
+					type: "item"
+					item: {
+						id: "ad_astra:tier_3_rocket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7CF6920D6D114FF6"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "5919CF89D1EEDEC9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1CA5613802C3B7C6"
+			x: 12.0d
+			y: -1.0d
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "16885C14E2E6680D"
+					type: "item"
+					item: {
+						id: "ad_astra:desh_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "6941CD964113D014"
+					type: "item"
+					item: {
+						id: "ad_astra:ostrum_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "328E75FE6BD37922"
+					type: "item"
+					item: {
+						id: "ad_astra:calorite_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6FA2D810A7A77A0B"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "1131531FC47B1337"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	quest_links: [ ]
 	images: [
 		{
 			id: "7208713374E58AC5"
 			x: 2.5d
-			y: -2.0d
+			y: -3.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d

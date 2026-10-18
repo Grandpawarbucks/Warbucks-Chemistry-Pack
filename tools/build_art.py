@@ -220,7 +220,8 @@ def main():
     tags = {"welcome": ("H", 1), "start": ("He", 2), "t0": ("T0", 0), "t1": ("T1", 1), "t2": ("T2", 2),
             "t3": ("T3", 3), "t4": ("T4", 4), "t5": ("T5", 5), "t6": ("T6", 6), "t7": ("T7", 7),
             "tools": ("Fe", 26), "factory": ("C", 6), "qol": ("Ar", 18), "storage": ("Si", 14),
-            "magic": ("Au", 79), "worlds": ("O", 8), "farming": ("N", 7)}
+            "magic": ("Au", 79), "worlds": ("O", 8), "farming": ("N", 7),
+            "periodic": ("Og", 118), "power": ("U", 92), "logic": ("Ge", 32)}
     for c in CHAPTERS:
         title = c.title.split(". ", 1)[-1]
         sym, z = tags.get(c.key, ("Ws", 0))

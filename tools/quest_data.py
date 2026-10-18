@@ -483,6 +483,80 @@ CHAPTERS = [
             "Simple Backups saves your world automatically. On a server, backups live in the server's backups folder."]),
     ]),
 
+    Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
+            ["Rebuild the table, group by group. Each column shares a chemistry, because each shares an outer-electron arrangement."], SIDE, [
+        Q("pt_alkali", 0, 0, [item("chemlib:lithium", 8), item("chemlib:sodium", 8), item("chemlib:potassium", 8)], "Alkali Metals", deps=["t1_elements"], xp=100, desc=[
+            "Group 1: one outer electron they're desperate to lose. Sodium fizzes on water; potassium bursts into lilac flame.",
+            "How: dissolve salt (sodium), potatoes and plants (potassium), and lithium-bearing minerals in the Dissolver."]),
+        Q("pt_alkaline", 2, 0, [item("chemlib:beryllium", 4), item("chemlib:magnesium", 8), item("chemlib:calcium", 8)], "Alkaline Earth Metals", deps=["pt_alkali"], xp=100, desc=[
+            "Group 2: two outer electrons. Calcium builds bones and limestone; magnesium burns with a blinding white light."]),
+        Q("pt_transition", 4, 0, [item("chemlib:iron", 16), item("chemlib:copper", 16), item("chemlib:nickel", 8), item("chemlib:zinc", 8), item("chemlib:gold", 4)], "Transition Metals", deps=["pt_alkaline"], xp=150, desc=[
+            "The wide middle block: hard, conductive, often colourful compounds, and the backbone of every machine you've built."]),
+        Q("pt_metalloids", 0, 2, [item("chemlib:boron", 4), item("chemlib:silicon", 16), item("chemlib:arsenic", 4)], "Metalloids", deps=["t1_elements"], xp=150, desc=[
+            "Half metal, half non-metal. Silicon's in-between conductivity is exactly what makes semiconductors (and AE2) possible."]),
+        Q("pt_nonmetals", 2, 2, [item("chemlib:nitrogen", 16), item("chemlib:phosphorus", 8), item("chemlib:sulfur", 16)], "Non-Metals", deps=["pt_metalloids"], xp=150, desc=[
+            "Nitrogen, phosphorus and sulfur: fertilisers, matches and acids. Life and industry both run on them."]),
+        Q("pt_halogens", 4, 2, [item("chemlib:fluorine", 4), item("chemlib:chlorine", 8), item("chemlib:bromine", 4), item("chemlib:iodine", 4)], "Halogens", deps=["pt_nonmetals"], xp=200, desc=[
+            "Group 17: one electron short of full, so fiercely reactive. 'Halogen' means 'salt-maker': chlorine plus sodium is table salt."]),
+        Q("pt_noble", 6, 1, [item("chemlib:helium", 8), item("chemlib:neon", 8), item("chemlib:argon", 8)], "Noble Gases", deps=["pt_halogens", "pt_transition"], xp=200, desc=[
+            "Group 18: a full outer shell, so they barely react with anything. Argon shields welding; neon lights up signs."]),
+        Q("pt_liquid", 6, 3, [item("chemlib:mercury", 4), item("chemlib:gallium", 4)], "Liquid Metals", deps=["pt_transition"], xp=150, desc=[
+            "Mercury is liquid at room temperature; gallium melts in your hand (29.8 °C)."]),
+        Q("pt_rare_earth", 8, 0, [item("chemlib:lanthanum", 4), item("chemlib:cerium", 4), item("chemlib:neodymium", 4)], "Rare Earths", deps=["pt_noble", "t6_pu"], xp=300, desc=[
+            "The lanthanides aren't actually rare, just hard to separate: they're chemically almost identical. Neodymium makes the strongest permanent magnets."]),
+        Q("pt_actinides", 8, 2, [item("chemlib:thorium", 4), item("chemlib:uranium", 8), item("chemlib:plutonium", 4)], "Actinides", deps=["pt_noble", "t6_waste"], xp=400, desc=[
+            "Every actinide is radioactive. Plutonium barely exists in nature: you made it in a reactor."]),
+        Q("pt_complete", 10, 1, [item("chemlib:oganesson")], "Element 118", deps=["pt_rare_earth", "pt_actinides", "t6_table"], xp=1000, size=2.0, shape="gear", desc=[
+            "&6The last box on the table.&r Oganesson, the heaviest element ever made, lasts under a millisecond in reality.",
+            "Every group, every period: the whole periodic table, rebuilt by your hand."]),
+    ]),
+
+    Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
+            ["Energy is chemistry too: combustion, gas burning, fission and fusion."], SIDE, [
+        Q("pw_iron_gen", 0, 0, [item("generatorgalore:iron_generator")], "First FE", deps=["t1_power"], xp=40, desc=[
+            "Generator Galore's generators burn fuel (and, at higher tiers, stranger things) for FE."]),
+        Q("pw_gold_gen", 2, -1, [item("generatorgalore:gold_generator")], deps=["pw_iron_gen"], xp=60, desc=["A faster generator."]),
+        Q("pw_heat", 2, 1, [item("mekanismgenerators:heat_generator")], "Heat Generator", deps=["pw_iron_gen", "t3_infuser"], xp=60, desc=[
+            "Mekanism's starter generator burns fuel, and gets a bonus from lava next to it."]),
+        Q("pw_cube", 4, 1, [item("mekanism:basic_energy_cube")], "Store It", deps=["pw_heat"], xp=60, desc=[
+            "Energy cubes buffer power. Upgrade them through the circuit tiers."]),
+        Q("pw_gas", 4, -1, [item("mekanismgenerators:gas_burning_generator")], "Burning Hydrogen", deps=["t4_separator"], xp=150, desc=[
+            "2H₂ + O₂ → 2H₂O + energy. Feed it hydrogen from your electrolysis line: water in, power out, water back. It's the cleanest combustion there is."]),
+        Q("pw_solar", 6, 1, [item("mekanismgenerators:solar_generator"), item("powah:solar_panel_starter")], "Photovoltaics", deps=["t4_mv"], xp=100, desc=[
+            "Silicon solar cells turn light straight into electricity: semiconductors at work."]),
+        Q("pw_diesel", 6, -1, [item("modern_industrialization:mv_diesel_generator")], "Diesel Generators", deps=["t5_diesel"], xp=150, desc=[
+            "Burn the diesel from your distillation tower. Scale up to HV and the Large Diesel Generator for real factories."]),
+        Q("pw_large_diesel", 8, -1, [item("modern_industrialization:large_diesel_generator")], deps=["pw_diesel", "t5_hv"], xp=250),
+        Q("pw_powah", 8, 1, [item("powah:reactor_basic", 36)], "Powah Reactor", deps=["t4_uraninite"], xp=250, desc=[
+            "A multiblock reactor fuelled by the uraninite you oxidised yourself."]),
+        Q("pw_turbine", 10, -1, [item("mekanismgenerators:turbine_casing", 16)], "Industrial Turbine", deps=["t6_fission"], xp=300, desc=[
+            "Fission makes heat; a turbine turns the steam into enormous amounts of power."]),
+        Q("pw_fusion", 12, 0, [item("mekanismgenerators:fusion_reactor_controller")], "Fusion", deps=["pw_turbine", "t6_waste"], xp=1000, size=1.75, shape="hexagon", desc=[
+            "&6The power of a star.&r Deuterium and tritium fuse into helium, releasing more energy than any chemical reaction.",
+            "How: deuterium from heavy water, tritium from lithium (Mekanism). Check JEI and Just Enough Mekanism Multiblocks."]),
+    ]),
+
+    Chapter("logic", "Automation and Logic", "computercraft:computer_advanced",
+            ["Make the factory run itself."], SIDE, [
+        Q("lg_computer", 0, 0, [item("computercraft:computer_normal")], "A Computer", deps=["t3_hull"], xp=50, desc=[
+            "CC: Tweaked computers run Lua programs. Monitor tanks, balance chemical lines, or build a base dashboard."]),
+        Q("lg_turtle", 2, -1, [item("computercraft:turtle_normal")], "Turtles", deps=["lg_computer"], xp=75, desc=[
+            "Programmable robots that mine, build and farm."]),
+        Q("lg_peripherals", 2, 1, [item("advancedperipherals:energy_detector"), item("advancedperipherals:me_bridge")], "Advanced Peripherals", deps=["lg_computer", "t5_ae2"], xp=150, desc=[
+            "Let computers read energy flow and your whole ME network."]),
+        Q("lg_id", 0, 3, [item("integrateddynamics:cable", 8), item("integrateddynamics:logic_programmer"), item("integrateddynamics:variable", 4)], "Integrated Dynamics", deps=["t3_hull"], xp=100, desc=[
+            "Logic networks without code: read a value (tank level, item count), apply logic, and act on it.",
+            "Perfect for chemistry: stop the electrolyzer when the hydrogen tank is full."]),
+        Q("lg_sfm", 2, 3, [item("sfm:manager"), item("sfm:cable", 8), item("sfm:disk")], "Super Factory Manager", deps=["lg_id"], xp=100, desc=[
+            "Script exactly how items, fluids and energy move through a whole factory from one block."]),
+        Q("lg_logistics", 4, 3, [item("logisticsnetworks:logistics_node", 2)], "Logistics Network", deps=["lg_sfm"], xp=75, desc=[
+            "Nodes that route items between inventories by rules."]),
+        Q("lg_laser", 4, 1, [item("laserio:card_item", 2)], "LaserIO Cards", deps=["s_laser"], xp=50, desc=[
+            "Cards configure what each LaserIO node moves: items, fluids, energy, with filters."]),
+        Q("lg_patterns", 6, 1, [item("ae2:pattern_provider"), item("ae2:molecular_assembler")], "Autocraft a Chemical Line", deps=["t5_ae2", "lg_peripherals"], xp=200, desc=[
+            "Pattern providers can drive MI and Mekanism machines. Encode the steps of a chemical chain (say, sulfur to sulfuric acid) and AE2 runs it on request."]),
+    ]),
+
     Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:backpack",
             ["A god needs somewhere to keep things."], SIDE, [
         Q("s_barrel", 0, 0, [item("sophisticatedstorage:barrel")], deps=["gs_backpack"], xp=25, desc=[
@@ -524,6 +598,22 @@ CHAPTERS = [
             "Beyond the Ancient City lies the Otherside. Take a Heart of the Deep from the Warden."]),
         Q("w_end", 2, 0, [dim("minecraft:the_end")], "The End", deps=["t2_nether"], xp=200, desc=[
             "End Crystals from here power Just Dire Things' flight upgrade."]),
+        Q("w_echo", 0, 2, [item("deeperdarker:reinforced_echo_shard", 4)], "Echoes of the Deep", deps=["w_otherside"], xp=200, desc=[
+            "The Otherside's strongest material, for gear that rivals netherite."]),
+        Q("w_undergarden", 2, 2, [item("undergarden:cloggrum_ingot", 8), item("undergarden:froststeel_ingot", 4), item("undergarden:utherium_crystal", 4)], "Undergarden Metals", deps=["t4_undergarden"], xp=200, desc=[
+            "New ores beneath the world: cloggrum, froststeel and utherium. Run them through the Dissolver: what are they made of?"]),
+        Q("w_naga", 4, 0, [item("twilightforest:naga_scale", 4)], "The Naga", deps=["t5_twilight"], xp=200, desc=[
+            "The Twilight Forest's first boss, coiled in a courtyard. Its scales unlock the path forward."]),
+        Q("w_lich", 6, 0, [item("twilightforest:lich_trophy")], "The Lich", deps=["w_naga"], xp=300, desc=[
+            "A sorcerer atop a tower. Defeating it opens the deeper Twilight."]),
+        Q("w_tf_metals", 6, 2, [item("twilightforest:ironwood_ingot", 4), item("twilightforest:knightmetal_ingot", 4), item("twilightforest:fiery_ingot", 2)], "Twilight Metals", deps=["w_lich"], xp=250, desc=[
+            "Ironwood, knightmetal and fiery metal: alloys found nowhere else."]),
+        Q("w_mars", 8, -1, [dim("ad_astra:mars"), item("ad_astra:tier_2_rocket")], "Mars", deps=["t7_rocket"], xp=500, desc=[
+            "The red planet: iron oxide dust over everything. Desh is mined here."]),
+        Q("w_venus", 10, -1, [dim("ad_astra:venus"), item("ad_astra:tier_3_rocket")], "Venus", deps=["w_mars"], xp=600, desc=[
+            "Sulfuric acid clouds and crushing CO₂ pressure. Bring your best suit: the atmosphere is a chemistry lesson in itself."]),
+        Q("w_space_metals", 12, -1, [item("ad_astra:desh_ingot", 8), item("ad_astra:ostrum_ingot", 4), item("ad_astra:calorite_ingot", 4)], "Alien Metals", deps=["w_venus"], xp=600, desc=[
+            "Desh, ostrum and calorite. Each one builds the next rocket tier."]),
     ]),
 
     Chapter("farming", "Farming", "botanypots:terracotta_hopper_botany_pot",

@@ -4,6 +4,14 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Quest book v5 (200 quests)
+- New side chapters:
+  - **The Periodic Table** (11): element groups from alkali metals to actinides, each with real chemistry, ending at element 118.
+  - **Power** (11): Generator Galore → Mekanism heat/gas-burning (H₂) → solar → MI diesel → Powah reactor → industrial turbine → fusion.
+  - **Automation and Logic** (8): CC: Tweaked, Advanced Peripherals, Integrated Dynamics, SFM, Logistics Network, LaserIO cards, AE2 chemical autocrafting.
+- **Other Worlds** expanded (+9): Otherside echo shards, Undergarden metals, the Naga and Lich, Twilight metals, Mars, Venus, alien metals.
+- New banners: Og, U, Ge. Book: 20 chapters, 200 quests. Smoke test passes.
+
 ### 2026-10-18: Visual fixes from the first client launch
 - The client log was clean, apart from one missing texture: the Demigod Token pointed at a texture that doesn't exist (`minecraft:item/sunflower`). It now has its own 16x16 coin texture (`kubejs/assets/kubejs/textures/item/demigod_token.png`).
 - World select (and 27 other menus) now show the pack background: FancyMenu universal layout plus ATM10's menu list (minus Embeddium/KeyBind Bundles; plus Create World).

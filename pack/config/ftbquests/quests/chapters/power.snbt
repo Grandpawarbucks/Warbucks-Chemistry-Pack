@@ -1,0 +1,414 @@
+{
+	id: "1C6E26542D7508E5"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 4
+	filename: "power"
+	icon: {
+		id: "mekanismgenerators:gas_burning_generator"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "664799749DFCE0E4"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"54E6526368208022"
+			]
+			tasks: [
+				{
+					id: "284EE4BDFE26180C"
+					type: "item"
+					item: {
+						id: "generatorgalore:iron_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "708834576E0B13E2"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1A0E62040BFB3DDE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "75F490C611174982"
+			x: 2.0d
+			y: -1.0d
+			dependencies: [
+				"664799749DFCE0E4"
+			]
+			tasks: [
+				{
+					id: "1DB487C07BBEFA94"
+					type: "item"
+					item: {
+						id: "generatorgalore:gold_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "250E55F2524FB696"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7D3CA9CBEEB5E34B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1EDE182DE2183A9C"
+			x: 2.0d
+			y: 1.0d
+			dependencies: [
+				"664799749DFCE0E4"
+				"42B76D3BDE21F0DC"
+			]
+			tasks: [
+				{
+					id: "07EC3D71B6C2749B"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:heat_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2100D402E5ADE22C"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "57D21DFC85FF38D1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "63E2812122315EC2"
+			x: 4.0d
+			y: 1.0d
+			dependencies: [
+				"1EDE182DE2183A9C"
+			]
+			tasks: [
+				{
+					id: "32A72E31DCC0D00C"
+					type: "item"
+					item: {
+						id: "mekanism:basic_energy_cube"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0F04A3A4C8BA1798"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "3FD5E041DC301D61"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "30A2E65738B8AE03"
+			x: 4.0d
+			y: -1.0d
+			dependencies: [
+				"0D7390621F3F2B9F"
+			]
+			tasks: [
+				{
+					id: "03C0A9FE259122BB"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:gas_burning_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2556004E2EA33AAF"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "54EAD2FEB42D22C1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5C6AD7D248FE5B0F"
+			x: 6.0d
+			y: 1.0d
+			dependencies: [
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "1867532498FE19E9"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:solar_generator"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2095B13EC41B5483"
+					type: "item"
+					item: {
+						id: "powah:solar_panel_starter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "72E5311B4AAB9D95"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "68010CF712A890C1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "36381170B678DBC6"
+			x: 6.0d
+			y: -1.0d
+			dependencies: [
+				"7CB7FF40BB33AD8F"
+			]
+			tasks: [
+				{
+					id: "1FC0C3E19925D201"
+					type: "item"
+					item: {
+						id: "modern_industrialization:mv_diesel_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "26A7B38E29ED67E9"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "3C1DA7FDB0CDBDDD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "39B5DB6B48A4B6D7"
+			x: 8.0d
+			y: -1.0d
+			dependencies: [
+				"36381170B678DBC6"
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "61897FC5C125BFF7"
+					type: "item"
+					item: {
+						id: "modern_industrialization:large_diesel_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4384D5CC8E6389BC"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "3B7F7F391F947F32"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "354774525777C4A9"
+			x: 8.0d
+			y: 1.0d
+			dependencies: [
+				"4F41C5095B66BC1F"
+			]
+			tasks: [
+				{
+					id: "5A7E4905BF5590A4"
+					type: "item"
+					item: {
+						id: "powah:reactor_basic"
+						count: 1
+					}
+					count: 36L
+				}
+			]
+			rewards: [
+				{
+					id: "647F5378994DB359"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "6852C1F828445C0B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0A9EE595B44C9104"
+			x: 10.0d
+			y: -1.0d
+			dependencies: [
+				"79D73BB7E003DB38"
+			]
+			tasks: [
+				{
+					id: "6F89B54671EB1ED6"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:turbine_casing"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "55D57DFC2D323E6F"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "4A7001A372508894"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2D19FF2F88C95DEA"
+			x: 12.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.75d
+			dependencies: [
+				"0A9EE595B44C9104"
+				"69D67DF12EE0C400"
+			]
+			tasks: [
+				{
+					id: "4822BF85E8E48C76"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:fusion_reactor_controller"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2B413405C6AC2A0E"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "0AAF041BDE61B5B9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [
+		{
+			id: "39203E4D1F5F75C4"
+			x: 2.5d
+			y: -3.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/power.png"
+		}
+	]
+}
