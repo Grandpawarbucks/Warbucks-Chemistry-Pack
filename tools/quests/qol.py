@@ -37,6 +37,16 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         "&eTip:&r place it before building in the Nether so your base stays quiet."]),
 
     # --- Backpacks (y=2) -----------------------------------------------------------------------
+    Q("q_stick", 8, 2, [item("crafting_on_a_stick:crafting_table")], "Crafting on a Stick", deps=["gs_table"], xp=20,
+      subtitle="A crafting table that fits in your pocket", desc=[
+        "&eWhat:&r a crafting table you carry around. Right-click it to open a 3x3 grid anywhere: in a mine, out exploring, mid-build.",
+        "&eHow:&r craft it from a crafting table and a stick (check JEI). The same mod makes pocket versions of the stonecutter, smithing table, anvil, grindstone, loom and cartography table.",
+        "&eTip:&r it saves a hotbar slot over placing and breaking tables. The pocket stonecutter is great for building with Create Deco and Rechiseled blocks."]),
+    Q("q_stick_more", 8, 3.5, [item("crafting_on_a_stick:stonecutter"), item("crafting_on_a_stick:smithing_table")], "A Whole Workshop", deps=["q_stick"], xp=20, optional=True, tokens=1,
+      subtitle="Pocket stonecutter and smithing table", desc=[
+        "&eWhat:&r optional: the pocket stonecutter and smithing table.",
+        "&eHow:&r each one is its block plus a stick (check JEI).",
+        "&eTip:&r the smithing table is how netherite and Apotheosis upgrades are applied, so it's handy to carry."]),
     Q("q_bp_up", 0, 2, [item("sophisticatedbackpacks:pickup_upgrade"), item("sophisticatedbackpacks:magnet_upgrade")], "Backpack Upgrades", deps=["gs_backpack"], xp=40,
       subtitle="Pickup and magnet upgrades", desc=[
         "&eWhat:&r pickup and magnet upgrades pull items straight into your backpack.",

@@ -4,6 +4,10 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Crafting On A Stick
+- Added Crafting On A Stick 1.21.0.6 (portable crafting table, stonecutter, smithing table, anvil, grindstone, loom, cartography table).
+- Quests: "Crafting on a Stick" (QoL) and the optional "A Whole Workshop". Book: 589 quests. 205 mods. Smoke test passes.
+
 ### 2026-10-18: Quest book v7: detailed (587 quests)
 - Five parallel writers expanded every chapter following `tools/quests/STYLE.md`; each quest is now one file per chapter in `tools/quests/`.
   - Every quest has a subtitle and a structured description: What / Chemistry / How / Tip.
