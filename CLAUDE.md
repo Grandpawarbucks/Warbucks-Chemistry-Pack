@@ -72,7 +72,7 @@
 - 2026-10-18 later: 197 mods (Towns&Towers, Regions Unexplored, YUNG's, Farmer's Delight, Occultism [gated:
   phase4_occultism.js], MoreMachine, SS in Motion, JourneyMap, Chunky). Quest book v5 = 200 quests, 20 chapters.
   Create re-added (early mechanical tier, phase4_create.js) -> 204 mods; quest book v6 = 213 quests, 21 chapters.
-- Quest book v7 (609 quests, 118 optional): one file per chapter in tools/quests/, style in tools/quests/STYLE.md;
+- Quest book v7 (587 quests, 118 optional): one file per chapter in tools/quests/, style in tools/quests/STYLE.md;
   validate with `python3 tools/build_quests.py --check`. Flying potion = levitation + 2 chemlib:hydrogen (phase4_flight.js).
 - Phase 5 quests (history): v4 (162 quests, 17 chapters incl. Welcome + QoL; tokens on every quest, step-by-step per user request) pending user review.
   QUESTS ARE GENERATED: edit tools/quest_data.py (content; helpers in tools/questlib.py), then run `python3 test/build_id_index.py` (after a smoke test) and

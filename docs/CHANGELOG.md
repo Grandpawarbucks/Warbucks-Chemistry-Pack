@@ -10,7 +10,7 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
   - Smaller steps throughout.
   - 118 optional side quests (off the main line, 1–2 tokens).
   - Gold "memory returning" story lines at each chapter's opening and milestones.
-- Quests: 213 → 609. No existing quest keys changed, so player progress is kept.
+- Quests: 213 → 587. No existing quest keys changed, so player progress is kept.
 - Progression bugs found by reading the real mod recipes, and fixed:
   - Item pipes need steel gears, so they moved to Chapter II.
   - The steam cutter needs lubricant.
@@ -26,7 +26,7 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 - TelePastries' Twilight Cake now needs an MI digital circuit (HV), matching the Twilight Forest gate.
 - The capstone uses **8** Antimatter Cores (the comments and docs said 4).
 - The Chapter IV/VI Electric Blast Furnace overlap is resolved (VI is now stainless steel only, after IV's EBF).
-- Server: "Loaded 21 chapters, 609 quests"; KubeJS 0 failed; smoke test passes.
+- Server: "Loaded 21 chapters, 587 quests"; KubeJS 0 failed; smoke test passes.
 
 ### 2026-10-18: Compact Machines room templates
 - In-game: "No Room Templates are registered!" Compact Machines 7 ships its templates as an optional built-in datapack that's off by default.
