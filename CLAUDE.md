@@ -94,6 +94,12 @@
   attempts, stop and show the user what you found.
 - After each phase: run the smoke test, update docs/CHANGELOG.md, commit to Git,
   summarize, and wait for the user's go-ahead.
+- GitHub (PUBLIC): https://github.com/Grandpawarbucks/Warbucks-Chemistry-Pack (branch main).
+  After a passing smoke test, commit AND `git push` so Prism instances auto-update. Never commit
+  secrets or server connection details (repo is public). The user also develops from a Windows
+  desktop: always `git pull` before starting work (see docs/DESKTOP_SETUP.md).
+- Player/desktop instance: launcher/Warbucks-Chemistry-Prism.zip (rebuild with
+  `python3 tools/build_prism_instance.py` if MC/NeoForge version or pack URL changes).
 
 ## Rules
 - Verify every mod exists for NeoForge 1.21.1 before adding it by checking its

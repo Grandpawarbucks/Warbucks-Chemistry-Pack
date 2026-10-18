@@ -2,6 +2,11 @@
 
 A chemistry and technology modpack for **NeoForge 21.1.262 / Minecraft 1.21.1**. You're a demigod who rebuilds the world from its elements. See [PROGRESSION.md](PROGRESSION.md) for the design, [MODLIST.md](MODLIST.md) for the mods and [CHANGELOG.md](CHANGELOG.md) for history.
 
+## Get the pack
+- **Play:** import [`launcher/Warbucks-Chemistry-Prism.zip`](../launcher/Warbucks-Chemistry-Prism.zip) into Prism Launcher. It updates itself from this repo on every launch.
+- **Develop on another PC:** see [DESKTOP_SETUP.md](DESKTOP_SETUP.md).
+- Pack URL (packwiz): `https://raw.githubusercontent.com/Grandpawarbucks/Warbucks-Chemistry-Pack/main/pack/pack.toml`
+
 ## Layout
 | Path | What |
 |---|---|
