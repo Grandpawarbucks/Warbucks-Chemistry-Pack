@@ -4,6 +4,18 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Suggested mods (user picks)
+- Added:
+  - World: Towns and Towers, Regions Unexplored, YUNG's Better Dungeons/Mineshafts/Strongholds.
+  - Gameplay: Farmer's Delight, Occultism, Mekanism MoreMachine, Sophisticated Storage in Motion.
+  - Map and admin: JourneyMap, Chunky.
+  - Libraries: Cristel Lib, Lithostitched, YUNG's API, SmartBrainLib, Modonomicon.
+- New `kubejs/server_scripts/phase4_occultism.js`: removes 17 Occultism miner recipes for chemistry-milestone resources (uranium, uraninite, osmium, fluorite, platinum, iridium, tungsten), matching the Mystical Agriculture rules.
+- Known-harmless issues added: MoreMachine loot tables for unregistered variants; a Farmer's Delight compat recipe for a Silent Gear block that doesn't exist.
+- Worldgen check (r=256): Better Dungeons, a Towns and Towers village, Regions Unexplored biomes and BOP biomes all generate; no worldgen errors. `test/worldgen.sh` locates the new structures and biomes too.
+- 197 mods (the upper end of the 100–200 target). Smoke and worldgen pass after 3 attempts (fixes: known-issues allowlist, correct T&T structure id).
+- Pending: the user wants Create plus some addons back, which reverses the original "No Create" requirement. Awaiting answers to scoping questions.
+
 ### 2026-10-18: Quest book v5 (200 quests)
 - New side chapters:
   - **The Periodic Table** (11): element groups from alkali metals to actinides, each with real chemistry, ending at element 118.

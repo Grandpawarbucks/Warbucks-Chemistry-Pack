@@ -23,10 +23,8 @@ These are only dependencies of ATM10 mods we don't include. The "used by" column
 | Framework (MrCrayfish) | MrCrayfish mods |
 | YACL, Bridging Mod deps | Bridging Mod and others |
 | owo-lib | Various Wisp Forest mods |
-| Modonomicon | Occultism and Theurgy |
-| SmartBrainLib, playerAnimator, Iron's Lib, Lionfish, Caelus | Mob and spell mods (Iron's Spells, etc.) |
-| PolyLib, Omega Config, Valhelsia Core, MonoLib, Cristel Lib, CorgiLib, Jupiter, Atlas API | Specific ATM10 content mods |
-| Lithostitched, YUNG's API | Structure mods (YUNG's, etc.) |
+| playerAnimator, Iron's Lib, Lionfish, Caelus | Mob and spell mods (Iron's Spells, etc.) |
+| PolyLib, Omega Config, Valhelsia Core, MonoLib, CorgiLib, Jupiter, Atlas API | Specific ATM10 content mods |
 | EdivadLib | DimStorage |
 | ExperienceLib, ObserverLib | Specific ATM10 content mods |
 | CTM | Connected-texture mods (XyCraft) |

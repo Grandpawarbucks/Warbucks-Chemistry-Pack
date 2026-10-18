@@ -28,8 +28,8 @@ send "chunky start"
 wait_for 'Task finished for minecraft:overworld' 1200 || echo "WARN: Chunky did not report completion in 20 min"
 
 # Spot-check that structures and biomes from vanilla and the pack resolve.
-for s in minecraft:village_plains minecraft:mineshaft minecraft:ancient_city; do send "locate structure $s"; done
-for b in biomesoplenty:redwood_forest biomesoplenty:lavender_field; do send "locate biome $b"; done
+for s in minecraft:village_plains minecraft:mineshaft minecraft:ancient_city betterdungeons:skeleton_dungeon towns_and_towers:village_badlands; do send "locate structure $s"; done
+for b in biomesoplenty:redwood_forest biomesoplenty:lavender_field regions_unexplored:maple_forest regions_unexplored:bamboo_forest; do send "locate biome $b"; done
 sleep 30
 stop_server
 
