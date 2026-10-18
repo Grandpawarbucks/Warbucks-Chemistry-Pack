@@ -1,0 +1,69 @@
+{
+	id: "477FA5F1CFD1E7A9"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 4
+	filename: "worlds"
+	icon: {
+		id: "deeperdarker:heart_of_the_deep"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "47E37212E3AD9C51"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "28CCFDEEA9BFDC71"
+					type: "item"
+					item: {
+						id: "deeperdarker:heart_of_the_deep"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "35F0D216AB34F4E7"
+					type: "dimension"
+					dimension: "deeperdarker:otherside"
+				}
+			]
+			rewards: [
+				{
+					id: "424E56E8BADA9335"
+					type: "xp"
+					xp: 300
+				}
+			]
+		}
+		{
+			id: "0F5CD98214E3E454"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "7AEC183F97E37984"
+					type: "dimension"
+					dimension: "minecraft:the_end"
+				}
+			]
+			rewards: [
+				{
+					id: "60168FDDEF5FA8DD"
+					type: "xp"
+					xp: 200
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

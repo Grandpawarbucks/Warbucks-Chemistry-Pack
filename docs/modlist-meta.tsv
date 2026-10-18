@@ -1,0 +1,178 @@
+slug	category	purpose	tier	notes
+modern-industrialization	Chemistry core	Tech backbone: steam→LV→EV machines, electrolyzer, chemical reactor, distillation, oil, nuclear	T0–T6
+alchemistry	Chemistry core	Dissolver/Combiner: break any item into elements and synthesize blocks; fission/fusion chambers	T1–T5	CurseForge only
+chemlib	Chemistry core	All 118 elements plus compounds as items and fluids	T1+	CurseForge only
+alchemylib	Library / Dependencies	Library for Alchemistry		CurseForge only
+mekanism	Chemistry core	Gas chemistry (H₂, Cl₂, HCl, H₂SO₄, HF, UF₆), multi-stage ore processing, isotope separation	T3–T6	Last update 2026-04
+mekanism-generators	Tech / Power	Gas-burning, fission, fusion, turbines	T3–T6
+ae2	Logistics / Storage	ME storage and autocrafting	T4+	Gated by silicon and plastic (Phase 4)
+toms-storage	Logistics / Storage	Early simple storage network and terminal before AE2	T1–T3
+functional-storage	Logistics / Storage	Drawers, compacting drawers, storage controller	T0–T2
+sophisticated-storage	Logistics / Storage	Upgradable chests, barrels, shulker boxes	T0+
+sophisticated-storage-plus	Logistics / Storage	Raises Sophisticated Storage slot and upgrade limits (config)	T0+	CurseForge only; one file, 2025-06 (16 months old)
+sophisticated-backpacks	Logistics / Storage	Upgradable backpacks	T0+
+backpackplus	Logistics / Storage	Raises Sophisticated Backpacks slot limits past 144	T0+	One file, 2025-05 (17 months old)
+sophisticated-item-actions	QoL	Inventory item actions for the Sophisticated mods
+sophisticated-core	Library / Dependencies	Library for the Sophisticated mods
+iron-furnaces	Tech / Power	Faster tiered furnaces for the early game	T0–T1	Last update 2025-09 (13 months old)
+ars-nouveau	Magic	Light magic: spellcrafting, rituals (incl. Ritual of Flight), Source	T2+
+relics-mod	Magic	Levelling relic accessories	T2+
+artifacts	Magic	Loot artifacts (accessories) found in structures	T0+
+reliquary-reincarnations	Magic	Magical relics, handguns and alchemical potions	T2+
+apotheosis	Magic	Enchanting, loot affixes and gems overhaul	T0+
+apothic-attributes	Magic	Attribute library; adds Potion of Flying (creative-flight effect)	T2	Required for the pylon flight route
+apothic-enchanting	Magic	Apotheosis enchanting module	T0+
+apothic-spawners	Magic	Apotheosis spawner module	T2+
+placebo	Library / Dependencies	Library for Apotheosis and the Fast* mods
+pylons	Tech / Power	Infusion Pylon: permanent potion effects (flight via Potion of Flying)	T2	The 1.21.1 version has no Flight Pylon
+biomes-o-plenty	World / Resources	New Overworld and Nether biomes	T0
+terrablender	Library / Dependencies	Biome API for Biomes O' Plenty		Last update 2025-01 (21 months old); ATM10 ships the same build
+glitchcore	Library / Dependencies	Library for Biomes O' Plenty
+the-undergarden	World / Resources	Undergarden dimension	T3
+the-twilight-forest	World / Resources	Twilight Forest dimension	T4	CurseForge
+deeperdarker	World / Resources	Otherside dimension past the Ancient City	T3+
+ad-astra	World / Resources	Space travel and planets	T6	Heavy, but it's the space dimension
+resourceful-lib	Library / Dependencies	Library for Ad Astra		Last update 2024-12
+resourceful-config	Library / Dependencies	Library for Ad Astra		Last update 2025-04
+common-storage-lib	Library / Dependencies	Library for Ad Astra
+ftb-library-forge	FTB	FTB core library
+ftb-teams-forge	FTB	Teams and parties
+ftb-quests-forge	FTB	Quest book (demigod storyline)
+ftb-chunks-forge	FTB	Chunk claiming, loading, minimap
+ftb-ultimine-forge	FTB	Vein mining
+ftb-essentials	FTB	Homes, warps, /back and similar commands
+ftb-ranks-forge	FTB	Permission ranks for the server
+ftb-filter-system	FTB	Shared item filters
+ftb-xmod-compat	FTB	Cross-mod compat for FTB mods
+ftb-jei-extras	FTB	JEI extras for FTB mods
+jei	QoL	Recipe viewer		ATM10 uses JEI
+mezzconfig	Library / Dependencies	Required by JEI
+jade	QoL	Block and entity info tooltip
+appleskin	QoL	Food and saturation display
+mouse-tweaks	QoL	Inventory mouse controls		Last update 2024-08 but stable; ATM10 ships it
+inventory-tweaks-refoxed	QoL	Inventory sorting		CurseForge (newer than Modrinth)
+controlling	QoL	Keybind search
+searchables	Library / Dependencies	Library for Controlling
+crafting-tweaks	QoL	Crafting grid rotate, balance, clear
+trashslot	QoL	Inventory trash slot
+toast-control	QoL	Hide or limit toasts
+enchantment-descriptions	QoL	Enchantment tooltips
+polymorph	QoL	Resolves recipe conflicts
+corail-tombstone	QoL	Graves on death
+natures-compass	QoL	Locate biomes
+explorers-compass	QoL	Locate structures
+just-enough-mekanism-multiblocks	QoL	JEI multiblock previews for Mekanism
+justenoughbreeding	QoL	JEI breeding info
+torchmaster	QoL	Mob-spawn control torches
+lootr	QoL	Per-player loot chests (multiplayer)
+netherportalfix	QoL	Linked Nether portals
+comforts	QoL	Sleeping bags and hammocks
+akashic-tome	QoL	Merges guidebooks into one
+waystones	QoL	Teleport waystones
+tool-belt	QoL	Tool belt hotbar		CurseForge
+building-gadgets	QoL	Building tools		CurseForge
+mining-gadgets	QoL	Mining laser tool		CurseForge
+almostunified	QoL	Ore and material unification (Phase 3)
+kubejs	QoL	Recipe and progression scripting
+rhino	Library / Dependencies	JS engine for KubeJS
+better-advanced-tooltips	Library / Dependencies	Required by KubeJS
+modernfix	Performance	Load time and memory
+ferrite-core	Performance	Memory usage
+immediatelyfast	Performance	Rendering		client
+sodium	Performance	Rendering engine		client; ATM10 uses Sodium
+sodium-extra	Performance	Extra Sodium options		client
+iris	Performance	Shader support (optional)		client
+clumps	Performance	Groups XP orbs		Last update 2024-08 but stable
+fastsuite	Performance	Recipe lookup speedups
+fastworkbench	Performance	Crafting table speedups
+fastfurnace	Performance	Furnace recipe speedups
+lmft	Performance	Fixes tag-loading failures		File is labelled 1.21.9 but listed for 1.21.1; loads OK
+modelfix	Performance	Fixes item model gaps		client; last update 2024-08
+spark	Performance	Profiler		Last update 2025-02
+ai-improvements	Performance	Mob AI performance		Last update 2024-06
+yeetus-experimentus	Performance	Removes the experimental-settings warning		client
+alltheleaks	Performance	Memory-leak fixes		CurseForge
+connectivity	Performance	Network and packet fixes		CurseForge
+cupboard	Library / Dependencies	Library for Connectivity		CurseForge
+architectury-api	Library / Dependencies	Multi-loader library
+balm	Library / Dependencies	Library for Waystones, Crafting Tweaks and others
+bookshelf-lib	Library / Dependencies	Library for Enchantment Descriptions
+prickle	Library / Dependencies	Library for Bookshelf
+curios	Library / Dependencies	Accessory slots		Last update 2025-05
+geckolib	Library / Dependencies	Animation library
+guideme	Library / Dependencies	Guidebook library for MI and AE2
+patchouli	Library / Dependencies	Guidebook library
+shatterbyte-lib	Library / Dependencies	Library for Relics
+powah	Tech / Power	Mid-game generators (reactors, solar, thermo) and energy storage	T3–T5	Key parts to be gated by chemical intermediates (Phase 4)
+flux-networks	Tech / Power	Wireless power transfer	T5	CurseForge
+extended-industrialization	Tech / Power	MI addon: more efficient machines, fewer chores	T1–T6
+industrialization-overdrive	Tech / Power	MI addon: machine upgrades and overdrive	T3–T6
+tesseract-api	Library / Dependencies	Library for Extended Industrialization
+cloth-config	Library / Dependencies	Config library (Powah and others)		Last update 2024-09 but stable
+pipez	Logistics / Storage	Simple item, fluid and energy pipes	T0–T2
+laserio	Logistics / Storage	Compact laser logistics	T2–T4	CurseForge
+logistics-network	Logistics / Storage	Logistics network (ATM10 pick)	T2+	CurseForge
+super-factory-manager	Logistics / Storage	Scriptable factory manager for item, fluid and energy routing	T2+
+cc-tweaked	Tech / Power	Programmable computers (logic)	T2+
+advancedperipherals	Tech / Power	CC peripherals bridging AE2, Mekanism and more	T3+
+integrated-dynamics	Tech / Power	Logic networks: read machine state and control plants	T2+
+integrated-tunnels	Logistics / Storage	Item, fluid and energy transport for Integrated Dynamics	T2+
+integrated-terminals	Logistics / Storage	Storage terminals for Integrated Dynamics	T2+
+integrated-crafting	Logistics / Storage	Autocrafting for Integrated Dynamics	T3+
+cyclops-core	Library / Dependencies	Library for the Integrated mods
+common-capabilities	Library / Dependencies	Library for the Integrated mods
+applied-energistics-2-wireless-terminals	Logistics / Storage	AE2 wireless terminals (AE2WTLib)	T4+
+ex-pattern-provider	Logistics / Storage	ExtendedAE: bigger pattern providers and more AE2 devices	T4+	CurseForge (newer than Modrinth)
+mega	Logistics / Storage	MEGA Cells: larger AE2 storage cells	T5+
+applied-mekanistics	Logistics / Storage	Mekanism chemicals in AE2 storage	T4+	Last update 2025-10 (borderline stale)
+ae2-jei-integration	QoL	AE2 and JEI integration	T4+	CurseForge
+glodium	Library / Dependencies	Library for ExtendedAE		Last update 2025-02
+just-dire-things	Tech / Power	Automation machines, tools and materials	T1–T5	CurseForge; has flight items, which need gating (Phase 4)
+titanium	Library / Dependencies	Library for Functional Storage
+invasive-optimizations	Performance	General performance optimizations		Has OPTIONAL Create integration (flagged; inactive here since there's no Create)
+borderless-window	Performance	Borderless fullscreen		client
+simple-backups	QoL	Automatic world backups for the server		
+attributefix	Library / Dependencies	Raises vanilla attribute caps (needed with Apotheosis affixes)		Last update 2025-10
+construction-sticks	Building	Wands that place rows and walls of blocks	T0+	
+effortless-building	Building	Mirror, array and line building modes	T0+	
+framedblocks	Building	Frame blocks that copy any block's texture	T0+	
+rechiseled	Building	Chisel decorative block variants	T0+	
+supplementaries	Building	Decorative and functional blocks (signs, jars, planters, etc.)	T0+	
+handcrafted	Building	Furniture	T0+	Last update 2025-03 (19 months old); ATM10 ships it
+macaws-doors	Building	Macaw's doors	T0+	
+macaws-windows	Building	Macaw's windows	T0+	
+macaws-roofs	Building	Macaw's roofs	T0+	Last update 2025-05 (17 months old)
+macaws-fences-and-walls	Building	Macaw's fences and walls	T0+	
+macaws-bridges	Building	Macaw's bridges	T0+	
+macaws-trapdoors	Building	Macaw's trapdoors	T0+	
+macaws-lights-and-lamps	Building	Macaw's lights and lamps	T0+	
+macaws-paths-and-pavings	Building	Macaw's paths and pavings	T0+	Last update 2025-09 (13 months old)
+macaws-furniture	Building	Macaw's furniture	T0+	
+macaws-stairs	Building	Macaw's stairs and balconies	T0+	
+fusion-connected-textures	Library / Dependencies	Connected textures for Rechiseled		
+moonlight	Library / Dependencies	Library for Supplementaries		
+supermartijn642s-core-lib	Library / Dependencies	Library for Rechiseled		
+supermartijn642s-config-lib	Library / Dependencies	Library for Rechiseled		Last update 2024-07
+generatorgalore	Tech / Power	Simple tiered generators (fuel, food, potions, enchantments and more)	T1–T3	CurseForge 1.7.0 (same as ATM10; the Modrinth build is older)
+botany-pots	QoL	Crop pots, including Hopper Botany Pots for automatic farming	T0+	
+appflux	Logistics / Storage	Applied Flux: store FE power in AE2 disks	T4+	
+advancedae	Logistics / Storage	Advanced AE: Quantum Computer (large, fast autocrafting) and more devices	T5+	
+aeinfinitybooster	Logistics / Storage	Infinite-range and cross-dimension wireless terminal boosters	T5+	
+merequester	Logistics / Storage	ME Requester: keeps item stock levels via autocrafting	T4+	
+ae2-import-export-card	Logistics / Storage	Import/export card upgrades for ME interfaces	T4+	
+mystical-agriculture	World / Resources	Resource crops. Gated: tier 3/4/5 seeds need MI LV/MV/HV circuits; chemistry-milestone crops blocked	T0–T5	See kubejs/server_scripts/phase4_mysticalagriculture.js
+cucumber	Library / Dependencies	Library for Mystical Agriculture		
+silent-gear	Tech / Power	Part-based tools and armor; stats come from the materials you build them from	T0+	Tinkers' Construct has no 1.21.1 build (1.20.1 Forge only); Silent Gear is the alternative
+silent-lib	Library / Dependencies	Library for Silent Gear		
+mekanism-tools	Tech / Power	Mekanism tools and armor, including Paxels (pickaxe + axe + shovel)	T1+	
+hostile-neural-networks	Tech / Power	Train mob data models, then simulate mob drops with power	T3+ (MV)	Monifactory pick. Sim Chamber and Loot Fabricator need an MI electronic circuit
+extended-crafting	Tech / Power	Big crafting tables (3x3 to 9x9) for endgame recipes	T1–T5	Monifactory pick. Advanced/Elite/Ultimate tables need MI MV/HV/EV circuits
+packagedauto	Logistics / Storage	AE2 autocrafting through packages	T4+	
+packagedexcrafting	Logistics / Storage	Packaged Auto support for Extended Crafting tables	T4+	
+compact-machines	Logistics / Storage	Factories folded into a single block	T3+	CurseForge 7.0.81 (same as ATM10)
+cable-facades	QoL	Disguise cables and pipes as other blocks	T3+	
+telepastries	QoL	Teleporting cakes between dimensions	T2+	13 months since last update
+angel-ring	Tech / Power	Angel Ring: portable creative flight	T5 (HV)+	CurseForge. Only 1.21.1 file is 3.0.0 BETA.3 (Aug 2025). Gated: needs an MI digital circuit plus Elytra and Nether Stars
+iron-jetpacks	Tech / Power	FE-powered jetpacks in tiers	T3 (LV)–T6	13 months old (same as ATM10). Coils need MI LV/MV/HV/EV circuits
+flight-api	Library / Dependencies	Library for Angel Ring		
+haydenapi	Library / Dependencies	Library for Angel Ring		

@@ -1,0 +1,406 @@
+{
+	id: "48AF3DD6C95E2CE8"
+	group: "2DCF10F76EBF2A74"
+	order_index: 1
+	filename: "t0"
+	icon: {
+		id: "modern_industrialization:bronze_ingot"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "79F4E5BCC7D2EFBF"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"14F9F46803366AD8"
+			]
+			tasks: [
+				{
+					id: "780EDDDB096ABB94"
+					type: "item"
+					item: {
+						id: "minecraft:charcoal"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "2738D6A032F24126"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "139143689A0FF7FD"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"14F9F46803366AD8"
+			]
+			tasks: [
+				{
+					id: "58AED0B8825088C2"
+					type: "item"
+					item: {
+						id: "minecraft:copper_ingot"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "1E757645E26BD3A1"
+					type: "xp"
+					xp: 20
+				}
+			]
+		}
+		{
+			id: "30FB6A2D6AE22741"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"139143689A0FF7FD"
+			]
+			tasks: [
+				{
+					id: "545E6966AEBABEF2"
+					type: "item"
+					item: {
+						id: "modern_industrialization:raw_tin"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "147A2C3538DA5306"
+					type: "item"
+					item: {
+						id: "modern_industrialization:tin_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "65D306DCD5D06014"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "1DD1902EBDA6FD91"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"79F4E5BCC7D2EFBF"
+				"139143689A0FF7FD"
+			]
+			tasks: [
+				{
+					id: "3631A698DD058D73"
+					type: "item"
+					item: {
+						id: "modern_industrialization:forge_hammer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "512C02AF03E74B49"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "6EB1CA116210134C"
+			x: 4.0d
+			y: 1.0d
+			size: 1.5d
+			dependencies: [
+				"1DD1902EBDA6FD91"
+				"30FB6A2D6AE22741"
+			]
+			tasks: [
+				{
+					id: "1E5CECB6B5180BCB"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_ingot"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "70E137B221B7421A"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+		{
+			id: "697156ADC0ABAEB8"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
+				"6EB1CA116210134C"
+			]
+			tasks: [
+				{
+					id: "06390C2445B10483"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_machine_casing"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "137881760EC68DEE"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "696474FC1863B20C"
+			x: 8.0d
+			y: 0.0d
+			size: 1.5d
+			dependencies: [
+				"697156ADC0ABAEB8"
+			]
+			tasks: [
+				{
+					id: "4601EA30D1F75A2C"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_boiler"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6EA920E9E9EE79CE"
+					type: "xp"
+					xp: 75
+				}
+			]
+		}
+		{
+			id: "15BEE6A43E8C4B6E"
+			x: 8.0d
+			y: 2.0d
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "5EFDAFBB07C2C470"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_water_pump"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3CF899613BE49F67"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "1B20E348E02AE451"
+			x: 10.0d
+			y: -2.0d
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "60CA9CC787F1C3D8"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0F5B703493BF3064"
+					type: "xp"
+					xp: 30
+				}
+			]
+		}
+		{
+			id: "1FCCFB27D4E61D8B"
+			x: 10.0d
+			y: -1.0d
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "255A2A1DD683AEE2"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_macerator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "72D5B806FF0803BE"
+					type: "xp"
+					xp: 30
+				}
+			]
+		}
+		{
+			id: "0DCF15D0DDB80EE0"
+			x: 10.0d
+			y: 0.0d
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "24ABE3719BA4C1DC"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_compressor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6FBDB5D9D87B08C1"
+					type: "xp"
+					xp: 30
+				}
+			]
+		}
+		{
+			id: "319D2A4BD36DBDCD"
+			x: 10.0d
+			y: 1.0d
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "25FB4525F980B67C"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_mixer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5092EF59E5D1ECAA"
+					type: "xp"
+					xp: 30
+				}
+			]
+		}
+		{
+			id: "5FA030B61A0C335C"
+			x: 10.0d
+			y: 2.0d
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "119F8B5B7363A8CD"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_cutting_machine"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0795EE1DEEC28B65"
+					type: "xp"
+					xp: 30
+				}
+			]
+		}
+		{
+			id: "0DB20A7152AEF87F"
+			x: 12.0d
+			y: 0.0d
+			dependencies: [
+				"1B20E348E02AE451"
+				"1FCCFB27D4E61D8B"
+				"0DCF15D0DDB80EE0"
+				"319D2A4BD36DBDCD"
+				"5FA030B61A0C335C"
+			]
+			tasks: [
+				{
+					id: "0ECAA06DCDE5E005"
+					type: "item"
+					item: {
+						id: "modern_industrialization:item_pipe"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "3526A6CAF42316E4"
+					type: "item"
+					item: {
+						id: "modern_industrialization:fluid_pipe"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "7915F73087DD50FC"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

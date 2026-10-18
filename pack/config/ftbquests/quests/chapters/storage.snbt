@@ -1,0 +1,243 @@
+{
+	id: "34560F2FAB74139C"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 2
+	filename: "storage"
+	icon: {
+		id: "sophisticatedbackpacks:backpack"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "44D2496540C5F6FE"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"30347A69744DE975"
+			]
+			tasks: [
+				{
+					id: "55293D457B8F85CB"
+					type: "item"
+					item: {
+						id: "sophisticatedstorage:barrel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "35DA1D537A77494E"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "34606B92A3A6F57F"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"44D2496540C5F6FE"
+			]
+			tasks: [
+				{
+					id: "0736F7017FD6EB04"
+					type: "item"
+					item: {
+						id: "functionalstorage:oak_1"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2A1DD01355FD5DDF"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "73F96D08F9DD5275"
+			x: 4.0d
+			y: 0.0d
+			dependencies: [
+				"34606B92A3A6F57F"
+			]
+			tasks: [
+				{
+					id: "312AE407F53CC3C7"
+					type: "item"
+					item: {
+						id: "toms_storage:storage_terminal"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "214D98B5A13AA2C5"
+					type: "item"
+					item: {
+						id: "toms_storage:inventory_connector"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "09196579E6AF177F"
+					type: "xp"
+					xp: 75
+				}
+			]
+		}
+		{
+			id: "28340CD18CB88A6E"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "742108DB29021DE7"
+					type: "item"
+					item: {
+						id: "ironfurnaces:iron_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2C79E64CA19715BC"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "2AA6E5D8AD92D260"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "0FF1F4C38D60CEC1"
+					type: "item"
+					item: {
+						id: "pipez:item_pipe"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "16FF3D36628314F7"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "3391DEB52E24862E"
+			x: 4.0d
+			y: 2.0d
+			dependencies: [
+				"2AA6E5D8AD92D260"
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "447F35BDD10EF613"
+					type: "item"
+					item: {
+						id: "laserio:laser_node"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "7A324E20A6521278"
+					type: "xp"
+					xp: 75
+				}
+			]
+		}
+		{
+			id: "33690DED4CD25646"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
+				"45849083414E98A3"
+			]
+			tasks: [
+				{
+					id: "2BCB5A3F7870519E"
+					type: "item"
+					item: {
+						id: "ae2:drive"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "18D90FA20910E8C4"
+					type: "item"
+					item: {
+						id: "ae2:terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5F052BE154BD543B"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "76110B693DBF6FF2"
+			x: 8.0d
+			y: 0.0d
+			dependencies: [
+				"33690DED4CD25646"
+			]
+			tasks: [
+				{
+					id: "68446AB7B38B8CEB"
+					type: "item"
+					item: {
+						id: "ae2:crafting_terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "568463DE39921348"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

@@ -1,0 +1,422 @@
+{
+	id: "1CE4EAE5C8575E5D"
+	group: "2DCF10F76EBF2A74"
+	order_index: 0
+	filename: "start"
+	icon: {
+		id: "minecraft:oak_sapling"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "4D8BFEB75E87D5CA"
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+			tasks: [
+				{
+					id: "306866E82CA8FEE6"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "2F4FE1CF9EF83C28"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "61A00C75298573F8"
+			x: 2.0d
+			y: -2.0d
+			dependencies: [
+				"4D8BFEB75E87D5CA"
+			]
+			tasks: [
+				{
+					id: "07EBA8BE7DC4AB53"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "24E8359881EF4160"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "310586A0CE86D7B4"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"4D8BFEB75E87D5CA"
+			]
+			tasks: [
+				{
+					id: "4CD43A69AFE8E9A3"
+					type: "item"
+					item: {
+						id: "minecraft:crafting_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "526166D3FCDCB17F"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "45595CCBFB325B76"
+					type: "item"
+					item: {
+						id: "minecraft:torch"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "1E339D434FEA09CE"
+			x: 4.0d
+			y: 0.0d
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "67004C900938E8EE"
+					type: "item"
+					item: {
+						id: "minecraft:stone_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "115DFC6735269785"
+					type: "xp"
+					xp: 15
+				}
+			]
+		}
+		{
+			id: "2181236B6834BFDF"
+			x: 4.0d
+			y: -2.0d
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "13E9EB529247F5A2"
+					type: "item"
+					item: {
+						id: "minecraft:bread"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6FC1071BAE16BFB0"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "12725DCFCB83D583"
+					type: "item"
+					item: {
+						id: "minecraft:bread"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "168A3AC3F1C50464"
+			x: 6.0d
+			y: -2.0d
+			dependencies: [
+				"2181236B6834BFDF"
+			]
+			tasks: [
+				{
+					id: "30D2049947A815F2"
+					type: "item"
+					item: {
+						id: "comforts:sleeping_bag_white"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3F114D334204A05D"
+					type: "xp"
+					xp: 20
+				}
+			]
+		}
+		{
+			id: "324A651EE9DDF0ED"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
+				"1E339D434FEA09CE"
+			]
+			tasks: [
+				{
+					id: "611903D4E248E664"
+					type: "item"
+					item: {
+						id: "minecraft:furnace"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "75C572DC6BCF53AB"
+					type: "item"
+					item: {
+						id: "minecraft:charcoal"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2312BB84C93E22F8"
+					type: "xp"
+					xp: 20
+				}
+			]
+		}
+		{
+			id: "1C5E43BCEDA7593F"
+			x: 8.0d
+			y: 0.0d
+			dependencies: [
+				"324A651EE9DDF0ED"
+			]
+			tasks: [
+				{
+					id: "6497818A01588F40"
+					type: "item"
+					item: {
+						id: "minecraft:iron_ingot"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "4E97CD6A82D35E1E"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "7A1D323C6D2FA6FE"
+			x: 10.0d
+			y: -1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "1FE700B0619317E8"
+					type: "item"
+					item: {
+						id: "minecraft:iron_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5E5C3E8C7F556E3E"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "6939E4AEBA9EF3ED"
+			x: 10.0d
+			y: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "124AAC6CE79C77CF"
+					type: "item"
+					item: {
+						id: "minecraft:water_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4CA880B65B65A209"
+					type: "xp"
+					xp: 15
+				}
+			]
+		}
+		{
+			id: "30347A69744DE975"
+			x: 8.0d
+			y: 2.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "358F8E526DD44A52"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:backpack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3B104A7C59867394"
+					type: "xp"
+					xp: 20
+				}
+			]
+		}
+		{
+			id: "78540BFEDFE5CCD4"
+			x: 12.0d
+			y: 0.0d
+			dependencies: [
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "05F74D9C135EA4A3"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "73A5E7C73B137CAC"
+					type: "xp"
+					xp: 20
+				}
+			]
+		}
+		{
+			id: "4081488F0A14597A"
+			x: 12.0d
+			y: 2.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "4E756B748066EF5A"
+					type: "item"
+					item: {
+						id: "mekanismtools:iron_paxel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "028EE69FB95F3741"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "384F1C4A2EF051A0"
+			x: 14.0d
+			y: 2.0d
+			dependencies: [
+				"4081488F0A14597A"
+			]
+			tasks: [
+				{
+					id: "781ADAEFF938A791"
+					type: "item"
+					item: {
+						id: "silentgear:blueprint_paper"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4086A38E2254B46B"
+					type: "item"
+					item: {
+						id: "silentgear:pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1390EBF1A434426E"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "14F9F46803366AD8"
+			x: 14.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"78540BFEDFE5CCD4"
+				"6939E4AEBA9EF3ED"
+			]
+			tasks: [
+				{
+					id: "056263A23C860E7A"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "279D9DD57F41EB30"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

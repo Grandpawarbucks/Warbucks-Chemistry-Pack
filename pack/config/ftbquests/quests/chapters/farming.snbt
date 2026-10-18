@@ -1,0 +1,77 @@
+{
+	id: "355E4A964218121E"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 5
+	filename: "farming"
+	icon: {
+		id: "botanypots:terracotta_hopper_botany_pot"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "3890E7B5FA9CA044"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"2181236B6834BFDF"
+			]
+			tasks: [
+				{
+					id: "4CBCE0E13ACE3468"
+					type: "item"
+					item: {
+						id: "botanypots:terracotta_hopper_botany_pot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4F7920B48972F801"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "7592FE8784DA7D0E"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"3890E7B5FA9CA044"
+			]
+			tasks: [
+				{
+					id: "484EE37D51261944"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:infusion_altar"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "72F5FACB87AE4304"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:inferium_essence"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "3B13B458DCD55134"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

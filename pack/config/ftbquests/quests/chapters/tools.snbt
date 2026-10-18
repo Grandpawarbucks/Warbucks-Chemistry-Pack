@@ -1,0 +1,299 @@
+{
+	id: "71E6C109F4D846B5"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 0
+	filename: "tools"
+	icon: {
+		id: "silentgear:pickaxe"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "566563CC2C37BED0"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"384F1C4A2EF051A0"
+			]
+			tasks: [
+				{
+					id: "2860F55F1526CA02"
+					type: "item"
+					item: {
+						id: "silentgear:material_grader"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "22351862DC22F13A"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "7C6F13A70CB4F9FE"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"566563CC2C37BED0"
+			]
+			tasks: [
+				{
+					id: "43DC30593F4EC827"
+					type: "item"
+					item: {
+						id: "silentgear:salvager"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "01408E019360D1E3"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "68908746B04D6B19"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"4081488F0A14597A"
+				"6EB1CA116210134C"
+			]
+			tasks: [
+				{
+					id: "76F74FB072E031B3"
+					type: "item"
+					item: {
+						id: "mekanismtools:bronze_paxel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "146C1661D51B09B8"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "37DD31C8DF09C737"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"68908746B04D6B19"
+				"42B76D3BDE21F0DC"
+			]
+			tasks: [
+				{
+					id: "053F2A781B3EC196"
+					type: "item"
+					item: {
+						id: "mekanismtools:osmium_paxel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5D5EC099C49026C2"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "189C20032B2F64A2"
+			x: 4.0d
+			y: 2.0d
+			dependencies: [
+				"37DD31C8DF09C737"
+			]
+			tasks: [
+				{
+					id: "6A4FF10C374621B7"
+					type: "item"
+					item: {
+						id: "mekanismtools:diamond_paxel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0D73B7ABCCBEC1DC"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+		{
+			id: "1E48AB2B0066F565"
+			x: 6.0d
+			y: 2.0d
+			dependencies: [
+				"189C20032B2F64A2"
+			]
+			tasks: [
+				{
+					id: "3D15C4862C5522B3"
+					type: "item"
+					item: {
+						id: "mekanismtools:refined_obsidian_paxel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2D721DA156E59E11"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "5E5F22E41BC4538A"
+			x: 8.0d
+			y: 0.0d
+			dependencies: [
+				"55AF98DD41956199"
+			]
+			tasks: [
+				{
+					id: "6BECF5A66A7E3B17"
+					type: "item"
+					item: {
+						id: "ironjetpacks:basic_coil"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5252B133168E620D"
+					type: "item"
+					item: {
+						id: "ironjetpacks:jetpack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1A5D477B07DA7AF4"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "29E14CD67BE0BB33"
+			x: 8.0d
+			y: 2.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"6D18179563EC6FB4"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "7FA63144B10CAEEF"
+					type: "item"
+					item: {
+						id: "angelring:diamond_ring"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4834C09A7A78D2BB"
+					type: "item"
+					item: {
+						id: "angelring:angel_ring"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5517B834CD659294"
+					type: "xp"
+					xp: 500
+				}
+			]
+		}
+		{
+			id: "1EA839D4E5BC136D"
+			x: 0.0d
+			y: 4.0d
+			dependencies: [
+				"168A3AC3F1C50464"
+			]
+			tasks: [
+				{
+					id: "12931F58B1B1EA2D"
+					type: "item"
+					item: {
+						id: "comforts:hammock_white"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "78BDC369419E3EF0"
+					type: "xp"
+					xp: 15
+				}
+			]
+		}
+		{
+			id: "1A44A497FCA1DF1C"
+			x: 2.0d
+			y: 4.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "2B82531060765100"
+					type: "item"
+					item: {
+						id: "waystones:warp_stone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "001B5D5407EF071C"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

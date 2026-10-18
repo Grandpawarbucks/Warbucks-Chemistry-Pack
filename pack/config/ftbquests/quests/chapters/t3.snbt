@@ -1,0 +1,472 @@
+{
+	id: "00581FF47AFBFC11"
+	group: "2DCF10F76EBF2A74"
+	order_index: 4
+	filename: "t3"
+	icon: {
+		id: "modern_industrialization:basic_machine_hull"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "06244939DFC248C8"
+			x: 0.0d
+			y: -1.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "4E3D8C347B34B926"
+					type: "item"
+					item: {
+						id: "modern_industrialization:rubber_sheet"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "4812F5007AE56A7D"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "57D063A8E142DE9D"
+			x: 0.0d
+			y: 1.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "3150CE3A6AD7CED3"
+					type: "item"
+					item: {
+						id: "modern_industrialization:copper_wire"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "4890CA3813BD9140"
+					type: "item"
+					item: {
+						id: "modern_industrialization:tin_cable"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "5546E9651EAE7C91"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "4D4359831AE16AE9"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"06244939DFC248C8"
+				"57D063A8E142DE9D"
+			]
+			tasks: [
+				{
+					id: "3F4D38738145999B"
+					type: "item"
+					item: {
+						id: "modern_industrialization:resistor"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "0084B1359A4AD6FB"
+					type: "item"
+					item: {
+						id: "modern_industrialization:capacitor"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "53BECEC4FD82D640"
+					type: "item"
+					item: {
+						id: "modern_industrialization:inductor"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "27DC27C255F8F516"
+					type: "xp"
+					xp: 60
+				}
+			]
+		}
+		{
+			id: "2BF86ECE9691E81C"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"57D063A8E142DE9D"
+			]
+			tasks: [
+				{
+					id: "0E5761102C97D76C"
+					type: "item"
+					item: {
+						id: "modern_industrialization:redstone_battery"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "348B9CD442491626"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "55AF98DD41956199"
+			x: 4.0d
+			y: 0.0d
+			dependencies: [
+				"4D4359831AE16AE9"
+			]
+			tasks: [
+				{
+					id: "2EE8C578EDD34CC6"
+					type: "item"
+					item: {
+						id: "modern_industrialization:analog_circuit"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "20B7B704B339D088"
+					type: "xp"
+					xp: 75
+				}
+			]
+		}
+		{
+			id: "392A7909301184E2"
+			x: 6.0d
+			y: 1.0d
+			size: 1.5d
+			dependencies: [
+				"55AF98DD41956199"
+				"2BF86ECE9691E81C"
+			]
+			tasks: [
+				{
+					id: "15D781C3A7FF09DC"
+					type: "item"
+					item: {
+						id: "modern_industrialization:basic_machine_hull"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7EC0ABA52589B13A"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "2535BA17FB64FACE"
+			x: 8.0d
+			y: -1.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "7E708036B0B5912F"
+					type: "item"
+					item: {
+						id: "modern_industrialization:lv_steam_turbine"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5BA9EFDF44CB0D61"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "435D6984CDDF47E1"
+			x: 10.0d
+			y: -3.0d
+			dependencies: [
+				"2535BA17FB64FACE"
+			]
+			tasks: [
+				{
+					id: "3C87A84E5758F720"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electric_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1342AA1DD42C383E"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "541A010A43E31E95"
+			x: 10.0d
+			y: -2.0d
+			dependencies: [
+				"2535BA17FB64FACE"
+			]
+			tasks: [
+				{
+					id: "78ED166EFFF9420E"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electric_macerator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "439D3B0B39A90D15"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "290BB135DCEA6DC7"
+			x: 10.0d
+			y: -1.0d
+			dependencies: [
+				"2535BA17FB64FACE"
+			]
+			tasks: [
+				{
+					id: "0525F60BCF640271"
+					type: "item"
+					item: {
+						id: "modern_industrialization:assembler"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67E89E65E8B5E5A6"
+					type: "xp"
+					xp: 60
+				}
+			]
+		}
+		{
+			id: "2F67A54D1D634F0A"
+			x: 10.0d
+			y: 0.0d
+			dependencies: [
+				"2535BA17FB64FACE"
+			]
+			tasks: [
+				{
+					id: "0E60059CD4D6239A"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electric_compressor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "48C35AA32AEF9684"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "0E77517E4651B27A"
+			x: 10.0d
+			y: 1.0d
+			dependencies: [
+				"2535BA17FB64FACE"
+			]
+			tasks: [
+				{
+					id: "59635A18B7A56411"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electric_wiremill"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "20AB100E2ACB5144"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "2EF4BB510E2F28AC"
+			x: 10.0d
+			y: 2.0d
+			dependencies: [
+				"2535BA17FB64FACE"
+			]
+			tasks: [
+				{
+					id: "63D63DDC752F8CA0"
+					type: "item"
+					item: {
+						id: "modern_industrialization:polarizer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C0857678725607A"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "42B76D3BDE21F0DC"
+			x: 8.0d
+			y: 3.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "03F828965A04B4C0"
+					type: "item"
+					item: {
+						id: "mekanism:metallurgic_infuser"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5B53A2BD55327004"
+					type: "xp"
+					xp: 60
+				}
+			]
+		}
+		{
+			id: "480FB3C55927F1A1"
+			x: 10.0d
+			y: 4.0d
+			dependencies: [
+				"42B76D3BDE21F0DC"
+				"55AF98DD41956199"
+			]
+			tasks: [
+				{
+					id: "16273A7405AC34DD"
+					type: "item"
+					item: {
+						id: "mekanism:basic_control_circuit"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "3F3488815CBEE0B1"
+					type: "item"
+					item: {
+						id: "mekanism:steel_casing"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "29AD4E31F54EC50C"
+					type: "xp"
+					xp: 75
+				}
+			]
+		}
+		{
+			id: "3A2454B103645938"
+			x: 12.0d
+			y: 4.0d
+			dependencies: [
+				"480FB3C55927F1A1"
+			]
+			tasks: [
+				{
+					id: "17C97F76B3818F9E"
+					type: "item"
+					item: {
+						id: "mekanism:enrichment_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4AA903E0C63C7DCB"
+					type: "xp"
+					xp: 60
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

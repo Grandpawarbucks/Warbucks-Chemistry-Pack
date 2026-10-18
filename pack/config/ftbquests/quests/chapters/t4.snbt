@@ -1,0 +1,384 @@
+{
+	id: "6549651AA2526584"
+	group: "2DCF10F76EBF2A74"
+	order_index: 5
+	filename: "t4"
+	icon: {
+		id: "modern_industrialization:sulfuric_acid_bucket"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "6913B96166CC25DA"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"290BB135DCEA6DC7"
+			]
+			tasks: [
+				{
+					id: "196C9E7DFD697A63"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electrolyzer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "629237B73562A449"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "4015B208E94DAE2D"
+			x: 2.0d
+			y: -2.0d
+			dependencies: [
+				"6913B96166CC25DA"
+			]
+			tasks: [
+				{
+					id: "065B1D15FDA61F07"
+					type: "item"
+					item: {
+						id: "modern_industrialization:salt_dust"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "3E975B3855C491D4"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "0D7390621F3F2B9F"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"480FB3C55927F1A1"
+			]
+			tasks: [
+				{
+					id: "2D0BCD5255C25AE3"
+					type: "item"
+					item: {
+						id: "mekanism:electrolytic_separator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "71156C56838B89FE"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "256D9F2CFA36ADE2"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"6913B96166CC25DA"
+			]
+			tasks: [
+				{
+					id: "2D561E5E5087DA74"
+					type: "item"
+					item: {
+						id: "modern_industrialization:chemical_reactor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7E2EBAAF23856ECF"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "4B75115FF988850B"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"0D7390621F3F2B9F"
+			]
+			tasks: [
+				{
+					id: "0EB0BA7B6372ADAE"
+					type: "item"
+					item: {
+						id: "mekanism:chemical_oxidizer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0DA5F5B82E73F4F3"
+					type: "item"
+					item: {
+						id: "mekanism:chemical_infuser"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "57872F6B63B89509"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "4377040E34093CBC"
+			x: 4.0d
+			y: 1.0d
+			shape: "hexagon"
+			size: 1.75d
+			dependencies: [
+				"4B75115FF988850B"
+				"256D9F2CFA36ADE2"
+			]
+			tasks: [
+				{
+					id: "73CE95C60A89DBE5"
+					type: "item"
+					item: {
+						id: "modern_industrialization:sulfuric_acid_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4E922367DFD5B6B7"
+					type: "xp"
+					xp: 250
+				}
+			]
+		}
+		{
+			id: "613C5C713C056E03"
+			x: 6.0d
+			y: -1.0d
+			dependencies: [
+				"4377040E34093CBC"
+			]
+			tasks: [
+				{
+					id: "5054B3D55B22FE0D"
+					type: "item"
+					item: {
+						id: "mekanism:purification_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5212040976B9A09F"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "5DC82018A921CB16"
+			x: 8.0d
+			y: -1.0d
+			dependencies: [
+				"613C5C713C056E03"
+			]
+			tasks: [
+				{
+					id: "198015EE8D1E57DF"
+					type: "item"
+					item: {
+						id: "mekanism:chemical_injection_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5398EDC9E3CDB086"
+					type: "xp"
+					xp: 200
+				}
+			]
+		}
+		{
+			id: "79928EE6B7E8E534"
+			x: 10.0d
+			y: -1.0d
+			size: 1.5d
+			dependencies: [
+				"5DC82018A921CB16"
+			]
+			tasks: [
+				{
+					id: "3E807787654011B1"
+					type: "item"
+					item: {
+						id: "mekanism:chemical_dissolution_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "145C930B5DF6CE97"
+					type: "item"
+					item: {
+						id: "mekanism:chemical_washer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "32D3F15DD5D0B75B"
+					type: "item"
+					item: {
+						id: "mekanism:chemical_crystallizer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "39E8FB280F0D75CC"
+					type: "xp"
+					xp: 300
+				}
+			]
+		}
+		{
+			id: "17832D4C895DEFF7"
+			x: 6.0d
+			y: 2.0d
+			size: 1.5d
+			dependencies: [
+				"6913B96166CC25DA"
+			]
+			tasks: [
+				{
+					id: "76BB6438B6A02C11"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electronic_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "192C0EDB00647226"
+					type: "item"
+					item: {
+						id: "modern_industrialization:advanced_machine_hull"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3BE563E4569B5654"
+					type: "xp"
+					xp: 250
+				}
+			]
+		}
+		{
+			id: "4F41C5095B66BC1F"
+			x: 8.0d
+			y: 2.0d
+			dependencies: [
+				"17832D4C895DEFF7"
+				"256D9F2CFA36ADE2"
+			]
+			tasks: [
+				{
+					id: "0E9DB71819D2AAFC"
+					type: "item"
+					item: {
+						id: "powah:energizing_orb"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "03F3B37F224966E6"
+					type: "item"
+					item: {
+						id: "powah:uraninite"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "07D92FDD320A706B"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "6CD23CD722EC696F"
+			x: 4.0d
+			y: 4.0d
+			dependencies: [
+				"4377040E34093CBC"
+			]
+			tasks: [
+				{
+					id: "543481BD0EF424BD"
+					type: "item"
+					item: {
+						id: "undergarden:catalyst"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "61FEB67D6481E70F"
+					type: "dimension"
+					dimension: "undergarden:undergarden"
+				}
+			]
+			rewards: [
+				{
+					id: "7CE4C136DAF9736A"
+					type: "xp"
+					xp: 300
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}

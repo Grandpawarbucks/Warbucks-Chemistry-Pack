@@ -1,0 +1,343 @@
+{
+	id: "64C69CCA641352A4"
+	group: "6B6FDD4F9A66BB50"
+	order_index: 1
+	filename: "factory"
+	icon: {
+		id: "hostilenetworks:sim_chamber"
+		count: 1
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "0C506EBC53C1DABE"
+			x: 0.0d
+			y: 0.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "15216109C9B5A0B4"
+					type: "item"
+					item: {
+						id: "hostilenetworks:deep_learner"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "007ED5D1ABF8D42D"
+					type: "item"
+					item: {
+						id: "hostilenetworks:blank_data_model"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2D7737DB5B14FDFE"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+		{
+			id: "288F7BE90AC49D6E"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"0C506EBC53C1DABE"
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "2594AFD9E83F8F05"
+					type: "item"
+					item: {
+						id: "hostilenetworks:sim_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4D7AD1B7DDEC84D3"
+					type: "item"
+					item: {
+						id: "hostilenetworks:prediction_matrix"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6A1C7DD549F28EAE"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "22C8C82E50C1150C"
+			x: 4.0d
+			y: 0.0d
+			dependencies: [
+				"288F7BE90AC49D6E"
+			]
+			tasks: [
+				{
+					id: "4B0892E03B87D194"
+					type: "item"
+					item: {
+						id: "hostilenetworks:loot_fabricator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "00A07FC2B74E7266"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "3D513F09267F082E"
+			x: 0.0d
+			y: 2.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "04ED9AAF8E024920"
+					type: "item"
+					item: {
+						id: "extendedcrafting:black_iron_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "03B8015F5FBACEC8"
+					type: "item"
+					item: {
+						id: "extendedcrafting:basic_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "51B854C0DE32979B"
+					type: "xp"
+					xp: 50
+				}
+			]
+		}
+		{
+			id: "3E2B8FDB3778E49B"
+			x: 2.0d
+			y: 2.0d
+			dependencies: [
+				"3D513F09267F082E"
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "265DA75438091AFC"
+					type: "item"
+					item: {
+						id: "extendedcrafting:advanced_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5D659FCACB087A50"
+					type: "xp"
+					xp: 100
+				}
+			]
+		}
+		{
+			id: "00ED2FDA05907C7A"
+			x: 4.0d
+			y: 2.0d
+			dependencies: [
+				"3E2B8FDB3778E49B"
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "0625142FF4F70F3A"
+					type: "item"
+					item: {
+						id: "extendedcrafting:elite_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5E5BA34993308838"
+					type: "xp"
+					xp: 200
+				}
+			]
+		}
+		{
+			id: "2C2ECADD0D0886BB"
+			x: 6.0d
+			y: 2.0d
+			dependencies: [
+				"00ED2FDA05907C7A"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "106E0A09330F0A68"
+					type: "item"
+					item: {
+						id: "extendedcrafting:ultimate_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "427B1A17E66FC217"
+					type: "xp"
+					xp: 400
+				}
+			]
+		}
+		{
+			id: "71D7CC7520B500C0"
+			x: 6.0d
+			y: 0.0d
+			dependencies: [
+				"45849083414E98A3"
+				"3E2B8FDB3778E49B"
+			]
+			tasks: [
+				{
+					id: "615E3427A2A232E0"
+					type: "item"
+					item: {
+						id: "packagedauto:packager"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3D7549A32A3E6DD9"
+					type: "item"
+					item: {
+						id: "packagedauto:unpackager"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4F8D5916F4659A1A"
+					type: "xp"
+					xp: 150
+				}
+			]
+		}
+		{
+			id: "37FE5B7240F8C222"
+			x: 0.0d
+			y: 4.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "2444381B56FA5C70"
+					type: "item"
+					item: {
+						id: "compactmachines:personal_shrinking_device"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "676ECEC04BFE920D"
+					type: "xp"
+					xp: 75
+				}
+			]
+		}
+		{
+			id: "194624A9FFBFAE06"
+			x: 2.0d
+			y: 4.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "48E4B031835C83C6"
+					type: "item"
+					item: {
+						id: "cable_facades:facade_wrench"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5C3F69B88B8C124F"
+					type: "xp"
+					xp: 25
+				}
+			]
+		}
+		{
+			id: "37B1429C3FDEB817"
+			x: 4.0d
+			y: 4.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "721C627AA478F486"
+					type: "item"
+					item: {
+						id: "telepastries:overworld_cake"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4A711443EF3B8D3E"
+					type: "xp"
+					xp: 40
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+	images: [ ]
+}
