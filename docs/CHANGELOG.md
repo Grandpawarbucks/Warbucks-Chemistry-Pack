@@ -4,6 +4,30 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Warbucks Core (custom mod), dissolver coverage, formula tooltips
+- **Warbucks Core 1.0.0**: the pack's own NeoForge mod. Source is in `mod/`; the jar is published as a GitHub release
+  and installed by packwiz from that URL.
+  - **Spectrometer** (LV: amethyst prism, steel plates, copper wire, analog circuit). Right-click to read the ore
+    signal in the loaded chunks around you (radius 4 chunks). It lists each element (from `c:ores/*` tags) with
+    strength, direction, distance and average depth. It reads each chunk section's block palette, so scans are cheap.
+  - **Biome Capsule** (glass bottle + rubber sheet + any sapling). Sneak + right-click records the biome you stand in.
+  - **Terraformer** (made from the Seed of a New World + processing units + energy cores). Give it a capsule, then
+    Charged Energy Cores (`#warbuckscore:terraformer_fuel`; 1 core = 9 chunks). It rewrites the biome nearest-first out
+    to 9x9 chunks, like `/fillbiome`. Tested on a server: the centre chunk and its ring of 8 converted, the next ring stayed untouched.
+  - Settings: `config/warbuckscore-common.toml`. Recipes: `kubejs/server_scripts/warbuckscore.js`.
+  - Quests: "The Spectrometer" (T3, optional); "A Sample of Somewhere", "The Terraformer" and "A World You Chose" (Creation).
+- **Dissolver coverage** (`tools/build_dissolver.py` → `kubejs/config/dissolver_recipes.json`, loaded by
+  `server_scripts/dissolver_generated.js`):
+  - 6,041 new dissolver recipes for modded and missing blocks. Each copies the output of an analogous block Alchemistry
+    already handles (planks, stone, glass and so on), scaled for slabs and panes.
+  - Machines, metals, storage blocks, ores and ProjectE items are skipped on purpose; the rest is listed in
+    `docs/dissolver-coverage.md`.
+  - Also fixes Alchemistry's 1.21.1 recipes for glass and carpets, which point at empty tags.
+  - One 289 KB table instead of 6,000 files, so packwiz syncs stay fast.
+- **Formula tooltips** (`kubejs/client_scripts/formula_tooltips.js`): 297 chemistry items (MI, Mekanism, EI, the pack's
+  own items) show their formula, e.g. "H₂SO₄ · sulfuric acid". ChemLib already shows its own.
+- 221 mods. Book: 1,172 quests. Smoke test passes (6,263 KubeJS recipes added, 0 failed).
+
 ### 2026-10-18: Dedicated server kit
 - New `server/` kit (see docs/SERVER.md):
   - `install.sh`: sets up the server folder.

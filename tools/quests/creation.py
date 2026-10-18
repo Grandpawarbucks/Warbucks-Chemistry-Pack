@@ -27,6 +27,26 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
         "&eTo the right:&r making matter. Rewrite nuclei with antimatter, compress a singularity, build armour from a collapsed star.",
         "&eTo the left:&r walking the worlds you can now reach, and holding the rarest parts of the periodic table in your hand."]),
     # ---------------------------------------------------------------- right, y=-4: rewriting nuclei
+    # --- the Terraformer (Warbucks Core): the Seed, planted ------------------------------------------
+    Q("cn_capsule", -1, 3, [item("warbuckscore:biome_capsule")], "A Sample of Somewhere", deps=["t7_creation"], xp=200,
+      tokens=10, subtitle="Bottle a biome", desc=[
+        "&6Every world you have walked through, you can carry with you.&r",
+        "&eWhat:&r a Biome Capsule records the biome you stand in (sneak + right-click). It tells the Terraformer what to grow.",
+        "&eHow:&r glass bottle, rubber sheet and any sapling. Travel to the biome you want, then record it.",
+        "&eTip:&r capsules stack until filled; each one holds one biome."]),
+    Q("cn_terraformer", 1, 3, [item("warbuckscore:terraformer")], "The Terraformer", deps=["cn_capsule"], xp=1500,
+      size=1.5, shape="gear", tokens=20, choice="pick_late", subtitle="The Seed, planted", desc=[
+        "&6The Seed was never meant to stay in your pocket.&r",
+        "&eWhat:&r the Terraformer (Warbucks Core) rewrites the biome around it, nearest chunks first, out to a 9x9 chunk area.",
+        "&eHow:&r craft it from the Seed of a New World, processing units, stainless plates and energy cores. Right-click it with a filled Biome Capsule, then with Charged Energy Cores (each powers 9 chunks; sneak to insert a stack). Right-click empty-handed for status.",
+        "{@pagebreak}",
+        "&eWhat changes:&r grass and leaf colours, weather (rain or snow), and which mobs spawn, just like vanilla /fillbiome. Blocks you placed stay as they are.",
+        "&eTip:&r you can change it again later: a new capsule restarts the spread with the new biome."]),
+    Q("cn_reshaped", 1, 5, [tick()], "A World You Chose", deps=["cn_terraformer"], xp=800, optional=True, tokens=10,
+      loot="boss", subtitle="All 81 chunks", desc=[
+        "&6This is what the power was for.&r",
+        "&eWhat:&r let a Terraformer finish its whole area (status shows 81 / 81), then tick this off.",
+        "&eTip:&r 9 Charged Energy Cores finish one Terraformer."]),
     Q("cn_nucleo", 3, -4, [item(MEK + "antiprotonic_nucleosynthesizer")], "Nucleosynthesis", deps=["t7_creation"], xp=500,
       tokens=10, choice="pick_late", subtitle="Turn one thing into another with antimatter", desc=[
         "&6You remember making things out of nothing. This is close.&r",

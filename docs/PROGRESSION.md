@@ -194,4 +194,4 @@ price bands; they never buy machines, circuits or tier skips.
 2. How to gate portals to the chemistry tiers (KubeJS catalyst items, or quest-only).
 6. Review: AdvancedAE Flight Card (late, needs quantum alloy) and the Ars Ritual of Flight (area-limited) aren't
    chemistry-gated; More Machine's UU-Matter replicator is ungated (late game). Decide whether to gate them.
-5. Alchemistry coverage: write KubeJS dissolver/combiner rules for modded blocks (BOP woods and stones, MI materials, dimension blocks). List anything left uncovered.
+5. (DONE 2026-10-18: tools/build_dissolver.py, 6,041 recipes; see docs/dissolver-coverage.md) Alchemistry coverage: write KubeJS dissolver/combiner rules for modded blocks (BOP woods and stones, MI materials, dimension blocks). List anything left uncovered.

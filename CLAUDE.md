@@ -75,7 +75,7 @@
 - 2026-10-18 later: 197 mods (Towns&Towers, Regions Unexplored, YUNG's, Farmer's Delight, Occultism [gated:
   phase4_occultism.js], MoreMachine, SS in Motion, JourneyMap, Chunky). Quest book v5 = 200 quests, 20 chapters.
   Create re-added (early mechanical tier, phase4_create.js) -> 220 mods; quest book v6 = 213 quests, 21 chapters.
-- Quest book v8 (1,168 quests, 38 chapters, 7 category groups set by LAYOUT in tools/quest_data.py): one file per
+- Quest book v8 (1,172 quests, 38 chapters, 7 category groups set by LAYOUT in tools/quest_data.py): one file per
   chapter in tools/quests/, style in tools/quests/STYLE.md (engine v8: kill/structure/biome/anytag/anyof tasks, hidden/
   secret/any_dep, loot=/choice= reward tables in tools/quests/_tables.py, links, {@pagebreak}). Validate with
   `python3 tools/build_quests.py --check` (or `QUEST_ONLY=a,b ...--check` for a few chapters). End goal = Seed chapter,
@@ -92,6 +92,14 @@
   Next: Phase 6 final test pass (launch, worldgen, JEI sanity, quest completion, dedicated server on VPS with user OK).
 - KubeJS 7 (2101.7.x) API confirmed via javap: event.findRecipes/remove/custom; recipe.json; recipe.getId().
   Editing pattern: parse JSON, remove the original, re-add under kubejs:phase3/... (see phase3_compat.js).
+- Warbucks Core (custom mod, 2026-10-18): source in mod/ (NeoForge 21.1.262 ModDevGradle; build with mod/gradlew build;
+  textures from mod/tools/textures.py). Spectrometer, Biome Capsule, Terraformer. Released as GitHub release
+  warbuckscore-vX.Y.Z; packwiz entry pack/mods/warbucks-core.pw.toml (`packwiz url add`). To ship a change: bump
+  mod_version, build, `gh release create`, then re-add the URL with packwiz. The Terraformer was tested on a
+  server; the Spectrometer still needs an in-game test (it needs a player).
+- Dissolver coverage: tools/build_dissolver.py -> pack/kubejs/config/dissolver_recipes.json (one table, loaded by
+  server_scripts/dissolver_generated.js); 6,041 recipes, uncovered list in docs/dissolver-coverage.md. Rerun after mod changes.
+- Formula tooltips: pack/kubejs/client_scripts/formula_tooltips.js (ItemEvents.modifyTooltips).
 - Dedicated server kit: server/ (install.sh, start.sh auto-updates from GitHub, warbucks.service), docs/SERVER.md.
   User decision 2026-10-18: Warbucks REPLACES ATM10 as the live server on the VPS (/opt/warbucks); whitelist on,
   auto-update, daily backups (7 kept), Normal difficulty. LIVE since 2026-10-18 19:08: warbucks.service enabled on

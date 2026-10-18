@@ -22,9 +22,11 @@ def read_toml(p):
     if "[update.curseforge]" in t:
         pid = re.search(r"project-id = (\d+)", t).group(1)
         link = f"[CurseForge](https://www.curseforge.com/projects/{pid})"
-    else:
+    elif "[update.modrinth]" in t:
         mid = re.search(r'mod-id = "(\w+)"', t).group(1)
         link = f"[Modrinth](https://modrinth.com/mod/{mid})"
+    else:  # direct URL (e.g. the pack's own Warbucks Core mod, a GitHub release)
+        link = f"[Download]({get('url')})"
     return {"name": get("name"), "file": get("filename"), "side": get("side"), "link": link}
 
 
