@@ -80,6 +80,7 @@
   secret/any_dep, loot=/choice= reward tables in tools/quests/_tables.py, links, {@pagebreak}). Validate with
   `python3 tools/build_quests.py --check` (or `QUEST_ONLY=a,b ...--check` for a few chapters). End goal = Seed chapter,
   then Creation. Tokens: Demigod Token + Greater (=9); shop in phase4_chemistry.js §5 (convenience only).
+  Empty starting inventory: join-gift books are off in pack/config (MI, Ars, Silent Gear, Advanced Peripherals).
   Balance fixes in phase5_balance.js (Mekanism 4x/5x machines at MV circuits; no Reliquary metal duplication).
   Open review items: AdvancedAE Flight Card and Ars Ritual of Flight aren't chemistry-gated (both late or area-limited);
   Mekanism More Machine UU-Matter replicator is ungated (late game); Entangled/Integrated Tunnels/Rechiseled ids are

@@ -4,6 +4,17 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Empty starting inventory
+- New players no longer get join gifts. Switched off in pack/config:
+  - Modern Industrialization guidebook (on first join and on respawn)
+  - Ars Nouveau Worn Notebook
+  - Silent Gear material book and starter blueprint package
+  - Advanced Peripherals manual
+- All of them can still be crafted. The Advanced Peripherals manual's own recipe is in the old pre-1.21 format and
+  never loads, so `phase5_balance.js` adds a working one: book + wired modem.
+- Client log after the v8 relaunch: world joined, 38 chapters / 1,168 quests loaded, only known harmless issues.
+  Smoke test passes.
+
 ### 2026-10-18: Quest book v8: end goal, categories, hunting (1,168 quests)
 - **Quest engine:** new task types: kill counts, structure, biome, and "any of" items or tags (FTB Filter System smart filters).
   Also new:

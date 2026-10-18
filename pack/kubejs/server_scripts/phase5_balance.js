@@ -31,3 +31,17 @@ ServerEvents.recipes(event => {
     'diamond', 'emerald', 'lapis_lazuli', 'nether_star']
     .forEach(n => event.remove({ id: `reliquary:alkahestry/crafting/${n}` }))
 })
+
+// --- Starting inventory (2026-10-18, user request) ---------------------------------------------
+// New players start with an empty inventory: the join gifts are switched off in pack/config
+// (MI guidebook, Ars Worn Notebook, Silent Gear material book + blueprint package, Advanced
+// Peripherals manual). All of them are craftable, but the Advanced Peripherals manual's own recipe
+// uses the pre-1.21 format and never loads, so it gets a working one: book + wired modem.
+ServerEvents.recipes(event => {
+  event.custom({
+    type: 'minecraft:crafting_shapeless',
+    category: 'misc',
+    ingredients: [{ item: 'minecraft:book' }, { item: 'computercraft:wired_modem' }],
+    result: { id: 'patchouli:guide_book', components: { 'patchouli:book': 'advancedperipherals:manual' } }
+  }).id('kubejs:phase5/advancedperipherals_manual')
+})
