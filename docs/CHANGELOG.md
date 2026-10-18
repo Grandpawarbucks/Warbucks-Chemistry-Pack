@@ -4,6 +4,11 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Compact Machines room templates
+- In-game: "No Room Templates are registered!" Compact Machines 7 ships its templates as an optional built-in datapack that's off by default.
+- Copied that pack's data (8 room templates, their recipes and advancements; MIT licence) into `pack/kubejs/data/compactmachines/`, so the templates are always on, in every world and on servers. Verified on the server: all 8 templates are registered.
+- Note for the future: KubeJS rejects files in `kubejs/data` with uppercase names (a README.txt there stopped the server).
+
 ### 2026-10-18: Create re-added as the early mechanical tier
 - **User decision: Create is back** (reverses the original "No Create" rule; CLAUDE.md updated, mod target raised to about 210–215).
 - Added Create 6.0.10, Crafts & Additions, Enchantment Industry (+ Dragons Plus), Create: Connected, Create: New Age and Create Deco. Destroy and Steam 'n' Rails have no 1.21.1 build.

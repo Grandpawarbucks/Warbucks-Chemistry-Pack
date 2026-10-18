@@ -85,6 +85,8 @@
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
 - MODLIST.md is GENERATED: add a row to docs/modlist-meta.tsv for every new mod, then run
   `python3 test/gen_modlist.py` (it fails if a mod has no row).
+- KubeJS rejects any file under pack/kubejs/data or assets with UPPERCASE in its name (server won't start).
+- Compact Machines room templates are shipped in pack/kubejs/data/compactmachines (built-in pack is off by default).
 - Modrinth API rate-limits (HTTP 429): use test/mrcheck.py, which retries.
 - Some mods don't declare all their dependencies in metadata (Ars Nouveau→GeckoLib, OctoLib→Architectury).
   The smoke test catches these.
