@@ -1,0 +1,3 @@
+# Never convert line endings. packwiz hashes the files as they are on disk, and players download
+# the bytes stored in Git, so the two must match exactly (Git for Windows defaults to autocrlf=true).
+* -text

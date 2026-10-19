@@ -72,6 +72,22 @@ desktop app's Code tab and say "continue from the CLAUDE.md handoff". `CLAUDE.md
 and the current state. Copy the private memory notes from the Mac's `handoff/` folder (git-ignored) and ask the new
 session to install them as its memory.
 
+### Smoke test on Windows
+```powershell
+powershell -ExecutionPolicy Bypass -File test\smoke.ps1      # $env:KEEP_WORLD=1 first to reuse the world
+```
+`test/smoke.ps1` + `test/lib.ps1` are the PowerShell port of `smoke.sh` + `lib.sh` (same steps, same `SEED`,
+`KEEP_WORLD`, `POST_DONE_WAIT`, `PACKWIZ_PORT` settings, same `parse_logs.py` summary). The first run downloads
+packwiz-installer-bootstrap and installs the NeoForge server into `test\server` (a few minutes plus all mod downloads).
+It uses Java 21 from `JAVA_HOME`, never the `java` on PATH (Windows often has an old Java 8 there).
+`test/known_issues.txt` (the allowlist of harmless log lines) is committed so both machines use the same list.
+
 ### Known limits on Windows
-- The test loop (`test/smoke.sh`, `worldgen.sh`, `client-sync.sh`) is bash with macOS details (`sed -i ''`, named pipes). Until it's ported, run it under WSL (Ubuntu) or Git Bash with GNU sed adjustments; the first job on Windows should be a PowerShell port of `smoke.sh`.
+- Line endings: the repo has a `.gitattributes` with `* -text`, so Git never converts line endings. Without it, Git for
+  Windows (autocrlf=true) checks out CRLF files, packwiz hashes those, and the pushed `index.toml` no longer matches what
+  players download. In an older clone, run `git config core.autocrlf false`, then `git rm --cached -r -q .; git reset --hard`.
+- `worldgen.sh`, `emc_check.sh` and `client-sync.sh` are still bash only (macOS `sed -i ''`, named pipes); port them the
+  same way as smoke.ps1 when needed.
+- If Gradle or Java servers fail with "Unable to establish loopback connection" in a Claude shell, run them in a normal
+  terminal (or the Claude app's Terminal panel); they work there.
 - CLAUDE.md is the project brief for Claude on either machine. Private details (server connection) are deliberately NOT in this public repo.

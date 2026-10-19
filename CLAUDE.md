@@ -62,8 +62,11 @@ Development moves to the user's Windows desktop. Start there with `git pull`, th
 docs/DESKTOP_SETUP.md. The user carries private memory notes (VPS rules) over in the git-ignored `handoff/` folder.
 State at handoff: everything committed and pushed. 221 mods, 1,172 quests, smoke test passing; Warbucks LIVE on the VPS.
 Open items / next steps, in order:
-1. Port the test loop to Windows (PowerShell smoke.sh, or run it under WSL). Until then quest/KubeJS changes can't be
-   smoke-tested on Windows.
+1. Test loop on Windows: smoke DONE (test/smoke.ps1 + lib.ps1, 2026-10-18; server reaches Done, logs parsed). It reports
+   FAIL until test/known_issues.txt (Mac-only, was git-ignored) is copied from the Mac and committed: the remaining hits
+   are the known harmless mekmm/mekanism_extras/create_connected loot tables plus FD/Create Deco recipes. Run Java and
+   Gradle from a real terminal or the app's Terminal panel (they fail with "loopback connection" in Claude's shell).
+   worldgen/emc_check/client-sync are still bash only.
 2. LIVE SERVER: the VPS still runs the pack from before commit 6bcd2bb (no Warbucks Core, dissolver table or tooltips).
    `systemctl restart warbucks` pulls the latest, but check `list` for 0 players and ask the user first.
 3. Spectrometer: needs an in-game test (right-click near ores). The Terraformer was tested on a server.
@@ -125,6 +128,10 @@ Open items / next steps, in order:
   Live ATM10 runs there; stopping it needs explicit user OK + 0 players. Default: test locally.
 - Gate in Phase 4: Just Dire Things flight items and Powah parts (chemical intermediates).
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
+  Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
+  %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Line endings: .gitattributes `* -text` (no conversion). packwiz hashes files on disk, so CRLF checkouts on Windows
+  would break the pushed index. If packwiz refresh changes hashes of files you didn't edit, check line endings first.
 - MODLIST.md is GENERATED: add a row to docs/modlist-meta.tsv for every new mod, then run
   `python3 test/gen_modlist.py` (it fails if a mod has no row).
 - KubeJS rejects any file under pack/kubejs/data or assets with UPPERCASE in its name (server won't start).

@@ -1,9 +1,11 @@
 # Test environment: commit scripts only
 test/*
 !test/*.sh
+!test/*.ps1
 !test/*.py
 !test/jvm_args.txt
 !test/ids.tsv
+!test/known_issues.txt
 !test/README.md
 .DS_Store
 .claude/

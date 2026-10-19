@@ -4,6 +4,16 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Windows desktop setup, PowerShell smoke test
+- **Fix: stale pack index.** `pack/index.toml` had old hashes for three quest files (`creation.snbt`, `t3.snbt`,
+  `lang/en_us.snbt`), so packwiz-installer would reject them. Refreshed.
+- **`.gitattributes`** (`* -text`): Git never converts line endings, so Windows checkouts hash the same as the Mac's.
+- **`test/smoke.ps1` + `test/lib.ps1`**: PowerShell port of `smoke.sh`/`lib.sh`. The first run sets up `test\server`
+  (packwiz-installer-bootstrap v0.0.3, NeoForge 21.1.262). First Windows run: server reached Done in 7.5s, no
+  dependency, mixin, KubeJS or worldgen errors. It reported FAIL only on the harmless loot-table and recipe lines,
+  because `test/known_issues.txt` was never committed. That file is now allowed in Git (copy it from the Mac).
+- `docs/DESKTOP_SETUP.md`: Windows smoke test, line endings, Claude shell loopback note.
+
 ### 2026-10-18: Warbucks Core (custom mod), dissolver coverage, formula tooltips
 - **Warbucks Core 1.0.0**: the pack's own NeoForge mod. Source is in `mod/`; the jar is published as a GitHub release
   and installed by packwiz from that URL.
