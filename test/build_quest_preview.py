@@ -18,14 +18,17 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 from quest_data import CHAPTERS, GROUPS, BOOK_TITLE  # noqa: E402
+import layout  # noqa: E402
 
 OUT = ROOT / "test/preview/index.html"
 JARS = [zipfile.ZipFile(j) for j in glob.glob(str(ROOT / "test/server/mods/*.jar"))]
-VANILLA = pathlib.Path.home() / "Library/Application Support/PrismLauncher/libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
+_PRISM = {"darwin": "Library/Application Support/PrismLauncher", "win32": "AppData/Roaming/PrismLauncher"}.get(
+    sys.platform, ".local/share/PrismLauncher")
+VANILLA = pathlib.Path.home() / _PRISM / "libraries/com/mojang/minecraft/1.21.1/minecraft-1.21.1-client.jar"
 if VANILLA.exists():
     JARS.append(zipfile.ZipFile(VANILLA))
 NAMES = {}
-for line in (ROOT / "test/ids.tsv").read_text().splitlines():
+for line in (ROOT / "test/ids.tsv").read_text(encoding="utf-8").splitlines():
     i, t, n = (line.split("\t") + ["", ""])[:3]
     NAMES.setdefault(i, n)
 _icon_cache = {}
@@ -37,7 +40,7 @@ def icon(item_id):
         return _icon_cache[item_id]
     ns, path = item_id.split(":", 1)
     if ns == "kubejs":
-        src = (ROOT / "pack/kubejs/startup_scripts/chemistry_items.js").read_text()
+        src = (ROOT / "pack/kubejs/startup_scripts/chemistry_items.js").read_text(encoding="utf-8")
         m = re.search(rf"create\('{path}'\).*?texture\('minecraft:item/([a-z_]+)'\)", src)
         ns, path = ("minecraft", m.group(1)) if m else (ns, path)
     cands = [f"assets/{ns}/textures/item/{path}.png"] + [
@@ -72,6 +75,11 @@ def b64file(p):
 
 
 def main():
+    # Same positions as the real book: the automatic layout runs at build time (tools/layout.py).
+    book_keys = {q.key for c in CHAPTERS for q in c.quests}
+    for c in CHAPTERS:
+        layout.apply(c, book_keys)
+    home = {q.key: c.title for c in CHAPTERS for q in c.quests}
     names = {q.key: (q.title or NAMES.get(q.tasks[0][1], q.tasks[0][1]) if q.tasks[0][0] == "item" else q.title or q.key)
              for c in CHAPTERS for q in c.quests}
     chapters = []
@@ -100,14 +108,19 @@ def main():
             qs.append({"key": q.key, "x": q.x, "y": q.y, "size": q.size or 1.0, "shape": q.shape or ("rsquare" if c.group == "main" else "circle"),
                        "title": strip_codes(names[q.key]), "desc": [fmt(d) if d != "{@pagebreak}" else "<hr>" for d in q.desc], "deps": q.deps,
                        "tasks": tasks, "rewards": rewards, "icon": first_icon})
+        # Quest links (shortcuts to quests in other chapters) as faded nodes in the link column.
+        for lk, lx, ly in c.links:
+            qs.append({"key": "link:" + lk, "x": lx, "y": ly, "size": 0.8, "shape": "circle", "link": True,
+                       "title": "Link: " + strip_codes(names.get(lk, lk)), "desc": [html.escape(f"Shortcut to a quest in {home.get(lk, 'another chapter')}.")],
+                       "deps": [], "tasks": [], "rewards": [], "icon": None})
         banner = ROOT / f"pack/kubejs/assets/warbucks/textures/quests/{c.key}.png"
-        chapters.append({"key": c.key, "title": c.title, "group": GROUPS[c.group], "sub": [fmt(s) for s in c.subtitle],
+        chapters.append({"key": c.key, "title": c.title, "group": GROUPS[c.group] or "Start here", "sub": [fmt(s) for s in c.subtitle],
                          "icon": icon(c.icon), "banner": b64file(banner) if banner.exists() else None, "quests": qs})
     logo = b64file(ROOT / "pack/config/fancymenu/assets/logo.png")
     bg = b64file(ROOT / "pack/config/fancymenu/assets/background.png")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(TEMPLATE.replace("__DATA__", json.dumps(chapters)).replace("__LOGO__", logo)
-                   .replace("__BG__", bg).replace("__TITLE__", html.escape(BOOK_TITLE)))
+                   .replace("__BG__", bg).replace("__TITLE__", html.escape(BOOK_TITLE)), encoding="utf-8")
     print(f"Wrote {OUT.relative_to(ROOT)} ({len(chapters)} chapters, {sum(len(c['quests']) for c in chapters)} quests)")
 
 
@@ -136,6 +149,7 @@ svg{position:absolute;left:0;top:0;pointer-events:none}
 aside{width:360px;flex:none;background:rgba(8,14,30,.92);border-left:1px solid #1d3247;overflow:auto;padding:16px}
 aside h2{margin:0 0 4px;color:var(--gold);font-size:18px}aside .t{display:flex;gap:8px;align-items:center;margin:4px 0}
 aside .t img{width:24px;height:24px;image-rendering:pixelated}aside h4{margin:14px 0 4px;color:var(--edge);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.q.link{opacity:.55;border-style:dashed}
 .k{color:#ffe27a}.g{color:var(--gold)}aside p{margin:6px 0}.empty{color:var(--muted)}
 @media (max-width:900px){body{flex-direction:column}nav{width:auto;height:30vh}aside{width:auto;height:35vh}}
 </style></head><body>
@@ -161,7 +175,7 @@ function show(i){const c=D[i];document.querySelectorAll('nav button').forEach(b=
  c.quests.forEach(q=>q.deps.forEach(d=>{const p=byKey[d];if(!p)return;const[a,b]=P(p.x,p.y),[e,f]=P(q.x,q.y);
   const l=document.createElementNS(svg.namespaceURI,'line');l.setAttribute('x1',a);l.setAttribute('y1',b);l.setAttribute('x2',e);l.setAttribute('y2',f);
   l.setAttribute('stroke','#4fd1c5');l.setAttribute('stroke-opacity','.55');l.setAttribute('stroke-width','3');svg.appendChild(l)}));
- c.quests.forEach(q=>{const s=q.size*U*0.8,[x,y]=P(q.x,q.y),el=document.createElement('div');el.className='q '+q.shape;
+ c.quests.forEach(q=>{const s=q.size*U*0.8,[x,y]=P(q.x,q.y),el=document.createElement('div');el.className='q '+q.shape+(q.link?' link':'');
   el.style.width=el.style.height=s+'px';el.style.left=(x-s/2)+'px';el.style.top=(y-s/2)+'px';el.title=q.title;
   el.innerHTML=q.icon?`<img src="${q.icon}">`:'<span>✓</span>';el.onclick=()=>{document.querySelectorAll('.q').forEach(e=>e.classList.remove('sel'));el.classList.add('sel');info(q,c)};cv.appendChild(el);
   const lb=document.createElement('div');lb.className='lbl';lb.textContent=q.title;lb.style.left=x+'px';lb.style.top=(y+s/2+2)+'px';cv.appendChild(lb)})}
