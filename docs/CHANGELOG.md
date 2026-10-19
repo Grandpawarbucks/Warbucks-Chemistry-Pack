@@ -4,6 +4,18 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: QoL: Utilitarian, longer days, less rain, faster furnaces
+- **Utilitarian** 0.19.2 (CurseForge; Modrinth's 1.21.1 build is a year older): bulk wood crafting (2 logs → 16 sticks, chests,
+  ladders, bowls, slabs, stairs, doors, trapdoors), re-dyeing coloured blocks, plus Angel Block, Block Magnet, Fluid Hopper,
+  Snad, Trowel, Sound Muffler, trader carpets and more. 222 mods.
+- **Longer days** (`server_scripts/qol_world.js`, from the user's Wardaddy ATM10 tweak): Overworld daytime lasts 2x as long;
+  night is unchanged.
+- **Less rain** (same file): when the weather changes, dry spells are stretched 2x and rain is cut to half, so roughly a
+  quarter as much rain. `/weather` still works; the `doWeatherCycle` gamerule turns it off.
+- **4x furnace speed** (`server_scripts/qol_furnace_speed.js`, from the Wardaddy ATM10 tweak): 639 smelting, blasting and
+  smoking recipes; machine recipes keep their times.
+- `test/gen_modlist.py` reads and writes UTF-8/LF (it failed on Windows).
+
 ### 2026-10-18: Aluminium line (Bayer + Hall-Héroult), Periodic Table perks
 - **Design decisions** (user): pacing ~100–120 h from content, not grind; one balanced path (no packmodes); no GTCEu for now,
   GT-style chemistry lines on MI instead; Warbucks Core grows (perks, reaction conditions, prospecting).

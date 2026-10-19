@@ -136,6 +136,10 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- QoL (user request 2026-10-18): Utilitarian mod (222 mods, above the ~210-215 target by user choice); longer days + less rain
+  (server_scripts/qol_world.js); 4x vanilla cooking (qol_furnace_speed.js). Day and rain length still need an in-game check.
+- Python tools on Windows: pass encoding="utf-8" (and newline="\n" when writing). build_quests, build_id_index and
+  gen_modlist are fixed; build_dissolver/build_deposits/build_prism_instance are not yet (run them with PYTHONUTF8=1).
 - Line endings: .gitattributes `* -text` (no conversion). packwiz hashes files on disk, so CRLF checkouts on Windows
   would break the pushed index. If packwiz refresh changes hashes of files you didn't edit, check line endings first.
 - MODLIST.md is GENERATED: add a row to docs/modlist-meta.tsv for every new mod, then run

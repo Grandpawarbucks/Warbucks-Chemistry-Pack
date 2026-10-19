@@ -17,7 +17,7 @@ ORDER = ["Chemistry core", "Tech / Power", "Logistics / Storage", "World / Resou
 
 
 def read_toml(p):
-    t = p.read_text()
+    t = p.read_text(encoding="utf-8")
     get = lambda k: (re.search(rf'^{k} = "(.*)"', t, re.M) or [None, ""])[1]
     if "[update.curseforge]" in t:
         pid = re.search(r"project-id = (\d+)", t).group(1)
@@ -31,7 +31,7 @@ def read_toml(p):
 
 
 def main():
-    meta = {r["slug"]: r for r in csv.DictReader(open(ROOT / "docs/modlist-meta.tsv"), delimiter="\t")}
+    meta = {r["slug"]: r for r in csv.DictReader(open(ROOT / "docs/modlist-meta.tsv", encoding="utf-8"), delimiter="\t")}
     mods = {p.name[:-len(".pw.toml")]: read_toml(p) for p in sorted((ROOT / "pack/mods").glob("*.pw.toml"))}
     missing = sorted(set(mods) - set(meta))
     if missing:
@@ -56,10 +56,10 @@ def main():
         out.append("")
     extra = ROOT / "docs/modlist-excluded.md"
     if extra.exists():
-        out += [extra.read_text()]
+        out += [extra.read_text(encoding="utf-8")]
     if stale_meta:
         out += ["<!-- metadata rows with no matching mod: " + ", ".join(stale_meta) + " -->"]
-    (ROOT / "docs/MODLIST.md").write_text("\n".join(out) + "\n")
+    (ROOT / "docs/MODLIST.md").write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
     print(f"Wrote docs/MODLIST.md ({len(mods)} mods)")
 
 
