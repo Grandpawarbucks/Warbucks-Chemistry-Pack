@@ -4,6 +4,15 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Gate fixes found while writing quests
+- Powah's own Energizing recipe uranium ingot → uraninite removed: uraninite only comes from the MI Chemical Reactor
+  (uranium + O₂), as designed.
+- Occultism crusher spirits all give 2 dust per ore (Djinni/Afrit/Marid gave 3x/4x/6x, above the 2x cap before acids).
+  Higher tiers still work faster. New `pack/config/occultism-server.toml`.
+- Ars Nouveau Ritual of Flight tablet now also needs 2 hydrogen, so ritual flight arrives with the Infusion Pylon.
+- Docs: STYLE.md's blocked lists corrected (Mystical Agriculture vs Occultism); CLAUDE.md no longer claims JDT flight is
+  chemistry-gated (it's late by design).
+
 ### 2026-10-18: Quest book v9 (1,617 quests, 43 chapters)
 - **Getting Started is a full first day** (27 → 50): logs → planks → table → sticks → wooden and stone tools → furnace →
   torches → shelter and bed → seeds and a wheat farm → cooked meat → leather → iron tools and armour → water → a first

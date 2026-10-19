@@ -4,8 +4,10 @@
 //   Iron Jetpacks                      LV -> EV        coils need MI analog/electronic/digital/processing circuits
 //   Angel Ring                         HV+             needs an MI digital circuit (plus its Elytra and Nether Stars)
 //
-// Also gated elsewhere: Just Dire Things flight upgrade (End Crystals, unchanged) and the Ars Nouveau
-// Ritual of Flight (Source, area-limited).
+//   Ars Ritual of Flight               end of Ch. II   tablet needs hydrogen too (2026-10-18; area-limited, uses Source)
+//
+// Not chemistry-gated, but late on purpose: the Just Dire Things flight upgrade (eclipse alloy chestplate: tier 4
+// goo from an Ancient City plus a netherite block).
 
 ServerEvents.recipes(event => {
   const reshape = (originalId, result, pattern, key) => {
@@ -59,4 +61,14 @@ ServerEvents.recipes(event => {
     ['FXF', 'GEG', 'NGN'],
     { F: 'minecraft:feather', X: 'modern_industrialization:digital_circuit', G: 'minecraft:gold_block',
       E: 'angelring:diamond_ring', N: 'minecraft:nether_star' })
+
+  // --- Ars Nouveau Ritual of Flight --------------------------------------------------------
+  // Was craftable in T2 from wilden wings and diamonds alone. Same ingredients plus the pylon's
+  // hydrogen, so ritual flight arrives with the Infusion Pylon, not before it.
+  event.remove({ id: 'ars_nouveau:ritual_flight' })
+  event.shapeless('ars_nouveau:ritual_flight', [
+    'ars_nouveau:purple_archwood_log', 'ars_nouveau:wilden_wing', 'ars_nouveau:wilden_wing',
+    'ars_nouveau:wilden_wing', '#c:gems/diamond', '#c:gems/diamond', 'minecraft:ender_pearl',
+    'chemlib:hydrogen', 'chemlib:hydrogen'
+  ]).id('kubejs:phase4/ars_nouveau/ritual_flight')
 })

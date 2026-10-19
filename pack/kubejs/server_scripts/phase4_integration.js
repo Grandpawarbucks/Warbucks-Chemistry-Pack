@@ -70,7 +70,9 @@ ServerEvents.recipes(event => {
       c: 'powah:dielectric_casing', r: 'powah:dielectric_rod_horizontal' })
 
   // Uraninite is uranium dioxide (UO₂). Powah's ore generation is off (Phase 3); instead it is
-  // made the real way: oxidise uranium in MI's Chemical Reactor.
+  // made the real way: oxidise uranium in MI's Chemical Reactor. Powah's own Energizing Orb recipe
+  // (uranium ingot + 30k FE -> uraninite) skipped the oxygen, so it goes (found 2026-10-18).
+  event.remove({ id: 'powah:energizing/uraninite_from_uranium' })
   event.custom({
     type: 'modern_industrialization:chemical_reactor',
     eu: 16,

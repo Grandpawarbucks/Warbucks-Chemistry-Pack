@@ -132,7 +132,8 @@ Open items / next steps, in order:
   port 25565; atm10.service stopped + disabled (folder untouched, re-enable to switch back).
 - Remote test server: the user's VPS (connection details are kept in local Claude memory, NOT in this public repo).
   Live ATM10 runs there; stopping it needs explicit user OK + 0 players. Default: test locally.
-- Gate in Phase 4: Just Dire Things flight items and Powah parts (chemical intermediates).
+- Phase 4 gates: Powah's Energizing Orb (MI electronic circuit). Just Dire Things flight is NOT chemistry-gated, by
+  decision: it is late anyway (eclipse alloy chestplate = tier 4 goo from an Ancient City + a netherite block).
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
@@ -142,12 +143,12 @@ Open items / next steps, in order:
   \config\ftbquests\quests, requirements only, ARR: never copy text). Parallel writers work well: one chapter file each,
   QUEST_ONLY=<keys> --check; the integrator rebuilds ids.tsv, runs the real build, smoke tests and commits.
   NEXT ROUND: densify the MI tier chapters t0-t7 (MI gaps: ~112 items) one at a time (cross-chapter deps).
-  Gate gaps found by the writers, pending user decision: (1) Powah's own energizing uraninite_from_uranium recipe skips the
-  Chemical Reactor + O2 step; (2) Occultism djinni/afrit/marid crusher spirits give 3x/4x/6x dust per ore (pack cap is 2x
-  before acids); (3) Occultism miners for aluminum/bauxite/titanium/thorium/monazite aren't removed, and STYLE.md's blocked
-  list mixes up the MA and Occultism lists; (4) no Ars recipe uses a chemical intermediate, and the Ritual of Flight tablet
-  is craftable in T2 (only the quest order puts it after the pylon); (5) JDT flight is late (tier 4 goo) but not
-  chemistry-gated, unlike the "Gate in Phase 4" line below says.
+  Gate gaps the writers found, FIXED 2026-10-18 (user decision): Powah's energizing uraninite_from_uranium removed
+  (phase4_integration.js); Occultism crusher spirits capped at 2x via pack/config/occultism-server.toml (outputMultiplier
+  1.0 for all tiers; speed bonus kept); Ars Ritual of Flight tablet needs 2 chemlib:hydrogen (phase4_flight.js); STYLE.md
+  blocked lists corrected. Left as is by decision: Occultism miners for non-milestone ores (aluminium/bauxite, titanium,
+  thorium, monazite give ore only) and JDT flight (late, not chemistry-gated). Still open: Occultism CRYSTALLIZER spirits
+  multiply output 1.5x/2x/3x (not yet reviewed); no Ars recipe uses a chemical intermediate besides the flight tablet.
 - QoL (user request 2026-10-18): Utilitarian mod (222 mods, above the ~210-215 target by user choice); longer days + less rain
   (server_scripts/qol_world.js); 4x vanilla cooking (qol_furnace_speed.js). Day and rain length still need an in-game check.
 - Python tools on Windows: pass encoding="utf-8" (and newline="\n" when writing). build_quests, build_id_index and
