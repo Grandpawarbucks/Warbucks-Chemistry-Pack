@@ -158,7 +158,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eTip:&r a big enough body of water or lava counts as endless (check the Ponder), so it's a free fluid source."]),
     Q("cr_biofuel", 12, -6, [item("createaddition:seed_oil_bucket"), item("createaddition:bioethanol_bucket")], "Bioethanol", deps=["cr_pipes"], xp=75,
       optional=True, tokens=1, subtitle="Optional: fuel from fermented plants", desc=[
-        "&eWhat:&r Crafts & Additions makes liquid fuel from plants: seed oil, then biomass, then bioethanol, which burns in a Liquid Blaze Burner.",
+        "&eWhat:&r Crafts and Additions makes liquid fuel from plants: seed oil, then biomass, then bioethanol, which burns in a Liquid Blaze Burner.",
         "&eChemistry:&r real bioethanol comes from yeast fermenting sugar: C₆H₁₂O₆ → 2 C₂H₅OH + 2 CO₂. Plant oils are triglycerides, long carbon chains that store a lot of energy.",
         "&eHow:&r compact seeds in a press and basin for seed oil; mix crops with seed oil over heat for biomass; mix biomass, sugar and cinder flour for bioethanol (check JEI).",
         "&eTip:&r it's a renewable fuel for Create steam engines that never touches your oil wells."]),

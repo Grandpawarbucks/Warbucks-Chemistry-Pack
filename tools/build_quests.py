@@ -22,6 +22,7 @@ Usage: python3 tools/build_quests.py               build into pack/config/ftbque
 import hashlib
 import os
 import pathlib
+import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -91,11 +92,14 @@ def build():
             for tkey in (q.loot, q.choice):
                 if tkey and tkey not in REWARD_TABLES:
                     errors.append(f"reward table {tkey} (from {q.key})")
+            # FTB Quests refuses to render "&" before whitespace ("Invalid formatting! ... escape with \&")
+            for text in [q.title or "", q.subtitle or "", *q.desc]:
+                if re.search(r"(?<!\\)&(\s|$)", text):
+                    errors.append(f"bare '&' in text (write 'and' or \\&) (from {q.key}): {text[:60]!r}")
         for lk, _, _ in c.links:
             if lk not in keys:
                 errors.append(f"quest link {lk} (in chapter {c.key})")
     if ONLY:  # partial check: deps on quests in chapters that weren't loaded are fine if the key exists somewhere
-        import re
         known = {k for f in (ROOT / "tools/quests").glob("*.py") for k in re.findall(r'Q\(\s*"([^"]+)"', f.read_text(encoding="utf-8"))}
         errors[:] = [e for e in errors if not (e.startswith(("dependency ", "quest link ")) and e.split()[-3 if e.startswith("dependency") else 2] in known)]
         if "--check" not in sys.argv:
