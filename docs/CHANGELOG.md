@@ -16,7 +16,8 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
   toughness. Groups are configurable (`perks.groups`).
 - Tools: `test/build_id_index.py` reads the pack's KubeJS lang files (MI machines registered from KubeJS); `tools/build_quests.py`
   writes UTF-8/LF and keeps folders (Windows/OneDrive); `test/smoke.ps1` takes `LOCAL_MOD_JAR` to test an unreleased mod build.
-- Smoke test passes with the local 1.1.0 jar: 6,269 KubeJS recipes added (+6), 195 removed (+3), 0 failed.
+- Smoke test passes with the released 1.1.0 jar (GitHub release `warbuckscore-v1.1.0`): 6,269 KubeJS recipes added (+6),
+  195 removed (+3), 0 failed.
 
 ### 2026-10-18: Windows desktop setup, PowerShell smoke test
 - **Fix: stale pack index.** `pack/index.toml` had old hashes for three quest files (`creation.snbt`, `t3.snbt`,
