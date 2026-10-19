@@ -91,10 +91,10 @@ CHAPTER = Chapter("worlds", "Other Worlds", "deeperdarker:heart_of_the_deep",
         "&eTip:&r check JEI for where the Warden upgrade template comes from."]),
 
     # --- The Undergarden (y=8, extras y=10) ----------------------------------------------------
-    Q("w_undergarden", 0, 8, [item("undergarden:cloggrum_ingot", 8), item("undergarden:froststeel_ingot", 4), item("undergarden:utherium_crystal", 4)], "Undergarden Metals",
-      deps=["t4_undergarden"], xp=200, subtitle="Cloggrum, froststeel and utherium", desc=[
-        "&eWhat:&r new ores beneath the world: cloggrum (tough), froststeel (slows what it hits) and utherium (hurts rotspawn).",
-        "&eHow:&r mine them in depthrock and shiverstone, then smelt.",
+    Q("w_undergarden", 0, 8, [item("undergarden:cloggrum_ingot", 8), item("undergarden:froststeel_ingot", 4)], "Undergarden Metals",
+      deps=["t4_undergarden"], xp=200, subtitle="Cloggrum and froststeel", desc=[
+        "&eWhat:&r new ores beneath the world: cloggrum (tough) and froststeel (slows what it hits). Utherium comes much later.",
+        "&eHow:&r mine them in depthrock and shiverstone, then smelt. Utherium only grows deep in tremblecrust and dreadrock, and its clusters need the Infuser: see the Undergarden page.",
         "&eTip:&r run them through the Alchemistry Dissolver: what are these strange metals made of?"]),
     Q("w_regalium", 2, 8, [item("undergarden:regalium_crystal", 4)], "Regalium", deps=["w_undergarden"], xp=150,
       subtitle="The Undergarden's precious crystal", desc=[

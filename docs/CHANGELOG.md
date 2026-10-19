@@ -4,6 +4,21 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Quest book v9 (1,617 quests, 43 chapters)
+- **Getting Started is a full first day** (27 → 50): logs → planks → table → sticks → wooden and stone tools → furnace →
+  torches → shelter and bed → seeds and a wheat farm → cooked meat → leather → iron tools and armour → water → a first
+  mining trip → Chapter I. Optional: boat, bow, campfire, glass, sugar cane, shears, smithing table, gold and chainmail.
+- **New pages:** Just Dire Things (45), Powah (34), The Undergarden (34), Deeper and Darker (23), Utilitarian (20).
+- **Expanded pages:** Create 35 → 81 (crushing wheels now correctly after precision mechanisms, Create 6 packages, trains),
+  Mekanism 39 → 81 (factories, QIO, MekaSuit, generators, turbine, Mekanism Tools armour), Twilight Forest 29 → 79 (boss
+  order fixed from the mod's own progression locks: stroganoff before the Hydra, Uncrafting Table after the Maze Map
+  Focus), AE2 40 → 67 (processors, ExtendedAE, MEGA Cells, AdvancedAE), Storage 21 → 51 (Sophisticated Storage and
+  Backpacks, Iron Furnaces, Logistics Network), Ars Nouveau 26 → 60, Occultism 17 → 48.
+- Fix: "Undergarden Metals" no longer asks for utherium crystals right after arrival (they need the Infuser, deep in).
+- `tools/quest_compare.py`: lists items another pack quests on that ours doesn't (requirements only; ATM10's book is a
+  checklist, nothing copied).
+- Written by 9 parallel writers (one chapter file each); smoke test passes and FTB Quests loads all 1,617 quests.
+
 ### 2026-10-18: QoL: Utilitarian, longer days, less rain, faster furnaces
 - **Utilitarian** 0.19.2 (CurseForge; Modrinth's 1.21.1 build is a year older): bulk wood crafting (2 logs → 16 sticks, chests,
   ladders, bowls, slabs, stairs, doors, trapdoors), re-dyeing coloured blocks, plus Angel Block, Block Magnet, Fluid Hopper,
