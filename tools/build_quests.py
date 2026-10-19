@@ -10,7 +10,6 @@ Usage: python3 tools/build_quests.py
 """
 import hashlib
 import pathlib
-import shutil
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -78,7 +77,7 @@ def build():
                 errors.append(f"quest link {lk} (in chapter {c.key})")
     if ONLY:  # partial check: deps on quests in chapters that weren't loaded are fine if the key exists somewhere
         import re
-        known = {k for f in (ROOT / "tools/quests").glob("*.py") for k in re.findall(r'Q\(\s*"([^"]+)"', f.read_text())}
+        known = {k for f in (ROOT / "tools/quests").glob("*.py") for k in re.findall(r'Q\(\s*"([^"]+)"', f.read_text(encoding="utf-8"))}
         errors[:] = [e for e in errors if not (e.startswith(("dependency ", "quest link ")) and e.split()[-3 if e.startswith("dependency") else 2] in known)]
         if "--check" not in sys.argv:
             sys.exit("QUEST_ONLY is for --check only")
@@ -91,14 +90,18 @@ def build():
         print(f"OK: {len(CHAPTERS)} chapters, {len(keys)} quests, all ids and dependencies valid (nothing written)")
         return
 
+    # Delete the old files but keep the folders: on Windows, OneDrive or Explorer can hold a folder
+    # open, and removing it then fails halfway through.
     if OUT.exists():
-        shutil.rmtree(OUT)
-    (OUT / "chapters").mkdir(parents=True)
-    (OUT / "lang").mkdir()
+        for f in sorted(OUT.rglob("*"), reverse=True):
+            if f.is_file():
+                f.unlink()
+    (OUT / "chapters").mkdir(parents=True, exist_ok=True)
+    (OUT / "lang").mkdir(exist_ok=True)
 
     group_ids = {g: hexid("group:" + g) for g in GROUPS}
-    (OUT / "data.snbt").write_text(snbt({"version": 13}) + "\n")
-    (OUT / "chapter_groups.snbt").write_text(snbt({"chapter_groups": [{"id": group_ids[g]} for g in GROUPS]}) + "\n")
+    (OUT / "data.snbt").write_text(snbt({"version": 13}) + "\n", encoding="utf-8", newline="\n")
+    (OUT / "chapter_groups.snbt").write_text(snbt({"chapter_groups": [{"id": group_ids[g]} for g in GROUPS]}) + "\n", encoding="utf-8", newline="\n")
     for g, title in GROUPS.items():
         lang[f"chapter_group.{group_ids[g]}.title"] = title
 
@@ -183,7 +186,7 @@ def build():
                    "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly)}
                                    for lk, lx, ly in c.links]}
         order[c.group] += 1
-        (OUT / "chapters" / f"{c.key}.snbt").write_text(snbt(chapter) + "\n")
+        (OUT / "chapters" / f"{c.key}.snbt").write_text(snbt(chapter) + "\n", encoding="utf-8", newline="\n")
 
     (OUT / "reward_tables").mkdir(exist_ok=True)
     for i, (tkey, t) in enumerate(REWARD_TABLES.items()):
@@ -193,8 +196,8 @@ def build():
                  "rewards": [{"id": hexid(f"tablereward:{tkey}:{j}"), "item": {"id": item, "count": n},
                               **({"weight": float(w)} if w != 1 else {})}
                              for j, (item, n, w) in enumerate(t["entries"])]}
-        (OUT / "reward_tables" / f"{tkey}.snbt").write_text(snbt(table) + "\n")
-    (OUT / "lang" / "en_us.snbt").write_text(snbt(lang) + "\n")
+        (OUT / "reward_tables" / f"{tkey}.snbt").write_text(snbt(table) + "\n", encoding="utf-8", newline="\n")
+    (OUT / "lang" / "en_us.snbt").write_text(snbt(lang) + "\n", encoding="utf-8", newline="\n")
     write_doc(total)
     print(f"Reward tables: {len(REWARD_TABLES)}")
     print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {OUT.relative_to(ROOT)} (+ {DOC.relative_to(ROOT)})")
@@ -233,7 +236,7 @@ def write_doc(total):
                     if line:
                         out.append(f"   > {strip(line)}")
             out.append("")
-    DOC.write_text("\n".join(out) + "\n")
+    DOC.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

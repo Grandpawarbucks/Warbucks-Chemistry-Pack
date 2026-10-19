@@ -3,7 +3,7 @@
 //
 // MI's own ladder is already chemical:
 //   LV  Basic hull            analog circuit, steel casing         (coke → steel)
-//   MV  Advanced hull         electronic circuit (aluminum)        (bauxite electrolysis, silicon)
+//   MV  Advanced hull         electronic circuit (aluminum)        (Bayer + Hall-Heroult, silicon)
 //   HV  Turbo hull            digital circuit (polyethylene)       (petrochemistry, salt → sodium)
 //   EV  Highly advanced hull  processing unit (PVC)                (chlorine chemistry)
 //   IV  Quantum hull          quantum circuit, plutonium battery   (nuclear)

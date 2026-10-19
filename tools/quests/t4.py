@@ -100,18 +100,56 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eChemistry:&r iron → nickel, copper → gold, gold → silver, &elead → silver&r (galena), tin → tungsten, osmium → iridium, uranium → lead (decay).",
         "&eHow:&r the Centrifuge needs an electronic circuit. Route dirty dust to it, and rare metals arrive as a bonus."]),
 
-    # ===== Lower line: aluminum, silicon and the electronic circuit (LV → MV) =====
-    Q("t4_bauxite", 0, 2, [item(MI + "bauxite_dust", 18)], "Bauxite", deps=["t3_ebf"], xp=40,
+    # ===== Lower line: aluminum (Bayer + Hall-Héroult), silicon and the electronic circuit (LV → MV) =====
+    Q("t4_bauxite", -8, 2, [item(MI + "bauxite_dust", 16)], "Bauxite", deps=["t3_ebf"], xp=40,
       subtitle="The ore aluminum hides in", desc=[
+        "&6You remember a metal an emperor once served to his most honoured guests. It was never rare, only stubborn.&r",
         "&eWhat:&r bauxite is the only practical aluminum ore. MI bauxite ore drops bauxite dust.",
         "&eChemistry:&r bauxite is mostly aluminium hydroxides, Al(OH)₃ and AlO(OH), stained red by iron oxide.",
-        "&eHow:&r rich bauxite deposits sit around Y -16 to 24. Pack 9 dust into a bauxite block (Packer or crafting grid)."]),
-    Q("t4_aluminum", 2, 2, [item(MI + "aluminum_ingot", 8)], "Aluminum", deps=["t4_bauxite"], xp=100,
-      subtitle="Bauxite block → aluminum ingot in the EBF", desc=[
-        "&eWhat:&r aluminum is the metal of the MV tier: boards, rotors, casings.",
-        "&eChemistry:&r aluminium is the most common metal in the crust but clings to oxygen. It only got cheap after 1886, when Hall and Héroult electrolysed molten alumina.",
-        "&eHow:&r Electric Blast Furnace with cupronickel coils: 1 bauxite block → 1 aluminum ingot.",
-        "&eTip:&r once you have an Electrolyzer, 10 bauxite dust → 4 aluminum dust + titanium. Much better yield."]),
+        "&eHow:&r rich bauxite deposits sit around Y -16 to 24. No furnace will free the metal: it goes through the Bayer process first."]),
+    Q("t4_lye_bayer", -8, 0, [item(MI + "sodium_hydroxide_bucket")], "Lye for the Digester", deps=["t3_mixer", "t1_combiner"], xp=60,
+      subtitle="Sodium hydroxide from the Combiner", desc=[
+        "&eWhat:&r the Bayer process dissolves bauxite in hot lye, so you need sodium hydroxide solution first.",
+        "&eChemistry:&r NaOH is a strong base: it fully splits into Na⁺ and OH⁻ in water, and OH⁻ is what pulls aluminium into solution.",
+        "&eHow:&r combine Na + O + H in the Alchemistry Combiner (check JEI on Sodium Hydroxide), then Mixer: 1 crystal + 250 mB water → 250 mB lye.",
+        "&eTip:&r the digester gives most of the lye back, so a few crystals go a long way. Later the Chemical Reactor makes it in bulk."]),
+    Q("t4_bayer_digest", -6, 2, [item(MI + "sodium_aluminate_solution_bucket")], "Bayer Digestion", deps=["t4_bauxite", "t4_lye_bayer"], xp=80,
+      subtitle="Dissolve the aluminium, leave the rust", desc=[
+        "&eWhat:&r the first step of every aluminium refinery since 1888: hot lye dissolves the aluminium out of bauxite.",
+        "&eChemistry:&r Al(OH)₃ + NaOH → NaAl(OH)₄ (sodium aluminate). Iron and titanium oxides don't dissolve; they settle out as 'red mud'.",
+        "&eHow:&r Mixer: 4 bauxite dust + 1000 mB lye → 1000 mB sodium aluminate solution + 2 tiny iron dust + 1 tiny titanium dust.",
+        "&eTip:&r pipe the solution straight into the next Mixer; a bucket is only needed for this quest."]),
+    Q("t4_bayer_precip", -4, 2, [item("chemlib:aluminum_hydroxide_dust", 8)], "Precipitation", deps=["t4_bayer_digest"], xp=60,
+      subtitle="Cool, dilute, and crystals fall out", desc=[
+        "&eWhat:&r pure aluminium hydroxide, crystallised back out of the solution, with the lye recovered.",
+        "&eChemistry:&r NaAl(OH)₄ → Al(OH)₃ + NaOH. Diluting the liquor makes the reaction run backwards; the impurities stayed behind in the red mud.",
+        "&eHow:&r Mixer: 1000 mB sodium aluminate + 1000 mB water → 4 aluminium hydroxide dust + 900 mB lye.",
+        "&eTip:&r loop the 900 mB of lye back into the digester. That loop is why the Bayer process is cheap."]),
+    Q("t4_alumina", -2, 2, [item("chemlib:aluminum_oxide_dust", 4)], "Alumina", deps=["t4_bayer_precip"], xp=60,
+      subtitle="Bake out the water", desc=[
+        "&eWhat:&r alumina (aluminium oxide) is the white powder that actually goes into the smelter.",
+        "&eChemistry:&r calcination: 2Al(OH)₃ → Al₂O₃ + 3H₂O at around 1000 °C. Alumina also makes sapphire and ruby, coloured by traces of iron, titanium or chromium.",
+        "&eHow:&r Electric Blast Furnace: 2 aluminium hydroxide dust → 1 alumina dust."]),
+    Q("t4_hallheroult", 0, 2, [item(MI + "hall_heroult_cell")], "The Hall-Héroult Cell", deps=["t4_alumina"], xp=150, size=1.5, shape="hexagon",
+      subtitle="Electrolyse molten alumina", desc=[
+        "&eWhat:&r a multiblock smelter that splits alumina with electricity. It's built from steel and LV parts, because it's what makes your first aluminium.",
+        "&eChemistry:&r alumina melts at 2072 °C, far too hot. Dissolved in molten cryolite it melts near 950 °C. Current then splits it: 2Al₂O₃ + 3C → 4Al + 3CO₂, burning the carbon anode away.",
+        "&eHow:&r controller from steel large plates, analog circuits, cupronickel coils and an LV hull. Check JEI (press U on the controller) for the 3x3x3 shape: steel casings top and bottom, a ring of cupronickel coils with the controller in the middle layer.",
+        "{@pagebreak}",
+        "&eHistory:&r Charles Martin Hall (USA) and Paul Héroult (France) found the process independently in 1886, both in their early twenties. Within about ten years the price of aluminium fell by more than 90%.",
+        "&eNote:&r every primary aluminium smelter on Earth still uses it, and the cells draw a few percent of the world's electricity."]),
+    Q("t4_aluminum", 2, 2, [item(MI + "aluminum_ingot", 8)], "Aluminum", deps=["t4_hallheroult"], xp=100,
+      subtitle="Alumina + carbon → aluminum, in the cell", desc=[
+        "&6The metal comes away bright and light in your hand. Some part of you is pleased it still had to work for it.&r",
+        "&eWhat:&r aluminum is the metal of the MV tier: boards, rotors, casings, the Chemical Reactor and the Electrolyzer.",
+        "&eChemistry:&r aluminium is the most common metal in the crust but clings to oxygen, so only electricity can pull it free.",
+        "&eHow:&r Hall-Héroult Cell (LV power): 1 alumina + coke dust (the anode, used half the time) + a pinch of fluorite flux → 1 aluminum ingot.",
+        "&eTip:&r 4 bauxite dust becomes 2 ingots. Alumina from the Combiner (Al + O) works in the cell too."]),
+    Q("t4_alchemical_alumina", -2, 0, [item("chemlib:aluminum_oxide", 2)], "The Alchemist's Alumina", deps=["t4_alumina", "t1_combiner"], xp=40, optional=True, tokens=1,
+      subtitle="Al + O in the Combiner, no bauxite", desc=[
+        "&eWhat:&r the Combiner can build aluminium oxide straight from elements, and the cell accepts it like refined alumina.",
+        "&eChemistry:&r 4Al + 3O₂ → 2Al₂O₃. The reaction is so eager it burns white-hot in thermite; you're running it backwards to get the metal.",
+        "&eHow:&r check JEI on Aluminum Oxide for the Combiner recipe. For aluminium elements, check JEI (press U on Aluminum) to see what the Dissolver breaks into it."]),
     Q("t4_electrum", 0, 4, [item(MI + "electrum_ingot", 4)], "Electrum", deps=["t3_mixer"], xp=60,
       subtitle="Gold and silver, the ancient alloy", desc=[
         "&eWhat:&r electrum cable and fine wire go into every MV component.",
@@ -140,7 +178,7 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
     Q("t4_electrolyzer", 8, 2, [item(MI + "electrolyzer")], "Electrolysis", deps=["t4_circuit"], xp=150,
       subtitle="MI's electrolysis machine", desc=[
         "&eWhat:&r pass current through a compound and it splits. This is &eelectrochemistry&r.",
-        "&eChemistry:&r water → H₂ + O₂ (3000 mB water → 2000 mB H₂ + 1000 mB O₂). Salt → sodium + chlorine. Bauxite → aluminum + titanium.",
+        "&eChemistry:&r water → H₂ + O₂ (3000 mB water → 2000 mB H₂ + 1000 mB O₂). Salt → sodium + chlorine.",
         "&eHow:&r magnetic cupronickel wire, aluminum rods, an LV hull, an electronic circuit and a large pump."]),
     Q("t4_reactor", 8, 4, [item(MI + "chemical_reactor")], "The Chemical Reactor", deps=["t4_circuit"], xp=100,
       subtitle="MI's general-purpose reaction vessel", desc=[
@@ -205,16 +243,16 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eWhat:&r a challenge: put at least five different ores through the full 5x line.",
         "&eHow:&r one Dissolution Chamber handles every metal, but each slurry needs its own washer and crystallizer pass. Tick this when five ores are done.",
         "&eTip:&r Mekanism factories (upgraded machines) run several ores at once."]),
-    Q("t4_bauxite_deposit", 0, 8, [item(MI + "bauxite_dust", 128)], "A Red Mountain", deps=["t4_bauxite"], xp=80, optional=True, tokens=1,
+    Q("t4_bauxite_deposit", -8, 4, [item(MI + "bauxite_dust", 128)], "A Red Mountain", deps=["t4_bauxite"], xp=80, optional=True, tokens=1,
       subtitle="Mine a rich bauxite deposit", desc=[
         "&eWhat:&r rich deposits hold hundreds of ores in one chunk. Find bauxite's and the MV tier stops feeling slow.",
         "&eHow:&r strip-mine around Y -16 to 24 and look for red ore with Jade. FTB Ultimine helps a lot.",
         "&eTip:&r Fortune works on bauxite ore, since it drops dust."]),
-    Q("t4_titanium", 4, 9, [item(MI + "titanium_tiny_dust", 9)], "A Hint of Titanium", deps=["t4_electrolyzer"], xp=60, optional=True, tokens=1,
-      subtitle="Bauxite electrolysis leaves titanium", desc=[
-        "&eWhat:&r electrolysing bauxite dust gives aluminum dust plus a little titanium. Save it for much later.",
-        "&eChemistry:&r bauxite carries titanium dioxide (TiO₂) as an impurity. Real refineries leave it in 'red mud'.",
-        "&eHow:&r Electrolyzer: 10 bauxite dust → 4 aluminum dust + 3 tiny titanium dust."]),
+    Q("t4_titanium", -6, 4, [item(MI + "titanium_tiny_dust", 9)], "A Hint of Titanium", deps=["t4_bayer_digest"], xp=60, optional=True, tokens=1,
+      subtitle="Red mud hides titanium", desc=[
+        "&eWhat:&r Bayer digestion leaves a little titanium behind with the iron. Save it for much later.",
+        "&eChemistry:&r bauxite carries titanium dioxide (TiO₂) as an impurity. It doesn't dissolve in lye, so it ends up in the 'red mud'.",
+        "&eHow:&r every Bayer digestion (4 bauxite dust) gives 1 tiny titanium dust. Nine of them pack into a full dust."]),
     Q("t4_mi_hcl", 8, 9, [item(MI + "hydrochloric_acid_bucket")], "Hydrochloric Acid, MI Style", deps=["t4_reactor", "t4_sodium"], xp=60, optional=True, tokens=1,
       subtitle="H₂ + Cl₂ in the Chemical Reactor", desc=[
         "&eWhat:&r MI makes hydrochloric acid as a fluid, the alternative to Mekanism's HCl gas.",
@@ -224,5 +262,6 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
       subtitle="Sodium hydroxide, the strong base", desc=[
         "&eWhat:&r sodium hydroxide (NaOH, lye) is the strong base to sulfuric acid's strong acid. Soap is made with it.",
         "&eChemistry:&r acid + base → salt + water. H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O.",
-        "&eHow:&r Chemical Reactor: sodium dust + 1000 mB oxygen + 1000 mB hydrogen → 2000 mB sodium hydroxide."]),
+        "&eHow:&r Chemical Reactor: sodium dust + 1000 mB oxygen + 1000 mB hydrogen → 2000 mB sodium hydroxide.",
+        "&eTip:&r this is the bulk lye supply for the Bayer digester, so you can stop feeding it Combiner crystals."]),
 ])

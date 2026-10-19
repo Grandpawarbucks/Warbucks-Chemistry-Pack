@@ -118,7 +118,10 @@ Seven tiers. Each one lists the chemistry concept, the divine milestone (the sto
 - MI config and KubeJS: fewer crafting steps for hulls and circuits, and no recipes that need more than about 3 nested intermediates for a single machine.
 - Quest rewards include a few of each tier's first machines, so you only build the first one of a type by hand.
 - FTB Ultimine, and Mekanism processing that pays off quickly.
-- Pacing target: about 50–80 hours to finish, and flight within the first 2–4 hours (right after the Nether and brewing).
+- Pacing target (raised 2026-10-18, user decision): about **100–120 hours** to finish, and flight still within the first
+  2–4 hours (right after the Nether and brewing). The extra time comes from more content (chemistry lines,
+  exploration-gated elements, Periodic Table perks, factory projects), never from longer timers or bigger recipe counts.
+- One balanced path (user decision 2026-10-18): no Expert/Hard packmode and no optional harder lines.
 
 ---
 
@@ -153,6 +156,25 @@ MI's tier ladder is the spine. Its hulls already need chemical intermediates: LV
 | EV | Mekanism Ultimate Control Circuit | + MI Processing Unit |
 | T5 / EV | Flux Core; Alchemistry Fission and Fusion controllers | MI Processing Unit |
 | T5→T6 | Ad Astra NASA Workbench | MI Highly Advanced Machine Hull |
+
+**Aluminium line** (2026-10-18, first GT-style chemistry line; `startup_scripts/aluminum_line.js` + `server_scripts/phase4_aluminum.js`).
+Aluminium gates MV (electronic circuit board, Chemical Reactor, Electrolyzer, advanced casing), so it's the LV → MV chemistry
+gate. Everything in the line is LV and aluminium-free:
+
+| Step | Machine | Recipe |
+|---|---|---|
+| Lye (bootstrap) | Mixer | Combiner NaOH crystal + 250 mB water → 250 mB NaOH (bulk: MI Chemical Reactor, after MV) |
+| Bayer digestion | Mixer | 4 bauxite dust + 1000 mB NaOH → 1000 mB sodium aluminate + 2 tiny iron + 1 tiny titanium ("red mud") |
+| Precipitation | Mixer | 1000 mB aluminate + 1000 mB water → 4 Al(OH)₃ dust + 900 mB NaOH (the lye loop) |
+| Calcination | EBF | 2 Al(OH)₃ → 1 alumina (Al₂O₃) |
+| Hall-Héroult | **Hall-Héroult Cell** (new LV multiblock: 3x3x3 steel casings + cupronickel coil ring) | alumina + coke dust (50%) + fluorite (5%) → aluminium ingot |
+
+Net 4 bauxite → 2 ingots. MI's shortcuts (bauxite → EBF, bauxite → Electrolyzer) are removed. Combiner alumina
+(`chemlib:aluminum_oxide`) also works in the cell, the alchemical alternative. Quests: T4 chapter, `t4_bauxite` → `t4_aluminum`.
+
+**Periodic Table perks** (Warbucks Core 1.1.0, `ElementPerks.java`, config `perks.groups`): the mod remembers every element a
+player has held; completing a group gives a permanent attribute bonus. First group: Post-Transition Metals (Al, Sn, Pb, In)
+→ +2 armor toughness. `/warbucks elements` shows progress. More groups can be added in the config without code.
 
 **Mystical Agriculture** (`phase4_mysticalagriculture.js`):
 - Seeds for chemistry-milestone resources are removed: uranium, uraninite, osmium, fluorite, silicon, steel, aluminum, graphite, platinum, iridium, refined obsidian, refined glowstone.

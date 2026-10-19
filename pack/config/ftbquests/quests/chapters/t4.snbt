@@ -613,7 +613,7 @@
 		}
 		{
 			id: "543D2B2404F95AAA"
-			x: 0.0d
+			x: -8.0d
 			y: 2.0d
 			dependencies: [
 				"0213687BA73A9908"
@@ -626,7 +626,7 @@
 						id: "modern_industrialization:bauxite_dust"
 						count: 1
 					}
-					count: 18L
+					count: 16L
 				}
 			]
 			rewards: [
@@ -646,11 +646,190 @@
 			]
 		}
 		{
+			id: "0634B5A042428462"
+			x: -8.0d
+			y: 0.0d
+			dependencies: [
+				"48A4FFD83AE8AD44"
+				"29BEA270C571B58C"
+			]
+			tasks: [
+				{
+					id: "5208D3CBFFA03BE4"
+					type: "item"
+					item: {
+						id: "modern_industrialization:sodium_hydroxide_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "77054D37314A7CCD"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "2D62A31D32E20090"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "0254086EF2C56C8D"
+			x: -6.0d
+			y: 2.0d
+			dependencies: [
+				"543D2B2404F95AAA"
+				"0634B5A042428462"
+			]
+			tasks: [
+				{
+					id: "21892B5221A09B6A"
+					type: "item"
+					item: {
+						id: "modern_industrialization:sodium_aluminate_solution_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2FE61EEDE08E796D"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "5EED6E1158C926E4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "44D206C74AAFDE47"
+			x: -4.0d
+			y: 2.0d
+			dependencies: [
+				"0254086EF2C56C8D"
+			]
+			tasks: [
+				{
+					id: "3D76E4CF8A7870AE"
+					type: "item"
+					item: {
+						id: "chemlib:aluminum_hydroxide_dust"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "7B506435D9F9F8AE"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "5188A8F6510832F9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "27E5C3E5F7BB388B"
+			x: -2.0d
+			y: 2.0d
+			dependencies: [
+				"44D206C74AAFDE47"
+			]
+			tasks: [
+				{
+					id: "76F3266F6573A7BA"
+					type: "item"
+					item: {
+						id: "chemlib:aluminum_oxide_dust"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "33F2CDD6308352C9"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "0856F551F8E0B417"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "3B99BB8419C1FF2D"
+			x: 0.0d
+			y: 2.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"27E5C3E5F7BB388B"
+			]
+			tasks: [
+				{
+					id: "382F6F922998B490"
+					type: "item"
+					item: {
+						id: "modern_industrialization:hall_heroult_cell"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "29ACB2AA9B062B7C"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "1D45465EE2C27353"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 6
+					}
+				}
+				{
+					id: "2B40BCA57C167122"
+					type: "random"
+					table_id: 7434033478712130111L
+				}
+			]
+		}
+		{
 			id: "4718BEF4ACA3AAE9"
 			x: 2.0d
 			y: 2.0d
 			dependencies: [
-				"543D2B2404F95AAA"
+				"3B99BB8419C1FF2D"
 			]
 			tasks: [
 				{
@@ -675,6 +854,42 @@
 					item: {
 						id: "kubejs:demigod_token"
 						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "529D466C8095705E"
+			x: -2.0d
+			y: 0.0d
+			optional: true
+			dependencies: [
+				"27E5C3E5F7BB388B"
+				"29BEA270C571B58C"
+			]
+			tasks: [
+				{
+					id: "177691DDA3A7D96E"
+					type: "item"
+					item: {
+						id: "chemlib:aluminum_oxide"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "4C623CDB34C71B51"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5828BA52CD677A18"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
 					}
 				}
 			]
@@ -1376,8 +1591,8 @@
 		}
 		{
 			id: "55F835AE318C2487"
-			x: 0.0d
-			y: 8.0d
+			x: -8.0d
+			y: 4.0d
 			optional: true
 			dependencies: [
 				"543D2B2404F95AAA"
@@ -1411,11 +1626,11 @@
 		}
 		{
 			id: "21C7F639DD99DD59"
-			x: 4.0d
-			y: 9.0d
+			x: -6.0d
+			y: 4.0d
 			optional: true
 			dependencies: [
-				"6913B96166CC25DA"
+				"0254086EF2C56C8D"
 			]
 			tasks: [
 				{
@@ -1520,7 +1735,7 @@
 	images: [
 		{
 			id: "3DB2D3A85351AD2E"
-			x: 2.5d
+			x: -5.5d
 			y: -10.0d
 			width: 6.0d
 			height: 1.0d

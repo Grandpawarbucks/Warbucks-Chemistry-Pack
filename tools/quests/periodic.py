@@ -29,7 +29,9 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
     Q("pt_post_transition", 8, 0, [item("chemlib:aluminum", 8), item("chemlib:tin", 8), item("chemlib:lead", 8), item("chemlib:indium", 4)], "Post-Transition Metals", subtitle="Soft metals on the metal side of the line", deps=["pt_transition"], xp=150, desc=[
         "&eWhat:&r aluminum, tin, lead and indium: softer, lower-melting metals just right of the transition block.",
         "&eChemistry:&r indium tin oxide is the clear conductor in every touchscreen. Lead is dense enough to stop X-rays.",
-        "&eHow:&r diorite dissolves into tin and indium. Aluminum and lead come from their ingots, dusts and minerals (check JEI)."]),
+        "&eHow:&r diorite dissolves into tin and indium. Aluminum and lead come from their ingots, dusts and minerals (check JEI).",
+        "&ePerk:&r hold one of each of these four elements and your body remembers them: &e+2 armor toughness&r, permanently. Soft metals bend instead of breaking.",
+        "&eTip:&r type &e/warbucks elements&r to see which Periodic Table perks you've unlocked and what's still missing."]),
     Q("pt_liquid", 6, -2, [item("chemlib:mercury", 4), item("chemlib:gallium", 4)], "Liquid Metals", subtitle="Metals that melt in your hand", deps=["pt_transition"], xp=150, desc=[
         "&eWhat:&r mercury and gallium, the two metals you can pour (almost) at room temperature.",
         "&eChemistry:&r mercury melts at −38.8 °C; gallium at 29.8 °C, below body temperature.",

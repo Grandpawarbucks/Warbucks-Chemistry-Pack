@@ -68,9 +68,15 @@ Open items / next steps, in order:
 2. LIVE SERVER: DONE 2026-10-18 20:17. Restarted with 0 players and the user's OK; now runs main at 33c52d1 (Warbucks Core
    loaded). For later updates: `systemctl restart warbucks` pulls the latest, but check `list` for 0 players and ask first.
 3. Spectrometer: needs an in-game test (right-click near ores). The Terraformer was tested on a server.
-4. GregTech decision pending: docs/research/gtceu.md. GTCEu Modern on 1.21.1 is only a stale beta (7.0.2) or 8.0
-   snapshots. Recommendation A: keep MI and port GT-style chemistry lines (rare earths, platinum, alumina, polymers)
-   with MI's own KubeJS API (MIMachineEvents / MIMaterialEvents, checked with javap). Ask the user which option.
+4. GregTech decision (2026-10-18): no GTCEu for now (docs/research/gtceu.md; revisit if a stable 8.x lands on Modrinth).
+   Keep MI and add GT-style chemistry lines (alumina T3, polymers T4, rare earths/PGM T5) with MI's KubeJS API
+   (MIMachineEvents / MIMaterialEvents). User decisions: pacing ~100-120 h (longer, but from content, not grind);
+   ONE balanced path (no packmodes); expand Warbucks Core (Periodic Table perks, reaction conditions, prospecting).
+   First step DONE 2026-10-18: aluminium slice (Bayer + Hall-Héroult Cell, T4 quests, Periodic Table perks in Warbucks
+   Core 1.1.0; PROGRESSION.md §7). Committed locally. PENDING user OK: `gh release create warbuckscore-v1.1.0`, re-add the
+   URL with packwiz, push. Then the user playtests the line in-game; next lines: polymers (design tier T4), rare earths/PGM (T5).
+   Note: design tiers (PROGRESSION.md) and quest chapter keys differ by one (design T3 = quest chapter t4).
+   Dissolver: no new entries needed (machines are excluded by design; ChemLib Al compounds are native Alchemistry).
 5. Review items: AdvancedAE Flight Card and Ars Ritual of Flight aren't chemistry-gated; More Machine UU-Matter is
    ungated; dissolver stone recipes give trace metals (copied from Alchemistry's own stone recipe), so decide whether to keep them.
 6. Phase 6 final test pass (client launch, worldgen, JEI sanity, quest completion).

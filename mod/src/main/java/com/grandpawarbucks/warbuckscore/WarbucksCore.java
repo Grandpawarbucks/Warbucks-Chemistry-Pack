@@ -1,5 +1,6 @@
 package com.grandpawarbucks.warbuckscore;
 
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -23,6 +24,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.slf4j.Logger;
 
 /**
  * Warbucks Core: custom content for the Warbucks Chemistry pack.
@@ -31,6 +33,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
  *   <li>Biome Capsule: records the biome you stand in.</li>
  *   <li>Terraformer: rewrites the biome around it to the capsule's biome, fuelled by items in
  *       the #warbuckscore:terraformer_fuel tag (the pack puts Charged Energy Cores there).</li>
+ *   <li>Periodic Table perks ({@link ElementPerks}): a permanent bonus for each completed element group.</li>
  * </ul>
  * Recipes are added by the pack's KubeJS scripts so they can use MI/ChemLib items without
  * this mod depending on them.
@@ -38,6 +41,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(WarbucksCore.MODID)
 public class WarbucksCore {
     public static final String MODID = "warbuckscore";
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
@@ -82,6 +86,7 @@ public class WarbucksCore {
         BLOCK_ENTITIES.register(modBus);
         COMPONENTS.register(modBus);
         TABS.register(modBus);
+        ElementPerks.register(modBus);
         container.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
         // Ore tags can change on /reload: forget the cached block -> element lookups.
         NeoForge.EVENT_BUS.addListener((TagsUpdatedEvent e) -> SpectrometerItem.clearCache());

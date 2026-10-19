@@ -3,6 +3,7 @@
 # packwiz-installer-bootstrap and installs the NeoForge server into test\server.
 #   powershell -ExecutionPolicy Bypass -File test\smoke.ps1                       fresh world each run
 #   $env:KEEP_WORLD=1; powershell -ExecutionPolicy Bypass -File test\smoke.ps1    reuse the existing world
+#   $env:LOCAL_MOD_JAR='mod\build\libs\warbuckscore-X.Y.Z.jar'; ...               test an unreleased Warbucks Core
 . "$PSScriptRoot\lib.ps1"
 
 Write-Host '== Preparing test server =='
@@ -10,6 +11,12 @@ Initialize-TestServer
 
 Write-Host '== Syncing pack =='
 Sync-Pack
+if ($env:LOCAL_MOD_JAR) {
+  # Test an unreleased Warbucks Core build: swap it in for the released jar the pack just installed.
+  Remove-Item (Join-Path $Server 'mods\warbuckscore-*.jar') -Force
+  Copy-Item $env:LOCAL_MOD_JAR (Join-Path $Server 'mods')
+  Write-Host "Using local mod jar: $env:LOCAL_MOD_JAR"
+}
 Initialize-ServerConfig
 if ($env:KEEP_WORLD -ne '1') { Remove-Item (Join-Path $Server 'world') -Recurse -Force -ErrorAction SilentlyContinue }
 Remove-Item (Join-Path $Server 'crash-reports'), (Join-Path $Server 'logs') -Recurse -Force -ErrorAction SilentlyContinue

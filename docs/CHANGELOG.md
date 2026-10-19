@@ -4,6 +4,20 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-18: Aluminium line (Bayer + Hall-Héroult), Periodic Table perks
+- **Design decisions** (user): pacing ~100–120 h from content, not grind; one balanced path (no packmodes); no GTCEu for now,
+  GT-style chemistry lines on MI instead; Warbucks Core grows (perks, reaction conditions, prospecting).
+- **Aluminium is chemistry now** (`startup_scripts/aluminum_line.js`, `server_scripts/phase4_aluminum.js`): Bayer digestion and
+  precipitation in the Mixer (with the lye recycled), calcination in the EBF, then the new **Hall-Héroult Cell** LV multiblock.
+  MI's bauxite → EBF and bauxite → Electrolyzer shortcuts are removed. New fluid: sodium aluminate solution.
+- **Quests** (T4): 6 new (Lye for the Digester, Bayer Digestion, Precipitation, Alumina, The Hall-Héroult Cell, and the optional
+  Alchemist's Alumina). Bauxite, Aluminum, A Hint of Titanium, Electrolysis and Lye reworded for the new route. 1,178 quests.
+- **Warbucks Core 1.1.0**: Periodic Table perks (`/warbucks elements`). Post-Transition Metals (Al, Sn, Pb, In) → +2 armor
+  toughness. Groups are configurable (`perks.groups`).
+- Tools: `test/build_id_index.py` reads the pack's KubeJS lang files (MI machines registered from KubeJS); `tools/build_quests.py`
+  writes UTF-8/LF and keeps folders (Windows/OneDrive); `test/smoke.ps1` takes `LOCAL_MOD_JAR` to test an unreleased mod build.
+- Smoke test passes with the local 1.1.0 jar: 6,269 KubeJS recipes added (+6), 195 removed (+3), 0 failed.
+
 ### 2026-10-18: Windows desktop setup, PowerShell smoke test
 - **Fix: stale pack index.** `pack/index.toml` had old hashes for three quest files (`creation.snbt`, `t3.snbt`,
   `lang/en_us.snbt`), so packwiz-installer would reject them. Refreshed.

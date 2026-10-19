@@ -10,7 +10,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 _IDS_FILE = ROOT / "test/ids.tsv"
 if not _IDS_FILE.exists():
     raise SystemExit("test/ids.tsv missing: run test/smoke.sh, then python3 test/build_id_index.py")
-IDS = {line.split("\t")[0] for line in _IDS_FILE.read_text().splitlines()}
+IDS = {line.split("\t")[0] for line in _IDS_FILE.read_text(encoding="utf-8").splitlines()}
 ERRORS = []
 MAIN, SIDE = "main", "side"
 
