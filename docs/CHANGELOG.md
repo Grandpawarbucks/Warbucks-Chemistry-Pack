@@ -11,7 +11,8 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 - **`test/smoke.ps1` + `test/lib.ps1`**: PowerShell port of `smoke.sh`/`lib.sh`. The first run sets up `test\server`
   (packwiz-installer-bootstrap v0.0.3, NeoForge 21.1.262). First Windows run: server reached Done in 7.5s, no
   dependency, mixin, KubeJS or worldgen errors. It reported FAIL only on the harmless loot-table and recipe lines,
-  because `test/known_issues.txt` was never committed. That file is now allowed in Git (copy it from the Mac).
+  because `test/known_issues.txt` was never committed. That file is now committed; with it the Windows smoke test
+  passes (Done in 6.3s, 106 known harmless lines, 0 failures).
 - `docs/DESKTOP_SETUP.md`: Windows smoke test, line endings, Claude shell loopback note.
 
 ### 2026-10-18: Warbucks Core (custom mod), dissolver coverage, formula tooltips

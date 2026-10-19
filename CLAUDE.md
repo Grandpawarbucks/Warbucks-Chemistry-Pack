@@ -62,13 +62,11 @@ Development moves to the user's Windows desktop. Start there with `git pull`, th
 docs/DESKTOP_SETUP.md. The user carries private memory notes (VPS rules) over in the git-ignored `handoff/` folder.
 State at handoff: everything committed and pushed. 221 mods, 1,172 quests, smoke test passing; Warbucks LIVE on the VPS.
 Open items / next steps, in order:
-1. Test loop on Windows: smoke DONE (test/smoke.ps1 + lib.ps1, 2026-10-18; server reaches Done, logs parsed). It reports
-   FAIL until test/known_issues.txt (Mac-only, was git-ignored) is copied from the Mac and committed: the remaining hits
-   are the known harmless mekmm/mekanism_extras/create_connected loot tables plus FD/Create Deco recipes. Run Java and
-   Gradle from a real terminal or the app's Terminal panel (they fail with "loopback connection" in Claude's shell).
-   worldgen/emc_check/client-sync are still bash only.
-2. LIVE SERVER: the VPS still runs the pack from before commit 6bcd2bb (no Warbucks Core, dissolver table or tooltips).
-   `systemctl restart warbucks` pulls the latest, but check `list` for 0 players and ask the user first.
+1. Test loop on Windows: smoke DONE and PASSING (test/smoke.ps1 + lib.ps1, 2026-10-18). test/known_issues.txt is now
+   committed (it was git-ignored and Mac-only). Run Java and Gradle from a real terminal or the app's Terminal panel
+   (they fail with "loopback connection" in Claude's shell). worldgen/emc_check/client-sync are still bash only.
+2. LIVE SERVER: DONE 2026-10-18 20:17. Restarted with 0 players and the user's OK; now runs main at 33c52d1 (Warbucks Core
+   loaded). For later updates: `systemctl restart warbucks` pulls the latest, but check `list` for 0 players and ask first.
 3. Spectrometer: needs an in-game test (right-click near ores). The Terraformer was tested on a server.
 4. GregTech decision pending: docs/research/gtceu.md. GTCEu Modern on 1.21.1 is only a stale beta (7.0.2) or 8.0
    snapshots. Recommendation A: keep MI and port GT-style chemistry lines (rare earths, platinum, alumina, polymers)

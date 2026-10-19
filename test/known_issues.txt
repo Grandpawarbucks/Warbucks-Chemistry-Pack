@@ -1,0 +1,28 @@
+# Regexes for log lines that are known and harmless. Matching lines are listed as
+# "known" instead of failing the test. Add a comment with the reason for each.
+
+# SFM ships a loot table for an item it doesn't register (mod bug, harmless)
+loot_table\]:sfm:blocks/buffer
+# ExtendedAE's EMC interface only exists with ProjectE, which this pack excludes
+loot_table\]:extendedae:blocks/ex_emc_interface
+# FTB Library notice about entities using old invisible textures (cosmetic)
+EntityIconLoader.*legacy invisible texture
+# GeckoLib animation in a mod's assets fails to parse (cosmetic, client)
+GeckoLib.*Unable to parse animation
+# Relics ships a client-only Screen mixin in its common config; the server skips it (harmless)
+RuntimeDistCleaner.*net/minecraft/client/gui/screens/Screen for invalid dist DEDICATED_SERVER
+# AE2 Import Export Card ships a client-only screen mixin in its common config; server skips it (harmless)
+RuntimeDistCleaner.*AbstractContainerScreen for invalid dist DEDICATED_SERVER
+# Mekanism MoreMachine ships loot tables for factory variants (dense/creative tiers) it doesn't register
+# in this build; the blocks don't exist, so these tables can never be used (harmless, mod data bug)
+loot_table\]:mekmm:blocks/.*Unknown registry key in ResourceKey\[minecraft:root / minecraft:item\]: mekmm:
+# Farmer's Delight compat recipe for a Silent Gear block that doesn't exist in this Silent Gear version
+farmersdelight:integration/silentgear/cutting/netherwood
+# Create: Connected ships loot tables for dye-depot catalysts that only exist with the Dye Depot mod (not in pack)
+loot_table\]:create_connected:blocks/dye_depot_.*Unknown registry key
+# Create Deco ships one malformed recipe (placard); mod bug, the rest of Create Deco loads
+Parsing error loading recipe createdeco:placard
+# Create: Enchantment Industry data map for a Reliquary XP fluid that Reliquary Reincarnations doesn't register
+reliquary:xp_juice_still specified in data map
+# Mekanism Extras ships loot tables for chemical-infusing factory tiers it doesn't register (harmless)
+loot_table\]:mekanism_extras:blocks/.*Unknown registry key in ResourceKey\[minecraft:root / minecraft:item\]: mekanism_extras:
