@@ -59,6 +59,17 @@ Mod textures: `python mod/tools/textures.py` (needs Pillow: `pip install pillow`
 | mods that add blocks | `python test/build_id_index.py` (needs a test server's mods folder), then `python tools/build_dissolver.py` |
 `test/ids.tsv` (every valid item/entity/biome id) is committed, so quests build on Windows without running a server.
 
+### Quest editor
+Run `.venv\Scripts\python.exe tools\quest_editor.py`, then open http://localhost:8765 (it only listens on this PC).
+It looks like the quest preview, but you can drag quests and quest links (0.5 grid, saved on drop) and edit a quest's
+title, subtitle and description (keep `&e`/`&6`/`&r` codes as plain text). Edits go to `tools/quest_overrides.json`,
+which the build applies after the automatic layout, so a moved quest stays put; they never change keys, dependencies,
+tasks or rewards. "Reset to generated" drops a quest's edits. The page reloads by itself when quest files change.
+**Check** runs `build_quests.py --check`. **Push** checks, builds, runs `packwiz refresh`, commits only the quest files
+(`tools/quest_overrides.json`, `pack/config/ftbquests`, `docs/QUESTS.md`, `pack/index.toml`, `pack/pack.toml`) and
+pushes: players get it on their next Prism launch, the live server on its next restart. Push refuses to run while
+other files under `pack/` have uncommitted changes. Item icons come from `test/server/mods` (run a smoke test once).
+
 ### The live server (VPS)
 Warbucks runs on the VPS as `warbucks.service` and pulls the pack from GitHub each time it starts (see `docs/SERVER.md`).
 After you push, restart it to update, but check `list` for players first. The SSH key on the Mac is Mac-only:

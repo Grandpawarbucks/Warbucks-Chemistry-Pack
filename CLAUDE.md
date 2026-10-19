@@ -137,6 +137,11 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Market + editor (2026-10-19): 2,468 quests. "shop" group (market, shop_materials, shop_gear, shop_world): 441 repeatable
+  token-shop quests, rule "buy more of what you've made yourself" (docs/research/shop_brief.md); shop chapters use
+  layout="manual" grids. Quest editor: tools/quest_editor.py (localhost:8765), user edits land in
+  tools/quest_overrides.json (applied after the auto layout; never change keys/deps/tasks). PENDING user decision:
+  Allthemodium (docs/research/allthemodium.md): Mining dimension with neutered ores or blocked; tier slots T3-T6.
 - Quest book v11 (2026-10-19): 2,000 quests (848 required, 320 on the main path). ATM10-aligned coverage (138 ATM10 items
   left, all skipped on purpose), story arc reviewed end to end, the MI nuclear/quantum chain before the Seed is now
   required on the main path (adds endgame hours; watch pacing vs the 100-120 h target). LIVE WORLD WIPED 2026-10-19 00:22

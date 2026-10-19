@@ -4,6 +4,21 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: The Demigod's Market (token shop) and the quest editor
+- **Token shop in the quest book** (`docs/research/shop_brief.md`): a new "The Demigod's Market" group with 4 chapters and
+  441 repeatable shop quests: Machines (64), Materials and Chemicals (88), Tools, Armour and Gear (129), Blocks, Food and
+  Wild Goods (160). Rule: whatever you've made or obtained yourself, you can buy more of. Each entry stays invisible until
+  the quest where you first make it, costs Demigod Tokens (Greater Tokens from MV up), and can be bought again and again.
+  Never sold: multiblocks, Alchemistry machines, flight items, finished circuits, nuclear fuel, oganesson, Nether Stars,
+  Seed parts, ProjectE and creative items.
+- Quest engine: `Q(repeat=..., consume=..., locked_hidden=...)` → FTB `can_repeat`, `consume_items`,
+  `hide_until_deps_complete` (field names read from the FTB Quests 2101.1.36 jar).
+- **Quest editor** (`tools/quest_editor.py`, http://localhost:8765): drag quests, edit titles/subtitles/descriptions,
+  autosave to `tools/quest_overrides.json` (applied on top of the automatic layout), Check and Push buttons. See
+  docs/DESKTOP_SETUP.md.
+- Research: `docs/research/allthemodium.md` (Allthemodium 3.2.1: feasible, pending user decisions).
+- 2,468 quests, 47 chapters, 9 groups.
+
 ### 2026-10-19: Quest book v11 (2,000 quests): ATM10-aligned coverage and the story arc; fresh world
 - **Live world wiped** (user decision): backup `backups/world-prewipe-20261019-002252.tar.gz` on the VPS; new random seed.
 - **ATM10-aligned quests** (brief: `docs/research/atm10_alignment_brief.md`): ATM10's book (All Rights Reserved) was used

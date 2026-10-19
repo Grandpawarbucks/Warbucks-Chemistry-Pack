@@ -23,6 +23,7 @@ BOOK_TITLE = "Warbucks Chemistry: The Demigod's Codex"
 GROUPS = {
     "top": None,
     "main": "The Demigod's Path",
+    "shop": "The Demigod's Market",
     "basics": "Basics",
     "chem": "Chemistry Lab",
     "eng": "Industry and Automation",
@@ -31,8 +32,10 @@ GROUPS = {
     "life": "Resources",
 }
 LAYOUT = {
-    "top": ["welcome", "market", "lab_notes", "completionist"],
+    "top": ["welcome", "lab_notes", "completionist"],
     "main": ["start", "t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "seed", "creation"],
+    # Token shop (docs/research/shop_brief.md): buy more of anything you've already made yourself.
+    "shop": ["market", "shop_materials", "shop_gear", "shop_world"],
     # Beginner "comfort" pages (ATM10's Basic Tools/Storage/Power idea). utilitarian is merged into qol.
     "basics": ["tools", "harvest", "storage", "power", "powah", "farming", "qol", "building"],
     "chem": ["periodic", "mekanism", "mekanism_power"],
@@ -68,3 +71,76 @@ for _c in CHAPTERS:
         for _q in _c.quests:
             if (_q.size or 1) >= 1.5 and not _q.loot and not _q.optional:
                 _q.loot = _c.key
+
+
+# --- Quest editor overrides (tools/quest_editor.py) ---------------------------------------------
+# tools/quest_overrides.json maps a quest key to any of {x, y, title, subtitle, desc}, or
+# "link:<chapter>:<quest>" to {x, y} for a quest link. Applied AFTER the automatic layout (so a dragged quest
+# keeps its spot), they only ever change position and text: never keys, deps, tasks or rewards.
+OVERRIDES_FILE = pathlib.Path(__file__).resolve().parent / "quest_overrides.json"
+_OVERRIDE_FIELDS = {"x", "y", "title", "subtitle", "desc"}
+
+
+def load_overrides():
+    """The overrides dict ({} if the file is missing or empty). Invalid JSON raises (edits must not vanish silently)."""
+    import json
+    if not OVERRIDES_FILE.exists():
+        return {}
+    text = OVERRIDES_FILE.read_text(encoding="utf-8").strip()
+    data = json.loads(text) if text else {}
+    if not isinstance(data, dict):
+        raise ValueError(f"{OVERRIDES_FILE.name}: top level must be a JSON object")
+    return data
+
+
+def apply_overrides(chapters=None, overrides=None):
+    """Apply the overrides to already laid-out chapters. Returns a list of warnings (unknown keys, bad values)."""
+    chapters = CHAPTERS if chapters is None else chapters
+    overrides = load_overrides() if overrides is None else overrides
+    quests = {q.key: q for c in chapters for q in c.quests}
+    bych = {c.key: c for c in chapters}
+    warnings = []
+    num = lambda v: isinstance(v, (int, float)) and not isinstance(v, bool)
+    for k, o in overrides.items():
+        if not isinstance(o, dict):
+            warnings.append(f"override {k}: value must be an object")
+            continue
+        for f in sorted(set(o) - _OVERRIDE_FIELDS):
+            warnings.append(f"override {k}: unknown field {f!r} (ignored)")
+        for f in ("x", "y"):
+            if f in o and not num(o[f]):
+                warnings.append(f"override {k}: {f} must be a number (ignored)")
+        if k.startswith("link:"):
+            _, ck, lk = (k.split(":", 2) + ["", ""])[:3]
+            c = bych.get(ck)
+            i = next((i for i, (l, _, _) in enumerate(c.links) if l == lk), None) if c else None
+            if i is None:
+                if not ONLY:
+                    warnings.append(f"override {k}: no such quest link (ignored)")
+                continue
+            for f in sorted({"title", "subtitle", "desc"} & set(o)):
+                warnings.append(f"override {k}: links only take x/y, not {f} (ignored)")
+            l, x, y = c.links[i]
+            c.links[i] = (l, o["x"] if num(o.get("x")) else x, o["y"] if num(o.get("y")) else y)
+            continue
+        q = quests.get(k)
+        if q is None:
+            if not ONLY:
+                warnings.append(f"override {k}: no quest with that key (ignored)")
+            continue
+        if num(o.get("x")):
+            q.x = o["x"]
+        if num(o.get("y")):
+            q.y = o["y"]
+        for f in ("title", "subtitle"):
+            if f in o:
+                if o[f] is None or isinstance(o[f], str):
+                    setattr(q, f, o[f])
+                else:
+                    warnings.append(f"override {k}: {f} must be a string (ignored)")
+        if "desc" in o:
+            if isinstance(o["desc"], list) and all(isinstance(s, str) for s in o["desc"]):
+                q.desc = list(o["desc"])
+            else:
+                warnings.append(f"override {k}: desc must be a list of strings (ignored)")
+    return warnings

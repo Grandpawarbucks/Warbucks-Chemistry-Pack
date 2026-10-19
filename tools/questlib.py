@@ -66,8 +66,12 @@ class Q:
 
     def __init__(self, key, x, y, tasks, title=None, desc=(), deps=(), xp=0, items=(),
                  subtitle=None, size=None, shape=None, tokens=None, optional=False,
-                 hidden=False, secret=False, any_dep=False, loot=None, choice=None, row=None):
+                 hidden=False, secret=False, any_dep=False, loot=None, choice=None, row=None,
+                 repeat=False, consume=False, locked_hidden=False):
         self.key, self.x, self.y, self.tasks = key, x, y, tasks
+        self.repeat = repeat              # FTB can_repeat: the quest resets after its rewards are claimed (shop quests)
+        self.consume = consume            # item tasks take the items away on submit (shop quests pay with tokens)
+        self.locked_hidden = locked_hidden  # invisible until every dependency is complete (shop entries)
         self.optional = optional  # optional side quest: shown, but not needed to progress
         self.hidden = hidden      # hidden until its dependencies are visible
         self.secret = secret      # invisible until completed (secret quests); never required for completion

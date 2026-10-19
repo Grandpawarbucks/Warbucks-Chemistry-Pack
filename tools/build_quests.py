@@ -7,7 +7,8 @@ Every item and dimension id is checked against test/ids.tsv (run test/build_id_i
 the build fails on any unknown id, so the book can't reference things that don't exist.
 
 Quest positions are computed by tools/layout.py (automatic layout) just before writing, except in chapters
-declared with Chapter(..., layout="manual").
+declared with Chapter(..., layout="manual"). Then tools/quest_overrides.json (written by tools/quest_editor.py)
+is applied on top: dragged positions and edited title/subtitle/description text.
 
 Usage: python3 tools/build_quests.py               build into pack/config/ftbquests/quests (+ docs/QUESTS.md)
        python3 tools/build_quests.py --check       validate only, write nothing
@@ -22,6 +23,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from questlib import ROOT, ERRORS as errors, check  # noqa: E402
 from quest_data import CHAPTERS, GROUPS, BOOK_TITLE, REWARD_TABLES, ONLY, UNLISTED  # noqa: E402
+from quest_data import load_overrides, apply_overrides  # noqa: E402  (tools/quest_overrides.json, quest editor)
 import layout  # noqa: E402
 
 if os.environ.get("QUEST_OUT"):
@@ -107,10 +109,13 @@ def build():
     if "--check" in sys.argv:
         for c in CHAPTERS:  # the layout must run cleanly on every chapter too
             layout.apply(c, set(keys))
-        print(f"OK: {len(CHAPTERS)} chapters, {len(keys)} quests, all ids and dependencies valid (nothing written)")
+        n_over = overrides()
+        print(f"OK: {len(CHAPTERS)} chapters, {len(keys)} quests, all ids and dependencies valid (nothing written)"
+              + (f"; {n_over} editor override(s)" if n_over else ""))
         return
     for c in CHAPTERS:
         layout.apply(c, set(keys))
+    overrides()
 
     # Delete the old files but keep the folders: on Windows, OneDrive or Explorer can hold a folder
     # open, and removing it then fails halfway through.
@@ -143,6 +148,8 @@ def build():
                 tid = hexid(f"task:{q.key}:{i}")
                 if t[0] == "item":
                     tasks.append({"id": tid, "type": "item", "item": {"id": t[1], "count": 1}, "count": Long(t[2])})
+                    if q.consume:
+                        tasks[-1]["consume_items"] = True
                 elif t[0] == "dimension":
                     tasks.append({"id": tid, "type": "dimension", "dimension": t[1]})
                 elif t[0] == "kill":
@@ -181,6 +188,10 @@ def build():
                 entry["invisible"] = True
             if q.any_dep:
                 entry["dependency_requirement"] = "one_completed"
+            if q.repeat:
+                entry["can_repeat"] = True
+            if q.locked_hidden:
+                entry["hide_until_deps_complete"] = True
             if q.deps:
                 entry["dependencies"] = [keys[d] for d in q.deps]
             entry["tasks"] = tasks
@@ -225,6 +236,17 @@ def build():
     print(f"Reward tables: {len(REWARD_TABLES)}")
     rel = lambda f: f.relative_to(ROOT) if f.is_relative_to(ROOT) else f
     print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {rel(OUT)} (+ {rel(DOC)})")
+
+
+def overrides():
+    """Apply tools/quest_overrides.json (quest editor: positions and text) on top of the layout; warn about bad entries."""
+    try:
+        data = load_overrides()
+    except ValueError as e:  # json.JSONDecodeError is a ValueError
+        sys.exit(f"tools/quest_overrides.json is not valid: {e}")
+    for w in apply_overrides(CHAPTERS, data):
+        print("WARNING: " + w)
+    return len(data)
 
 
 def write_doc(total):
