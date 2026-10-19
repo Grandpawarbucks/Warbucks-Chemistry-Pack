@@ -47,7 +47,8 @@ def names():
         _names = {}
         for line in (ROOT / "test/ids.tsv").read_text(encoding="utf-8").splitlines():
             i, t, n = (line.split("\t") + ["", ""])[:3]
-            _names.setdefault(i, n)
+            if n or i not in _names:  # registry rows (build_id_index.py) have no name: keep the lang one
+                _names[i] = _names.get(i) or n
     return _names
 
 

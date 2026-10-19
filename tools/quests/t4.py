@@ -93,7 +93,8 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&6Five from one. You used to call that a small miracle. Now you call it hydrometallurgy.&r",
         "&eWhat:&r the Chemical Crystallizer turns clean slurry into crystals: &e5x&r per ore.",
         "&eChemistry:&r this is &ehydrometallurgy&r, the way most of the world's copper is really refined.",
-        "&eHow:&r crystals → Injection Chamber (shards) → Purification Chamber (clumps) → Crusher → Enrichment Chamber."]),
+        "&eHow:&r crystals → Injection Chamber (shards) → Purification Chamber (clumps) → Crusher → Enrichment Chamber.",
+        "&eTip:&r the Crystallizer itself needs fluorite gems: Mekanism's fluorite ore sits deep underground (check JEI for the recipe)."]),
     Q("t4_byproduct", 18, -4, [item(MI + "centrifuge"), item(MI + "silver_dust", 4)], "Ore Byproducts", deps=["t4_ore5", "t4_circuit"], xp=200,
       optional=True, tokens=1, subtitle="Dirty dust through a centrifuge", desc=[
         "&eWhat:&r real ores are never pure. Send Mekanism's &edirty dust&r through MI's &eCentrifuge&r instead of the Enrichment Chamber for the same dust plus a chance at a bonus metal.",

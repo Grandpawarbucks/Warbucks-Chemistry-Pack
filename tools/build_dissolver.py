@@ -393,7 +393,8 @@ def main():
             covered.setdefault(m, key)
 
     blocks = [l.split("\t")[0] for l in IDS.read_text().splitlines()
-              if l.count("\t") >= 2 and l.split("\t")[1] == "block"]
+              if l.count("\t") >= 2 and l.split("\t")[1] == "block" and l.split("\t")[2]]
+    # (named lang rows only: build_id_index.py also adds unnamed registry rows, e.g. technical blocks like wall torches)
     missing_refs = sorted({r for _, r, _, _ in TAG_RULES if r not in refs})
     if missing_refs:
         sys.exit(f"reference recipes not found in Alchemistry: {missing_refs}")

@@ -4,6 +4,19 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Fast Leaf Decay, quest audit, cleaner quest lines
+- **Fast Leaf Decay** (CurseForge, fastleafdecay-35) added; both sides.
+- **Quest audit** `tools/quest_audit.py`: cycles, unreachable or task-less quests, required quests behind optional ones,
+  unknown item/kill/dimension/structure/biome ids (cheap checks run on every `build_quests.py` and `--check`).
+  `--full` also checks obtainability and tier order against a server dump (`test/audit_dump.ps1`, which uses the
+  marker-gated `zz_recipe_dump.js`). Fixes: `ars_anima` asks for `sauce:anima_essence`; six nonexistent 64x Powah
+  generators removed from `pw_gg_64x`; the Ars Additions chunk-loading ritual enabled (`config/ars_additions-common.toml`)
+  so `ars_chunk` can be done. `test/ids.tsv` is now built from the real registry.
+- **Layout** (`tools/layout.py`): lines through other quests 264 → 19, crossings 325 → 148 (937 → 264 counting the
+  quest-link lines). Redundant transitive dependency lines are dropped on output only (22), with better crossing
+  reduction, centred main paths, spread-out fans, quest links placed next to their dependents, and best of three
+  layouts per chapter.
+
 ### 2026-10-19: Mining dimension veins for common MI metals
 - All The Ores skipped (user decision: it duplicates MI/Mekanism metals everywhere and skips chemistry milestones).
 - `tools/build_deposits.py` now also writes rich veins for tin, lead, nickel, silver (Mekanism ore) and bauxite into

@@ -32,7 +32,7 @@ def main():
     names = {}
     for line in (ROOT / "test/ids.tsv").read_text(encoding="utf-8").splitlines():
         parts = line.split("\t")
-        names[parts[0]] = parts[2] if len(parts) > 2 else ""
+        names[parts[0]] = names.get(parts[0]) or (parts[2] if len(parts) > 2 else "")  # unnamed registry rows keep the lang name
     ours = set()
     for f in (ROOT / "pack/config/ftbquests/quests/chapters").glob("*.snbt"):
         text = f.read_text(encoding="utf-8")

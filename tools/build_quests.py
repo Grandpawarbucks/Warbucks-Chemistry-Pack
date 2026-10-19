@@ -10,6 +10,10 @@ Quest positions are computed by tools/layout.py (automatic layout) just before w
 declared with Chapter(..., layout="manual"). Then tools/quest_overrides.json (written by tools/quest_editor.py)
 is applied on top: dragged positions and edited title/subtitle/description text.
 
+Every run (build or --check) also runs the cheap checks of tools/quest_audit.py (dependency cycles, unreachable
+quests, required-behind-optional warnings, item/entity/biome/structure/dimension id kinds); errors stop the build.
+For the full audit (unobtainable items, tier sanity) see tools/quest_audit.py --full.
+
 Usage: python3 tools/build_quests.py               build into pack/config/ftbquests/quests (+ docs/QUESTS.md)
        python3 tools/build_quests.py --check       validate only, write nothing
        python3 tools/build_quests.py --layout-report   per-chapter layout metrics, hand x/y vs automatic layout
@@ -103,6 +107,7 @@ def build():
     dup = [k for k in keys if sum(1 for c in CHAPTERS for q in c.quests if q.key == k) > 1]
     if dup:
         sys.exit("Duplicate quest keys: " + ", ".join(sorted(set(dup))))
+    audit()  # tools/quest_audit.py cheap checks: cycles, reachability, ids and their kinds (fails on errors)
     if "--layout-report" in sys.argv:
         print(layout.report(CHAPTERS, lambda c: layout.apply(c, set(keys))))
         return
@@ -236,6 +241,16 @@ def build():
     print(f"Reward tables: {len(REWARD_TABLES)}")
     rel = lambda f: f.relative_to(ROOT) if f.is_relative_to(ROOT) else f
     print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {rel(OUT)} (+ {rel(DOC)})")
+
+
+def audit():
+    """Run the cheap quest-audit checks (tools/quest_audit.py): errors stop the build, soft warnings are printed."""
+    import quest_audit
+    errs, warns = quest_audit.cheap_checks(CHAPTERS, REWARD_TABLES, partial=bool(ONLY))
+    if warns:
+        print(f"Quest audit warnings ({len(set(warns))}):\n" + quest_audit.fmt(warns))
+    if errs:
+        sys.exit(f"Quest audit errors ({len(set(errs))}):\n" + quest_audit.fmt(errs))
 
 
 def overrides():

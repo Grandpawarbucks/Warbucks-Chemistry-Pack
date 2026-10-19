@@ -173,6 +173,10 @@ Open items / next steps, in order:
   multiply output 1.5x/2x/3x (not yet reviewed); no Ars recipe uses a chemical intermediate besides the flight tablet.
 - QoL (user request 2026-10-18): Utilitarian mod (222 mods, above the ~210-215 target by user choice); longer days + less rain
   (server_scripts/qol_world.js); 4x vanilla cooking (qol_furnace_speed.js). Day and rain length still need an in-game check.
+- Quest audit (2026-10-19): tools/quest_audit.py. Cheap checks (cycles, unreachable, no tasks, id kinds; required-
+  behind-optional warnings) run inside every build_quests.py run. `--full` needs test/audit_dump.ps1 (Terminal panel;
+  marker-gated pack/kubejs/server_scripts/zz_recipe_dump.js, marker never in pack/) and reports unobtainable items and
+  tier warnings; ALLOW in the tool lists coded mechanics with reasons. How-to: docs/DESKTOP_SETUP.md "Quest audit".
 - Python tools on Windows: pass encoding="utf-8" (and newline="\n" when writing). build_quests, build_id_index and
   gen_modlist are fixed; build_dissolver/build_deposits/build_prism_instance are not yet (run them with PYTHONUTF8=1).
 - Line endings: .gitattributes `* -text` (no conversion). packwiz hashes files on disk, so CRLF checkouts on Windows

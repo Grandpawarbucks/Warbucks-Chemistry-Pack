@@ -61,6 +61,26 @@ def main():
     # startup_scripts/aluminum_line.js) only have names in the pack's own lang files.
     for lang in glob.glob(str(ROOT / "pack/kubejs/assets/*/lang/en_us.json")):
         scan_lang(pathlib.Path(lang).read_text(encoding="utf-8"), rows)
+    # Registry ids from a real server (test/audit_dump.ps1 -> test/dump/registry_dump.json), if present: catches
+    # items with no lang entry (e.g. compactmachines:machine) and anything registered only in code.
+    dump = ROOT / "test/dump/registry_dump.json"
+    if dump.exists():
+        reg = json.loads(dump.read_text(encoding="utf-8"))
+        # Lang files also name things that aren't registered (removed items, disabled modules): drop those, so
+        # questlib refuses them. Kinds missing from the dump are kept as they are.
+        before = len(rows)
+        known = {k: set(v) for k, v in reg.items() if isinstance(v, list)}
+        rows = {r for r in rows if r[1] not in known or r[0] in known[r[1]]}
+        print(f"Dropped {before - len(rows)} lang/data ids the server doesn't register")
+        have = {(i, t) for i, t, _ in rows}
+        added = 0
+        for kind in ("item", "block", "entity", "fluid", "biome", "structure", "dimension"):
+            for i in reg.get(kind, []):
+                if (i, kind) not in have:
+                    rows.add((i, kind, ""))
+                    added += 1
+        rows.add(("#registry", "meta", "item rows are the server's item registry"))  # tools/quest_audit.py: strict item kind
+        print(f"Added {added} ids from {dump.relative_to(ROOT)}")
     out = ROOT / "test/ids.tsv"
     out.write_text("".join(f"{i}\t{t}\t{n}\n" for i, t, n in sorted(rows)), encoding="utf-8", newline="\n")
     print(f"Wrote {out} ({len(rows)} ids)")

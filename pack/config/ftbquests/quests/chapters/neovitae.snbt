@@ -149,7 +149,7 @@
 		{
 			id: "067F539FCB6023EF"
 			x: 8.0d
-			y: -4.0d
+			y: -2.0d
 			dependencies: [
 				"68EBC363A4C85F7C"
 			]
@@ -183,7 +183,7 @@
 		{
 			id: "646A47024D9CB316"
 			x: 8.0d
-			y: -2.0d
+			y: 2.0d
 			dependencies: [
 				"68EBC363A4C85F7C"
 			]
@@ -217,7 +217,7 @@
 		{
 			id: "68017FF35A6697CF"
 			x: 10.0d
-			y: -4.0d
+			y: 2.0d
 			dependencies: [
 				"646A47024D9CB316"
 			]
@@ -251,7 +251,7 @@
 		{
 			id: "035456673F726A27"
 			x: 12.0d
-			y: -5.0d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"68017FF35A6697CF"
@@ -451,7 +451,7 @@
 		{
 			id: "79BA36D342715B75"
 			x: 14.0d
-			y: -2.0d
+			y: 2.0d
 			optional: true
 			dependencies: [
 				"1CDAB99B2BB3535D"
@@ -486,7 +486,7 @@
 		{
 			id: "303A621549A04817"
 			x: 10.0d
-			y: -6.0d
+			y: -4.0d
 			dependencies: [
 				"067F539FCB6023EF"
 			]
@@ -520,7 +520,7 @@
 		{
 			id: "317BE4308F8FE6FB"
 			x: 12.0d
-			y: -6.5d
+			y: -4.0d
 			dependencies: [
 				"303A621549A04817"
 			]
@@ -554,7 +554,7 @@
 		{
 			id: "5E12ADBD0D83C3F6"
 			x: 14.0d
-			y: -6.5d
+			y: -2.5d
 			dependencies: [
 				"317BE4308F8FE6FB"
 			]
@@ -592,7 +592,6 @@
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
-				"1F251E1D6739FDF7"
 				"1CDAB99B2BB3535D"
 			]
 			tasks: [
@@ -676,8 +675,8 @@
 		}
 		{
 			id: "6984375DCD2592CE"
-			x: 20.0d
-			y: -2.5d
+			x: 22.0d
+			y: -4.5d
 			dependencies: [
 				"6643E667BC436BD7"
 			]
@@ -711,7 +710,7 @@
 		{
 			id: "1F756503ABFB5B65"
 			x: 16.0d
-			y: 4.0d
+			y: -3.0d
 			dependencies: [
 				"12A553D541821422"
 				"55AF98DD41956199"
@@ -746,7 +745,7 @@
 		{
 			id: "38AAD029073B21E9"
 			x: 18.0d
-			y: 5.5d
+			y: -4.5d
 			optional: true
 			dependencies: [
 				"1F756503ABFB5B65"
@@ -888,7 +887,7 @@
 		}
 		{
 			id: "6C8C3EE72DBD4CEB"
-			x: 16.0d
+			x: 18.0d
 			y: 2.0d
 			dependencies: [
 				"12A553D541821422"
@@ -959,7 +958,7 @@
 		{
 			id: "16A4D003E9E542B5"
 			x: 26.0d
-			y: -2.5d
+			y: -2.0d
 			dependencies: [
 				"654009A64A9CDD54"
 				"6984375DCD2592CE"
@@ -1100,7 +1099,7 @@
 		{
 			id: "05C3D2E2FA44B05B"
 			x: 16.0d
-			y: 5.5d
+			y: -1.5d
 			optional: true
 			dependencies: [
 				"12A553D541821422"
@@ -1137,7 +1136,7 @@
 		{
 			id: "00808F77C9F055F6"
 			x: 0.5d
-			y: -8.5d
+			y: -6.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -1145,18 +1144,6 @@
 		}
 	]
 	quest_links: [
-		{
-			id: "16C1A5B9AF3D5207"
-			linked_quest: "6C18ADE33F69C1A9"
-			x: -2.0d
-			y: -3.0d
-		}
-		{
-			id: "1482070C3B5EE14A"
-			linked_quest: "7033201713D3AEDC"
-			x: -2.0d
-			y: -1.5d
-		}
 		{
 			id: "31EE85B12059F5E7"
 			linked_quest: "1C5E43BCEDA7593F"
@@ -1166,8 +1153,20 @@
 		{
 			id: "131210883E029602"
 			linked_quest: "55AF98DD41956199"
-			x: -2.0d
-			y: 4.0d
+			x: 14.0d
+			y: -4.0d
+		}
+		{
+			id: "16C1A5B9AF3D5207"
+			linked_quest: "6C18ADE33F69C1A9"
+			x: 22.0d
+			y: -3.0d
+		}
+		{
+			id: "1482070C3B5EE14A"
+			linked_quest: "7033201713D3AEDC"
+			x: 22.0d
+			y: -1.5d
 		}
 	]
 }

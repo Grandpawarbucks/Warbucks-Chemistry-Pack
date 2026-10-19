@@ -207,7 +207,7 @@ CHAPTER = Chapter("ars", "Ars Nouveau", "ars_nouveau:novice_spell_book",
         "&eWhat:&r manipulation essence goes into the Enchanter's Wand, Spell Bow, Repairing thread, runic chalk and Containment.",
         "&eHow:&r Imbuement Chamber: a source gem, with a stone button, redstone and a clock on pedestals (2,000 Source).",
         "&eTip:&r it also converts some blocks into others, such as stone into granite or tuff (check JEI)."]),
-    Q("ars_anima", 18, 1.5, [item("ars_elemental:anima_essence")], "Anima Essence", deps=["ars_manipulation"], xp=50,
+    Q("ars_anima", 18, 1.5, [item("sauce:anima_essence")], "Anima Essence", deps=["ars_manipulation"], xp=50,
       subtitle="Ars Elemental's essence of life and death", desc=[
         "&eWhat:&r anima essence is the eighth essence, used for the Mark of Mastery and necromantic gear.",
         "&eChemistry:&r bone meal comes from bone, which is mostly hydroxyapatite, a calcium phosphate (Ca₅(PO₄)₃OH).",

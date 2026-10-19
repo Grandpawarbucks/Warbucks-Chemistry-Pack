@@ -232,7 +232,8 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eTip:&r a few beehives with campfires underneath keep the honey generator running."]),
     Q("pw_gg_64x", 0, 0, [anyof([f"generatorgalore:{g}_generator_{n}" for g in ("copper", "iron", "gold", "diamond", "emerald", "obsidian", "netherite", "magmatic", "culinary",
                                                                               "honey", "potion", "ender", "enchantment", "halitosis", "netherstar") for n in ("8x", "64x")
-                                 if not (g == "iron" and n == "8x")])],
+                                 if not (g == "iron" and n == "8x")
+                                 and not (n == "64x" and g in ("copper", "iron", "gold", "diamond", "emerald", "obsidian"))])],
       "Compressed Generators", deps=["pw_gg_8x"], xp=100, optional=True, tokens=2, subtitle="Optional: another 8x or a 64x", desc=[
         "&eWhat:&r any compressed generator other than the iron 8x: magmatic, star, gem, food, whatever you run most. 64x generators are eight 8x ones around a conduit.",
         "&eHow:&r 8x: eight generators around an echo shard. 64x: eight 8x generators around a conduit (check JEI).",

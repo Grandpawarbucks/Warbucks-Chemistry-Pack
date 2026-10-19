@@ -689,7 +689,7 @@
    > What: FTB Chunks protects your base and can keep it loaded while you're away.
    > How: Press M to open the map, then drag over chunks to claim them. Click the checkmark when done.
    > Tip: Right-click a claimed chunk to force-load it. You'll need that for the flight pylon later.
-41. **Ready for Chemistry**: checkmark *(after: A First Mining Trip, Claim Your Land)*
+41. **Ready for Chemistry**: checkmark *(after: Claim Your Land)*
    > Fed, armed, sheltered: a good day, by mortal standards. Now the real work begins, the long road back to what you were.
    > How: Click to open Chapter I. The copper and tin in the reward are a head start on your first alloy.
    > Tip: Bring spare coal and iron. Chapter I eats both.
@@ -790,7 +790,7 @@
    > What: A bronze tank stores fluid, and the boiler needs one to hold its water.
    > Chemistry: Bronze resists corrosion from water, which is why it was used for ship fittings for centuries.
    > How: 8 bronze plates around 1 glass block.
-20. **Steam Power**: `modern_industrialization:bronze_boiler` *(after: Bronze Machine Casing, Firebrick Blocks, Bronze Tank)*
+20. **Steam Power**: `modern_industrialization:bronze_boiler` *(after: Firebrick Blocks, Bronze Tank)*
    > The engines remember you even if the world doesn't. Pressure, heat, motion: old friends.
    > What: Burn fuel, boil water, and the expanding steam does work. Welcome to the industrial revolution.
    > Chemistry: Water expands more than 1,600 times in volume when it boils into steam. That pressure is what drives the machines.
@@ -858,7 +858,7 @@
    > Chemistry: The energy is in the carbon, not the shape: packing coal tighter doesn't add heat, it just stores more of it in one slot.
    > How: 9 coal in a crafting grid make 1 block.
    > Tip: Feed boilers coal blocks through a hopper and you can leave them alone for a long time.
-36. **The Diamond Hammer**: `modern_industrialization:diamond_hammer` *(after: The Iron Hammer, Steam Compressor)*
+36. **The Diamond Hammer**: `modern_industrialization:diamond_hammer` *(after: Steam Compressor)*
    > What: A more durable hammer for the Forge Hammer's tool slot. It does the same jobs as the Iron Hammer and wears out far more slowly.
    > Chemistry: Diamond is carbon locked into a rigid 3D lattice, which makes it the hardest natural material. Iron bends; diamond doesn't.
    > How: The Steam Compressor presses 1 diamond into 1 diamond plate; 4 plates make a large plate. Then 5 large plates and 2 sticks, in the Iron Hammer's shape.
@@ -1097,7 +1097,7 @@
    > Chemistry: H is element 1: one proton, one electron. Hydrogen balloons carried people aloft in 1783.
    > How: dissolve water, plants or wood and collect the hydrogen.
    > Tip: feed the Dissolver from a hopper and it runs while you're in the Nether.
-14. **Wings of a God**: `pylons:infusion_pylon` *(after: Potion Filter, Nether Quartz, Blackstone, Lighter than Air)*
+14. **Wings of a God**: `pylons:infusion_pylon` *(after: Potion Filter, Nether Quartz, Blackstone)*
    > Your second gift returns, and the sky is yours again. You had forgotten how small the world looks from here.
    > What: the Infusion Pylon applies a filter's effect to you anywhere. With a Flying filter, that's creative-style flight.
    > How: craft it from Nether quartz, blackstone and hydrogen from your Dissolver (see JEI), place it, and put the full (one-hour) filter inside.
@@ -1216,7 +1216,7 @@
    > What: a steel frame. The LV hull is built around it.
    > How: 8 steel plates around a steel gear, the same shape as the bronze one.
    > Tip: the LV hull uses one casing each, and every LV machine needs a hull. Make a few.
-16. **LV Machine Hull**: `modern_industrialization:basic_machine_hull` *(after: Analog Circuit, Redstone Battery, Steel Machine Casing)*
+16. **LV Machine Hull**: `modern_industrialization:basic_machine_hull` *(after: Analog Circuit, Redstone Battery)*
    > Your hands remember wiring this. Your mind is still catching up.
    > What: LV (Low Voltage) is the first electric tier. Every LV machine is built on this hull.
    > How: steel machine casing + analog circuit + 2 redstone batteries + 3 tin cable.
@@ -1248,7 +1248,7 @@
    > What: copper wire and fine wire in bulk. Circuits use a lot of it.
    > How: LV hull, motors and analog circuits (see JEI).
    > Tip: feed it from your compressor's plate output.
-24. **Polarizer**: `modern_industrialization:polarizer` *(after: Steam to Electricity, Inductor)*
+24. **Polarizer**: `modern_industrialization:polarizer` *(after: Steam to Electricity)*
    > What: magnetic steel rods for motors, and magnetic cupronickel wire for heating coils.
    > Chemistry: a strong field lines up the magnetic domains in the metal, and they stay lined up.
    > How: LV hull, inductors, tin wire and tin cable.
@@ -1301,7 +1301,7 @@
    > What: Mekanism's basic alloy. The Enrichment Chamber and many basic machines need it.
    > Chemistry: a real alloy mixes metals at the atomic level. Here redstone plays the part of the second element.
    > How: put redstone in the infuser's left slot (it becomes an infusion buffer), then feed copper ingots.
-37. **Mekanism Circuits**: 2x `mekanism:basic_control_circuit`; `mekanism:steel_casing` *(after: Mekanism: Metallurgic Infuser, Analog Circuit)*
+37. **Mekanism Circuits**: 2x `mekanism:basic_control_circuit`; `mekanism:steel_casing` *(after: Mekanism: Metallurgic Infuser)*
    > What: in this pack, a Basic Control Circuit is MI Analog Circuit + osmium. Each Mekanism circuit tier needs the matching MI circuit.
    > How: the Steel Casing (steel, glass and osmium) is the frame for most Mekanism machines.
    > Tip: make several casings at once. Every Mekanism machine in the next chapter needs one.
@@ -1317,7 +1317,7 @@
    > What: saves an item or fluid pipe connection's settings and pastes them onto other connections.
    > How: sneak + use on a configured pipe connection to save; use on another connection to apply. Sneak + use on air clears it.
    > Tip: it can also camouflage pipes as any block. The card's tooltip explains how.
-41. **LV Storage Unit**: `modern_industrialization:lv_storage_unit` *(after: Steam to Electricity, Redstone Battery)*
+41. **LV Storage Unit**: `modern_industrialization:lv_storage_unit` *(after: Steam to Electricity)*
    > What: stores EU, so machines keep running when the turbine can't keep up for a moment.
    > How: six redstone batteries, battery alloy plates and an LV hull.
    > Tip: put it between turbine and machines so short dips don't stop anything.
@@ -1369,7 +1369,7 @@
    > What: the Rotary Condensentrator converts fluids to gases and back. It turns water into water vapor.
    > How: set it to gas mode (the toggle in its GUI), pipe water in and pressurized tube out.
    > Tip: it also turns Mekanism gases into buckets, which is handy for storage and trading.
-7. **Contact Process 3: H₂SO₄**: checkmark *(after: Contact Process 2: SO₃, Water Vapor)*
+7. **Contact Process 3: H₂SO₄**: checkmark *(after: Water Vapor)*
    > What: a second Chemical Infuser combines SO₃ with water vapor into sulfuric acid gas. Tick this when acid is flowing.
    > Chemistry: SO₃ + H₂O → H₂SO₄. Real plants dissolve SO₃ in existing acid first (oleum), because SO₃ and water alone make a corrosive mist.
    > Tip: store the acid in a chemical tank. The 5x ore line drinks it.
@@ -1381,7 +1381,7 @@
    > What: brine is salty water, and Mekanism splits it into chlorine. Tick this when you have brine.
    > How: put salt dust in a Chemical Oxidizer (15 mB brine per dust), or build a Thermal Evaporation Plant (see the side quest).
    > Tip: a second oxidizer just for salt saves you from swapping inputs.
-10. **Chlorine**: checkmark *(after: Brine, Mekanism Gases)*
+10. **Chlorine**: checkmark *(after: Brine)*
    > What: the Electrolytic Separator also takes brine. Out come chlorine and sodium. Tick this when chlorine is flowing.
    > Chemistry: real brine electrolysis gives Cl₂ at one electrode and H₂ + NaOH at the other. Mekanism simplifies it to sodium + chlorine.
    > Tip: use a second separator so your hydrogen and oxygen line keeps running.
@@ -1410,7 +1410,8 @@
    > What: the Chemical Crystallizer turns clean slurry into crystals: 5x per ore.
    > Chemistry: this is hydrometallurgy, the way most of the world's copper is really refined.
    > How: crystals → Injection Chamber (shards) → Purification Chamber (clumps) → Crusher → Enrichment Chamber.
-17. **Ore Byproducts**: `modern_industrialization:centrifuge`; 4x `modern_industrialization:silver_dust` *(after: 5x Ore: Dissolution, Electronic Circuit)*
+   > Tip: the Crystallizer itself needs fluorite gems: Mekanism's fluorite ore sits deep underground (check JEI for the recipe).
+17. **Ore Byproducts**: `modern_industrialization:centrifuge`; 4x `modern_industrialization:silver_dust` *(after: 5x Ore: Dissolution)*
    > What: real ores are never pure. Send Mekanism's dirty dust through MI's Centrifuge instead of the Enrichment Chamber for the same dust plus a chance at a bonus metal.
    > Chemistry: iron → nickel, copper → gold, gold → silver, lead → silver (galena), tin → tungsten, osmium → iridium, uranium → lead (decay).
    > How: the Centrifuge needs an electronic circuit. Route dirty dust to it, and rare metals arrive as a bonus.
@@ -1477,11 +1478,11 @@
    > What: the MV circuit. The Electrolyzer, Chemical Reactor and Centrifuge all need it, even though they sit on an LV hull.
    > How: electronic circuit board, 4 analog circuits, 2 diodes and 2 transistors.
    > Tip: set an Assembler to make these. You'll need dozens.
-31. **Electrolysis**: `modern_industrialization:electrolyzer` *(after: Electronic Circuit, Pumps, Large and Small)*
+31. **Electrolysis**: `modern_industrialization:electrolyzer` *(after: Pumps, Large and Small)*
    > What: pass current through a compound and it splits. This is electrochemistry.
    > Chemistry: water → H₂ + O₂ (3000 mB water → 2000 mB H₂ + 1000 mB O₂). Salt → sodium + chlorine.
    > How: magnetic cupronickel wire, aluminum rods, an LV hull, an electronic circuit and a large pump.
-32. **The Chemical Reactor**: `modern_industrialization:chemical_reactor` *(after: Electronic Circuit, Pumps, Large and Small)*
+32. **The Chemical Reactor**: `modern_industrialization:chemical_reactor` *(after: Pumps, Large and Small)*
    > What: combines items and fluids into new compounds. You'll use it constantly from here to the end.
    > How: glass, a large pump, aluminum rotors, an LV hull, electronic circuits and electrum cable.
    > Tip: MI fluids go in through pipes. A Configurable Tank holds spare H₂ and O₂.
@@ -1548,11 +1549,11 @@
    > Chemistry: acid + base → salt + water. H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O.
    > How: Chemical Reactor: sodium dust + 1000 mB oxygen + 1000 mB hydrogen → 2000 mB sodium hydroxide.
    > Tip: this is the bulk lye supply for the Bayer digester, so you can stop feeding it Combiner crystals.
-48. **Pumps, Large and Small**: 3x `modern_industrialization:pump`; `modern_industrialization:large_motor`; `modern_industrialization:large_pump` *(after: Electronic Circuit, Aluminum)*
+48. **Pumps, Large and Small**: 3x `modern_industrialization:pump`; `modern_industrialization:large_motor`; `modern_industrialization:large_pump` *(after: Electronic Circuit)*
    > What: the Electrolyzer and the Chemical Reactor each need a Large Pump, and a Large Pump is three small pumps driven by a Large Motor.
    > How: Large Motor: an electronic circuit, 2 aluminum rods and 6 motors. Large Pump: 2 electronic circuits, 3 aluminum rotors, a Large Motor and 3 pumps (Assembler or crafting table; check JEI).
    > Tip: pumps are the part you'll run short of. Keep an Assembler stocked with motors and rotors.
-49. **Doping Silicon**: `modern_industrialization:silicon_n_doped_plate`; `modern_industrialization:silicon_p_doped_plate` *(after: Transistors and Diodes, The Chemical Reactor)*
+49. **Doping Silicon**: `modern_industrialization:silicon_n_doped_plate`; `modern_industrialization:silicon_p_doped_plate` *(after: The Chemical Reactor)*
    > What: silicon plates with a trace of another element, used in cheaper recipes for transistors and diodes.
    > Chemistry: silicon has four outer electrons. Antimony has five, so it adds a spare electron (n-type); aluminium has three, so it leaves a 'hole' (p-type). Where n meets p, current flows one way only: a diode.
    > How: Chemical Reactor: 1 silicon plate + 1 tiny antimony dust → n-doped plate; 1 silicon plate + 1 tiny aluminum dust → p-doped plate. JEI shows the doped transistor and diode recipes.
@@ -1575,7 +1576,7 @@
    > Chemistry: hydrocarbons are just carbon and hydrogen (CₙH₂ₙ₊₂ and friends). Chain length decides whether one is a gas, a fuel or a tar.
    > How: put the Oil Drilling Rig in an MI Quarry over an oil-rich area (check JEI). It slowly wears out aluminum drills.
    > Tip: pipe the crude straight into a tank. You'll need a lot of it.
-2. **Fractional Distillation**: `modern_industrialization:distillation_tower` *(after: Black Gold, Pipe Casings)*
+2. **Fractional Distillation**: `modern_industrialization:distillation_tower` *(after: Pipe Casings)*
    > What: the Distillation Tower is a multiblock that splits one fluid into several fractions at once.
    > Chemistry: heat the crude and each fraction boils off at its own temperature. Light molecules rise to the top, heavy ones stay low.
    > How: the 3D layout is in JEI and the MI guidebook. Each extra layer adds one more output.
@@ -1637,7 +1638,7 @@
    > Chemistry: sodium metal gives up its one outer electron very easily (it fizzes in water), which is what makes it a good battery material.
    > How: sodium dust from the Electrolyzer (2 salt dust → 1 sodium dust + chlorine), as in Electrochemistry. Then craft the battery (check JEI).
    > Tip: keep the chlorine. It's needed for HCl and, next chapter, PVC.
-16. **HV: Digital Circuits**: `modern_industrialization:digital_circuit`; `modern_industrialization:turbo_machine_hull` *(after: Digital Circuit Board, Sodium Battery, Logic Gates)*
+16. **HV: Digital Circuits**: `modern_industrialization:digital_circuit`; `modern_industrialization:turbo_machine_hull` *(after: Sodium Battery, Logic Gates)*
    > Logic gates, clicking into place. You used to think this fast.
    > What: digital circuits unlock HV machines, AE2, the Angel Ring and elite jetpack coils.
    > How: Assembler: digital circuit board + 4 electronic circuits + AND, OR and NOT gates. The Turbo hull adds 2 sodium batteries and aluminum cable.
@@ -1650,7 +1651,7 @@
    > What: fluix crystals carry the ME network's signal. The ME Controller needs them.
    > How: charge certus quartz in the Charger, then drop charged certus, redstone and Nether quartz in water together (check JEI).
    > Tip: budding certus quartz grows new crystals, so certus is renewable once you find some.
-19. **The Inscriber**: `ae2:inscriber`; 2x `ae2:engineering_processor` *(after: HV: Digital Circuits, Fallen Stars)*
+19. **The Inscriber**: `ae2:inscriber`; 2x `ae2:engineering_processor` *(after: Fallen Stars)*
    > What: every AE2 processor is printed in the Inscriber. In this pack it's built on a Turbo hull.
    > Chemistry: engineering processors print a circuit onto silicon, the same element your HV boards depend on.
    > How: press a diamond into a printed engineering circuit, silicon into printed silicon, then combine them with redstone.
@@ -1678,7 +1679,7 @@
    > Chemistry: benzene + ethylene → ethylbenzene (acid catalyst). Steam over iron then pulls off H₂ to give styrene, C₈H₈, exactly as in real plants.
    > How: Chemical Reactor: benzene + ethylene + a little HCl → ethylbenzene. Then ethylbenzene + steam + iron dust → styrene + hydrogen.
    > Tip: the hydrogen by-product can go straight back into hydrotreating.
-25. **Synthetic Rubber**: `modern_industrialization:styrene_butadiene_rubber_bucket` *(after: Styrene, Butadiene)*
+25. **Synthetic Rubber**: `modern_industrialization:styrene_butadiene_rubber_bucket` *(after: Butadiene)*
    > What: styrene-butadiene rubber (SBR) is the rubber in most tyres. Here it makes rubber sheets by the stack.
    > Chemistry: styrene and butadiene polymerise together into one chain (a copolymer): stiff styrene parts, springy butadiene parts.
    > How: Chemical Reactor: styrene + butadiene → styrene-butadiene, then polymerise with tiny lead or chromium dust. The Vacuum Freezer turns 200 mB into 64 rubber sheets.
@@ -1965,7 +1966,7 @@
    > What: the walls and the top grid of the reactor. Item hatches hold fuel and rods; fluid hatches hold water to boil into steam.
    > How: nuclear casing: 8 nuclear alloy plates around an HV hull. Hatches: 8 plates around an EV item or fluid input hatch. Check JEI for the pipe casing.
    > Tip: the reactor comes in several sizes. Start small; the MI guidebook shows them all.
-51. **Fuel Rods**: 2x `modern_industrialization:uranium_fuel_rod`; `modern_industrialization:uranium_fuel_rod_double` *(after: Blastproof Alloy, Soldering Alloy, Rare Earths and Helium, Nuclear Alloy)*
+51. **Fuel Rods**: 2x `modern_industrialization:uranium_fuel_rod`; `modern_industrialization:uranium_fuel_rod_double` *(after: Soldering Alloy, Rare Earths and Helium, Nuclear Alloy)*
    > What: plain uranium fuel rods need no enrichment. They burn slowly, and that slowness breeds plutonium.
    > Chemistry: natural uranium is 99.3% U-238 and 0.7% fissile U-235. U-238 catches a neutron and decays twice: ²³⁸U → ²³⁹U → ²³⁹Np → ²³⁹Pu.
    > How: uranium dust → Kanthal-tier EBF → ingot → 18 rods. Assembler: 18 uranium rods, 2 blastproof curved plates, a large motor, 2 robot arms, 500 mB solder, 100 mB helium. Packer: 2 rods + a nuclear alloy plate → double rod.
@@ -4626,7 +4627,7 @@
    > Chemistry: honey is about 80% sugars (fructose and glucose). Sugar burns well: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O, the same reaction your cells run, only slower.
    > How: a culinary generator in honey blocks with buckets and a redstone block, or in pink dye with brewing stands (check JEI).
    > Tip: a few beehives with campfires underneath keep the honey generator running.
-45. **Compressed Generators**: 1x any of `or(item(generatorgalore:copper_generator_8x)item(generatorgalore:copper_generator_64x)item(generatorgalore:iron_generator_64x)item(generatorgalore:gold_generator_8x)item(generatorgalore:gold_generator_64x)item(generatorgalore:diamond_generator_8x)item(generatorgalore:diamond_generator_64x)item(generatorgalore:emerald_generator_8x)item(generatorgalore:emerald_generator_64x)item(generatorgalore:obsidian_generator_8x)item(generatorgalore:obsidian_generator_64x)item(generatorgalore:netherite_generator_8x)item(generatorgalore:netherite_generator_64x)item(generatorgalore:magmatic_generator_8x)item(generatorgalore:magmatic_generator_64x)item(generatorgalore:culinary_generator_8x)item(generatorgalore:culinary_generator_64x)item(generatorgalore:honey_generator_8x)item(generatorgalore:honey_generator_64x)item(generatorgalore:potion_generator_8x)item(generatorgalore:potion_generator_64x)item(generatorgalore:ender_generator_8x)item(generatorgalore:ender_generator_64x)item(generatorgalore:enchantment_generator_8x)item(generatorgalore:enchantment_generator_64x)item(generatorgalore:halitosis_generator_8x)item(generatorgalore:halitosis_generator_64x)item(generatorgalore:netherstar_generator_8x)item(generatorgalore:netherstar_generator_64x))` *(after: Eight Times the Burn)*
+45. **Compressed Generators**: 1x any of `or(item(generatorgalore:copper_generator_8x)item(generatorgalore:gold_generator_8x)item(generatorgalore:diamond_generator_8x)item(generatorgalore:emerald_generator_8x)item(generatorgalore:obsidian_generator_8x)item(generatorgalore:netherite_generator_8x)item(generatorgalore:netherite_generator_64x)item(generatorgalore:magmatic_generator_8x)item(generatorgalore:magmatic_generator_64x)item(generatorgalore:culinary_generator_8x)item(generatorgalore:culinary_generator_64x)item(generatorgalore:honey_generator_8x)item(generatorgalore:honey_generator_64x)item(generatorgalore:potion_generator_8x)item(generatorgalore:potion_generator_64x)item(generatorgalore:ender_generator_8x)item(generatorgalore:ender_generator_64x)item(generatorgalore:enchantment_generator_8x)item(generatorgalore:enchantment_generator_64x)item(generatorgalore:halitosis_generator_8x)item(generatorgalore:halitosis_generator_64x)item(generatorgalore:netherstar_generator_8x)item(generatorgalore:netherstar_generator_64x))` *(after: Eight Times the Burn)*
    > What: any compressed generator other than the iron 8x: magmatic, star, gem, food, whatever you run most. 64x generators are eight 8x ones around a conduit.
    > How: 8x: eight generators around an echo shard. 64x: eight 8x generators around a conduit (check JEI).
    > Tip: a 64x generator eats fuel 64 times as fast. Make sure the fuel line can keep up first.
@@ -4912,7 +4913,7 @@
    > What: cows, sheep, pigs and chickens give food, leather, wool and eggs. Two adults fed their favourite food make a baby.
    > How: lead two animals into a pen and feed them. Just Enough Breeding adds a JEI page per animal: look up any mob egg or food to see what it eats and what it drops.
    > Tip: babies take about 20 minutes to grow; feeding them their breeding food speeds that up.
-18. **Pet Food**: `farmersdelight:horse_feed`; `farmersdelight:dog_food` *(after: Animal Husbandry, Knife and Board)*
+18. **Pet Food**: `farmersdelight:horse_feed`; `farmersdelight:dog_food` *(after: Animal Husbandry)*
    > What: Horse Feed heals and speeds up horses; Dog Food heals tamed wolves and gives them buffs.
    > How: both are Farmer's Delight crafting recipes (check JEI).
    > Tip: a well-fed wolf is a decent bodyguard in the early Twilight Forest.
@@ -5367,7 +5368,7 @@
    > What: Macaw's Doors adds barn, cottage, glass, modern and many more doors in every wood.
    > How: any two barn, modern, glass or cottage doors (check JEI for recipes).
    > Tip: glass doors let you see into a machine room without opening it.
-17. **Trapdoors**: 4x any of `or(item(mcwtrpdoors:oak_barn_trapdoor)item(mcwtrpdoors:spruce_barn_trapdoor)item(mcwtrpdoors:birch_barn_trapdoor)item(mcwtrpdoors:jungle_barn_trapdoor)item(mcwtrpdoors:acacia_barn_trapdoor)item(mcwtrpdoors:dark_oak_barn_trapdoor)item(mcwtrpdoors:mangrove_barn_trapdoor)item(mcwtrpdoors:cherry_barn_trapdoor)item(mcwtrpdoors:bamboo_barn_trapdoor)item(mcwtrpdoors:crimson_barn_trapdoor)item(mcwtrpdoors:warped_barn_trapdoor)item(mcwtrpdoors:oak_glass_trapdoor)item(mcwtrpdoors:spruce_glass_trapdoor)item(mcwtrpdoors:birch_glass_trapdoor)item(mcwtrpdoors:jungle_glass_trapdoor)item(mcwtrpdoors:acacia_glass_trapdoor)item(mcwtrpdoors:dark_oak_glass_trapdoor)item(mcwtrpdoors:mangrove_glass_trapdoor)item(mcwtrpdoors:cherry_glass_trapdoor)item(mcwtrpdoors:bamboo_glass_trapdoor)item(mcwtrpdoors:crimson_glass_trapdoor)item(mcwtrpdoors:warped_glass_trapdoor)item(mcwtrpdoors:oak_classic_trapdoor)item(mcwtrpdoors:spruce_classic_trapdoor)item(mcwtrpdoors:birch_classic_trapdoor)item(mcwtrpdoors:jungle_classic_trapdoor)item(mcwtrpdoors:acacia_classic_trapdoor)item(mcwtrpdoors:dark_oak_classic_trapdoor)item(mcwtrpdoors:mangrove_classic_trapdoor)item(mcwtrpdoors:cherry_classic_trapdoor)item(mcwtrpdoors:bamboo_classic_trapdoor)item(mcwtrpdoors:crimson_classic_trapdoor)item(mcwtrpdoors:warped_classic_trapdoor))` *(after: Doors)*
+17. **Trapdoors**: 4x any of `or(item(mcwtrpdoors:oak_barn_trapdoor)item(mcwtrpdoors:spruce_barn_trapdoor)item(mcwtrpdoors:birch_barn_trapdoor)item(mcwtrpdoors:jungle_barn_trapdoor)item(mcwtrpdoors:acacia_barn_trapdoor)item(mcwtrpdoors:dark_oak_barn_trapdoor)item(mcwtrpdoors:mangrove_barn_trapdoor)item(mcwtrpdoors:cherry_barn_trapdoor)item(mcwtrpdoors:bamboo_barn_trapdoor)item(mcwtrpdoors:crimson_barn_trapdoor)item(mcwtrpdoors:warped_barn_trapdoor)item(mcwtrpdoors:oak_glass_trapdoor)item(mcwtrpdoors:spruce_glass_trapdoor)item(mcwtrpdoors:birch_glass_trapdoor)item(mcwtrpdoors:jungle_glass_trapdoor)item(mcwtrpdoors:acacia_glass_trapdoor)item(mcwtrpdoors:dark_oak_glass_trapdoor)item(mcwtrpdoors:mangrove_glass_trapdoor)item(mcwtrpdoors:cherry_glass_trapdoor)item(mcwtrpdoors:bamboo_glass_trapdoor)item(mcwtrpdoors:crimson_glass_trapdoor)item(mcwtrpdoors:warped_glass_trapdoor)item(mcwtrpdoors:spruce_classic_trapdoor)item(mcwtrpdoors:birch_classic_trapdoor)item(mcwtrpdoors:jungle_classic_trapdoor)item(mcwtrpdoors:acacia_classic_trapdoor)item(mcwtrpdoors:dark_oak_classic_trapdoor)item(mcwtrpdoors:mangrove_classic_trapdoor)item(mcwtrpdoors:cherry_classic_trapdoor)item(mcwtrpdoors:bamboo_classic_trapdoor)item(mcwtrpdoors:crimson_classic_trapdoor)item(mcwtrpdoors:warped_classic_trapdoor))` *(after: Doors)*
    > What: decorative trapdoors that match the doors: barn, glass, classic and more.
    > How: any four barn, glass or classic trapdoors (check JEI).
    > Tip: trapdoors on walls make great shutters and cabinet fronts.
@@ -7787,7 +7788,7 @@
    > What: manipulation essence goes into the Enchanter's Wand, Spell Bow, Repairing thread, runic chalk and Containment.
    > How: Imbuement Chamber: a source gem, with a stone button, redstone and a clock on pedestals (2,000 Source).
    > Tip: it also converts some blocks into others, such as stone into granite or tuff (check JEI).
-35. **Anima Essence**: `ars_elemental:anima_essence` *(after: Manipulation Essence)*
+35. **Anima Essence**: `sauce:anima_essence` *(after: Manipulation Essence)*
    > What: anima essence is the eighth essence, used for the Mark of Mastery and necromantic gear.
    > Chemistry: bone meal comes from bone, which is mostly hydroxyapatite, a calcium phosphate (Ca₅(PO₄)₃OH).
    > How: Imbuement Chamber: a source gem, with a wither skeleton skull, bone meal and a golden apple on pedestals (3,000 Source).
@@ -8291,7 +8292,7 @@
    > What: the Sentient Sword collects Spiritus from every kill and hits harder the more Spiritus you carry.
    > How: an iron sword in the Hellfire Forge with a Petty Spiritus Gem as catalyst (the gem stays).
    > Tip: the axe, pickaxe, shovel and scythe work the same way.
-17. **Veneficus Orb**: `neovitae:blood_orb_magician` *(after: Discipulus Orb, Stronger Slates)*
+17. **Veneficus Orb**: `neovitae:blood_orb_magician` *(after: Stronger Slates)*
    > What: the third orb. With it come ritual stones, the Master Ritual Stone and activation crystals.
    > Chemistry: gold is the input: it barely reacts with anything, which is why it lasts in the ground as native metal.
    > How: a block of gold on a Tier III altar, 25,000 EV. Scriptura Vitae shows the Tier III layout.

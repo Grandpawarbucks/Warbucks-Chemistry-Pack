@@ -93,6 +93,26 @@ packwiz-installer-bootstrap and installs the NeoForge server into `test\server` 
 It uses Java 21 from `JAVA_HOME`, never the `java` on PATH (Windows often has an old Java 8 there).
 `test/known_issues.txt` (the allowlist of harmless log lines) is committed so both machines use the same list.
 
+### Quest audit (can every quest be finished?)
+`tools/quest_audit.py` looks for quests a player can never finish. Its cheap checks run on every
+`build_quests.py` run (build and `--check`) and stop the build on errors: dependency cycles, quests no root can reach,
+quests with no tasks, and ids of the wrong kind (an entity in an item task, an unknown biome...). Required quests that
+only optional quests unlock are printed as warnings. The full audit also needs a recipe dump from a real server:
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File test\audit_dump.ps1   # Terminal panel or a real terminal (Java)
+.venv\Scripts\python.exe test\build_id_index.py                          # optional: registry ids into test/ids.tsv
+.venv\Scripts\python.exe tools\quest_audit.py --full
+```
+`audit_dump.ps1` runs the smoke test once with the marker `test\server\kubejs\config\dump_recipes.json`, so
+`pack/kubejs/server_scripts/zz_recipe_dump.js` writes every recipe (after all KubeJS changes), the registries and the
+item/block tags to `test\dump\`; it deletes the marker afterwards (never put it in `pack\`, or the script runs for
+players). `--full` then reports item tasks nobody can obtain (not a recipe output, loot drop, loot-modifier drop,
+naturally generated block, or non-shop quest reward; errors for required quests, warnings for optional ones), empty
+`anytag()` tags, and tier warnings (a t0..t7 item whose every recipe needs an item first asked for in a later tier).
+Mechanics the dump can't see (bucketing mobs, coded drops, special recipes) go in `ALLOW` in the tool, with a reason.
+With a dump present, `build_id_index.py` also drops lang-only ids the server doesn't register and adds registry ids
+(e.g. `compactmachines:machine`, which has no lang entry), so the cheap checks catch more.
+
 ### Known limits on Windows
 - Line endings: the repo has a `.gitattributes` with `* -text`, so Git never converts line endings. Without it, Git for
   Windows (autocrlf=true) checks out CRLF files, packwiz hashes those, and the pushed `index.toml` no longer matches what
