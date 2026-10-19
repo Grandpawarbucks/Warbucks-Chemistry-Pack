@@ -1,7 +1,7 @@
 {
 	id: "29A6965304E1D4DA"
-	group: "71650C5783BBAA4C"
-	order_index: 2
+	group: ""
+	order_index: 1
 	filename: "market"
 	icon: {
 		id: "kubejs:demigod_token"
@@ -74,69 +74,11 @@
 			]
 		}
 		{
-			id: "28AD4AEDE3D6AD2F"
+			id: "730D392B8D2C31C6"
 			x: 4.0d
 			y: 0.0d
 			dependencies: [
 				"2B95087344F45A1D"
-			]
-			tasks: [
-				{
-					id: "5AE0D7A64DDC0AEB"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "53D75BDA8E27F047"
-					type: "xp"
-					xp: 20
-				}
-				{
-					id: "716626EADFA98B85"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5452D2F4A6EBEED3"
-			x: 6.0d
-			y: 0.0d
-			dependencies: [
-				"28AD4AEDE3D6AD2F"
-			]
-			tasks: [
-				{
-					id: "220AD2C1B7FF2098"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "40438BF7165FE720"
-					type: "xp"
-					xp: 20
-				}
-				{
-					id: "5371338CA32531BD"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "730D392B8D2C31C6"
-			x: 0.0d
-			y: 2.0d
-			dependencies: [
-				"5452D2F4A6EBEED3"
 			]
 			tasks: [
 				{
@@ -148,7 +90,7 @@
 				{
 					id: "237F6ADCC00E5F53"
 					type: "xp"
-					xp: 30
+					xp: 60
 				}
 				{
 					id: "23F0043E799DDA44"
@@ -161,67 +103,9 @@
 			]
 		}
 		{
-			id: "5927B0F6E131CD9E"
-			x: 2.0d
-			y: 2.0d
-			dependencies: [
-				"730D392B8D2C31C6"
-			]
-			tasks: [
-				{
-					id: "074CDA81BD26A21B"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "3CFB49070B2748A8"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "1471A1EC0F24714D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1A97B140379BA760"
-			x: 4.0d
-			y: 2.0d
-			dependencies: [
-				"5927B0F6E131CD9E"
-			]
-			tasks: [
-				{
-					id: "280A66A78C655A81"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "5FB3ED599235938E"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "22EE9362551B55CA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "003F5C5CD886D522"
 			x: 6.0d
-			y: 2.0d
+			y: -2.0d
 			dependencies: [
 				"730D392B8D2C31C6"
 			]
@@ -254,8 +138,8 @@
 		}
 		{
 			id: "78DBBB51C5B3D742"
-			x: 0.0d
-			y: 4.0d
+			x: 6.0d
+			y: 0.0d
 			dependencies: [
 				"730D392B8D2C31C6"
 				"1C5E43BCEDA7593F"
@@ -294,11 +178,10 @@
 		}
 		{
 			id: "410F8D5BAEFB395A"
-			x: 2.0d
-			y: 4.0d
+			x: 8.0d
+			y: 0.0d
 			dependencies: [
 				"78DBBB51C5B3D742"
-				"5927B0F6E131CD9E"
 				"55AF98DD41956199"
 			]
 			tasks: [
@@ -335,11 +218,12 @@
 		}
 		{
 			id: "4F2FD5E25FC1E6FB"
-			x: 4.0d
-			y: 4.0d
+			x: 10.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
 			dependencies: [
 				"410F8D5BAEFB395A"
-				"1A97B140379BA760"
 				"009FBA775299B910"
 			]
 			tasks: [
@@ -376,8 +260,8 @@
 		}
 		{
 			id: "5D7536360603F09D"
-			x: 6.0d
-			y: 4.0d
+			x: 8.0d
+			y: -3.5d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -414,8 +298,8 @@
 	images: [
 		{
 			id: "0A0052C70C09E87C"
-			x: 2.5d
-			y: -2.0d
+			x: 0.5d
+			y: -5.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d

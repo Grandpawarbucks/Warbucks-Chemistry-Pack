@@ -69,7 +69,7 @@ CHAPTER = Chapter("powah", "Powah!", P + "energizing_orb",
         "&eWhat:&r a block that charges the FE items carried by the player bound to it.",
         "&eHow:&r Player Aerial Pearl on top, tiny capacitors and a casing in the middle, an upright rod below. The Binding Card is a blank card (2 horizontal rods) with redstone and rotten flesh; right-click to bind it to yourself.",
         "&eTip:&r power it from a cell and your jetpack never runs dry at home."]),
-    Q("pw_photo", 6, 2, [item(P + "photoelectric_pane", 3), item(P + "thermoelectric_plate", 3)], "Panes and Plates", subtitle="The parts of solar and thermo generators", deps=["pw_capacitor"], xp=50, desc=[
+    Q("pw_photo", 6, 2, [item(P + "photoelectric_pane", 3), item(P + "thermoelectric_plate", 3)], "Panes and Plates", optional=True, tokens=1, subtitle="Optional: the parts of solar and thermo generators", deps=["pw_capacitor"], xp=50, desc=[
         "&eWhat:&r photoelectric panes go into Powah solar panels; thermo plates go into thermo generators (both in the Power chapter).",
         "&eChemistry:&r light can knock electrons out of a material: the photoelectric effect Einstein explained in 1905. Lapis gets its blue from trisulfur radical ions (Sâ‚ƒâ») trapped in the mineral lazurite.",
         "&eHow:&r pane: a glass pane in lapis and paste. Plate: a tiny capacitor in redstone and blaze powder.",
@@ -114,11 +114,11 @@ CHAPTER = Chapter("powah", "Powah!", P + "energizing_orb",
         "&eWhat:&r hardened capacitors unlock the hardened tier of everything.",
         "&eHow:&r 2 basic capacitors make a large one. A large capacitor in energized steel and paste makes 2 hardened capacitors.",
         "&eTip:&r large capacitors go into every crystal capacitor too. Craft spares."]),
-    Q("pw_cable_hardened", 20, -2, [item(P + "energy_cable_basic", 6), item(P + "energy_cable_hardened", 12)], "Hardened Cables", subtitle="More FE per tick", deps=["pw_cap_hardened"], xp=60, desc=[
+    Q("pw_cable_hardened", 20, -2, [item(P + "energy_cable_basic", 6), item(P + "energy_cable_hardened", 12)], "Hardened Cables", optional=True, tokens=1, subtitle="Optional: more FE per tick", deps=["pw_cap_hardened"], xp=60, desc=[
         "&eWhat:&r faster cables for your growing grid.",
         "&eHow:&r basic: 6 rods, 2 starter cables, a basic capacitor. Hardened: 6 rods, 2 energized steel, a hardened capacitor makes 12 (check JEI).",
         "&eTip:&r a cable is only as fast as its slowest segment. Upgrade the trunk line first."]),
-    Q("pw_cell_hardened", 22, -2, [item(P + "energy_cell_hardened")], "Hardened Energy Cell", subtitle="A real buffer", deps=["pw_cap_hardened", "pw_powah_cell"], xp=100, desc=[
+    Q("pw_cell_hardened", 22, -2, [item(P + "energy_cell_hardened")], "Hardened Energy Cell", optional=True, tokens=1, subtitle="Optional: a real buffer", deps=["pw_cap_hardened", "pw_powah_cell"], xp=100, desc=[
         "&eWhat:&r the next storage step after the basic cell.",
         "&eHow:&r 2 basic cells, energized steel, hardened capacitors and a dielectric casing.",
         "&eTip:&r the crystal cells in the Power chapter each start from the cell below them."]),
@@ -159,7 +159,7 @@ CHAPTER = Chapter("powah", "Powah!", P + "energizing_orb",
         "&eWhat:&r the heart of Ender Cells and Ender Gates.",
         "&eHow:&r Energizing Orb: an eye of ender, a dielectric casing and a tiny capacitor, 50,000 FE.",
         "&eTip:&r one core per ender block, at every tier."]),
-    Q("pw_ender_gate", 16, 4, [item(P + "ender_gate_starter", 4)], "Ender Gates", subtitle="Small taps on the ender network", deps=["pw_ender_core"], xp=75, desc=[
+    Q("pw_ender_gate", 16, 4, [item(P + "ender_gate_starter", 4)], "Ender Gates", optional=True, tokens=1, subtitle="Optional: small taps on the ender network", deps=["pw_ender_core"], xp=75, desc=[
         "&eWhat:&r ender gates connect to the same ender energy network as your Ender Cells, without storing much themselves.",
         "&eHow:&r obsidian, 2 starter cables and an ender core make 4. Set the channel in the GUI to match your cells.",
         "&eTip:&r put a gate next to each remote machine and one Ender Cell at your main bank."]),

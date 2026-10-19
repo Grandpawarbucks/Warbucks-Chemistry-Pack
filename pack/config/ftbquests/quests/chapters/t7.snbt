@@ -1,7 +1,7 @@
 {
 	id: "45FF88D8CD5549A4"
 	group: "2DCF10F76EBF2A74"
-	order_index: 9
+	order_index: 8
 	filename: "t7"
 	icon: {
 		id: "ad_astra:tier_1_rocket"
@@ -47,7 +47,7 @@
 		{
 			id: "2D71A1E8E2859236"
 			x: 2.0d
-			y: 0.0d
+			y: 4.0d
 			dependencies: [
 				"7F5D0246011FE307"
 			]
@@ -108,7 +108,7 @@
 		{
 			id: "06F69B817832C614"
 			x: 2.0d
-			y: -2.0d
+			y: 0.0d
 			dependencies: [
 				"7F5D0246011FE307"
 			]
@@ -151,7 +151,7 @@
 		{
 			id: "494D2FBE3172520A"
 			x: 4.0d
-			y: -2.0d
+			y: 0.0d
 			dependencies: [
 				"06F69B817832C614"
 			]
@@ -203,7 +203,7 @@
 		{
 			id: "6DDB2C2ACDAA5443"
 			x: 4.0d
-			y: 0.0d
+			y: 8.0d
 			dependencies: [
 				"2D71A1E8E2859236"
 			]
@@ -237,7 +237,7 @@
 		{
 			id: "44A4B4888AF3AF27"
 			x: 4.0d
-			y: 2.0d
+			y: 6.0d
 			dependencies: [
 				"7F5D0246011FE307"
 				"7CB7FF40BB33AD8F"
@@ -273,6 +273,7 @@
 			id: "0C1DD95BA033EAB3"
 			x: 6.0d
 			y: 0.0d
+			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"6DDB2C2ACDAA5443"
@@ -319,7 +320,8 @@
 		{
 			id: "1B2FF1921BFAFACF"
 			x: 8.0d
-			y: -2.0d
+			y: -3.5d
+			optional: true
 			dependencies: [
 				"0C1DD95BA033EAB3"
 			]
@@ -354,7 +356,7 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 8
+						count: 1
 					}
 				}
 			]
@@ -362,7 +364,8 @@
 		{
 			id: "17759B5826DD9CB6"
 			x: 10.0d
-			y: -2.0d
+			y: -5.0d
+			optional: true
 			dependencies: [
 				"1B2FF1921BFAFACF"
 			]
@@ -388,15 +391,15 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 8
+						count: 1
 					}
 				}
 			]
 		}
 		{
 			id: "243C3A96FE99DD8D"
-			x: 8.0d
-			y: 2.0d
+			x: 2.0d
+			y: -2.0d
 			dependencies: [
 				"69D67DF12EE0C400"
 			]
@@ -438,8 +441,8 @@
 		}
 		{
 			id: "1CB50F40C6DA26D6"
-			x: 10.0d
-			y: 2.0d
+			x: 4.0d
+			y: -5.0d
 			dependencies: [
 				"243C3A96FE99DD8D"
 			]
@@ -472,10 +475,10 @@
 		}
 		{
 			id: "1E6BA9227B6B280F"
-			x: 12.0d
+			x: 8.0d
 			y: 0.0d
-			shape: "hexagon"
-			size: 1.75d
+			shape: "gear"
+			size: 2.0d
 			dependencies: [
 				"0C1DD95BA033EAB3"
 				"1CB50F40C6DA26D6"
@@ -523,8 +526,8 @@
 		}
 		{
 			id: "25E45CBEE34D9D34"
-			x: 14.0d
-			y: -2.0d
+			x: 6.0d
+			y: -4.0d
 			dependencies: [
 				"69D67DF12EE0C400"
 			]
@@ -557,7 +560,7 @@
 		}
 		{
 			id: "4EF6FFBCA6DD55AD"
-			x: 16.0d
+			x: 8.0d
 			y: -2.0d
 			dependencies: [
 				"25E45CBEE34D9D34"
@@ -591,8 +594,9 @@
 		}
 		{
 			id: "39868F66D40B59DD"
-			x: 18.0d
+			x: 10.0d
 			y: 0.0d
+			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"4EF6FFBCA6DD55AD"
@@ -601,15 +605,6 @@
 			tasks: [
 				{
 					id: "0A7085322F91D6F3"
-					type: "item"
-					item: {
-						id: "kubejs:energy_core"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "74C6FDF7264B71C7"
 					type: "item"
 					item: {
 						id: "kubejs:antimatter_core"
@@ -641,8 +636,8 @@
 		}
 		{
 			id: "37BAEF06294D5602"
-			x: 6.0d
-			y: -4.0d
+			x: 8.0d
+			y: 2.0d
 			optional: true
 			dependencies: [
 				"0C1DD95BA033EAB3"
@@ -677,7 +672,7 @@
 		{
 			id: "17ABF0CEA1A27F7B"
 			x: 8.0d
-			y: -4.0d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"0C1DD95BA033EAB3"
@@ -707,8 +702,8 @@
 		}
 		{
 			id: "3AC9108E8851EEA2"
-			x: 10.0d
-			y: -4.0d
+			x: 8.0d
+			y: 5.0d
 			optional: true
 			dependencies: [
 				"0C1DD95BA033EAB3"
@@ -758,8 +753,8 @@
 		}
 		{
 			id: "2DD64AE9BEF9A844"
-			x: 4.0d
-			y: -4.0d
+			x: 6.0d
+			y: -2.5d
 			optional: true
 			dependencies: [
 				"494D2FBE3172520A"
@@ -803,8 +798,8 @@
 		}
 		{
 			id: "5F38F7B1EF8C809A"
-			x: 12.0d
-			y: -4.0d
+			x: 0.0d
+			y: 8.5d
 			optional: true
 			dependencies: [
 				"0371D774272DB515"
@@ -843,8 +838,8 @@
 		}
 		{
 			id: "4E04F8FE399BBE55"
-			x: 12.0d
-			y: 3.0d
+			x: 10.0d
+			y: 2.0d
 			optional: true
 			dependencies: [
 				"1E6BA9227B6B280F"
@@ -880,8 +875,8 @@
 	images: [
 		{
 			id: "2E326B1FEA8E4F46"
-			x: 2.5d
-			y: -6.0d
+			x: 0.5d
+			y: -7.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -892,8 +887,14 @@
 		{
 			id: "32F3401A61422DCF"
 			linked_quest: "3A6618C9323E34D8"
-			x: 21.0d
-			y: 0.0d
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			id: "5F2C6E5487E5A697"
+			linked_quest: "009FBA775299B910"
+			x: -2.0d
+			y: 1.0d
 		}
 	]
 }

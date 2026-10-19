@@ -16,7 +16,7 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
     Q("t7_parts", 2, 0, [item(AA + "rocket_nose_cone"), item(AA + "rocket_fin", 4), item(AA + "steel_tank", 2), item(AA + "steel_engine")], "Rocket Parts", deps=["t7_nasa"], xp=200,
       subtitle="Nose cone, fins, tanks and an engine", desc=[
         "&eWhat:&r a Tier 1 rocket needs a nose cone, 4 fins, 2 steel tanks, a steel engine and 6 steel blocks.",
-        "&eChemistry:&r a rocket carries its own oxidiser as well as fuel: there's no air to burn in once you're up.",
+        "&eChemistry:&r real rockets carry their own oxidiser (often liquid oxygen) as well as fuel, because there's no air to burn in once you're up. Ad Astra simplifies this: its tanks take fuel only (MI diesel, biodiesel or cryo fuel; see Rocket Fuel).",
         "&eHow:&r all parts are crafted from steel plates and rods (check JEI). The nose cone uses a lightning rod."]),
     Q("t7_suit", 2, -2, [item(AA + "space_helmet"), item(AA + "oxygen_loader")], "Breathe", deps=["t7_nasa"], xp=200,
       subtitle="Space has no air", desc=[
@@ -35,9 +35,9 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
         "&eTip:&r build a pad on each world you visit so you always have somewhere to land and relaunch."]),
     Q("t7_fuel", 4, 2, [item(MI + "diesel_bucket", 3)], "Rocket Fuel", deps=["t7_nasa", "t5_diesel"], xp=150,
       subtitle="Ad Astra burns your diesel", desc=[
-        "&eWhat:&r in this pack rockets run on MI diesel (biodiesel works too). Ad Astra's own oil refining is removed.",
+        "&eWhat:&r in this pack rockets burn anything in the Ad Astra fuel tag: MI diesel or biodiesel, or Ad Astra's cryo fuel. Ad Astra's own oil refining is removed.",
         "&eChemistry:&r a kilogram of diesel releases about 45 MJ when it burns: more than ten times a good battery.",
-        "&eHow:&r fill the rocket from buckets or pipes (check its GUI for how much it holds).",
+        "&eHow:&r fill the rocket from buckets or pipes (check its GUI for how much it holds). Cryo fuel comes from Ad Astra's Cryo Freezer (check JEI).",
         "&eTip:&r bring spare fuel for the trip home."]),
     Q("t7_rocket", 6, 0, [item(AA + "tier_1_rocket"), dim(AA + "moon")], "One Small Step", deps=["t7_launchpad", "t7_fuel", "t7_suit_full"], xp=600, size=1.5,
       subtitle="Reach the Moon", desc=[
@@ -45,12 +45,12 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
         "&eHow:&r build the rocket in the NASA Workbench, place it on the pad, fuel it, climb in and launch. Pick the Moon on the planet screen.",
         "&eTip:&r place a bed or waystone near your landing site before exploring."]),
     Q("t7_desh", 8, -2, [item(AA + "raw_desh", 8), item(AA + "desh_plate", 4)], "Desh", deps=["t7_rocket"], xp=200,
-      subtitle="The Moon's own metal", desc=[
+      optional=True, tokens=1, subtitle="Optional: the Moon's own metal", desc=[
         "&eWhat:&r desh is Ad Astra's lunar metal, needed for the Tier 2 rocket and oxygen equipment.",
         "&eHow:&r mine desh ore on the Moon, smelt it, and press the ingots into plates in Ad Astra's Compressor.",
         "&eTip:&r the Moon also has cheese ore. Really."]),
     Q("t7_distributor", 10, -2, [item(AA + "oxygen_distributor")], "A Breathable Room", deps=["t7_desh"], xp=200,
-      subtitle="Bring an atmosphere with you", desc=[
+      optional=True, tokens=1, subtitle="Optional: bring an atmosphere with you", desc=[
         "&eWhat:&r the Oxygen Distributor fills a sealed room with air, so you can take off your helmet.",
         "&eHow:&r built from an Oxygen Loader, a large gas tank, fans, an oxygen gear and desh plates. Feed it oxygen and power.",
         "&eTip:&r any gap in the walls lets the air out. Seal the room completely, doors included."]),
@@ -83,7 +83,7 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
         "&eWhat:&r an empty core holds nothing until you charge it with raw electrical energy.",
         "&eHow:&r MI Assembler at 512 EU/t for 6000 ticks: about 3 million EU per core.",
         "&eTip:&r give it its own power line. A charging core will starve every other machine on the network."]),
-    Q("t7_cores", 18, 0, [item("kubejs:energy_core"), item("kubejs:antimatter_core")], "Antimatter Core", deps=["t7_core_charge", "t7_antimatter"], xp=1000, size=1.5,
+    Q("t7_cores", 18, 0, [item("kubejs:antimatter_core")], "Antimatter Core", deps=["t7_core_charge", "t7_antimatter"], xp=1000, size=1.5,
       subtitle="The heart of the Seed", desc=[
         "&6You feel it humming in your hand. You remember being this.&r",
         "&eWhat:&r a charged core, upgraded with antimatter and a quantum circuit.",
@@ -108,7 +108,6 @@ CHAPTER = Chapter("t7", "VIII. Creation", "ad_astra:tier_1_rocket",
         "&eTip:&r Venus and Mercury are hot enough to cook an ordinary space suit. Bring the netherite one."]),
     Q("t7_opt_hot_suit", 4, -4, [item(AA + "netherite_space_helmet"), item(AA + "netherite_space_suit")], "Heat-Proof Suit", deps=["t7_suit_full", "w_mars"], xp=150,
       optional=True, tokens=1, subtitle="Optional: armour for hot planets", desc=[
-        "&eWhat:&r the netherite space suit survives the heat of Venus and Mercury.",
         "&eWhat:&r the netherite space suit survives the heat of Venus and Mercury.",
         "&eHow:&r the chest piece is a netherite chestplate with ostrum plates (from Mars), gas tanks and an oxygen gear. Check JEI for the rest."]),
     Q("t7_opt_tier4", 12, -4, [item(AA + "tier_4_rocket"), dim(AA + "glacio")], "Glacio", deps=["w_venus"], xp=400,

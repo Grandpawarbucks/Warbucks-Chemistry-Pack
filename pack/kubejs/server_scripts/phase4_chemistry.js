@@ -117,13 +117,14 @@ ServerEvents.recipes(event => {
   // ==========================================================================================
   // 4. CAPSTONE: Seed of a New World (9x9, Extended Crafting Ultimate Table)
   // One intermediate from every tier: coke (T1), synthesized water and hydrogen (Alchemistry),
-  // sulfuric acid (T3), polyethylene (T4), processing units (T5), oganesson (full periodic
+  // sulfuric acid (T3), polyethylene (T4), hydrofluoric acid (fluorite + H2SO4, the uranium-
+  // enrichment acid of T5), processing units (T5), oganesson (full periodic
   // table), plutonium and polonium (nuclear), and eight Antimatter Cores (T7).
   // ==========================================================================================
   event.custom({
     type: 'extendedcrafting:shaped_table',
     pattern: [
-      'KWSPAPSWK',
+      'KWSFAFSWK',
       'WHUOEOUHW',
       'SUCPXPCUS',
       'POPNANPOP',
@@ -131,14 +132,15 @@ ServerEvents.recipes(event => {
       'POPNANPOP',
       'SUCPXPCUS',
       'WHUOEOUHW',
-      'KWSPAPSWK'
+      'KWSFAFSWK'
     ],
     key: {
       K: { item: `${MI}:coke` },
       W: { item: 'chemlib:water' },
       H: { item: 'chemlib:hydrogen' },
-      S: { item: `${MI}:sulfuric_acid_bucket` },
+      S: { tag: 'warbucks:sulfuric_acid_buckets' }, // any H2SO4 bucket (MI, Mekanism, ChemLib)
       P: { item: `${MI}:polyethylene_bucket` },
+      F: { item: 'mekanism:hydrofluoric_acid_bucket' },
       U: { item: `${MI}:processing_unit` },
       O: { item: 'chemlib:oganesson' },
       E: { item: 'mekanism:pellet_plutonium' },

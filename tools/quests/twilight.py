@@ -321,7 +321,7 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eChemistry:&r remelting scrap is how most real steel is made today: an electric arc furnace melts recycled metal back into new ingots.",
         "&eHow:&r nine armour shards make a cluster (shapeless). Smelt or blast the cluster for one ingot."]),
     Q("w_tf_metals", 13, 8, [item("twilightforest:ironwood_ingot", 4), item("twilightforest:knightmetal_ingot", 4), item("twilightforest:fiery_ingot", 2)], "Twilight Metals",
-      deps=["tf_fiery", "tf_knightmetal"], xp=250, subtitle="Ironwood, knightmetal and fiery metal", desc=[
+      deps=["tf_fiery", "tf_knightmetal"], xp=250, subtitle="Ironwood, knightmetal and fiery metal", optional=True, tokens=1, desc=[
         "&eWhat:&r the three alloys found nowhere else, for strong tools and armour.",
         "&eHow:&r ironwood from liveroot (see the forest), knightmetal from armour shards, fiery metal from iron and fiery blood or tears.",
         "&eTip:&r knightmetal armour and tools are great against the Knight Phantoms."]),

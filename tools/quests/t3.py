@@ -9,9 +9,10 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
     Q("t3_rubber", 0, -2, [item(MI + "rubber_sheet", 8)], "Rubber", deps=["t1_steel"], xp=40,
       subtitle="Insulation, so current goes where you want", desc=[
         "&6You remember lightning answering when you called it. Now you'll have to build it a road.&r",
-        "&eWhat:&r rubber sheets insulate cables and form circuit boards.",
-        "&eChemistry:&r natural rubber is polyisoprene, (C₅H₈)ₙ: long chains that don't let electrons through.",
-        "&eHow:&r check JEI (press R on Rubber Sheet) for MI's rubber recipes, from plant matter or, later, synthetic rubber."]),
+        "&eWhat:&r rubber sheets insulate cables and form circuit boards. Here rubber is &esynthetic&r, made from coal, not tree sap.",
+        "&eChemistry:&r hot carbon and water make syngas (C + H₂O → CO + H₂), and the Fischer-Tropsch process builds that into oil-like hydrocarbons: coal-to-oil, as Germany did in the 1940s. Cross-linked with sulfur (&evulcanisation&r), the long chains become a tough, flexible insulator.",
+        "&eHow:&r Mixer: coke dust + water → raw synthetic oil. Blast Furnace: raw oil → synthetic oil. Mixer: synthetic oil + paper → 2 rubber sheets, or + sulfur dust → synthetic rubber fluid (12 sheets per paper). Check JEI.",
+        "&eTip:&r the sulfur route gives six times more sheets per oil, but its mixer needs more power (check JEI for sulfur dust sources)."]),
     Q("t3_wire", 0, 0, [item(MI + "copper_wire", 8), item(MI + "tin_cable", 8)], "Wires and Cables", deps=["t1_steel"], xp=40,
       subtitle="Copper conducts; rubber makes it a cable", desc=[
         "&eWhat:&r copper wire goes into every component. Tin cable carries LV power between machines.",
@@ -45,20 +46,27 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eWhat:&r inductors resist sudden changes in current. The Polarizer also needs them.",
         "&eChemistry:&r current through a coil makes a magnetic field; changing the current fights that field.",
         "&eHow:&r copper wire wound around a steel rod."]),
-    Q("t3_battery", 2, 3, [item(MI + "redstone_battery", 2)], "Redstone Battery", deps=["t3_alloy", "t3_wire"], xp=40,
-      subtitle="The LV hull needs two", desc=[
-        "&eWhat:&r a simple rechargeable battery. Every LV hull holds two.",
-        "&eHow:&r battery alloy plate and curved plates, tin cable and redstone (see JEI).",
+    Q("t3_acid", 2, 5, [item("chemlib:sulfuric_acid", 2)], "Battery Acid", deps=["t1_combiner"], xp=50,
+      subtitle="2 H + S + 4 O → H₂SO₄, in the Combiner", desc=[
+        "&eWhat:&r the redstone battery is a real &elead-acid battery&r, and its electrolyte is sulfuric acid. The Combiner from Chapter II makes it from elements.",
+        "&eChemistry:&r H₂SO₄ is the most-produced chemical in the world. In a car battery it reacts with the lead plates (Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O) and releases electrons; charging runs the reaction backwards.",
+        "&eHow:&r pick sulfuric acid in the Combiner and supply 2 hydrogen, 1 sulfur and 4 oxygen. Dissolve gunpowder for sulfur (1 gunpowder → 8 S) and water or cellulose for hydrogen and oxygen.",
+        "&eTip:&r every LV hull needs two batteries, so keep a stack of acid ready."]),
+    Q("t3_battery", 2, 3, [item(MI + "redstone_battery", 2)], "Redstone Battery", deps=["t3_alloy", "t3_wire", "t3_acid"], xp=40,
+      subtitle="Lead, antimony and acid: the LV hull needs two", desc=[
+        "&eWhat:&r a rechargeable lead-acid battery. Every LV hull holds two.",
+        "&eChemistry:&r lead-antimony grids, sulfuric acid electrolyte: the same chemistry as the battery under a car's bonnet.",
+        "&eHow:&r battery alloy plate and curved plates, tin cable, redstone and &esulfuric acid&r from the Combiner (check JEI for the exact recipe).",
         "&eTip:&r the LV Storage Unit is built from six of these, so make spares."]),
     Q("t3_analog", 4, -1, [item(MI + "analog_circuit", 2)], "Analog Circuit", deps=["t3_board", "t3_capacitor", "t3_components", "t3_inductor"], xp=75,
       subtitle="Your first circuit", desc=[
         "&eWhat:&r the LV circuit. Mekanism's Basic Control Circuit also needs one, so MI and Mekanism advance together.",
         "&eHow:&r 2 resistors, 1 inductor, 2 capacitors, the board, and 3 copper wire (see JEI for the layout).",
         "&eTip:&r make four or five now. The hull, turbine and each machine all eat them."]),
-    Q("t3_casing", 4, 2, [item(MI + "steel_machine_casing")], "Steel Machine Casing", deps=["t1_steel"], xp=30,
+    Q("t3_casing", 4, 2, [item(MI + "steel_machine_casing")], "Steel Machine Casing", deps=["t1_steel_gear"], xp=30,
       subtitle="The frame inside every LV machine", desc=[
         "&eWhat:&r a steel frame. The LV hull is built around it.",
-        "&eHow:&r steel plates (see JEI). You've made the bronze one already; this is the steel upgrade.",
+        "&eHow:&r 8 steel plates around a steel gear, the same shape as the bronze one.",
         "&eTip:&r the LV hull uses one casing each, and every LV machine needs a hull. Make a few."]),
     Q("t3_hull", 6, 1, [item(MI + "basic_machine_hull")], "LV Machine Hull", deps=["t3_analog", "t3_battery", "t3_casing"], xp=150, size=1.5, items=[(MI + "analog_circuit", 4), (MI + "electric_macerator", 1)],
       subtitle="The heart of every LV machine", desc=[
@@ -89,17 +97,17 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eWhat:&r MI's piston component, used in the macerator, compressor and robot arm.",
         "&eHow:&r steel plates, steel rods, steel gear, tin cable and a motor.",
         "&eTip:&r the Electric Macerator and Electric Compressor each need pistons, so make four."]),
-    Q("t3_conveyor", 10, -2, [item(MI + "conveyor", 2)], "Conveyor", deps=["t3_motor", "t3_rubber"], xp=30,
+    Q("t3_conveyor", 10, -2, [item(MI + "conveyor", 2)], "Conveyor", deps=["t3_motor", "t3_rubber"], optional=True, tokens=1, xp=30,
       subtitle="A rubber belt on two motors", desc=[
         "&eWhat:&r conveyors move items inside machines. The Assembler, Packer and Cutting Machine need them.",
         "&eHow:&r rubber sheets, two motors and tin cable.",
         "&eTip:&r motors are the bottleneck here. Keep a few spare."]),
-    Q("t3_ecompressor", 10, 0, [item(MI + "electric_compressor")], "Electric Compressor", deps=["t3_turbine", "t3_piston"], xp=40,
+    Q("t3_ecompressor", 10, 0, [item(MI + "electric_compressor")], "Electric Compressor", deps=["t3_turbine", "t3_piston"], optional=True, tokens=1, xp=40,
       subtitle="Plates, faster and without steam", desc=[
         "&eWhat:&r plates, curved plates and rings for every part you'll build next.",
         "&eHow:&r LV hull, two pistons, analog circuits and tin cable.",
         "&eTip:&r it doubles as a second plate source while the steam compressor keeps running."]),
-    Q("t3_ewiremill", 10, 1, [item(MI + "electric_wiremill")], "Electric Wiremill", deps=["t3_turbine"], xp=40,
+    Q("t3_ewiremill", 10, 1, [item(MI + "electric_wiremill")], "Electric Wiremill", deps=["t3_turbine"], optional=True, tokens=1, xp=40,
       subtitle="Wire, faster", desc=[
         "&eWhat:&r copper wire and fine wire in bulk. Circuits use a lot of it.",
         "&eHow:&r LV hull, motors and analog circuits (see JEI).",
@@ -119,32 +127,32 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eWhat:&r ore to crushed dust, ingots back to dust. Still capped at 2x per ore until acids.",
         "&eHow:&r needs an &einvar rotary blade&r (invar gear + diamond dust). Invar is iron + nickel; mix the dusts.",
         "&eTip:&r the hull quest reward included one. Build a second for throughput."]),
-    Q("t3_efurnace", 14, 1, [item(MI + "electric_furnace")], "Electric Furnace", deps=["t3_cupronickel"], xp=40,
+    Q("t3_efurnace", 14, 1, [item(MI + "electric_furnace")], "Electric Furnace", deps=["t3_cupronickel"], optional=True, tokens=1, xp=40,
       subtitle="Smelting with heat from a wire coil", desc=[
         "&eWhat:&r fast, fuel-free smelting.",
         "&eChemistry:&r current through a resistive wire turns into heat (Joule heating), the same idea as a toaster.",
         "&eHow:&r LV hull wrapped in magnetic cupronickel wire, with analog circuits."]),
-    Q("t3_robotarm", 12, -3, [item(MI + "robot_arm", 2)], "Robot Arm", deps=["t3_piston"], xp=40,
+    Q("t3_robotarm", 12, -3, [item(MI + "robot_arm", 2)], "Robot Arm", deps=["t3_piston"], optional=True, tokens=1, xp=40,
       subtitle="Motors, a piston and a circuit", desc=[
         "&eWhat:&r robot arms move parts inside the Assembler and Packer.",
         "&eHow:&r two motors, a piston, steel rods, tin cable and an analog circuit.",
         "&eTip:&r the Assembler takes two and the Packer two more."]),
-    Q("t3_cutting", 12, -1, [item(MI + "electric_cutting_machine")], "Cutting Machine", deps=["t3_conveyor", "t3_turbine"], xp=40,
+    Q("t3_cutting", 12, -1, [item(MI + "electric_cutting_machine")], "Cutting Machine", deps=["t3_conveyor", "t3_turbine"], optional=True, tokens=1, xp=40,
       subtitle="Rods, bolts and planks", desc=[
         "&eWhat:&r cutting ingots into rods and bolts, and logs into more planks.",
-        "&eHow:&r it uses an invar rotary blade, motors and a conveyor. Its cuts use a little lubricant (check JEI for where to get it).",
+        "&eHow:&r it uses an invar rotary blade, motors and a conveyor. Its cuts use a little lubricant, the creosote + redstone mix from Chapter II.",
         "&eTip:&r logs give six planks here instead of four."]),
     Q("t3_cupronickel", 12, 2, [item(MI + "cupronickel_wire_magnetic", 8)], "Magnetic Cupronickel Wire", deps=["t3_polarizer", "t3_mixer"], xp=50,
       subtitle="Copper-nickel wire for heating coils", desc=[
         "&eWhat:&r the heating wire for the Electric Furnace and Electric Blast Furnace.",
         "&eChemistry:&r cupronickel (copper + nickel) resists current more than copper and survives heat. Coins and ship pipes use it too.",
         "&eHow:&r mix copper and nickel dust, smelt, draw into wire, then magnetise it in the Polarizer."]),
-    Q("t3_assembler", 14, -3, [item(MI + "assembler")], "Assembler", deps=["t3_robotarm", "t3_conveyor"], xp=60,
+    Q("t3_assembler", 14, -3, [item(MI + "assembler")], "Assembler", deps=["t3_robotarm", "t3_conveyor"], optional=True, tokens=1, xp=60,
       subtitle="Where MI automation really starts", desc=[
         "&eWhat:&r circuits and machine parts, automatically, from a stocked input.",
         "&eHow:&r LV hull, two robot arms, two conveyors and two analog circuits.",
         "&eTip:&r MI shows every assembler recipe in JEI. Feed it sheets, wire and plates and leave it running."]),
-    Q("t3_packer", 14, -1, [item(MI + "electric_packer")], "Packer", deps=["t3_robotarm", "t3_conveyor"], xp=40,
+    Q("t3_packer", 14, -1, [item(MI + "electric_packer")], "Packer", deps=["t3_robotarm", "t3_conveyor"], optional=True, tokens=1, xp=40,
       subtitle="Blocks, double ingots and more", desc=[
         "&eWhat:&r compacting ingots into blocks and double ingots, and assembling a few parts. You'll want bauxite blocks next chapter.",
         "&eHow:&r robot arms, conveyors, analog circuits and tin cable on an LV hull.",
@@ -189,11 +197,6 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eTip:&r it also turns ingots back into dust, handy for alloy recipes."]),
 
     # --- Optional side quests ---
-    Q("t3_wrench", 4, -5, [item(MI + "wrench")], "The Wrench", deps=["t3_hull"], xp=20, optional=True, tokens=1,
-      subtitle="Rotate machines, see multiblock spots", desc=[
-        "&eWhat:&r MI's wrench adjusts machines and pipes. Read its tooltip for the controls.",
-        "&eHow:&r bronze plates (see JEI).",
-        "&eTip:&r holding it near a multiblock controller highlights where the hatches can go."]),
     Q("t3_configcard", 6, -5, [item(MI + "config_card")], "Pipe Config Card", deps=["t3_hull"], xp=20, optional=True, tokens=1,
       subtitle="Copy one pipe's settings to another", desc=[
         "&eWhat:&r saves an item or fluid pipe connection's settings and pastes them onto other connections.",

@@ -22,7 +22,7 @@ CHAPTER = Chapter("projecte", "Equivalent Exchange", PE + "philosophers_stone",
         "&eHow:&r redstone dust and glowstone dust in a ring around one oganesson (this pack's recipe).",
         "&eTip:&r it isn't used up in crafting recipes, so one stone lasts forever."]),
     Q("pe_world", 2, 0, [tick()], "World Transmutation", deps=["pe_stone"], xp=50,
-      subtitle="Right-click to reshape the land", desc=[
+      subtitle="Right-click to reshape the land", optional=True, tokens=1, desc=[
         "&eWhat:&r right-click a block with the stone to turn it into a related block: stone and cobblestone, dirt, grass and sand, one wood or flower type into the next.",
         "&eHow:&r an outline shows what will change before you click; sneak-click for the reverse direction. ProjectE's keybinds change the area size and shape.",
         "&eTip:&r a whole hillside of stone into cobblestone (or back) takes seconds. Click the checkmark once you've tried it."]),
@@ -32,7 +32,7 @@ CHAPTER = Chapter("projecte", "Equivalent Exchange", PE + "philosophers_stone",
         "&eHow:&r four obsidian in the corners, four stone on the sides, the Philosopher's Stone in the centre.",
         "&eTip:&r your EMC and your learned items belong to you, not the table: every table you open shows the same list."]),
     Q("pe_learn", 6, 0, [tick()], "Burn to Learn", deps=["pe_table"], xp=50,
-      subtitle="What EMC can and can't do here", desc=[
+      subtitle="What EMC can and can't do here", optional=True, tokens=1, desc=[
         "&eWhat:&r placing an item in the table's burn slot destroys it, adds its EMC to your total and teaches you that item.",
         "&eHow:&r burn a stack of something cheap (cobblestone, logs, sand), then try to burn an iron ingot. The ingot has no EMC, so it can't be learned.",
         "&eTip:&r stone, wood, glass, terracotta, wool and other building materials all work. Click the checkmark when you understand the rule."]),
@@ -47,7 +47,7 @@ CHAPTER = Chapter("projecte", "Equivalent Exchange", PE + "philosophers_stone",
         "&eWhat:&r a large chest, and the base of the Alchemical Bag.",
         "&eHow:&r one of each covalence dust on top, stone, a diamond and stone in the middle, iron, a chest and iron on the bottom."]),
     Q("pe_bag", 12, 0, [anyof(BAGS)], "Alchemical Bag", deps=["pe_chest"], xp=100,
-      subtitle="The same inventory everywhere you go", desc=[
+      subtitle="The same inventory everywhere you go", optional=True, tokens=1, desc=[
         "&eWhat:&r an Alchemical Bag shares its inventory with every bag of the same colour you own.",
         "&eHow:&r three high covalence dust on top, wool on each side of an Alchemical Chest, and three wool below. Dye the wool for a different colour.",
         "&eTip:&r keep one colour for building blocks so your supplies follow you between builds."]),
@@ -63,7 +63,7 @@ CHAPTER = Chapter("projecte", "Equivalent Exchange", PE + "philosophers_stone",
 
     # --- Why EMC is limited (y=2) --------------------------------------------------------------
     Q("pe_why", 0, 2, [tick()], "The Law of Conservation", deps=["pe_stone"], xp=50,
-      subtitle="Why you can't conjure metal", desc=[
+      subtitle="Why you can't conjure metal", optional=True, tokens=1, desc=[
         "&eWhat:&r in this pack, EMC works on building blocks only. Metals, gems, dusts, ores and plates have no EMC.",
         "&eHow:&r read the second page, then click the checkmark.",
         "{@pagebreak}",
@@ -98,7 +98,7 @@ CHAPTER = Chapter("projecte", "Equivalent Exchange", PE + "philosophers_stone",
         "&eTip:&r four Dark Matter make a Dark Matter Block, used by the tablet and the Dark Matter Furnace."]),
     Q("pe_dm_tools", 10, 2, [anyof([PE + "dm_pick", PE + "dm_axe", PE + "dm_shovel", PE + "dm_sword", PE + "dm_hoe",
                                     PE + "dm_shears", PE + "dm_hammer"])],
-      "Dark Matter Tools", deps=["pe_dm"], xp=100, subtitle="Unbreakable tools", desc=[
+      "Dark Matter Tools", deps=["pe_dm"], xp=100, subtitle="Unbreakable tools", optional=True, tokens=1, desc=[
         "&eWhat:&r Dark Matter tools never break and dig very fast. Their charge key widens what they mine.",
         "&eHow:&r like diamond tools, but Dark Matter replaces the head and diamonds the handle (the pickaxe is 3 Dark Matter and 2 diamonds).",
         "&eTip:&r charge the Dark Matter Hammer to mine a wider area: great for clearing land."]),

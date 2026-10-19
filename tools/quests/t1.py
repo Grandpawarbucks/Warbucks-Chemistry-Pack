@@ -5,7 +5,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         ["Destructive distillation turns coal into coke, and coke turns iron into steel.",
          "At the end of this chapter, matter itself opens up to you."], MAIN, [
     # --- the coke oven --------------------------------------------------------------------
-    Q("t1_bricks", 0, 0, [item("minecraft:bricks", 32)], "A Kiln's Worth of Bricks", subtitle="The Coke Oven's shell", deps=["t0_pipes"], xp=30, desc=[
+    Q("t1_bricks", 0, 0, [item("minecraft:bricks", 32)], "A Kiln's Worth of Bricks", subtitle="The Coke Oven's shell", deps=["t0_pump"], xp=30, desc=[
         "&6You remember smoke rising from a hill of earth, and what came out of it burning hotter than anything before.&r",
         "&eWhat:&r The Coke Oven is built from ordinary brick blocks: one ring of 8 for the controller, and more for its walls.",
         "&eChemistry:&r Firing clay drives out the water bound in its minerals and fuses the grains, turning soft mud into ceramic.",
@@ -37,7 +37,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
     Q("t1_lubricant", 10, 2, [item("modern_industrialization:lubricant_bucket")], "Lubricant", subtitle="Creosote + redstone", deps=["t1_creosote"], xp=30, desc=[
         "&eWhat:&r The Steam Cutting Machine needs lubricant as cutting fluid. Now you can finally run it.",
         "&eHow:&r In the Steam Mixer, 500 mB of creosote and 1 redstone make 500 mB of lubricant.",
-        "&eTip:&r Each cut uses only 1 mB, so one bucket lasts a very long time."]),
+        "&eTip:&r Each cut uses only 1 mB, so one bucket lasts a very long time. The Cutting Machine now makes your steel rods and bolts."]),
 
     # --- steel ----------------------------------------------------------------------------
     Q("t1_coke_dust", 10, 0, [item("modern_industrialization:coke_dust", 4)], "Coke Dust", subtitle="Carbon, powdered", deps=["t1_coke"], xp=25, desc=[
@@ -68,11 +68,12 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r Iron with a small, controlled amount of carbon (about 0.2-2%) is &esteel&r: strong, tough, and the backbone of every machine to come.",
         "&eChemistry:&r Carbon atoms sit in the gaps between iron atoms and stop the layers sliding. Too much carbon and you get brittle cast iron. Chemistry is about the right ratio.",
         "&eHow:&r Put uncooked steel dust in the blast furnace's item input hatch. Each dust becomes 1 steel ingot in 30 seconds."]),
-    Q("t1_steel_paxel", 18, 3, [item("mekanismtools:steel_paxel")], "Steel Paxel", subtitle="A sturdier all-in-one tool", deps=["t1_steel"], xp=40, desc=[
-        "&eWhat:&r A sturdier paxel for the long mining trips ahead.",
+    Q("t1_steel_paxel", 18, 3, [item("mekanismtools:steel_paxel")], "Steel Paxel", subtitle="Diamond-tier mining, without diamonds", deps=["t1_steel"], xp=40, desc=[
+        "&eWhat:&r Mekanism's steel tools are &ediamond tier&r: a steel paxel mines obsidian, which the Combiner needs, and lasts far longer than iron.",
+        "&eChemistry:&r A little carbon in iron makes it much harder: carbon atoms in the gaps of the iron lattice pin it so the layers can't slip.",
         "&eHow:&r A steel pickaxe, axe and shovel with 2 sticks (check JEI).",
-        "&eTip:&r Steel tools last much longer than iron ones. Good for clearing ground for the factory ahead."]),
-    Q("t1_steel_boiler", 18, -3, [item("modern_industrialization:steel_boiler")], "Steel Boiler", subtitle="More steam per tick", deps=["t1_steel"], xp=60, desc=[
+        "&eTip:&r No diamonds needed for obsidian now. Save your diamonds for the Combiner itself."]),
+    Q("t1_steel_boiler", 18, -3, [item("modern_industrialization:steel_boiler")], "Steel Boiler", subtitle="More steam per tick", deps=["t1_steel"], optional=True, tokens=1, xp=60, desc=[
         "&eWhat:&r More steam per tick than the bronze boiler.",
         "&eHow:&r Steel plates, a steel tank, a furnace and 3 fire clay brick blocks (check JEI).",
         "&eTip:&r Steel versions of the steam machines (macerator, compressor and others) run faster too."]),
@@ -80,11 +81,11 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r The Dissolver and Combiner are framed in steel plates, and steel gears need them too.",
         "&eHow:&r The Steam Compressor presses 1 steel ingot into 1 plate.",
         "&eTip:&r You need at least 8 for the Dissolver and Combiner, plus more for gears. Keep the compressor busy."]),
-    Q("t1_steel_gear", 22, -3, [item("modern_industrialization:steel_gear", 2)], "Steel Gears", subtitle="Plates, bolts and a ring, in steel", deps=["t1_steel_plate"], xp=30, desc=[
-        "&eWhat:&r Item pipes and steel machine casings need steel gears.",
+    Q("t1_steel_gear", 22, -3, [item("modern_industrialization:steel_gear", 2)], "Steel Gears", subtitle="Plates, bolts and a ring, in steel", deps=["t1_steel_plate", "t1_lubricant"], xp=30, desc=[
+        "&eWhat:&r Steel machine casings (the core of every LV machine in Chapter IV) and item pipes need steel gears.",
         "&eHow:&r Same pattern as bronze: 4 steel plates, 4 steel bolts and 1 steel ring (check JEI).",
         "&eTip:&r Steel rods, bolts and rings come from the Forge Hammer, or from the Cutting Machine now that you have lubricant."]),
-    Q("t1_item_pipes", 24, -3, [item("modern_industrialization:item_pipe", 16)], "Item Pipes", subtitle="Automate the item flow", deps=["t1_steel_gear"], xp=40, desc=[
+    Q("t1_item_pipes", 24, -3, [item("modern_industrialization:item_pipe", 16)], "Item Pipes", subtitle="Automate the item flow", deps=["t1_steel_gear"], optional=True, tokens=1, xp=40, desc=[
         "&eWhat:&r MI item pipes move items between machines, so dust, ingots and coke flow on their own.",
         "&eHow:&r 6 bronze curved plates and 2 steel gears make 16 pipes.",
         "&eTip:&r Right-click a pipe end with an empty hand to switch it between insert and extract."]),
@@ -104,10 +105,10 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eChemistry:&r Magma blocks are rock hot enough to glow, a fitting heat source for a machine that tears compounds apart.",
         "&eHow:&r Magma blocks generate in underwater ravines and caves, or can be crafted from 4 magma cream. Pistons need iron, redstone, cobblestone and planks."]),
     Q("t1_combiner_parts", 22, 1, [item("minecraft:diamond"), item("minecraft:obsidian", 2)], "Pressure and Precision", subtitle="A diamond and obsidian for the Combiner",
-      deps=["t1_steel_plate"], xp=30, desc=[
+      deps=["t1_steel_plate", "t1_steel_paxel"], xp=30, desc=[
         "&eWhat:&r The Combiner needs a diamond, 2 obsidian and a piston, plus steel plates and a casing.",
         "&eChemistry:&r Obsidian is volcanic glass: lava that cooled too fast for crystals to form.",
-        "&eHow:&r Pour water onto a lava source to make obsidian, and mine it with a diamond pickaxe. Diamonds are most common near the bottom of the world."]),
+        "&eHow:&r Pour water onto a lava source to make obsidian. Your &esteel paxel&r is diamond tier, so it mines obsidian; no diamond pickaxe needed. Diamonds are most common near the bottom of the world."]),
     Q("t1_dissolver", 25, -1, [item("alchemistry:dissolver")], "The Dissolver", subtitle="Break anything into its elements",
       deps=["t1_dissolver_parts", "t1_power"], xp=150, size=1.75, shape="hexagon", items=[("minecraft:experience_bottle", 16)], desc=[
         "&6Your first divine gift returns.&r",
@@ -118,7 +119,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
       deps=["t1_combiner_parts", "t1_power"], xp=150, size=1.75, shape="hexagon", desc=[
         "&eWhat:&r The reverse: arrange elements and the Combiner builds them back into items and blocks.",
         "&eHow:&r Steel plates, a diamond, obsidian, a piston and a Bronze Machine Casing (check JEI). It runs on FE too.",
-        "&eTip:&r Taking the world apart and rebuilding it to your design is what this pack is about."]),
+        "&eTip:&r Its first real job comes in Chapter IV: sulfuric acid for the lead-acid redstone battery. Taking the world apart and rebuilding it is what this pack is about."]),
     Q("t1_cellulose", 27, -3, [item("chemlib:cellulose", 4)], "Wood, Undone", subtitle="Logs dissolve into cellulose", deps=["t1_dissolver"], xp=40, desc=[
         "&eWhat:&r Your first compound out of the Dissolver.",
         "&eChemistry:&r Cellulose is a chain of glucose units, (C₆H₁₀O₅)ₙ. It's the most common organic compound on Earth and gives wood its strength.",

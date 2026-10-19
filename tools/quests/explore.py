@@ -1,6 +1,8 @@
 """Quest chapter: explore (structure and biome discovery). See tools/quests/STYLE.md. Build: python3 tools/build_quests.py
 
-Moved here from worlds.py (keys unchanged): w_dungeon, w_mineshaft, w_town. New quests use the ex_ prefix.
+Moved here from worlds.py (keys unchanged): w_dungeon, w_mineshaft. New quests use the ex_ prefix.
+2026-10-18: ex_compass removed (same tasks as q_compass in qol.py, linked instead); w_town merged into ex_village;
+the optional villages are siblings of ex_village instead of a chain.
 Only structures that generate in this pack: vanilla, YUNG's Better Dungeons/Mineshafts/Strongholds, Towns and Towers.
 Biome quests avoid the biomes already used by the completionist tours (completionist.py).
 Rows: villages y=0, dungeons and ruins y=3/5/7, oceans y=9, the Nether y=12.5, biomes y=16/17.5.
@@ -15,43 +17,33 @@ RU = "regions_unexplored:"
 CHAPTER = Chapter("explore", "Exploration", "naturescompass:naturescompass",
         ["Go and see what the world has made without you."], SIDE, [
     # --- villages and outposts (y=0) -----------------------------------------------------------
-    Q("ex_compass", 0, -2, [item("naturescompass:naturescompass"), item("explorerscompass:explorerscompass")], "Two Compasses", deps=["gs_iron"], xp=50,
-      choice="pick_early", subtitle="Find any biome, find any structure", desc=[
-        "&6You remember knowing every corner of this world by heart. For now, a compass will do.&r",
-        "&eWhat:&r Nature's Compass points to any biome; Explorer's Compass points to any structure. Every quest on this page gets easier with them.",
-        "&eHow:&r each is a compass ringed with a few common blocks (check JEI). Right-click to pick a target, then follow the needle.",
-        "&eTip:&r the compasses work in other dimensions too: the Nether, the Undergarden, the Twilight Forest and even other planets."]),
     Q("ex_village", 0, 0, [structure(MC + "village_plains")], "A Plains Village", deps=["gs_iron"], xp=40,
       loot="hunt", subtitle="Neighbours, at last", desc=[
+        "&6You remember knowing every corner of this world by heart. For now, a compass will do.&r",
         "&eWhat:&r villagers trade emeralds for crops, tools and enchanted books, and their beds and fields are free for the taking (politely).",
-        "&eHow:&r plains villages generate in plains and a few grassy modded biomes. Walk into one.",
-        "&eTip:&r a cartographer villager sells maps to ocean monuments and woodland mansions."]),
-    Q("w_town", 14, 0, [tick()], "Towns and Towers", deps=["ex_tt_swamp"], xp=50,
-      optional=True, tokens=1, subtitle="Optional: visit a new village or tower", desc=[
-        "&eWhat:&r Towns and Towers adds new village styles and pillager outposts across the biomes.",
-        "&eHow:&r find a village or outpost you haven't seen before. Click the checkmark when done.",
-        "&eTip:&r villages often have a waystone."]),
-    Q("ex_tt_forest", 6, 0, [structure(TT + "village_forest")], "A Forest Village", deps=["ex_desert_village"], xp=40,
+        "&eHow:&r plains villages generate in plains and a few grassy modded biomes. Walk into one. Nature's Compass and Explorer's Compass (the &eFind Anything&r quest, linked on the left) point you to any biome or structure on this page.",
+        "&eTip:&r Towns and Towers adds a village style for most biomes (the optional villages next to this one), and villages often have a waystone. A cartographer villager sells maps to ocean monuments and woodland mansions."]),
+    Q("ex_tt_forest", 6, 0, [structure(TT + "village_forest")], "A Forest Village", deps=["ex_village"], xp=40,
       optional=True, tokens=1, loot="hunt", subtitle="Optional: timber houses under the trees", desc=[
         "&eWhat:&r Towns and Towers builds a village style for each biome. The forest village is timber and cobblestone.",
         "&eHow:&r find one in a forest biome (Explorer's Compass: Towns and Towers) and walk in.",
         "&eTip:&r each biome style has its own loot chests."]),
-    Q("ex_tt_meadow", 8, 0, [structure(TT + "village_meadow")], "A Meadow Village", deps=["ex_tt_forest"], xp=40,
+    Q("ex_tt_meadow", 8, 0, [structure(TT + "village_meadow")], "A Meadow Village", deps=["ex_village"], xp=40,
       optional=True, tokens=1, loot="hunt", subtitle="Optional: a village in the mountain meadows", desc=[
         "&eWhat:&r high meadows below the peaks get their own village style.",
         "&eHow:&r find a meadow biome on a mountainside and the village in it.",
         "&eTip:&r meadows are where bees and wildflowers are thickest."]),
-    Q("ex_tt_snowy", 10, 0, [structure(TT + "village_snowy_taiga")], "A Snowy Taiga Village", deps=["ex_tt_meadow"], xp=40,
+    Q("ex_tt_snowy", 10, 0, [structure(TT + "village_snowy_taiga")], "A Snowy Taiga Village", deps=["ex_village"], xp=40,
       optional=True, tokens=1, loot="hunt", subtitle="Optional: spruce and snow", desc=[
         "&eWhat:&r a village built for the cold, in the snowy taiga.",
         "&eHow:&r find a snowy taiga and the village in it.",
         "&eTip:&r bring leather boots for powder snow."]),
-    Q("ex_tt_swamp", 12, 0, [structure(TT + "village_swamp")], "A Swamp Village", deps=["ex_tt_snowy"], xp=40,
+    Q("ex_tt_swamp", 12, 0, [structure(TT + "village_swamp")], "A Swamp Village", deps=["ex_village"], xp=40,
       optional=True, tokens=1, loot="hunt", subtitle="Optional: houses on stilts", desc=[
         "&eWhat:&r vanilla never put villages in swamps. Towns and Towers does.",
         "&eHow:&r find a swamp and the village in it.",
         "&eTip:&r witches love swamps too; keep a milk bucket handy."]),
-    Q("ex_desert_village", 4, 0, [structure(MC + "village_desert")], "A Desert Village", deps=["ex_outpost"], xp=40,
+    Q("ex_desert_village", 4, 0, [structure(MC + "village_desert")], "A Desert Village", deps=["ex_village"], xp=40,
       optional=True, tokens=1, loot="hunt", subtitle="Optional: sandstone in the sun", desc=[
         "&eWhat:&r a sandstone village in the desert.",
         "&eChemistry:&r sandstone is sand grains (mostly quartz, SiO₂) cemented by minerals like calcite or iron oxides that precipitated from groundwater.",
@@ -253,4 +245,4 @@ CHAPTER = Chapter("explore", "Exploration", "naturescompass:naturescompass",
         "&6Blocky trees, bright grass, a sky of old. You remember the world looking exactly like this, once.&r",
         "&eWhat:&r a rare Biomes O' Plenty biome styled after Minecraft's earliest days.",
         "&eTip:&r there's a snowy version too, the wintry origin valley."]),
-], links=[("gs_iron", -2, 0), ("t2_nether", -2, 12.5)])
+], links=[("gs_iron", -2, 0), ("q_compass", -2, 2), ("t2_nether", -2, 12.5)])

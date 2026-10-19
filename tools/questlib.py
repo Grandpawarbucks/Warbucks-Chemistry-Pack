@@ -66,7 +66,7 @@ class Q:
 
     def __init__(self, key, x, y, tasks, title=None, desc=(), deps=(), xp=0, items=(),
                  subtitle=None, size=None, shape=None, tokens=None, optional=False,
-                 hidden=False, secret=False, any_dep=False, loot=None, choice=None):
+                 hidden=False, secret=False, any_dep=False, loot=None, choice=None, row=None):
         self.key, self.x, self.y, self.tasks = key, x, y, tasks
         self.optional = optional  # optional side quest: shown, but not needed to progress
         self.hidden = hidden      # hidden until its dependencies are visible
@@ -80,11 +80,15 @@ class Q:
         self.title, self.desc, self.deps, self.xp = title, list(desc), list(deps), xp
         self.items = [(check(i), n) for i, n in items]
         self.subtitle, self.size, self.shape = subtitle, size, shape
+        self.row = row  # auto layout: pin this quest (and its row) to y = 2 * row; None = automatic
 
 
 class Chapter:
-    def __init__(self, key, title, icon, subtitle, group, quests, tokens=1, links=()):
+    def __init__(self, key, title, icon, subtitle, group, quests, tokens=1, links=(), layout="auto"):
         self.tokens = tokens  # Demigod Tokens per quest in this chapter (tier-scaled reward)
         self.links = list(links)  # quest links: (quest_key_in_another_chapter, x, y)
         self.key, self.title, self.icon = key, title, check(icon)
         self.subtitle, self.group, self.quests = subtitle, group, quests
+        if layout not in ("auto", "manual"):
+            raise ValueError(f"Chapter {key}: layout must be 'auto' or 'manual', not {layout!r}")
+        self.layout = layout  # "auto" = tools/layout.py places every quest at build time; "manual" = keep the x/y written here

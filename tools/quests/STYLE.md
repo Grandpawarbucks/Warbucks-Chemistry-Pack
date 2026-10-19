@@ -24,7 +24,7 @@ Validate with `python3 tools/build_quests.py --check` (writes nothing). The real
 Split big leaps into one quest per new machine or intermediate (e.g. sulfur → SO₂ → SO₃ → H₂SO₄, each its own quest with its own machine). New quest keys use the chapter prefix (e.g. `t3_so2`). Wire `deps` so the line reads left to right. Keep existing quests as the milestones.
 
 ## Optional side quests
-Bonus content off the main line: collections, challenges, fun facts, alternative routes. Mark them `optional=True` and give `tokens=1` (or 2 for hard ones). Place them above or below the main line (different y), never in the main flow. Main-line quests never depend on optional ones.
+Bonus content off the main line: collections, challenges, fun facts, alternative routes. Mark them `optional=True` and give `tokens=1` (or 2 for hard ones). The layout places them off the main line automatically. Main-line quests never depend on optional ones.
 
 ## Story and lore
 The player is a demigod who woke without their power and regains it by mastering chemistry. Each chapter should have:
@@ -33,7 +33,37 @@ The player is a demigod who woke without their power and regains it by mastering
 Tone: wonder and quiet confidence, a little wry; never purple prose. 1–2 lines, not paragraphs. No new characters or lore beyond "the demigod remembering what they once were".
 
 ## Layout
-`x`/`y` are grid cells; keep about 2 cells between quests horizontally and 1–2 vertically. Avoid overlapping quests and lines that cross the whole chapter. Milestones may use `size=1.5`/`2.0` and `shape="hexagon"`/`"gear"`.
+**Layout is automatic. Don't spend time on `x`/`y`.** `tools/layout.py` places every quest at build time from its
+`deps` (the `x, y` you write in `Q(...)` are ignored; new quests can use `0, 0`). What it does:
+- **Columns follow dependencies:** a quest sits one column (2 cells) right of its deepest dep in the same chapter, so
+  every line points right. Deps on quests in other chapters don't count. So get `deps` right: they ARE the layout.
+- **The spine is on y = 0:** the longest chain of required quests runs along the middle. Other required chains
+  become rows above and below it (2 cells apart); optional quests sit 1.5 cells off their parent's row.
+- Crossings are reduced automatically; groups of quests with no line to the spine are packed below it.
+- **Links** (`links=[("t3_ebf", 0, 0)]`) go in a link column at x = -2 beside the rows that use them; the x/y in the
+  tuple are ignored. The chapter's entry quest automatically gets a link to its deps in other chapters.
+- The chapter banner goes above the topmost quest or link.
+- `python3 tools/build_quests.py --layout-report` prints crossings, lines through quests, edges longer than 6 cells
+  and overlaps per chapter (hand x/y vs automatic). Good chapters have few crossings and no overlaps.
+
+Shaping the result, if a chapter reads badly:
+- `Q(..., row=N)` pins a quest to y = 2N (e.g. `row=-1` puts it on the row above the spine).
+- Fewer long lines: depend on the nearest quest that really unlocks this one, not on a far-away hub.
+- A whole chapter can opt out with `Chapter(..., layout="manual")`: then its hand-written `x`/`y` (and link
+  positions) are used as they are. Use this only for special pages (a picture, a map).
+
+**Milestones have exactly two styles** (normalised at build time, so other sizes are converted):
+- **Chapter capstone:** `size=2.0, shape="gear"` (any size of 1.75 or more becomes this).
+- **Section milestone:** `size=1.5, shape="hexagon"` (sizes 1.25 to 1.5 become this).
+- Everything else is size 1 in the chapter's default shape. Milestones (size >= 1.5) pay double tokens.
+
+**Where chapters go** (`GROUPS`/`LAYOUT` in `tools/quest_data.py`; the group is set there by chapter key):
+- **Top area, no group:** welcome, market, lab_notes, completionist. These are listed above the first tab (FTB
+  Quests' ungrouped area, like ATM10's Welcome pages).
+- Then the tabs: The Demigod's Path (start, t0 to t7, seed, creation), **Basics** (the beginner "comfort" pages:
+  tools, harvest, storage, power, powah, farming, qol, building), Chemistry Lab, Industry and Automation,
+  Magic and Relics, Exploration, Resources.
+- A new chapter file must be added to `LAYOUT`, or it isn't built (`--check` warns about unlisted files).
 
 ## Pack facts to respect (gates set in KubeJS; see docs/PROGRESSION.md §6–7)
 - Tech spine = Modern Industrialization tiers: LV analog circuit, MV electronic circuit (aluminum), HV digital circuit (polyethylene), EV processing unit (PVC), IV quantum.

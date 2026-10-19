@@ -61,7 +61,7 @@ CHAPTER = Chapter("apotheosis", "Apotheosis", "apotheosis:gem_dust",
 
     # --- Affix loot and Gateways (y=1.5) -------------------------------------------------------
     Q("ap_hunt", 0, 1.5, [kill("minecraft:zombie", 50)], "Elite Hunting", deps=["gs_iron"], xp=75, loot="hunt",
-      subtitle="Kill 50 zombies and watch for affix gear", desc=[
+      subtitle="Kill 50 zombies and watch for affix gear", optional=True, tokens=1, desc=[
         "&eWhat:&r Apotheosis gives some monsters affixed gear and makes rare elites with a coloured name. Their drops can roll affixes and sockets.",
         "&eHow:&r kill 50 zombies. Pick up any named or glowing item they drop and read its tooltip.",
         "&eTip:&r elites hit hard. Gear up before poking one with a stick."]),
@@ -72,7 +72,7 @@ CHAPTER = Chapter("apotheosis", "Apotheosis", "apotheosis:gem_dust",
         "&eHow:&r three identical potions in the middle row and six blaze powder around them. Infusing it later makes it permanent (check JEI).",
         "&eTip:&r Night Vision or Haste charms are the most useful early."]),
     Q("ap_rarity", 4, 1.5, [item("apotheosis:luminous_crystal_shard", 4)], "Rarity Materials", deps=["m_salvage"], xp=60,
-      subtitle="Scrap, fabric, crystal, sand, pearl", desc=[
+      subtitle="Scrap, fabric, crystal, sand, pearl", optional=True, tokens=1, desc=[
         "&eWhat:&r each rarity salvages into its own material: common scrap metal, uncommon timeworn fabric, rare luminous crystal, epic arcane sands, mythic godforged pearls.",
         "&eHow:&r salvage rare (blue) gear in the Salvaging Table until you have 4 luminous crystal shards.",
         "&eTip:&r reforging uses the material of that rarity, so sort your loot by colour before salvaging."]),
@@ -82,7 +82,7 @@ CHAPTER = Chapter("apotheosis", "Apotheosis", "apotheosis:gem_dust",
         "&eHow:&r the Blaze gate is five blaze rods, an ender pearl and three nether bricks. Apotheosis adds tiered gates (Frontier and up); JEI shows them all.",
         "&eTip:&r a gate is a controlled mob farm: blaze rods, ender pearls and XP on demand."]),
     Q("ap_gate_close", 8, 1.5, [tick()], "Close a Gateway", deps=["ap_gate"], xp=100, loot="hunt",
-      subtitle="Survive every wave", desc=[
+      subtitle="Survive every wave", optional=True, tokens=1, desc=[
         "&eWhat:&r the gateway closes when every wave is defeated and pays out its reward.",
         "&eHow:&r throw the pearl in an open area, stay close (leaving fails the gate) and kill each wave. Click the checkmark when it closes.",
         "&eTip:&r tiered Apotheosis gates hand out affix gear and rarity materials."]),
@@ -106,7 +106,7 @@ CHAPTER = Chapter("apotheosis", "Apotheosis", "apotheosis:gem_dust",
         "&eHow:&r put a hellshelf in the enchanting table with enough shelves around it. JEI's infusion page shows the exact Eterna, Quanta and Arcana it needs.",
         "&eTip:&r the table's three stats are shown on the screen: power, randomness and how many extra enchantments you get."]),
     Q("ap_library", 4, 7, [item("apothic_enchanting:library")], "Enchantment Library", deps=["ap_infused"], xp=100,
-      subtitle="Store every enchanted book", desc=[
+      subtitle="Store every enchanted book", optional=True, tokens=1, desc=[
         "&eWhat:&r the Library absorbs enchanted books and stores their enchantments as points, then pulls out any level you've collected.",
         "&eHow:&r four ender chests, four infused shelves and an enchanting table.",
         "&eTip:&r it only gives back levels up to the highest single book you fed it, so feed it every spare book."]),

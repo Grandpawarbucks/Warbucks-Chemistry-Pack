@@ -35,14 +35,20 @@ MCW_PATHS = (variants("mcwpaths:{}_basket_weave_paving", STONES) + variants("mcw
 
 CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_hammer",
         ["A god's house should look like one."], SIDE, [
-    # --- Hand tools (y=0) ----------------------------------------------------------------------
-    Q("q_effortless", 0, 0, [item("effortlessbuilding:randomizer_tool")], "Effortless Building", deps=["gs_table"], xp=20,
-      subtitle="Mirror, array and line building", desc=[
+    Q("bd_start", -1, 1, [tick()], "Building Basics", deps=["gs_table"], xp=10, size=1.5, shape="hexagon",
+      subtitle="Tools and blocks for a base worth living in", desc=[
         "&6You remember raising cities with a gesture. For now, a few clever tools will do.&r",
+        "&eWhat:&r this page is a catalogue: building tools, gadgets, framed blocks, furniture, Macaw's blocks, Supplementaries, Create decor and a proper chemistry lab, one row each.",
+        "&eHow:&r everything here is optional and cheap; pick what you like. Click the checkmark to open the page.",
+        "&eTip:&r the lab row at the bottom opens once you have Nether quartz."]),
+
+    # --- Hand tools (y=0) ----------------------------------------------------------------------
+    Q("q_effortless", 0, 0, [item("effortlessbuilding:randomizer_tool")], "Effortless Building", deps=["bd_start"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: mirror, array and line building", desc=[
         "&eWhat:&r Effortless Building adds mirror, array and line modes for big builds.",
         "&eHow:&r open its menu (check Controls) and pick a mode. The randomizer places a random mix of the blocks you load into it.",
         "&eTip:&r the randomizer with stone, andesite and cobblestone makes natural-looking walls."]),
-    Q("bd_stick", 2, 0, [item("constructionstick:wooden_stick")], "Construction Stick", deps=["gs_table"], xp=15,
+    Q("bd_stick", 2, 0, [item("constructionstick:wooden_stick")], "Construction Stick", deps=["bd_start"], xp=15,
       optional=True, tokens=1, subtitle="Optional: extend a wall in one click", desc=[
         "&eWhat:&r a Construction Stick places a whole row or face of blocks matching the one you click, using blocks from your inventory.",
         "&eHow:&r three sticks in a column (check JEI). Right-click the face of a wall to grow it by one layer.",
@@ -52,14 +58,14 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eWhat:&r better sticks place more blocks per click and last longer: copper, iron, diamond, then netherite.",
         "&eChemistry:&r diamond is pure carbon (C) in a tight 3D lattice, which makes it the hardest natural material.",
         "&eHow:&r a diamond on two sticks (check JEI). Templates applied at a smithing table add tricks like placing in mid-air."]),
-    Q("bd_chisel", 6, 0, [tick()], "Rechiseled", deps=["gs_iron"], xp=15,
+    Q("bd_chisel", 6, 0, [tick()], "Rechiseled", deps=["bd_start", "gs_iron"], xp=15,
       optional=True, tokens=1, subtitle="Optional: hundreds of block patterns", desc=[
         "&eWhat:&r Rechiseled adds a chisel that turns stone, planks, metal blocks and more into decorative patterns: bricks, tiles, pillars, gears.",
         "&eHow:&r craft the chisel from an iron ingot on a stick, right-click to open it, put blocks in and pick a pattern. Click the checkmark when you've chiseled something.",
         "&eTip:&r many patterns connect to each other when placed side by side. Try the iron and copper block patterns for a machine room."]),
 
     # --- Building Gadgets (y=2) ----------------------------------------------------------------
-    Q("q_gadget", 0, 2, [item("buildinggadgets2:gadget_building")], "Building Gadgets", deps=["t3_hull"], xp=40,
+    Q("q_gadget", 0, 2, [item("buildinggadgets2:gadget_building")], "Building Gadgets", deps=["bd_start", "t3_hull"], xp=40,
       subtitle="Place whole surfaces with FE", desc=[
         "&eWhat:&r FE-powered gadgets that place, swap, copy and remove blocks in bulk.",
         "&eHow:&r iron, redstone, lapis and a diamond (check JEI). Charge it in an energy cube.",
@@ -81,7 +87,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eTip:&r perfect for hollowing out a hillside for a new factory floor."]),
 
     # --- FramedBlocks (y=5) --------------------------------------------------------------------
-    Q("bd_framed", 0, 5, [item("framedblocks:framed_cube", 8), item("framedblocks:framed_hammer")], "Framed Blocks", deps=["gs_table"], xp=20,
+    Q("bd_framed", 0, 5, [item("framedblocks:framed_cube", 8), item("framedblocks:framed_hammer")], "Framed Blocks", deps=["bd_start"], xp=20,
       subtitle="Any shape, any texture", desc=[
         "&eWhat:&r FramedBlocks are wooden frames that take the look of any block you right-click into them, in dozens of shapes.",
         "&eHow:&r framed cubes are planks and sticks (check JEI). Right-click a framed block with any full block to apply it as camouflage. The Framed Hammer takes it back off.",
@@ -98,7 +104,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eTip:&r hide your rarest elements in one. Nobody suspects the third stone brick from the left."]),
 
     # --- Furniture (y=7) -----------------------------------------------------------------------
-    Q("bd_chairs", 0, 7, [anyof(variants("handcrafted:{}_chair"), 2), anyof(variants("handcrafted:{}_table"), 1)], "Somewhere to Sit", deps=["gs_table"], xp=15,
+    Q("bd_chairs", 0, 7, [anyof(variants("handcrafted:{}_chair"), 2), anyof(variants("handcrafted:{}_table"), 1)], "Somewhere to Sit", deps=["bd_start"], xp=15,
       optional=True, tokens=1, subtitle="Optional: Handcrafted chairs and a table", desc=[
         "&eWhat:&r Handcrafted adds furniture you can actually sit on: chairs, couches, benches, tables, desks.",
         "&eHow:&r any wood works (check JEI). Right-click a chair to sit.",
@@ -117,7 +123,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
 
     # --- Macaw's structure (y=9) ---------------------------------------------------------------
     Q("bd_mcw_doors", 0, 9, [anyof(variants("mcwdoors:{}_barn_door") + variants("mcwdoors:{}_modern_door")
-                                   + variants("mcwdoors:{}_glass_door") + variants("mcwdoors:{}_cottage_door"), 2)], "Doors", deps=["gs_table"], xp=15,
+                                   + variants("mcwdoors:{}_glass_door") + variants("mcwdoors:{}_cottage_door"), 2)], "Doors", deps=["bd_start"], xp=15,
       optional=True, tokens=1, subtitle="Optional: Macaw's doors", desc=[
         "&eWhat:&r Macaw's Doors adds barn, cottage, glass, modern and many more doors in every wood.",
         "&eHow:&r any two barn, modern, glass or cottage doors (check JEI for recipes).",
@@ -148,7 +154,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eTip:&r hedges are made from leaves, so you can keep a garden looking natural."]),
 
     # --- Macaw's outdoors and lights (y=11) ----------------------------------------------------
-    Q("bd_mcw_paths", 0, 11, [anyof(MCW_PATHS, 16)], "Paths", deps=["gs_stone"], xp=15,
+    Q("bd_mcw_paths", 0, 11, [anyof(MCW_PATHS, 16)], "Paths", deps=["bd_start", "gs_stone"], xp=15,
       optional=True, tokens=1, subtitle="Optional: paving between your buildings", desc=[
         "&eWhat:&r Macaw's Paths adds paving patterns (basket weave, honeycomb, flagstone) in stone, brick and sandstone.",
         "&eHow:&r any sixteen paving blocks (check JEI).",
@@ -158,7 +164,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eWhat:&r Macaw's Bridges adds bridge pieces that connect into rope, stone, brick and iron bridges, with piers and stairs.",
         "&eHow:&r any eight bridge pieces (check JEI).",
         "&eTip:&r an iron bridge over a lava lake makes the Nether commute much safer."]),
-    Q("bd_mcw_lights", 4, 11, [anyof(MCW_LIGHTS, 4)], "Lamps and Lanterns", deps=["gs_torch"], xp=15,
+    Q("bd_mcw_lights", 4, 11, [anyof(MCW_LIGHTS, 4)], "Lamps and Lanterns", deps=["bd_start", "gs_torch"], xp=15,
       optional=True, tokens=1, subtitle="Optional: street lamps and chandeliers", desc=[
         "&eWhat:&r Macaw's Lights adds street lamps, lanterns, garden lights and chandeliers.",
         "&eHow:&r any four of them (check JEI).",
@@ -170,7 +176,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eHow:&r iron nuggets, a lava bucket and an iron ingot (check JEI)."]),
 
     # --- Supplementaries (y=13) ----------------------------------------------------------------
-    Q("bd_jar", 0, 13, [item("supplementaries:jar", 2)], "Jars", deps=["gs_table"], xp=15,
+    Q("bd_jar", 0, 13, [item("supplementaries:jar", 2)], "Jars", deps=["bd_start"], xp=15,
       optional=True, tokens=1, subtitle="Optional: display jars for anything", desc=[
         "&eWhat:&r Supplementaries jars hold items, liquids or even small mobs, and show what's inside.",
         "&eHow:&r glass and a wooden slab (check JEI). Right-click with an item or a bucket to fill.",
@@ -196,7 +202,7 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
                                                                       "yellow_brass", "red_brass", "green_brass", "blue_brass",
                                                                       "yellow_copper", "red_copper", "green_copper", "blue_copper",
                                                                       "yellow_iron", "red_iron", "green_iron", "blue_iron",
-                                                                      "yellow_zinc", "red_zinc", "green_zinc", "blue_zinc"]), 4)], "Create Deco Lamps", deps=["cr_deco"], xp=20,
+                                                                      "yellow_zinc", "red_zinc", "green_zinc", "blue_zinc"]), 4)], "Create Deco Lamps", deps=["bd_start", "cr_deco"], xp=20,
       optional=True, tokens=1, subtitle="Optional: industrial lights", desc=[
         "&eWhat:&r Create Deco lamps in four colours and five metals light up a factory floor properly.",
         "&eHow:&r a nugget, a torch and a plate of the metal (check JEI). Any four lamps.",
@@ -209,14 +215,14 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eTip:&r copper hulls weather like copper blocks do. Wax them with honeycomb to keep the shine."]),
     Q("bd_copycat", 4, 15, [item("copycats:copycat_block", 2), anyof(["copycats:copycat_slope", "copycats:copycat_stairs", "copycats:copycat_board",
                                                                      "copycats:copycat_beam", "copycats:copycat_slice", "copycats:copycat_vertical_slope"], 4)],
-      "Copycats", deps=["cr_casing"], xp=25,
+      "Copycats", deps=["bd_start", "cr_casing"], xp=25,
       optional=True, tokens=1, subtitle="Optional: Create-style shape-shifting blocks", desc=[
         "&eWhat:&r Copycats+ adds many more Create copycat shapes: slopes, boards, beams, slices. Each takes the look of the block you apply to it.",
         "&eHow:&r cut zinc ingots in a stonecutter (zinc ore is found underground; check JEI), then right-click a placed copycat with a block.",
         "&eTip:&r copycat boards cover pipes and shafts while leaving them working."]),
 
     # --- The chemistry lab (y=17) --------------------------------------------------------------
-    Q("bd_lab", 0, 17, [item("laboratoryblocks:laboratory_block", 16)], "Laboratory Blocks", deps=["t2_quartz"], xp=25,
+    Q("bd_lab", 0, 17, [item("laboratoryblocks:laboratory_block", 16)], "Laboratory Blocks", deps=["bd_start", "t2_quartz"], xp=25,
       subtitle="Clean white walls for a chemist", desc=[
         "&6You remember a laboratory of white stone and light. You can build it again.&r",
         "&eWhat:&r Artemis' Laboratory Blocks adds clean lab walls, tiles, glass, screens, vents and fans.",

@@ -71,7 +71,7 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
       subtitle="The acid that eats glass", desc=[
         "&eChemistry:&r CaF₂ + H₂SO₄ → CaSO₄ + 2HF. Hydrogen fluoride dissolves glass and is one of the most dangerous acids there is.",
         "&eHow:&r Chemical Dissolution Chamber: fluorite + sulfuric acid → hydrofluoric acid gas.",
-        "&eTip:&r fluorite ore sits deep. Mystical Agriculture and Occultism can't make it in this pack."]),
+        "&eTip:&r fluorite ore sits deep. Mystical Agriculture and Occultism can't make it in this pack. Keep extra HF: the Seed of a New World needs 4 buckets (a Rotary Condensentrator in liquid mode turns the gas into fluid)."]),
     Q("t6_uf6", 14, -6, [item(MEK + "chemical_infuser"), item(MEK + "chemical_oxidizer")], "Uranium Hexafluoride", deps=["t6_yellowcake", "t6_hf"], xp=200,
       subtitle="Turn uranium into a gas", desc=[
         "&eWhat:&r UF₆ is the only uranium compound that becomes a gas at low temperature (it sublimes at 56 °C), so it can be spun.",
@@ -129,7 +129,7 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eHow:&r fuse your way up in the Fusion Chamber (check JEI for which pairs reach 118).",
         "&6Every block in this world can now be built from chemicals. You're close to what you once were.&r"]),
     Q("t6_flux", 12, 2, [item("fluxnetworks:flux_core")], "Wireless Power", deps=["t6_pu"], xp=200,
-      subtitle="Energy without cables", desc=[
+      optional=True, tokens=1, subtitle="Optional: energy without cables", desc=[
         "&eWhat:&r Flux Networks moves energy anywhere in a dimension, or across them.",
         "&eHow:&r the Flux Core needs a processing unit in this pack. Add plugs at sources and points at machines.",
         "&eTip:&r set a password on your network if you share a server."]),
@@ -166,14 +166,14 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eChemistry:&r ammonium chloride makes the platinum fall out as yellow ammonium hexachloroplatinate, (NH₄)₂PtCl₆.",
         "&eHow:&r Chemical Reactor: 1 chloroplatinic acid + 2 ammonium chloride → 1 ammonium hexachloroplatinate.",
         "&eTip:&r this step is why real platinum refining needs both the Haber-Bosch and Ostwald plants."]),
-    Q("t6_pgm", 10, 5, [item("kubejs:pgm_sludge", 4), item("kubejs:chloroplatinic_acid", 2), item(MI + "platinum_dust", 4)], "The Platinum Line", deps=["t6_precip"], xp=500, size=1.5,
+    Q("t6_pgm", 10, 5, [item(MI + "platinum_dust", 4)], "The Platinum Line", deps=["t6_precip"], xp=500, size=1.5,
       subtitle="Calcine the salt, keep the metal", desc=[
         "&6You remember metals that never tarnish. Now you know why: they refuse to react.&r",
         "&eChemistry:&r heating (calcining) drives off ammonia and HCl and leaves pure platinum metal.",
         "&eHow:&r Electric Blast Furnace: 2 ammonium hexachloroplatinate → 1 platinum dust.",
         "&eTip:&r processing unit boards need 4 platinum plates each. Automate this line."]),
     Q("t6_rare_pgm", 12, 5, [item(MI + "iridium_dust"), item("mekanism:dust_osmium"), item("chemlib:rhodium_dust"), item("chemlib:ruthenium_dust")], "The Rare Four", deps=["t6_pgm"], xp=250,
-      subtitle="Iridium, osmium, rhodium, ruthenium", desc=[
+      optional=True, tokens=1, subtitle="Optional: iridium, osmium, rhodium, ruthenium", desc=[
         "&eWhat:&r the insoluble residue holds the rarest metals on Earth.",
         "&eChemistry:&r osmium is the densest element known, and iridium the most corrosion-resistant metal.",
         "&eHow:&r Centrifuge the PGM residue. Each output is a chance, so run plenty.",

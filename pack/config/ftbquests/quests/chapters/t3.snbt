@@ -1,7 +1,7 @@
 {
 	id: "00581FF47AFBFC11"
 	group: "2DCF10F76EBF2A74"
-	order_index: 5
+	order_index: 4
 	filename: "t3"
 	icon: {
 		id: "modern_industrialization:basic_machine_hull"
@@ -13,7 +13,7 @@
 		{
 			id: "06244939DFC248C8"
 			x: 0.0d
-			y: -2.0d
+			y: 0.0d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -47,7 +47,7 @@
 		{
 			id: "57D063A8E142DE9D"
 			x: 0.0d
-			y: 0.0d
+			y: 5.0d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -90,7 +90,7 @@
 		{
 			id: "03F683AA3BD598A6"
 			x: 0.0d
-			y: 3.0d
+			y: 7.0d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -124,7 +124,7 @@
 		{
 			id: "66D90743DD8F6EC0"
 			x: 2.0d
-			y: -3.0d
+			y: 0.0d
 			dependencies: [
 				"06244939DFC248C8"
 			]
@@ -158,7 +158,7 @@
 		{
 			id: "28A08814D26B46D9"
 			x: 2.0d
-			y: -1.0d
+			y: 2.0d
 			dependencies: [
 				"06244939DFC248C8"
 				"57D063A8E142DE9D"
@@ -193,7 +193,7 @@
 		{
 			id: "4D4359831AE16AE9"
 			x: 2.0d
-			y: 0.0d
+			y: 4.0d
 			dependencies: [
 				"57D063A8E142DE9D"
 			]
@@ -227,7 +227,7 @@
 		{
 			id: "3562EE0D06376879"
 			x: 2.0d
-			y: 1.0d
+			y: 6.0d
 			dependencies: [
 				"57D063A8E142DE9D"
 			]
@@ -259,12 +259,47 @@
 			]
 		}
 		{
+			id: "504400DAF1F3A606"
+			x: 0.0d
+			y: 9.0d
+			dependencies: [
+				"29BEA270C571B58C"
+			]
+			tasks: [
+				{
+					id: "2576BFC4CC6777F7"
+					type: "item"
+					item: {
+						id: "chemlib:sulfuric_acid"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "68FC2FD0468921C8"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "1E722C24BE3643B7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
 			id: "2BF86ECE9691E81C"
 			x: 2.0d
-			y: 3.0d
+			y: 8.0d
 			dependencies: [
 				"03F683AA3BD598A6"
 				"57D063A8E142DE9D"
+				"504400DAF1F3A606"
 			]
 			tasks: [
 				{
@@ -296,7 +331,7 @@
 		{
 			id: "55AF98DD41956199"
 			x: 4.0d
-			y: -1.0d
+			y: 0.0d
 			dependencies: [
 				"66D90743DD8F6EC0"
 				"28A08814D26B46D9"
@@ -335,7 +370,7 @@
 			x: 4.0d
 			y: 2.0d
 			dependencies: [
-				"506EB945C083CC2E"
+				"7C26AEBE7939F360"
 			]
 			tasks: [
 				{
@@ -367,7 +402,8 @@
 		{
 			id: "392A7909301184E2"
 			x: 6.0d
-			y: 1.0d
+			y: 0.0d
+			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"55AF98DD41956199"
@@ -424,8 +460,8 @@
 		}
 		{
 			id: "1295A863E0D4A446"
-			x: 6.0d
-			y: -3.0d
+			x: 0.0d
+			y: 11.0d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -458,8 +494,8 @@
 		}
 		{
 			id: "2082C655C0D3F03A"
-			x: 8.0d
-			y: -3.0d
+			x: 2.0d
+			y: 10.0d
 			dependencies: [
 				"1295A863E0D4A446"
 				"57D063A8E142DE9D"
@@ -494,7 +530,7 @@
 		{
 			id: "2535BA17FB64FACE"
 			x: 8.0d
-			y: -1.0d
+			y: 0.0d
 			dependencies: [
 				"392A7909301184E2"
 				"2082C655C0D3F03A"
@@ -528,8 +564,8 @@
 		}
 		{
 			id: "18D25C63CA285B54"
-			x: 10.0d
-			y: -4.0d
+			x: 4.0d
+			y: 12.5d
 			dependencies: [
 				"2082C655C0D3F03A"
 			]
@@ -562,8 +598,9 @@
 		}
 		{
 			id: "5E348DAE3EAE594E"
-			x: 10.0d
-			y: -2.0d
+			x: 6.0d
+			y: 8.0d
+			optional: true
 			dependencies: [
 				"2082C655C0D3F03A"
 				"06244939DFC248C8"
@@ -590,7 +627,7 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
@@ -598,7 +635,8 @@
 		{
 			id: "2F67A54D1D634F0A"
 			x: 10.0d
-			y: 0.0d
+			y: 14.5d
+			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
 				"18D25C63CA285B54"
@@ -625,7 +663,7 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
@@ -633,7 +671,8 @@
 		{
 			id: "0E77517E4651B27A"
 			x: 10.0d
-			y: 1.0d
+			y: 2.0d
+			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
 			]
@@ -659,7 +698,7 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
@@ -667,7 +706,7 @@
 		{
 			id: "2EF4BB510E2F28AC"
 			x: 10.0d
-			y: 2.0d
+			y: 0.0d
 			dependencies: [
 				"2535BA17FB64FACE"
 				"3562EE0D06376879"
@@ -702,7 +741,7 @@
 		{
 			id: "48A4FFD83AE8AD44"
 			x: 10.0d
-			y: 3.0d
+			y: -2.0d
 			dependencies: [
 				"2535BA17FB64FACE"
 			]
@@ -735,8 +774,8 @@
 		}
 		{
 			id: "541A010A43E31E95"
-			x: 12.0d
-			y: -5.0d
+			x: 10.0d
+			y: 11.0d
 			dependencies: [
 				"18D25C63CA285B54"
 				"2535BA17FB64FACE"
@@ -771,7 +810,8 @@
 		{
 			id: "435D6984CDDF47E1"
 			x: 14.0d
-			y: 1.0d
+			y: -2.0d
+			optional: true
 			dependencies: [
 				"0DFEE581F10201B2"
 			]
@@ -797,15 +837,16 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
 		}
 		{
 			id: "23F83FE4BAEF4BD9"
-			x: 12.0d
-			y: -3.0d
+			x: 6.0d
+			y: 10.0d
+			optional: true
 			dependencies: [
 				"18D25C63CA285B54"
 			]
@@ -831,15 +872,16 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
 		}
 		{
 			id: "7364759091BAA54E"
-			x: 12.0d
-			y: -1.0d
+			x: 10.0d
+			y: 3.5d
+			optional: true
 			dependencies: [
 				"5E348DAE3EAE594E"
 				"2535BA17FB64FACE"
@@ -866,7 +908,7 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
@@ -874,7 +916,7 @@
 		{
 			id: "0DFEE581F10201B2"
 			x: 12.0d
-			y: 2.0d
+			y: 0.0d
 			dependencies: [
 				"2EF4BB510E2F28AC"
 				"48A4FFD83AE8AD44"
@@ -908,8 +950,9 @@
 		}
 		{
 			id: "290BB135DCEA6DC7"
-			x: 14.0d
-			y: -3.0d
+			x: 8.0d
+			y: 8.5d
+			optional: true
 			dependencies: [
 				"23F83FE4BAEF4BD9"
 				"5E348DAE3EAE594E"
@@ -936,15 +979,16 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
 		}
 		{
 			id: "6D28244E306FB852"
-			x: 14.0d
-			y: -1.0d
+			x: 8.0d
+			y: 10.5d
+			optional: true
 			dependencies: [
 				"23F83FE4BAEF4BD9"
 				"5E348DAE3EAE594E"
@@ -971,7 +1015,7 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 3
+						count: 1
 					}
 				}
 			]
@@ -979,8 +1023,8 @@
 		{
 			id: "0213687BA73A9908"
 			x: 14.0d
-			y: 3.0d
-			shape: "gear"
+			y: 0.0d
+			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"0DFEE581F10201B2"
@@ -1028,8 +1072,8 @@
 		}
 		{
 			id: "474137432EABE206"
-			x: 6.0d
-			y: 6.0d
+			x: 8.0d
+			y: -4.0d
 			dependencies: [
 				"392A7909301184E2"
 			]
@@ -1062,8 +1106,8 @@
 		}
 		{
 			id: "42B76D3BDE21F0DC"
-			x: 8.0d
-			y: 6.0d
+			x: 10.0d
+			y: -5.5d
 			dependencies: [
 				"474137432EABE206"
 			]
@@ -1096,8 +1140,8 @@
 		}
 		{
 			id: "354E125FC5D3BB01"
-			x: 8.0d
-			y: 8.0d
+			x: 12.0d
+			y: -4.5d
 			dependencies: [
 				"42B76D3BDE21F0DC"
 			]
@@ -1130,8 +1174,8 @@
 		}
 		{
 			id: "480FB3C55927F1A1"
-			x: 10.0d
-			y: 6.0d
+			x: 12.0d
+			y: -9.5d
 			dependencies: [
 				"42B76D3BDE21F0DC"
 				"55AF98DD41956199"
@@ -1174,8 +1218,8 @@
 		}
 		{
 			id: "3A2454B103645938"
-			x: 12.0d
-			y: 6.0d
+			x: 14.0d
+			y: -5.0d
 			dependencies: [
 				"480FB3C55927F1A1"
 				"354E125FC5D3BB01"
@@ -1209,8 +1253,8 @@
 		}
 		{
 			id: "6BB487593411143E"
-			x: 12.0d
-			y: 8.0d
+			x: 14.0d
+			y: -7.0d
 			dependencies: [
 				"480FB3C55927F1A1"
 			]
@@ -1242,44 +1286,9 @@
 			]
 		}
 		{
-			id: "0FC4E1E093B6BE04"
-			x: 4.0d
-			y: -5.0d
-			optional: true
-			dependencies: [
-				"392A7909301184E2"
-			]
-			tasks: [
-				{
-					id: "20564663D252CE28"
-					type: "item"
-					item: {
-						id: "modern_industrialization:wrench"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "553072E70BE0314D"
-					type: "xp"
-					xp: 20
-				}
-				{
-					id: "371D90AB3C44CCCF"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "715BC066754DE9B0"
-			x: 6.0d
-			y: -5.0d
+			x: 8.0d
+			y: -2.5d
 			optional: true
 			dependencies: [
 				"392A7909301184E2"
@@ -1313,8 +1322,8 @@
 		}
 		{
 			id: "58932C2263D38534"
-			x: 14.0d
-			y: -5.0d
+			x: 10.0d
+			y: 8.0d
 			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -1349,8 +1358,8 @@
 		}
 		{
 			id: "7DE855B5084E6181"
-			x: 16.0d
-			y: -5.0d
+			x: 10.0d
+			y: 6.0d
 			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -1384,8 +1393,8 @@
 		}
 		{
 			id: "4C7AA8620B6D2885"
-			x: 2.0d
-			y: 5.0d
+			x: 6.0d
+			y: -3.5d
 			optional: true
 			dependencies: [
 				"55AF98DD41956199"
@@ -1420,7 +1429,7 @@
 		{
 			id: "70A17E4532B8DA8B"
 			x: 0.0d
-			y: 5.0d
+			y: 13.5d
 			optional: true
 			dependencies: [
 				"506EB945C083CC2E"
@@ -1454,8 +1463,8 @@
 		}
 		{
 			id: "6A50FF652B6B5624"
-			x: 6.0d
-			y: 8.0d
+			x: 10.0d
+			y: -3.5d
 			optional: true
 			dependencies: [
 				"474137432EABE206"
@@ -1491,13 +1500,20 @@
 	images: [
 		{
 			id: "769185F6D6A47807"
-			x: 2.5d
-			y: -7.0d
+			x: 0.5d
+			y: -11.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/t3.png"
 		}
 	]
-	quest_links: [ ]
+	quest_links: [
+		{
+			id: "58D132E1644EAD7F"
+			linked_quest: "506EB945C083CC2E"
+			x: -2.0d
+			y: 7.5d
+		}
+	]
 }

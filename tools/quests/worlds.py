@@ -2,7 +2,7 @@
 Build: python3 tools/build_quests.py
 
 The Twilight Forest moved to twilight.py and Ad Astra to space.py; the YUNG's / Towns and Towers structure quests
-(w_dungeon, w_mineshaft, w_town) moved to explore.py. Keys are unchanged. New quests use the wd_ prefix.
+(w_dungeon, w_mineshaft) moved to explore.py (w_town was later merged into ex_village). Keys are unchanged. New quests use the wd_ prefix.
 """
 from questlib import Q, Chapter, item, dim, tick, kill, structure, biome, MAIN, SIDE  # noqa: F401
 

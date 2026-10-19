@@ -6,18 +6,31 @@ chapters/<name>.snbt, and all text in lang/en_us.snbt under keys "<type>.<HEXID>
 Every item and dimension id is checked against test/ids.tsv (run test/build_id_index.py);
 the build fails on any unknown id, so the book can't reference things that don't exist.
 
-Usage: python3 tools/build_quests.py
+Quest positions are computed by tools/layout.py (automatic layout) just before writing, except in chapters
+declared with Chapter(..., layout="manual").
+
+Usage: python3 tools/build_quests.py               build into pack/config/ftbquests/quests (+ docs/QUESTS.md)
+       python3 tools/build_quests.py --check       validate only, write nothing
+       python3 tools/build_quests.py --layout-report   per-chapter layout metrics, hand x/y vs automatic layout
+       QUEST_OUT=<folder> python3 tools/build_quests.py   build somewhere else (QUESTS.md goes into that folder too)
 """
 import hashlib
+import os
 import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from questlib import ROOT, ERRORS as errors, check  # noqa: E402
-from quest_data import CHAPTERS, GROUPS, BOOK_TITLE, REWARD_TABLES, ONLY  # noqa: E402
+from quest_data import CHAPTERS, GROUPS, BOOK_TITLE, REWARD_TABLES, ONLY, UNLISTED  # noqa: E402
+import layout  # noqa: E402
 
-OUT = ROOT / "pack/config/ftbquests/quests"
-DOC = ROOT / "docs/QUESTS.md"
+if os.environ.get("QUEST_OUT"):
+    OUT = pathlib.Path(os.environ["QUEST_OUT"]).resolve()
+    DOC = OUT / "QUESTS.md"
+else:
+    OUT = ROOT / "pack/config/ftbquests/quests"
+    DOC = ROOT / "docs/QUESTS.md"
+TOP = "top"  # ungrouped chapters: written with group "" so FTB Quests lists them above the first group tab
 
 
 def hexid(key):
@@ -81,14 +94,23 @@ def build():
         errors[:] = [e for e in errors if not (e.startswith(("dependency ", "quest link ")) and e.split()[-3 if e.startswith("dependency") else 2] in known)]
         if "--check" not in sys.argv:
             sys.exit("QUEST_ONLY is for --check only")
+    if UNLISTED and not ONLY:
+        print("WARNING: chapter files not in LAYOUT (tools/quest_data.py), so not built: " + ", ".join(UNLISTED))
     if errors:
         sys.exit("Unknown ids/dependencies:\n  " + "\n  ".join(sorted(set(errors))))
     dup = [k for k in keys if sum(1 for c in CHAPTERS for q in c.quests if q.key == k) > 1]
     if dup:
         sys.exit("Duplicate quest keys: " + ", ".join(sorted(set(dup))))
+    if "--layout-report" in sys.argv:
+        print(layout.report(CHAPTERS, lambda c: layout.apply(c, set(keys))))
+        return
     if "--check" in sys.argv:
+        for c in CHAPTERS:  # the layout must run cleanly on every chapter too
+            layout.apply(c, set(keys))
         print(f"OK: {len(CHAPTERS)} chapters, {len(keys)} quests, all ids and dependencies valid (nothing written)")
         return
+    for c in CHAPTERS:
+        layout.apply(c, set(keys))
 
     # Delete the old files but keep the folders: on Windows, OneDrive or Explorer can hold a folder
     # open, and removing it then fails halfway through.
@@ -99,11 +121,13 @@ def build():
     (OUT / "chapters").mkdir(parents=True, exist_ok=True)
     (OUT / "lang").mkdir(exist_ok=True)
 
-    group_ids = {g: hexid("group:" + g) for g in GROUPS}
+    used = [g for g in GROUPS if g != TOP and any(c.group == g for c in CHAPTERS)]
+    group_ids = {g: hexid("group:" + g) for g in used}
+    group_ids[TOP] = ""  # FTB Quests' default (ungrouped) group: the "group" field is empty
     (OUT / "data.snbt").write_text(snbt({"version": 13}) + "\n", encoding="utf-8", newline="\n")
-    (OUT / "chapter_groups.snbt").write_text(snbt({"chapter_groups": [{"id": group_ids[g]} for g in GROUPS]}) + "\n", encoding="utf-8", newline="\n")
-    for g, title in GROUPS.items():
-        lang[f"chapter_group.{group_ids[g]}.title"] = title
+    (OUT / "chapter_groups.snbt").write_text(snbt({"chapter_groups": [{"id": group_ids[g]} for g in used]}) + "\n", encoding="utf-8", newline="\n")
+    for g in used:
+        lang[f"chapter_group.{group_ids[g]}.title"] = GROUPS[g]
 
     order = {g: 0 for g in GROUPS}
     total = 0
@@ -170,17 +194,16 @@ def build():
             if q.desc:
                 lang[f"quest.{qid}.quest_desc"] = q.desc
             total += 1
-        # Banner (tools/build_art.py) above the chapter's top-left quest; 960x160 art = 6 x 1 grid cells.
-        minx = min(q.x for q in c.quests)
-        miny = min(q.y for q in c.quests)
-        images = [{"id": hexid(f"image:{c.key}:banner"), "x": float(minx + 2.5), "y": float(miny - 2.0),
+        # Banner (tools/build_art.py) above the topmost quest or link (layout.banner); 960x160 art = 6 x 1 grid cells.
+        bx, by = layout.banner(c)
+        images = [{"id": hexid(f"image:{c.key}:banner"), "x": float(bx), "y": float(by),
                    "width": 6.0, "height": 1.0, "rotation": 0.0, "image": f"warbucks:textures/quests/{c.key}.png"}]
-        if c.key == "welcome":  # the pack logo (1220x360) under the banner area
-            images.append({"id": hexid("image:welcome:logo"), "x": float(minx + 3.0), "y": float(miny - 4.25),
+        if c.key == "welcome":  # the pack logo (1220x360) above the banner
+            images.append({"id": hexid("image:welcome:logo"), "x": float(bx + 0.5), "y": float(by - 2.25),
                            "width": 7.0, "height": 2.07, "rotation": 0.0, "image": "warbucks:textures/quests/logo.png"})
         chapter = {"id": cid, "group": group_ids[c.group], "order_index": order[c.group], "filename": c.key,
                    "icon": {"id": c.icon, "count": 1},
-                   "default_quest_shape": "rsquare" if c.group == "main" else "circle",
+                   "default_quest_shape": "rsquare" if c.group == "main" or c.key == "welcome" else "circle",
                    "default_hide_dependency_lines": False,
                    "quests": quests, "images": images,
                    "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly)}
@@ -200,7 +223,8 @@ def build():
     (OUT / "lang" / "en_us.snbt").write_text(snbt(lang) + "\n", encoding="utf-8", newline="\n")
     write_doc(total)
     print(f"Reward tables: {len(REWARD_TABLES)}")
-    print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {OUT.relative_to(ROOT)} (+ {DOC.relative_to(ROOT)})")
+    rel = lambda f: f.relative_to(ROOT) if f.is_relative_to(ROOT) else f
+    print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {rel(OUT)} (+ {rel(DOC)})")
 
 
 def write_doc(total):
@@ -211,7 +235,7 @@ def write_doc(total):
     out = [f"# {BOOK_TITLE}", "",
            f"{len(CHAPTERS)} chapters, {total} quests. Generated by `tools/build_quests.py` from `tools/quest_data.py`; don't edit by hand.", ""]
     for g, gname in GROUPS.items():
-        out += [f"## {gname}", ""]
+        out += [f"## {gname or 'Start here (no group, above the tabs)'}", ""]
         for c in [c for c in CHAPTERS if c.group == g]:
             out += [f"### {c.title}", "", "*" + " ".join(c.subtitle) + "*", ""]
             for n, q in enumerate(c.quests, 1):

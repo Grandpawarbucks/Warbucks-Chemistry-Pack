@@ -94,13 +94,27 @@ CHAPTER = Chapter("logic", "Automation and Logic", "computercraft:computer_advan
         "&eHow:&r set a label in the gun, then right-click each machine. The Network Tool shows what's connected.",
         "&eTip:&r label by job ('sulfur_in', 'acid_out'), not by machine type."]),
     Q("lg_logistics", 6, 4, [item("logisticsnetworks:logistics_node", 2)], "Logistics Network", subtitle="Nodes that route by rules", deps=["lg_sfm_label"], xp=75, desc=[
-        "&eWhat:&r Logistics Network nodes move items between inventories according to rules you set.",
-        "&eHow:&r place nodes on the machines and set each node's direction and rules in its GUI (check JEI and the tooltips).",
-        "&eTip:&r nodes are compact: good for tight spaces where cables won't fit."]),
+        "&eWhat:&r Logistics Network nodes sit on machines and chests and move items, fluids and energy between every node in the same named network, with no cables.",
+        "&eHow:&r obsidian, a redstone block, hoppers, an eye of ender and a redstone torch for a node (check JEI). Open a node to create or join a network, then set what it imports and exports.",
+        "&eTip:&r the Wrench has a copy-paste mode: set up one node, then paste its settings onto the rest."]),
     Q("lg_logistics_filter", 8, 5, [item("logisticsnetworks:tag_filter"), item("logisticsnetworks:amount_filter")], "Logistics Filters", subtitle="Move only what you mean to", deps=["lg_logistics"], xp=75, optional=True, tokens=1, desc=[
         "&eWhat:&r filters narrow what a node moves: by tag, by amount and more.",
         "&eHow:&r put a filter in a node's slot and set it up in its GUI (check JEI for all the filter types).",
         "&eTip:&r a tag filter for 'c:dusts' sends every dust to one chest."]),
+    # Moved from storage.py (keys unchanged) when its Logistics Networks row was removed (2026-10-18).
+    Q("sto_ln_upgrade", 8, 3, [item("logisticsnetworks:iron_upgrade"), item("logisticsnetworks:gold_upgrade")], "Node Upgrades", subtitle="Bigger batches, shorter delays", deps=["lg_logistics"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r upgrades raise how much a node moves per batch and how often. Iron, gold, diamond and netherite tiers each do more.",
+        "&eHow:&r the tier's metal, hoppers, chests and smooth stone (check JEI). Put them in the node's upgrade slots.",
+        "&eTip:&r the upgrade's tooltip lists its exact items, fluid and energy per batch."]),
+    Q("sto_ln_chem", 10, 3, [item("logisticsnetworks:mekanism_chemical_upgrade")], "Moving Chemicals", subtitle="Nodes that carry Mekanism gases", deps=["sto_ln_upgrade", "t3_infuser"], xp=75, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Mekanism Chemical Upgrade lets nodes move Mekanism chemicals: H₂, O₂, Cl₂, SO₂ and the rest.",
+        "&eChemistry:&r the contact process needs SO₂ and O₂ in the same place: 2SO₂ + O₂ → 2SO₃. Nodes can bring both to one Chemical Infuser.",
+        "&eHow:&r basic chemical tanks, infused alloy, chests and an Iron Upgrade (check JEI).",
+        "&eTip:&r one network for gases and another for items keeps the settings easy to read."]),
+    Q("sto_ln_computer", 10, 5, [item("logisticsnetworks:computer")], "Network Manager", subtitle="Optional: see every node and its flow", deps=["lg_logistics"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Computer opens a Network Manager that lists your networks, their nodes and how much each channel moves.",
+        "&eHow:&r iron, glass and a comparator (check JEI).",
+        "&eTip:&r when a line stops, look here first: a channel with no flow shows where the jam is."]),
 
     # --- LaserIO (y = 6) ---------------------------------------------------------------------
     Q("lg_laser", 0, 6, [item("laserio:card_item", 2)], "LaserIO Cards", subtitle="Configure what each node moves", deps=["s_laser"], xp=50, desc=[

@@ -46,7 +46,7 @@ CHAPTER = Chapter("relics", "Relics and Artifacts", "reliquary:mob_charm_fragmen
         "&eHow:&r found in chests underground and in structures, and dropped by Mimics. Any one artifact completes this quest.",
         "&eTip:&r a Cloud in a Bottle (double jump) and Running Shoes make early exploring much easier."]),
     Q("rl_mimic", 6, 5, [kill("artifacts:mimic")], "That Chest Has Teeth", deps=["rl_artifacts"], xp=100, loot="hunt",
-      subtitle="Kill a Mimic", desc=[
+      subtitle="Kill a Mimic", optional=True, tokens=1, desc=[
         "&eWhat:&r a Mimic looks exactly like a chest until you open it. It always drops an artifact.",
         "&eHow:&r they hide in mineshafts, dungeons and caves. If a chest stands somewhere odd, hit it before opening it.",
         "&eTip:&r Mimics are tough for their size; fight one with real armor, not a wooden sword."]),
@@ -63,7 +63,7 @@ CHAPTER = Chapter("relics", "Relics and Artifacts", "reliquary:mob_charm_fragmen
         "&eHow:&r they drop from their mobs (zombies drop zombie hearts). In this pack they can also be crafted: a zombie heart is rotten flesh in a ring of iron ingots.",
         "&eTip:&r a Looting sword makes the drops much more common than the iron recipe."]),
     Q("rl_belt", 6, 6.5, [item("reliquary:mob_charm_belt")], "Mob Charm Belt", deps=["rl_heart"], xp=75,
-      subtitle="Wear all your charms at once", desc=[
+      subtitle="Wear all your charms at once", optional=True, tokens=1, desc=[
         "&eWhat:&r the belt holds Mob Charms, so you can be ignored by several mob types at once.",
         "&eHow:&r three leather and five mob charm fragments (check JEI). Each fragment is made from that mob's drops.",
         "&eTip:&r creeper and enderman charms are the most valuable around a base."]),

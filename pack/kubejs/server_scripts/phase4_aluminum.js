@@ -9,13 +9,25 @@
 //   precipitate Mixer: aluminate + water -> 4 Al(OH)3, 900 mB NaOH back (the Bayer loop recycles lye)
 //   calcine    EBF: 2Al(OH)3 -> Al2O3 + 3H2O
 //   cell       Hall-Heroult Cell: Al2O3 + carbon anode -> Al (+ CO2); a little fluorite tops up the flux
-// Net: 4 bauxite -> 2 aluminium ingots (MI's electrolyzer gave 1.6). Alumina from the Alchemistry
-// Combiner (chemlib:aluminum_oxide) works in the cell too: the alchemical route.
+// Net: 4 bauxite -> 2 aluminium ingots (MI's electrolyzer gave 1.6).
+//
+// Phase 5 (chem_tier_audit.md #1, 2026-10-18): the cell is the ONLY way to win aluminium.
+// Al2O3 is one of the most stable oxides there is (it melts at 2072 C and carbon only reduces it
+// above ~2000 C), so no furnace turns alumina, or Alchemistry's aluminium element items, into metal:
+// it has to be dissolved in a molten-salt bath and electrolysed (Hall-Heroult, 1886). Closed holes:
+//   - Dissolver: 1 obsidian -> 8 chemlib:aluminum_oxide (compound items). The cell took those, so one
+//     renewable obsidian = 8 ingots. The cell now takes only alumina DUST, which only the Bayer
+//     calcination makes. Alchemistry's two "8 compound items -> 1 dust" recipes (Compactor and
+//     Combiner) are removed, or they would reopen the same hole.
+//   - Elements: 16 chemlib:aluminum -> Compactor -> aluminium dust -> vanilla furnace -> ingot, all at
+//     T1. The Compactor recipe and both ChemLib cooking recipes are removed.
+// Alchemistry's alumina items still dissolve into Al + O for the Combiner; they just aren't ore.
 
 ServerEvents.tags('item', event => {
   event.add('warbucks:sodium_hydroxide', ['chemlib:sodium_hydroxide', 'chemlib:sodium_hydroxide_dust'])
   event.add('warbucks:aluminum_hydroxide', ['chemlib:aluminum_hydroxide', 'chemlib:aluminum_hydroxide_dust'])
-  event.add('warbucks:alumina', ['chemlib:aluminum_oxide', 'chemlib:aluminum_oxide_dust'])
+  // Bayer alumina only; the compound item chemlib:aluminum_oxide is deliberately left out (see above).
+  event.add('warbucks:alumina', 'chemlib:aluminum_oxide_dust')
 })
 
 ServerEvents.recipes(event => {
@@ -25,6 +37,11 @@ ServerEvents.recipes(event => {
   // MI's shortcuts skip the chemistry: bauxite straight into the EBF or the Electrolyzer.
   ;['materials/blast_furnace/bauxite_to_aluminum_ingot', 'materials/blast_furnace/bauxite_to_aluminum_nugget',
     'materials/electrolyzer/bauxite'].forEach(path => event.remove({ id: `${MI}:${path}` }))
+
+  // Alchemistry/ChemLib shortcuts to metallic aluminium and to alumina dust (see the header).
+  ;['chemlib:aluminum_ingot_from_smelting_aluminum_dust', 'chemlib:aluminum_ingot_from_blasting_aluminum_dust',
+    'alchemistry:compactor/aluminum_dust', 'alchemistry:compactor/aluminum_oxide_dust',
+    'alchemistry:combiner/aluminum_oxide_dust'].forEach(id => event.remove({ id: id }))
 
   mi('mixer', {
     eu: 2, duration: 100,

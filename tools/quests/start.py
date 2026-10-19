@@ -20,35 +20,24 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
         "&6You remember being more than this.&r The memory is fading, but one idea stays clear: everything is made of elements, and elements can be taken apart and put back together.",
         "&eWhat:&r This book walks you from your first log to antimatter. Follow the lines: each quest unlocks the next.",
         "&eHow:&r Click the checkmark on the right to begin."]),
-    Q("gs_jei", 2, -2, [tick()], "Tip: Recipes (JEI)", subtitle="R for recipes, U for uses", deps=["gs_wake"], xp=10, desc=[
-        "&eWhat:&r JEI shows every recipe in the pack, including the ones changed for progression.",
-        "&eHow:&r Press &eR&r over any item to see how it's made, or &eU&r to see what it's used in. Try it on a quest icon, then click the checkmark.",
-        "&eTip:&r Type &e@modname&r in the JEI search bar to list everything one mod adds."]),
-    Q("gs_jade", 2, -4, [tick()], "Tip: What Am I Looking At?", subtitle="Jade names every block", deps=["gs_jei"], xp=10, desc=[
-        "&eWhat:&r Jade shows a small panel at the top of the screen for whatever block you're looking at.",
-        "&eHow:&r Look at any block or machine. Jade shows its name, its mod, and for machines their progress, energy and fluids.",
-        "&eTip:&r When a machine isn't working, look at it first. Jade usually tells you why."]),
+    Q("gs_jei", 2, -2, [tick()], "Tip: Recipes and Jade", subtitle="R for recipes, U for uses", deps=["gs_wake"], xp=10, desc=[
+        "&eWhat:&r JEI shows every recipe in the pack, including the ones changed for progression. Jade shows a small panel at the top of the screen for whatever block you're looking at.",
+        "&eHow:&r Press &eR&r over any item to see how it's made, or &eU&r to see what it's used in. Try it on the crafting table you're about to make, then click the checkmark.",
+        "&eTip:&r Type &e@modname&r in the JEI search bar to list a mod's items. When a machine isn't working, look at it: Jade shows its progress, energy and fluids, and usually why."]),
     Q("gs_logs", 2, 0, [anytag("minecraft:logs", 16)], "Punch a Tree", subtitle="Bare hands, sixteen logs", deps=["gs_wake"], xp=10, desc=[
         "&eWhat:&r You start with nothing. Logs are the first thing you can take with bare hands, and everything early is made from them.",
         "&eChemistry:&r Wood is mostly &ecellulose&r, (C₆H₁₀O₅)ₙ, long chains of glucose, bound together by &elignin&r, a tough aromatic polymer that keeps trees standing.",
         "&eHow:&r Hold left-click on a tree trunk. Any kind of log counts.",
         "&eTip:&r FTB Ultimine fells a whole tree at once: hold the &e`&r key (grave/tilde) while you break the bottom log."]),
-    Q("gs_planks", 4, 0, [anytag("minecraft:planks", 32)], "Planks", subtitle="One log, four planks", deps=["gs_logs"], xp=10, desc=[
-        "&eWhat:&r Planks are the basic building material for tables, tools, chests and beds.",
-        "&eHow:&r Open your inventory and put a log in the small 2x2 crafting grid. Each log gives 4 planks.",
-        "&eTip:&r Keep a few logs as logs. Some shortcuts below use them directly."]),
-    Q("gs_table", 6, 0, [item("minecraft:crafting_table")], "A Workbench", subtitle="The 3x3 grid", deps=["gs_planks"], xp=10, items=[("minecraft:torch", 8)], desc=[
-        "&eWhat:&r Your inventory only has a 2x2 grid. Almost every tool and machine needs the full 3x3 grid of a crafting table.",
-        "&eHow:&r Put 4 planks in the 2x2 grid, then place the table and right-click it. Any wood works.",
-        "&eTip:&r The 8 torches in the reward get you through your first night if dusk catches you early."]),
+    Q("gs_table", 6, 0, [anytag("minecraft:planks", 32), item("minecraft:crafting_table")], "Planks and a Workbench", subtitle="One log, four planks; four planks, one table",
+      deps=["gs_logs", "gs_jei"], xp=10, items=[("minecraft:torch", 8)], desc=[
+        "&eWhat:&r Planks are the basic building material for tables, tools, chests and beds. Your inventory only has a 2x2 grid; almost every tool and machine needs the full 3x3 grid of a crafting table.",
+        "&eHow:&r Put a log in the 2x2 grid in your inventory: each log gives 4 planks. Then 4 planks in the 2x2 grid make the table. Place it and right-click it.",
+        "&eTip:&r Keep a few logs as logs: some shortcuts below use them directly. The 8 torches in the reward get you through your first night."]),
     Q("gs_chest", 6, -2, [item("minecraft:chest", 2)], "Somewhere to Put Things", subtitle="Two chests for your first stockpile", deps=["gs_table"], xp=10, desc=[
         "&eWhat:&r You'll collect far more than you can carry. Chests hold 27 stacks each, and two side by side make a double chest.",
         "&eHow:&r 8 planks in a ring make one chest. The &eUtilitarian&r shortcut is better: 8 &elogs&r in a ring make 4 chests.",
-        "&eTip:&r Inventory sorting works in chests too. Check Controls for the sort key."]),
-    Q("gs_sticks", 8, 0, [item("minecraft:stick", 16)], "Sticks", subtitle="Handles for everything", deps=["gs_table"], xp=10, desc=[
-        "&eWhat:&r Sticks are the handle of every tool, and you'll need them for torches too.",
-        "&eHow:&r 2 planks stacked vertically make 4 sticks.",
-        "&eTip:&r &eUtilitarian&r adds a shortcut: 2 &elogs&r stacked vertically make &e16 sticks&r. That's twice as many per log as going through planks."]),
+        "&eTip:&r Keep one chest spare: your first backpack is built around one."]),
     Q("gs_opt_boat", 6, 2, [anytag("minecraft:boats")], "Messing About in Boats", subtitle="Faster than walking along a coast", deps=["gs_table"], optional=True, tokens=1, xp=15, desc=[
         "&eWhat:&r A boat crosses rivers and oceans much faster than swimming, and you can scout coastlines for villages and exposed ore.",
         "&eChemistry:&r Dry wood is about 0.4 to 0.7 g/cm³, lighter than water at 1.0 g/cm³, so it floats. That's density, nothing more.",
@@ -56,23 +45,20 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
         "&eTip:&r Mobs that touch a boat get pulled into it. Handy for moving a cow home."]),
 
     # --- stone -------------------------------------------------------------------------------
-    Q("gs_woodpick", 10, 0, [item("minecraft:wooden_pickaxe")], "A Wooden Pick", subtitle="Just enough to break stone", deps=["gs_sticks"], xp=10, desc=[
-        "&eWhat:&r A wooden pickaxe is weak, but it can mine stone, and stone is your next step.",
-        "&eHow:&r 3 planks across the top and 2 sticks down the middle of a crafting table.",
-        "&eTip:&r Don't bother upgrading it. Stone is minutes away."]),
-    Q("gs_cobble", 12, 0, [item("minecraft:cobblestone", 32)], "Cobblestone", subtitle="The rock under the grass", deps=["gs_woodpick"], xp=10, desc=[
-        "&eWhat:&r Cobblestone makes stone tools, a furnace and a safe first shelter. You'll want a lot of it.",
+    Q("gs_woodpick", 10, 0, [item("minecraft:stick", 16), item("minecraft:wooden_pickaxe")], "Sticks and a Wooden Pick", subtitle="Just enough to break stone", deps=["gs_table"], xp=10, desc=[
+        "&eWhat:&r Sticks are the handle of every tool and torch. A wooden pickaxe is weak, but it can mine stone, and stone is your next step.",
+        "&eHow:&r 2 planks stacked vertically make 4 sticks. Then 3 planks across the top and 2 sticks down the middle of a crafting table make the pickaxe.",
+        "&eTip:&r &eUtilitarian&r adds a shortcut: 2 &elogs&r stacked vertically make &e16 sticks&r, twice as many per log as going through planks."]),
+    Q("gs_stone", 14, 0, [item("minecraft:cobblestone", 32), item("minecraft:stone_pickaxe")], "Stone Age", subtitle="Cobblestone, and a pickaxe that can mine iron", deps=["gs_woodpick"], xp=15, desc=[
+        "&eWhat:&r Cobblestone makes stone tools, a furnace and a safe first shelter. A stone pickaxe can mine iron ore.",
         "&eChemistry:&r Stone is a mix of &esilicate minerals&r: quartz (SiO₂) and feldspars, aluminium silicates of sodium, potassium and calcium. Silicon and oxygen are the two most common elements in the Earth's crust.",
-        "&eHow:&r Dig a few blocks down anywhere, or mine a cliff face. Stone drops cobblestone when mined with a pickaxe."]),
-    Q("gs_stone", 14, 0, [item("minecraft:stone_pickaxe")], "Stone Age", subtitle="A pickaxe that can mine iron", deps=["gs_cobble"], xp=15, desc=[
-        "&eWhat:&r Stone tools last longer than wood, and a stone pickaxe can mine iron ore.",
-        "&eHow:&r Same shape as the wooden pickaxe, with 3 cobblestone in place of planks.",
+        "&eHow:&r Dig a few blocks down or mine a cliff face: stone drops cobblestone. The stone pickaxe is the wooden shape with 3 cobblestone in place of planks.",
         "&eTip:&r FTB Ultimine mines a whole vein at once. Hold the &e`&r key (grave/tilde) while breaking blocks."]),
     Q("gs_coal", 14, 2, [item("minecraft:coal", 16)], "Coal", subtitle="Ancient carbon from the ground", deps=["gs_stone"], xp=15, desc=[
         "&eWhat:&r Coal fuels furnaces now, and becomes coke and steel in Chapter II.",
         "&eChemistry:&r Coal is plant matter buried for millions of years. Heat and pressure drove off most of its hydrogen and oxygen and left mostly carbon.",
         "&eHow:&r Coal ore is the black-speckled stone common in exposed cliffs and mountains. Mine it with any pickaxe.",
-        "&eTip:&r Save extra coal. The Coke Oven eats a lot of it."]),
+        "&eTip:&r Save extra coal for torches on your first mining trip. The Coke Oven in Chapter II eats a lot of it too."]),
     Q("gs_stonetools", 16, 0, [item("minecraft:stone_sword"), item("minecraft:stone_axe"), item("minecraft:stone_shovel")], "A Full Toolkit",
       subtitle="Sword, axe and shovel", deps=["gs_stone"], xp=15, desc=[
         "&eWhat:&r A sword for the first night, an axe for faster wood, and a shovel for dirt, sand and gravel.",
@@ -108,11 +94,8 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
     Q("gs_shelter", 22, 0, [tick()], "A Roof Overhead", subtitle="Walls, a door, and light", deps=["gs_torch"], xp=15, desc=[
         "&eWhat:&r Monsters spawn in the dark. A small, lit, enclosed room keeps you safe while you work.",
         "&eHow:&r Build four walls and a roof from planks or cobblestone, add a door, and light the inside with torches. Click the checkmark when you're done.",
-        "&eTip:&r Leave room to grow. Your steam machines in Chapter I need floor space."]),
-    Q("gs_daylight", 22, -2, [tick()], "Tip: Long Days", subtitle="Daytime lasts twice as long here", deps=["gs_shelter"], xp=10, desc=[
-        "&eWhat:&r In this world the sun stays up about &etwice as long&r as in vanilla, roughly 20 minutes of daylight. Nights are normal length, and rain is rarer and shorter.",
-        "&eHow:&r Use the long day to gather and build. When the sun starts to set, head for your shelter and bed. Click the checkmark.",
-        "&eTip:&r Monsters still spawn in dark caves and under thick trees in daytime. Light is what keeps them away, not the sun."]),
+        "Days here last about &etwice as long&r as in vanilla (roughly 20 minutes of daylight); nights are normal length, and rain is rarer and shorter.",
+        "&eTip:&r Leave room to grow: your steam machines in Chapter I need floor space. Monsters still spawn in dark caves and under thick trees in daytime. Light keeps them away, not the sun."]),
     Q("gs_bed", 24, 0, [anytag("minecraft:beds")], "A Bed", subtitle="Skip the night, set your spawn", deps=["gs_shelter"], xp=20, desc=[
         "&6You never needed sleep before. Lying in the dark, you remember why mortals feared it.&r",
         "&eWhat:&r Sleeping skips the night and sets your spawn point, so you wake up here if you die.",
@@ -125,13 +108,10 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
         "&eTip:&r Hammocks skip the day instead."]),
 
     # --- food --------------------------------------------------------------------------------
-    Q("gs_seeds", 26, 0, [item("minecraft:wheat_seeds", 8)], "Seeds", subtitle="Break the tall grass", deps=["gs_bed"], xp=10, desc=[
-        "&eWhat:&r Seeds are the start of a renewable food supply.",
-        "&eChemistry:&r A plant builds itself out of air and water using sunlight: &ephotosynthesis&r, 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
-        "&eHow:&r Break grass and tall grass. Seeds drop now and then."]),
-    Q("gs_farm", 28, 0, [anyof(HOES), item("minecraft:wheat", 16)], "A First Field", subtitle="Hoe, water, wheat", deps=["gs_seeds"], xp=15, desc=[
+    Q("gs_farm", 28, 0, [anyof(HOES), item("minecraft:wheat", 16)], "A First Field", subtitle="Seeds, hoe, water, wheat", deps=["gs_bed"], xp=15, desc=[
         "&eWhat:&r A small wheat field feeds you for the whole early game.",
-        "&eHow:&r Craft a hoe, till dirt or grass next to water, and plant the seeds. Farmland stays wet up to 4 blocks from water. Harvest the wheat when it turns golden.",
+        "&eChemistry:&r A plant builds itself out of air and water using sunlight: &ephotosynthesis&r, 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂.",
+        "&eHow:&r Break grass and tall grass for seeds. Craft a hoe, till dirt next to water and plant them. Farmland stays wet up to 4 blocks from water. Harvest when the wheat turns golden.",
         "&eTip:&r Bone meal (from skeleton bones) is calcium phosphate, a real fertiliser. Right-click a crop with it to grow it faster."]),
     Q("gs_opt_canes", 28, 2, [item("minecraft:sugar_cane", 16)], "Sugar Cane", subtitle="Sugar and paper", deps=["gs_farm"], optional=True, tokens=1, xp=15, desc=[
         "&eWhat:&r Sugar cane gives sugar for food and paper for books, maps and Silent Gear blueprints.",
@@ -149,7 +129,7 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
         "&eChemistry:&r Heat &edenatures&r proteins: it unfolds them so they firm up, and turns tough collagen into soft gelatin. It also kills bacteria.",
         "&eHow:&r Kill cows, pigs, sheep, chickens or rabbits and cook the raw meat in a furnace, smoker or on a campfire. Any mix of cooked meat counts.",
         "&eTip:&r Breed animals with wheat (cows, sheep) or carrots (pigs) next to your base so you never have to hunt far."]),
-    Q("gs_fish", 32, -2, [item("minecraft:fishing_rod"), anyof(COOKED_FISH, 4)], "Gone Fishing", subtitle="Food from any patch of water", deps=["gs_meat"], xp=15, desc=[
+    Q("gs_fish", 32, -2, [item("minecraft:fishing_rod"), anyof(COOKED_FISH, 4)], "Gone Fishing", subtitle="Food from any patch of water", deps=["gs_meat"], optional=True, tokens=1, xp=15, desc=[
         "&eWhat:&r A fishing rod gets you food anywhere there's water, plus the odd treasure.",
         "&eHow:&r 3 sticks and 2 string. Cast it into water and pull it in when the bobber dips. Cook the cod or salmon you catch.",
         "&eTip:&r A rod also reels in mobs and items, and fishing in the rain is faster."]),
@@ -158,10 +138,10 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
         "&eChemistry:&r Leather is animal skin that's been &etanned&r: tannins or chromium salts cross-link the collagen proteins so the hide stops rotting and stays flexible.",
         "&eHow:&r Cows drop leather. A tunic takes 8 leather and boots take 4.",
         "&eTip:&r Save spare leather. Backpacks and books need it."]),
-    Q("gs_backpack", 34, 2, [item("sophisticatedbackpacks:backpack")], "A Backpack", subtitle="More pockets, upgradeable later", deps=["gs_leather"], xp=20, desc=[
+    Q("gs_backpack", 34, 2, [item("sophisticatedbackpacks:backpack")], "A Backpack", subtitle="More pockets, upgradeable later", deps=["gs_leather", "gs_chest"], xp=20, desc=[
         "&eWhat:&r More inventory, and it can be upgraded later (pickup, magnet, feeding and more).",
         "&eHow:&r Leather, string and a chest (check JEI for the shape). Wear it in the chest slot or keep it in your inventory.",
-        "&eTip:&r Backpack upgrades are in the Demigod Token shop."]),
+        "&eTip:&r Take it on your first mining trip. Backpack upgrades are in the Demigod Token shop."]),
 
     # --- iron --------------------------------------------------------------------------------
     Q("gs_iron", 36, 0, [item("minecraft:iron_ingot", 16)], "Iron", subtitle="Ore, heat, and carbon make metal", deps=["gs_leather"], xp=25, desc=[
@@ -230,7 +210,7 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
 
     # --- the first dig -----------------------------------------------------------------------
     Q("gs_mine", 46, 0, [item("minecraft:raw_copper", 16), item("minecraft:raw_iron", 16)], "A First Mining Trip", subtitle="Go down, come back richer",
-      deps=["gs_bucket"], xp=25, desc=[
+      deps=["gs_bucket", "gs_coal", "gs_backpack"], xp=25, desc=[
         "&eWhat:&r Chapter I needs copper and plenty of iron. Time for a proper trip underground.",
         "&eChemistry:&r Below about Y 0, stone gives way to &edeepslate&r: older, denser rock formed under more heat and pressure. Ores near the surface are often oxidised by air and water, which is why copper ore has green streaks.",
         "&eHow:&r Pack torches, food, a water bucket and spare tools. Dig a staircase down (never straight down) or explore a cave, and bring back raw copper and raw iron.",

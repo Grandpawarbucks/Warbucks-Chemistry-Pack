@@ -21,7 +21,7 @@ CHAPTER = Chapter("undergarden", "The Undergarden", "undergarden:catalyst",
         "&6Acid opened the way, and the dark below remembers you. You were the one who sealed it.&r",
         "&eWhat:&r depthrock is the Undergarden's stone, the way deepslate is the Overworld's. Its ores (cloggrum, froststeel, utherium, regalium) all sit in it or in icy shiverstone.",
         "&eChemistry:&r dissolve depthrock in the Alchemistry Dissolver and it gives silicon dioxide (SiO₂), iron and aluminium, with rare traces of zirconium, gallium, dysprosium and tungsten.",
-        "&eHow:&r the catalyst is copper ingots, stone, an ender pearl and a bucket of MI sulfuric acid (this pack's recipe). Light the stone-brick frame and step through, then mine.",
+        "&eHow:&r the catalyst is copper ingots, stone, an ender pearl and a bucket of sulfuric acid (MI, Mekanism or ChemLib; this pack's recipe). Light the stone-brick frame and step through, then mine.",
         "&eTip:&r the Undergarden has no sun. Bring a stack of torches and mark your portal."]),
     Q("ug_cloggrum_tools", 2, 0, [item(UG + "cloggrum_pickaxe"), item(UG + "cloggrum_sword")], "Cloggrum Tools", deps=["ug_arrival"], xp=100,
       subtitle="The Undergarden's everyday metal", desc=[
@@ -75,7 +75,7 @@ CHAPTER = Chapter("undergarden", "The Undergarden", "undergarden:catalyst",
         "&eHow:&r twistytwigs (two wigglewood planks make four) and sticks. Pebbles drop from mogs and stoneborn, or stonecut depthrock.",
         "&eTip:&r it takes its own enchantments: Ricochet bounces shots off walls, Self Sling launches you instead."]),
     Q("ug_froststeel", 4, 2, [item(UG + "froststeel_sword"), item(UG + "froststeel_chestplate")], "Froststeel", deps=["ug_cloggrum_tools"], xp=150,
-      subtitle="A metal that bites with cold", desc=[
+      subtitle="A metal that bites with cold", optional=True, tokens=1, desc=[
         "&eWhat:&r froststeel weapons give targets the Chilly effect, which slows them.",
         "&eChemistry:&r real steel gets brittle in deep cold: below its ductile-to-brittle transition temperature it cracks instead of bending, which is why ships' hulls once split in icy seas.",
         "&eHow:&r froststeel ore only forms in shiverstone, in the frozen biomes. It needs an iron pickaxe; smelt the raw froststeel.",
@@ -117,7 +117,7 @@ CHAPTER = Chapter("undergarden", "The Undergarden", "undergarden:catalyst",
         "&eHow:&r smogstem forests, wigglewood forests and the gronglegrowth each have their own tree.",
         "&eTip:&r wigglewood planks make the twistytwigs for the slingshot."]),
     Q("ug_shard_torch", 2, -2, [item(UG + "shard_torch", 8)], "Shard Torches", deps=["ug_arrival"], xp=75,
-      subtitle="Light that burns rotspawn", desc=[
+      subtitle="Light that burns rotspawn", optional=True, tokens=1, desc=[
         "&eWhat:&r a torch tipped with an utheric shard. It lights the dark and hurts rotspawn that come close.",
         "&eHow:&r one utheric shard on a stick. Shards drop from rotbeasts and rotbelchers and sit in catacomb chests.",
         "&eTip:&r ring your portal and your base with them."]),

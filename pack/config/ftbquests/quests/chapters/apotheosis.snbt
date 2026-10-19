@@ -1,7 +1,7 @@
 {
 	id: "5BBA2E199EC82256"
 	group: "517E2EE5EE2E76FF"
-	order_index: 1
+	order_index: 2
 	filename: "apotheosis"
 	icon: {
 		id: "apotheosis:gem_dust"
@@ -13,7 +13,7 @@
 		{
 			id: "0823E0B0B994DD08"
 			x: 0.0d
-			y: 3.0d
+			y: 0.0d
 			dependencies: [
 				"1C5E43BCEDA7593F"
 			]
@@ -47,7 +47,7 @@
 		{
 			id: "6E58E2BD59CFAE57"
 			x: 2.0d
-			y: 3.0d
+			y: 0.0d
 			dependencies: [
 				"0823E0B0B994DD08"
 			]
@@ -81,7 +81,7 @@
 		{
 			id: "57C95E565D3B2119"
 			x: 4.0d
-			y: 3.0d
+			y: 0.0d
 			dependencies: [
 				"6E58E2BD59CFAE57"
 			]
@@ -115,7 +115,7 @@
 		{
 			id: "629C34B0AC068654"
 			x: 6.0d
-			y: 3.0d
+			y: 0.0d
 			dependencies: [
 				"57C95E565D3B2119"
 			]
@@ -149,7 +149,8 @@
 		{
 			id: "153E1F2212F6740C"
 			x: 8.0d
-			y: 3.0d
+			y: 0.0d
+			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"629C34B0AC068654"
@@ -184,8 +185,8 @@
 		}
 		{
 			id: "563D61599C12CF41"
-			x: 1.0d
-			y: 4.5d
+			x: 2.0d
+			y: 1.5d
 			optional: true
 			dependencies: [
 				"0823E0B0B994DD08"
@@ -220,8 +221,8 @@
 		}
 		{
 			id: "12EF5F7791329CED"
-			x: 7.0d
-			y: 4.5d
+			x: 8.0d
+			y: 2.0d
 			optional: true
 			dependencies: [
 				"629C34B0AC068654"
@@ -255,8 +256,8 @@
 		}
 		{
 			id: "0C78BE8ECFF1CD59"
-			x: 9.0d
-			y: 4.5d
+			x: 10.0d
+			y: -2.5d
 			optional: true
 			dependencies: [
 				"153E1F2212F6740C"
@@ -291,7 +292,7 @@
 		{
 			id: "124C0733D11EE060"
 			x: 0.0d
-			y: 0.0d
+			y: 4.5d
 			optional: true
 			dependencies: [
 				"1C5E43BCEDA7593F"
@@ -326,7 +327,7 @@
 		{
 			id: "4175DD97D428CAF7"
 			x: 2.0d
-			y: 0.0d
+			y: 4.5d
 			optional: true
 			dependencies: [
 				"124C0733D11EE060"
@@ -364,8 +365,9 @@
 		}
 		{
 			id: "29B876259D4B5686"
-			x: 0.0d
-			y: 1.5d
+			x: 6.0d
+			y: 8.5d
+			optional: true
 			dependencies: [
 				"1C5E43BCEDA7593F"
 			]
@@ -401,7 +403,7 @@
 		{
 			id: "1F426EE32EDF30C4"
 			x: 2.0d
-			y: 1.5d
+			y: 3.0d
 			optional: true
 			dependencies: [
 				"0823E0B0B994DD08"
@@ -436,8 +438,9 @@
 		}
 		{
 			id: "645E6EA4F2C67FAB"
-			x: 4.0d
+			x: 6.0d
 			y: 1.5d
+			optional: true
 			dependencies: [
 				"57C95E565D3B2119"
 			]
@@ -470,8 +473,8 @@
 		}
 		{
 			id: "30908A094F9B094F"
-			x: 6.0d
-			y: 1.5d
+			x: 0.0d
+			y: 10.0d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -504,8 +507,9 @@
 		}
 		{
 			id: "29DC8827585EFBB8"
-			x: 8.0d
-			y: 1.5d
+			x: 2.0d
+			y: 8.5d
+			optional: true
 			dependencies: [
 				"30908A094F9B094F"
 			]
@@ -538,8 +542,8 @@
 		}
 		{
 			id: "0E850BA9288D13B8"
-			x: 7.0d
-			y: 6.0d
+			x: 10.0d
+			y: 3.0d
 			optional: true
 			dependencies: [
 				"12EF5F7791329CED"
@@ -573,8 +577,8 @@
 		}
 		{
 			id: "074EDD3891190AD6"
-			x: 11.0d
-			y: 4.5d
+			x: 10.0d
+			y: -1.0d
 			optional: true
 			dependencies: [
 				"153E1F2212F6740C"
@@ -608,8 +612,8 @@
 		}
 		{
 			id: "0DA470EE8E63A89F"
-			x: 2.0d
-			y: 7.0d
+			x: 4.0d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"563D61599C12CF41"
@@ -643,8 +647,9 @@
 		}
 		{
 			id: "67476A5068C80199"
-			x: 4.0d
-			y: 7.0d
+			x: 6.0d
+			y: 4.5d
+			optional: true
 			dependencies: [
 				"0DA470EE8E63A89F"
 			]
@@ -678,7 +683,7 @@
 		{
 			id: "2103D96D8A9B8008"
 			x: 6.0d
-			y: 7.0d
+			y: 6.0d
 			optional: true
 			dependencies: [
 				"0DA470EE8E63A89F"
@@ -713,8 +718,8 @@
 		}
 		{
 			id: "742D6F656F7BFD9B"
-			x: 2.0d
-			y: 8.5d
+			x: 4.0d
+			y: 2.0d
 			optional: true
 			dependencies: [
 				"563D61599C12CF41"
@@ -750,8 +755,8 @@
 	images: [
 		{
 			id: "54674D82B9495273"
-			x: 2.5d
-			y: -2.0d
+			x: 0.5d
+			y: -4.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -763,7 +768,7 @@
 			id: "2A6AD4C3296F1344"
 			linked_quest: "1C5E43BCEDA7593F"
 			x: -2.0d
-			y: 3.0d
+			y: 4.5d
 		}
 	]
 }

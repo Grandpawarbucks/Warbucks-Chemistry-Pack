@@ -58,9 +58,12 @@ ServerEvents.recipes(event => {
 
   // --- T3: acids -------------------------------------------------------------------------
   // The Undergarden opens with acid chemistry: its portal catalyst needs a bucket of sulfuric acid.
+  // Any H2SO4 counts (tag warbucks:sulfuric_acid_buckets, below): Mekanism's LV contact process
+  // (S -> SO2 -> SO3 + H2O), MI's Chemical Reactor (MV) or ChemLib's fluid. Phase 5 fix: it used to
+  // accept only MI's bucket, which forced an MV detour (chem_tier_audit.md #5).
   reshape('undergarden:catalyst', 'undergarden:catalyst',
     ['CAC', 'SES', 'CSC'],
-    { C: '#c:ingots/copper', A: 'modern_industrialization:sulfuric_acid_bucket',
+    { C: '#c:ingots/copper', A: '#warbucks:sulfuric_acid_buckets',
       E: '#c:ender_pearls', S: '#c:stones' })
 
   // Powah's Energizing Orb (entry to all Powah tech) needs an MV electronic circuit.
@@ -121,4 +124,11 @@ ServerEvents.recipes(event => {
   // Not changed on purpose:
   //  - pylons:infusion_pylon already needs Nether materials (quartz, blackstone): flight after the Nether.
   //  - justdirethings:upgrade_flight already needs End Crystals: portable flight after the End.
+})
+
+ServerEvents.tags('item', event => {
+  // Every sulfuric acid bucket in the pack, for the Undergarden catalyst above.
+  event.add('warbucks:sulfuric_acid_buckets', [
+    'modern_industrialization:sulfuric_acid_bucket', 'mekanism:sulfuric_acid_bucket', 'chemlib:sulfuric_acid_bucket'
+  ])
 })

@@ -64,7 +64,7 @@ CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infus
         "&eHow:&r 8 inferium essence around wheat seeds in a crafting grid (no altar needed). Plant them on farmland and replant the extra seeds.",
         "&eTip:&r every other resource seed starts from a seed base on the altar, so build a big inferium field first."]),
     Q("ma_farmland", 2, -2, [item("mysticalagriculture:inferium_farmland", 8)], "Essence Farmland", deps=["ma_seeds"], xp=30,
-      subtitle="Better soil for inferium crops", desc=[
+      subtitle="Better soil for inferium crops", optional=True, tokens=1, desc=[
         "&eWhat:&r farmland infused with essence. Inferium crops drop more essence on higher-tier farmland.",
         "&eHow:&r one inferium essence plus one farmland, shapeless (check JEI). Higher tiers use their own essence.",
         "&eTip:&r upgrade the farmland under your inferium field as each new essence tier arrives."]),
@@ -79,7 +79,7 @@ CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infus
         "&eHow:&r Nature Agglomeratio is pumpkin, potato, cactus and sugar cane; JEI shows the rest.",
         "&eTip:&r the elemental crops (air, earth, water, fire) feed many other recipes, so they're good early picks."]),
     Q("ma_why", 8, -2, [tick()], "Why Chemistry Won't Grow", deps=["f_tertium"], xp=40,
-      subtitle="Some seeds were removed on purpose", desc=[
+      subtitle="Some seeds were removed on purpose", optional=True, tokens=1, desc=[
         "&eWhat:&r seeds for uranium, uraninite, osmium, fluorite, silicon, steel, aluminum, graphite, platinum, iridium, refined obsidian and refined glowstone don't exist in this pack. Click the checkmark when you've read why.",
         "&eHow:&r if JEI shows no altar recipe for a crop, it's one of these. Get them from ore processing and the reactors in the main quests.",
         "&eTip:&r iron, copper, tin, lead, gold and other everyday metals are still farmable, behind their circuit gates.",
@@ -134,7 +134,7 @@ CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infus
         "&eHow:&r keep an empty Soul Jar in your inventory and kill zombies with the Soulium Dagger.",
         "&eTip:&r the Soul Extractor can also pull souls out of mob drops like rotten flesh (check JEI)."]),
     Q("ma_mobseed", 8, 3.5, [item("mysticalagriculture:soulium_seed_base")], "Mob Seeds", deps=["ma_souls", "f_tertium"], xp=60,
-      subtitle="Grow mob drops without the mobs", desc=[
+      subtitle="Grow mob drops without the mobs", optional=True, tokens=1, desc=[
         "&eWhat:&r mob seeds start from a Soulium Seed Base and grow drops like rotten flesh, bones and string.",
         "&eHow:&r a prosperity seed base plus 2 soulium dust. On the altar, put it in the middle and the full jars and essence on the pedestals (check JEI).",
         "&eTip:&r zombie, skeleton, spider and creeper are tier 3, so they also need an analog circuit."]),
@@ -146,7 +146,7 @@ CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infus
         "&eHow:&r iron, redstone and stone (check JEI).",
         "&eTip:&r MA machines run on Forge Energy, so they plug into any FE cable."]),
     Q("ma_harvester", 2, 5.5, [item("mysticalagriculture:harvester")], "Harvester", deps=["ma_frame"], xp=50,
-      subtitle="Harvests and replants a field", desc=[
+      subtitle="Harvests and replants a field", optional=True, tokens=1, desc=[
         "&eWhat:&r the Harvester picks mature crops in an area in front of it and replants them, pushing drops into its inventory.",
         "&eHow:&r machine frame, soulium ingots, iron and two diamond scythes (check JEI). Power it with FE.",
         "&eTip:&r pipe its output into storage and the field runs itself."]),
@@ -156,7 +156,7 @@ CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infus
         "&eHow:&r machine frame, soulium ingots, iron and a soulium dagger (check JEI). Power it with FE.",
         "&eTip:&r feed it drops from an HNN Simulation Chamber for a fully passive soul supply."]),
     Q("ma_pots", 6, 5.5, [item("botanypots:terracotta_hopper_botany_pot", 8), anytag("mysticalagriculture:seeds", 8)], "A Pot Farm", deps=["f_pot", "ma_seeds"], xp=60,
-      subtitle="Eight hopper pots of resource crops", desc=[
+      subtitle="Eight hopper pots of resource crops", optional=True, tokens=1, desc=[
         "&eWhat:&r Mystical Agriculture seeds grow in Hopper Botany Pots, which harvest by themselves into a chest below.",
         "&eHow:&r put each pot on a hopper, pipe or chest, add dirt or farmland and a seed. Hold any MA seed in JEI to see its pot growth time.",
         "&eTip:&r a column of pots over one shared item pipe is a compact essence farm for every tier."]),

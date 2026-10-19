@@ -21,7 +21,7 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eHow:&r cook vegetable soup in the Cooking Pot (check JEI), then bowl it.",
         "&eTip:&r a Feeding Upgrade in your backpack eats these for you."]),
     Q("fd_pasta", 6, 0, [item("farmersdelight:pasta_with_meatballs", 2)], "Pasta with Meatballs", deps=["f_meal", "fd_crops"], xp=40,
-      subtitle="Four ingredients, three of them cooked first", desc=[
+      optional=True, tokens=1, subtitle="Optional: four ingredients, three of them cooked first", desc=[
         "&eWhat:&r a hearty meal that chains every kitchen tool: knife (minced beef), board (raw pasta from dough) and pot (tomato sauce).",
         "&eChemistry:&r dough is starch and gluten proteins; water lets gluten chains cross-link into the stretchy network that holds pasta together.",
         "&eHow:&r follow the tree in JEI: wheat dough → raw pasta, beef → minced beef, tomatoes → tomato sauce, then the pot.",
@@ -38,7 +38,7 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eHow:&r craft compost from dirt, straw and bone meal plus rotten flesh or tree bark (check JEI), place it and wait.",
         "&eTip:&r till Rich Soil with a hoe to get rich farmland for crops."]),
     Q("fd_stove", 3, -1.5, [item("farmersdelight:stove")], "The Stove", deps=["f_cooking_pot"], xp=25,
-      subtitle="A heat source that never burns out", desc=[
+      optional=True, tokens=1, subtitle="Optional: a heat source that never burns out", desc=[
         "&eWhat:&r the Stove heats a Cooking Pot or Skillet on top and can grill up to six items on its own surface.",
         "&eHow:&r iron ingots, bricks and a campfire (check JEI). Light it with flint and steel.",
         "&eTip:&r unlike a campfire it doesn't need logs, and it looks right in a kitchen."]),
@@ -59,12 +59,12 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eHow:&r plant a brown or red mushroom on Rich Soil in low light, wait, then harvest it with shears; the colony stays and regrows.",
         "&eTip:&r mushroom colonies are the steady source of mushrooms for stews and rice dishes."]),
     Q("fd_skillet", 3, -3, [item("farmersdelight:skillet")], "Skillet", deps=["fd_stove"], xp=25,
-      subtitle="Fry it, or hit something with it", desc=[
+      optional=True, tokens=1, subtitle="Optional: fry it, or hit something with it", desc=[
         "&eWhat:&r a frying pan that cooks one item at a time over heat, and doubles as a surprisingly good weapon.",
         "&eHow:&r iron ingots and a brick (check JEI). Place it on the Stove or a campfire, or check its tooltip for cooking in hand.",
         "&eTip:&r Fire Aspect on a skillet sounds silly; it works."]),
     Q("fd_fried", 5, -3, [item("farmersdelight:fried_egg", 4), item("farmersdelight:cooked_bacon", 4)], "Breakfast", deps=["fd_skillet"], xp=30,
-      subtitle="Eggs and bacon from the skillet", desc=[
+      optional=True, tokens=1, subtitle="Optional: eggs and bacon from the skillet", desc=[
         "&eWhat:&r the start of most Farmer's Delight breakfasts: fried eggs and cooked bacon.",
         "&eChemistry:&r egg white turns opaque as heat unfolds its proteins (denaturation) and they tangle together; it can't go back.",
         "&eHow:&r cut raw porkchop into bacon on the Cutting Board, then fry it and the eggs on the Skillet or Stove.",
@@ -88,15 +88,15 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eTip:&r crop storage blocks (crates and bags) pack 9 crops each; you need the loose crops here."]),
 
     # --- Botany Pots (y=3) ---------------------------------------------------------------------
-    Q("f_pot", 0, 3, [item("botanypots:terracotta_hopper_botany_pot")], "Hopper Botany Pots", deps=["gs_food"], xp=25,
+    Q("f_pot", 0, 3, [item("botanypots:terracotta_hopper_botany_pot")], "Hopper Botany Pots", deps=["f_knife"], xp=25,
       subtitle="A farm in one block", desc=[
         "&eWhat:&r Hopper Botany Pots grow crops and push the harvest into the container below.",
         "&eHow:&r place one on a chest, add soil (dirt) and a seed.",
         "&eTip:&r Rich Soil or farmland grows faster than dirt, and Mystical Agriculture seeds work in pots too."]),
 
     # --- Animals (y=4.5) -----------------------------------------------------------------------
-    Q("fd_breed", 2, 4.5, [item("minecraft:lead", 2), item("minecraft:wheat", 16)], "Animal Husbandry", deps=["gs_food"], xp=20,
-      subtitle="Breeding, explained by Just Enough Breeding", desc=[
+    Q("fd_breed", 2, 4.5, [item("minecraft:lead", 2), item("minecraft:wheat", 16)], "Animal Husbandry", deps=["f_knife"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: breeding, explained by Just Enough Breeding", desc=[
         "&eWhat:&r cows, sheep, pigs and chickens give food, leather, wool and eggs. Two adults fed their favourite food make a baby.",
         "&eHow:&r lead two animals into a pen and feed them. Just Enough Breeding adds a JEI page per animal: look up any mob egg or food to see what it eats and what it drops.",
         "&eTip:&r babies take about 20 minutes to grow; feeding them their breeding food speeds that up."]),
@@ -125,7 +125,7 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eHow:&r Chemical Reactor, three steps (check JEI): bone meal + H₂SO₄ → phosphoric acid; potato/carrot/beetroot + water + HCl → potassium chloride, then KCl + H₂ + O₂ → potassium hydroxide; finally nitrogen + phosphoric acid + KOH → NPK Fertilizer.",
         "&eTip:&r real NPK plants start from ammonia, not raw nitrogen. Here the recipe takes the shortcut."]),
     Q("fd_farmer", 4, 6, [item("extended_industrialization:steam_farmer")], "The Steam Farmer", deps=["t3_analog", "t3_motor"], xp=100,
-      subtitle="A multiblock that plants and harvests", desc=[
+      optional=True, tokens=1, subtitle="Optional: a multiblock that plants and harvests", desc=[
         "&eWhat:&r Extended Industrialization's Farmer is a multiblock that tills, plants, harvests and (with fertiliser) speeds up a whole field.",
         "&eHow:&r analog circuits, a motor, bronze plated bricks, a steel combine and a bronze pipe casing (check JEI). Its layout is in JEI and the MI guidebook.",
         "&eTip:&r the Electric Farmer is the upgrade. JEI has a fertiliser page that shows which fluids speed up a Farmer."]),

@@ -32,7 +32,7 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
         "&eHow:&r diorite dissolves into tin and indium. Aluminum and lead come from their ingots, dusts and minerals (check JEI).",
         "&ePerk:&r hold one of each of these four elements and your body remembers them: &e+2 armor toughness&r, permanently. Soft metals bend instead of breaking.",
         "&eTip:&r type &e/warbucks elements&r to see which Periodic Table perks you've unlocked and what's still missing."]),
-    Q("pt_liquid", 6, -2, [item("chemlib:mercury", 4), item("chemlib:gallium", 4)], "Liquid Metals", subtitle="Metals that melt in your hand", deps=["pt_transition"], xp=150, desc=[
+    Q("pt_liquid", 6, -2, [item("chemlib:mercury", 4), item("chemlib:gallium", 4)], "Liquid Metals", subtitle="Metals that melt in your hand", deps=["pt_transition"], xp=150, optional=True, tokens=1, desc=[
         "&eWhat:&r mercury and gallium, the two metals you can pour (almost) at room temperature.",
         "&eChemistry:&r mercury melts at −38.8 °C; gallium at 29.8 °C, below body temperature.",
         "&eHow:&r ender pearls and end stone dissolve into mercury. Cobblestone gives a little gallium."]),
@@ -75,13 +75,13 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
         "&eChemistry:&r a full outer shell means nothing to gain or lose. Argon shields welds from air; neon glows red in a discharge tube.",
         "&eHow:&r nothing dissolves into them, so build them: the Alchemistry Fusion Chamber (EV) adds proton numbers, so H + H → He. Check JEI for neon and argon.",
         "&eTip:&r real stars fuse hydrogen into helium too, though it takes them four protons, not two."]),
-    Q("pt_heavy_noble", 10, -1, [item("chemlib:xenon", 2), item("chemlib:radon", 2)], "Heavy Noble Gases", subtitle="Even the 'inert' ones have limits", deps=["pt_post_transition"], xp=250, optional=True, tokens=1, desc=[
+    Q("pt_heavy_noble", 10, -1, [item("chemlib:xenon", 2), item("chemlib:radon", 2)], "Heavy Noble Gases", subtitle="Even the 'inert' ones have limits", deps=["pt_noble"], xp=250, optional=True, tokens=1, desc=[
         "&eWhat:&r xenon and radon, the heaviest natural noble gases.",
         "&eChemistry:&r in 1962 xenon was made to react (with platinum hexafluoride), ending the idea that noble gases never react. Radon is radioactive.",
         "&eHow:&r dragon's breath dissolves into both. That means a trip to the End."]),
 
     # --- Late table ---------------------------------------------------------------------------
-    Q("pt_rare_earth", 12, 0, [item("chemlib:lanthanum", 4), item("chemlib:cerium", 4), item("chemlib:neodymium", 4)], "Rare Earths", subtitle="Not rare, just hard to separate", deps=["pt_noble", "t6_pu"], xp=300, desc=[
+    Q("pt_rare_earth", 12, 0, [item("chemlib:lanthanum", 4), item("chemlib:cerium", 4), item("chemlib:neodymium", 4)], "Rare Earths", subtitle="Not rare, just hard to separate", deps=["pt_noble"], xp=300, desc=[
         "&eWhat:&r the lanthanides: lanthanum, cerium, neodymium and their near-identical neighbours.",
         "&eChemistry:&r they differ only in an inner (4f) shell, so their chemistry is almost the same. Neodymium makes the strongest permanent magnets.",
         "&eHow:&r check JEI for sources. The Alchemistry Fusion Chamber can also build them from lighter elements."]),
@@ -119,7 +119,7 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
         "&eWhat:&r ammonia, NH₃, the base of nearly all fertiliser.",
         "&eChemistry:&r N₂ + 3H₂ → 2NH₃. Breaking nitrogen's triple bond is hard; the Haber-Bosch process needs heat, pressure and an iron catalyst.",
         "&eHow:&r Combiner: 1 nitrogen + 3 hydrogen. Later you'll run real Haber-Bosch in an MI machine."]),
-    Q("pt_salt", 10, 4, [item("chemlib:sodium_chloride", 8)], "Ionic Bonds: Salt", subtitle="A metal gives, a non-metal takes", deps=["pt_ammonia", "pt_halogens"], xp=125, desc=[
+    Q("pt_salt", 10, 4, [item("chemlib:sodium_chloride", 8)], "Ionic Bonds: Salt", subtitle="A metal gives, a non-metal takes", deps=["pt_ammonia"], xp=125, desc=[
         "&eWhat:&r sodium chloride, NaCl: table salt.",
         "&eChemistry:&r sodium gives its one electron to chlorine. Na⁺ and Cl⁻ then hold together in a cubic crystal: an ionic bond.",
         "&eHow:&r Combiner: 1 sodium + 1 chlorine.",
@@ -153,39 +153,39 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
 
     # --- Complete groups (y = -4) and full f-block (x = 18), all optional ---------------------
     Q("pt_alkali_all", 2, -4, [item("chemlib:lithium"), item("chemlib:sodium"), item("chemlib:potassium"), item("chemlib:rubidium"), item("chemlib:cesium"), item("chemlib:francium")],
-      "Group 1, Complete", subtitle="Every alkali metal, lithium to francium", deps=["pt_alkali", "pt_noble"], xp=250, optional=True, tokens=2, desc=[
+      "Group 1, Complete", subtitle="Every alkali metal, lithium to francium", deps=["pt_noble"], xp=250, optional=True, tokens=2, desc=[
         "&eWhat:&r all six alkali metals: Li, Na, K, Rb, Cs and Fr.",
         "&eChemistry:&r reactivity climbs down the group: the outer electron sits further from the nucleus and is lost more easily. Caesium explodes in water.",
         "&eHow:&r press &eU&r on rubidium and caesium in JEI for Dissolver sources. Francium is rare in both reality and here; the Fusion Chamber can build it.",
         "&eTip:&r real francium has a half-life of about 22 minutes. Yours keeps."]),
     Q("pt_alkaline_all", 4, -4, [item("chemlib:beryllium"), item("chemlib:magnesium"), item("chemlib:calcium"), item("chemlib:strontium"), item("chemlib:barium"), item("chemlib:radium")],
-      "Group 2, Complete", subtitle="Beryllium to radium", deps=["pt_alkaline", "pt_noble"], xp=250, optional=True, tokens=2, desc=[
+      "Group 2, Complete", subtitle="Beryllium to radium", deps=["pt_alkali_all"], xp=250, optional=True, tokens=2, desc=[
         "&eWhat:&r all six alkaline earth metals: Be, Mg, Ca, Sr, Ba and Ra.",
         "&eChemistry:&r strontium salts burn red and barium salts green: that's how fireworks get their colours. Radium glows from its own radioactivity.",
         "&eHow:&r JEI (&eU&r) shows Dissolver sources for strontium, barium and radium; the Fusion Chamber fills any gaps."]),
     Q("pt_boron_group", 6, -4, [item("chemlib:boron"), item("chemlib:aluminum"), item("chemlib:gallium"), item("chemlib:indium"), item("chemlib:thallium")],
-      "The Boron Group", subtitle="Group 13: three valence electrons", deps=["pt_post_transition", "pt_noble"], xp=250, optional=True, tokens=1, desc=[
+      "The Boron Group", subtitle="Group 13: three valence electrons", deps=["pt_alkaline_all"], xp=250, optional=True, tokens=1, desc=[
         "&eWhat:&r boron, aluminum, gallium, indium and thallium.",
         "&eChemistry:&r boron is a metalloid; the rest are metals. Borosilicate glass (with B₂O₃) survives sudden heat, which is why lab glassware uses it.",
         "&eHow:&r boron needs the Fusion Chamber (5 = 1 + 4: hydrogen + beryllium). Check JEI for thallium.",
         "&eTip:&r thallium is very toxic in reality. In a chest it's harmless."]),
     Q("pt_carbon_group", 8, -4, [item("chemlib:carbon"), item("chemlib:silicon"), item("chemlib:germanium"), item("chemlib:tin"), item("chemlib:lead")],
-      "The Carbon Group", subtitle="Group 14: from diamond to lead", deps=["pt_metalloids", "pt_post_transition"], xp=200, optional=True, tokens=1, desc=[
+      "The Carbon Group", subtitle="Group 14: from diamond to lead", deps=["pt_post_transition"], xp=200, optional=True, tokens=1, desc=[
         "&eWhat:&r carbon, silicon, germanium, tin and lead, all with four valence electrons.",
         "&eChemistry:&r the group runs from a non-metal (carbon) through metalloids (Si, Ge) to metals (Sn, Pb). Same outer shell, very different behaviour.",
         "&eHow:&r all five come from the Dissolver: coal or graphite, sand, Nether bricks, diorite and lead ingots (check JEI)."]),
     Q("pt_pnictogens", 10, -4, [item("chemlib:nitrogen"), item("chemlib:phosphorus"), item("chemlib:arsenic"), item("chemlib:antimony"), item("chemlib:bismuth")],
-      "The Pnictogens", subtitle="Group 15: nitrogen to bismuth", deps=["pt_nonmetals", "pt_metalloids"], xp=200, optional=True, tokens=1, desc=[
+      "The Pnictogens", subtitle="Group 15: nitrogen to bismuth", deps=["pt_nonmetals"], xp=200, optional=True, tokens=1, desc=[
         "&eWhat:&r nitrogen, phosphorus, arsenic, antimony and bismuth.",
         "&eChemistry:&r five valence electrons, so they often form three bonds (NH₃, PH₃). Bismuth crystals grow in stepped 'hopper' shapes with a rainbow oxide film.",
         "&eHow:&r JEI (&eU&r) shows Dissolver sources for antimony and bismuth."]),
     Q("pt_halogens_all", 12, -4, [item("chemlib:fluorine"), item("chemlib:chlorine"), item("chemlib:bromine"), item("chemlib:iodine"), item("chemlib:astatine")],
-      "Group 17, Complete", subtitle="All five halogens, astatine included", deps=["pt_halogens", "pt_noble"], xp=250, optional=True, tokens=2, desc=[
+      "Group 17, Complete", subtitle="All five halogens, astatine included", deps=["pt_boron_group"], xp=250, optional=True, tokens=2, desc=[
         "&eWhat:&r the four common halogens plus astatine, one of the rarest natural elements on Earth.",
         "&eChemistry:&r down the group the halogens go from gas (F₂, Cl₂) to liquid (Br₂) to solid (I₂): bigger molecules attract each other more strongly.",
         "&eHow:&r astatine has a few Dissolver sources (press &eU&r in JEI), or build it in the Fusion Chamber."]),
     Q("pt_noble_all", 14, -4, [item("chemlib:helium"), item("chemlib:neon"), item("chemlib:argon"), item("chemlib:krypton"), item("chemlib:xenon"), item("chemlib:radon")],
-      "Group 18, Complete", subtitle="Every natural noble gas", deps=["pt_noble", "pt_heavy_noble"], xp=300, optional=True, tokens=2, desc=[
+      "Group 18, Complete", subtitle="Every natural noble gas", deps=["pt_heavy_noble"], xp=300, optional=True, tokens=2, desc=[
         "&eWhat:&r helium through radon, the whole right-hand column.",
         "&eChemistry:&r from 1960 to 1983 the metre was defined by the orange light of krypton-86. Xenon lights car headlamps and drives ion engines in spacecraft.",
         "&eHow:&r nothing dissolves into the light ones: fuse them in the Fusion Chamber (krypton is 36: try neon + iron). Xenon and radon come from dragon's breath."]),
@@ -204,11 +204,11 @@ CHAPTER = Chapter("periodic", "The Periodic Table", "chemlib:hydrogen",
         "&eHow:&r the Fusion Chamber: gold (79) plus a light element reaches actinium and beyond (check JEI for the pairs)."]),
 
     # --- More compounds (y = 6 / 8), optional; two secrets ----------------------------------
-    Q("pt_limestone", 2, 6, [item("chemlib:calcium_carbonate", 4)], "Limestone", subtitle="CaCO₃: shells, chalk and marble", deps=["pt_co2", "pt_alkaline"], xp=125, optional=True, tokens=1, desc=[
+    Q("pt_limestone", 2, 6, [item("chemlib:calcium_carbonate", 4)], "Limestone", subtitle="CaCO₃: shells, chalk and marble", deps=["pt_co2"], xp=125, optional=True, tokens=1, desc=[
         "&eWhat:&r calcium carbonate, the mineral in limestone, chalk, marble and seashells.",
         "&eChemistry:&r heat it and it splits: CaCO₃ → CaO + CO₂. That quicklime is the start of cement and mortar.",
         "&eHow:&r Combiner: first carbonate (1 carbon + 3 oxygen), then 1 calcium + 1 carbonate."]),
-    Q("pt_saltpeter", 8, 6, [item("chemlib:potassium_nitrate", 4)], "Saltpeter", subtitle="KNO₃: fertiliser and black powder", deps=["pt_ammonia", "pt_alkali"], xp=125, optional=True, tokens=1, desc=[
+    Q("pt_saltpeter", 8, 6, [item("chemlib:potassium_nitrate", 4)], "Saltpeter", subtitle="KNO₃: fertiliser and black powder", deps=["pt_ammonia"], xp=125, optional=True, tokens=1, desc=[
         "&eWhat:&r potassium nitrate, the oxidiser in gunpowder and a classic fertiliser.",
         "&eChemistry:&r black powder is roughly 75% KNO₃, 15% charcoal and 10% sulfur. The nitrate brings its own oxygen, so it burns without air.",
         "&eHow:&r Combiner: nitrate (1 nitrogen + 3 oxygen), then 1 potassium + 1 nitrate.",

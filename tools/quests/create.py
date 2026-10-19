@@ -58,7 +58,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r brass casing, for mechanical crafters, arms and brass tunnels.",
         "&eHow:&r right-click a stripped log or stripped wood with a brass ingot.",
         "&eTip:&r a deployer holding brass ingots can apply it automatically."]),
-    Q("cr_precision", 22, 0, [item("create:precision_mechanism"), item("create:mechanical_crafter", 4)], "Precision", subtitle="Your first sequenced assembly", deps=["cr_deployer", "cr_brass_casing"], xp=150, size=1.5, desc=[
+    Q("cr_precision", 22, 0, [item("create:precision_mechanism"), item("create:mechanical_crafter", 4)], "Precision", subtitle="Your first sequenced assembly", deps=["cr_deployer"], xp=150, size=1.5, desc=[
         "&6Each step in its place, every time. You used to build worlds this way.&r",
         "&eWhat:&r the precision mechanism, made by sequenced assembly: one item passes the same stations several times. Mechanical Crafters join into a big grid for recipes too large for a crafting table.",
         "&eHow:&r start with a gold plate, then deploy a cogwheel, a large cogwheel and an iron nugget onto it, 5 loops. JEI shows the sequence. Crafters are an electron tube, brass casing and crafting table.",
@@ -104,7 +104,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r a bearing turns the blocks attached to its face into a moving 'contraption': doors, rotors, fans, ferris wheels.",
         "&eHow:&r a wooden slab, an andesite casing and a shaft. Build onto its face, power it, and right-click to start.",
         "&eTip:&r moving blocks keep working: a spinning contraption can carry drills, harvesters and seats."]),
-    Q("cr_clockwork", 0, 4, [item("create:clockwork_bearing")], "Clockwork Bearing", subtitle="Optional: a bearing that tells time", deps=["cr_bearing", "cr_tube"], xp=40, optional=True, tokens=1, desc=[
+    Q("cr_clockwork", 0, 4, [item("create:clockwork_bearing")], "Clockwork Bearing", subtitle="Optional: a bearing that tells time", deps=["cr_bearing"], xp=40, optional=True, tokens=1, desc=[
         "&eWhat:&r the Clockwork Bearing points its contraption at the current in-game time, like the hands of a clock.",
         "&eHow:&r a wooden slab, a brass casing and an electron tube. Build an hour hand on it, and a second layer for the minute hand.",
         "&eTip:&r a giant clock tower is a classic Create build."]),
@@ -124,11 +124,11 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r a moving Drill breaks blocks in front of it; a Harvester picks crops and leaves the plant to regrow.",
         "&eHow:&r both use andesite casing and alloy, with iron (drill) or iron plates (harvester). Mount them on a piston, bearing or gantry.",
         "&eTip:&r a slow bearing with harvesters sweeping a round field is a cheap automatic farm."]),
-    Q("cr_gantry", 4, 8, [item("create:gantry_carriage"), item("create:gantry_shaft", 8)], "Gantries", subtitle="A carriage that rides a shaft", deps=["cr_piston"], xp=50, desc=[
+    Q("cr_gantry", 4, 8, [item("create:gantry_carriage"), item("create:gantry_shaft", 8)], "Gantries", subtitle="A carriage that rides a shaft", deps=["cr_piston"], xp=50, optional=True, tokens=1, desc=[
         "&eWhat:&r a Gantry Carriage runs along a powered gantry shaft, carrying its contraption with it, with no length limit.",
         "&eHow:&r gantry shafts are alloy and redstone; the carriage is a slab, a casing and a cogwheel. Power the shaft and the carriage moves.",
         "&eTip:&r gantries can carry other gantries, which makes an X-Y frame for a big drill or quarry."]),
-    Q("cr_cart", 2, 8, [item("create:cart_assembler", 2)], "Minecart Contraptions", subtitle="Contraptions on rails", deps=["cr_glue"], xp=50, desc=[
+    Q("cr_cart", 2, 8, [item("create:cart_assembler", 2)], "Minecart Contraptions", subtitle="Contraptions on rails", deps=["cr_glue"], xp=50, optional=True, tokens=1, desc=[
         "&eWhat:&r a Cart Assembler on a rail turns a passing minecart and the blocks glued to it into a moving contraption.",
         "&eHow:&r andesite alloy, redstone and logs. Place it as a rail, build on top, then send a minecart through with the assembler powered.",
         "&eTip:&r a minecart contraption with a drill digs its own tunnel along the track."]),
@@ -139,7 +139,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eChemistry:&r grinding raises surface area: a powder reacts, dissolves and mixes much faster than a lump.",
         "&eHow:&r a cogwheel, an andesite casing and stone. Power it from the side or below and drop items in on top.",
         "&eTip:&r it doesn't take ores here. Ore crushing needs Crushing Wheels later."]),
-    Q("cr_saw", 10, -4, [item("create:mechanical_saw")], "Mechanical Saw", subtitle="A stonecutter with a motor", deps=["cr_millstone"], xp=40, desc=[
+    Q("cr_saw", 10, -4, [item("create:mechanical_saw")], "Mechanical Saw", subtitle="A stonecutter with a motor", deps=["cr_millstone"], xp=40, optional=True, tokens=1, desc=[
         "&eWhat:&r a still saw over a belt cuts logs into planks and acts as a stonecutter; on a contraption it fells whole trees.",
         "&eHow:&r iron plates, an iron ingot and an andesite casing. Set its target recipe with a filter if it has several.",
         "&eTip:&r a row of saws on a bearing makes a tree farm that never misses a log."]),
@@ -166,7 +166,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r the Spout pours fluid into items below it on a depot or belt: water bottles, buckets, honey, lava cakes and more.",
         "&eHow:&r a copper casing over dried kelp. Pipe fluid into it and put a depot underneath.",
         "&eTip:&r spouts are a station in many sequenced assembly recipes, so you'll use them again."]),
-    Q("cr_drain", 14, -6, [item("create:item_drain")], "Item Drain", subtitle="Empty buckets on the way past", deps=["cr_spout"], xp=40, desc=[
+    Q("cr_drain", 14, -6, [item("create:item_drain")], "Item Drain", subtitle="Empty buckets on the way past", deps=["cr_spout"], xp=40, optional=True, tokens=1, desc=[
         "&eWhat:&r the Item Drain empties fluid containers that roll over it and holds the fluid for your pipes.",
         "&eHow:&r iron bars over a copper casing. Put it in a belt line and pull the fluid out with a pump.",
         "&eTip:&r it's the easy way to turn buckets from another mod into piped fluid."]),
@@ -216,17 +216,17 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r chutes drop items straight down between machines and chests; a fan under or over one blows items upward.",
         "&eHow:&r iron plates and an iron ingot make 4 chutes.",
         "&eTip:&r a chute into a crushing wheel or basin is the simplest feeder there is."]),
-    Q("cr_vault", 14, 4, [item("create:item_vault", 4)], "Item Vaults", subtitle="Storage that grows as you build", deps=["cr_chute"], xp=40, desc=[
+    Q("cr_vault", 14, 4, [item("create:item_vault", 4)], "Item Vaults", subtitle="Storage that grows as you build", deps=["cr_chute"], xp=40, optional=True, tokens=1, desc=[
         "&eWhat:&r Item Vaults merge into one big storage block when placed together.",
         "&eHow:&r iron plates around a barrel. Place several side by side; funnels and pipes reach the whole vault.",
         "&eTip:&r vaults also go into frogports, so make a few extra."]),
-    Q("cr_brass_logistics", 18, 4, [item("create:brass_funnel", 2), item("create:brass_tunnel", 2), item("create:smart_chute")], "Smart Logistics", subtitle="Brass parts that read filters", deps=["cr_tube", "cr_chute"], xp=60, desc=[
+    Q("cr_brass_logistics", 18, 4, [item("create:brass_funnel", 2), item("create:brass_tunnel", 2), item("create:smart_chute")], "Smart Logistics", subtitle="Brass parts that read filters", deps=["cr_chute"], xp=60, optional=True, tokens=1, desc=[
         "&eWhat:&r brass funnels, tunnels and smart chutes take a filter, so you choose exactly which items pass and how many.",
         "&eHow:&r each uses an electron tube and brass (check JEI). Put an item or a Create Filter in the slot on the block.",
         "&eTip:&r a brass tunnel set to 'synchronise' only lets items through when every lane has one: perfect for 1:1 recipes."]),
 
     # --- Packages (x = 14..20, y = 6..8) --------------------------------------------------------
-    Q("cr_cardboard", 14, 6, [item("create:cardboard", 8)], "Cardboard", subtitle="Pulp, pressed flat", deps=["cr_vault", "cr_mixer"], xp=40, desc=[
+    Q("cr_cardboard", 14, 6, [item("create:cardboard", 8)], "Cardboard", subtitle="Pulp, pressed flat", deps=["cr_mixer"], xp=40, desc=[
         "&eWhat:&r cardboard, for Create's package logistics.",
         "&eChemistry:&r paper and card are mats of cellulose fibres; water lets the fibres bond as it dries, which is why pulp holds together.",
         "&eHow:&r mix 4 pulpable items (like sticks or sugar cane; check JEI) with 250 mB of water for pulp, then press the pulp into cardboard."]),
@@ -275,13 +275,13 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eHow:&r each wheel is a mechanical crafting recipe (check JEI). Place them side by side, spin them inward, and drop items in from above.",
         "&eHow:&r yields: an ore block gives 1 crushed ore plus a 75% chance of a second; deepslate and modded ores are &ecapped at 2&r in this pack. Raw ore gives just 1 crushed ore (no gain), plus an XP nugget chance.",
         "&eTip:&r crush ore blocks (silk touch), not raw ore. Even so it's the same 2x ceiling as every route before acids; Mekanism's acid chain is where 3x and up begins."]),
-    Q("cr_wash", 24, 4, [item("create:encased_fan"), item("create:crushed_raw_iron", 8)], "Bulk Washing", subtitle="Water, a fan and a bonus", deps=["cr_crush", "cr_fan"], xp=60, desc=[
+    Q("cr_wash", 24, 4, [item("create:encased_fan"), item("create:crushed_raw_iron", 8)], "Bulk Washing", subtitle="Water, a fan and a bonus", deps=["cr_crush"], xp=60, optional=True, tokens=1, desc=[
         "&eWhat:&r an encased fan blowing through water washes crushed ore into nuggets plus a byproduct.",
         "&eHow:&r put flowing water in front of the fan and pass items through the air stream (a belt works).",
         "&eTip:&r washed crushed iron gives 9 nuggets (one ingot's worth) and a 75% chance of redstone. The byproduct is the bonus, not extra iron."]),
 
     # --- Trains (x = 26..32, y = 5..9) ---------------------------------------------------------
-    Q("cr_sturdy", 26, 5, [item("create:powdered_obsidian", 4), item("create:sturdy_sheet", 4)], "Sturdy Sheets", subtitle="Obsidian, lava and two presses", deps=["cr_crush", "cr_spout"], xp=75, desc=[
+    Q("cr_sturdy", 26, 5, [item("create:powdered_obsidian", 4), item("create:sturdy_sheet", 4)], "Sturdy Sheets", subtitle="Obsidian, lava and two presses", deps=["cr_crush"], xp=75, desc=[
         "&eWhat:&r sturdy sheets, the armour plate for train casings and schedules.",
         "&eChemistry:&r obsidian is volcanic glass: lava cooled so fast that its silica never formed crystals.",
         "&eHow:&r crush obsidian into powder, then a sequenced assembly: spout 500 mB of lava onto it, press, press. JEI shows the loop.",
@@ -290,7 +290,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r train casing is the base block for stations, controls, signals and bogeys.",
         "&eHow:&r right-click a brass casing with a sturdy sheet.",
         "&eTip:&r right-clicking a track with train casing places a bogey: the wheels your train sits on."]),
-    Q("cr_track", 28, 7, [item("create:track", 32)], "Train Track", subtitle="Sleepers, nuggets, a press", deps=["cr_railway", "cr_deployer"], xp=60, desc=[
+    Q("cr_track", 28, 7, [item("create:track", 32)], "Train Track", subtitle="Sleepers, nuggets, a press", deps=["cr_railway"], xp=60, desc=[
         "&eWhat:&r Create's train track, which can curve, slope and cross.",
         "&eHow:&r sequenced assembly on stone slabs (the 'sleepers'): deploy an iron or zinc nugget, deploy another, then press. Check JEI.",
         "&eTip:&r click one track end, then another, to lay a curve or slope between them."]),
@@ -313,7 +313,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r Crafts and Additions' Alternator turns rotation into FE.",
         "&eChemistry:&r a coil turning in a magnetic field pushes electrons along the wire: electromagnetic induction.",
         "&eHow:&r in this pack its core is an &eMI analog circuit&r (LV), so electricity from rotation waits for the LV age. Feed it fast rotation."]),
-    Q("cr_motor", 28, 1, [item("createaddition:electric_motor")], "Electricity to Rotation", subtitle="Run contraptions off the grid", deps=["cr_alternator"], xp=100, desc=[
+    Q("cr_motor", 28, 1, [item("createaddition:electric_motor")], "Electricity to Rotation", subtitle="Run contraptions off the grid", deps=["cr_alternator"], xp=100, optional=True, tokens=1, desc=[
         "&eWhat:&r the Electric Motor turns FE back into rotation, with a speed you set.",
         "&eHow:&r give it FE from your MI or Mekanism grid and set the speed in its GUI.",
         "&eTip:&r motors free you from water wheels and windmills. Put a Create line anywhere."]),

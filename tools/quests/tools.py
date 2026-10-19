@@ -1,7 +1,7 @@
 """Quest chapter: tools. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
 from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
-CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
+CHAPTER = Chapter("tools", "Gear and Comfort", "silentgear:pickaxe",
         ["Better tools from better materials, and a soft place to land."], SIDE, [
     # --- Silent Gear: core line (y=0) ---------------------------------------------------------
     Q("tc_sg_repair", 0, 0, [item("silentgear:crude_repair_kit")], "Repair Kits", deps=["gs_silent"], xp=25,
@@ -11,18 +11,18 @@ CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
         "&eHow:&r craft a Crude Repair Kit, load it with matching material, then combine it with the tool in a crafting grid.",
         "&eTip:&r a better kit (Sturdy, then Crimson and Azure) holds more material and repairs more per use."]),
     Q("tc_blaze_gold", 2, 0, [item("silentgear:blaze_gold_ingot", 4)], "Blaze Gold", deps=["tc_sg_repair", "t2_nether"], xp=40,
-      subtitle="Gold, fired with blaze powder", desc=[
+      optional=True, tokens=1, subtitle="Optional: gold, fired with blaze powder", desc=[
         "&eWhat:&r Silent Gear's first magic alloy. It's a key ingredient of the Material Grader and the Starlight Charger.",
         "&eChemistry:&r gold (Au) is a noble metal: it barely reacts with anything, which is why it's found as native nuggets. Blaze gold is fictional; the blaze powder does the work.",
         "&eHow:&r gold ingot + 2 blaze powder in the Alloy Forge, or check JEI for the early crafting route.",
         "&eTip:&r keep a stack spare. Blaze gold blocks also go into the Starlight Charger."]),
     Q("tc_grader", 4, 0, [item("silentgear:material_grader")], "Material Grader", deps=["tc_blaze_gold"], xp=40,
-      subtitle="Same metal, better grade, stronger part", desc=[
+      optional=True, tokens=1, subtitle="Optional: same metal, better grade, stronger part", desc=[
         "&eWhat:&r grades Silent Gear materials. A higher grade adds a stat bonus to every part made from that material.",
         "&eHow:&r quartz, iron, blaze gold and an Advanced Upgrade Base (check JEI). Feed it materials plus a catalyst (check JEI for which items count).",
         "&eTip:&r grade only the materials you'll use for heads and main parts; rods and bindings matter less."]),
     Q("tc_salvager", 6, 0, [item("silentgear:salvager")], "Salvager", deps=["tc_grader"], xp=40,
-      subtitle="Old tools back into parts", desc=[
+      optional=True, tokens=1, subtitle="Optional: old tools back into parts", desc=[
         "&eWhat:&r breaks old Silent Gear tools back into parts, so upgrading doesn't waste materials.",
         "&eHow:&r place it and drop in the old tool. Some material is lost on each salvage.",
         "&eTip:&r salvage before you throw anything in lava; the parts often have most of their value left."]),
@@ -44,43 +44,30 @@ CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
         "&eHow:&r crimson steel ingots, blackstone and an iron block (check JEI). Fuel it like a furnace.",
         "&eTip:&r alloying in the forge gives more ingots per batch than the crafting-table route."]),
     Q("tc_azure", 8, -2, [item("silentgear:azure_electrum_ingot", 4)], "Azure Electrum", deps=["tc_alloy_forge", "w_end"], xp=100,
-      subtitle="Azure silver from the End, plus gold", desc=[
+      optional=True, tokens=1, subtitle="Optional: azure silver from the End, plus gold", desc=[
         "&eWhat:&r azure silver ore generates in the End. Alloyed with gold it becomes azure electrum, a fast, enchantable metal.",
         "&eChemistry:&r real electrum is a natural gold–silver alloy (Au–Ag); the ancient Lydians struck the first coins from it.",
-        "&eHow:&r Alloy Forge: an azure silver block, 2 gold ingots and an ender pearl."]),
+        "&eHow:&r azure silver ore needs a netherite-tier pickaxe (netherite, refined obsidian, crimson steel or better; see the Harvest Tiers chapter). Then Alloy Forge: an azure silver block, 2 gold ingots and an ender pearl."]),
     Q("tc_tyrian", 10, -4, [item("silentgear:tyrian_steel_ingot", 4)], "Tyrian Steel", deps=["tc_azure"], xp=200,
       optional=True, tokens=2, subtitle="Optional: Silent Gear's finest metal", desc=[
         "&eWhat:&r the top Silent Gear alloy: crimson steel, azure electrum, crushed shulker shell and netherite scrap.",
         "&eChemistry:&r Tyrian purple was a real dye made from sea snails, once worth its weight in silver. The steel just borrowed the colour.",
         "&eHow:&r Alloy Forge (check JEI). Crush shulker shells first."]),
 
-    # --- Mekanism paxels (y=2) -----------------------------------------------------------------
-    Q("tc_bronze_paxel", 0, 2, [item("mekanismtools:bronze_paxel")], "Bronze Paxel", deps=["gs_paxel", "t0_bronze"], xp=25,
-      subtitle="Pickaxe, axe and shovel in your first alloy", desc=[
-        "&eWhat:&r a paxel is a pickaxe, axe and shovel in one tool. Bronze is tougher than iron.",
-        "&eChemistry:&r bronze is copper with about 12% tin (Cu–Sn). Tin atoms stiffen copper's soft lattice.",
-        "&eHow:&r craft a bronze pickaxe, axe and shovel, then combine them with a stick (check JEI)."]),
-    Q("tc_osmium_paxel", 2, 2, [item("mekanismtools:osmium_paxel")], "Osmium Paxel", deps=["tc_bronze_paxel", "t3_infuser"], xp=40,
+    # --- Mekanism paxels (y=2). Bronze and steel paxels are on the main path (t0_opt_paxel, t1_steel_paxel);
+    #     harvest tiers are in the harvest chapter. -------------------------------------------------
+    Q("tc_osmium_paxel", 2, 2, [item("mekanismtools:osmium_paxel")], "Osmium Paxel", deps=["t3_infuser"], xp=40,
       subtitle="The densest natural element, as a tool", desc=[
-        "&eWhat:&r Mekanism's signature metal as a paxel: more durability and speed than bronze.",
+        "&eWhat:&r Mekanism's signature metal as a paxel: more durability and speed than bronze, iron tier for mining.",
         "&eChemistry:&r osmium (Os) is the densest natural element at about 22.6 g/cm³, twice as dense as lead.",
-        "&eHow:&r osmium ore generates in the Overworld; smelt or process it, then craft the tools and combine."]),
-    Q("tc_diamond_paxel", 4, 2, [item("mekanismtools:diamond_paxel")], "Diamond Paxel", deps=["tc_osmium_paxel"], xp=50,
-      subtitle="Carbon in its hardest form", desc=[
-        "&eWhat:&r the diamond paxel mines everything the diamond pickaxe can, in one slot.",
-        "&eChemistry:&r diamond is pure carbon with every atom bonded to four others in a rigid 3D lattice. Graphite is the same carbon in flat sheets.",
-        "&eHow:&r diamond pickaxe, axe and shovel plus a stick (check JEI)."]),
-    Q("tc_obsidian_paxel", 6, 2, [item("mekanismtools:refined_obsidian_paxel")], "The Ultimate Paxel", deps=["tc_diamond_paxel"], xp=100,
+        "&eHow:&r osmium ore generates in the Overworld; smelt or process it, then craft the pickaxe, axe and shovel and combine them with a stick (check JEI).",
+        "&eTip:&r your steel paxel from T1 already mines at diamond tier. This one is about durability and speed."]),
+    Q("tc_obsidian_paxel", 6, 2, [item("mekanismtools:refined_obsidian_paxel")], "The Ultimate Paxel", deps=["tc_osmium_paxel"], xp=100,
       size=1.5, shape="hexagon", subtitle="Refined obsidian: Mekanism's toughest metal", desc=[
         "&6You remember a hammer that could split mountains. This is a start.&r",
-        "&eWhat:&r refined obsidian is Mekanism's toughest material, and its paxel is the best of the line.",
+        "&eWhat:&r refined obsidian is Mekanism's toughest material, and its paxel is the best of the line (netherite tier).",
         "&eHow:&r infuse obsidian dust with diamond in the Metallurgic Infuser, then press the refined obsidian dust in the Osmium Compressor (check JEI).",
         "&eTip:&r the same ingots make the Atomic Disassembler and much of Mekanism's late gear."]),
-    Q("tc_steel_paxel", 1, 3.5, [item("mekanismtools:steel_paxel")], "Steel Paxel", deps=["tc_bronze_paxel", "t1_steel"], xp=30,
-      optional=True, tokens=1, subtitle="Optional: a paxel from your blast furnace", desc=[
-        "&eWhat:&r a sidegrade to bronze, made from the steel you already produce.",
-        "&eChemistry:&r steel is iron with a little carbon from coke. Too much carbon (cast iron) makes it brittle.",
-        "&eHow:&r steel pickaxe, axe and shovel plus a stick (check JEI)."]),
     Q("tc_disassembler", 7, 3.5, [item("mekanism:atomic_disassembler")], "Atomic Disassembler", deps=["tc_obsidian_paxel"], xp=150,
       optional=True, tokens=1, subtitle="Optional: an FE-powered everything-tool", desc=[
         "&eWhat:&r an electric tool that mines, chops and digs, with vein and area modes. It runs on FE instead of durability.",
@@ -146,22 +133,12 @@ CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
 
     # --- Comfort (y=13.5) ----------------------------------------------------------------------
     Q("tc_hammock", 0, 13.5, [item("comforts:hammock_white")], "Hammock", deps=["gs_sleep"], xp=15,
-      subtitle="Sleep through the day", desc=[
+      optional=True, tokens=1, subtitle="Optional: sleep through the day", desc=[
         "&eWhat:&r skips the day the way a sleeping bag skips the night, without moving your spawn.",
         "&eHow:&r white wool, string and sticks. Hang it between two Rope and Nails placed on facing walls (check JEI).",
         "&eTip:&r useful when you want night-only mobs, like the ones a Deep Learner needs."]),
-    Q("tc_waystone", 2, 13.5, [item("waystones:warp_stone")], "Warp Stone", deps=["gs_iron"], xp=40,
-      subtitle="Teleport to any waystone from anywhere", desc=[
-        "&eWhat:&r Waystones (found in villages, or crafted) let you teleport between places you've visited. A Warp Stone works from anywhere.",
-        "&eHow:&r amethyst, ender pearls and emeralds (check JEI). Activate a waystone first by right-clicking it.",
-        "&eTip:&r it has a cooldown, so don't count on it in an emergency."]),
-    Q("tc_toolbelt", 4, 13.5, [item("toolbelt:belt")], "Tool Belt", deps=["gs_iron"], xp=20,
-      subtitle="Swap tools from your belt with one key", desc=[
-        "&eWhat:&r a belt worn in a Curios slot that holds tools and swaps them into your hand with a key.",
-        "&eHow:&r leather, string and an iron ingot. Add pouches for more slots.",
-        "&eTip:&r set the belt key in Controls. Great for paxel, sword, hoe and wrench."]),
     Q("tc_mining_gadget", 6, 13.5, [item("mininggadgets:mininggadget_simple")], "Mining Gadget", deps=["t3_hull"], xp=60,
-      subtitle="A mining laser powered by FE", desc=[
+      optional=True, tokens=1, subtitle="Optional: a mining laser powered by FE", desc=[
         "&eWhat:&r a mining laser that breaks blocks at range. Upgrades add 3x3 (and bigger) size, efficiency, magnet and void filters.",
         "&eHow:&r iron, gold, diamond and redstone (check JEI). Charge it with FE.",
         "&eTip:&r a void filter for stone and dirt keeps your inventory clean on long ore runs."]),
@@ -188,41 +165,20 @@ CHAPTER = Chapter("tools", "Tools and Comfort", "silentgear:pickaxe",
         "&eHow:&r helmet, chestplate, legging and boot plates from their blueprints, then assemble each piece (check JEI). Any four pieces.",
         "&eTip:&r crimson steel and azure electrum plates have strong traits; check the Material Book before choosing."]),
 
-    # --- Just Dire Things (y=17.5) -------------------------------------------------------------
+    # --- Just Dire Things (y=17.5): the goo line itself lives in the justdirethings chapter --------
     Q("tc_jdt_goo", 0, 17.5, [item("justdirethings:gooblock_tier1")], "Primordial Goo", deps=["gs_iron"], xp=25,
-      subtitle="Just Dire Things: goo that changes blocks", desc=[
-        "&6You remember a slime that turned stone into anything you asked. This one is less clever, but it tries.&r",
+      optional=True, tokens=1, subtitle="Optional: the door into Just Dire Things", desc=[
         "&eWhat:&r Just Dire Things goo converts the blocks it touches. Tier 1 goo turns an iron block into raw ferricore ore.",
-        "&eHow:&r clay, sugar, rotten flesh and dirt (check JEI). Place an iron block against the goo and wait (JEI shows how long).",
+        "&eHow:&r clay, sugar, rotten flesh and dirt (check JEI). The full goo line, from ferricore to eclipse alloy, is in the Just Dire Things chapter.",
         "&eTip:&r JEI's goo tab shows every conversion and which goo tier it needs."]),
-    Q("tc_jdt_ferricore", 2, 17.5, [item("justdirethings:ferricore_ingot", 8), item("justdirethings:ferricore_wrench")], "Ferricore", deps=["tc_jdt_goo"], xp=40,
-      subtitle="The first goo metal", desc=[
-        "&eWhat:&r ferricore is the first Just Dire Things metal: tools, the Pocket Generator, machines and upgrade blanks.",
-        "&eHow:&r mine the raw ferricore ore the goo makes and smelt it (check JEI).",
-        "&eTip:&r the Ferricore Wrench rotates and picks up JDT machines."]),
-    Q("tc_jdt_blazegold", 4, 17.5, [item("justdirethings:gooblock_tier2"), item("justdirethings:blazegold_ingot", 4)], "Blazegold", deps=["tc_jdt_ferricore", "t2_nether"], xp=60,
-      subtitle="Tier 2 goo and a Nether metal", desc=[
-        "&eWhat:&r tier 2 goo turns gold blocks into raw blazegold ore. Blazegold makes the next tier of JDT tools and machines.",
-        "&eHow:&r upgrade tier 1 goo with blaze powder, redstone and Nether wart (check JEI), then feed it gold blocks.",
-        "&eTip:&r goo only converts blocks touching it, so surround it with several gold blocks at once."]),
-    Q("tc_jdt_celestigem", 6, 17.5, [item("justdirethings:gooblock_tier3"), item("justdirethings:celestigem", 4)], "Celestigem", deps=["tc_jdt_blazegold", "w_dragon"], xp=100,
-      optional=True, tokens=1, subtitle="Optional: tier 3 goo and a gem from diamond", desc=[
-        "&eWhat:&r tier 3 goo turns diamond blocks into celestigem ore. Celestigem tools take powerful upgrades.",
-        "&eHow:&r upgrade tier 2 goo with ender pearls, end stone and dragon's breath (check JEI).",
-        "&eTip:&r JDT's flight upgrade needs End Crystals, so portable flight here comes after the End, as the pack intends."]),
-    Q("tc_jdt_eclipse", 8, 17.5, [item("justdirethings:gooblock_tier4"), item("justdirethings:eclipsealloy_ingot", 2)], "Eclipse Alloy", deps=["tc_jdt_celestigem", "w_ancient"], xp=150,
-      optional=True, tokens=2, subtitle="Optional: tier 4 goo eats netherite", desc=[
-        "&eWhat:&r tier 4 goo turns netherite blocks into eclipse alloy ore, JDT's top material.",
-        "&eHow:&r upgrade tier 3 goo with sculk, a sculk shrieker and echo shards from an Ancient City (check JEI). Then sacrifice a netherite block.",
-        "&eTip:&r it's expensive. Decide which eclipse alloy tool you want before you start."]),
-    Q("tc_jdt_pocket", 1, 19, [item("justdirethings:pocket_generator")], "Pocket Generator", deps=["tc_jdt_ferricore"], xp=40,
+    Q("tc_jdt_pocket", 1, 19, [item("justdirethings:pocket_generator")], "Pocket Generator", deps=["jdt_ferricore"], xp=40,
       optional=True, tokens=1, subtitle="Optional: charge tools on the go", desc=[
         "&eWhat:&r the Pocket Generator burns fuel in your inventory and charges your FE items.",
         "&eHow:&r ferricore, a furnace, coal and a redstone block (check JEI).",
         "&eChemistry:&r burning coal is oxidation: C + O₂ → CO₂ releases about 394 kJ per mole of carbon as heat."]),
-    Q("tc_jdt_portal", 7, 19, [item("justdirethings:portalgun")], "Thinking with Portals", deps=["tc_jdt_celestigem"], xp=100,
+    Q("tc_jdt_portal", 7, 19, [item("justdirethings:portalgun")], "Thinking with Portals", deps=["jdt_celestigem"], xp=100,
       secret=True, loot="secret", subtitle="Secret: now you're thinking", desc=[
         "&6You remember stepping between places without walking. You'd forgotten how much fun it was.&r",
         "&eWhat:&r the Portal Gun shoots two linked portals onto walls. Walk in one, come out the other.",
         "&eTip:&r there is an upgraded Portal Gun too; JEI has its recipe."]),
-], links=[("gs_silent", -2, 0), ("t3_infuser", -2, 5.5), ("t3_analog", -2, 9.5), ("gs_iron", -2, 17.5)])
+], links=[("gs_silent", -2, 0), ("t1_steel_paxel", 0, 2), ("t3_infuser", -2, 5.5), ("t3_analog", -2, 9.5), ("jdt_goo", 2, 17.5)])

@@ -155,7 +155,7 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
         "&eTip:&r this is a server project. Split the materials between players."]),
     # ---------------------------------------------------------------- right, y=4: pocket worlds
     Q("cn_pocket", 3, 4, [item("compactmachines:wall", 64), dim("compactmachines:compact_world")], "Worlds Within Worlds", deps=["t7_creation"], xp=300,
-      tokens=10, choice="pick_late", subtitle="A demigod should have rooms to spare", desc=[
+      optional=True, tokens=2, choice="pick_late", subtitle="Optional: a demigod should have rooms to spare", desc=[
         "&eWhat:&r Compact Machines are small rooms in their own dimension. You've made a new world; now make a few small ones.",
         "&eHow:&r 64 machine walls, then step inside any of your machines with the Personal Shrinking Device.",
         "&eTip:&r one room per production line keeps your main base clean and your server's tick time low."]),
@@ -217,10 +217,10 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
         "&eHow:&r Alchemistry Fusion Chamber. Automate the inputs and let it run.",
         "&eTip:&r physicists predict an 'island of stability' near 114 protons and 184 neutrons, where superheavy nuclei might last much longer. No one has reached it yet."]),
     # ---------------------------------------------------------------- finale
-    Q("cn_demigod", 0, 7, [tick()], "Demigod", deps=["cn_quantum_armor", "cn_atomic", "cn_ec_singularity", "cn_bio_space", "cn_superheavy", "cn_echo"],
+    Q("cn_demigod", 0, 7, [tick()], "Demigod", deps=["cn_terraformer", "cn_quantum_armor", "cn_atomic", "cn_ec_singularity", "cn_bio_space", "cn_superheavy", "cn_echo"],
       xp=5000, size=2.0, shape="gear", tokens=30, loot="boss", items=[(GT, 5)], subtitle="Nothing left to remember", desc=[
         "&6You don't remember being this any more. You simply are.&r",
-        "&eWhat:&r you've walked every world, built armour from a collapsed star, and held the whole periodic table.",
+        "&eWhat:&r you've planted the Seed, walked every world, built armour from a collapsed star, and held the whole periodic table.",
         "&eNow:&r build. A city, a garden on Mars, a pocket world for every friend on the server. The tools are yours.",
         "&6The new world is waiting. It's whatever you make it.&r"]),
     # ---------------------------------------------------------------- secrets

@@ -14,34 +14,21 @@ CHAPTER = Chapter("welcome", "Welcome", "minecraft:nether_star",
         "&eWhat:&r Your power returns as you rebuild your understanding of matter. Every chapter of this book is one more piece of what you once were.",
         "&eChemistry:&r All matter is made of about 90 naturally occurring elements. Rearrange their atoms and you change what a thing is. That's the whole game.",
         "&eHow:&r Click the checkmark to continue."]),
-    Q("wel_progress", 4, -1, [tick()], "How Progression Works", subtitle="Eight tiers, each opened by chemistry", deps=["wel_story"], desc=[
-        "&eWhat:&r The pack has 8 tiers. Each one is unlocked by a chemistry milestone, not just more metal.",
-        "&eHow:&r Fire and bronze → coke and steel → hydrogen and flight → electricity → acids → oil and plastics → silicon, PVC and the atom → antimatter.",
+    Q("wel_progress", 4, -1, [tick()], "How Progression Works", subtitle="Eight tiers, and how to read this book", deps=["wel_story"], desc=[
+        "&eWhat:&r The pack has 8 tiers. Each one is unlocked by a chemistry milestone, not just more metal: fire and bronze → coke and steel → hydrogen and flight → electricity → acids → oil and plastics → silicon, PVC and the atom → antimatter.",
         "Modern Industrialization's voltage tiers (LV, MV, HV, EV) are the spine. Other mods (Mekanism, AE2, Powah and more) unlock alongside them.",
-        "&eTip:&r If a recipe looks different from what you remember, it's been gated on purpose. JEI always shows the real recipe."]),
-    Q("wel_keys", 4, 1, [tick()], "Your Toolkit", subtitle="The keys you'll press a thousand times", deps=["wel_story"], desc=[
+        "&eHow:&r Every quest reads the same way: &eWhat&r says what the thing is, &eChemistry&r gives the real science, &eHow&r gives the steps and &eTip&r saves you time. Gold lines are your memories returning.",
+        "&eTip:&r Quests marked &eoptional&r sit off the main line and never block progress. If a recipe looks different from what you remember, it's been gated on purpose: JEI always shows the real recipe."]),
+    Q("wel_keys", 4, 1, [tick()], "Your Toolkit", subtitle="Keys, teams and memory", deps=["wel_story"], desc=[
         "&eWhat:&r A few mods make everything easier. Learn their keys now.",
-        "&eHow:&r &eR&r / &eU&r over an item: recipes / uses (JEI). &eM&r: map and chunk claiming (FTB Chunks).",
-        "Hold &e`&r while mining to vein mine (FTB Ultimine). Look at a block and Jade shows what it is and what it's doing.",
-        "&eTip:&r Inventory sorting, crafting-grid tweaks and the trash slot are in your inventory screen; check Controls for their keys."]),
-    Q("wel_book", 6, -1, [tick()], "Reading This Book", subtitle="Sections, side quests and gold lines", deps=["wel_progress"], desc=[
-        "&eWhat:&r Every quest is written the same way, so you always know where to look.",
-        "&eHow:&r &eWhat&r says what the thing is, &eChemistry&r gives the real science, &eHow&r gives the steps, and &eTip&r saves you time.",
-        "Quests marked &eoptional&r sit above or below the main line. They give bonus tokens but never block progress.",
-        "&eTip:&r Gold lines are your memories returning. They mark the start of each chapter and its big milestones."]),
-    Q("wel_tokens", 8, -1, [tick()], "Demigod Tokens", subtitle="Quest rewards you can spend", deps=["wel_book"], tokens=5, desc=[
+        "&eHow:&r &eR&r / &eU&r over an item: recipes / uses (JEI). &eM&r: map and chunk claiming (FTB Chunks). Hold &e`&r while mining to vein mine (FTB Ultimine). Jade shows what you're looking at.",
+        "On a server, share quests and land with a team: &e/ftbteams party create <name>&r, then &e/ftbteams party invite <player>&r.",
+        "&eTip:&r Give the game about 8-10 GB of memory in Prism's instance settings (docs/README.md has the Java arguments). If it hitches every few seconds, check the memory bar in F3 first."]),
+    Q("wel_tokens", 8, -1, [tick()], "Demigod Tokens", subtitle="Quest rewards you can spend", deps=["wel_progress"], tokens=5, desc=[
         "&eWhat:&r Most quests give &eDemigod Tokens&r. Spend them on convenience items by crafting: torches, food, XP, iron, coke, rubber, osmium, backpack upgrades and a Warp Stone.",
         "&eHow:&r Search &eDemigod Token&r in JEI and press U to see the whole shop.",
         "&eTip:&r Bigger milestones pay more tokens, and later tiers pay more than early ones. Optional quests pay too."]),
-    Q("wel_team", 6, 1, [tick()], "Playing Together", subtitle="Share quests and land with friends", deps=["wel_keys"], desc=[
-        "&eWhat:&r On a server, make a team so you share quest progress and claimed land.",
-        "&eHow:&r &e/ftbteams party create <name>&r, then invite friends with &e/ftbteams party invite <player>&r.",
-        "&eTip:&r Split the work: one player on ore processing, one on power, one exploring. Chemistry rewards a production line."]),
-    Q("wel_perf", 8, 1, [tick()], "Give the Game Room", subtitle="Memory settings for a big pack", deps=["wel_team"], desc=[
-        "&eWhat:&r This is a large pack. Too little memory means stutters; too much can cause long pauses.",
-        "&eHow:&r In Prism, open the instance settings and allocate about 8-10 GB. The pack's docs/README.md has the recommended Java arguments.",
-        "&eTip:&r If the game hitches every few seconds, check the memory bar in F3 before blaming a mod."]),
-    Q("wel_ready", 10, 0, [tick()], "Begin", subtitle="Open Getting Started", deps=["wel_tokens", "wel_perf"], size=1.5, shape="hexagon", desc=[
+    Q("wel_ready", 10, 0, [tick()], "Begin", subtitle="Open Getting Started", deps=["wel_tokens", "wel_keys"], size=1.5, shape="hexagon", desc=[
         "&6The world is waiting to be taken apart and put back together.&r",
         "&eHow:&r That's everything. Open &eGetting Started&r and take your first step.",
         "&eTip:&r You can come back to this chapter any time from the chapter list."]),

@@ -18,7 +18,8 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eWhat:&r Tin is soft on its own, but a little of it makes copper much harder.",
         "&eChemistry:&r Real tin comes from cassiterite, SnO₂. Carbon reduces it the same way: SnO₂ + 2C → Sn + 2CO.",
         "&eHow:&r Tin ore here comes from Modern Industrialization (MI). It's grey with pale specks and fairly common underground. Mine it and smelt the raw tin."]),
-    Q("t0_guide", 0, -3, [item("modern_industrialization:guidebook")], "The MI Guidebook", subtitle="Every machine and multiblock, explained", deps=["gs_ready"], xp=15, desc=[
+    Q("t0_guide", 0, -3, [item("modern_industrialization:guidebook")], "The MI Guidebook", subtitle="Every machine and multiblock, explained", deps=["gs_ready"],
+      optional=True, tokens=1, xp=15, desc=[
         "&eWhat:&r Modern Industrialization's own manual. It explains each machine and shows multiblock layouts.",
         "&eHow:&r 8 copper nuggets around a book. Break a copper ingot into nuggets first.",
         "&eTip:&r JEI (R/U) also shows multiblock shapes in 3D."]),
@@ -141,7 +142,7 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&6Fire, water, metal, motion. The pieces of a world are coming back to you.&r",
         "&eWhat:&r A steam-powered pump that pulls water from the ground, so your boiler never runs dry.",
         "&eHow:&r Copper rotors, copper gears, a bronze tank, a machine casing and fluid pipes (check JEI). Place it next to the boiler, or pipe its water into it.",
-        "&eTip:&r Next stop: coke and steel in Chapter II."]),
+        "&eTip:&r The Coke Oven in Chapter II runs on steam, so a boiler that never runs dry comes first. Next stop: coke and steel."]),
 
     # --- optional side quests -------------------------------------------------------------
     Q("t0_opt_block", 6, 3, [item("modern_industrialization:bronze_block", 4)], "Bronze Age Hoard", subtitle="Four blocks of bronze",
@@ -156,7 +157,7 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
     Q("t0_opt_wrench", 10, 3, [item("modern_industrialization:wrench")], "The Wrench", subtitle="Handle MI machines with care", deps=["t0_plates"], optional=True, tokens=1, xp=20, desc=[
         "&eWhat:&r MI's wrench rotates MI machines, sets which face they output from, and picks them up quickly.",
         "&eHow:&r 5 bronze plates in a wrench shape (check JEI).",
-        "&eTip:&r Handy when you rearrange your steam setup for the Coke Oven in Chapter II."]),
+        "&eTip:&r Handy when you rearrange your steam setup for the Coke Oven in Chapter II. Held near a multiblock controller, it also highlights where hatches can go."]),
     Q("t0_opt_drill", 12, 3, [item("modern_industrialization:steam_mining_drill")], "Steam Mining Drill", subtitle="A drill that burns fuel", deps=["t0_parts"],
       optional=True, tokens=2, xp=40, desc=[
         "&eWhat:&r A fuel-burning mining tool that digs a 3x3 area and can give an easy Silk Touch.",

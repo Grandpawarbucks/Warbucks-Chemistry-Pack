@@ -110,7 +110,7 @@ CHAPTER = Chapter("factory", "Mob Data and Big Crafting", "hostilenetworks:sim_c
 
     # --- Odds and ends (y=9) -------------------------------------------------------------------
     Q("mf_facade", 0, 9, [item("cable_facades:facade_wrench")], "Hide the Cables", deps=["t3_hull"], xp=25,
-      subtitle="Cables that look like any block", desc=[
+      subtitle="Cables that look like any block", optional=True, tokens=1, desc=[
         "&eWhat:&r Cable Facades disguise cables and pipes as any block. Tidy factories, same throughput.",
         "&eHow:&r craft the Facade Wrench, then apply blocks to cables (check JEI).",
         "&eTip:&r facades on MI pipes make chemical lines much easier to look at."]),

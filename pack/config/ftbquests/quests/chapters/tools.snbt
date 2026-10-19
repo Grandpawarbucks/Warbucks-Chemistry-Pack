@@ -1,7 +1,7 @@
 {
 	id: "71E6C109F4D846B5"
-	group: "4801EE691EF63116"
-	order_index: 5
+	group: "36707A3974FCEA79"
+	order_index: 0
 	filename: "tools"
 	icon: {
 		id: "silentgear:pickaxe"
@@ -47,7 +47,8 @@
 		{
 			id: "7458CDD0AC00121E"
 			x: 2.0d
-			y: 0.0d
+			y: -1.5d
+			optional: true
 			dependencies: [
 				"4ABA9DD08B8F9ACD"
 				"04B2CA0DEFD9BEA6"
@@ -82,7 +83,8 @@
 		{
 			id: "566563CC2C37BED0"
 			x: 4.0d
-			y: 0.0d
+			y: -3.0d
+			optional: true
 			dependencies: [
 				"7458CDD0AC00121E"
 			]
@@ -116,7 +118,8 @@
 		{
 			id: "7C6F13A70CB4F9FE"
 			x: 6.0d
-			y: 0.0d
+			y: -4.5d
+			optional: true
 			dependencies: [
 				"566563CC2C37BED0"
 			]
@@ -150,7 +153,7 @@
 		{
 			id: "2A06D8DD04609B9C"
 			x: 2.0d
-			y: -2.0d
+			y: 0.0d
 			dependencies: [
 				"4ABA9DD08B8F9ACD"
 				"04B2CA0DEFD9BEA6"
@@ -185,7 +188,7 @@
 		{
 			id: "4E659FFA072CD2C6"
 			x: 4.0d
-			y: -2.0d
+			y: 0.0d
 			dependencies: [
 				"2A06D8DD04609B9C"
 			]
@@ -219,7 +222,7 @@
 		{
 			id: "5C0C129959F2C62D"
 			x: 6.0d
-			y: -2.0d
+			y: 0.0d
 			dependencies: [
 				"4E659FFA072CD2C6"
 			]
@@ -253,7 +256,8 @@
 		{
 			id: "6628750FED7710A3"
 			x: 8.0d
-			y: -2.0d
+			y: -1.5d
+			optional: true
 			dependencies: [
 				"5C0C129959F2C62D"
 				"0F5CD98214E3E454"
@@ -288,7 +292,7 @@
 		{
 			id: "39DF5C695F1B32EB"
 			x: 10.0d
-			y: -4.0d
+			y: -3.0d
 			optional: true
 			dependencies: [
 				"6628750FED7710A3"
@@ -321,46 +325,10 @@
 			]
 		}
 		{
-			id: "68908746B04D6B19"
-			x: 0.0d
-			y: 2.0d
-			dependencies: [
-				"4081488F0A14597A"
-				"6EB1CA116210134C"
-			]
-			tasks: [
-				{
-					id: "76F74FB072E031B3"
-					type: "item"
-					item: {
-						id: "mekanismtools:bronze_paxel"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "146C1661D51B09B8"
-					type: "xp"
-					xp: 25
-				}
-				{
-					id: "64A61A2902B7E2CB"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "37DD31C8DF09C737"
-			x: 2.0d
-			y: 2.0d
+			x: 18.0d
+			y: 8.0d
 			dependencies: [
-				"68908746B04D6B19"
 				"42B76D3BDE21F0DC"
 			]
 			tasks: [
@@ -391,47 +359,13 @@
 			]
 		}
 		{
-			id: "189C20032B2F64A2"
-			x: 4.0d
-			y: 2.0d
-			dependencies: [
-				"37DD31C8DF09C737"
-			]
-			tasks: [
-				{
-					id: "6A4FF10C374621B7"
-					type: "item"
-					item: {
-						id: "mekanismtools:diamond_paxel"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "0D73B7ABCCBEC1DC"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "50AC95420FD460D4"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "1E48AB2B0066F565"
-			x: 6.0d
-			y: 2.0d
+			x: 20.0d
+			y: 8.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
-				"189C20032B2F64A2"
+				"37DD31C8DF09C737"
 			]
 			tasks: [
 				{
@@ -461,45 +395,9 @@
 			]
 		}
 		{
-			id: "5D357E097AE9F6A0"
-			x: 1.0d
-			y: 3.5d
-			optional: true
-			dependencies: [
-				"68908746B04D6B19"
-				"506EB945C083CC2E"
-			]
-			tasks: [
-				{
-					id: "4F9EDDABE5E4A137"
-					type: "item"
-					item: {
-						id: "mekanismtools:steel_paxel"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "23CE85317159367E"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "7DE87FFC7BA8D075"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "4E4AD4A8D6C2C30C"
-			x: 7.0d
-			y: 3.5d
+			x: 22.0d
+			y: 6.5d
 			optional: true
 			dependencies: [
 				"1E48AB2B0066F565"
@@ -534,7 +432,7 @@
 		{
 			id: "42978372FCFCA164"
 			x: 0.0d
-			y: 5.5d
+			y: 7.0d
 			dependencies: [
 				"42B76D3BDE21F0DC"
 			]
@@ -577,7 +475,7 @@
 		{
 			id: "1868DF8A24A0C2BA"
 			x: 2.0d
-			y: 5.5d
+			y: 7.0d
 			dependencies: [
 				"42978372FCFCA164"
 			]
@@ -611,7 +509,7 @@
 		{
 			id: "43D93D778FD7460F"
 			x: 4.0d
-			y: 5.5d
+			y: 7.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -656,8 +554,8 @@
 		}
 		{
 			id: "172C8AEEBF9724DA"
-			x: 1.0d
-			y: 7.0d
+			x: 2.0d
+			y: 8.5d
 			optional: true
 			dependencies: [
 				"42978372FCFCA164"
@@ -691,8 +589,8 @@
 		}
 		{
 			id: "18BB98D1C02BB648"
-			x: 3.0d
-			y: 7.0d
+			x: 2.0d
+			y: 10.0d
 			optional: true
 			dependencies: [
 				"42978372FCFCA164"
@@ -726,8 +624,8 @@
 		}
 		{
 			id: "5E5F22E41BC4538A"
-			x: 0.0d
-			y: 9.5d
+			x: 8.0d
+			y: 11.0d
 			dependencies: [
 				"55AF98DD41956199"
 			]
@@ -769,8 +667,8 @@
 		}
 		{
 			id: "5E3BA6083259F734"
-			x: 1.0d
-			y: 11.0d
+			x: 10.0d
+			y: 9.0d
 			optional: true
 			dependencies: [
 				"5E5F22E41BC4538A"
@@ -805,8 +703,8 @@
 		}
 		{
 			id: "6EF99BBC489E3FBF"
-			x: 3.0d
-			y: 11.0d
+			x: 12.0d
+			y: 8.0d
 			optional: true
 			dependencies: [
 				"5E3BA6083259F734"
@@ -841,8 +739,8 @@
 		}
 		{
 			id: "1DAC0AE8A49D8F79"
-			x: 5.0d
-			y: 11.0d
+			x: 14.0d
+			y: 6.5d
 			optional: true
 			dependencies: [
 				"6EF99BBC489E3FBF"
@@ -877,8 +775,8 @@
 		}
 		{
 			id: "29E14CD67BE0BB33"
-			x: 4.0d
-			y: 9.5d
+			x: 10.0d
+			y: 11.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -924,8 +822,9 @@
 		}
 		{
 			id: "1EA839D4E5BC136D"
-			x: 0.0d
-			y: 13.5d
+			x: 26.0d
+			y: 6.5d
+			optional: true
 			dependencies: [
 				"168A3AC3F1C50464"
 			]
@@ -957,77 +856,10 @@
 			]
 		}
 		{
-			id: "1A44A497FCA1DF1C"
-			x: 2.0d
-			y: 13.5d
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "2B82531060765100"
-					type: "item"
-					item: {
-						id: "waystones:warp_stone"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "001B5D5407EF071C"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "2BB15F44C00042B9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "3FEE458B9198CC55"
-			x: 4.0d
-			y: 13.5d
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "19ED46A9435FBDEE"
-					type: "item"
-					item: {
-						id: "toolbelt:belt"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "1434A3EE18932468"
-					type: "xp"
-					xp: 20
-				}
-				{
-					id: "239AC50E3599E865"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "0359B6BBCD892545"
-			x: 6.0d
-			y: 13.5d
+			x: 0.0d
+			y: 14.0d
+			optional: true
 			dependencies: [
 				"392A7909301184E2"
 			]
@@ -1061,7 +893,7 @@
 		{
 			id: "6B1EAD376672743D"
 			x: 0.0d
-			y: 15.5d
+			y: 4.0d
 			optional: true
 			dependencies: [
 				"384F1C4A2EF051A0"
@@ -1104,8 +936,8 @@
 		}
 		{
 			id: "1109E5DB21C9B41E"
-			x: 2.0d
-			y: 15.5d
+			x: 6.0d
+			y: -2.0d
 			optional: true
 			dependencies: [
 				"6B1EAD376672743D"
@@ -1140,8 +972,8 @@
 		}
 		{
 			id: "66CF5CE277F89ABA"
-			x: 4.0d
-			y: 15.5d
+			x: 2.0d
+			y: 4.5d
 			optional: true
 			dependencies: [
 				"6B1EAD376672743D"
@@ -1179,7 +1011,7 @@
 		{
 			id: "5FAAB59A05382846"
 			x: 6.0d
-			y: 15.5d
+			y: 3.0d
 			optional: true
 			dependencies: [
 				"6B1EAD376672743D"
@@ -1217,8 +1049,9 @@
 		}
 		{
 			id: "02AA8F5B0AF7AF4F"
-			x: 0.0d
-			y: 17.5d
+			x: 2.0d
+			y: 14.0d
+			optional: true
 			dependencies: [
 				"1C5E43BCEDA7593F"
 			]
@@ -1250,189 +1083,12 @@
 			]
 		}
 		{
-			id: "402EC67BB19B609F"
-			x: 2.0d
-			y: 17.5d
-			dependencies: [
-				"02AA8F5B0AF7AF4F"
-			]
-			tasks: [
-				{
-					id: "7C171B1A2DB5C649"
-					type: "item"
-					item: {
-						id: "justdirethings:ferricore_ingot"
-						count: 1
-					}
-					count: 8L
-				}
-				{
-					id: "7E809E48F6CB328B"
-					type: "item"
-					item: {
-						id: "justdirethings:ferricore_wrench"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7386C6D491F4F49D"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "1934798220C3AACA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "370EC935014D4805"
-			x: 4.0d
-			y: 17.5d
-			dependencies: [
-				"402EC67BB19B609F"
-				"04B2CA0DEFD9BEA6"
-			]
-			tasks: [
-				{
-					id: "3F3509AC25B9FFB2"
-					type: "item"
-					item: {
-						id: "justdirethings:gooblock_tier2"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2D1E81D92A76277E"
-					type: "item"
-					item: {
-						id: "justdirethings:blazegold_ingot"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "6A37DCD81852822F"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "162AA7A04DAAEDD0"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "43871B3E70259309"
-			x: 6.0d
-			y: 17.5d
-			optional: true
-			dependencies: [
-				"370EC935014D4805"
-				"478C654ED802C25B"
-			]
-			tasks: [
-				{
-					id: "598A2F4140AEDA4C"
-					type: "item"
-					item: {
-						id: "justdirethings:gooblock_tier3"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "23052700F0654FC1"
-					type: "item"
-					item: {
-						id: "justdirethings:celestigem"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "46F2ED513D1F39C0"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "18CCD15D48B05ACB"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "03A450539601C94E"
-			x: 8.0d
-			y: 17.5d
-			optional: true
-			dependencies: [
-				"43871B3E70259309"
-				"1A42564839595307"
-			]
-			tasks: [
-				{
-					id: "7D2FF7E61E1C8D59"
-					type: "item"
-					item: {
-						id: "justdirethings:gooblock_tier4"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2802CDC1F15F4A30"
-					type: "item"
-					item: {
-						id: "justdirethings:eclipsealloy_ingot"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "02AE89316A863BAD"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "5A42576B6A9235EF"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "0377341C1CFB93F6"
-			x: 1.0d
-			y: 19.0d
+			x: 4.0d
+			y: 14.0d
 			optional: true
 			dependencies: [
-				"402EC67BB19B609F"
+				"12DFAC850D78DC82"
 			]
 			tasks: [
 				{
@@ -1463,12 +1119,12 @@
 		}
 		{
 			id: "1940B63A57F962D5"
-			x: 7.0d
-			y: 19.0d
+			x: 6.0d
+			y: 14.0d
 			optional: true
 			invisible: true
 			dependencies: [
-				"43871B3E70259309"
+				"55300B4F8479D90F"
 			]
 			tasks: [
 				{
@@ -1506,8 +1162,8 @@
 	images: [
 		{
 			id: "32E2A2983896EAAD"
-			x: 2.5d
-			y: -6.0d
+			x: 0.5d
+			y: -6.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -1516,28 +1172,34 @@
 	]
 	quest_links: [
 		{
+			id: "54BE22B4FE0FF911"
+			linked_quest: "5FC7A4838C153DB0"
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			id: "76EC1E52EC27CD90"
+			linked_quest: "2232B59A6FDB6BB1"
+			x: -2.0d
+			y: 0.5d
+		}
+		{
 			id: "67C50045CBB4F666"
 			linked_quest: "384F1C4A2EF051A0"
 			x: -2.0d
-			y: 0.0d
+			y: 2.0d
 		}
 		{
 			id: "24FA60BAE045B6FB"
 			linked_quest: "42B76D3BDE21F0DC"
 			x: -2.0d
-			y: 5.5d
+			y: 7.5d
 		}
 		{
 			id: "3D6815EB355FA289"
 			linked_quest: "55AF98DD41956199"
 			x: -2.0d
-			y: 9.5d
-		}
-		{
-			id: "1182C0597FDF49F3"
-			linked_quest: "1C5E43BCEDA7593F"
-			x: -2.0d
-			y: 17.5d
+			y: 11.0d
 		}
 	]
 }

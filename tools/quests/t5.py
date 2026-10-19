@@ -85,11 +85,11 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eWhat:&r the base of every HV circuit.",
         "&eChemistry:&r polyethylene is an excellent insulator, so it separates the copper layers of the board.",
         "&eHow:&r Assembler: electronic circuit board + 4 stainless steel plates + silicon battery + 6 aluminum cable + 750 mB polyethylene."]),
-    Q("t5_sodium", 16, -2, [item(MI + "sodium_dust", 4), item(MI + "sodium_battery", 2)], "Sodium Battery", deps=["t4_salt"], xp=150,
+    Q("t5_sodium", 16, -2, [item(MI + "sodium_battery", 2)], "Sodium Battery", deps=["t4_sodium"], xp=150,
       subtitle="Table salt becomes a battery", desc=[
         "&eWhat:&r the HV hull needs two sodium batteries.",
-        "&eChemistry:&r electrolysis splits salt: 2NaCl → 2Na + Cl₂. Sodium metal is so reactive it fizzes in water, which is what makes it a good battery material.",
-        "&eHow:&r Electrolyzer: 2 salt dust → 1 sodium dust + chlorine. Then craft the battery (check JEI).",
+        "&eChemistry:&r sodium metal gives up its one outer electron very easily (it fizzes in water), which is what makes it a good battery material.",
+        "&eHow:&r sodium dust from the Electrolyzer (2 salt dust → 1 sodium dust + chlorine), as in Electrochemistry. Then craft the battery (check JEI).",
         "&eTip:&r keep the chlorine. It's needed for HCl and, next chapter, PVC."]),
     Q("t5_hv", 16, 0, [item(MI + "digital_circuit"), item(MI + "turbo_machine_hull")], "HV: Digital Circuits", deps=["t5_dcb", "t5_sodium"], xp=300, size=1.5,
       items=[(MI + "digital_circuit", 2)], subtitle="High Voltage, built on plastic", desc=[
@@ -112,15 +112,16 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
       subtitle="Printing circuits onto silicon", desc=[
         "&eWhat:&r every AE2 processor is printed in the Inscriber. In this pack it's built on a Turbo hull.",
         "&eChemistry:&r engineering processors print a circuit onto silicon, the same element your HV boards depend on.",
-        "&eHow:&r press a diamond into a printed engineering circuit, silicon into printed silicon, then combine them with redstone."]),
-    Q("t5_ae2", 20, 0, [item("ae2:inscriber"), item("ae2:controller")], "The God's Archive", deps=["t5_inscriber", "t5_fluix"], xp=400, size=1.75, shape="hexagon",
+        "&eHow:&r press a diamond into a printed engineering circuit, silicon into printed silicon, then combine them with redstone.",
+        "&eTip:&r the silicon is your MI silicon from the EBF. AE2's certus-to-silicon smelting is removed in this pack."]),
+    Q("t5_ae2", 20, 0, [item("ae2:controller")], "The God's Archive", deps=["t5_inscriber", "t5_fluix"], xp=400, size=1.75, shape="hexagon",
       items=[("ae2:drive", 1)], subtitle="Your memory, rebuilt as a network", desc=[
         "&6Everything you ever owned, known at once. You remember having a mind like that.&r",
         "&eWhat:&r Applied Energistics 2 stores items as data and crafts on demand.",
         "&eHow:&r the ME Controller needs a digital circuit, an engineering processor, fluix and smooth sky stone.",
         "&eTip:&r Tom's Simple Storage was your early network. AE2 takes over from here (see the Applied Energistics page in Engineering)."]),
     Q("t5_cells", 22, 0, [item("ae2:item_storage_cell_1k", 2), item("ae2:fluid_storage_cell_1k")], "First Storage Cells", deps=["t5_ae2"], xp=150,
-      subtitle="Where the archive keeps its memories", desc=[
+      optional=True, tokens=1, subtitle="Optional: where the archive keeps its memories", desc=[
         "&eWhat:&r storage cells go into an ME Drive. Fluid cells hold your acids and fuels as data too.",
         "&eHow:&r a 1k cell component needs a logic processor (gold + logic press). Check JEI for the housing.",
         "&eTip:&r a few fluid cells beat a wall of tanks for small stocks of rare chemicals."]),
@@ -131,22 +132,22 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eTip:&r set a waystone near the portal before you explore."]),
     # ---------------------------------------------------------------- synthetic rubber
     Q("t5_aromatics", 8, 2, [item(MI + "benzene_bucket"), item(MI + "toluene_bucket")], "Benzene Rings", deps=["t5_crack"], xp=150,
-      subtitle="The hexagon at the heart of organic chemistry", desc=[
+      optional=True, tokens=1, subtitle="Optional: the hexagon at the heart of organic chemistry", desc=[
         "&eWhat:&r benzene (C₆H₆) and toluene (C₇H₈) come out of the cracked-naphtha distillation.",
         "&eChemistry:&r benzene is a flat ring of six carbons whose electrons are shared around the whole ring. That makes it unusually stable.",
         "&eHow:&r collect them from the Distillation Tower's benzene and toluene outputs.",
         "&eTip:&r benzene also makes dyes and, via caprolactam, nylon."]),
     Q("t5_styrene", 10, 2, [item(MI + "ethylbenzene_bucket"), item(MI + "styrene_bucket")], "Styrene", deps=["t5_aromatics"], xp=150,
-      subtitle="Add ethylene, then strip off hydrogen", desc=[
+      optional=True, tokens=1, subtitle="Optional: add ethylene, then strip off hydrogen", desc=[
         "&eChemistry:&r benzene + ethylene → ethylbenzene (acid catalyst). Steam over iron then pulls off H₂ to give styrene, C₈H₈, exactly as in real plants.",
         "&eHow:&r Chemical Reactor: benzene + ethylene + a little HCl → ethylbenzene. Then ethylbenzene + steam + iron dust → styrene + hydrogen.",
         "&eTip:&r the hydrogen by-product can go straight back into hydrotreating."]),
     Q("t5_sbr", 12, 2, [item(MI + "styrene_butadiene_rubber_bucket")], "Synthetic Rubber", deps=["t5_styrene"], xp=200,
-      subtitle="Car-tyre rubber, made from oil", desc=[
+      optional=True, tokens=1, subtitle="Optional: car-tyre rubber, made from oil", desc=[
         "&eWhat:&r styrene-butadiene rubber (SBR) is the rubber in most tyres. Here it makes rubber sheets by the stack.",
         "&eChemistry:&r styrene and butadiene polymerise together into one chain (a copolymer): stiff styrene parts, springy butadiene parts.",
         "&eHow:&r Chemical Reactor: styrene + butadiene → styrene-butadiene, then polymerise with tiny lead or chromium dust. The Vacuum Freezer turns 200 mB into 64 rubber sheets.",
-        "&eTip:&r this replaces plant rubber for good and feeds the better cable recipes."]),
+        "&eTip:&r far more rubber per batch than your old coke-oil rubber line, and it feeds the better cable recipes."]),
     # ---------------------------------------------------------------- optional side quests
     Q("t5_opt_tools", 6, -4, [item(MI + "diesel_mining_drill"), item(MI + "diesel_jetpack")], "Diesel Toys", deps=["t5_diesel"], xp=100,
       optional=True, tokens=1, subtitle="Optional: fuel-powered tools", desc=[

@@ -73,7 +73,7 @@ CHAPTER = Chapter("deeperdarker", "Deeper and Darker", "deeperdarker:warden_cara
 
     # --- soul materials and temple prizes (y=-2) -----------------------------------------------
     Q("dd_transmitter", 0, -2, [item(DD + "sculk_transmitter")], "Sculk Transmitter", deps=["wd_temple"], xp=150,
-      subtitle="Open a chest from far away", desc=[
+      subtitle="Open a chest from far away", optional=True, tokens=1, desc=[
         "&eWhat:&r a handheld sculk link. Link it to a container, and it opens that container from a distance.",
         "&eHow:&r found in the Ancient Temple's secret chest. Use it on a chest to link it, then use it anywhere to open that chest.",
         "&eTip:&r dye it to tell several apart; each colour is its own item."]),
@@ -83,7 +83,7 @@ CHAPTER = Chapter("deeperdarker", "Deeper and Darker", "deeperdarker:warden_cara
         "&eHow:&r hunt in the Otherside; the Ancient Temple's chests hold some of each too.",
         "&eTip:&r the Monster Hunting page has quests for these mobs, so do both at once."]),
     Q("dd_staff", 4, -2, [item(DD + "sonorous_staff")], "Sonorous Staff", deps=["dd_soul"], xp=250,
-      subtitle="Borrow the Warden's voice", desc=[
+      subtitle="Borrow the Warden's voice", optional=True, tokens=1, desc=[
         "&eWhat:&r a staff that charges and releases a sonic boom, the Warden's own attack.",
         "&eChemistry:&r sound is a pressure wave: molecules bunch up and spread apart. A shock wave is a pressure jump so steep it travels faster than sound itself.",
         "&eHow:&r a Heart of the Deep, two soul crystals and two sculk bones (check JEI). Repair it with soul crystals.",

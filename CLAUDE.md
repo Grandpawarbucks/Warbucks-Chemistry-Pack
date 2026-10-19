@@ -137,6 +137,14 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Quest book v10 (2026-10-19): 1,622 quests (801 required), 44 chapters. AUTOMATIC LAYOUT (tools/layout.py): writers no
+  longer place x/y (Chapter(layout="manual") opts out; Q(row=N) pins). `build_quests.py --layout-report` for metrics.
+  Groups: top (welcome, market, lab_notes, completionist), main, basics, chem, eng, magic, world, life; new chapters
+  harvest and mekanism_power; utilitarian merged into qol. Audits in docs/research/ (chem_tier_audit, quest_layout_audit,
+  tools_harvest_plan, build_round_brief). Chemistry gate fixes in phase5_chem_gates.js; ore tiers in
+  phase5_harvest_tiers.js. Not yet done: in-game visual check of the auto layout (tall hub chapters: qol, twilight,
+  mekanism, seed; FTB hide_dependent_lines for hubs is the next engine step). Still open user decisions: real rocket fuel,
+  sulfuric acid in the MV board, token shop prices, stone trace metals, Occultism crystallizer multipliers.
 - Quest book v9 (2026-10-18): 1,617 quests, 43 chapters. Getting Started is a full first day; new pages powah,
   justdirethings, undergarden, deeperdarker, utilitarian; create/mekanism/twilight/ae2/storage/ars/occultism expanded.
   Use tools/quest_compare.py (ATM10 book at C:\Users\Grandpawarbucks\curseforge\minecraft\Instances\All the Mods 10 - ATM10

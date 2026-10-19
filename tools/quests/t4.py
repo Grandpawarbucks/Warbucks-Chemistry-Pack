@@ -68,9 +68,9 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eHow:&r hydrogen in one side of a Chemical Infuser, chlorine in the other."]),
 
     # ===== Mekanism ore line: 3x, 4x, 5x =====
-    Q("t4_ore3", 10, -4, [item(MEK + "purification_chamber")], "3x Ore: Oxygen", deps=["t4_separator", "t3_enrich", "t3_crusher"], xp=150,
+    Q("t4_ore3", 10, -4, [item(MEK + "purification_chamber")], "3x Ore: Oxygen", deps=["t4_separator", "t3_enrich", "t3_crusher", "t4_circuit"], xp=150,
       subtitle="Purification Chamber + oxygen", desc=[
-        "&eWhat:&r before acids, every route caps at &e2x&r per ore. Purifying ore with oxygen gives &e3x&r.",
+        "&eWhat:&r before acids, every route caps at &e2x&r per ore. Purifying ore with oxygen gives &e3x&r. The chamber needs advanced control circuits, which are built on MI's electronic circuit.",
         "&eHow:&r ore + O₂ → 3 clumps. Crusher: clumps → dirty dust. Enrichment Chamber: dirty dust → dust.",
         "&eTip:&r Mekanism shows each step in JEI. Chain them with pipes and side configuration."]),
     Q("t4_ore4", 12, -4, [item(MEK + "chemical_injection_chamber")], "4x Ore: Hydrogen Chloride", deps=["t4_ore3", "t4_hcl"], xp=200,
@@ -88,14 +88,14 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eWhat:&r the Chemical Washer rinses impurities out of the slurry.",
         "&eChemistry:&r washing removes the dissolved gangue (waste rock) so only the metal salt is left to crystallise.",
         "&eHow:&r slurry in, water in, clean slurry out. An MI electric water pump keeps the water coming."]),
-    Q("t4_ore5", 16, -4, [item(MEK + "chemical_dissolution_chamber"), item(MEK + "chemical_washer"), item(MEK + "chemical_crystallizer")], "5x Ore: Dissolution", deps=["t4_washer"], xp=300, size=1.5,
+    Q("t4_ore5", 16, -4, [item(MEK + "chemical_crystallizer")], "5x Ore: Dissolution", deps=["t4_washer"], xp=300, size=1.5,
       subtitle="Crystallise the slurry: five from one", desc=[
         "&6Five from one. You used to call that a small miracle. Now you call it hydrometallurgy.&r",
         "&eWhat:&r the Chemical Crystallizer turns clean slurry into crystals: &e5x&r per ore.",
         "&eChemistry:&r this is &ehydrometallurgy&r, the way most of the world's copper is really refined.",
         "&eHow:&r crystals → Injection Chamber (shards) → Purification Chamber (clumps) → Crusher → Enrichment Chamber."]),
     Q("t4_byproduct", 18, -4, [item(MI + "centrifuge"), item(MI + "silver_dust", 4)], "Ore Byproducts", deps=["t4_ore5", "t4_circuit"], xp=200,
-      subtitle="Dirty dust through a centrifuge", desc=[
+      optional=True, tokens=1, subtitle="Dirty dust through a centrifuge", desc=[
         "&eWhat:&r real ores are never pure. Send Mekanism's &edirty dust&r through MI's &eCentrifuge&r instead of the Enrichment Chamber for the same dust plus a chance at a bonus metal.",
         "&eChemistry:&r iron → nickel, copper → gold, gold → silver, &elead → silver&r (galena), tin → tungsten, osmium → iridium, uranium → lead (decay).",
         "&eHow:&r the Centrifuge needs an electronic circuit. Route dirty dust to it, and rare metals arrive as a bonus."]),
@@ -143,13 +143,14 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&6The metal comes away bright and light in your hand. Some part of you is pleased it still had to work for it.&r",
         "&eWhat:&r aluminum is the metal of the MV tier: boards, rotors, casings, the Chemical Reactor and the Electrolyzer.",
         "&eChemistry:&r aluminium is the most common metal in the crust but clings to oxygen, so only electricity can pull it free.",
-        "&eHow:&r Hall-Héroult Cell (LV power): 1 alumina + coke dust (the anode, used half the time) + a pinch of fluorite flux → 1 aluminum ingot.",
-        "&eTip:&r 4 bauxite dust becomes 2 ingots. Alumina from the Combiner (Al + O) works in the cell too."]),
-    Q("t4_alchemical_alumina", -2, 0, [item("chemlib:aluminum_oxide", 2)], "The Alchemist's Alumina", deps=["t4_alumina", "t1_combiner"], xp=40, optional=True, tokens=1,
-      subtitle="Al + O in the Combiner, no bauxite", desc=[
-        "&eWhat:&r the Combiner can build aluminium oxide straight from elements, and the cell accepts it like refined alumina.",
-        "&eChemistry:&r 4Al + 3O₂ → 2Al₂O₃. The reaction is so eager it burns white-hot in thermite; you're running it backwards to get the metal.",
-        "&eHow:&r check JEI on Aluminum Oxide for the Combiner recipe. For aluminium elements, check JEI (press U on Aluminum) to see what the Dissolver breaks into it."]),
+        "&eHow:&r Hall-Héroult Cell (LV power): 1 alumina dust + coke dust (the anode, used half the time) + a pinch of fluorite flux → 1 aluminum ingot.",
+        "&eTip:&r 4 bauxite dust becomes 2 ingots. The cell only takes refined alumina dust, and no furnace will smelt aluminium dust: the Bayer line is the way in."]),
+    Q("t4_alchemical_alumina", -2, 0, [tick()], "Fun Fact: No Shortcut", deps=["t4_alumina"], xp=40, optional=True, tokens=1,
+      subtitle="Why fire can't free aluminium", desc=[
+        "&eWhat:&r for decades aluminium cost more than silver, because nobody could pull it off its oxygen cheaply. Tick this once you've read why.",
+        "&eChemistry:&r 4Al + 3O₂ → 2Al₂O₃ releases so much energy that thermite (Al + iron oxide) burns white-hot. Carbon grabs oxygen far less strongly, so coke in a furnace can't take it back from alumina.",
+        "&eHow:&r that's why this pack has no furnace route for aluminium: the Hall-Héroult cell feeds in electricity instead, and it only accepts refined alumina dust from your Bayer line.",
+        "&eTip:&r Napoleon III reportedly served his most honoured guests on aluminium plates. Everyone else made do with gold."]),
     Q("t4_electrum", 0, 4, [item(MI + "electrum_ingot", 4)], "Electrum", deps=["t3_mixer"], xp=60,
       subtitle="Gold and silver, the ancient alloy", desc=[
         "&eWhat:&r electrum cable and fine wire go into every MV component.",
@@ -159,7 +160,8 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
       subtitle="Quartz + carbon in the EBF", desc=[
         "&eWhat:&r silicon is the semiconductor every transistor and diode is built on.",
         "&eChemistry:&r SiO₂ + 2C → Si + 2CO. Carbon pulls the oxygen off quartz at furnace heat: carbothermic reduction.",
-        "&eHow:&r macerate quartz into dust, then EBF: quartz dust + coke dust → silicon dust. Smelt it into ingots."]),
+        "&eHow:&r macerate quartz into dust, then EBF: quartz dust + coke dust → silicon dust. Smelt it into ingots.",
+        "&eTip:&r this is the only source of silicon in the pack. AE2's certus smelting and Mekanism's sand crushing are removed, so AE2 runs on this silicon too."]),
     Q("t4_ecboard", 4, 2, [item(MI + "electronic_circuit_board")], "Electronic Circuit Board", deps=["t4_aluminum", "t4_electrum"], xp=60,
       subtitle="Aluminum, electrum and a battery", desc=[
         "&eWhat:&r the base for MV circuits.",
@@ -216,10 +218,10 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eWhat:&r uraninite fuels Powah's reactors. Powah's Energizing Orb needs an MV circuit.",
         "&eChemistry:&r uraninite is UO₂, the main ore of uranium in nature. Here you make it: U + O₂ → UO₂.",
         "&eHow:&r Chemical Reactor: uranium dust + 500 mB oxygen → uraninite. Powah's own uraninite ore is turned off."]),
-    Q("t4_undergarden", 12, 4, [item("undergarden:catalyst"), dim("undergarden:undergarden")], "The Undergarden", deps=["t4_acid"], xp=300,
+    Q("t4_undergarden", 12, 4, [item("undergarden:catalyst"), dim("undergarden:undergarden")], "The Undergarden", deps=["t4_acid", "t4_mek_acid"], any_dep=True, xp=300,
       subtitle="A realm beneath the world", desc=[
-        "&eWhat:&r a strange underground dimension. Its portal catalyst needs a bucket of MI sulfuric acid.",
-        "&eHow:&r build a stone-brick portal frame and right-click it with the catalyst.",
+        "&eWhat:&r a strange underground dimension. Its portal catalyst needs a bucket of sulfuric acid: MI's, Mekanism's or ChemLib's all work.",
+        "&eHow:&r the quickest bucket is your Mekanism contact process: a Rotary Condensentrator in liquid mode turns the acid gas into fluid you can bucket. MI's Chemical Reactor acid works too. Then build a stone-brick portal frame and right-click it with the catalyst.",
         "&eTip:&r bring torches and food. It is dark down there."]),
 
     # ===== Optional side quests =====

@@ -1,6 +1,6 @@
 {
 	id: "4335527ACA7CF750"
-	group: "2DCF10F76EBF2A74"
+	group: ""
 	order_index: 0
 	filename: "welcome"
 	icon: {
@@ -68,7 +68,7 @@
 		{
 			id: "022F679599389147"
 			x: 4.0d
-			y: -1.0d
+			y: 0.0d
 			dependencies: [
 				"14851AEFE672966D"
 			]
@@ -92,7 +92,7 @@
 		{
 			id: "745DBEEE9AE746C7"
 			x: 4.0d
-			y: 1.0d
+			y: 2.0d
 			dependencies: [
 				"14851AEFE672966D"
 			]
@@ -114,35 +114,11 @@
 			]
 		}
 		{
-			id: "268396713B9B58E9"
+			id: "32306651C1085697"
 			x: 6.0d
-			y: -1.0d
+			y: 0.0d
 			dependencies: [
 				"022F679599389147"
-			]
-			tasks: [
-				{
-					id: "4DDDCE0E4C660582"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "58E623B5D2F79133"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "32306651C1085697"
-			x: 8.0d
-			y: -1.0d
-			dependencies: [
-				"268396713B9B58E9"
 			]
 			tasks: [
 				{
@@ -162,62 +138,14 @@
 			]
 		}
 		{
-			id: "19F5D52D281D058B"
-			x: 6.0d
-			y: 1.0d
-			dependencies: [
-				"745DBEEE9AE746C7"
-			]
-			tasks: [
-				{
-					id: "4E69F88A35DF2836"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "267718C61DE6AFA9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "006E1D3530E698E7"
-			x: 8.0d
-			y: 1.0d
-			dependencies: [
-				"19F5D52D281D058B"
-			]
-			tasks: [
-				{
-					id: "5264CED59D4AD2B8"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "285B729FEBA1F8A4"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "61103C80A99526F9"
-			x: 10.0d
+			x: 8.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"32306651C1085697"
-				"006E1D3530E698E7"
+				"745DBEEE9AE746C7"
 			]
 			tasks: [
 				{
@@ -239,7 +167,7 @@
 		{
 			id: "5F462A144226867C"
 			x: 4.0d
-			y: -3.0d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"14851AEFE672966D"
@@ -264,7 +192,7 @@
 		{
 			id: "5EFC77C0525603E5"
 			x: 6.0d
-			y: 3.0d
+			y: 2.5d
 			optional: true
 			dependencies: [
 				"745DBEEE9AE746C7"
@@ -290,8 +218,8 @@
 	images: [
 		{
 			id: "64EA6B5BC9A940C8"
-			x: 2.5d
-			y: -5.0d
+			x: 2.0d
+			y: -2.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -299,8 +227,8 @@
 		}
 		{
 			id: "5C02A206CED00D77"
-			x: 3.0d
-			y: -7.25d
+			x: 2.5d
+			y: -4.75d
 			width: 7.0d
 			height: 2.07d
 			rotation: 0.0d

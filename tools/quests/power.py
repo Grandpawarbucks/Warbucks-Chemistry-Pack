@@ -5,15 +5,16 @@ from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noq
 # y=2 MI steam and EU, y=4 Powah, y=6 renewables. Optional quests sit at the row ends / off-row.
 CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         ["Energy is chemistry too: combustion, gas burning, fission and fusion."], SIDE, [
-    Q("pw_iron_gen", 0, 0, [item("generatorgalore:iron_generator")], "First FE", subtitle="Burn something, get power", deps=["t1_power"], xp=40, desc=[
-        "&6You remember holding lightning. For now, a box that burns coal will do.&r",
-        "&eWhat:&r Generator Galore's generators burn fuel for FE (Forge Energy), the power most mods share.",
-        "&eChemistry:&r burning is oxidation: C + O₂ → CO₂ releases the energy stored in carbon's bonds.",
-        "&eHow:&r feed it coal or charcoal and connect a cable or put a machine next to it.",
-        "&eTip:&r this chapter is a side path. Pick the power lines that suit your base."]),
+    Q("pw_iron_gen", 0, 0, [tick()], "Choosing Your Power", subtitle="A catalogue of every way to make FE and EU", deps=["t1_power"], xp=40,
+      size=1.5, shape="hexagon", desc=[
+        "&6You remember holding lightning. For now, the generator you built in T1 will do.&r",
+        "&eWhat:&r this page lists the pack's power options by row: combustion, storage, MI steam and EU, Powah, renewables and nuclear. Pick the lines that suit your base; most are optional.",
+        "&eChemistry:&r every generator turns some stored energy into current: chemical bonds (C + O₂ → CO₂), sunlight, wind, heat, or the nucleus itself.",
+        "&eHow:&r start from the Generator Galore generator you made for Forge Energy (FE), the power most mods share. Click the checkmark to open the page.",
+        "&eTip:&r MI machines run on EU, Modern Industrialization's own electricity (the MI steam and EU row). Most other mods run on FE."]),
 
     # --- Combustion (y = -2) -----------------------------------------------------------------
-    Q("pw_gold_gen", 2, -2, [item("generatorgalore:gold_generator")], "A Faster Burn", subtitle="Same fuel, more FE per tick", deps=["pw_iron_gen"], xp=60, desc=[
+    Q("pw_gold_gen", 2, -2, [item("generatorgalore:gold_generator")], "A Faster Burn", optional=True, tokens=1, subtitle="Optional: same fuel, more FE per tick", deps=["pw_iron_gen"], xp=60, desc=[
         "&eWhat:&r the next Generator Galore tier: it burns fuel faster and makes more FE per tick.",
         "&eHow:&r upgrade from the iron generator (check JEI for the recipe).",
         "&eTip:&r a faster burn needs a steadier fuel supply. Pipe in charcoal from a tree farm."]),
@@ -26,16 +27,16 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eWhat:&r Mekanism's Bio-Generator burns Bio Fuel.",
         "&eChemistry:&r plants store sunlight as sugars and cellulose. Burning them releases it, and the CO₂ is the same CO₂ the plant took in.",
         "&eHow:&r crush seeds and crops into Bio Fuel in a Mekanism Crusher."]),
-    Q("pw_gas", 4, -2, [item("mekanismgenerators:gas_burning_generator")], "Burning Hydrogen", subtitle="The cleanest combustion there is", deps=["t4_separator"], xp=150, desc=[
+    Q("pw_gas", 4, -2, [item("mekanismgenerators:gas_burning_generator")], "Burning Hydrogen", optional=True, tokens=1, subtitle="Optional: the cleanest combustion there is", deps=["pw_iron_gen", "t4_separator"], xp=150, desc=[
         "&eWhat:&r the Gas-Burning Generator turns flammable gas into FE.",
         "&eChemistry:&r 2H₂ + O₂ → 2H₂O + energy. The only exhaust is water.",
         "&eHow:&r pipe hydrogen from your Electrolytic Separator in with pressurized tubes.",
         "&eTip:&r electrolysis costs more energy than burning hydrogen returns. Use it to store spare power, not to make it."]),
-    Q("pw_diesel", 6, -2, [item("modern_industrialization:mv_diesel_generator")], "Diesel Generators", subtitle="Petrochemical power", deps=["t5_diesel"], xp=150, desc=[
+    Q("pw_diesel", 6, -2, [item("modern_industrialization:mv_diesel_generator")], "Diesel Generators", optional=True, tokens=1, subtitle="Optional: petrochemical power", deps=["pw_iron_gen", "t5_diesel"], xp=150, desc=[
         "&eWhat:&r MI generators that burn the fuels from your distillation tower.",
         "&eChemistry:&r diesel is a mix of hydrocarbons around C₁₂ to C₂₀. Long chains pack lots of C-H bonds, and lots of energy.",
         "&eHow:&r pipe diesel into the generator and cable it to your machines."]),
-    Q("pw_large_diesel", 8, -2, [item("modern_industrialization:large_diesel_generator")], "Large Diesel Generator", subtitle="Factory-scale combustion", deps=["pw_diesel", "t5_hv"], xp=250, desc=[
+    Q("pw_large_diesel", 8, -2, [item("modern_industrialization:large_diesel_generator")], "Large Diesel Generator", optional=True, tokens=1, subtitle="Optional: factory-scale combustion", deps=["pw_diesel", "t5_hv"], xp=250, desc=[
         "&eWhat:&r a multiblock diesel generator for real factories.",
         "&eHow:&r the 3D layout is in JEI and the MI guidebook. It needs fluid input and energy output hatches.",
         "&eTip:&r refined fuels (like boosted diesel) burn for more EU per bucket. Check JEI."]),
@@ -69,35 +70,35 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eWhat:&r a hollow multiblock battery. Cells inside set how much it stores; providers set how fast it charges and discharges.",
         "&eHow:&r casings form the shell (Structural Glass works for the walls), ports move energy in and out. Layout: Just Enough Mekanism Multiblocks.",
         "&eTip:&r switch one port to output with the Configurator. Start small; you can rebuild it larger later."]),
-    Q("pw_flux_storage", 14, 0, [item("fluxnetworks:basic_flux_storage"), item("fluxnetworks:flux_plug"), item("fluxnetworks:flux_point")], "Wireless Grid", subtitle="Power anywhere, no cables", deps=["pw_induction", "t6_pu"], xp=300, desc=[
+    Q("pw_flux_storage", 14, 0, [item("fluxnetworks:basic_flux_storage"), item("fluxnetworks:flux_plug"), item("fluxnetworks:flux_point")], "Wireless Grid", optional=True, tokens=1, subtitle="Optional: power anywhere, no cables", deps=["pw_induction", "t6_pu"], xp=300, desc=[
         "&eWhat:&r Flux Networks sends power through the air: Plugs take it in, Points give it out, Storage buffers it.",
         "&eHow:&r the Flux Core needs an &eMI processing unit&r (EV) in this pack. Link all devices to one network in their GUI.",
         "&eTip:&r put a Flux Plug on your induction matrix's output port and every Point on the network draws from it."]),
 
     # --- MI steam and EU (y = 2) ---------------------------------------------------------------
-    Q("pw_mi_storage", 2, 2, [item("modern_industrialization:lv_storage_unit")], "EU Storage", subtitle="A battery for MI's grid", deps=["t3_hull"], xp=60, desc=[
+    Q("pw_mi_storage", 2, 2, [item("modern_industrialization:lv_storage_unit")], "EU Storage", subtitle="A battery for MI's grid", deps=["pw_iron_gen", "t3_hull"], xp=60, desc=[
         "&eWhat:&r MI's storage unit holds EU, Modern Industrialization's electricity.",
         "&eHow:&r built from redstone batteries, battery alloy plates and an LV hull. Put it between your turbine and your machines.",
         "&eTip:&r a buffer lets your steam turbine keep running while machines are idle."]),
-    Q("pw_mv_turbine", 4, 2, [item("modern_industrialization:mv_steam_turbine")], "MV Steam Turbine", subtitle="More steam, more EU", deps=["pw_mi_storage", "t4_mv"], xp=100, desc=[
+    Q("pw_mv_turbine", 4, 2, [item("modern_industrialization:mv_steam_turbine")], "MV Steam Turbine", optional=True, tokens=1, subtitle="Optional: more steam, more EU", deps=["pw_mi_storage", "t4_mv"], xp=100, desc=[
         "&eWhat:&r a bigger steam turbine that outputs MV power.",
         "&eChemistry:&r a turbine converts the energy of hot, expanding steam into rotation, then a generator turns rotation into current.",
         "&eHow:&r assemble it from an MV hull, aluminum rotors and large motors (check JEI)."]),
-    Q("pw_transformer", 6, 2, [item("modern_industrialization:lv_mv_transformer")], "Transformers", subtitle="Step voltage between tiers", deps=["pw_mv_turbine"], xp=75, desc=[
+    Q("pw_transformer", 6, 2, [item("modern_industrialization:lv_mv_transformer")], "Transformers", optional=True, tokens=1, subtitle="Optional: step voltage between tiers", deps=["pw_mv_turbine"], xp=75, desc=[
         "&eWhat:&r a transformer moves energy between two neighbouring voltage tiers (LV and MV here).",
         "&eHow:&r place it between an MV cable and your LV machines (or the other way round). Check which face is which in its tooltip.",
         "&eTip:&r real grids do the same: high voltage for transmission, low voltage at the socket."]),
-    Q("pw_hv_turbine", 8, 2, [item("modern_industrialization:hv_steam_turbine")], "HV Steam Turbine", subtitle="High-voltage steam", deps=["pw_transformer", "t5_hv"], xp=150, desc=[
+    Q("pw_hv_turbine", 8, 2, [item("modern_industrialization:hv_steam_turbine")], "HV Steam Turbine", optional=True, tokens=1, subtitle="Optional: high-voltage steam", deps=["pw_transformer", "t5_hv"], xp=150, desc=[
         "&eWhat:&r the HV steam turbine, for HV machine lines.",
         "&eHow:&r check JEI for the recipe. Feed it from a large boiler.",
         "&eTip:&r more steam than one turbine can eat? Add a second turbine on the same steam line."]),
-    Q("pw_large_turbine", 10, 2, [item("modern_industrialization:large_steam_turbine")], "Large Steam Turbine", subtitle="Power-station scale", deps=["pw_hv_turbine", "t6_pu"], xp=300, desc=[
+    Q("pw_large_turbine", 10, 2, [item("modern_industrialization:large_steam_turbine")], "Large Steam Turbine", optional=True, tokens=1, subtitle="Optional: power-station scale", deps=["pw_hv_turbine", "t6_pu"], xp=300, desc=[
         "&eWhat:&r MI's multiblock steam turbine. It eats steam by the thousands of mB and makes serious EU.",
         "&eHow:&r the controller needs an HV steam turbine, a processing unit (EV) and a highly advanced hull. Layout: JEI or the MI guidebook.",
         "&eTip:&r pair it with a large boiler or a reactor's steam output."]),
 
     # --- Powah (y = 4) -------------------------------------------------------------------------
-    Q("pw_energized", 2, 4, [item("powah:steel_energized", 8)], "Energized Steel", subtitle="Iron and gold, charged together", deps=["t4_uraninite"], xp=100, desc=[
+    Q("pw_energized", 2, 4, [item("powah:steel_energized", 8)], "Energized Steel", subtitle="Iron and gold, charged together", deps=["pw_iron_gen", "t4_uraninite"], xp=100, desc=[
         "&eWhat:&r Powah's basic alloy, made by the Energizing Orb.",
         "&eHow:&r place Energizing Rods aimed at the orb and power them. Put 1 iron + 1 gold in the orb for 2 Energized Steel.",
         "&eTip:&r more rods (and better rods) charge faster."]),
@@ -116,7 +117,7 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eTip:&r fuel, temperature and coolant all show in its GUI. Watch the temperature as you scale up."]),
 
     # --- Renewables (y = 6) -------------------------------------------------------------------
-    Q("pw_solar", 4, 6, [item("mekanismgenerators:solar_generator"), item("powah:solar_panel_starter")], "Photovoltaics", subtitle="Light straight into electricity", deps=["t4_mv"], xp=100, desc=[
+    Q("pw_solar", 4, 6, [item("mekanismgenerators:solar_generator"), item("powah:solar_panel_starter")], "Photovoltaics", optional=True, tokens=1, subtitle="Optional: light straight into electricity", deps=["pw_iron_gen", "t4_mv"], xp=100, desc=[
         "&eWhat:&r solar panels from Mekanism and Powah.",
         "&eChemistry:&r silicon solar cells use a p-n junction: a photon knocks an electron loose and the junction pushes it into a current.",
         "&eHow:&r place them under open sky. They stop at night and slow in rain.",
@@ -131,7 +132,7 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eTip:&r it needs open space around it, so leave room."]),
 
     # --- Nuclear (y = -4) ----------------------------------------------------------------------
-    Q("pw_fission_safety", 10, -4, [item("mekanismgenerators:fission_reactor_logic_adapter", 2)], "Reactor Safety", subtitle="Build the off-switch first", deps=["t6_fission"], xp=200, desc=[
+    Q("pw_fission_safety", 10, -4, [item("mekanismgenerators:fission_reactor_logic_adapter", 2)], "Reactor Safety", subtitle="Build the off-switch first", deps=["pw_iron_gen", "t6_fission"], xp=200, desc=[
         "&eWhat:&r Logic Adapters let redstone read the reactor and switch it off.",
         "&eChemistry:&r a fission reactor makes heat by splitting heavy nuclei. If heat can't escape fast enough, the reactor takes damage; at 100% it melts down.",
         "&eHow:&r set one adapter to emit a signal on damage or high temperature (pick the mode in its GUI) and wire it to another in Activation mode.",

@@ -121,7 +121,7 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eHow:&r a swamp hut farm, or raids (witches join them).",
         "&eTip:&r witches are immune to most potion damage; use a sword or bow."]),
     Q("hn_slime", 4, 7.5, [kill(MC + "slime", 25)], "Slime Time", deps=["gs_shield"], xp=75,
-      loot="hunt", subtitle="Kill 25 slimes", desc=[
+      loot="hunt", subtitle="Kill 25 slimes", optional=True, tokens=1, desc=[
         "&eWhat:&r slimes split when killed; the smallest drop slimeballs for sticky pistons and leads.",
         "&eChemistry:&r real slime is a polymer gel: long molecules cross-linked loosely enough to flow, like borax and PVA glue.",
         "&eHow:&r slimes spawn in swamps at night and in slime chunks underground.",
@@ -142,7 +142,7 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eHow:&r YUNG's strongholds are full of infested blocks; a single blow kills each one.",
         "&eTip:&r don't break blocks near a silverfish fight; you'll wake more."]),
     Q("hn_trials", 6, 9, [kill(MC + "breeze", 10), kill(MC + "bogged", 10)], "The Trials", deps=["gs_shield"], xp=150,
-      loot="hunt", subtitle="Kill 10 breezes and 10 bogged", desc=[
+      loot="hunt", subtitle="Kill 10 breezes and 10 bogged", optional=True, tokens=1, desc=[
         "&eWhat:&r two mobs from 1.21: breezes (wind spirits) and bogged (mossy skeletons with poison arrows), both from trial chambers.",
         "&eHow:&r find a trial chamber (see the Exploration page) and fight the trial spawners.",
         "&eTip:&r breeze rods make wind charges and the mace."]),
@@ -164,12 +164,12 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eHow:&r keep your shield up; their axes can disable it, so back off after a block.",
         "&eTip:&r a vindicator named \"Johnny\" attacks every mob in sight."]),
     Q("hn_evoker", 12, 4.5, [kill(MC + "evoker", 3)], "Evoker Bane", deps=["hn_vindicator"], xp=150,
-      loot="hunt", subtitle="Kill 3 evokers", desc=[
+      loot="hunt", subtitle="Kill 3 evokers", optional=True, tokens=1, desc=[
         "&eWhat:&r evokers summon fangs and vexes. Each one drops a Totem of Undying.",
         "&eHow:&r they come in later raid waves and live in woodland mansions. Kill the evoker first; its vexes die with it.",
         "&eTip:&r keep a totem in your off-hand when fighting raids."]),
     Q("hn_ravager", 10, 6, [kill(MC + "ravager", 3)], "Beast of the Raid", deps=["hn_vindicator"], xp=150,
-      loot="hunt", subtitle="Kill 3 ravagers", desc=[
+      loot="hunt", subtitle="Kill 3 ravagers", optional=True, tokens=1, desc=[
         "&eWhat:&r ravagers are huge raid beasts that trample crops and charge.",
         "&eHow:&r they appear in raids from wave 3 on. Block the charge with a shield, then counterattack while it's stunned.",
         "&eTip:&r ravagers drop saddles."]),
@@ -182,7 +182,7 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
 
     # --- the Nether (x=16..20) -----------------------------------------------------------------
     Q("hn_zpiglin", 16, 0, [kill(MC + "zombified_piglin", 50)], "Gold in the Rot", deps=["t2_nether"], xp=75,
-      loot="hunt", subtitle="Kill 50 zombified piglins", desc=[
+      loot="hunt", subtitle="Kill 50 zombified piglins", optional=True, tokens=1, desc=[
         "&eWhat:&r zombified piglins drop gold nuggets and rotten flesh.",
         "&eHow:&r they're neutral until you hit one, then the whole crowd comes. Fight in a corridor.",
         "&eTip:&r gold farms over Nether-roof portals are a classic build."]),
@@ -198,12 +198,12 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eHow:&r build a blaze farm around a fortress spawner.",
         "&eTip:&r blaze rods are a good furnace fuel: 12 items each."]),
     Q("hn_ghast", 16, 3, [kill(MC + "ghast", 10)], "Ghastbuster", deps=["t2_nether"], xp=100,
-      loot="hunt", subtitle="Kill 10 ghasts", desc=[
+      loot="hunt", subtitle="Kill 10 ghasts", optional=True, tokens=1, desc=[
         "&eWhat:&r ghasts drop ghast tears (regeneration potions, end crystals) and gunpowder.",
         "&eHow:&r hit their fireballs back at them with a sword or an arrow.",
         "&eTip:&r kill them over solid ground, not lava, or the tear is lost."]),
     Q("hn_magma", 18, 3, [kill(MC + "magma_cube", 50)], "Hot Jelly", deps=["t2_nether"], xp=75,
-      loot="hunt", subtitle="Kill 50 magma cubes", desc=[
+      loot="hunt", subtitle="Kill 50 magma cubes", optional=True, tokens=1, desc=[
         "&eWhat:&r magma cubes split like slimes and drop magma cream for fire resistance.",
         "&eHow:&r basalt deltas are full of them.",
         "&eTip:&r every split counts as a kill."]),
@@ -218,7 +218,7 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eHow:&r a wither skeleton farm on a fortress platform.",
         "&eTip:&r a Smite sword kills them quickly."]),
     Q("hn_bastion", 16, 6, [kill(MC + "piglin_brute", 5), kill(MC + "hoglin", 10)], "Bastion Brawl", deps=["t2_nether"], xp=150,
-      loot="hunt", subtitle="Kill 5 piglin brutes and 10 hoglins", desc=[
+      loot="hunt", subtitle="Kill 5 piglin brutes and 10 hoglins", optional=True, tokens=1, desc=[
         "&eWhat:&r the toughest regular Nether fighters: axe-armed piglin brutes in bastions and charging hoglins in crimson forests.",
         "&eChemistry:&r hoglins fear warped fungus; real animals avoid many plant compounds, which evolved as chemical defences.",
         "&eHow:&r brutes ignore gold armour; fight them in doorways. Hoglins drop pork and leather.",
@@ -226,17 +226,17 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
 
     # --- other dimensions (y=12..15) -----------------------------------------------------------
     Q("hn_shulker", 0, 12, [kill(MC + "shulker", 20)], "Shell Game", deps=["w_end"], xp=150,
-      loot="hunt", subtitle="Kill 20 shulkers", desc=[
+      loot="hunt", subtitle="Kill 20 shulkers", optional=True, tokens=1, desc=[
         "&eWhat:&r shulkers hide in End Cities and drop shells for shulker boxes.",
         "&eHow:&r hit them when their shell opens. Their bullets make you levitate.",
         "&eTip:&r carry milk or slow falling against levitation."]),
     Q("hn_rotspawn", 2, 12, [kill(UG + "rotling", 20), kill(UG + "rotwalker", 10), kill(UG + "rotbeast", 3)], "The Rotspawn", deps=["t4_undergarden"], xp=150,
-      loot="hunt", subtitle="Undergarden's rotting horde", desc=[
+      loot="hunt", subtitle="Undergarden's rotting horde", optional=True, tokens=1, desc=[
         "&eWhat:&r the Undergarden's undead-like rotspawn: small rotlings, tall rotwalkers and the huge rotbeast.",
         "&eHow:&r utherium weapons deal extra damage to rotspawn.",
         "&eTip:&r rotbeasts hit hard and have a lot of health; fight them in the open."]),
     Q("hn_undergarden", 4, 12, [kill(UG + "nargoyle", 5), kill(UG + "muncher", 10)], "Things in the Dark", deps=["t4_undergarden"], xp=150,
-      loot="hunt", subtitle="Nargoyles and munchers", desc=[
+      loot="hunt", subtitle="Nargoyles and munchers", optional=True, tokens=1, desc=[
         "&eWhat:&r more Undergarden predators: nargoyles and the hungry munchers.",
         "&eHow:&r explore the Undergarden at length; both turn up in its caverns.",
         "&eTip:&r cloggrum armour is the Undergarden's best early protection."]),
@@ -246,7 +246,7 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eHow:&r roam the Otherside's biomes. Sneak to approach without alerting the sculk.",
         "&eTip:&r carry food and a way home; the Otherside is a long way from your base."]),
     Q("hn_stalker", 8, 12, [kill(DD + "shattered", 10), kill(DD + "stalker", 3)], "Shattered and Stalkers", deps=["hn_sculk"], xp=200,
-      loot="hunt", subtitle="The Otherside's hunters", desc=[
+      loot="hunt", subtitle="The Otherside's hunters", optional=True, tokens=1, desc=[
         "&eWhat:&r shattered drop sculk bones; stalkers drop soul crystals. Both go into the soul elytra.",
         "&eHow:&r both hunt by sound like the Warden. Fight at range.",
         "&eTip:&r sneak to keep your footsteps quiet."]),
@@ -256,22 +256,22 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eChemistry:&r anything living on Mars would need to cope with perchlorates (ClO₄⁻), reactive salts found in real Martian soil.",
         "&eHow:&r land on Mars and hunt in the wastelands. Keep your suit topped up."]),
     Q("hn_tf_forest", 0, 14, [kill(TF + "redcap", 20), kill(TF + "kobold", 20), kill(TF + "swarm_spider", 20)], "Twilight Pests", deps=["t5_twilight"], xp=150,
-      loot="hunt", subtitle="Redcaps, kobolds and swarm spiders", desc=[
+      loot="hunt", subtitle="Redcaps, kobolds and swarm spiders", optional=True, tokens=1, desc=[
         "&eWhat:&r the common hostile mobs of the Twilight Forest.",
         "&eHow:&r redcaps and kobolds roam the forest; swarm spiders spawn around hollow hills and spider-infested spots.",
         "&eTip:&r redcap sappers carry TNT; kill them before they light it."]),
     Q("hn_tf_swamp", 2, 14, [kill(TF + "minotaur", 10), kill(TF + "maze_slime", 10), kill(TF + "skeleton_druid", 10)], "Maze and Swamp", deps=["w_lich"], xp=150,
-      loot="hunt", subtitle="Minotaurs, maze slimes and druids", desc=[
+      loot="hunt", subtitle="Minotaurs, maze slimes and druids", optional=True, tokens=1, desc=[
         "&eWhat:&r guardians of the labyrinth and the swamp beyond the Lich.",
         "&eHow:&r minotaurs and maze slimes fill the labyrinth; skeleton druids lurk in the forest at night.",
         "&eTip:&r maze slimes split like regular slimes."]),
     Q("hn_tf_knights", 4, 14, [kill(TF + "lower_goblin_knight", 10), kill(TF + "blockchain_goblin", 5), kill(TF + "carminite_ghastguard", 10)], "Goblins and Ghastguards",
-      deps=["w_hydra"], xp=200, loot="hunt", subtitle="Stronghold and Dark Tower guards", desc=[
+      deps=["w_hydra"], xp=200, loot="hunt", subtitle="Stronghold and Dark Tower guards", optional=True, tokens=1, desc=[
         "&eWhat:&r goblin knights and block-and-chain goblins hold the Goblin Stronghold; carminite ghastguards haunt the Dark Tower.",
         "&eHow:&r goblin knights ride in pairs; knock off the upper one, then finish the lower.",
         "&eTip:&r ghastguards' fireballs can be hit back like a ghast's."]),
     Q("hn_tf_snow", 6, 14, [kill(TF + "yeti", 10), kill(TF + "winter_wolf", 10)], "Snow Beasts", deps=["w_lich"], xp=150,
-      loot="hunt", subtitle="Yetis and winter wolves", desc=[
+      loot="hunt", subtitle="Yetis and winter wolves", optional=True, tokens=1, desc=[
         "&eWhat:&r the snowy forest's hunters. Yetis drop arctic fur for warm armour.",
         "&eHow:&r yetis guard the Alpha Yeti's cave; winter wolves roam the snowy forest and breathe frost.",
         "&eTip:&r winter wolves come in packs; back against a tree."]),
@@ -283,7 +283,7 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
 
     # --- bosses (Elder Guardians next to the guardian line, the Wither under the Nether block) ---------------------------------
     Q("hn_elder", 12, 7.5, [kill(MC + "elder_guardian", 3)], "Elder Guardians", deps=["hn_guardian"], xp=300,
-      loot="boss", subtitle="All three elders of a monument", desc=[
+      loot="boss", subtitle="All three elders of a monument", optional=True, tokens=1, desc=[
         "&eWhat:&r each ocean monument holds three elder guardians. They cast Mining Fatigue until all three are dead.",
         "&eHow:&r the elders sit in the top room and two wing rooms. Water breathing, a good sword and patience.",
         "&eTip:&r elders drop wet sponges and, sometimes, a tide armour trim."]),

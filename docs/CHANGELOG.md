@@ -4,6 +4,29 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Chemistry by tier, quest book v10 (layout, Basics, pruning), harvest tiers
+Based on three audits in `docs/research/` (chem_tier_audit, quest_layout_audit, tools_harvest_plan); 7 parallel writers.
+- **Chemistry gates** (`phase4_aluminum.js`, new `phase5_chem_gates.js`):
+  - Aluminium only from the Hall-Héroult Cell: obsidian-dissolved alumina, ChemLib's aluminium-dust smelting and
+    Alchemistry's compound→dust compacting are gone; the cell takes only Bayer alumina dust.
+  - Dragon's breath dissolves to xenon + radon only; oganesson only from Fusion.
+  - Redstone battery needs Combiner sulfuric acid (a lead-acid battery): the T1 "first compound" gate now exists.
+  - Silicon only from carbothermic reduction (MI EBF); sand/certus/quartz-blend routes removed; MI silicon is `c:silicon`.
+  - Undergarden catalyst and the Seed accept any sulfuric acid bucket (MI, Mekanism, ChemLib).
+  - Seed of a New World needs 4 hydrofluoric acid buckets (polyethylene 16 → 12).
+- **Harvest tiers** (`phase5_harvest_tiers.js`): MI titanium, tungsten, platinum, iridium ores need an iron pickaxe; Ad Astra
+  desh iron, ostrum diamond, calorite netherite.
+- **Quest book v10** (1,622 quests, 44 chapters; 801 required, 821 optional):
+  - Automatic layout (`tools/layout.py`): every line points left to right, the required path on the middle row, side
+    topics as rows, links in a left column. Line crossings 320 → 121, backward lines 415 → 0, overlaps 14 → 0.
+    `python tools/build_quests.py --layout-report` shows the numbers.
+  - New **Basics** group (tools, harvest, storage, power, Powah, farming, QoL, building); Welcome, Market, Lab Notes
+    and Completionist sit above the tabs. Utilitarian merged into QoL; Mekanism split into Mekanism + Mekanism Power.
+  - New **Tools, Armour and Harvest Tiers** chapter (30 quests): each pickaxe tier and what it can now mine.
+  - Pruning: duplicates removed or merged (paxels, JDT intro, claim, compass, logistics, market and welcome tick
+    chains), the Seed's single-item quests optional, dead ends made optional. New "Battery Acid" quest.
+  - Text fixes: synthetic rubber, steel paxel mines obsidian, rocket fuel, silicon, aluminium, Undergarden acid.
+
 ### 2026-10-18: Gate fixes found while writing quests
 - Powah's own Energizing recipe uranium ingot → uraninite removed: uraninite only comes from the MI Chemical Reactor
   (uranium + O₂), as designed.
