@@ -23,6 +23,7 @@ CHAPTER = Chapter("worlds", "Other Worlds", "deeperdarker:heart_of_the_deep",
     Q("w_dragon", 2, -2, [item("minecraft:dragon_breath", 4)], "The Dragon's Breath", deps=["wd_dragon"], xp=200,
       subtitle="Bottle what the dragon breathes", desc=[
         "&eWhat:&r the dragon's purple breath can be bottled and makes lingering potions.",
+        "&eChemistry:&r the Dissolver splits one bottle into 8 xenon and 8 radon, two heavy noble gases. It gives no oganesson in this pack: element 118 has never been found in nature, so here it only comes from the Fusion Chamber.",
         "&eHow:&r catch the purple breath cloud in glass bottles during the fight, or respawn the dragon for another go.",
         "&eTip:&r crystals respawn the dragon when placed on the exit portal, if you need it again."]),
     Q("wd_end_city", 4, 0, [structure("minecraft:end_city")], "An End City", deps=["wd_dragon"], xp=150,

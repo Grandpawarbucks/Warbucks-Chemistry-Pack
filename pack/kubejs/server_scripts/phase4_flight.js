@@ -66,6 +66,7 @@ ServerEvents.recipes(event => {
   // Was craftable in T2 from wilden wings and diamonds alone. Same ingredients plus the pylon's
   // hydrogen, so ritual flight arrives with the Infusion Pylon, not before it.
   event.remove({ id: 'ars_nouveau:ritual_flight' })
+  event.remove({ id: 'ars_elemental:flight_alt' }) // Ars Elemental's own tablet recipe skipped the hydrogen too
   event.shapeless('ars_nouveau:ritual_flight', [
     'ars_nouveau:purple_archwood_log', 'ars_nouveau:wilden_wing', 'ars_nouveau:wilden_wing',
     'ars_nouveau:wilden_wing', '#c:gems/diamond', '#c:gems/diamond', 'minecraft:ender_pearl',

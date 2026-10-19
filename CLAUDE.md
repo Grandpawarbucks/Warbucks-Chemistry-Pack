@@ -137,6 +137,11 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Quest book v11 (2026-10-19): 2,000 quests (848 required, 320 on the main path). ATM10-aligned coverage (138 ATM10 items
+  left, all skipped on purpose), story arc reviewed end to end, the MI nuclear/quantum chain before the Seed is now
+  required on the main path (adds endgame hours; watch pacing vs the 100-120 h target). LIVE WORLD WIPED 2026-10-19 00:22
+  (backup on the VPS: /opt/warbucks/backups/world-prewipe-20261019-002252.tar.gz). Quest preview for review:
+  `python test/build_quest_preview.py`, then serve test/preview (the session's quest-preview launch config).
 - Quest book v10 (2026-10-19): 1,622 quests (801 required), 44 chapters. AUTOMATIC LAYOUT (tools/layout.py): writers no
   longer place x/y (Chapter(layout="manual") opts out; Q(row=N) pins). `build_quests.py --layout-report` for metrics.
   Groups: top (welcome, market, lab_notes, completionist), main, basics, chem, eng, magic, world, life; new chapters

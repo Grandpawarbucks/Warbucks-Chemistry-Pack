@@ -55,12 +55,13 @@
 		}
 		{
 			id: "077B8D568A0E67A4"
-			x: 2.0d
+			x: 4.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"3975D5E5733B2029"
+				"056317CC7EAC1F12"
 			]
 			tasks: [
 				{
@@ -96,7 +97,7 @@
 		}
 		{
 			id: "5C73D62A251E158E"
-			x: 4.0d
+			x: 6.0d
 			y: 0.0d
 			dependencies: [
 				"077B8D568A0E67A4"
@@ -148,7 +149,7 @@
 		}
 		{
 			id: "41CD2A6115484870"
-			x: 6.0d
+			x: 8.0d
 			y: 0.0d
 			dependencies: [
 				"5C73D62A251E158E"
@@ -200,8 +201,8 @@
 		}
 		{
 			id: "7CB7FF40BB33AD8F"
-			x: 8.0d
-			y: -2.0d
+			x: 10.0d
+			y: -3.0d
 			dependencies: [
 				"41CD2A6115484870"
 			]
@@ -243,7 +244,7 @@
 		}
 		{
 			id: "63562E7CFD3869A1"
-			x: 8.0d
+			x: 10.0d
 			y: 0.0d
 			dependencies: [
 				"41CD2A6115484870"
@@ -277,7 +278,7 @@
 		}
 		{
 			id: "2B7050355105A3E8"
-			x: 10.0d
+			x: 12.0d
 			y: 0.0d
 			dependencies: [
 				"63562E7CFD3869A1"
@@ -311,7 +312,7 @@
 		}
 		{
 			id: "76071A1B98D9CFD3"
-			x: 12.0d
+			x: 14.0d
 			y: 0.0d
 			dependencies: [
 				"2B7050355105A3E8"
@@ -345,8 +346,8 @@
 		}
 		{
 			id: "4B32EEF0B09F51CB"
-			x: 14.0d
-			y: -3.0d
+			x: 16.0d
+			y: -5.5d
 			dependencies: [
 				"76071A1B98D9CFD3"
 			]
@@ -380,7 +381,7 @@
 		{
 			id: "1A986E281B98DA89"
 			x: 0.0d
-			y: 3.5d
+			y: 5.5d
 			dependencies: [
 				"17832D4C895DEFF7"
 			]
@@ -423,7 +424,7 @@
 		{
 			id: "4083455951FE50A4"
 			x: 2.0d
-			y: 3.5d
+			y: 5.5d
 			dependencies: [
 				"1A986E281B98DA89"
 			]
@@ -457,7 +458,7 @@
 		{
 			id: "589F846BD366467D"
 			x: 4.0d
-			y: 3.5d
+			y: 5.5d
 			dependencies: [
 				"4083455951FE50A4"
 			]
@@ -500,7 +501,7 @@
 		{
 			id: "5534AEA7CF93C53D"
 			x: 8.0d
-			y: 4.5d
+			y: 8.5d
 			dependencies: [
 				"589F846BD366467D"
 				"0213687BA73A9908"
@@ -534,7 +535,7 @@
 		}
 		{
 			id: "6630705D72AEB78D"
-			x: 14.0d
+			x: 16.0d
 			y: 0.0d
 			dependencies: [
 				"76071A1B98D9CFD3"
@@ -569,8 +570,8 @@
 		}
 		{
 			id: "494A81F2F340497C"
-			x: 14.0d
-			y: 2.0d
+			x: 18.0d
+			y: -2.0d
 			dependencies: [
 				"73B0B0B23BDA8732"
 			]
@@ -603,13 +604,14 @@
 		}
 		{
 			id: "6D18179563EC6FB4"
-			x: 16.0d
+			x: 20.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
 				"6630705D72AEB78D"
 				"494A81F2F340497C"
+				"4B5C9677207BD72C"
 			]
 			tasks: [
 				{
@@ -662,7 +664,7 @@
 		}
 		{
 			id: "0977A230BB3A6718"
-			x: 18.0d
+			x: 22.0d
 			y: 0.0d
 			dependencies: [
 				"6D18179563EC6FB4"
@@ -714,7 +716,7 @@
 		}
 		{
 			id: "61C8ED46F157C456"
-			x: 20.0d
+			x: 24.0d
 			y: 2.5d
 			dependencies: [
 				"6D18179563EC6FB4"
@@ -757,7 +759,7 @@
 		}
 		{
 			id: "6C079DD7BD5DC36A"
-			x: 20.0d
+			x: 24.0d
 			y: 0.0d
 			dependencies: [
 				"6D18179563EC6FB4"
@@ -801,7 +803,7 @@
 		}
 		{
 			id: "45849083414E98A3"
-			x: 22.0d
+			x: 26.0d
 			y: 0.0d
 			shape: "gear"
 			size: 2.0d
@@ -851,7 +853,7 @@
 		}
 		{
 			id: "40E5C8E7AFD9DCDB"
-			x: 24.0d
+			x: 28.0d
 			y: -1.5d
 			optional: true
 			dependencies: [
@@ -895,7 +897,7 @@
 		}
 		{
 			id: "4B6B18DEE9511230"
-			x: 18.0d
+			x: 22.0d
 			y: 2.0d
 			dependencies: [
 				"6D18179563EC6FB4"
@@ -925,8 +927,8 @@
 		}
 		{
 			id: "66878B009C6ABC9F"
-			x: 10.0d
-			y: 3.0d
+			x: 12.0d
+			y: -3.0d
 			optional: true
 			dependencies: [
 				"63562E7CFD3869A1"
@@ -969,8 +971,8 @@
 		}
 		{
 			id: "5529968E112BBA9E"
-			x: 12.0d
-			y: 1.5d
+			x: 14.0d
+			y: -8.0d
 			optional: true
 			dependencies: [
 				"66878B009C6ABC9F"
@@ -1013,11 +1015,12 @@
 		}
 		{
 			id: "11E3CE994DD5E91B"
-			x: 14.0d
-			y: -1.5d
+			x: 18.0d
+			y: -4.5d
 			optional: true
 			dependencies: [
 				"5529968E112BBA9E"
+				"1A1FFC0C25846B77"
 			]
 			tasks: [
 				{
@@ -1048,8 +1051,8 @@
 		}
 		{
 			id: "7A05E39EE109E1CA"
-			x: 10.0d
-			y: -3.5d
+			x: 12.0d
+			y: -4.5d
 			optional: true
 			dependencies: [
 				"7CB7FF40BB33AD8F"
@@ -1092,7 +1095,7 @@
 		}
 		{
 			id: "697083271627CD0D"
-			x: 10.0d
+			x: 12.0d
 			y: -1.5d
 			optional: true
 			dependencies: [
@@ -1127,8 +1130,8 @@
 		}
 		{
 			id: "1AAB2F81853CDE86"
-			x: 10.0d
-			y: 1.5d
+			x: 12.0d
+			y: 2.0d
 			optional: true
 			dependencies: [
 				"63562E7CFD3869A1"
@@ -1171,8 +1174,8 @@
 		}
 		{
 			id: "6879CF7353CD336E"
-			x: 12.0d
-			y: 4.0d
+			x: 14.0d
+			y: -3.5d
 			optional: true
 			dependencies: [
 				"66878B009C6ABC9F"
@@ -1215,8 +1218,8 @@
 		}
 		{
 			id: "66000D449A417BFA"
-			x: 16.0d
-			y: -3.0d
+			x: 20.0d
+			y: -6.0d
 			optional: true
 			dependencies: [
 				"11E3CE994DD5E91B"
@@ -1248,12 +1251,424 @@
 				}
 			]
 		}
+		{
+			id: "056317CC7EAC1F12"
+			x: 2.0d
+			y: 0.0d
+			dependencies: [
+				"3975D5E5733B2029"
+			]
+			tasks: [
+				{
+					id: "3CA70186E521B3E5"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_machine_casing_pipe"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "070FFE5CD9C13217"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "61AC8D29FCCC1A68"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "4B5C9677207BD72C"
+			x: 18.0d
+			y: 0.0d
+			dependencies: [
+				"6630705D72AEB78D"
+			]
+			tasks: [
+				{
+					id: "494766F160A4870D"
+					type: "item"
+					item: {
+						id: "modern_industrialization:op_amp"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "01ABC9FFB993AC0F"
+					type: "item"
+					item: {
+						id: "modern_industrialization:and_gate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "360EC946B3BF0864"
+					type: "item"
+					item: {
+						id: "modern_industrialization:or_gate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "07B055A30E8101C4"
+					type: "item"
+					item: {
+						id: "modern_industrialization:not_gate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4BD5041D9E8FF7EF"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "3FEF6A01172E93D6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "29EB3B57474E09B3"
+			x: 2.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"3975D5E5733B2029"
+			]
+			tasks: [
+				{
+					id: "6955CFE5F3E4866E"
+					type: "item"
+					item: {
+						id: "modern_industrialization:distillery"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3374ADA916F43A40"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1658D0D155649026"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3CABA477F26CBEE2"
+			x: 2.0d
+			y: 7.0d
+			optional: true
+			dependencies: [
+				"1A986E281B98DA89"
+			]
+			tasks: [
+				{
+					id: "00597E3D4D1F2898"
+					type: "item"
+					item: {
+						id: "modern_industrialization:chromium_crushed_dust"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "779FD85204E14AD0"
+					type: "item"
+					item: {
+						id: "modern_industrialization:manganese_crushed_dust"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "68669C46289C60E6"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "2EDA89180B8B9EEE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "449849B93937E00E"
+			x: 6.0d
+			y: 5.5d
+			optional: true
+			dependencies: [
+				"589F846BD366467D"
+			]
+			tasks: [
+				{
+					id: "4F54F46623F75A44"
+					type: "item"
+					item: {
+						id: "modern_industrialization:heatproof_machine_casing"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "2A088E306D2ED450"
+					type: "item"
+					item: {
+						id: "modern_industrialization:frostproof_machine_casing"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "60BC9ABB5D76468F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7C69E26C7D063FC4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "60DC824132BB1184"
+			x: 16.0d
+			y: -1.5d
+			optional: true
+			dependencies: [
+				"76071A1B98D9CFD3"
+			]
+			tasks: [
+				{
+					id: "7C8D7D77C8D4E6CD"
+					type: "item"
+					item: {
+						id: "modern_industrialization:advanced_upgrade"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "597A675FCC14455D"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "72BC3D2D2CDEB78D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "242CC152863715AD"
+			x: 12.0d
+			y: 3.5d
+			optional: true
+			dependencies: [
+				"63562E7CFD3869A1"
+			]
+			tasks: [
+				{
+					id: "11F0FB2DFF9F6905"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steam_cracked_light_fuel_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4E86C2DBBE3B873D"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6A8D5A53A6ECCA8A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1A1FFC0C25846B77"
+			x: 16.0d
+			y: -7.0d
+			optional: true
+			dependencies: [
+				"5529968E112BBA9E"
+			]
+			tasks: [
+				{
+					id: "5ED3101F56075474"
+					type: "item"
+					item: {
+						id: "modern_industrialization:butadiene_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3B641BF7D09E69A8"
+					type: "item"
+					item: {
+						id: "modern_industrialization:styrene_butadiene_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "520F43DB18863A88"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "2EFD6920D59BE637"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5FA794E22BE6574B"
+			x: 10.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"41CD2A6115484870"
+				"5534AEA7CF93C53D"
+			]
+			tasks: [
+				{
+					id: "2E6F2E8FEFE45461"
+					type: "item"
+					item: {
+						id: "modern_industrialization:sulfuric_crude_oil_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7239857A4266E111"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "462E15EFD48249A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FBB61200999B261"
+			x: 22.0d
+			y: 4.0d
+			optional: true
+			dependencies: [
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "2C4C014A9495DC62"
+					type: "item"
+					item: {
+						id: "extended_industrialization:processing_array"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6F9BBBE6045405C7"
+					type: "item"
+					item: {
+						id: "modern_industrialization:clean_stainless_steel_machine_casing"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "698AE7F528102996"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "07E9F0BC2869E333"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	images: [
 		{
 			id: "2FA1F2006FE14F91"
 			x: 0.5d
-			y: -5.5d
+			y: -10.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -1265,7 +1680,7 @@
 			id: "702AF486DF4C9919"
 			linked_quest: "17832D4C895DEFF7"
 			x: -2.0d
-			y: 2.0d
+			y: 3.0d
 		}
 	]
 }

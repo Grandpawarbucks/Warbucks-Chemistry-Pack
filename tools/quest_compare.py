@@ -35,7 +35,11 @@ def main():
         names[parts[0]] = parts[2] if len(parts) > 2 else ""
     ours = set()
     for f in (ROOT / "pack/config/ftbquests/quests/chapters").glob("*.snbt"):
-        ours |= set(re.findall(r'id: "([a-z0-9_]+:[a-z0-9_/]+)"', f.read_text(encoding="utf-8")))
+        text = f.read_text(encoding="utf-8")
+        ours |= set(re.findall(r'id: "([a-z0-9_]+:[a-z0-9_/]+)"', text))
+        # anyof() tasks are FTB Filter System strings listing item(ns:id). anytag() tasks are not expanded,
+        # so items our book only asks for through a tag still show up as missing.
+        ours |= set(re.findall(r'(?<![_a-z])item\(([a-z0-9_]+:[a-z0-9_/]+)\)', text))
 
     chapters = {}
     for f in sorted((pathlib.Path(args.theirs) / "chapters").glob("*.snbt")):

@@ -293,6 +293,86 @@ CHAPTER = Chapter("mekanism", "Mekanism", "mekanism:metallurgic_infuser",
         "&eHow:&r personal chest: steel, glass, chests and a Basic Control Circuit. Security desk: steel, glass, a Network Reader and &eElite Control Circuits&r (HV) (check JEI).",
         "&eTip:&r on a shared server, lock your reactor controls."]),
 
+    # --- ATM10-alignment round (2026-10-19): items worth a quest that the page didn't ask for yet ---
+    Q("mk2_enriched", 0, 0, [item(MEK + "enriched_carbon", 8), item(MEK + "enriched_redstone", 8), item(MEK + "dust_charcoal", 8)], "Enriched Infusion",
+      subtitle="Concentrate the infuse before you use it", deps=["mk2_intro", "t3_infuser"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Enrichment Chamber turns coal, charcoal and redstone into enriched forms. One enriched item gives the Metallurgic Infuser far more infuse than the raw material.",
+        "&eChemistry:&r charcoal is nearly pure carbon left after heating wood without air (pyrolysis). Enriching it is like refining coal into coke: less ash, more carbon per gram.",
+        "&eHow:&r crush charcoal into Charcoal Dust in the Crusher, then put coal, charcoal or redstone through the Enrichment Chamber (check JEI).",
+        "&eTip:&r feed enriched items into the infuser's left slot: one stack lasts a long time."]),
+    Q("mk2_obsidian_dust", 0, 0, [item(MEK + "dust_obsidian", 8), item(MEK + "dust_refined_obsidian", 4)], "Obsidian Dusts",
+      subtitle="The road to refined obsidian", deps=["mk2_reinforced"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r obsidian dust, and refined obsidian dust made by infusing it with diamond. Refined obsidian dust becomes Atomic Alloy and refined obsidian ingots.",
+        "&eChemistry:&r obsidian is volcanic glass, mostly SiO₂ (about 70%) with aluminium, iron and alkali oxides, frozen before it could crystallise.",
+        "&eHow:&r crush obsidian in the Crusher, then Metallurgic Infuser: obsidian dust + diamond infusion → refined obsidian dust (check JEI).",
+        "&eTip:&r a Combiner can turn spare obsidian dust back into obsidian later."]),
+    Q("mk2_bio_fuel", 0, 0, [item(MEK + "bio_fuel", 32)], "Bio Fuel",
+      subtitle="Crush plants into fuel", deps=["mk2_intro", "t3_mekcircuit"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r bio fuel is crushed plant matter. It burns in the Bio-Generator and is the start of the substrate line in the PRC.",
+        "&eChemistry:&r plants store sunlight as sugars and cellulose: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Burning or digesting them gives that energy back.",
+        "&eHow:&r put seeds, saplings, crops or other plant items into the Crusher (press U on Bio Fuel in JEI to see what counts).",
+        "&eTip:&r a Mystical Agriculture or Farmer's Delight farm feeding a Crusher makes it renewable."]),
+    Q("mk2_lab_tools", 0, 0, [item(MEK + "dictionary"), item(MEK + "gauge_dropper")], "Dictionary and Gauge Dropper",
+      subtitle="Read tags, sample tanks", deps=["mk2_intro", "t3_mekcircuit"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Dictionary shows the tags of any item or block you click. The Gauge Dropper sucks a little fluid or gas out of a tank, or dumps a tank you don't want.",
+        "&eHow:&r Dictionary: a book under a Basic Control Circuit. Gauge Dropper: osmium over glass panes (check JEI).",
+        "&eTip:&r the Dictionary is the fastest way to find out which tag a filter needs (c:dusts/iron, c:ores and so on)."]),
+    Q("mk2_chargepad", 0, 0, [item(MEK + "chargepad")], "Chargepad",
+      subtitle="Stand on it, charge everything", deps=["mk2_tablet"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Chargepad charges the FE items in your inventory (and a Robit) while you stand on it.",
+        "&eHow:&r polished blackstone pressure plates over steel and an Energy Tablet (check JEI). Feed it power from below.",
+        "&eTip:&r put one in front of your storage. Every visit tops up your tools."]),
+    Q("mk2_fluid_tanks", 0, 0, [item(MEK + "basic_fluid_tank"), item(MEK + "advanced_fluid_tank")], "Portable Fluid Tanks",
+      subtitle="Tanks that keep their contents", deps=["mk2_intro", "t3_infused"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r Mekanism fluid tanks keep their fluid when broken, so you can carry a tank of acid to another machine. Each tier holds more and moves it faster.",
+        "&eHow:&r basic: iron and Basic Alloy. Advanced: a basic tank ringed with iron and Infused Alloy (check JEI). They stack on top of each other and pass fluid down.",
+        "&eTip:&r right-click a tank with a bucket to fill or empty it; tanks also fill buckets placed in their GUI."]),
+    Q("mk2_elite_tanks", 0, 0, [item(MEK + "elite_fluid_tank"), item(MEK + "elite_chemical_tank")], "Elite Tanks",
+      subtitle="Bigger tanks for fluids and gases", deps=["mk2_fluid_tanks"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r elite tanks hold far more than basic ones. The chemical tank is the gas version, for H₂, O₂, Cl₂ or SO₂.",
+        "&eHow:&r the advanced tank ringed with Reinforced Alloy and iron (fluid) or osmium (chemical). Check JEI.",
+        "&eTip:&r a chemical tank under an Electrolytic Separator smooths out its output while the rest of the line catches up."]),
+    Q("mk2_liquid_gases", 0, 0, [item(MEK + "hydrogen_bucket"), item(MEK + "oxygen_bucket")], "Liquefied Gases",
+      subtitle="Hydrogen and oxygen, cold enough to pour", deps=["t4_vapor", "mk2_fluid_tanks"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Rotary Condensentrator turns gases into liquids and back. Liquid hydrogen and oxygen fit in buckets and ordinary fluid tanks.",
+        "&eChemistry:&r hydrogen boils at -253 °C and oxygen at -183 °C. Liquid oxygen is pale blue and is attracted to a magnet, because O₂ has two unpaired electrons.",
+        "&eHow:&r set the condensentrator to condensing, feed it H₂ or O₂ from a separator, and pipe the liquid into a fluid tank. Fill buckets from the tank.",
+        "&eTip:&r rockets in this pack burn fuel and oxygen; liquids are how big amounts travel."]),
+    Q("mk2_liquid_acids", 0, 0, [item(MEK + "hydrogen_chloride_bucket"), item(MEK + "sulfuric_acid_bucket")], "Acids by the Bucket",
+      subtitle="HCl and H₂SO₄ as liquids", deps=["mk2_liquid_gases", "t4_mek_acid", "t4_hcl"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the same machine liquefies hydrogen chloride and sulfuric acid, so other mods' machines (and the Undergarden catalyst) can use Mekanism's acids.",
+        "&eChemistry:&r hydrogen chloride dissolved in water is hydrochloric acid; sulfuric acid is already a liquid at room temperature and boils at 337 °C.",
+        "&eHow:&r Rotary Condensentrator on condensing mode, fed from your contact process or HCl line (check JEI).",
+        "&eTip:&r one bucket is 1,000 mB, the same as 1,000 mB of the gas form."]),
+    Q("mk2_adv_transmitters", 0, 0, [item(MEK + "advanced_universal_cable", 8), item(MEK + "advanced_mechanical_pipe", 8), item(MEK + "advanced_pressurized_tube", 8),
+                                     item(MEK + "advanced_logistical_transporter", 8), item(MEK + "advanced_thermodynamic_conductor", 8)],
+      "Advanced Transmitters", subtitle="The second tier of all five", deps=["mk2_transporter", "t3_infused"], xp=100, optional=True, tokens=1, desc=[
+        "&eWhat:&r every Mekanism transmitter has four tiers. Advanced ones carry several times more energy, fluid, gas, items or heat than basic.",
+        "&eHow:&r eight basic transmitters around Infused Alloy make eight advanced ones (check JEI).",
+        "&eChemistry:&r gas flow through a pipe rises with its cross-section and the pressure difference; Mekanism just lets you buy the bigger pipe.",
+        "&eTip:&r upgrade the trunk line from the separator first; the branches can stay basic."]),
+    Q("mk2_ult_cable", 0, 0, [item(MEK + "ultimate_universal_cable", 8)], "Ultimate Universal Cable",
+      subtitle="Enough power for a reactor hall", deps=["mk2_adv_transmitters"], xp=120, optional=True, tokens=1, desc=[
+        "&eWhat:&r the top tier of power cable: tens of thousands of times what a basic cable carries.",
+        "&eHow:&r elite cables around Atomic Alloy (elite cables use Reinforced Alloy). Check JEI.",
+        "&eChemistry:&r real cables lose power as heat (P = I²R); fusion plants send power at high voltage so the current, and the loss, stays low."]),
+    Q("mk2_electric_bow", 0, 0, [item(MEK + "electric_bow")], "Electric Bow",
+      subtitle="A bow that never needs repairs", deps=["mk2_tablet"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r an FE-powered bow. Its fire mode sets arrows alight.",
+        "&eHow:&r string, Infused Alloy and an Energy Tablet (check JEI). Charge it on a Chargepad.",
+        "&eTip:&r it has no durability, only charge."]),
+    Q("mk2_flamethrower", 0, 0, [item(MEK + "flamethrower")], "Flamethrower",
+      subtitle="Hydrogen, lit", deps=["mk2_adv_circuit", "t4_separator"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r a hand-held flamethrower that burns hydrogen gas. One mode smelts the blocks it hits.",
+        "&eChemistry:&r 2H₂ + O₂ → 2H₂O, about 286 kJ per mole of hydrogen. The flame is nearly invisible in daylight and leaves only water vapour.",
+        "&eHow:&r tin, bronze, a basic chemical tank, flint and steel and an &eAdvanced Control Circuit&r (MV). Fill it with H₂ from the separator's output or a chemical tank.",
+        "&eTip:&r never point it at your storage."]),
+    Q("mk2_pigment_mixer", 0, 0, [item(MEK + "pigment_mixer")], "Pigment Mixer",
+      subtitle="Two colours in, one colour out", deps=["mk2_pigment"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r mixes two pigments into a new one, for colours no single dye gives.",
+        "&eChemistry:&r pigments mix subtractively: each absorbs part of the spectrum, so yellow + cyan leaves only green to reflect.",
+        "&eHow:&r Reinforced Alloy, HDPE rods, a steel casing and &eElite Control Circuits&r (HV). Check JEI."]),
+
     # --- Mekanism Tools armour (y = 19.5 / 21) --------------------------------------------------
     Q("mk2_armor_osmium", 0, 19.5, armour("osmium"), "Osmium Armour", subtitle="The densest metal, worn", deps=["mk2_intro"], xp=100, desc=[
         "&eWhat:&r Mekanism Tools adds a full armour set for each of its metals. Osmium is the first, and tougher than iron.",

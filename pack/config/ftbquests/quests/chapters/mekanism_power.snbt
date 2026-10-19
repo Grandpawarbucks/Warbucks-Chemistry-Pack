@@ -248,7 +248,7 @@
 		{
 			id: "579284C06EF69B84"
 			x: 6.0d
-			y: -8.5d
+			y: -8.0d
 			dependencies: [
 				"0909511F411FE352"
 				"3CE4B1A7FBAD8566"
@@ -310,7 +310,7 @@
 		{
 			id: "34E5D064EB957947"
 			x: 8.0d
-			y: -9.0d
+			y: -8.0d
 			dependencies: [
 				"579284C06EF69B84"
 			]
@@ -469,7 +469,7 @@
 		{
 			id: "700325CD50B46596"
 			x: 10.0d
-			y: -10.5d
+			y: -9.5d
 			optional: true
 			dependencies: [
 				"34E5D064EB957947"
@@ -497,6 +497,179 @@
 					item: {
 						id: "kubejs:demigod_token"
 						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1178EDB5E27173C0"
+			x: 2.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"7565AF89927B950A"
+				"54C26C329300A347"
+				"43B12CDF9223A242"
+			]
+			tasks: [
+				{
+					id: "3757B5A47027224A"
+					type: "item"
+					item: {
+						id: "mekanism:advanced_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4A958280CA0BEA1E"
+					type: "item"
+					item: {
+						id: "mekanism:advanced_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "63AA7ADD393054D4"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "19EB1CBE3A7838BF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5F711391262BEFD1"
+			x: 4.0d
+			y: 3.0d
+			optional: true
+			dependencies: [
+				"1178EDB5E27173C0"
+				"11991CAC308F74E6"
+			]
+			tasks: [
+				{
+					id: "24ED0280214683DA"
+					type: "item"
+					item: {
+						id: "mekanism:elite_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "264FFB1F11B4E664"
+					type: "item"
+					item: {
+						id: "mekanism:elite_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2F46843672F6A578"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "0EBA10FE3C6C0E28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "28F257A509393BA0"
+			x: 4.0d
+			y: 4.5d
+			optional: true
+			dependencies: [
+				"7565AF89927B950A"
+				"430AB97A415B41E0"
+			]
+			tasks: [
+				{
+					id: "75C174F1614F42F1"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_energy_cube"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "696677F812F7174D"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "1E15B71E8E8D36E0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6624297467DA9646"
+			x: 6.0d
+			y: 5.0d
+			optional: true
+			dependencies: [
+				"5F711391262BEFD1"
+				"28F257A509393BA0"
+				"6C11AB2E4E625255"
+			]
+			tasks: [
+				{
+					id: "40E89496E31320DD"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0D1383632E7CCDE0"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3D4E0931834998EC"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "67259C43974B09FE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
 					}
 				}
 			]
@@ -625,7 +798,7 @@
 		{
 			id: "5947F763AB2801F8"
 			x: 6.0d
-			y: -6.5d
+			y: -6.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -707,7 +880,7 @@
 		{
 			id: "40D85A929DD5607F"
 			x: 6.0d
-			y: -4.5d
+			y: -4.0d
 			optional: true
 			dependencies: [
 				"3E4C4D79C59C0844"
@@ -743,7 +916,7 @@
 		{
 			id: "31BB98406EA4EDD2"
 			x: 8.0d
-			y: -7.5d
+			y: -6.5d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -784,7 +957,7 @@
 		{
 			id: "6CC2DEC317329165"
 			x: 6.0d
-			y: -3.0d
+			y: -1.5d
 			optional: true
 			dependencies: [
 				"3E4C4D79C59C0844"
@@ -1030,7 +1203,7 @@
 		{
 			id: "20AADC7F057BBBD9"
 			x: 6.0d
-			y: 1.5d
+			y: 3.0d
 			optional: true
 			dependencies: [
 				"6C057847340B18C8"
@@ -1150,7 +1323,7 @@
 		{
 			id: "0F0B0536065E9246"
 			x: 0.5d
-			y: -12.5d
+			y: -12.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d

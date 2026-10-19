@@ -49,7 +49,7 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
         "&eTip:&r 9 Charged Energy Cores finish one Terraformer."]),
     Q("cn_nucleo", 3, -4, [item(MEK + "antiprotonic_nucleosynthesizer")], "Nucleosynthesis", deps=["t7_creation"], xp=500,
       tokens=10, choice="pick_late", subtitle="Turn one thing into another with antimatter", desc=[
-        "&6You remember making things out of nothing. This is close.&r",
+        "&6Making something out of nothing was once your trade. This is close.&r",
         "&eWhat:&r Mekanism's Antiprotonic Nucleosynthesizer feeds a few millibuckets of antimatter into an item and rebuilds it as something rarer.",
         "&eChemistry:&r nucleosynthesis is how stars make elements: lighter nuclei fuse into heavier ones. This machine borrows the idea.",
         "&eHow:&r check JEI for the recipe and the full list of transmutations. Pipe antimatter in from your SPS.",
@@ -82,7 +82,7 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
         "Fission splits heavy nuclei like Pu-239 into lighter ones. Fusion joins light nuclei like deuterium (²H) and tritium (³H) into helium.",
         "Both release energy because the products are more tightly bound than the inputs. Iron-56 sits at the bottom of that curve: nothing is gained by splitting it or fusing it.",
         "Real thermonuclear weapons use a fission stage to compress and heat a fusion stage. MI's recipe follows the same idea."]),
-    Q("cn_mi_singularity", 5, -2, [item(MI + "singularity")], "A Singularity", deps=["cn_nuke"], xp=800,
+    Q("cn_mi_singularity", 5, -2, [item(MI + "singularity")], "A Singularity", deps=["cn_nuke", "cn_ultradense"], xp=800,
       tokens=20, items=[(GT, 2)], subtitle="Sixty-four nukes, one point", desc=[
         "&eWhat:&r MI's Singularity: an ultradense metal ball collapsed by 64 nukes in the Implosion Compressor.",
         "&eHow:&r ultradense metal ball (tungsten large plates, lead plates and an iridium plate, check JEI) + 64 nukes → Implosion Compressor.",
@@ -100,7 +100,7 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
     Q("cn_quantum_armor", 9, -2, [item(MI + "quantum_helmet"), item(MI + "quantum_chestplate"), item(MI + "quantum_leggings"), item(MI + "quantum_boots")],
       "Quantum Armour", deps=["cn_quantum_upgrade"], xp=2000, size=1.5, shape="hexagon",
       tokens=30, loot="boss", items=[(GT, 3)], subtitle="Armour fit for a god", desc=[
-        "&6You remember not needing armour. This is the next best thing.&r",
+        "&6Once you needed no armour at all. This is the next best thing.&r",
         "&eWhat:&r MI's quantum armour: a full set, each piece a netherite piece plus a quantum upgrade.",
         "&eHow:&r MI Packer: netherite armour piece + 1 quantum upgrade, 200 ticks at 1,000,000 EU/t. Four upgrades for four pieces.",
         "&eTip:&r that draw is far above a plain Packer's limit. Check JEI and the MI guidebook for how machine upgrades raise it."]),
@@ -162,7 +162,7 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
     # ---------------------------------------------------------------- left, y=-3: walking the worlds
     Q("cn_bio_overworld", -3, -3, [biome("minecraft:mushroom_fields"), biome("minecraft:ice_spikes"), biome("minecraft:cherry_grove")], "Rare Ground",
       deps=["t7_creation"], xp=400, tokens=10, choice="pick_late", subtitle="The Overworld's rarest places", desc=[
-        "&6You remember these places from above. Walk them this time.&r",
+        "&6You saw these places from above, long ago. Walk them this time.&r",
         "&eWhat:&r visit a Mushroom Fields island, an Ice Spikes plain and a Cherry Grove.",
         "&eHow:&r Explorer's Compass or Nature's Compass (if you have one) finds biomes; otherwise fly and look. Each completes on arrival.",
         "&eTip:&r Mushroom Fields never spawn hostile mobs. A good place for a quiet base."]),
@@ -234,4 +234,16 @@ CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
         "&eWhat:&r Biomes O' Plenty's Origin Valley, built to look like the very first versions of Minecraft.",
         "&6Bright grass, roses, plain old trees. You remember a world this simple. It was the first one you made.&r",
         "&eTip:&r it's rare. If you found it by chance, consider it a gift."]),
+
+    # ---------------------------------------------------------------- ATM10-aligned additions (2026-10-19)
+    Q("cn_ultradense", 3, -3, [item(MI + "ultradense_metal_ball")], "Ultradense Metal Ball", deps=["t7_creation"], xp=500,
+      tokens=10, subtitle="The heaviest thing you can hold", desc=[
+        "&eWhat:&r the core that 64 nukes crush into a singularity.",
+        "&eChemistry:&r tungsten, lead and iridium are among the densest metals there are. Iridium and osmium tie for the record at about 22.6 g/cm³, twice as dense as lead.",
+        "&eHow:&r Assembler: 4 tungsten large plates, 4 lead plates and 1 iridium plate."]),
+    Q("cn_opt_qsword", 9, -4, [item(MI + "quantum_sword")], "Quantum Sword", deps=["cn_quantum_upgrade"], xp=500,
+      optional=True, tokens=5, subtitle="Optional: one upgrade, one blade", desc=[
+        "&eWhat:&r MI's quantum sword: the MI guidebook claims it vaporises anything it hits.",
+        "&eHow:&r MI Packer: netherite sword + 1 quantum upgrade, at the same huge draw as the armour (check JEI).",
+        "&eTip:&r a quantum upgrade is a lot to spend on a sword. Finish the armour first."]),
 ], links=[("t7_seed", -3, 0), ("t7_opt_nucleo", 3, -6)])

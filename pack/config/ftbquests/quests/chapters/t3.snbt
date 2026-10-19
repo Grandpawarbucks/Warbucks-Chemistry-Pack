@@ -11,11 +11,79 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			id: "06244939DFC248C8"
+			id: "6F197454B1B8D676"
 			x: 0.0d
-			y: 0.0d
+			y: -2.0d
 			dependencies: [
 				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "0B7E149EC2E8CACE"
+					type: "item"
+					item: {
+						id: "modern_industrialization:raw_synthetic_oil_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "78CA8C5896BEFAF4"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "47F3F6C01F82A4A6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "02E79E2CE41503C0"
+			x: 2.0d
+			y: -2.0d
+			dependencies: [
+				"6F197454B1B8D676"
+			]
+			tasks: [
+				{
+					id: "25D3E547787229F3"
+					type: "item"
+					item: {
+						id: "modern_industrialization:synthetic_oil_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "25CCCF85E0355A91"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "09026C6AC4D0F58F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "06244939DFC248C8"
+			x: 4.0d
+			y: -3.0d
+			dependencies: [
+				"02E79E2CE41503C0"
 			]
 			tasks: [
 				{
@@ -45,11 +113,45 @@
 			]
 		}
 		{
-			id: "57D063A8E142DE9D"
-			x: 0.0d
-			y: 5.0d
+			id: "1D00667539B02E3B"
+			x: 2.0d
+			y: 0.0d
 			dependencies: [
-				"506EB945C083CC2E"
+				"0E122D2C0AEFAF5E"
+			]
+			tasks: [
+				{
+					id: "2B1F4EEE46694A2D"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_wiremill"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "46AEDDC8D4E6521A"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "38FC2F180225F8FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "57D063A8E142DE9D"
+			x: 4.0d
+			y: 0.0d
+			dependencies: [
+				"1D00667539B02E3B"
 			]
 			tasks: [
 				{
@@ -89,8 +191,8 @@
 		}
 		{
 			id: "03F683AA3BD598A6"
-			x: 0.0d
-			y: 7.0d
+			x: 4.0d
+			y: 2.5d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -123,8 +225,8 @@
 		}
 		{
 			id: "66D90743DD8F6EC0"
-			x: 2.0d
-			y: 0.0d
+			x: 8.0d
+			y: -3.0d
 			dependencies: [
 				"06244939DFC248C8"
 			]
@@ -157,8 +259,8 @@
 		}
 		{
 			id: "28A08814D26B46D9"
-			x: 2.0d
-			y: 2.0d
+			x: 6.0d
+			y: -2.0d
 			dependencies: [
 				"06244939DFC248C8"
 				"57D063A8E142DE9D"
@@ -191,11 +293,45 @@
 			]
 		}
 		{
-			id: "4D4359831AE16AE9"
-			x: 2.0d
-			y: 4.0d
+			id: "7507760BBA479D06"
+			x: 6.0d
+			y: 0.0d
 			dependencies: [
 				"57D063A8E142DE9D"
+			]
+			tasks: [
+				{
+					id: "4167027723C849DD"
+					type: "item"
+					item: {
+						id: "modern_industrialization:copper_fine_wire"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "2D12092A1F2F25CD"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "325D1C378782A986"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 3
+					}
+				}
+			]
+		}
+		{
+			id: "4D4359831AE16AE9"
+			x: 8.0d
+			y: 0.0d
+			dependencies: [
+				"7507760BBA479D06"
 			]
 			tasks: [
 				{
@@ -226,8 +362,8 @@
 		}
 		{
 			id: "3562EE0D06376879"
-			x: 2.0d
-			y: 6.0d
+			x: 8.0d
+			y: 2.0d
 			dependencies: [
 				"57D063A8E142DE9D"
 			]
@@ -260,8 +396,8 @@
 		}
 		{
 			id: "504400DAF1F3A606"
-			x: 0.0d
-			y: 9.0d
+			x: 4.0d
+			y: 4.5d
 			dependencies: [
 				"29BEA270C571B58C"
 			]
@@ -294,8 +430,8 @@
 		}
 		{
 			id: "2BF86ECE9691E81C"
-			x: 2.0d
-			y: 8.0d
+			x: 6.0d
+			y: 3.0d
 			dependencies: [
 				"03F683AA3BD598A6"
 				"57D063A8E142DE9D"
@@ -330,7 +466,7 @@
 		}
 		{
 			id: "55AF98DD41956199"
-			x: 4.0d
+			x: 10.0d
 			y: 0.0d
 			dependencies: [
 				"66D90743DD8F6EC0"
@@ -367,8 +503,8 @@
 		}
 		{
 			id: "0E122D2C0AEFAF5E"
-			x: 4.0d
-			y: 2.0d
+			x: 0.0d
+			y: 0.0d
 			dependencies: [
 				"7C26AEBE7939F360"
 			]
@@ -401,7 +537,7 @@
 		}
 		{
 			id: "392A7909301184E2"
-			x: 6.0d
+			x: 12.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
@@ -460,8 +596,8 @@
 		}
 		{
 			id: "1295A863E0D4A446"
-			x: 0.0d
-			y: 11.0d
+			x: 4.0d
+			y: 6.5d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -494,8 +630,8 @@
 		}
 		{
 			id: "2082C655C0D3F03A"
-			x: 2.0d
-			y: 10.0d
+			x: 6.0d
+			y: 5.0d
 			dependencies: [
 				"1295A863E0D4A446"
 				"57D063A8E142DE9D"
@@ -529,7 +665,7 @@
 		}
 		{
 			id: "2535BA17FB64FACE"
-			x: 8.0d
+			x: 14.0d
 			y: 0.0d
 			dependencies: [
 				"392A7909301184E2"
@@ -564,8 +700,8 @@
 		}
 		{
 			id: "18D25C63CA285B54"
-			x: 4.0d
-			y: 12.5d
+			x: 8.0d
+			y: 6.5d
 			dependencies: [
 				"2082C655C0D3F03A"
 			]
@@ -598,8 +734,8 @@
 		}
 		{
 			id: "5E348DAE3EAE594E"
-			x: 6.0d
-			y: 8.0d
+			x: 10.0d
+			y: 4.5d
 			optional: true
 			dependencies: [
 				"2082C655C0D3F03A"
@@ -634,8 +770,8 @@
 		}
 		{
 			id: "2F67A54D1D634F0A"
-			x: 10.0d
-			y: 14.5d
+			x: 16.0d
+			y: 16.5d
 			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -670,8 +806,8 @@
 		}
 		{
 			id: "0E77517E4651B27A"
-			x: 10.0d
-			y: 2.0d
+			x: 16.0d
+			y: 6.5d
 			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -705,7 +841,7 @@
 		}
 		{
 			id: "2EF4BB510E2F28AC"
-			x: 10.0d
+			x: 16.0d
 			y: 0.0d
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -740,8 +876,8 @@
 		}
 		{
 			id: "48A4FFD83AE8AD44"
-			x: 10.0d
-			y: -2.0d
+			x: 16.0d
+			y: 2.0d
 			dependencies: [
 				"2535BA17FB64FACE"
 			]
@@ -774,8 +910,8 @@
 		}
 		{
 			id: "541A010A43E31E95"
-			x: 10.0d
-			y: 11.0d
+			x: 16.0d
+			y: 12.5d
 			dependencies: [
 				"18D25C63CA285B54"
 				"2535BA17FB64FACE"
@@ -809,7 +945,7 @@
 		}
 		{
 			id: "435D6984CDDF47E1"
-			x: 14.0d
+			x: 20.0d
 			y: -2.0d
 			optional: true
 			dependencies: [
@@ -844,8 +980,8 @@
 		}
 		{
 			id: "23F83FE4BAEF4BD9"
-			x: 6.0d
-			y: 10.0d
+			x: 10.0d
+			y: 6.0d
 			optional: true
 			dependencies: [
 				"18D25C63CA285B54"
@@ -879,8 +1015,8 @@
 		}
 		{
 			id: "7364759091BAA54E"
-			x: 10.0d
-			y: 3.5d
+			x: 16.0d
+			y: 5.0d
 			optional: true
 			dependencies: [
 				"5E348DAE3EAE594E"
@@ -915,7 +1051,7 @@
 		}
 		{
 			id: "0DFEE581F10201B2"
-			x: 12.0d
+			x: 18.0d
 			y: 0.0d
 			dependencies: [
 				"2EF4BB510E2F28AC"
@@ -950,8 +1086,8 @@
 		}
 		{
 			id: "290BB135DCEA6DC7"
-			x: 8.0d
-			y: 8.5d
+			x: 12.0d
+			y: 5.5d
 			optional: true
 			dependencies: [
 				"23F83FE4BAEF4BD9"
@@ -986,8 +1122,8 @@
 		}
 		{
 			id: "6D28244E306FB852"
-			x: 8.0d
-			y: 10.5d
+			x: 12.0d
+			y: 7.5d
 			optional: true
 			dependencies: [
 				"23F83FE4BAEF4BD9"
@@ -1022,7 +1158,7 @@
 		}
 		{
 			id: "0213687BA73A9908"
-			x: 14.0d
+			x: 20.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
@@ -1072,7 +1208,7 @@
 		}
 		{
 			id: "474137432EABE206"
-			x: 8.0d
+			x: 14.0d
 			y: -4.0d
 			dependencies: [
 				"392A7909301184E2"
@@ -1106,8 +1242,8 @@
 		}
 		{
 			id: "42B76D3BDE21F0DC"
-			x: 10.0d
-			y: -5.5d
+			x: 16.0d
+			y: -2.5d
 			dependencies: [
 				"474137432EABE206"
 			]
@@ -1140,8 +1276,8 @@
 		}
 		{
 			id: "354E125FC5D3BB01"
-			x: 12.0d
-			y: -4.5d
+			x: 18.0d
+			y: -2.5d
 			dependencies: [
 				"42B76D3BDE21F0DC"
 			]
@@ -1174,8 +1310,8 @@
 		}
 		{
 			id: "480FB3C55927F1A1"
-			x: 12.0d
-			y: -9.5d
+			x: 18.0d
+			y: -8.0d
 			dependencies: [
 				"42B76D3BDE21F0DC"
 				"55AF98DD41956199"
@@ -1218,8 +1354,8 @@
 		}
 		{
 			id: "3A2454B103645938"
-			x: 14.0d
-			y: -5.0d
+			x: 20.0d
+			y: -3.5d
 			dependencies: [
 				"480FB3C55927F1A1"
 				"354E125FC5D3BB01"
@@ -1253,8 +1389,8 @@
 		}
 		{
 			id: "6BB487593411143E"
-			x: 14.0d
-			y: -7.0d
+			x: 20.0d
+			y: -5.5d
 			dependencies: [
 				"480FB3C55927F1A1"
 			]
@@ -1287,8 +1423,8 @@
 		}
 		{
 			id: "715BC066754DE9B0"
-			x: 8.0d
-			y: -2.5d
+			x: 14.0d
+			y: -2.0d
 			optional: true
 			dependencies: [
 				"392A7909301184E2"
@@ -1322,8 +1458,8 @@
 		}
 		{
 			id: "58932C2263D38534"
-			x: 10.0d
-			y: 8.0d
+			x: 16.0d
+			y: 10.5d
 			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -1358,8 +1494,8 @@
 		}
 		{
 			id: "7DE855B5084E6181"
-			x: 10.0d
-			y: 6.0d
+			x: 16.0d
+			y: 8.0d
 			optional: true
 			dependencies: [
 				"2535BA17FB64FACE"
@@ -1393,8 +1529,8 @@
 		}
 		{
 			id: "4C7AA8620B6D2885"
-			x: 6.0d
-			y: -3.5d
+			x: 12.0d
+			y: -3.0d
 			optional: true
 			dependencies: [
 				"55AF98DD41956199"
@@ -1429,7 +1565,7 @@
 		{
 			id: "70A17E4532B8DA8B"
 			x: 0.0d
-			y: 13.5d
+			y: 15.0d
 			optional: true
 			dependencies: [
 				"506EB945C083CC2E"
@@ -1463,8 +1599,8 @@
 		}
 		{
 			id: "6A50FF652B6B5624"
-			x: 10.0d
-			y: -3.5d
+			x: 16.0d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"474137432EABE206"
@@ -1501,7 +1637,7 @@
 		{
 			id: "769185F6D6A47807"
 			x: 0.5d
-			y: -11.5d
+			y: -10.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -1510,10 +1646,10 @@
 	]
 	quest_links: [
 		{
-			id: "58D132E1644EAD7F"
-			linked_quest: "506EB945C083CC2E"
+			id: "536D33FD14614752"
+			linked_quest: "7C26AEBE7939F360"
 			x: -2.0d
-			y: 7.5d
+			y: 0.0d
 		}
 	]
 }

@@ -15,7 +15,7 @@ CHAPTER = Chapter("seed", "The Seed of a New World", "kubejs:seed_of_a_new_world
     # ---------------------------------------------------------------- opening
     Q("sd_intro", 0, -6, [tick()], "The Last Recipe", deps=["t7_nasa"], xp=200, size=1.5, shape="hexagon",
       subtitle="One grid, thirteen ingredients", desc=[
-        "&6You remember now what all of this was for. Not machines. A world.&r",
+        "&6Now it comes back, what all of this was for. Not machines. A world.&r",
         "&eWhat:&r the Seed of a New World is the pack's final craft: a 9x9 Ultimate Table recipe that uses something from every tier you've climbed.",
         "&eHow:&r the checklist quests next to the centre hold the exact counts; finish them all and the Seed opens. The small quests further out are an optional bill of materials, one per ingredient, with the chemistry behind it.",
         "&eTip:&r you can start the cheap lines (coke, water, acids, plastic) right away. The Antimatter Cores at the bottom take the longest.",
@@ -222,7 +222,7 @@ CHAPTER = Chapter("seed", "The Seed of a New World", "kubejs:seed_of_a_new_world
       subtitle="Seed checklist: the hardest part", desc=[
         "&eWhat:&r eight Antimatter Cores ring the centre of the recipe.",
         "&eHow:&r that's 32 antimatter pellets, 32 polonium pellets, 32 stainless plates, 8 processing units and 8 quantum circuits in total.",
-        "&6Eight suns in your pack. You remember carrying more.&r"]),
+        "&6Eight suns in your pack. You have carried heavier things.&r"]),
     Q("t7_seed", 0, 0, [item("kubejs:seed_of_a_new_world")], "Seed of a New World",
       deps=["mf_ult_table", "t7_seed_basics", "t7_seed_acid", "t7_seed_hf", "t7_seed_pe", "t7_seed_cores", "t7_seed_tech", "t7_seed_nuclear", "t7_seed_stars"],
       xp=3000, size=2.0, shape="hexagon", subtitle="The endgame goal", desc=[

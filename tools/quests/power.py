@@ -50,10 +50,10 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eWhat:&r energy cubes hold FE so short spikes don't stall your machines.",
         "&eHow:&r put one between your generators and machines. Configure its sides with the Configurator.",
         "&eTip:&r cubes upgrade in place: craft the next tier around the old one."]),
-    Q("pw_adv_cube", 6, 0, [item("mekanism:advanced_energy_cube")], "Bigger Cubes", subtitle="Each tier needs the matching circuit", deps=["pw_cube", "t4_mv"], xp=100, desc=[
+    Q("pw_adv_cube", 6, 0, [item("mekanism:advanced_energy_cube")], "Bigger Cubes", subtitle="Alloys and energy tablets around the cube below", deps=["pw_cube", "t4_mv"], xp=100, desc=[
         "&eWhat:&r the Advanced Energy Cube holds and moves much more energy.",
-        "&eHow:&r it needs an Advanced Control Circuit, which in this pack needs an &eMI electronic circuit&r (MV).",
-        "&eTip:&r Elite and Ultimate cubes follow the HV and EV circuits."]),
+        "&eHow:&r a basic cube with infused alloy, osmium ingots and energy tablets around it (check JEI). Upgrading in place keeps the stored energy.",
+        "&eTip:&r Elite and Ultimate cubes follow the same pattern with reinforced and atomic alloys."]),
     Q("pw_brine", 8, 0, [item("mekanism:thermal_evaporation_controller"), item("mekanism:brine_bucket")], "Evaporation Ponds", subtitle="Sunlight and heat concentrate brine", deps=["pw_adv_cube"], xp=150, desc=[
         "&eWhat:&r the Thermal Evaporation Plant boils water down into brine, and brine down into liquid lithium.",
         "&eChemistry:&r real lithium comes from salt flats: brine sits in ponds until the water evaporates and the salts concentrate.",
@@ -207,4 +207,40 @@ CHAPTER = Chapter("power", "Power", "mekanismgenerators:gas_burning_generator",
         "&eWhat:&r the Flux Controller sends network energy wirelessly into players' inventories. The Configurator copies settings between flux devices.",
         "&eHow:&r flux blocks, a Flux Core and flux dust (check JEI). The Flux Core needs an MI processing unit in this pack.",
         "&eTip:&r turn charging off for your armor slots if it fights with other chargers."]),
+
+    # ===== ATM10-aligned round (2026-10-19): the rest of Generator Galore, and flux dust =====
+    Q("pw_gg_obsidian", 0, 0, [item("generatorgalore:obsidian_generator")], "Obsidian Generator", deps=["pw_gg_collection", "t2_obsidian"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: the hub of the late generator tree", desc=[
+        "&eWhat:&r a stronger burner, and the base for the ender, enchantment and magmatic generators.",
+        "&eHow:&r a diamond generator in obsidian with a redstone block (or use the diamond to obsidian upgrade kit on a placed one).",
+        "&eTip:&r the upgrade kits keep fuel and connections; JEI shows the whole tree."]),
+    Q("pw_gg_gems", 0, 0, [item("generatorgalore:emerald_generator"), item("generatorgalore:netherite_generator")], "Emerald and Netherite Generators", deps=["pw_gg_collection", "t2_debris"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: the two top solid-fuel burners", desc=[
+        "&eWhat:&r the emerald and netherite generators burn ordinary fuel at a much higher rate for much more FE per tick.",
+        "&eHow:&r emerald: a diamond generator in emeralds with a redstone block. Netherite: smithing table, template + diamond generator + netherite ingot.",
+        "&eTip:&r feed them coal blocks or coke blocks; loose coal won't keep up."]),
+    Q("pw_gg_ender", 0, 0, [item("generatorgalore:ender_generator"), item("generatorgalore:enchantment_generator")], "Ender and Enchantment Generators", deps=["pw_gg_obsidian"], xp=80,
+      optional=True, tokens=1, subtitle="Optional: burn pearls and enchanted books", desc=[
+        "&eWhat:&r the ender generator burns ender pearls; the enchantment generator burns enchanted books. Junk books from fishing finally have a use.",
+        "&eHow:&r an obsidian generator in ender pearls with a redstone block, or in enchanted books with an enchanting table (check JEI).",
+        "&eTip:&r an enderman farm feeds the ender generator for ever."]),
+    Q("pw_gg_sweet", 0, 0, [item("generatorgalore:honey_generator"), item("generatorgalore:potion_generator")], "Honey and Potion Generators", deps=["pw_gg_collection"], xp=80,
+      optional=True, tokens=1, subtitle="Optional: burn honey and leftover potions", desc=[
+        "&eWhat:&r two branches from the Culinary Generator: one burns honey, the other burns potions.",
+        "&eChemistry:&r honey is about 80% sugars (fructose and glucose). Sugar burns well: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O, the same reaction your cells run, only slower.",
+        "&eHow:&r a culinary generator in honey blocks with buckets and a redstone block, or in pink dye with brewing stands (check JEI).",
+        "&eTip:&r a few beehives with campfires underneath keep the honey generator running."]),
+    Q("pw_gg_64x", 0, 0, [anyof([f"generatorgalore:{g}_generator_{n}" for g in ("copper", "iron", "gold", "diamond", "emerald", "obsidian", "netherite", "magmatic", "culinary",
+                                                                              "honey", "potion", "ender", "enchantment", "halitosis", "netherstar") for n in ("8x", "64x")
+                                 if not (g == "iron" and n == "8x")])],
+      "Compressed Generators", deps=["pw_gg_8x"], xp=100, optional=True, tokens=2, subtitle="Optional: another 8x or a 64x", desc=[
+        "&eWhat:&r any compressed generator other than the iron 8x: magmatic, star, gem, food, whatever you run most. 64x generators are eight 8x ones around a conduit.",
+        "&eHow:&r 8x: eight generators around an echo shard. 64x: eight 8x generators around a conduit (check JEI).",
+        "&eTip:&r a 64x generator eats fuel 64 times as fast. Make sure the fuel line can keep up first."]),
+    Q("pw_flux_dust", 0, 0, [item("fluxnetworks:flux_dust", 16), item("fluxnetworks:flux_block")], "Flux Dust", deps=["pw_iron_gen", "t2_nether"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: redstone crushed between obsidian and bedrock", desc=[
+        "&eWhat:&r flux dust is the base of every Flux Networks device. Nine make a Flux Block.",
+        "&eChemistry:&r real redstone doesn't exist, but pressure really does change minerals: graphite squeezed hard enough becomes diamond, and that's the idea here.",
+        "&eHow:&r its tooltip says it: redstone compressed with bedrock and obsidian. JEI's Flux Networks page shows the setup. Bedrock is easy to reach at the Nether's floor or roof.",
+        "&eTip:&r make a big batch now. The Flux Core still needs an MI processing unit (EV), but the dust doesn't."]),
 ], links=[("t1_power", -2, 0), ("t6_flux", 14, -2), ("t4_uraninite", 0, 4), ("t6_fission", 8, -6)])

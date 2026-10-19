@@ -9,7 +9,7 @@ y=17.5/19 deeper autocrafting (hangs off lg_cpu in the Automation and Logic page
 Gate: AE2 opens at t5_ae2 (the Inscriber needs an MI Turbo hull, the Controller a digital circuit).
 The AdvancedAE Flight Card is under review in this pack: no quest asks for it or sells it as flight.
 """
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, anyof, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("ae2", "Applied Energistics", "ae2:controller",
         ["The archive of a god: every item as data, every recipe on demand."], SIDE, [
@@ -383,5 +383,209 @@ CHAPTER = Chapter("ae2", "Applied Energistics", "ae2:controller",
         "&eWhat:&r the Pattern Access Terminal shows the patterns in every pattern provider, so you can add or swap them without walking to each machine.",
         "&eHow:&r an illuminated panel, an engineering processor and a pattern provider, shapeless (check JEI).",
         "&eTip:&r one terminal next to your Pattern Encoding Terminal makes a tidy crafting desk."]),
+
+    # --- ATM10-alignment round (2026-10-19) ----------------------------------------------------
+    # Crystals and growing
+    Q("ae_charged", 0, 0, [item("ae2:charger"), item("ae2:charged_certus_quartz_crystal", 8)], "Charged Certus",
+      subtitle="A crystal holding a jolt", deps=["ae_certus"], xp=60, desc=[
+        "&eWhat:&r the Charger puts energy into certus crystals. Charged certus is the key to fluix, crystal growth and many AE2 recipes.",
+        "&eChemistry:&r real quartz is piezoelectric: squeeze it and it makes a voltage, push a voltage into it and it flexes. AE2 imagines it can store the charge.",
+        "&eHow:&r the Charger is iron and copper ingots (check JEI). Power it with FE and put certus crystals in.",
+        "&eTip:&r a Crank on top of the Charger works too, slowly, if your power isn't up yet."]),
+    Q("ae_fluix", 0, 0, [item("ae2:fluix_crystal", 8), item("ae2:fluix_dust", 4), item("ae2:fluix_block")], "Fluix",
+      subtitle="Certus, quartz and redstone, in water", deps=["ae_charged"], xp=60, desc=[
+        "&eWhat:&r fluix crystals carry AE2's channels: every cable, core and most parts need fluix.",
+        "&eChemistry:&r a reaction in solution: charged certus, nether quartz and redstone dropped together in water fuse into fluix. Real crystals also grow fastest from a seed in solution.",
+        "&eHow:&r throw charged certus, nether quartz and redstone into a water block: you get two fluix crystals. Grind fluix in the Inscriber for dust; four crystals make a block.",
+        "&eTip:&r a fluix block is what ExtendedAE's entro seeds are planted on."]),
+    Q("ae_budding", 0, 0, [item("ae2:damaged_budding_quartz"), item("ae2:chipped_budding_quartz")], "Budding Certus by Hand",
+      subtitle="Grow your own crystal farm", deps=["ae_charged"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r a certus quartz block dropped in water with charged certus becomes Damaged Budding Certus; repeat to climb to Chipped and better. Budding blocks grow certus buds.",
+        "&eHow:&r throw a certus block and a charged crystal into water together (JEI's transform tab). AdvancedAE's Reaction Chamber can do eight at a time.",
+        "&eTip:&r lower-grade budding blocks decay as they grow. Keep a stock of charged certus to remake them."]),
+    Q("ae_ender_dust", 0, 0, [item("ae2:ender_dust", 8)], "Ender Dust",
+      subtitle="Ground pearls", deps=["ae_presses"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r ender pearls ground into dust in the Inscriber. Entangled singularities, entro seeds and wireless parts use it.",
+        "&eHow:&r put an ender pearl in the Inscriber with no press.",
+        "&eTip:&r an enderman model in a Simulation Chamber keeps the pearls coming."]),
+    Q("ae_tiny_tnt", 0, 0, [item("ae2:tiny_tnt", 4)], "Tiny TNT",
+      subtitle="Small bangs for quantum science", deps=["ae_condenser"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r a small explosive made from quartz dust and gunpowder.",
+        "&eChemistry:&r gunpowder is potassium nitrate, charcoal and sulfur: 2KNO₃ + S + 3C → K₂S + N₂ + 3CO₂. The gases expanding all at once are the bang.",
+        "&eHow:&r drop a singularity and ender dust together, then set off Tiny TNT next to them: you get a pair of Quantum Entangled Singularities.",
+        "&eTip:&r set it off away from anything you care about. It is still TNT."]),
+
+    # Cards and cells
+    Q("ae_behaviour_cards", 0, 0, [item("ae2:fuzzy_card"), item("ae2:inverter_card"), item("ae2:crafting_card"), item("ae2:redstone_card")], "Cards That Change a Part",
+      subtitle="Fuzzy, inverter, crafting, redstone", deps=["ae_cards"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r Fuzzy matches items by damage or ignores their data; Inverter turns a whitelist into a blacklist; Crafting lets a bus order what it lacks; Redstone switches a part by signal.",
+        "&eHow:&r each is a basic or advanced card plus one extra item (check JEI). Slot them into the part's upgrade slots.",
+        "&eTip:&r an export bus with a Crafting Card and a Redstone Card makes items only when a machine asks for them."]),
+    Q("ae_flow_cards", 0, 0, [item("ae2:energy_card"), item("ae2:equal_distribution_card"), item("ae2:void_card")], "Energy, Split and Overflow",
+      subtitle="Cards for tools and storage cells", deps=["ae_workbench"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Energy Card adds charge to portable terminals and tools. Equal Distribution spreads items evenly over a cell's partitions; Overflow Destruction deletes what a full cell can't hold.",
+        "&eHow:&r each is a basic or advanced card plus a few items (check JEI). Cell cards go in through the Cell Workbench.",
+        "&eTip:&r an overflow card on a cobblestone cell stops a generator from filling your whole network."]),
+    Q("ae_cell_4k", 0, 0, [item("ae2:cell_component_4k", 2)], "4k Components",
+      subtitle="Three 1k components and a processor", deps=["s_ae_cell"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the first step up: a 4k component holds four times as many bytes as a 1k.",
+        "&eHow:&r three 1k components around quartz glass, with redstone and a calculation processor (check JEI).",
+        "&eTip:&r split an empty 1k cell in the crafting grid to get its housing back for the bigger component."]),
+    Q("ae_cell_256k", 0, 0, [item("ae2:cell_component_256k")], "256k Component",
+      subtitle="The biggest cell in base AE2", deps=["ae_cell_tiers"], xp=100, optional=True, tokens=1, desc=[
+        "&eWhat:&r the top AE2 component: 256 kilobytes for a single cell.",
+        "&eHow:&r three 64k components around quartz glass, with sky stone dust and a calculation processor (check JEI).",
+        "&eTip:&r a cell spends bytes on every new item type, so put bulk stock here and rare items elsewhere."]),
+    Q("ae_planes", 0, 0, [item("ae2:annihilation_plane"), item("ae2:formation_plane")], "Planes",
+      subtitle="Break blocks in, place blocks out", deps=["ae_cores"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Annihilation Plane breaks the block in front of it (or picks up items) into the network; the Formation Plane places blocks or drops items out of it.",
+        "&eHow:&r fluix crystals with an annihilation or formation core (check JEI). Put them on a cable facing the space.",
+        "&eTip:&r an annihilation plane in front of a cobblestone generator feeds the Matter Condenser with no pipes."]),
+    Q("ae_active_plane", 0, 0, [item("extendedae:active_formation_plane")], "Active Formation Plane",
+      subtitle="Push items into whatever is in front", deps=["ae_planes"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r ExtendedAE's plane inserts items straight into the inventory it faces instead of dropping them.",
+        "&eHow:&r a formation plane upgraded with ExtendedAE parts (check JEI).",
+        "&eTip:&r handy for filling machines that don't accept a storage bus."]),
+    Q("ae_io_port", 0, 0, [item("ae2:io_port"), item("ae2:chest")], "IO Port and ME Chest",
+      subtitle="Move whole cells at once", deps=["s_ae_cell"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the IO Port empties a cell into the network (or fills a cell from it). The ME Chest is a one-cell drive with its own terminal.",
+        "&eHow:&r the IO Port is glass, two drives, fluix cable, iron and a logic processor; the ME Chest is glass, a terminal, fluix cable, iron and copper (check JEI).",
+        "&eTip:&r upgrading 4k cells to 64k? Run the old cells through an IO Port first."]),
+    Q("ae_cable_tricks", 0, 0, [item("ae2:toggle_bus"), item("ae2:cable_anchor", 4)], "Toggle Bus and Cable Anchors",
+      subtitle="Switch a branch, keep cables apart", deps=["ae_channels"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r a Toggle Bus connects or cuts a branch of cable by redstone. Cable Anchors stop two neighbouring cables joining.",
+        "&eHow:&r toggle bus: fluix glass cable, redstone and a lever. Anchors: cut any metal ingot with a Certus or Nether Quartz Cutting Knife (4 at a time).",
+        "&eTip:&r put a toggle bus in front of a subnetwork you only want running sometimes, like a long autocrafting line."]),
+
+    # Wireless and tools
+    Q("ae_wap", 0, 0, [item("ae2:wireless_access_point"), item("ae2:wireless_booster", 2), item("ae2:wireless_terminal")], "Wireless Access Point",
+      subtitle="Where every wireless terminal connects", deps=["s_ae_wireless"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Wireless Access Point sends your network a short distance through the air. Boosters raise its range; any wireless terminal links to it.",
+        "&eHow:&r access point: a wireless receiver (fluix pearl, quartz fibre, iron) over a calculation processor and fluix cable. Boosters: fluix dust, certus, ender dust and iron (check JEI).",
+        "&eTip:&r put the terminal in the access point once to link it, and keep it charged in the Charger."]),
+    Q("ae_bridge_card", 0, 0, [item("ae2wtlib:quantum_bridge_card")], "Quantum Bridge Card",
+      subtitle="Your terminal, through an entangled pair", deps=["ae_wut"], xp=100, optional=True, tokens=1, desc=[
+        "&eWhat:&r this AE2 Wireless Terminals card lets your universal terminal reach the network through quantum entanglement, from any distance or dimension.",
+        "&eHow:&r quantum rings, a Quantum Link Chamber and an advanced card (check JEI). Put it in the terminal; its tooltip explains how to pair it.",
+        "&eTip:&r the network's end must stay chunk-loaded."]),
+    Q("ae_powered_tools", 0, 0, [anyof(["ae2:entropy_manipulator", "ae2:color_applicator", "ae2:charged_staff"], 2)], "AE2 Powered Tools",
+      subtitle="Any two: heat and cool, paint, zap", deps=["ae_fluix"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Entropy Manipulator heats or cools blocks (water to ice, cobblestone to stone, lava to obsidian); the Color Applicator paints cables; the Charged Staff zaps mobs.",
+        "&eChemistry:&r the manipulator follows real phase changes: removing heat freezes water, and lava cools into obsidian when it loses heat too fast to crystallise.",
+        "&eHow:&r each uses an energy cell and processors (check JEI). Charge them in the Charger.",
+        "&eTip:&r colour-coding cables keeps two neighbouring networks from merging."]),
+    Q("ae_matter_cannon", 0, 0, [item("ae2:matter_cannon"), item("ae2:matter_ball", 16)], "Matter Cannon",
+      subtitle="The heavier the atom, the harder it hits", deps=["ae_condenser"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Matter Cannon fires matter balls or metal nuggets from a cell inside it.",
+        "&eChemistry:&r AE2 rates each nugget by its element's real atomic mass: iron 55.8, osmium 190.2, uranium 238. Heavier atoms carry more momentum at the same speed, so they hit harder.",
+        "&eHow:&r a Matter Condenser set to Matter Balls makes ammo. The cannon is iron, a formation core, a 4k component and an energy cell (check JEI). Its tooltip shows how to load ammo.",
+        "&eTip:&r osmium and uranium nuggets are the best ammo you'll have spare."]),
+    Q("ae_name_press", 0, 0, [item("ae2:name_press")], "A Press With Your Name",
+      subtitle="Secret: label anything in the Inscriber", deps=["ae_presses"], xp=40, secret=True, loot="secret", desc=[
+        "&eWhat:&r the Inscriber Name Press. Rename it in an anvil, then press any item with it to give that item the name.",
+        "&eTip:&r every chemist labels their bottles. Now you can label everything."]),
+    Q("ae_fluix_sword", 0, 0, [item("ae2:fluix_sword")], "Fluix Sword",
+      subtitle="Optional: a crystal blade", deps=["ae_fluix"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r a sword with a fluix crystal edge. Compare its stats with iron in JEI.",
+        "&eHow:&r fluix crystals and a stick, like any sword (check JEI).",
+        "&eTip:&r AE2 also makes certus and fluix tools if you like the look."]),
+    Q("ae_spatial", 0, 0, [item("ae2:spatial_io_port"), item("ae2:spatial_pylon", 8), item("ae2:spatial_anchor")], "Spatial IO",
+      subtitle="Cut a room out of the world", deps=["ae_cell_tiers"], xp=200, optional=True, tokens=2, desc=[
+        "&eWhat:&r Spatial Pylons frame a box; the Spatial IO Port stores everything inside it in a spatial cell, and can put it back elsewhere. The Spatial Anchor keeps a network's chunks loaded.",
+        "&eHow:&r pylons are fluix and quartz glass; the port and anchor add processors and spatial components (check JEI and the AE2 guidebook).",
+        "&eTip:&r the stored room becomes a real dimension you can visit. Ask before you move someone else's base."]),
+
+    # ExtendedAE extras
+    Q("ae_ex_matrix_more", 0, 0, [item("extendedae:assembler_matrix_speed", 2), item("extendedae:assembler_matrix_wall", 8)], "Matrix Speed and Walls",
+      subtitle="A faster Assembler Matrix", deps=["ae_assembler_matrix"], xp=100, optional=True, tokens=1, desc=[
+        "&eWhat:&r Speed Cores make the Assembler Matrix craft faster; walls close its shell more cheaply than frames.",
+        "&eHow:&r both come from the Crystal Assembler with concurrent processors and entro (check JEI).",
+        "&eTip:&r more crafter cores add parallel jobs; speed cores make each job finish sooner."]),
+    Q("ae_canner", 0, 0, [item("extendedae:caner")], "ME Canner",
+      subtitle="Fill and empty containers for autocrafting", deps=["s_exae"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the ME Canner fills buckets, cells and other containers from the network, or empties them back in.",
+        "&eChemistry:&r many recipes still ask for a bucket of acid. The canner means the network can hand over 1,000 mB of H₂SO₄ in a bucket without you.",
+        "&eHow:&r made in the Crystal Assembler (check JEI). Set Fill or Empty mode in its GUI and give it patterns through a provider."]),
+    Q("ae_circuit_slicer", 0, 0, [item("extendedae:circuit_cutter")], "Circuit Slicer",
+      subtitle="A storage block into nine prints", deps=["ae_ex_machines"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Circuit Slicer cuts a whole block (gold, diamond, silicon, certus) into nine printed circuits at once.",
+        "&eHow:&r made in the Crystal Assembler (check JEI). Put the matching press-style blade in and feed it blocks.",
+        "&eTip:&r a silicon block becomes nine printed silicon. That's an MI ingot line feeding AE2 nine at a time."]),
+    Q("ae_entro_budding", 0, 0, [item("extendedae:entro_budding_half"), item("extendedae:crystal_fixer")], "Keeping Entro Growing",
+      subtitle="Budding entro and the Crystal Fixer", deps=["ae_entro"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r budding entro decays as it grows clusters, from fully to mostly to half to hardly entroized. The Crystal Fixer restores it with fresh material.",
+        "&eHow:&r the fixer comes from the Crystal Assembler (check JEI). Put it next to a budding block and give it what its GUI asks for.",
+        "&eTip:&r it works on budding certus too, so one fixer keeps both farms alive."]),
+    Q("ae_void_cell", 0, 0, [item("extendedae:void_cell")], "ME Void Cell",
+      subtitle="Trash, matter balls or singularities", deps=["s_exae"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r a cell that destroys what you send it. Its modes delete items, turn them into Matter Balls, or compress them into Singularities.",
+        "&eHow:&r check JEI. Partition it to cobblestone in a Cell Workbench and put it in a drive.",
+        "&eTip:&r on Singularity mode it replaces the Matter Condenser for AdvancedAE and MEGA's singularity needs."]),
+    Q("ae_wireless_hub", 0, 0, [item("extendedae:wireless_tool"), item("extendedae:wireless_hub")], "Wireless Hub",
+      subtitle="Many wireless links, one block", deps=["ae_wireless_connector"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the ME Wireless Setup Kit binds wireless connectors; the ME Wireless Hub takes many wireless links at one point.",
+        "&eHow:&r both come from the Crystal Assembler (check JEI). Use the kit on one end, then the other.",
+        "&eTip:&r one hub in the middle of your base, linked out to every outpost room."]),
+
+    # MEGA Cells
+    Q("ae_mega_ladder", 0, 0, [item("megacells:cell_component_1m", 2), item("megacells:cell_component_16m")], "The MEGA Ladder",
+      subtitle="1M up to 16M", deps=["ae_mega_big"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r MEGA components climb by four each step: 1M, 4M, 16M, 64M, 256M.",
+        "&eHow:&r each one is three of the last with accumulation processors (check JEI).",
+        "&eTip:&r a MEGA cell needs a MEGA housing; AE2 housings won't take these components."]),
+    Q("ae_mega_top", 0, 0, [item("megacells:cell_component_64m"), item("megacells:cell_component_256m")], "Challenge: 256M",
+      subtitle="The largest component there is", deps=["ae_mega_ladder"], xp=300, optional=True, tokens=2, desc=[
+        "&6Every name of every thing, and room to spare. You remember this kind of memory.&r",
+        "&eWhat:&r the 64M and 256M MEGA components, the top of AE2 storage in this pack.",
+        "&eHow:&r keep climbing the ladder (check JEI). Bulk cells and accumulation processors keep it affordable."]),
+    Q("ae_mega_portable", 0, 0, [item("megacells:portable_item_cell_256m")], "A Pocket Archive",
+      subtitle="Optional: 256M in your inventory", deps=["ae_mega_top"], xp=200, optional=True, tokens=2, desc=[
+        "&eWhat:&r a portable cell with a 256M component: a whole storage network you carry, no drive needed.",
+        "&eHow:&r a 256M component in a portable cell housing with an energy cell (check JEI). Charge it first.",
+        "&eTip:&r perfect for a long trip to another planet."]),
+
+    # AdvancedAE extras (no Flight or Flight Drift Card: flight in this pack comes from chemistry)
+    Q("ae_adv_encoder", 0, 0, [item("advanced_ae:adv_pattern_encoder")], "Advanced Pattern Encoder",
+      subtitle="Pick a face for each ingredient", deps=["ae_adv_provider"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the encoder adds side information to a processing pattern, so an Advanced Pattern Provider sends each input to the right face.",
+        "&eHow:&r check JEI. Put a pattern in, set each input's side, and take it out.",
+        "&eTip:&r a Mekanism PRC takes items, a fluid and a gas on different sides: perfect for this."]),
+    Q("ae_quantum_bigger", 0, 0, [item("advanced_ae:quantum_unit", 2), item("advanced_ae:quantum_accelerator"), item("advanced_ae:quantum_storage_component", 2), item("advanced_ae:quantum_storage_128")],
+      "A Bigger Quantum Computer", subtitle="Units, accelerators and storage", deps=["ae_quantum_computer"], xp=200, optional=True, tokens=1, desc=[
+        "&eWhat:&r Quantum Crafting Units fill the Quantum Computer's shell; accelerators add parallel jobs; storage blocks raise how big a job it can plan.",
+        "&eHow:&r all need shattered singularities and quantum parts (check JEI; ExtendedAE changes a few recipes).",
+        "&eTip:&r storage first: a long chemical chain fails to plan long before it runs short of threads."]),
+    Q("ae_quantum_max", 0, 0, [item("advanced_ae:quantum_storage_256"), item("advanced_ae:data_entangler")], "Challenge: Quantum Data Entangler",
+      subtitle="Multiply the computer's memory", deps=["ae_quantum_bigger"], xp=300, optional=True, tokens=2, desc=[
+        "&eWhat:&r the 256M Quantum Storage block, and the Quantum Data Entangler, which multiplies the whole computer's storage (a few per multiblock).",
+        "&eHow:&r both need quantum storage, quantum units and shattered singularities (check JEI).",
+        "&eTip:&r one entangler is usually enough for the Seed of a New World chain."]),
+    Q("ae_quantum_crafter", 0, 0, [item("advanced_ae:quantum_crafter")], "Quantum Crafter",
+      subtitle="An assembler that keeps stock", deps=["ae_quantum_bigger"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Quantum Crafter crafts patterns over and over with no CPU, keeping a set amount in stock.",
+        "&eHow:&r quantum accelerators, a quantum unit, 64k components and shattered singularities (check JEI).",
+        "&eTip:&r set it to keep plates and wires in stock; the CPU stays free for the long chains."]),
+    Q("ae_quantum_base_card", 0, 0, [item("advanced_ae:quantum_upgrade_base", 2)], "Quantum Upgrade Base",
+      subtitle="The blank behind every armour card", deps=["ae_quantum_processor"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the blank card that every Quantum Armour card is built on.",
+        "&eHow:&r a quantum alloy plate surrounded by quantum processors (check JEI)."]),
+    Q("ae_cards_move", 0, 0, [anyof(["advanced_ae:walk_speed_card", "advanced_ae:sprint_speed_card", "advanced_ae:step_assist_card", "advanced_ae:jump_height_card",
+                                     "advanced_ae:swim_speed_card", "advanced_ae:reach_card"], 2)], "Armour Cards: Movement",
+      subtitle="Any two: speed, step, jump, swim, reach", deps=["ae_quantum_base_card"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r cards for Quantum Armour: faster walking, sprinting and swimming, step assist, higher jumps and longer reach.",
+        "&eHow:&r a Quantum Upgrade Base plus a few items each (check JEI). Install them in the armour piece's GUI.",
+        "&eTip:&r flight is not on this list on purpose: in this pack it comes from chemistry (pylons, jetpacks, the Angel Ring)."]),
+    Q("ae_cards_survive", 0, 0, [anyof(["advanced_ae:hp_buffer_card", "advanced_ae:regeneration_card", "advanced_ae:evasion_card", "advanced_ae:lava_immunity_card",
+                                        "advanced_ae:water_breathing_card", "advanced_ae:night_vision_card", "advanced_ae:auto_feeding_card"], 2)], "Armour Cards: Survival",
+      subtitle="Any two: health, regen, evasion and more", deps=["ae_quantum_base_card"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r extra health, regeneration, a chance to dodge, lava immunity, water breathing, night vision, or eating from your network when hungry.",
+        "&eHow:&r a Quantum Upgrade Base plus a few items each (check JEI).",
+        "&eTip:&r Auto Feeding pulls food from the ME network, so stock a farm's output there."]),
+    Q("ae_cards_utility", 0, 0, [anyof(["advanced_ae:magnet_card", "advanced_ae:pick_craft_card", "advanced_ae:portable_workbench_card", "advanced_ae:auto_stock_card",
+                                        "advanced_ae:recharging_card", "advanced_ae:luck_card", "advanced_ae:strength_card", "advanced_ae:attack_speed_card"], 2)], "Armour Cards: Utility",
+      subtitle="Any two: magnet, auto stock, recharging and more", deps=["ae_quantum_base_card"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r Magnet pulls in drops; Auto Stock refills your inventory from the network; ME Recharging charges your armour from it; Pick Craft orders the block you're looking at; plus a portable workbench, luck, strength and attack speed.",
+        "&eHow:&r a Quantum Upgrade Base plus quantum alloy and a few items each (check JEI).",
+        "&eTip:&r Auto Stock plus a Magnet means you never visit storage for torches or scaffolding again."]),
 ], links=[("t5_ae2", -2, 0), ("t5_cells", -2, 2), ("lg_patterns", 10, 0), ("mf_packaged", -2, 15.5), ("t4_mv", -2, 10.5),
           ("t5_meteor", -2, -9), ("lg_cpu", -2, 17.5)])

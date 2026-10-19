@@ -13,7 +13,7 @@
 		{
 			id: "4D231017F4253DCD"
 			x: 0.0d
-			y: 17.5d
+			y: 21.5d
 			dependencies: [
 				"4B6B18DEE9511230"
 			]
@@ -46,8 +46,8 @@
 		}
 		{
 			id: "4EA4B955C6925C4B"
-			x: 12.0d
-			y: 7.5d
+			x: 14.0d
+			y: 10.0d
 			optional: true
 			dependencies: [
 				"4B6B18DEE9511230"
@@ -82,7 +82,7 @@
 		{
 			id: "4DFE7AFE22B459FA"
 			x: 2.0d
-			y: 13.0d
+			y: 15.5d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -113,7 +113,7 @@
 		{
 			id: "133A1A361E39E958"
 			x: 4.0d
-			y: 11.5d
+			y: 14.0d
 			optional: true
 			dependencies: [
 				"4DFE7AFE22B459FA"
@@ -151,7 +151,7 @@
 		{
 			id: "0F7514A8F468C6EF"
 			x: 6.0d
-			y: 7.5d
+			y: 10.0d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -186,7 +186,7 @@
 		{
 			id: "757EF0A10E439663"
 			x: 6.0d
-			y: 9.0d
+			y: 11.5d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -221,7 +221,7 @@
 		{
 			id: "7F7A757A0C0D6E52"
 			x: 6.0d
-			y: 10.5d
+			y: 13.0d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -256,7 +256,7 @@
 		{
 			id: "16949366931715D7"
 			x: 6.0d
-			y: 12.0d
+			y: 14.5d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -289,11 +289,54 @@
 			]
 		}
 		{
-			id: "4CA9218FA53F5DE1"
+			id: "7CFBB54ED187EDE0"
 			x: 2.0d
-			y: 14.5d
+			y: 17.0d
 			dependencies: [
 				"4D231017F4253DCD"
+			]
+			tasks: [
+				{
+					id: "2EFC8863F7589282"
+					type: "item"
+					item: {
+						id: "twilightforest:raven_feather"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "108ED986C9C2A6C0"
+					type: "item"
+					item: {
+						id: "twilightforest:torchberries"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "7A31DAE865579B78"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "0DCE8684A989D314"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4CA9218FA53F5DE1"
+			x: 4.0d
+			y: 17.0d
+			dependencies: [
+				"7CFBB54ED187EDE0"
 			]
 			tasks: [
 				{
@@ -324,8 +367,8 @@
 		}
 		{
 			id: "4382AE1CE86BC1A6"
-			x: 4.0d
-			y: 13.0d
+			x: 6.0d
+			y: 18.5d
 			optional: true
 			dependencies: [
 				"4CA9218FA53F5DE1"
@@ -360,7 +403,7 @@
 		{
 			id: "236C4B860AAB5C49"
 			x: 2.0d
-			y: 16.0d
+			y: 18.5d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -391,7 +434,7 @@
 		{
 			id: "2E9E4733D025679D"
 			x: 4.0d
-			y: 17.5d
+			y: 20.0d
 			optional: true
 			dependencies: [
 				"236C4B860AAB5C49"
@@ -426,7 +469,7 @@
 		{
 			id: "20296B7B6D4D509C"
 			x: 6.0d
-			y: 19.0d
+			y: 21.5d
 			optional: true
 			dependencies: [
 				"2E9E4733D025679D"
@@ -457,7 +500,7 @@
 		{
 			id: "11BB4BAFB379C1DA"
 			x: 8.0d
-			y: 20.5d
+			y: 23.0d
 			optional: true
 			dependencies: [
 				"20296B7B6D4D509C"
@@ -495,7 +538,7 @@
 		{
 			id: "127FD36957AB6CC5"
 			x: 2.0d
-			y: 17.5d
+			y: 20.0d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -530,7 +573,7 @@
 		{
 			id: "575CA84F7948FBE4"
 			x: 4.0d
-			y: 19.0d
+			y: 21.5d
 			optional: true
 			dependencies: [
 				"127FD36957AB6CC5"
@@ -568,7 +611,7 @@
 		{
 			id: "52D07DFAAE1958CD"
 			x: 2.0d
-			y: 19.0d
+			y: 21.5d
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -611,7 +654,7 @@
 		{
 			id: "2A8520BC87E05E4F"
 			x: 4.0d
-			y: 20.5d
+			y: 23.0d
 			optional: true
 			dependencies: [
 				"52D07DFAAE1958CD"
@@ -649,7 +692,7 @@
 		{
 			id: "04C278B25CA523F3"
 			x: 2.0d
-			y: 20.5d
+			y: 23.0d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -687,7 +730,7 @@
 		{
 			id: "5650E651512B60B8"
 			x: 2.0d
-			y: 22.0d
+			y: 24.5d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -722,7 +765,7 @@
 		{
 			id: "2BF59B0595F7B373"
 			x: 4.0d
-			y: 22.5d
+			y: 25.0d
 			optional: true
 			dependencies: [
 				"5650E651512B60B8"
@@ -766,7 +809,7 @@
 		{
 			id: "1670158D0136FEDD"
 			x: 6.0d
-			y: 24.0d
+			y: 26.5d
 			optional: true
 			dependencies: [
 				"2BF59B0595F7B373"
@@ -804,7 +847,7 @@
 		{
 			id: "3F245F5BEA0EA889"
 			x: 4.0d
-			y: 24.0d
+			y: 26.5d
 			optional: true
 			dependencies: [
 				"5650E651512B60B8"
@@ -840,9 +883,53 @@
 			]
 		}
 		{
+			id: "31A10F1B06C351EA"
+			x: 2.0d
+			y: 26.0d
+			optional: true
+			dependencies: [
+				"4D231017F4253DCD"
+			]
+			tasks: [
+				{
+					id: "2BA5EEF01D1CA4DD"
+					type: "item"
+					item: {
+						id: "twilightforest:raw_venison"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "139C3E7CE7F6A677"
+					type: "item"
+					item: {
+						id: "twilightforest:cooked_venison"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6FB26177647EA725"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "47CA67596C88A0BF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "537A527A1114A7B6"
 			x: 2.0d
-			y: 23.5d
+			y: 27.5d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -877,7 +964,7 @@
 		{
 			id: "18D4A2102F919AE7"
 			x: 4.0d
-			y: 25.5d
+			y: 29.0d
 			optional: true
 			dependencies: [
 				"537A527A1114A7B6"
@@ -912,7 +999,7 @@
 		{
 			id: "7A896DEA1B224171"
 			x: 6.0d
-			y: 27.0d
+			y: 30.5d
 			optional: true
 			dependencies: [
 				"18D4A2102F919AE7"
@@ -950,7 +1037,7 @@
 		{
 			id: "3798CB29F2F9EB96"
 			x: 2.0d
-			y: 25.5d
+			y: 30.0d
 			optional: true
 			dependencies: [
 				"4D231017F4253DCD"
@@ -991,7 +1078,7 @@
 		{
 			id: "3C32DFF182AAB721"
 			x: 4.0d
-			y: 27.0d
+			y: 30.5d
 			optional: true
 			dependencies: [
 				"3798CB29F2F9EB96"
@@ -1022,7 +1109,7 @@
 		{
 			id: "3EDECB3F741E7A42"
 			x: 6.0d
-			y: 28.5d
+			y: 32.0d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -1059,7 +1146,7 @@
 		{
 			id: "50BB6994DC34E843"
 			x: 8.0d
-			y: 30.0d
+			y: 33.5d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -1092,6 +1179,47 @@
 				}
 				{
 					id: "665C10953D073449"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "3DB2F38D604DB483"
+			x: 10.0d
+			y: 35.0d
+			optional: true
+			invisible: true
+			dependencies: [
+				"50BB6994DC34E843"
+			]
+			tasks: [
+				{
+					id: "7856B8740F10C158"
+					type: "item"
+					item: {
+						id: "twilightforest:quest_ram_trophy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "272E55B7053AE8CB"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "2A51FC09744ACBD3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "22375DF7919373AF"
 					type: "random"
 					table_id: 8682264593899658817L
 				}
@@ -1499,9 +1627,88 @@
 			]
 		}
 		{
+			id: "005D8A97125DC3EC"
+			x: 10.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "10BDA66D639D77CB"
+					type: "item"
+					item: {
+						id: "twilightforest:raw_meef"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "615B08CD72F8226F"
+					type: "item"
+					item: {
+						id: "twilightforest:cooked_meef"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "050B53AD32CB8B6C"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "66FB4770CA768374"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "52E4898C23EA212B"
+			x: 10.0d
+			y: 4.5d
+			optional: true
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "56265DEBF4463F94"
+					type: "item"
+					item: {
+						id: "twilightforest:maze_wafer"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "009E86631D4293F6"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "36F750C66424821E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "39DF1364A3BB9256"
 			x: 12.0d
-			y: -5.0d
+			y: -5.5d
 			optional: true
 			dependencies: [
 				"65BD66A52090130E"
@@ -1536,7 +1743,7 @@
 		{
 			id: "3DD75B19D000C358"
 			x: 14.0d
-			y: -6.5d
+			y: -7.0d
 			optional: true
 			dependencies: [
 				"39DF1364A3BB9256"
@@ -1571,7 +1778,7 @@
 		{
 			id: "0DD53DE3BCAD93CA"
 			x: 12.0d
-			y: -3.5d
+			y: -4.0d
 			optional: true
 			dependencies: [
 				"65BD66A52090130E"
@@ -1799,7 +2006,7 @@
 		{
 			id: "6A3D139EDF66F3AB"
 			x: 18.0d
-			y: -4.0d
+			y: -5.0d
 			dependencies: [
 				"39A9D5474A8012E0"
 			]
@@ -1831,9 +2038,44 @@
 			]
 		}
 		{
+			id: "492415D794906357"
+			x: 18.0d
+			y: -3.5d
+			optional: true
+			dependencies: [
+				"39A9D5474A8012E0"
+			]
+			tasks: [
+				{
+					id: "07888544452BC14F"
+					type: "item"
+					item: {
+						id: "twilightforest:hydra_chop"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "28DC82082013C8F0"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "7838A7DCA1C5965B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "7F3E65B654069BAA"
 			x: 20.0d
-			y: -5.5d
+			y: -6.5d
 			optional: true
 			dependencies: [
 				"6A3D139EDF66F3AB"
@@ -2384,7 +2626,7 @@
 		{
 			id: "7C52CA9E17D044E7"
 			x: 10.0d
-			y: 3.5d
+			y: 6.0d
 			optional: true
 			dependencies: [
 				"06CC5F9C904C562E"
@@ -2431,7 +2673,7 @@
 		{
 			id: "656D7C4735C0CFA8"
 			x: 10.0d
-			y: 2.0d
+			y: 3.0d
 			dependencies: [
 				"06CC5F9C904C562E"
 			]
@@ -2463,12 +2705,47 @@
 			]
 		}
 		{
-			id: "54DEACECA3E07A58"
+			id: "350ECB50DEF6DE63"
 			x: 12.0d
-			y: 3.5d
+			y: 3.0d
 			optional: true
 			dependencies: [
 				"656D7C4735C0CFA8"
+			]
+			tasks: [
+				{
+					id: "52BFAACA40467A42"
+					type: "item"
+					item: {
+						id: "twilightforest:alpha_yeti_fur"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "1B0CBA512B5F1446"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "30A2606E707EDFC5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "54DEACECA3E07A58"
+			x: 14.0d
+			y: 3.0d
+			optional: true
+			dependencies: [
+				"350ECB50DEF6DE63"
 			]
 			tasks: [
 				{
@@ -2503,7 +2780,7 @@
 		{
 			id: "7B22307BB2A82650"
 			x: 12.0d
-			y: 2.0d
+			y: 4.5d
 			dependencies: [
 				"656D7C4735C0CFA8"
 			]
@@ -2544,7 +2821,7 @@
 		{
 			id: "170C7097B314C79D"
 			x: 14.0d
-			y: 2.0d
+			y: 4.5d
 			optional: true
 			dependencies: [
 				"7B22307BB2A82650"
@@ -2580,9 +2857,44 @@
 			]
 		}
 		{
+			id: "73128FC20EA6EAB0"
+			x: 14.0d
+			y: 7.5d
+			optional: true
+			dependencies: [
+				"7B22307BB2A82650"
+			]
+			tasks: [
+				{
+					id: "37EF058F8DD1E651"
+					type: "item"
+					item: {
+						id: "twilightforest:glass_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "577935CBA93168F8"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "732677095DA5F787"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "53A416978B641844"
 			x: 14.0d
-			y: 5.0d
+			y: 6.0d
 			dependencies: [
 				"7B22307BB2A82650"
 			]
@@ -2616,7 +2928,7 @@
 		{
 			id: "53890000D55CBBAB"
 			x: 16.0d
-			y: 3.5d
+			y: 6.0d
 			optional: true
 			dependencies: [
 				"53A416978B641844"
@@ -2654,7 +2966,7 @@
 		{
 			id: "089D4A7144E8B41C"
 			x: 16.0d
-			y: 5.0d
+			y: 7.5d
 			optional: true
 			dependencies: [
 				"53A416978B641844"
@@ -2868,6 +3180,76 @@
 			]
 		}
 		{
+			id: "2CC987541BBC6F25"
+			x: 28.0d
+			y: 1.5d
+			optional: true
+			dependencies: [
+				"1A1B0B1B03A203F4"
+			]
+			tasks: [
+				{
+					id: "4D09BC629F74FB6D"
+					type: "item"
+					item: {
+						id: "twilightforest:thorn_rose"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "214FE515FFE9269B"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "2BEDBFE940F72042"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "02D40EB8D976C22D"
+			x: 30.0d
+			y: -3.0d
+			optional: true
+			dependencies: [
+				"21B4176B92393E04"
+			]
+			tasks: [
+				{
+					id: "4D5812650ECB311B"
+					type: "item"
+					item: {
+						id: "twilightforest:uberous_soil"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0DD004B55BFD8BF2"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "68407A3D5D997BB3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "438848E256C633EB"
 			x: 30.0d
 			y: -1.5d
@@ -3047,7 +3429,7 @@
 		{
 			id: "429C883956CD3107"
 			x: 0.5d
-			y: -8.5d
+			y: -9.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -3059,7 +3441,7 @@
 			id: "210CEA62C5551D93"
 			linked_quest: "4B6B18DEE9511230"
 			x: -2.0d
-			y: 8.5d
+			y: 10.5d
 		}
 	]
 }

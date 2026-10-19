@@ -166,4 +166,11 @@ CHAPTER = Chapter("factory", "Mob Data and Big Crafting", "hostilenetworks:sim_c
         "&eWhat:&r one compact machine per chemical line keeps your base tidy: a sulfuric acid room, a chlorine room, a petrochemical room.",
         "&eHow:&r craft more machines (check JEI for the sizes) and enter each with the Personal Shrinking Device.",
         "&eTip:&r a room only runs while the chunk with its machine block is loaded, so claim and force-load your factory."]),
+
+    # --- ATM10-alignment round (2026-10-19): MI addon with no other home -------------------------
+    Q("mf_multiblock_builder", 0, 0, [item("industrialization_overdrive:terminal")], "Multiblock Builder",
+      subtitle="Place a whole MI multiblock in one go", deps=["t4_mv", "t3_ebf"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r Industrialization Overdrive's Multiblock Builder places every missing block of an MI multiblock from your inventory (or a linked ME network). Other modes copy and paste a formed one, or tear it down.",
+        "&eHow:&r steel plates, glass panes and an &eMI electronic circuit&r (MV). Look at the controller and press the key combination its tooltip shows; another key cycles the modes.",
+        "&eTip:&r carry the casings, hatches and coils first: it only places what you have."]),
 ], links=[("t4_mv", -2, 0), ("t1_steel", -2, 2.5), ("t3_hull", -2, 6.5), ("t5_ae2", -2, 4)])

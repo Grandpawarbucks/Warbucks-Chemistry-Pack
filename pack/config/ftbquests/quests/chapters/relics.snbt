@@ -145,8 +145,8 @@
 		}
 		{
 			id: "65639548C2C2E03A"
-			x: 6.0d
-			y: 11.5d
+			x: 0.0d
+			y: 13.0d
 			dependencies: [
 				"1C5E43BCEDA7593F"
 			]
@@ -182,8 +182,8 @@
 		}
 		{
 			id: "1C39B10303C8A4FB"
-			x: 8.0d
-			y: 10.0d
+			x: 2.0d
+			y: 11.5d
 			optional: true
 			dependencies: [
 				"65639548C2C2E03A"
@@ -212,7 +212,7 @@
 		}
 		{
 			id: "155D611580258963"
-			x: 0.0d
+			x: 8.0d
 			y: 11.5d
 			dependencies: [
 				"1C5E43BCEDA7593F"
@@ -249,7 +249,7 @@
 		}
 		{
 			id: "138734AE1F0C3A87"
-			x: 2.0d
+			x: 10.0d
 			y: 10.0d
 			optional: true
 			dependencies: [
@@ -286,7 +286,7 @@
 		}
 		{
 			id: "73D8CBFF0B71205A"
-			x: 2.0d
+			x: 10.0d
 			y: 13.0d
 			optional: true
 			invisible: true
@@ -536,6 +536,41 @@
 				}
 			]
 		}
+		{
+			id: "5E6FBB34947A8DDF"
+			x: 4.0d
+			y: 10.0d
+			optional: true
+			dependencies: [
+				"1C39B10303C8A4FB"
+			]
+			tasks: [
+				{
+					id: "53E44BAD0E1AFD38"
+					type: "item"
+					item: {
+						id: "relics:golden_tooth"
+						count: 1
+					}
+					count: 9L
+				}
+			]
+			rewards: [
+				{
+					id: "26F083178D3E13CE"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5D88134561841292"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	images: [
 		{
@@ -553,7 +588,7 @@
 			id: "2723994877168630"
 			linked_quest: "1C5E43BCEDA7593F"
 			x: -2.0d
-			y: 7.5d
+			y: 8.0d
 		}
 	]
 }

@@ -10,7 +10,7 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
     # ===== Upper line: Mekanism gases and the contact process (LV) =====
     Q("t4_separator", 0, -2, [item(MEK + "electrolytic_separator")], "Mekanism Gases", deps=["t3_mekcircuit"], xp=100,
       subtitle="Split water into hydrogen and oxygen", desc=[
-        "&6You remember pulling water apart with a word. A machine and a cable will have to do.&r",
+        "&6Once a word was enough to pull water apart. Now it takes a machine and a cable, and that will have to do.&r",
         "&eWhat:&r the Electrolytic Separator makes hydrogen and oxygen as gases you can pipe and store.",
         "&eChemistry:&r 2H₂O → 2H₂ + O₂. Current drives the reaction backwards from burning hydrogen.",
         "&eHow:&r feed it water and FE. Gases leave from the coloured sides (configure them with the Configurator)."]),
@@ -103,7 +103,7 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
     # ===== Lower line: aluminum (Bayer + Hall-Héroult), silicon and the electronic circuit (LV → MV) =====
     Q("t4_bauxite", -8, 2, [item(MI + "bauxite_dust", 16)], "Bauxite", deps=["t3_ebf"], xp=40,
       subtitle="The ore aluminum hides in", desc=[
-        "&6You remember a metal an emperor once served to his most honoured guests. It was never rare, only stubborn.&r",
+        "&6An emperor once served his finest guests on this metal. You knew even then it was never rare, only stubborn.&r",
         "&eWhat:&r bauxite is the only practical aluminum ore. MI bauxite ore drops bauxite dust.",
         "&eChemistry:&r bauxite is mostly aluminium hydroxides, Al(OH)₃ and AlO(OH), stained red by iron oxide.",
         "&eHow:&r rich bauxite deposits sit around Y -16 to 24. No furnace will free the metal: it goes through the Bayer process first."]),
@@ -177,12 +177,12 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eWhat:&r the MV circuit. The Electrolyzer, Chemical Reactor and Centrifuge all need it, even though they sit on an LV hull.",
         "&eHow:&r electronic circuit board, 4 analog circuits, 2 diodes and 2 transistors.",
         "&eTip:&r set an Assembler to make these. You'll need dozens."]),
-    Q("t4_electrolyzer", 8, 2, [item(MI + "electrolyzer")], "Electrolysis", deps=["t4_circuit"], xp=150,
+    Q("t4_electrolyzer", 8, 2, [item(MI + "electrolyzer")], "Electrolysis", deps=["t4_circuit", "t4_pumps"], xp=150,
       subtitle="MI's electrolysis machine", desc=[
         "&eWhat:&r pass current through a compound and it splits. This is &eelectrochemistry&r.",
         "&eChemistry:&r water → H₂ + O₂ (3000 mB water → 2000 mB H₂ + 1000 mB O₂). Salt → sodium + chlorine.",
         "&eHow:&r magnetic cupronickel wire, aluminum rods, an LV hull, an electronic circuit and a large pump."]),
-    Q("t4_reactor", 8, 4, [item(MI + "chemical_reactor")], "The Chemical Reactor", deps=["t4_circuit"], xp=100,
+    Q("t4_reactor", 8, 4, [item(MI + "chemical_reactor")], "The Chemical Reactor", deps=["t4_circuit", "t4_pumps"], xp=100,
       subtitle="MI's general-purpose reaction vessel", desc=[
         "&eWhat:&r combines items and fluids into new compounds. You'll use it constantly from here to the end.",
         "&eHow:&r glass, a large pump, aluminum rotors, an LV hull, electronic circuits and electrum cable.",
@@ -194,7 +194,7 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eHow:&r Electrolyzer: 2 salt dust → 1 sodium dust + 125 mB chlorine."]),
     Q("t4_acid", 10, 4, [item(MI + "sulfuric_acid_bucket")], "Sulfuric Acid", deps=["t4_reactor", "t4_sulfur"], xp=250, size=1.75, shape="hexagon", items=[(MI + "sulfuric_acid_bucket", 2)],
       subtitle="The most-produced chemical on Earth", desc=[
-        "&6Acid opens what fire cannot. You remember that lesson; you remember learning it the hard way.&r",
+        "&6Acid opens what fire cannot. You learned that once, the hard way, and the lesson has come back intact.&r",
         "&eWhat:&r sulfuric acid, as an MI fluid you can bucket. The Undergarden portal and many MI recipes need it.",
         "&eChemistry:&r S + O₂ + H₂O → &eH₂SO₄&r, the whole contact process in one vessel. Industry makes more of it than any other chemical.",
         "&eHow:&r Chemical Reactor: 1 sulfur dust + 200 mB O₂ + 200 mB water → 500 mB sulfuric acid."]),
@@ -220,6 +220,7 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eHow:&r Chemical Reactor: uranium dust + 500 mB oxygen → uraninite. Powah's own uraninite ore is turned off."]),
     Q("t4_undergarden", 12, 4, [item("undergarden:catalyst"), dim("undergarden:undergarden")], "The Undergarden", deps=["t4_acid", "t4_mek_acid"], any_dep=True, xp=300,
       subtitle="A realm beneath the world", desc=[
+        "&6A world beneath the world, and the key to its door is a bottle of acid. You are trusted with more every day.&r",
         "&eWhat:&r a strange underground dimension. Its portal catalyst needs a bucket of sulfuric acid: MI's, Mekanism's or ChemLib's all work.",
         "&eHow:&r the quickest bucket is your Mekanism contact process: a Rotary Condensentrator in liquid mode turns the acid gas into fluid you can bucket. MI's Chemical Reactor acid works too. Then build a stone-brick portal frame and right-click it with the catalyst.",
         "&eTip:&r bring torches and food. It is dark down there."]),
@@ -266,4 +267,26 @@ CHAPTER = Chapter("t4", "V. Electrochemistry and Acids", "modern_industrializati
         "&eChemistry:&r acid + base → salt + water. H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O.",
         "&eHow:&r Chemical Reactor: sodium dust + 1000 mB oxygen + 1000 mB hydrogen → 2000 mB sodium hydroxide.",
         "&eTip:&r this is the bulk lye supply for the Bayer digester, so you can stop feeding it Combiner crystals."]),
+
+    # ===== ATM10-aligned additions (2026-10-19): MV components, doping, upgrades =====
+    Q("t4_pumps", 0, 0, [item(MI + "pump", 3), item(MI + "large_motor"), item(MI + "large_pump")], "Pumps, Large and Small", deps=["t4_circuit", "t4_aluminum"], xp=100,
+      subtitle="The heart of every MV fluid machine", desc=[
+        "&eWhat:&r the Electrolyzer and the Chemical Reactor each need a Large Pump, and a Large Pump is three small pumps driven by a Large Motor.",
+        "&eHow:&r Large Motor: an electronic circuit, 2 aluminum rods and 6 motors. Large Pump: 2 electronic circuits, 3 aluminum rotors, a Large Motor and 3 pumps (Assembler or crafting table; check JEI).",
+        "&eTip:&r pumps are the part you'll run short of. Keep an Assembler stocked with motors and rotors."]),
+    Q("t4_doped", 0, 0, [item(MI + "silicon_n_doped_plate"), item(MI + "silicon_p_doped_plate")], "Doping Silicon", deps=["t4_transistor", "t4_reactor"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: n-type and p-type silicon", desc=[
+        "&eWhat:&r silicon plates with a trace of another element, used in cheaper recipes for transistors and diodes.",
+        "&eChemistry:&r silicon has four outer electrons. Antimony has five, so it adds a spare electron (n-type); aluminium has three, so it leaves a 'hole' (p-type). Where n meets p, current flows one way only: a diode.",
+        "&eHow:&r Chemical Reactor: 1 silicon plate + 1 tiny antimony dust → n-doped plate; 1 silicon plate + 1 tiny aluminum dust → p-doped plate. JEI shows the doped transistor and diode recipes."]),
+    Q("t4_upgrade", 0, 0, [item(MI + "basic_upgrade", 4), item(MI + "overdrive_module")], "Machine Upgrades", deps=["t4_ecboard"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: let a machine draw more power", desc=[
+        "&eWhat:&r Upgrades go in a machine's upgrade slot and raise how much EU/t it may draw, so it overclocks harder. The Overdrive Module keeps a machine's efficiency up while it waits for input.",
+        "&eHow:&r Assembler: 2 conveyors, 4 motors, 2 robot arms and an analog circuit board → 4 basic upgrades. Overdrive Module: 2 diodes, 2 transistors, 4 electrum fine wire and an electronic circuit board.",
+        "&eTip:&r hover over an upgrade for its exact bonus. Some late recipes ask for more EU/t than a plain machine allows; upgrades are the answer."]),
+    Q("t4_lv_machines", 0, 0, [item("extended_industrialization:electric_alloy_smelter"), item(MI + "electric_unpacker")], "Electric Helpers", deps=["t4_separator"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: alloy smelter and unpacker, now electric", desc=[
+        "&eWhat:&r the electric versions of two steam-age helpers: the Electric Alloy Smelter (Extended Industrialization) pours alloys from nuggets, the Electric Unpacker breaks blocks and double ingots back down.",
+        "&eHow:&r both sit on an LV machine hull with analog circuits. The Alloy Smelter adds a tin rotor and magnetic cupronickel wire, the Unpacker motors and conveyors (check JEI).",
+        "&eTip:&r they run on the same LV cable as everything else, so your steam boilers can finally rest."]),
 ])

@@ -331,4 +331,60 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         "&eWhat:&r you scooped a small slime into a bucket. It gets visibly excited when you carry it into a slime chunk.",
         "&eHow:&r use an empty bucket on a small slime. Place it again by using the bucket on the ground.",
         "&eTip:&r slime chunks spawn slimes underground at any light level, which makes them the best spot for a slime farm."]),
+
+    # ===== ATM10-aligned round (2026-10-19): vanilla workshop blocks, redstone and the other pylons =====
+    # --- the vanilla workshop (y=20) ------------------------------------------------------------
+    Q("ql_enchanting", 0, 0, [item("minecraft:enchanting_table"), item("minecraft:bookshelf", 15), item("minecraft:book", 3)], "The Enchanting Table", deps=["ql_start", "gs_ironpick"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: books, obsidian and a diamond or two", desc=[
+        "&eWhat:&r the enchanting table, with the 15 bookshelves it needs for level 30 enchantments. Apotheosis makes it much deeper (Magic group).",
+        "&eChemistry:&r paper is pressed cellulose fibre; old books yellow because acids left in the paper slowly break those chains (and lignin oxidises).",
+        "&eHow:&r table: a book, 2 diamonds and 4 obsidian. Bookshelf: 6 planks and 3 books. Book: 3 paper and a leather.",
+        "&eTip:&r leave one block of air between the table and the shelves, or they don't count."]),
+    Q("ql_anvil", 0, 0, [item("minecraft:anvil")], "Anvil", deps=["ql_start", "gs_iron"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: repair, rename, combine", desc=[
+        "&eWhat:&r the anvil joins enchanted books to tools, repairs gear with its own material, and renames items.",
+        "&eChemistry:&r a real anvil is a block of hardened steel on a softer body: the hard face doesn't dent, the soft body doesn't crack.",
+        "&eHow:&r 3 iron blocks and 4 iron ingots: 31 iron in all.",
+        "&eTip:&r every repair raises the 'too expensive' cost. Combine books first, then put them on the tool in one go."]),
+    Q("ql_map_clock", 0, 0, [item("minecraft:map"), item("minecraft:compass"), item("minecraft:clock")], "Map, Compass and Clock", deps=["ql_start", "gs_iron"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: the vanilla navigator's kit", desc=[
+        "&eWhat:&r a map draws the land as you walk; a compass points to world spawn (or a lodestone); a clock shows the time of day, even underground.",
+        "&eChemistry:&r a real compass needle is magnetised iron. The first ones (China, about 1,000 years ago) used lodestone, naturally magnetic magnetite, Fe₃O₄.",
+        "&eHow:&r map: paper around a compass. Compass: 4 iron around redstone. Clock: 4 gold around redstone.",
+        "&eTip:&r JourneyMap does the mapping for you; a framed map on the wall is still a nice trophy."]),
+    Q("ql_redstone", 0, 0, [item("minecraft:lever"), item("minecraft:redstone_torch", 4), item("minecraft:repeater", 2)], "Redstone Basics", deps=["ql_start", "gs_ironpick"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: switches, inverters and delays", desc=[
+        "&eWhat:&r the three parts of most redstone builds: a lever (a switch), a redstone torch (a NOT gate) and a repeater (a delay and a booster).",
+        "&eChemistry:&r redstone is fiction, but the logic is real: a torch is an inverter, exactly like a transistor wired as a NOT gate in every chip you own.",
+        "&eHow:&r lever: a stick on cobblestone. Torch: redstone on a stick. Repeater: 2 torches and redstone on stone.",
+        "&eTip:&r MI and Mekanism machines can be switched off with redstone; a lever by your machines saves power at night."]),
+    Q("ql_daylight", 0, 0, [item("minecraft:daylight_detector")], "Daylight Detector", deps=["ql_redstone", "t2_quartz"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: a switch that knows the time", desc=[
+        "&eWhat:&r it outputs a signal that follows the sun. Right-click it to invert, so it fires at night instead.",
+        "&eChemistry:&r a real light sensor is a photodiode: light knocks electrons loose in a semiconductor and a current flows. Same physics as a solar panel, just smaller.",
+        "&eHow:&r glass, Nether quartz and wooden slabs (check JEI).",
+        "&eTip:&r inverted, it switches on street lamps at dusk."]),
+    Q("ql_conduit", 0, 0, [item("minecraft:conduit")], "Conduit Power", deps=["ql_start", "ex_treasure"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: breathe and see underwater", desc=[
+        "&eWhat:&r an activated conduit gives Conduit Power to players in the water nearby: no drowning, night vision underwater and faster mining. A bigger frame also attacks hostile mobs.",
+        "&eChemistry:&r nautilus shells are aragonite, a form of calcium carbonate (CaCO₃) with a different crystal packing from calcite. The pearly sheen is layers of it thinner than a wavelength of light.",
+        "&eHow:&r a heart of the sea (buried treasure) in 8 nautilus shells (drowned and fishing). Place it in water inside a frame of prismarine (check the wiki shape in JEI's info tab).",
+        "&eTip:&r perfect for an underwater base, or for clearing an ocean monument."]),
+
+    # --- the other pylons (y=22): flight is in Chapter II; these guard and farm a claim ---------
+    Q("ql_pylon_harvester", 0, 0, [item("pylons:harvester_pylon")], "Harvester Pylon", deps=["t2_pylon", "fd_breed"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: a pylon that farms for you", desc=[
+        "&eWhat:&r harvests crops in a square around it (3x3 up to 9x9) and puts them in a chest above it. It wears a hoe down by 1 durability per harvest.",
+        "&eHow:&r quartz slabs, iron bars and polished blackstone around a hay bale. Put it in the farm's water block (or level with the crops), a hoe inside, a chest on top.",
+        "&eTip:&r an Unbreaking hoe lasts far longer; a Mending one never runs out."]),
+    Q("ql_pylon_interdiction", 0, 0, [item("pylons:interdiction_pylon"), anyof(["pylons:mob_filter", "pylons:lifeless_filter"])], "Interdiction Pylon", deps=["t2_pylon", "t2_debris"], xp=80,
+      optional=True, tokens=1, subtitle="Optional: no more of that mob, here", desc=[
+        "&eWhat:&r stops chosen mobs spawning in up to 5x5 chunks. A Mob Filter names the mob; the Lifeless Filter blocks all natural spawns over a much larger area.",
+        "&eHow:&r the pylon frame around a netherite block. Filters: cyan terracotta, green dye and glass around netherite (mob) or a Nether Star (lifeless). Use a mob filter on the mob to set it.",
+        "&eTip:&r a phantom filter over your base means sleepless nights are only a figure of speech."]),
+    Q("ql_pylon_guard", 0, 0, [item("pylons:protection_pylon"), item("pylons:expulsion_pylon"), anyof(["pylons:player_filter", "pylons:block_filter"])],
+      "Guard Pylons", deps=["t2_pylon", "ql_team"], xp=60, optional=True, tokens=1, subtitle="Optional: protect your claim, and keep strangers out", desc=[
+        "&eWhat:&r the Protection Pylon stops you breaking chosen blocks or hurting chosen mobs in its range (so a pet or a showpiece is safe from your own sword). The Expulsion Pylon sends other players out of your chunks; whitelist friends with a Player Filter.",
+        "&eHow:&r the pylon frame around a honeycomb block (protection) or a diamond block (expulsion). Filters: cyan terracotta, green dye and glass around honeycomb (block) or a diamond (player).",
+        "&eTip:&r with FTB Teams, your team is whitelisted automatically."]),
 ], links=[("gs_table", -3, 0), ("gs_iron", -3, 2), ("gs_backpack", -3, 3.5), ("gs_stone", 10, -1.5)])

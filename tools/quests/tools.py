@@ -181,4 +181,46 @@ CHAPTER = Chapter("tools", "Gear and Comfort", "silentgear:pickaxe",
         "&6You remember stepping between places without walking. You'd forgotten how much fun it was.&r",
         "&eWhat:&r the Portal Gun shoots two linked portals onto walls. Walk in one, come out the other.",
         "&eTip:&r there is an upgraded Portal Gun too; JEI has its recipe."]),
+
+    # --- Silent Gear: catalysts, dusts and the late blocks (ATM10-aligned round, 2026-10-19) ------
+    Q("tc_sg_catalyst", 0, 0, [item("silentgear:glowing_dust", 4), item("silentgear:blazing_dust", 4)], "Grading Catalysts", deps=["tc_grader", "tc_sg_dust"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: fuel for the Material Grader", desc=[
+        "&eWhat:&r the Material Grader needs a catalyst for each try. Glowing dust is tier 1, blazing dust tier 2; a better catalyst allows a higher grade.",
+        "&eChemistry:&r a real catalyst speeds a reaction without being used up. These are spent on every try, so 'reagent' would be the honest word.",
+        "&eHow:&r glowing dust: a stick, 2 glowstone dust and a quartz (makes 4). Blazing dust: blaze gold dust and 2 glowstone dust (makes 4).",
+        "&eTip:&r grade the material for a tool head, not the rod; the head carries most of the stats."]),
+    Q("tc_sg_glittery", 0, 0, [item("silentgear:glittery_dust", 8)], "Glittery Dust", deps=["tc_sg_catalyst", "w_end"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: the tier 3 catalyst", desc=[
+        "&eWhat:&r the best Grader catalyst, for the highest grades.",
+        "&eHow:&r popped chorus fruit, emerald nuggets, glowstone dust and a nether banana make 8 (check JEI). Chorus grows in the End; nether bananas grow on netherwood trees.",
+        "&eTip:&r popped chorus is just chorus fruit smelted in a furnace."]),
+    Q("tc_sg_dust", 0, 0, [item("silentgear:blaze_gold_dust", 2)], "Hammered Dust", deps=["tc_blaze_gold"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: crush an ingot on an anvil", desc=[
+        "&eWhat:&r Silent Gear turns its ingots into dust with a hammer: blaze gold, crimson iron, azure silver and more.",
+        "&eChemistry:&r grinding a metal to powder hugely raises its surface area. That's why fine metal dusts burn or react so much faster than a solid bar.",
+        "&eHow:&r a tool action with any hammer (the c:tools/hammer tag) on the ingot; JEI shows the steps and which block it needs.",
+        "&eTip:&r blaze gold dust is the tier 1 Starlight Charger catalyst and the base of blazing dust."]),
+    Q("tc_sg_charger", 0, 0, [item("silentgear:starlight_charger")], "Starlight Charger", deps=["tc_sg_dust"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: charge materials under the night sky", desc=[
+        "&eWhat:&r the Starlight Charger collects starlight at night and charges Silent Gear materials, giving them a 'charged' bonus.",
+        "&eHow:&r quartz blocks, glass, polished blackstone and a blaze gold block (check JEI). Place it under open sky, add a catalyst (blaze gold dust is tier 1) and the item.",
+        "&eTip:&r the catalyst tier sets how strong the charge can get; JEI's tag view lists each tier."]),
+    Q("tc_sg_starmetal", 0, 0, [item("silentgear:azure_silver_dust", 2), item("silentgear:starmetal_dust", 3)], "Starmetal", deps=["tc_azure", "tc_sg_dust", "hn_wither"], xp=100,
+      optional=True, tokens=2, subtitle="Optional: azure metals and a piece of a star", desc=[
+        "&eWhat:&r starmetal dust is a late Silent Gear material made from azure metals and a Nether Star fragment.",
+        "&eChemistry:&r every atom heavier than iron was forged in dying stars or neutron-star collisions. Real 'starmetal' is just... metal.",
+        "&eHow:&r azure electrum dust, 2 azure silver dust, blaze gold dust and a nether star fragment make 3 (check JEI). Hammer the ingots into dust first.",
+        "&eTip:&r one Nether Star crafts into 9 fragments, so a single Wither kill goes a long way."]),
+    Q("tc_sg_recrystallizer", 0, 0, [item("silentgear:recrystallizer")], "Recrystallizer", deps=["tc_azure"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: grow hybrid gems", desc=[
+        "&eWhat:&r the Recrystallizer fuses gems and dusts into a hybrid gem material whose stats depend on what you put in.",
+        "&eChemistry:&r real recrystallisation purifies a solid: dissolve it hot, cool slowly, and pure crystals grow while impurities stay in the liquid.",
+        "&eHow:&r azure electrum ingots, an emerald, a diamond, purpur blocks and a gold block (check JEI).",
+        "&eTip:&r the Material Book explains hybrid gems; experiment with cheap gems first."]),
+    Q("tc_sg_blocks", 0, 0, [item("silentgear:crimson_steel_block"), item("silentgear:azure_electrum_block"), item("silentgear:tyrian_steel_block")],
+      "A Metallurgist's Shelf", deps=["tc_tyrian"], xp=150, optional=True, tokens=2, subtitle="Optional: a block of each great alloy", desc=[
+        "&6Three alloys, three blocks, each one a recipe you wrote yourself. You remember a forge like this.&r",
+        "&eWhat:&r a storage block of crimson steel, azure electrum and tyrian steel: Silent Gear's three great alloys, side by side.",
+        "&eChemistry:&r alloys aren't mixtures you can see: the atoms share one crystal lattice. Bronze, steel and electrum are all solid solutions or mixed phases at the atomic scale.",
+        "&eHow:&r nine ingots of each make a block (check JEI)."]),
 ], links=[("gs_silent", -2, 0), ("t1_steel_paxel", 0, 2), ("t3_infuser", -2, 5.5), ("t3_analog", -2, 9.5), ("jdt_goo", 2, 17.5)])

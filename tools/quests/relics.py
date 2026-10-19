@@ -9,6 +9,7 @@ CHAPTER = Chapter("relics", "Relics and Artifacts", "reliquary:mob_charm_fragmen
     # --- Relics (y=6.5) ------------------------------------------------------------------------
     Q("m_reliquary", 0, 6.5, [item("reliquary:mob_charm_fragment")], "Relics", deps=["gs_iron"], xp=50,
       subtitle="Reliquary, Relics and Artifacts", desc=[
+        "&6You remember a treasury. Most of it is scattered now, in chests and in the hands of monsters.&r",
         "&eWhat:&r three mods of found and crafted treasures. Reliquary items are crafted from mob parts; Relics and Artifacts hide in chests and structures.",
         "&eHow:&r mob charm fragments drop from mobs. JEI shows the charm they build.",
         "&eTip:&r a Mob Charm stops that mob type attacking you."]),
@@ -87,4 +88,12 @@ CHAPTER = Chapter("relics", "Relics and Artifacts", "reliquary:mob_charm_fragmen
         "&eWhat:&r saves you from death, heals you, and gives you a few seconds of protection. It has several charges.",
         "&eHow:&r three Angelheart Vials and an Angelic Feather. Vials need milk, glass, fertile essence and an infernal claw (check JEI).",
         "&eTip:&r keep it in your inventory before boss fights and Nether trips."]),
+
+    # --- ATM10-aligned additions (2026-10-19) ----------------------------------------------------
+    Q("rl_teeth", 0, 0, [item("relics:golden_tooth", 9)], "Gold Teeth", deps=["rl_relic_level"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: the Piglin Mask's loot", desc=[
+        "&eWhat:&r with the Piglin Mask's looting ability, kills drop golden teeth: bigger mobs, more teeth. Picking them up can also fire up its frenzy rank.",
+        "&eChemistry:&r gold crowns last because gold barely reacts with anything in your mouth: it is the least reactive metal of all.",
+        "&eHow:&r find a Piglin Mask, level its looting ability and fight. Three teeth craft into a gold ingot, or trade them to piglins.",
+        "&eTip:&r it's mob-drop gold, like a zombified piglin farm: handy, but not ore."]),
 ], links=[("gs_iron", -2, 5)])

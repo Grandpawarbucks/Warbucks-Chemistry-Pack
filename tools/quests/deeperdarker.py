@@ -105,7 +105,7 @@ CHAPTER = Chapter("deeperdarker", "Deeper and Darker", "deeperdarker:warden_cara
         "&eWhat:&r the blooming caverns grow tall blooming stems (a second Otherside wood) and edible bloom berries.",
         "&eHow:&r cut the stems and pick the berries in the blooming caverns.",
         "&eTip:&r bloom berries are the easiest food to find down here."]),
-    Q("dd_gleam", 4, -4, [item(DD + "gloomslate_light", 4)], "Light in the Dark", deps=["dd_stones"], xp=75,
+    Q("dd_gleam", 4, -4, [item(DD + "gloomslate_light", 4)], "Light in the Dark", deps=["dd_sculk_gleam"], xp=75,
       optional=True, tokens=1, subtitle="Optional: gloomslate lights", desc=[
         "&eWhat:&r sculk gleam is the Otherside's glowing block; set in gloomslate it makes a tidy lamp.",
         "&eChemistry:&r a glow stick makes cold light by chemiluminescence: hydrogen peroxide oxidises an oxalate ester, and the energy excites a dye that emits light.",
@@ -139,9 +139,33 @@ CHAPTER = Chapter("deeperdarker", "Deeper and Darker", "deeperdarker:warden_cara
       secret=True, loot="secret", subtitle="Secret: not every pot is a pot", desc=[
         "&eWhat:&r some pots in the Otherside are alive: anger, sorrow and fear pots. You broke an angry one.",
         "&eTip:&r they drop gloomsherds, so a living pot is worth chasing."]),
-    Q("dd_grime", 8, 4, [item(DD + "grime_brick", 8)], "Grime Bricks", deps=["dd_stones"], xp=75,
+    Q("dd_grime", 8, 4, [item(DD + "grime_brick", 8)], "Grime Bricks", deps=["dd_grime_ball"], xp=75,
       optional=True, tokens=1, subtitle="Optional: bricks fired from sculk grime", desc=[
         "&eWhat:&r grime balls fire into grime bricks, a building block made from the Otherside's mud.",
         "&eChemistry:&r brick-making is old chemistry: heating clay above about 900 °C sinters its particles together into a hard ceramic.",
         "&eHow:&r smelt grime balls (Ancient Temple chests hold them). Four grime balls also make a block of sculk grime."]),
+    Q("dd_sculk_gleam", 0, 0, [item(DD + "sculk_gleam", 4)], "Sculk Gleam", deps=["dd_stones"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: the Otherside's own lamps", desc=[
+        "&eWhat:&r glowing sculk growths that light the deeplands and the echoing forest.",
+        "&eChemistry:&r a glow can be fluorescence (light given back at once, like a highlighter under UV) or phosphorescence (stored and released slowly, like glow-in-the-dark paint, often strontium aluminate).",
+        "&eHow:&r mine sculk gleam where it grows in the deeplands and echoing forest.",
+        "&eTip:&r it's the core of the gloomslate light in the next quest."]),
+    Q("dd_living_ground", 0, 0, [item(DD + "echo_soil", 8), item(DD + "blooming_moss_block", 8)], "Living Ground", deps=["dd_stones"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: echo soil and blooming moss", desc=[
+        "&eWhat:&r the two soils of the Otherside: echo soil under the echoing forest's trees, blooming moss across the blooming caverns.",
+        "&eChemistry:&r real soil is about half mineral grains, a quarter water and a quarter air, plus a few percent organic matter that holds most of its nutrients.",
+        "&eHow:&r dig them up in the echoing forest and the blooming caverns.",
+        "&eTip:&r echo trees grow on echo soil; bring some home with your saplings."]),
+    Q("dd_flora", 0, 0, [item(DD + "glowing_roots", 4), item(DD + "sculk_vines", 4), item(DD + "sculk_tendrils", 4), item(DD + "gloomy_cactus", 2)],
+      "Otherside Flora", deps=["dd_stones"], xp=100, optional=True, tokens=1, subtitle="Optional: roots, vines, tendrils and a cactus", desc=[
+        "&eWhat:&r the plants of each region: glowing roots in the blooming caverns, sculk vines and tendrils in the deeplands and echoing forest, gloomy cacti in the overcast columns.",
+        "&eChemistry:&r real cacti save water with CAM photosynthesis: they open their pores only at night, store CO₂ as malic acid, and use it by day with their pores shut.",
+        "&eHow:&r visit the four Otherside regions and collect each plant.",
+        "&eTip:&r the overcast columns are the gloomslate region; the cacti grow among its gloomy sculk."]),
+    Q("dd_grime_ball", 0, 0, [item(DD + "grime_ball", 8)], "Grime Balls", deps=["dd_stones"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: mud from the sculk patches", desc=[
+        "&eWhat:&r sculk grime is a muddy block that forms in the Otherside's sculk patches. Mined without Silk Touch, it breaks into 2 to 4 grime balls.",
+        "&eChemistry:&r mud is mostly clay minerals: sheets of aluminium silicate so thin they slide over each other when wet, which is why clay can be shaped.",
+        "&eHow:&r mine sculk grime where sculk spreads; Ancient Temple chests hold grime balls too.",
+        "&eTip:&r the grime bricks in the next quest are smelted from these."]),
 ], links=[("w_otherside", -2, 0), ("wd_warden", -2, 2), ("wd_temple", -2, -2)])

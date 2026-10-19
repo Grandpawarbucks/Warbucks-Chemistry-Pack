@@ -123,7 +123,7 @@
 		{
 			id: "60920BB92C5975BC"
 			x: 4.0d
-			y: -5.0d
+			y: -3.5d
 			dependencies: [
 				"056CD721D29672F1"
 				"6EB1CA116210134C"
@@ -213,7 +213,7 @@
 		{
 			id: "08BC2133F72EA7FC"
 			x: 6.0d
-			y: -2.0d
+			y: -3.5d
 			dependencies: [
 				"354E836D0228BCD9"
 			]
@@ -375,7 +375,7 @@
 		{
 			id: "7540B7EBA3302C25"
 			x: 8.0d
-			y: 4.0d
+			y: 2.0d
 			dependencies: [
 				"131B5FE96A4605BB"
 				"42B76D3BDE21F0DC"
@@ -517,7 +517,7 @@
 		{
 			id: "70178598964EFF4E"
 			x: 4.0d
-			y: -3.5d
+			y: 4.0d
 			optional: true
 			dependencies: [
 				"056CD721D29672F1"
@@ -593,7 +593,7 @@
 		{
 			id: "143395D7328062B5"
 			x: 6.0d
-			y: 5.0d
+			y: 3.5d
 			dependencies: [
 				"354E836D0228BCD9"
 			]
@@ -627,7 +627,7 @@
 		{
 			id: "0F0206FF419082A1"
 			x: 8.0d
-			y: 2.5d
+			y: 3.5d
 			optional: true
 			dependencies: [
 				"131B5FE96A4605BB"
@@ -665,7 +665,7 @@
 		{
 			id: "1192D454BBE6D5C5"
 			x: 10.0d
-			y: 7.5d
+			y: 13.0d
 			dependencies: [
 				"694B6BC236B91267"
 				"143395D7328062B5"
@@ -738,7 +738,7 @@
 		{
 			id: "5628DFE05F0477DE"
 			x: 8.0d
-			y: 9.0d
+			y: 8.0d
 			optional: true
 			dependencies: [
 				"143395D7328062B5"
@@ -811,7 +811,7 @@
 		{
 			id: "23B44A46EAB73D68"
 			x: 6.0d
-			y: -6.0d
+			y: -5.0d
 			optional: true
 			dependencies: [
 				"60920BB92C5975BC"
@@ -873,7 +873,7 @@
 		{
 			id: "410BB4BB232F3580"
 			x: 8.0d
-			y: 5.5d
+			y: 5.0d
 			optional: true
 			dependencies: [
 				"131B5FE96A4605BB"
@@ -935,7 +935,7 @@
 		{
 			id: "5C190CBD956F8F68"
 			x: 8.0d
-			y: 10.5d
+			y: 10.0d
 			dependencies: [
 				"354E836D0228BCD9"
 			]
@@ -996,7 +996,7 @@
 		{
 			id: "37F636BFE7E37758"
 			x: 10.0d
-			y: 10.0d
+			y: 15.0d
 			dependencies: [
 				"694B6BC236B91267"
 				"5C190CBD956F8F68"
@@ -1089,7 +1089,7 @@
 		{
 			id: "50A0E221B1B69D46"
 			x: 6.0d
-			y: 7.0d
+			y: 8.5d
 			optional: true
 			dependencies: [
 				"354E836D0228BCD9"
@@ -1178,7 +1178,7 @@
 		{
 			id: "161941956EC2518F"
 			x: 8.0d
-			y: 12.0d
+			y: 11.5d
 			optional: true
 			dependencies: [
 				"50A0E221B1B69D46"
@@ -1208,7 +1208,7 @@
 		{
 			id: "4A7AE47C4EF7931F"
 			x: 6.0d
-			y: 3.5d
+			y: 5.0d
 			optional: true
 			dependencies: [
 				"354E836D0228BCD9"
@@ -1243,7 +1243,7 @@
 		{
 			id: "249BDBDED71AD605"
 			x: 8.0d
-			y: -3.5d
+			y: -5.0d
 			optional: true
 			dependencies: [
 				"08BC2133F72EA7FC"
@@ -1267,6 +1267,409 @@
 				}
 				{
 					id: "1F0FE1411F960941"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "29AA69B51A6AFDD7"
+			x: 2.0d
+			y: 2.0d
+			optional: true
+			dependencies: [
+				"60FA1921CCF3AF97"
+			]
+			tasks: [
+				{
+					id: "4EF90D29B61B919A"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "62FD78A65B7B21F3"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "795BAFAD235B0CBC"
+					type: "item"
+					item: {
+						id: "minecraft:wooden_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A5C99BC1B47BB91"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "01331939DDAE8192"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "78EF41DFE812460E"
+			x: 6.0d
+			y: 6.5d
+			optional: true
+			dependencies: [
+				"354E836D0228BCD9"
+			]
+			tasks: [
+				{
+					id: "3ED97FAF91BBD137"
+					type: "item"
+					item: {
+						id: "minecraft:gold_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "3AF436B491E94D56"
+					type: "item"
+					item: {
+						id: "minecraft:golden_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1E8A6636C350C710"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "3DBE1AD531548514"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5C98652AE96904AD"
+			x: 8.0d
+			y: 6.5d
+			optional: true
+			dependencies: [
+				"143395D7328062B5"
+			]
+			tasks: [
+				{
+					id: "5E4D0AFBF887F587"
+					type: "item"
+					item: {
+						id: "minecraft:diamond_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1EF059347B6BEC2B"
+					type: "item"
+					item: {
+						id: "minecraft:diamond_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "78727F655CA84204"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "7CCCA1115C92B77E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3728FFD02FB4DBFA"
+			x: 10.0d
+			y: 7.5d
+			optional: true
+			dependencies: [
+				"694B6BC236B91267"
+				"5C98652AE96904AD"
+			]
+			tasks: [
+				{
+					id: "38C02682C10254FF"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "26D813611C364D1E"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "514AE9133EA04084"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6750BD8E82E2D070"
+			x: 6.0d
+			y: -2.0d
+			optional: true
+			dependencies: [
+				"60920BB92C5975BC"
+			]
+			tasks: [
+				{
+					id: "1D4BDCFF5124C8C0"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanismtools:bronze_sword)item(mekanismtools:lapis_lazuli_sword)item(mekanismtools:osmium_sword)item(mekanismtools:steel_sword)item(mekanismtools:refined_glowstone_sword)item(mekanismtools:refined_obsidian_sword))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "37856FE6B5E42BEA"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "38ED4F33C98FB1B4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "144F85C7FE48A4C1"
+			x: 6.0d
+			y: 10.0d
+			optional: true
+			dependencies: [
+				"70178598964EFF4E"
+			]
+			tasks: [
+				{
+					id: "3437D92E442EF434"
+					type: "item"
+					item: {
+						id: "mekanismtools:lapis_lazuli_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4D426D1356BA3C36"
+					type: "item"
+					item: {
+						id: "mekanismtools:lapis_lazuli_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6BDA0345A044A2C0"
+					type: "item"
+					item: {
+						id: "mekanismtools:lapis_lazuli_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1B64A13F24DB008B"
+					type: "item"
+					item: {
+						id: "mekanismtools:lapis_lazuli_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "53CB46FCC76CA185"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "53F174BC41A7AF2D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "322E25AE504F1593"
+			x: 0.0d
+			y: 14.0d
+			optional: true
+			dependencies: [
+				"2575EE3D3B863D1D"
+			]
+			tasks: [
+				{
+					id: "69D8F8779A30700E"
+					type: "item"
+					item: {
+						id: "minecraft:leather_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5C776FF5BDC5C1E2"
+					type: "item"
+					item: {
+						id: "minecraft:leather_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "60EA87FE37C4E9AD"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "49A37A3070AE7ADA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "209C0E4096417699"
+			x: 2.0d
+			y: 14.0d
+			optional: true
+			dependencies: [
+				"322E25AE504F1593"
+			]
+			tasks: [
+				{
+					id: "2CFEB30C613295EB"
+					type: "item"
+					item: {
+						id: "minecraft:wolf_armor"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "255F75E605B2CC61"
+					type: "item"
+					item: {
+						id: "minecraft:armadillo_scute"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0173ACB7D56677D9"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "056806E7B287AA69"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0BC7913B1AAE9567"
+			x: 2.0d
+			y: 15.5d
+			optional: true
+			dependencies: [
+				"322E25AE504F1593"
+			]
+			tasks: [
+				{
+					id: "17406CC53EC42DE2"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:leather_horse_armor)item(minecraft:iron_horse_armor)item(minecraft:golden_horse_armor)item(minecraft:diamond_horse_armor))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "72C1E21454854D7C"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "7379D938C1599040"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1319,190 +1722,190 @@
 			y: -2.0d
 		}
 		{
-			id: "14659B060636B9C5"
-			linked_quest: "2575EE3D3B863D1D"
-			x: -2.0d
-			y: -0.5d
-		}
-		{
 			id: "00BA0B798F433134"
 			linked_quest: "78AB87381549A629"
 			x: -2.0d
-			y: 1.0d
+			y: -0.5d
 		}
 		{
 			id: "1C053F63DA4337EE"
 			linked_quest: "39214B137E06B1D9"
 			x: -2.0d
-			y: 2.5d
+			y: 1.0d
 		}
 		{
 			id: "7DB80B9DB976118B"
 			linked_quest: "51ADE3E5594C4B5E"
 			x: -2.0d
-			y: 4.0d
+			y: 2.5d
 		}
 		{
 			id: "17BA25966D9C094F"
 			linked_quest: "4C3565E3456D5AE4"
 			x: -2.0d
-			y: 5.5d
+			y: 4.0d
 		}
 		{
 			id: "2EF736EABCF71314"
 			linked_quest: "3257C24FD424AE58"
 			x: -2.0d
-			y: 7.0d
+			y: 5.5d
 		}
 		{
 			id: "7161B554EF2243D7"
 			linked_quest: "5FC7A4838C153DB0"
 			x: -2.0d
-			y: 8.5d
+			y: 7.0d
 		}
 		{
 			id: "221F2905BACF7CC9"
 			linked_quest: "206E95EBFA840B9D"
-			x: -4.0d
-			y: -8.0d
+			x: -2.0d
+			y: 8.5d
 		}
 		{
 			id: "30FFE4FB347BC7E5"
 			linked_quest: "5162E347921E0863"
 			x: -4.0d
-			y: -6.5d
+			y: -8.0d
 		}
 		{
 			id: "77C333C16EA927A9"
 			linked_quest: "7A05E39EE109E1CA"
 			x: -4.0d
-			y: -5.0d
+			y: -6.5d
 		}
 		{
 			id: "25713E6AFC4E8CFF"
 			linked_quest: "1B2FF1921BFAFACF"
 			x: -4.0d
-			y: -3.5d
+			y: -5.0d
 		}
 		{
 			id: "7807155BFF68F95A"
 			linked_quest: "37DD31C8DF09C737"
 			x: -4.0d
-			y: -2.0d
+			y: -3.5d
 		}
 		{
 			id: "732A3AA12E4662CF"
 			linked_quest: "1E48AB2B0066F565"
 			x: -4.0d
-			y: -0.5d
+			y: -2.0d
 		}
 		{
 			id: "23CF207A5A124C1E"
 			linked_quest: "4E4AD4A8D6C2C30C"
 			x: -4.0d
-			y: 1.0d
+			y: -0.5d
 		}
 		{
 			id: "1D5E5EF1702464DA"
 			linked_quest: "6628750FED7710A3"
 			x: -4.0d
-			y: 2.5d
+			y: 1.0d
 		}
 		{
 			id: "03DF0E86FF4755F1"
 			linked_quest: "53B27674143FE723"
 			x: -4.0d
-			y: 4.0d
+			y: 2.5d
 		}
 		{
 			id: "10C90B4D2A919D0E"
 			linked_quest: "7D7B226DB54EB297"
 			x: -4.0d
-			y: 5.5d
+			y: 4.0d
 		}
 		{
 			id: "5EA13E8F15D9E722"
 			linked_quest: "0B26554D7E11DCF3"
 			x: -4.0d
-			y: 7.0d
+			y: 5.5d
 		}
 		{
 			id: "3CE2F02D6A043AEE"
 			linked_quest: "327B62CC52974966"
 			x: -4.0d
-			y: 8.5d
+			y: 7.0d
 		}
 		{
 			id: "0053554049197655"
 			linked_quest: "4408031B4D0E368F"
-			x: -6.0d
-			y: -8.0d
+			x: -4.0d
+			y: 8.5d
 		}
 		{
 			id: "758C9FB5F9F7048A"
 			linked_quest: "465DD74BC5CE144E"
 			x: -6.0d
-			y: -6.5d
+			y: -7.5d
 		}
 		{
 			id: "2FD39D3ED1ECD5D2"
 			linked_quest: "2A8520BC87E05E4F"
 			x: -6.0d
-			y: -5.0d
+			y: -6.0d
 		}
 		{
 			id: "7F2289654AFD0604"
 			linked_quest: "60C0DD7EE2931A65"
 			x: -6.0d
-			y: -3.5d
+			y: -4.5d
 		}
 		{
 			id: "2F5275DD2B70F5B9"
 			linked_quest: "7F3E65B654069BAA"
 			x: -6.0d
-			y: -2.0d
+			y: -3.0d
 		}
 		{
 			id: "6E97D1D0135CFDB6"
 			linked_quest: "765D740D175B0667"
 			x: -6.0d
-			y: -0.5d
+			y: -1.5d
 		}
 		{
 			id: "0DAE668688BCA1EC"
 			linked_quest: "01955F27A3D813AE"
 			x: -6.0d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			id: "338F61C915D7F49C"
 			linked_quest: "71A31138E5B796F4"
 			x: -6.0d
-			y: 2.5d
+			y: 1.5d
 		}
 		{
 			id: "2B16EF8C20B82C99"
 			linked_quest: "1751F7DCDA2801ED"
 			x: -6.0d
-			y: 4.0d
+			y: 3.0d
 		}
 		{
 			id: "4CB5429736B2359D"
 			linked_quest: "31F2D0605D2E5028"
 			x: -6.0d
-			y: 5.5d
+			y: 4.5d
 		}
 		{
 			id: "3531B61F2B8B64AA"
 			linked_quest: "76E6697544E0D8BF"
 			x: -6.0d
-			y: 7.0d
+			y: 6.0d
 		}
 		{
 			id: "59B867DF1E6CC1F8"
 			linked_quest: "056B70005B9D0DDB"
 			x: -6.0d
-			y: 8.5d
+			y: 7.5d
+		}
+		{
+			id: "14659B060636B9C5"
+			linked_quest: "2575EE3D3B863D1D"
+			x: -6.0d
+			y: 14.0d
 		}
 	]
 }

@@ -69,7 +69,13 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eTip:&r a cheap sorting room for a forest outpost; at home your storage network does it better."]),
 
     # --- maps (y=-6) ---
-    Q("tf_map_focus", -6, -6, [item(TF + "magic_map_focus")], "Magic Map Focus", deps=["tf_oak"], xp=75,
+    Q("tf_focus_parts", 0, 0, [item(TF + "raven_feather"), item(TF + "torchberries", 4)], "Feather and Berries", deps=["tf_oak"], xp=50,
+      subtitle="A raven's feather and a glowing berry", desc=[
+        "&eWhat:&r the two forest ingredients of the Magic Map Focus.",
+        "&eChemistry:&r glowing berries are a nod to real bioluminescence: an enzyme, luciferase, oxidises a molecule called luciferin, and the energy leaves as light instead of heat.",
+        "&eHow:&r ravens hop about the forest floor and drop feathers; Dark Tower chests hold them too. Torchberries hang from cave and hollow-hill roofs, and skeleton druids drop them.",
+        "&eTip:&r the Moonworm Queen eats torchberries: each one restores 64 of its durability."]),
+    Q("tf_map_focus", -6, -6, [item(TF + "magic_map_focus")], "Magic Map Focus", deps=["tf_focus_parts"], xp=75,
       subtitle="Feather, berry and glowstone", desc=[
         "&eWhat:&r the focus that turns paper into a Magic Map of the Twilight Forest.",
         "&eHow:&r a raven feather, torchberries and glowstone dust, shapeless. Ravens hop about the forest floor; torchberries hang from cave roofs (skeleton druids drop them too).",
@@ -156,6 +162,12 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r dried meat from the drying rack: light, filling travel food.",
         "&eChemistry:&r drying lowers the water activity of meat below about 0.85, and most bacteria can't grow without free water. It's one of the oldest preservation methods there is.",
         "&eHow:&r hang raw meat (venison from forest deer works well) on a drying rack and wait. Collect 8 jerky."]),
+    Q("tf_venison", 0, 0, [item(TF + "raw_venison", 4), item(TF + "cooked_venison", 4)], "Venison", deps=["tf_oak"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: the forest's everyday meat", desc=[
+        "&eWhat:&r Twilight deer drop raw venison and leather. Cooked, it's a steady food for long trips.",
+        "&eChemistry:&r red meat is red because of myoglobin, an iron protein that holds oxygen. Cooking unfolds it and oxidises its iron from Fe²⁺ to Fe³⁺, which turns the meat brown.",
+        "&eHow:&r hunt deer in the forest, then cook the venison in a furnace, smoker or on a campfire.",
+        "&eTip:&r save a few raw pieces for the drying rack: venison jerky keeps forever."]),
 
     # --- charms (y=8) ---
     Q("tf_charm_life", -6, 8, [item(TF + "charm_of_life_1")], "Charm of Life", deps=["tf_oak"], xp=100,
@@ -195,6 +207,11 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r feed the Questing Ram all sixteen colours of wool and it pays out blocks of metal and gems, its trophy, and the Crumble Horn.",
         "&eHow:&r blow the horn at stone and it crumbles the blocks in front of you (check JEI for what turns into what).",
         "&eTip:&r it's a handy tunnelling tool for the labyrinth."]),
+    Q("tf_ram_trophy", 0, 0, [item(TF + "quest_ram_trophy")], "The Ram's Own Trophy", deps=["tf_crumble_horn"], xp=100,
+      secret=True, loot="secret", subtitle="Secret: a bundle with a head in it", desc=[
+        "&eWhat:&r the Questing Ram's reward comes in a bundle: its own trophy plus a pile of metal and gem blocks.",
+        "&eHow:&r open the bundle the ram gave you and keep the trophy. Place it on a wall next to your boss trophies.",
+        "&eTip:&r it's the only trophy in the forest you earn without a fight."]),
 
     # ============================ the boss line (lairs y=0, spoils y=2) ============================
     # --- the Naga (x=0) ---
@@ -253,6 +270,18 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r a heavy diamond axe dropped by the Minoshroom.",
         "&eHow:&r beat the Minoshroom; the axe drops with its stroganoff.",
         "&eTip:&r it's an axe, so it still chops wood; keep it for both jobs."]),
+    Q("tf_meef", 0, 0, [item(TF + "raw_meef", 4), item(TF + "cooked_meef", 4)], "Meef", deps=["tf_labyrinth"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: minotaur meat, a maze staple", desc=[
+        "&eWhat:&r the labyrinth's minotaurs drop raw meef. Cooked meef steaks are among the best plain foods in the forest.",
+        "&eChemistry:&r a seared crust is the Maillard reaction: amino acids and sugars react above about 140 °C into hundreds of browned flavour compounds.",
+        "&eHow:&r kill minotaurs in the labyrinth's corridors, then cook the meef in a furnace, smoker or on a campfire.",
+        "&eTip:&r raw meef also dries into meef jerky on a drying rack."]),
+    Q("tf_maze_wafer", 0, 0, [item(TF + "maze_wafer", 8)], "Maze Wafers", deps=["tf_labyrinth"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: biscuits from the labyrinth's larder", desc=[
+        "&eWhat:&r small dry wafers stashed in labyrinth rooms, dead ends and vaults. Goblin strongholds and the Aurora Palace keep some too.",
+        "&eChemistry:&r dry food keeps because microbes need free water; bakers call this low water activity, the same trick as jerky and hard tack.",
+        "&eHow:&r open the labyrinth's chests as you work through the maze.",
+        "&eTip:&r keep a few in a pocket as emergency food for the rest of the boss line."]),
     Q("tf_maze_map", 8, -4, [item(TF + "filled_maze_map")], "Maze Map", deps=["tf_maze_focus"], xp=100,
       optional=True, tokens=1, subtitle="Optional: a map of corridors", desc=[
         "&eWhat:&r a map that draws the tunnels around you at your own depth.",
@@ -302,6 +331,12 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r fiery ingots: the hottest metal of the forest, for fire-proof tools and armour.",
         "&eChemistry:&r real blood is red because of the iron in haem, the part of haemoglobin that carries O₂. The Hydra's blood just burns as well.",
         "&eHow:&r a vial of fiery blood (Hydra) or fiery tears (Ur-Ghast) + an iron ingot, shapeless."]),
+    Q("tf_hydra_chop", 0, 0, [item(TF + "hydra_chop")], "Hydra Chop", deps=["w_hydra"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: one bite fills you up", desc=[
+        "&eWhat:&r a giant cut of Hydra meat. Eating one fills your whole hunger bar at once.",
+        "&eChemistry:&r food energy is measured by burning food in a bomb calorimeter: the heat released (about 4 kcal per gram of protein, 9 per gram of fat) is what your body can extract by slower oxidation.",
+        "&eHow:&r the Hydra drops them when it dies. Fight another Hydra in a different lair for more.",
+        "&eTip:&r eat it when your hunger bar is empty; the mod has an advancement for exactly that."]),
     Q("tf_fiery_gear", 10, 6, [anyof(tf("fiery_pickaxe", "fiery_sword", "fiery_helmet", "fiery_chestplate", "fiery_leggings", "fiery_boots"))],
       "Fiery Gear", deps=["tf_fiery"], xp=200, optional=True, tokens=1, subtitle="Optional: a pickaxe that smelts as it digs", desc=[
         "&eWhat:&r the Fiery Pickaxe smelts the ore it mines on the spot; the sword sets targets alight.",
@@ -395,7 +430,13 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r the Alpha Yeti lives in a cave in the snowy forest. It drops its trophy, alpha yeti fur and ice bombs.",
         "&eHow:&r dodge the ice it throws and the icicles that fall from the cave roof.",
         "&eTip:&r carrying alpha yeti fur is what lets you bear the glacier's cold."]),
-    Q("tf_yeti_armor", 4, 14, [anyof(tf("yeti_helmet", "yeti_chestplate", "yeti_leggings", "yeti_boots"))], "Yeti Armour", deps=["w_yeti"], xp=200,
+    Q("tf_alpha_fur", 0, 0, [item(TF + "alpha_yeti_fur", 8)], "Alpha Yeti Fur", deps=["w_yeti"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: the pelt of the snowy forest's boss", desc=[
+        "&eWhat:&r the Alpha Yeti's thick white fur, the material of yeti armour.",
+        "&eChemistry:&r hair and fur are keratin, a protein whose chains are cross-linked by disulfide (S–S) bonds from the amino acid cysteine; that's what makes it tough and water-shedding.",
+        "&eHow:&r the Alpha Yeti drops it when it dies. Other yeti caves have other Alpha Yetis if you need more.",
+        "&eTip:&r a full yeti set takes a lot of fur; keep a piece in your pack for the glacier's cold."]),
+    Q("tf_yeti_armor", 4, 14, [anyof(tf("yeti_helmet", "yeti_chestplate", "yeti_leggings", "yeti_boots"))], "Yeti Armour", deps=["tf_alpha_fur"], xp=200,
       optional=True, tokens=1, subtitle="Optional: the Alpha Yeti's coat", desc=[
         "&eWhat:&r armour of alpha yeti fur; every piece is crafted with Protection II already on it.",
         "&eHow:&r alpha yeti fur in the usual armour shapes (check JEI).",
@@ -411,6 +452,12 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r the Aurora Palace's chests hold the Ice Sword and Ice Bow, which slow what they hit, and the Ender Bow, which swaps you with your target.",
         "&eHow:&r loot the palace's rooms and caches on your way up.",
         "&eTip:&r the Ender Bow is a fine escape tool: shoot a mob far away and trade places."]),
+    Q("tf_glass_sword", 0, 0, [item(TF + "glass_sword")], "One Hit Wonder", deps=["tf_aurora"], xp=150,
+      optional=True, tokens=2, subtitle="Optional: a blade that shatters on first use", desc=[
+        "&eWhat:&r an enchanted Glass Sword from the Aurora Palace's room chests. It hits very hard, then breaks after a single hit.",
+        "&eChemistry:&r glass is amorphous SiO₂: with no crystal grains to stop it, one crack runs straight through. Toughened glass is quenched so its surface is squeezed, and cracks have to fight that first.",
+        "&eHow:&r loot the palace rooms on your way up to the Queen. It's a rare find; check every chest.",
+        "&eTip:&r save it for one blow that matters, like the last hit on a boss."]),
     Q("w_snow_queen", 8, 12, [item("twilightforest:snow_queen_trophy")], "The Snow Queen", deps=["tf_aurora"], xp=400,
       subtitle="The glacier's ice palace", desc=[
         "&eWhat:&r the Snow Queen rules the Aurora Palace on the glacier.",
@@ -446,6 +493,18 @@ CHAPTER = Chapter("twilight", "The Twilight Forest", "twilightforest:naga_trophy
         "&eWhat:&r caves under the highlands, full of trolls guarding vaults. The Lamp of Cinders hides in one.",
         "&eHow:&r find a troll cave in the highlands and loot its vaults. The lamp burns away the thorns that wall off the final plateau.",
         "&eTip:&r trolls throw rocks; fight them in the open, not in narrow tunnels."]),
+    Q("tf_thorn_rose", 0, 0, [item(TF + "thorn_rose", 4)], "Thorn Roses", deps=["tf_highlands"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: a flower that grows on thorns", desc=[
+        "&eWhat:&r the thornlands' only flower, growing among the thorns. One rose crafts into red dye.",
+        "&eChemistry:&r red petals get their colour from anthocyanins, pigments that change colour with pH: red in acid, purple to blue as it rises. Red cabbage juice is the same dye and makes a classroom pH indicator.",
+        "&eHow:&r pick them carefully at the thornlands' edge; living thorns hurt to touch.",
+        "&eTip:&r bring the Lamp of Cinders to clear a safe path first."]),
+    Q("tf_uberous", 0, 0, [item(TF + "uberous_soil", 2)], "Uberous Soil", deps=["tf_troll_cave"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: soil rich enough for a beanstalk", desc=[
+        "&eWhat:&r a glowing, absurdly fertile soil from the trolls' gardens. Magic beans planted on it sprout a beanstalk.",
+        "&eChemistry:&r real fertile soil is rich in humus and in the three big plant nutrients, nitrogen, phosphorus and potassium (N-P-K), the same numbers printed on every fertiliser bag.",
+        "&eHow:&r loot troll cave gardens; the same caves hold the magic beans.",
+        "&eTip:&r a beanstalk is only useful with clouds above it; plant under the cloud layer."]),
     Q("tf_magic_beans", 27, 10.5, [item(TF + "magic_beans")], "Magic Beans", deps=["tf_troll_cave"], xp=150,
       optional=True, tokens=1, subtitle="Optional: a beanstalk to the clouds", desc=[
         "&eWhat:&r trolls drop magic beans. Planted on the glowing uberous soil beneath the clouds, they grow a beanstalk straight up.",

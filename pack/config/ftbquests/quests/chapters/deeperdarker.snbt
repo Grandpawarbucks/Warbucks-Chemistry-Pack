@@ -214,7 +214,7 @@
 		{
 			id: "68B1341780D45FC8"
 			x: 0.0d
-			y: 20.0d
+			y: 24.5d
 			dependencies: [
 				"3A05164A9C113523"
 			]
@@ -248,7 +248,7 @@
 		{
 			id: "66420E691B6216FC"
 			x: 2.0d
-			y: 18.5d
+			y: 23.0d
 			optional: true
 			dependencies: [
 				"68B1341780D45FC8"
@@ -283,7 +283,7 @@
 		{
 			id: "574FC3862F29AA23"
 			x: 2.0d
-			y: 20.0d
+			y: 24.5d
 			dependencies: [
 				"68B1341780D45FC8"
 			]
@@ -317,7 +317,7 @@
 		{
 			id: "71A31138E5B796F4"
 			x: 4.0d
-			y: 20.0d
+			y: 24.5d
 			dependencies: [
 				"574FC3862F29AA23"
 			]
@@ -360,7 +360,7 @@
 		{
 			id: "49C18B6C77E30EB4"
 			x: 6.0d
-			y: 18.5d
+			y: 23.0d
 			shape: "hexagon"
 			size: 1.5d
 			optional: true
@@ -420,7 +420,7 @@
 		{
 			id: "77ED1272F1E7A428"
 			x: 10.0d
-			y: 18.0d
+			y: 22.5d
 			optional: true
 			dependencies: [
 				"7D4873404550BDD4"
@@ -664,11 +664,11 @@
 		}
 		{
 			id: "14A0BB33C07DFFB9"
-			x: 2.0d
-			y: 6.5d
+			x: 4.0d
+			y: 15.5d
 			optional: true
 			dependencies: [
-				"3A447C1F1CEAD738"
+				"35E65938210C21EF"
 			]
 			tasks: [
 				{
@@ -700,7 +700,7 @@
 		{
 			id: "0DB06BD8BCA91014"
 			x: 2.0d
-			y: 8.0d
+			y: 6.5d
 			optional: true
 			dependencies: [
 				"3A447C1F1CEAD738"
@@ -735,7 +735,7 @@
 		{
 			id: "7811592DAB04EC9B"
 			x: 2.0d
-			y: 9.5d
+			y: 8.0d
 			optional: true
 			dependencies: [
 				"3A447C1F1CEAD738"
@@ -781,7 +781,7 @@
 		{
 			id: "6CFF4538B44BB55A"
 			x: 2.0d
-			y: 11.0d
+			y: 9.5d
 			optional: true
 			dependencies: [
 				"3A447C1F1CEAD738"
@@ -824,7 +824,7 @@
 		{
 			id: "37A7AD6C2F962A4E"
 			x: 2.0d
-			y: 12.5d
+			y: 11.0d
 			optional: true
 			dependencies: [
 				"3A447C1F1CEAD738"
@@ -862,7 +862,7 @@
 		{
 			id: "16954838A76C1F73"
 			x: 2.0d
-			y: 17.0d
+			y: 12.5d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -899,11 +899,11 @@
 		}
 		{
 			id: "3FF906041B74EDD8"
-			x: 2.0d
-			y: 15.5d
+			x: 4.0d
+			y: 20.0d
 			optional: true
 			dependencies: [
-				"3A447C1F1CEAD738"
+				"698F574DC57BB03E"
 			]
 			tasks: [
 				{
@@ -924,6 +924,182 @@
 				}
 				{
 					id: "4CABC558B61F8341"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "35E65938210C21EF"
+			x: 2.0d
+			y: 14.0d
+			optional: true
+			dependencies: [
+				"3A447C1F1CEAD738"
+			]
+			tasks: [
+				{
+					id: "0A53A83290BFEDF7"
+					type: "item"
+					item: {
+						id: "deeperdarker:sculk_gleam"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "20FD50F3943D55A3"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6F9CF46FB6FBA0AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32856C975EB7A004"
+			x: 2.0d
+			y: 15.5d
+			optional: true
+			dependencies: [
+				"3A447C1F1CEAD738"
+			]
+			tasks: [
+				{
+					id: "03C2B364503FB849"
+					type: "item"
+					item: {
+						id: "deeperdarker:echo_soil"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "579429A9B88E5CE3"
+					type: "item"
+					item: {
+						id: "deeperdarker:blooming_moss_block"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "4951A2A1FD6EB7E2"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5B8E4FAACE8F3F43"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2637712205B68034"
+			x: 2.0d
+			y: 20.5d
+			optional: true
+			dependencies: [
+				"3A447C1F1CEAD738"
+			]
+			tasks: [
+				{
+					id: "11534180A6E65E04"
+					type: "item"
+					item: {
+						id: "deeperdarker:glowing_roots"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "4A5F1EA6201F134F"
+					type: "item"
+					item: {
+						id: "deeperdarker:sculk_vines"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "6F1B96F12281DD95"
+					type: "item"
+					item: {
+						id: "deeperdarker:sculk_tendrils"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "371714BEBCD07B3C"
+					type: "item"
+					item: {
+						id: "deeperdarker:gloomy_cactus"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "72A16B2A03171D2B"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "7DF4AF84D6C632AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "698F574DC57BB03E"
+			x: 2.0d
+			y: 18.5d
+			optional: true
+			dependencies: [
+				"3A447C1F1CEAD738"
+			]
+			tasks: [
+				{
+					id: "10CACE148D74364C"
+					type: "item"
+					item: {
+						id: "deeperdarker:grime_ball"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "47709FDB856891C6"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4C91190234C0E51A"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -955,13 +1131,13 @@
 			id: "3EB9A5226D5EFD25"
 			linked_quest: "7D4873404550BDD4"
 			x: -2.0d
-			y: 18.0d
+			y: 22.5d
 		}
 		{
 			id: "030F008F67BECA4E"
 			linked_quest: "3A05164A9C113523"
 			x: -2.0d
-			y: 20.0d
+			y: 24.5d
 		}
 	]
 }

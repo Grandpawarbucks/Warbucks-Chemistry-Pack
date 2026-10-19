@@ -6,7 +6,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
          "At the end of this chapter, matter itself opens up to you."], MAIN, [
     # --- the coke oven --------------------------------------------------------------------
     Q("t1_bricks", 0, 0, [item("minecraft:bricks", 32)], "A Kiln's Worth of Bricks", subtitle="The Coke Oven's shell", deps=["t0_pump"], xp=30, desc=[
-        "&6You remember smoke rising from a hill of earth, and what came out of it burning hotter than anything before.&r",
+        "&6Smoke rising from a hill of earth, and what came out of it burning hotter than anything before. That memory is older than any city.&r",
         "&eWhat:&r The Coke Oven is built from ordinary brick blocks: one ring of 8 for the controller, and more for its walls.",
         "&eChemistry:&r Firing clay drives out the water bound in its minerals and fuses the grains, turning soft mud into ceramic.",
         "&eHow:&r Smelt clay balls into bricks, then craft 4 bricks into a brick block.",
@@ -25,12 +25,18 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r Put the shell together and the controller comes to life.",
         "&eHow:&r Press R on the Coke Oven in JEI or open the MI guidebook to see the 3D layout: a 3x3x3 cube of brick blocks with the controller in one face. Swap wall bricks for hatches: item in, item out, steam in, and a fluid output for creosote.",
         "&eTip:&r Pipe steam from your boiler into the fluid input hatch. Click the checkmark once the controller shows it's formed."]),
+    Q("t1_fluid_out", 0, 0, [item("modern_industrialization:bronze_fluid_output_hatch")], "A Way Out for Tar", subtitle="A fluid output hatch for the Coke Oven",
+      deps=["t1_hatches"], xp=25, desc=[
+        "&eWhat:&r Coking coal also drives out a liquid. Without a fluid output hatch it has nowhere to go.",
+        "&eChemistry:&r The volatile part of coal leaves as gas and condenses into tar as it cools. Real coke works collect it, because coal tar is a feedstock, not waste.",
+        "&eHow:&r A bronze machine casing on top of a bronze tank. Swap one wall brick of the Coke Oven for it.",
+        "&eTip:&r Pipe it straight into a tank or a boiler so it never fills up."]),
     Q("t1_coke", 8, 0, [item("modern_industrialization:coke", 16)], "Coke", subtitle="Nearly pure carbon, burns hotter than coal", deps=["t1_coke_build"], xp=40, desc=[
         "&eWhat:&r Coke is exactly what a blast furnace needs: strong, porous, nearly pure carbon.",
         "&eChemistry:&r With the hydrogen, sulfur and tars baked out, what's left is a carbon skeleton that burns hot and clean.",
         "&eHow:&r Feed coal into the item input hatch. Each coal becomes 1 coke in 30 seconds.",
         "&eTip:&r Coal dust works too and comes out as coke dust, which saves a grinding step later."]),
-    Q("t1_creosote", 8, 2, [item("modern_industrialization:creosote_bucket")], "Byproduct: Creosote", subtitle="The tar driven out of coal", deps=["t1_coke_build"], xp=40, desc=[
+    Q("t1_creosote", 8, 2, [item("modern_industrialization:creosote_bucket")], "Byproduct: Creosote", subtitle="The tar driven out of coal", deps=["t1_coke_build", "t1_fluid_out"], xp=40, desc=[
         "&eWhat:&r Half the time, coking a coal also yields 500 mB of &ecreosote&r. Nothing is wasted in chemistry: creosote is a boiler fuel.",
         "&eChemistry:&r Coal-tar creosote is a mix of phenols, cresols and ring-shaped hydrocarbons, the same family of compounds that makes tar smell the way it does.",
         "&eHow:&r Pipe it out of the fluid output hatch into a tank, or straight into a boiler."]),
@@ -64,7 +70,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eTip:&r Some later recipes in this furnace need a steel hatch. Steel itself only needs bronze ones."]),
     Q("t1_steel", 18, 0, [item("modern_industrialization:steel_ingot", 16)], "Steel", subtitle="Iron and carbon in the right ratio",
       deps=["t1_blast", "t1_uncooked"], xp=100, size=1.5, items=[("modern_industrialization:steel_ingot", 16)], desc=[
-        "&6Iron that bends without breaking. You remember forging weapons for gods out of something very like this.&r",
+        "&6Iron that bends without breaking. You once forged weapons for gods out of something very like this.&r",
         "&eWhat:&r Iron with a small, controlled amount of carbon (about 0.2-2%) is &esteel&r: strong, tough, and the backbone of every machine to come.",
         "&eChemistry:&r Carbon atoms sit in the gaps between iron atoms and stop the layers sliding. Too much carbon and you get brittle cast iron. Chemistry is about the right ratio.",
         "&eHow:&r Put uncooked steel dust in the blast furnace's item input hatch. Each dust becomes 1 steel ingot in 30 seconds."]),
@@ -91,7 +97,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eTip:&r Right-click a pipe end with an empty hand to switch it between insert and extract."]),
 
     # --- power and the Alchemistry machines -----------------------------------------------
-    Q("t1_copper_gen", 20, 3, [item("generatorgalore:copper_generator")], "A Simple Generator", subtitle="Burn fuel, make Forge Energy", deps=["t1_steel"], xp=30, desc=[
+    Q("t1_copper_gen", 20, 3, [item("generatorgalore:copper_generator")], "A Simple Generator", subtitle="Burn fuel, make Forge Energy", deps=["t1_redstone"], xp=30, desc=[
         "&eWhat:&r Generator Galore's Copper Generator burns solid fuel into FE (Forge Energy) and pushes it into machines it touches.",
         "&eChemistry:&r Burning releases the chemical energy stored in carbon bonds as heat; the generator turns that heat into electricity.",
         "&eHow:&r Copper ingots around a furnace, with a block of redstone (check JEI)."]),
@@ -111,12 +117,13 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eHow:&r Pour water onto a lava source to make obsidian. Your &esteel paxel&r is diamond tier, so it mines obsidian; no diamond pickaxe needed. Diamonds are most common near the bottom of the world."]),
     Q("t1_dissolver", 25, -1, [item("alchemistry:dissolver")], "The Dissolver", subtitle="Break anything into its elements",
       deps=["t1_dissolver_parts", "t1_power"], xp=150, size=1.75, shape="hexagon", items=[("minecraft:experience_bottle", 16)], desc=[
-        "&6Your first divine gift returns.&r",
+        "&6Your first gift returns: look at anything and know what it's made of.&r",
         "&eWhat:&r The Dissolver breaks any item into the &eelements and compounds&r it's made of.",
         "&eHow:&r Steel plates, pistons, magma blocks and a Bronze Machine Casing (check JEI). Power it with FE, insert anything, and collect the elements.",
         "&eTip:&r Some things dissolve into compounds first. Put those back in to break them down further."]),
     Q("t1_combiner", 25, 1, [item("alchemistry:combiner")], "The Combiner", subtitle="Build items back up from elements",
       deps=["t1_combiner_parts", "t1_power"], xp=150, size=1.75, shape="hexagon", desc=[
+        "&6And the other half of the gift: what you can take apart, you can put back together.&r",
         "&eWhat:&r The reverse: arrange elements and the Combiner builds them back into items and blocks.",
         "&eHow:&r Steel plates, a diamond, obsidian, a piston and a Bronze Machine Casing (check JEI). It runs on FE too.",
         "&eTip:&r Its first real job comes in Chapter IV: sulfuric acid for the lead-acid redstone battery. Taking the world apart and rebuilding it is what this pack is about."]),
@@ -135,10 +142,15 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eHow:&r Cellulose gives carbon, hydrogen and oxygen; graphite gives carbon. Each iron ingot gives 16 iron.",
         "&eTip:&r The Periodic Table chapter tracks every element from here on."]),
     Q("t1_compound", 31, 0, [item("chemlib:water", 4)], "Your First Synthesis", subtitle="2 H + 1 O → H₂O", deps=["t1_elements"], xp=200, size=1.5, shape="hexagon", desc=[
-        "&6Two hydrogen, one oxygen, and a world's worth of oceans. You remember making the first ones.&r",
+        "&6Two hydrogen, one oxygen. You once filled oceans with this; today it's a few drops. It's a start, and it's yours.&r",
         "&eWhat:&r Build water from its elements in the Combiner. It's a trivial compound, but you made it from scratch. That's the point.",
         "&eChemistry:&r 2H₂ + O₂ → 2H₂O. Hydrogen and oxygen share electrons in covalent bonds, and the bent shape of the molecule makes it polar.",
         "&eHow:&r Pick water as the target in the Combiner's GUI, then supply 2 hydrogen and 1 oxygen per water."]),
+
+    Q("t1_redstone", 0, 0, [item("minecraft:redstone_block", 2)], "Blocks of Redstone", subtitle="One for each generator", deps=["t1_steel"], xp=25, desc=[
+        "&eWhat:&r The Copper Generator and its Iron upgrade each have a block of redstone in their recipe, so make two.",
+        "&eHow:&r 9 redstone dust make 1 block. Redstone ore sits deep, mostly below Y 16, and needs an iron pickaxe.",
+        "&eTip:&r Ultimine a redstone vein: one gives plenty, and lubricant needs dust too."]),
 
     # --- optional side quests -------------------------------------------------------------
     Q("t1_opt_coke_block", 8, -3, [item("modern_industrialization:coke_block", 4)], "Fuel Reserve", subtitle="Four blocks of coke", deps=["t1_coke"],
@@ -164,4 +176,26 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r A diamond dissolves into 128 graphite. Expensive, but it proves a point.",
         "&eChemistry:&r Diamond and graphite are both pure carbon, called &eallotropes&r. In diamond every atom bonds to four neighbours in 3D; in graphite, to three in flat sheets.",
         "&eTip:&r Don't dissolve your last diamond. You'll need them for machines."]),
+    Q("t1_opt_steel_hatches", 0, 0, [item("modern_industrialization:steel_item_input_hatch"), item("modern_industrialization:steel_item_output_hatch"),
+                                     item("modern_industrialization:steel_fluid_input_hatch")], "Steel Hatches", subtitle="One steel hatch makes a multiblock steel tier",
+      deps=["t1_steel_gear"], optional=True, tokens=1, xp=40, desc=[
+        "&eWhat:&r Steel hatches hold more than bronze ones, and a steam multiblock with at least one steel hatch is upgraded to steel tier: twice as fast, as long as the recipe stays within 4 EU/t.",
+        "&eHow:&r Each is a steel machine casing (8 steel plates around a steel gear) with a hopper or a steel tank on top (check JEI for the output versions).",
+        "&eTip:&r Swap one hatch on your Coke Oven and Steam Blast Furnace and both run at double speed."]),
+    Q("t1_opt_packer", 0, 0, [item("modern_industrialization:steel_packer"), item("modern_industrialization:steel_unpacker")], "Packer and Unpacker",
+      subtitle="Simple crafts, done by steam", deps=["t1_item_pipes"], optional=True, tokens=1, xp=40, desc=[
+        "&eWhat:&r The Packer does small crafts on its own: blocks, double ingots and pipes. The Unpacker takes blocks back apart. Both exist only in steel.",
+        "&eHow:&r A steel machine casing with bronze gears, fluid pipes and item pipes (check JEI; the Unpacker also needs bronze rods).",
+        "&eTip:&r Pipe ingots into the Packer and store your metal as blocks: nine times fewer slots."]),
+    Q("t1_opt_alloy_smelter", 0, 0, [item("extended_industrialization:steel_alloy_smelter")], "Steel Alloy Smelter", subtitle="Alloy ingots straight from nuggets",
+      deps=["t1_steel_gear"], optional=True, tokens=1, xp=40, desc=[
+        "&eWhat:&r An Extended Industrialization machine that melts metals together and pours alloy ingots directly: bronze, invar, cupronickel, electrum, battery alloy, brass and more.",
+        "&eChemistry:&r Alloying in the melt is how bronze was really made: liquid copper and tin mix atom by atom, then freeze together.",
+        "&eHow:&r Invar plates, a bronze rotor, fluid pipes and a steel machine casing (check JEI). Invar is iron and nickel; mix the dusts and smelt. Feed the smelter nuggets or tiny dusts.",
+        "&eTip:&r 27 copper and 9 tin nuggets make 4 bronze ingots: the same 3:1 ratio as the dust, with no mixing step."]),
+    Q("t1_opt_quarry", 0, 0, [item("modern_industrialization:steam_quarry"), item("modern_industrialization:bronze_drill", 4)], "The Steam Quarry",
+      subtitle="Ore from below the bottom of the world", deps=["t1_item_pipes"], optional=True, tokens=2, xp=75, desc=[
+        "&eWhat:&r A steam multiblock that wears out bronze drills to bring up ore from deeper than bedrock. Slow, but you never have to dig.",
+        "&eHow:&r The controller takes steel large plates, steel gears, item pipes, an invar rotary blade and a steel machine casing (check JEI for the shape and its ore table). Drills come 4 at a time from a bronze drill head, iron gears and pipes.",
+        "&eTip:&r It eats a lot of steel, so build it once your Steam Blast Furnace runs on its own. Quarry ore still obeys the 2x cap until acids."]),
 ])

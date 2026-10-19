@@ -8,12 +8,12 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
     # ---------------------------------------------------------------- main line: crude -> polymers
     Q("t5_oil", 0, 0, [item(MI + "oil_drilling_rig"), item(MI + "crude_oil_bucket")], "Black Gold", deps=["t4_mv"], xp=200,
       subtitle="Millions of years of sunlight, stored underground", desc=[
-        "&6You remember the world before people: forests that grew, died and sank, pressed into oil over ages you once watched pass.&r",
+        "&6Before there were people, you watched forests grow, fall and sink, and the ages press them into oil. Time to take some of that sunlight back.&r",
         "&eWhat:&r crude oil is a soup of hydrocarbons, from tiny gas molecules to long waxy chains.",
         "&eChemistry:&r hydrocarbons are just carbon and hydrogen (CₙH₂ₙ₊₂ and friends). Chain length decides whether one is a gas, a fuel or a tar.",
         "&eHow:&r put the Oil Drilling Rig in an MI Quarry over an oil-rich area (check JEI). It slowly wears out aluminum drills.",
         "&eTip:&r pipe the crude straight into a tank. You'll need a lot of it."]),
-    Q("t5_distill", 2, 0, [item(MI + "distillation_tower")], "Fractional Distillation", deps=["t5_oil"], xp=300, size=1.5,
+    Q("t5_distill", 2, 0, [item(MI + "distillation_tower")], "Fractional Distillation", deps=["t5_oil", "t5_pipe_casing"], xp=300, size=1.5,
       subtitle="The refinery of the pack", desc=[
         "&eWhat:&r the Distillation Tower is a multiblock that splits one fluid into several fractions at once.",
         "&eChemistry:&r heat the crude and each fraction boils off at its own temperature. Light molecules rise to the top, heavy ones stay low.",
@@ -91,7 +91,7 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eChemistry:&r sodium metal gives up its one outer electron very easily (it fizzes in water), which is what makes it a good battery material.",
         "&eHow:&r sodium dust from the Electrolyzer (2 salt dust → 1 sodium dust + chlorine), as in Electrochemistry. Then craft the battery (check JEI).",
         "&eTip:&r keep the chlorine. It's needed for HCl and, next chapter, PVC."]),
-    Q("t5_hv", 16, 0, [item(MI + "digital_circuit"), item(MI + "turbo_machine_hull")], "HV: Digital Circuits", deps=["t5_dcb", "t5_sodium"], xp=300, size=1.5,
+    Q("t5_hv", 16, 0, [item(MI + "digital_circuit"), item(MI + "turbo_machine_hull")], "HV: Digital Circuits", deps=["t5_dcb", "t5_sodium", "t5_gates"], xp=300, size=1.5,
       items=[(MI + "digital_circuit", 2)], subtitle="High Voltage, built on plastic", desc=[
         "&6Logic gates, clicking into place. You used to think this fast.&r",
         "&eWhat:&r digital circuits unlock HV machines, AE2, the Angel Ring and elite jetpack coils.",
@@ -116,7 +116,7 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eTip:&r the silicon is your MI silicon from the EBF. AE2's certus-to-silicon smelting is removed in this pack."]),
     Q("t5_ae2", 20, 0, [item("ae2:controller")], "The God's Archive", deps=["t5_inscriber", "t5_fluix"], xp=400, size=1.75, shape="hexagon",
       items=[("ae2:drive", 1)], subtitle="Your memory, rebuilt as a network", desc=[
-        "&6Everything you ever owned, known at once. You remember having a mind like that.&r",
+        "&6Everything you own, known at once and found in an instant. Your memory used to work like this; now it lives in a network you built.&r",
         "&eWhat:&r Applied Energistics 2 stores items as data and crafts on demand.",
         "&eHow:&r the ME Controller needs a digital circuit, an engineering processor, fluix and smooth sky stone.",
         "&eTip:&r Tom's Simple Storage was your early network. AE2 takes over from here (see the Applied Energistics page in Engineering)."]),
@@ -127,6 +127,7 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eTip:&r a few fluid cells beat a wall of tanks for small stocks of rare chemicals."]),
     Q("t5_twilight", 16, 3, [dim("twilightforest:twilight_forest")], "The Twilight Forest", deps=["t5_hv"], xp=300,
       subtitle="A realm of permanent dusk", desc=[
+        "&6A forest held forever at dusk. Even a god can get lost here, which is half the fun.&r",
         "&eWhat:&r a dimension of bosses, strange woods and unique metals (see the Twilight Forest page in Exploration).",
         "&eHow:&r dig a 2x2 pool of water ringed with flowers, stand in it, and throw in a diamond.",
         "&eTip:&r set a waystone near the portal before you explore."]),
@@ -142,7 +143,7 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eChemistry:&r benzene + ethylene → ethylbenzene (acid catalyst). Steam over iron then pulls off H₂ to give styrene, C₈H₈, exactly as in real plants.",
         "&eHow:&r Chemical Reactor: benzene + ethylene + a little HCl → ethylbenzene. Then ethylbenzene + steam + iron dust → styrene + hydrogen.",
         "&eTip:&r the hydrogen by-product can go straight back into hydrotreating."]),
-    Q("t5_sbr", 12, 2, [item(MI + "styrene_butadiene_rubber_bucket")], "Synthetic Rubber", deps=["t5_styrene"], xp=200,
+    Q("t5_sbr", 12, 2, [item(MI + "styrene_butadiene_rubber_bucket")], "Synthetic Rubber", deps=["t5_styrene", "t5_opt_butadiene"], xp=200,
       optional=True, tokens=1, subtitle="Optional: car-tyre rubber, made from oil", desc=[
         "&eWhat:&r styrene-butadiene rubber (SBR) is the rubber in most tyres. Here it makes rubber sheets by the stack.",
         "&eChemistry:&r styrene and butadiene polymerise together into one chain (a copolymer): stiff styrene parts, springy butadiene parts.",
@@ -174,4 +175,57 @@ CHAPTER = Chapter("t5", "VI. Petrochemistry", "modern_industrialization:polyethy
         "&eHow:&r keep the SBR line and Vacuum Freezer running until you have 256 sheets.",
         "&eWhat:&r four full stacks of rubber sheets, made the modern way.",
         "&eTip:&r one bucket of SBR is five freezer runs, so a single bucket gets you there."]),
+
+    # ---------------------------------------------------------------- ATM10-aligned additions (2026-10-19)
+    Q("t5_pipe_casing", 0, 0, [item(MI + "steel_machine_casing_pipe", 4)], "Pipe Casings", deps=["t5_oil"], xp=60,
+      subtitle="The tower's hollow core", desc=[
+        "&eWhat:&r steel pipe machine casings form the inside of the Distillation Tower, where the vapours rise.",
+        "&eHow:&r a steel machine casing wrapped in 6 steel curved plates gives 2 pipe casings (crafting table or Assembler).",
+        "&eTip:&r a taller tower needs more of them. Check the layout in JEI before you craft."]),
+    Q("t5_gates", 0, 0, [item(MI + "op_amp", 2), item(MI + "and_gate"), item(MI + "or_gate"), item(MI + "not_gate")], "Logic Gates", deps=["t5_dcb"], xp=150,
+      subtitle="AND, OR, NOT: the grammar of thought", desc=[
+        "&eWhat:&r every digital circuit needs one AND, one OR and one NOT gate, and every gate starts with an operational amplifier.",
+        "&eChemistry:&r a transistor is a switch with no moving parts. Wire a few together and they answer yes-or-no questions; wire millions and you have a computer.",
+        "&eHow:&r Assembler. Op amp: 4 resistors, 4 transistors, 1 diode. AND: 2 resistors, 1 op amp, 4 aluminum wire. OR: 2 op amps, 2 aluminum wire, 1 diode. NOT: 1 resistor, 1 op amp, 1 aluminum wire.",
+        "&eTip:&r set one Assembler per gate type. Digital circuits eat them by the dozen."]),
+    Q("t5_opt_distillery", 0, 0, [item(MI + "distillery")], "The Distillery", deps=["t5_oil"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: one fraction at a time", desc=[
+        "&eWhat:&r a single-block still that pulls just one fraction out of a fluid. Cheaper than the tower, slower and wasteful.",
+        "&eChemistry:&r a pot still works by boiling point too, but with only one stage it can't separate everything at once.",
+        "&eHow:&r LV machine hull, 2 large pumps, 2 electronic circuits, glass, a fluid pipe and electrum cable.",
+        "&eTip:&r good for a side fluid you only need a little of, like one fraction of cracked naphtha."]),
+    Q("t5_opt_crushed", 0, 0, [item(MI + "chromium_crushed_dust", 2), item(MI + "manganese_crushed_dust", 2)], "Chromium and Manganese Ores", deps=["t5_chromium"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: where the crushed dust comes from", desc=[
+        "&eWhat:&r the raw material for the chromium and manganese leaching lines.",
+        "&eChemistry:&r ruby is aluminium oxide coloured red by chromium, so it hides chromium. Iron ores usually carry a little manganese.",
+        "&eHow:&r Centrifuge: 6 ruby dust → 1 chromium crushed dust + 2 aluminum dust (ruby dust comes from centrifuging redstone). Centrifuge: 6 raw iron → 8 iron dust + 1 manganese crushed dust."]),
+    Q("t5_opt_casings", 0, 0, [item(MI + "heatproof_machine_casing", 4), item(MI + "frostproof_machine_casing", 4)], "Hot and Cold Casings", deps=["t5_freezer"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: invar for heat, aluminum for cold", desc=[
+        "&eWhat:&r heatproof casings wall in your Blast Furnace; frostproof casings wall in the Vacuum Freezer. The Heat Exchanger needs both.",
+        "&eChemistry:&r invar (iron with 36% nickel) barely expands when heated. Aluminium stays tough in the cold, where steel turns brittle.",
+        "&eHow:&r 8 invar plates + an invar gear, or 8 aluminum plates + an aluminum gear (Assembler or crafting table)."]),
+    Q("t5_opt_up_adv", 0, 0, [item(MI + "advanced_upgrade", 4)], "Advanced Upgrades", deps=["t5_pe"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: four basic upgrades, made better", desc=[
+        "&eWhat:&r a bigger EU/t boost per slot than basic upgrades.",
+        "&eHow:&r Assembler: 4 basic upgrades, 2 large motors, a large pump, an electronic circuit board and 1000 mB polyethylene → 4 advanced upgrades."]),
+    Q("t5_opt_cracked_light", 0, 0, [item(MI + "steam_cracked_light_fuel_bucket")], "Cracking Light Fuel", deps=["t5_crack"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: crack the fuel, not just the naphtha", desc=[
+        "&eWhat:&r light fuel can be steam-cracked too, and the cracked fuel distils into another mix of small molecules.",
+        "&eChemistry:&r cracking breaks long chains into short ones. Refineries crack whatever fraction the market wants less of into what it wants more of.",
+        "&eHow:&r steam + light fuel in the cracker (check JEI), then send it through the Distillation Tower."]),
+    Q("t5_opt_butadiene", 0, 0, [item(MI + "butadiene_bucket"), item(MI + "styrene_butadiene_bucket")], "Butadiene", deps=["t5_styrene"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: the springy half of synthetic rubber", desc=[
+        "&eWhat:&r butadiene (C₄H₆) is the second monomer of SBR rubber.",
+        "&eChemistry:&r two double bonds make it springy once polymerised. Before oil, Soviet plants made it from ethanol (the Lebedev process); MI can too.",
+        "&eHow:&r Chemical Reactor: 750 mB ethanol + a tiny aluminum dust, or distil it out of cracked naphtha or cracked fuels (check JEI). Then styrene + butadiene → styrene-butadiene."]),
+    Q("t5_opt_shale", 0, 0, [item(MI + "sulfuric_crude_oil_bucket")], "Shale Oil", deps=["t5_hydrotreat", "t5_ebf"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: sour crude and a breath of helium", desc=[
+        "&eWhat:&r the Oil Drilling Rig, fed stainless steel drills instead of aluminum ones, brings up shale oil. Distilled, it gives sour (sulfuric) crude, sulfuric naphtha and a little helium.",
+        "&eChemistry:&r sour crude is full of sulfur compounds. Hydrotreating strips them out with hydrogen, the same way your fuels are cleaned: 12 B sour crude + 2 B H₂ → 12 B crude oil + 2 B sulfuric acid.",
+        "&eTip:&r real helium is mined from natural gas wells, where it collects from uranium decay. Keep this helium; you'll want it later."]),
+    Q("t5_opt_array", 0, 0, [item("extended_industrialization:processing_array"), item(MI + "clean_stainless_steel_machine_casing", 2)], "Processing Array", deps=["t5_hv"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: many machines, one controller", desc=[
+        "&eWhat:&r an Extended Industrialization multiblock that holds a stack of identical machines and runs them as one.",
+        "&eHow:&r an Assembler, 4 robot arms, 2 digital circuits and 2 clean stainless steel casings (8 stainless plates + a stainless gear each). Check JEI for the layout and what it accepts.",
+        "&eTip:&r one array of 16 macerators beats 16 macerators on cables."]),
 ])

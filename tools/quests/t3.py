@@ -6,14 +6,32 @@ MI = "modern_industrialization:"
 CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_machine_hull",
         ["Electricity is the tool that splits compounds apart. First you have to make it, and build the circuits that use it."], MAIN, [
     # --- Raw materials ---
-    Q("t3_rubber", 0, -2, [item(MI + "rubber_sheet", 8)], "Rubber", deps=["t1_steel"], xp=40,
+    Q("t3_raw_oil", 0, 0, [item(MI + "raw_synthetic_oil_bucket")], "Oil from Coal", deps=["t1_steel"], xp=40,
+      subtitle="Coke dust and water, in the mixer", desc=[
+        "&6Lightning used to come when you called it. Now you'll have to build it a road, and the road starts in a coal pit.&r",
+        "&eWhat:&r Raw synthetic oil is the first step to rubber, and rubber is what keeps electricity in its wires.",
+        "&eChemistry:&r Hot carbon and steam react into syngas, C + H₂O → CO + H₂, and the Fischer-Tropsch process builds that up into longer hydrocarbon chains. Coal-to-oil really was done this way.",
+        "&eHow:&r In the Steam Mixer, 1 coke dust and 100 mB of water make 200 mB of raw synthetic oil. Fill a bucket from the mixer's output.",
+        "&eTip:&r Grind coke in the Steam Macerator for the dust. One coke dust is a fifth of a bucket of oil."]),
+    Q("t3_synth_oil", 0, 0, [item(MI + "synthetic_oil_bucket")], "Synthetic Oil", deps=["t3_raw_oil"], xp=40,
+      subtitle="Refined in the Steam Blast Furnace", desc=[
+        "&eWhat:&r Raw oil is a messy mixture. Heat refines it into synthetic oil, the input for rubber.",
+        "&eChemistry:&r Heating a crude hydrocarbon mix breaks up the unstable pieces and drives off the light ones, leaving a cleaner, more uniform oil.",
+        "&eHow:&r Pipe raw synthetic oil into a fluid input hatch on your Steam Blast Furnace: 100 mB in, 100 mB out. It needs a fluid output hatch too.",
+        "&eTip:&r A tank between mixer and furnace keeps both busy."]),
+    Q("t3_rubber", 0, -2, [item(MI + "rubber_sheet", 8)], "Rubber", deps=["t3_synth_oil"], xp=40,
       subtitle="Insulation, so current goes where you want", desc=[
-        "&6You remember lightning answering when you called it. Now you'll have to build it a road.&r",
         "&eWhat:&r rubber sheets insulate cables and form circuit boards. Here rubber is &esynthetic&r, made from coal, not tree sap.",
-        "&eChemistry:&r hot carbon and water make syngas (C + H₂O → CO + H₂), and the Fischer-Tropsch process builds that into oil-like hydrocarbons: coal-to-oil, as Germany did in the 1940s. Cross-linked with sulfur (&evulcanisation&r), the long chains become a tough, flexible insulator.",
-        "&eHow:&r Mixer: coke dust + water → raw synthetic oil. Blast Furnace: raw oil → synthetic oil. Mixer: synthetic oil + paper → 2 rubber sheets, or + sulfur dust → synthetic rubber fluid (12 sheets per paper). Check JEI.",
+        "&eChemistry:&r rubber is a polymer: long, tangled hydrocarbon chains. Cross-linked with sulfur (&evulcanisation&r), the chains become a tough, flexible insulator.",
+        "&eHow:&r Mixer: synthetic oil + paper → 2 rubber sheets, or + sulfur dust → synthetic rubber fluid (12 sheets per paper). Check JEI.",
         "&eTip:&r the sulfur route gives six times more sheets per oil, but its mixer needs more power (check JEI for sulfur dust sources)."]),
-    Q("t3_wire", 0, 0, [item(MI + "copper_wire", 8), item(MI + "tin_cable", 8)], "Wires and Cables", deps=["t1_steel"], xp=40,
+    Q("t3_wiremill", 0, 0, [item(MI + "steel_wiremill")], "Steel Wiremill", deps=["t3_casing"], xp=40,
+      subtitle="Pulls plates into wire", desc=[
+        "&eWhat:&r Copper wire can't be crafted by hand. The Wiremill draws plates into wire, and wire into fine wire.",
+        "&eChemistry:&r Metals are &eductile&r: their atoms slide past each other without the bonds breaking, so a plate can be pulled through a die into a thin wire.",
+        "&eHow:&r A steel machine casing with bronze gears, bronze rotors and fluid pipes (check JEI). It runs on steam like your other machines.",
+        "&eTip:&r 1 copper plate makes 2 wire. Keep it fed from your Steam Compressor."]),
+    Q("t3_wire", 0, 0, [item(MI + "copper_wire", 8), item(MI + "tin_cable", 8)], "Wires and Cables", deps=["t3_wiremill"], xp=40,
       subtitle="Copper conducts; rubber makes it a cable", desc=[
         "&eWhat:&r copper wire goes into every component. Tin cable carries LV power between machines.",
         "&eChemistry:&r copper's single outer electron moves freely between atoms, which is why it conducts so well.",
@@ -36,7 +54,12 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eWhat:&r capacitors store a small charge and smooth out the current.",
         "&eChemistry:&r two conductors (gold plates) separated by an insulator (rubber): charge builds up on each side.",
         "&eHow:&r gold plates, copper wire and a rubber sheet (see JEI)."]),
-    Q("t3_components", 2, 0, [item(MI + "resistor", 3)], "Resistor", deps=["t3_wire"], xp=30,
+    Q("t3_fine_wire", 0, 0, [item(MI + "copper_fine_wire", 8)], "Fine Copper Wire", deps=["t3_wire"], xp=25,
+      subtitle="Wire, drawn again", desc=[
+        "&eWhat:&r Thinner wire for small components. Resistors need it first.",
+        "&eChemistry:&r A thinner wire has more resistance: current has less metal to flow through. Useful when you want to limit current, not carry it.",
+        "&eHow:&r Put copper wire back into the Wiremill: 1 wire makes 4 fine wire."]),
+    Q("t3_components", 2, 0, [item(MI + "resistor", 3)], "Resistor", deps=["t3_fine_wire"], xp=30,
       subtitle="Limits the current through a circuit", desc=[
         "&eWhat:&r resistors limit current so the rest of the circuit doesn't burn out.",
         "&eChemistry:&r carbon conducts, but poorly. A pinch of coal dust between fine copper wires makes a carbon resistor.",
@@ -214,7 +237,7 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eTip:&r next chapter, water becomes hydrogen and oxygen. You'll want lots of it."]),
     Q("t3_spectrometer", 2, 5, [item("warbuckscore:spectrometer")], "The Spectrometer", deps=["t3_analog"], xp=60, optional=True, tokens=1,
       subtitle="Every element sings its own colour", desc=[
-        "&6You remember seeing the colours inside things, the light every element gives off.&r",
+        "&6Once you could see the colours inside things, the light every element gives off. This is a fair copy.&r",
         "&eWhat:&r a hand-held scanner (Warbucks Core, made for this pack). Right-click to read the ore signal in the loaded chunks around you.",
         "&eChemistry:&r heated atoms give off light only at certain wavelengths, an emission spectrum unique to each element. That's how helium was found in the Sun before anyone found it on Earth.",
         "&eHow:&r amethyst prism, steel plates, copper wire and an analog circuit (check JEI). It lists each element with its strength, direction, distance and depth.",

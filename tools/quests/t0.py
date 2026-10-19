@@ -41,7 +41,7 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eTip:&r The Steam Mixer later turns the same inputs into 4 bronze dust instead of 3."]),
     Q("t0_bronze", 8, 0, [item("modern_industrialization:bronze_ingot", 16)], "The First Alloy", subtitle="Humanity's first engineered material",
       deps=["t0_bronze_dust"], xp=50, size=1.5, desc=[
-        "&6Metal that never existed until a mind decided it should. You remember the feeling.&r",
+        "&6Metal that never existed until a mind decided it should. The feeling is an old friend.&r",
         "&eWhat:&r &eBronze&r is harder than either copper or tin alone, and it's the frame of your whole steam age.",
         "&eChemistry:&r An &ealloy&r is a mixture of metals. Its properties can beat its ingredients because the mixed atoms resist being pushed out of line.",
         "&eHow:&r Smelt bronze dust in any furnace."]),
@@ -168,4 +168,16 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eWhat:&r Mix 32 bronze dust in the Steam Mixer.",
         "&eChemistry:&r In real metallurgy, alloy ratios are measured by mass or by number of atoms. Getting the ratio right matters more than the amount.",
         "&eTip:&r Pipe the macerator's dust straight into the mixer and you'll never mix by hand again."]),
+    Q("t0_opt_coal_block", 0, 0, [item("minecraft:coal_block", 4)], "Coal by the Block", subtitle="Nine coal, one block, a long burn",
+      deps=["t0_boiler"], optional=True, tokens=1, xp=20, desc=[
+        "&eWhat:&r A block of coal holds 9 coal and burns as long as all nine, so one block keeps a boiler going far longer between refills.",
+        "&eChemistry:&r The energy is in the carbon, not the shape: packing coal tighter doesn't add heat, it just stores more of it in one slot.",
+        "&eHow:&r 9 coal in a crafting grid make 1 block.",
+        "&eTip:&r Feed boilers coal blocks through a hopper and you can leave them alone for a long time."]),
+    Q("t0_opt_diamond_hammer", 0, 0, [item("modern_industrialization:diamond_hammer")], "The Diamond Hammer", subtitle="Same slot, a much tougher head",
+      deps=["t0_iron_hammer", "t0_compressor"], optional=True, tokens=2, xp=40, desc=[
+        "&eWhat:&r A more durable hammer for the Forge Hammer's tool slot. It does the same jobs as the Iron Hammer and wears out far more slowly.",
+        "&eChemistry:&r Diamond is carbon locked into a rigid 3D lattice, which makes it the hardest natural material. Iron bends; diamond doesn't.",
+        "&eHow:&r The Steam Compressor presses 1 diamond into 1 diamond plate; 4 plates make a large plate. Then 5 large plates and 2 sticks, in the Iron Hammer's shape.",
+        "&eTip:&r That's 20 diamonds. Ore yields stay capped at 2x either way, so build it only if you're tired of crafting Iron Hammers."]),
 ])

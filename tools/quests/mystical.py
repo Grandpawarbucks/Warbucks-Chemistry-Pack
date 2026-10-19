@@ -1,6 +1,13 @@
 """Quest chapter: mystical (Mystical Agriculture). See tools/quests/STYLE.md."""
 from questlib import Q, Chapter, item, dim, tick, kill, anytag, anyof, MAIN, SIDE  # noqa: F401
 
+MA = "mysticalagriculture:"
+TIERS = ["inferium", "prudentium", "tertium", "imperium", "supremium"]
+ARMOR = [MA + t + "_" + p for t in TIERS + ["awakened_supremium"] for p in ("helmet", "chestplate", "leggings", "boots")]
+WEAPONS = [MA + t + "_" + w for t in TIERS + ["awakened_supremium"] for w in ("sword", "bow", "crossbow", "fishing_rod")]
+FARMLAND_UP = [MA + t + "_farmland" for t in TIERS[1:]]
+ACCEL_UP = [MA + t + "_growth_accelerator" for t in TIERS[1:] + ["awakened_supremium"]]
+
 CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infusion_altar",
         ["Resource crops, within the rules of chemistry."], SIDE, [
     # --- Essence tiers: the spine (y=0) --------------------------------------------------------
@@ -160,4 +167,76 @@ CHAPTER = Chapter("mystical", "Mystical Agriculture", "mysticalagriculture:infus
         "&eWhat:&r Mystical Agriculture seeds grow in Hopper Botany Pots, which harvest by themselves into a chest below.",
         "&eHow:&r put each pot on a hopper, pipe or chest, add dirt or farmland and a seed. Hold any MA seed in JEI to see its pot growth time.",
         "&eTip:&r a column of pots over one shared item pipe is a compact essence farm for every tier."]),
+
+    # --- ATM10-aligned additions (2026-10-19): altar parts, upgrades, gear, machines --------------
+    Q("ma_pedestals", 0, 0, [item(MA + "infusion_pedestal", 8)], "Infusion Pedestals", deps=["f_altar"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: a full ring around the altar", desc=[
+        "&eWhat:&r the altar takes its eight side ingredients from the pedestals around it. Every seed recipe uses all eight.",
+        "&eHow:&r each pedestal is gold, red wool and stone (check JEI). Place them as JEI shows around the altar.",
+        "&eTip:&r a hopper or pipe into the altar's centre makes repeat seeds easier."]),
+    Q("ma_farmland_up", 0, 0, [anyof(FARMLAND_UP, 8)], "Better Farmland", deps=["ma_farmland", "f_prudentium"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: upgrade the soil under your inferium", desc=[
+        "&eWhat:&r higher-tier farmland makes inferium crops drop more essence: prudentium, tertium, imperium or supremium.",
+        "&eHow:&r one essence of the tier plus farmland (shapeless), or till dirt with a hoe and the essence.",
+        "&eTip:&r it only boosts inferium crops; resource crops grow the same on any farmland."]),
+    Q("ma_accel_up", 0, 0, [anyof(ACCEL_UP, 4)], "Stronger Accelerators", deps=["f_accelerator", "f_prudentium"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: faster growth from below", desc=[
+        "&eWhat:&r higher-tier growth accelerators reach further and tick crops more often.",
+        "&eHow:&r essence of the tier around stone and that tier's gemstone (makes 3; check JEI).",
+        "&eTip:&r stack them in a column under the crop; each tier adds range."]),
+    Q("ma_gear", 0, 0, [anyof(ARMOR)], "Essence Armor", deps=["ma_ingot"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: armor grown from a field", desc=[
+        "&eWhat:&r Mystical Agriculture armor in six tiers, from inferium to awakened supremium. Higher tiers hold augments.",
+        "&eHow:&r a diamond armor piece with two ingots and two gemstones of the tier (it keeps the item's enchantments). Each tier upgrades the last.",
+        "&eTip:&r higher tiers also take augments; see the Augments quest."]),
+    Q("ma_weapons", 0, 0, [anyof(WEAPONS)], "Essence Weapons", deps=["ma_ingot"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: swords, bows and a fishing rod", desc=[
+        "&eWhat:&r essence swords, bows, crossbows and fishing rods, upgraded tier by tier like the armor.",
+        "&eHow:&r the diamond (or plain) item with two ingots and two gemstones of the tier (check JEI).",
+        "&eTip:&r a sword with the Mystical Enlightenment enchantment can collect Cognizant Dust from bosses."]),
+    Q("ma_augments", 0, 0, [item(MA + "tinkering_table"), item(MA + "unattuned_augment")], "Augments", deps=["ma_gear", "ma_soulium"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: add powers to essence gear", desc=[
+        "&eWhat:&r augments add effects to essence tools and armor (speed, night vision, mining area and more). The Tinkering Table fits them.",
+        "&eHow:&r the table is stone and soulium dust. An Unattuned Augment is prosperity shards and iron; attune it on the altar (check JEI).",
+        "&eTip:&r higher gear tiers have more augment slots."]),
+    Q("ma_reprocessor", 0, 0, [item(MA + "seed_reprocessor")], "Seed Reprocessor", deps=["ma_frame"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: spare seeds back into essence", desc=[
+        "&eWhat:&r grinds surplus resource seeds back into the essence they're made of, powered by FE.",
+        "&eHow:&r a machine frame with soulium ingots, iron and 2 iron hoes.",
+        "&eTip:&r feed it the extra seeds from a pot farm and nothing goes to waste."]),
+    Q("ma_furnace", 0, 0, [item(MA + "furnace")], "Essence Furnace", deps=["ma_frame"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: an electric furnace", desc=[
+        "&eWhat:&r a powered furnace that smelts with FE instead of burning fuel.",
+        "&eChemistry:&r an electric furnace heats by resistance: current through a wire, P = I²R. No combustion, no CO₂ at the furnace.",
+        "&eHow:&r a machine frame with iron, prosperity ingots and 2 furnaces."]),
+    Q("ma_enchanter", 0, 0, [item(MA + "enchanter")], "Essence Enchanter", deps=["ma_soulium"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: enchant with essence, not luck", desc=[
+        "&eWhat:&r applies the enchantment you pick, paid for with experience essence plus an item for each enchantment (check JEI for the costs).",
+        "&eHow:&r an enchanting table on a soulium ingot over 3 soulstone.",
+        "&eTip:&r it's the easy way to put Mystical Enlightenment on a sword."]),
+    Q("ma_capsule", 0, 0, [item(MA + "experience_capsule")], "Experience Capsule", deps=["ma_jar"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: bottle your levels", desc=[
+        "&eWhat:&r stores experience points picked up while it's in your inventory, to spend later.",
+        "&eHow:&r 2 soulium ingots and 2 soul glass."]),
+    Q("ma_spawner", 0, 0, [item(MA + "soulium_spawner")], "Soulium Spawner", deps=["ma_frame", "ma_souls"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: mobs from essence", desc=[
+        "&eWhat:&r a powered spawner that turns mob essence into living mobs (JEI's Soulium Spawner page lists what each costs).",
+        "&eHow:&r a machine frame with iron, soulium ingots and 2 wither skeleton skulls.",
+        "&eTip:&r pair it with a mob grinder for drops crops can't grow, like XP."]),
+    Q("ma_awaken_parts", 0, 0, [item(MA + "awakening_pedestal", 4), item(MA + "essence_vessel", 4)], "Awakening Rig", deps=["f_supremium", "ma_soulium"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: pedestals and vessels for the altar", desc=[
+        "&eWhat:&r the Awakening Altar is fed by 4 Awakening Pedestals and 4 Essence Vessels holding air, earth, water and fire essence.",
+        "&eHow:&r both are gold and soulstone, with orange wool (pedestal) or glass (vessel). JEI shows the layout.",
+        "&eTip:&r fill the vessels before you start; awakening drains a lot of elemental essence."]),
+    Q("ma_witherproof", 0, 0, [item(MA + "witherproof_bricks", 16)], "Witherproof Bricks", deps=["f_supremium", "ma_soulium"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: an arena the Wither can't break", desc=[
+        "&eWhat:&r bricks the Wither's skulls can't destroy: build a box and fight it on your terms.",
+        "&eHow:&r a witherproof block is soulstone in wither skeleton essence (a tier 5 crop); 4 blocks make 4 bricks.",
+        "&eTip:&r the Seed of a New World needs Nether Stars, so a safe Wither arena pays for itself."]),
+    Q("ma_cognizant", 0, 0, [item(MA + "cognizant_dust")], "Cognizant Dust", deps=["ma_weapons", "ma_enchanter"], xp=200,
+      optional=True, tokens=2, subtitle="Optional: knowledge from a boss", desc=[
+        "&6You remember learning from the strongest things you fought. Some of it is still on the floor.&r",
+        "&eWhat:&r Cognizant Dust drops from the Wither and the Ender Dragon when they die to an essence weapon with Mystical Enlightenment.",
+        "&eHow:&r enchant an essence sword in the Essence Enchanter, then land the last hit on a boss with it.",
+        "&eTip:&r it goes into awakened supremium: JEI shows the awakening recipe."]),
 ], links=[("gs_iron", -3, 0), ("t3_analog", 8, 1.5), ("t4_mv", 10, 1.5), ("t5_hv", 12, 1.5), ("f_pot", 6, 7.5)])

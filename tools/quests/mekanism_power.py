@@ -78,6 +78,30 @@ CHAPTER = Chapter("mekanism_power", "Mekanism: Power and Beyond", "mekanismgener
         "&eHow:&r a fusion reactor frame surrounded by redstone; swap one frame of the shell for it and pick the mode in its GUI.",
         "&eTip:&r wire \"ready for ignition\" to your laser amplifier to relight the reactor automatically."]),
 
+    # --- Bigger energy storage (ATM10-alignment round, 2026-10-19) -----------------------------
+    Q("mkp_induction_adv", 0, 0, [item(MEK + "advanced_induction_cell"), item(MEK + "advanced_induction_provider")], "Advanced Induction",
+      subtitle="More storage, faster in and out", deps=["mkp_intro", "pw_induction", "mk2_adv_circuit"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r cells set how much an Induction Matrix stores; providers set how fast power goes in and out. Swap basic ones for advanced and the same shell does far more.",
+        "&eChemistry:&r the basic cells are lithium: Li has the lowest density of any metal and gives up its electron easily, which is why real batteries use it.",
+        "&eHow:&r cell: four basic cells around an Advanced Energy Cube, with Energy Tablets in the corners. Provider: four basic providers around an Advanced Energy Cube, with &eAdvanced Control Circuits&r (MV). Check JEI.",
+        "&eTip:&r cells and providers go inside the matrix, not in its walls."]),
+    Q("mkp_induction_elite", 0, 0, [item(MEK + "elite_induction_cell"), item(MEK + "elite_induction_provider")], "Elite Induction",
+      subtitle="The next tier inside the matrix", deps=["mkp_induction_adv", "mk2_elite_circuit"], xp=200, optional=True, tokens=1, desc=[
+        "&eWhat:&r elite cells and providers, each again several times bigger than the advanced ones.",
+        "&eHow:&r the same pattern one tier up: advanced cells around an Elite Energy Cube; advanced providers with &eElite Control Circuits&r (HV). Check JEI.",
+        "&eTip:&r a fission or fusion plant needs a big buffer for when the turbine spins down. Size the providers to your turbine's output."]),
+    Q("mkp_ult_cube", 0, 0, [item(MEK + "ultimate_energy_cube")], "Ultimate Energy Cube",
+      subtitle="The biggest single-block battery", deps=["mkp_intro", "mk2_atomic"], xp=150, optional=True, tokens=1, desc=[
+        "&eWhat:&r the top Energy Cube: a lot of storage in one block you can pick up and carry, contents and all.",
+        "&eHow:&r an Elite Energy Cube (Reinforced Alloy, gold) upgraded again with Atomic Alloy, Energy Tablets and diamonds (check JEI).",
+        "&eTip:&r it's also the core of the ultimate induction cell and provider."]),
+    Q("mkp_induction_ult", 0, 0, [item(MEK + "ultimate_induction_cell"), item(MEK + "ultimate_induction_provider")], "Challenge: Ultimate Induction",
+      subtitle="A power bank for a star", deps=["mkp_induction_elite", "mkp_ult_cube", "mk2_ult_circuit"], xp=400, optional=True, tokens=2, desc=[
+        "&6You remember holding the energy of a sun and not noticing the weight. This is close.&r",
+        "&eWhat:&r the top Induction Matrix parts. A matrix full of these stores more than any other block in base Mekanism.",
+        "&eHow:&r elite cells or providers around an Ultimate Energy Cube, with Ultimate Control Circuits for the provider (check JEI).",
+        "&eTip:&r a full matrix lets a fusion reactor keep your base running while you refuel or rebuild it."]),
+
     # --- Mekanism: More Machine (y = 22.5 .. 25.5) ----------------------------------------------
     Q("mk2_mm_cnc", 0, 24, [anyof([MM + "cnc_stamper", MM + "cnc_lathe", MM + "cnc_rolling_mill"])], "CNC Machines", subtitle="More Machine: stamp, turn and roll", deps=["mkp_intro", "t3_mekcircuit"], xp=80, desc=[
         "&eWhat:&r Mekanism: More Machine adds CNC machines: the Stamper presses plates, the Lathe turns rods, the Rolling Mill rolls wire.",

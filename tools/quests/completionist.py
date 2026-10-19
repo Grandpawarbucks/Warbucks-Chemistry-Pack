@@ -144,7 +144,7 @@ CHAPTER = Chapter("completionist", "Completionist", "minecraft:white_wool",
       subtitle="Uranium, tungsten, osmium and fluorite", desc=[
         "&eWhat:&r the deep ores, as blocks.",
         "&eChemistry:&r uranium ore is uraninite (UO₂); tungsten comes from wolframite and scheelite (CaWO₄); fluorite is calcium fluoride, CaF₂, the source of the hydrofluoric acid you'll need for uranium.",
-        "&eHow:&r Silk Touch. Uranium and tungsten deposits sit deep, around Y −56 to −24.",
+        "&eHow:&r Silk Touch. Uranium and tungsten deposits sit deep, around Y −56 to −24. Tungsten ore needs an iron pickaxe or better in this pack.",
         "&eTip:&r Mekanism's radiation comes from its nuclear fluids and waste later on. Hazmat gear is in Tools and Comfort."]),
     Q("cp_ore_hoard", 8, 4, [anytag("c:ores", 256)], "Ore Hoarder", deps=["cp_ores_mi"], xp=150,
       optional=True, tokens=1, subtitle="256 ore blocks of any kind", desc=[

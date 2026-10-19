@@ -221,6 +221,61 @@ CHAPTER = Chapter("harvest", "Tools, Armour and Harvest Tiers", "minecraft:diamo
         "&eChemistry:&r heat tungsten powder with carbon at 1400-2000 °C: W + C → WC. Tungsten carbide is about Mohs 9 and keeps its hardness when red hot. Pressed with 6-12% cobalt as a binder it becomes 'cemented carbide', hard and tough at once.",
         "&eHow:&r macerate raw tungsten into 2 tungsten dust.",
         "&eTip:&r tungsten carbide is about twice as dense as steel. Pick up a carbide drill bit and it feels wrong."]),
+
+    # --- weapons and the rest of the armour (ATM10-aligned round, 2026-10-19) --------------------
+    Q("hv_opt_wood_set", 0, 0, [item(MC + "wooden_sword"), item(MC + "wooden_axe"), item(MC + "wooden_shovel")], "Wooden Tools",
+      deps=["hv_intro"], xp=10, optional=True, tokens=1, subtitle="Optional: the oldest composite you own", desc=[
+        "&eWhat:&r the full wooden set: weak, cheap, and a fine fuel once it wears out.",
+        "&eChemistry:&r wood is a natural composite: long cellulose fibres, (C₆H₁₀O₅)ₙ chains of glucose, glued together by lignin. It's strong along the grain and splits easily across it.",
+        "&eHow:&r planks and sticks, shaped like any tool.",
+        "&eTip:&r a broken wooden tool burns in a furnace for as long as a plank. Nothing goes to waste."]),
+    Q("hv_gold_sword", 0, 0, [item(MC + "gold_ingot", 8), item(MC + "golden_sword")], "Soft Gold", deps=["hv_iron"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: a ceremonial blade", desc=[
+        "&eWhat:&r a golden sword hits about as hard as a wooden one and wears out faster. Piglins like it, though.",
+        "&eChemistry:&r gold is the most malleable metal: one gram can be beaten into a leaf about a square metre wide and a few hundred atoms thick. Great for leaf, useless for an edge.",
+        "&eHow:&r smelt 8 gold ingots from raw gold (needs an iron-tier pick), then craft the sword.",
+        "&eTip:&r wearing one piece of gold armour keeps most piglins calm in the Nether."]),
+    Q("hv_diamond_kit", 0, 0, [item(MC + "diamond_sword"), item(MC + "diamond_shovel")], "Diamond Sword and Shovel", deps=["hv_diamond_pick"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: rounding out the diamond kit", desc=[
+        "&eWhat:&r the diamond sword is the vanilla weapon to beat until netherite; the shovel digs sand and gravel at speed.",
+        "&eChemistry:&r real diamond blades exist: diamond scalpels cut with an edge only a few nanometres wide. They're kept for eye surgery because one sideways knock can chip them.",
+        "&eHow:&r two diamonds and a stick for the sword, one diamond and two sticks for the shovel.",
+        "&eTip:&r enchant before you upgrade to netherite: the enchantments carry over."]),
+    Q("hv_netherite_sword", 0, 0, [item(MC + "netherite_sword")], "Netherite Sword", deps=["hv_netherite", "hv_diamond_kit"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: upgrade the blade too", desc=[
+        "&eWhat:&r the strongest vanilla sword, and it can't burn up in lava.",
+        "&eHow:&r smithing table: netherite upgrade template + diamond sword + netherite ingot.",
+        "&eTip:&r copy a template with 7 diamonds and a netherrack first, so the sword doesn't cost your last one."]),
+    Q("hv_mek_swords", 0, 0, [anyof([MT + "bronze_sword", MT + "lapis_lazuli_sword", MT + "osmium_sword", MT + "steel_sword",
+                                     MT + "refined_glowstone_sword", MT + "refined_obsidian_sword"])],
+      "Mekanism Blades", deps=["hv_bronze"], xp=30, optional=True, tokens=1, subtitle="Optional: a sword from your own alloys", desc=[
+        "&eWhat:&r Mekanism Tools makes a sword in every one of its metals: bronze, lapis, osmium, steel, refined glowstone and refined obsidian. Any one counts.",
+        "&eChemistry:&r a good sword is a compromise. Hard steel keeps an edge; soft steel bends instead of snapping. Japanese smiths welded both into one blade and quenched it with clay on the spine.",
+        "&eHow:&r two ingots (or gems) of the metal and a stick, like any sword (check JEI).",
+        "&eTip:&r refined obsidian is the best of the set; steel is the cheapest one worth carrying."]),
+    Q("hv_lapis_armor", 0, 0, vset("lapis_lazuli", MT), "Lapis Armour", deps=["hv_lapis_tools"], xp=30, optional=True, tokens=1,
+      subtitle="Optional: blue and very enchantable", desc=[
+        "&eWhat:&r Mekanism Tools lapis armour protects about as well as chainmail but takes enchantments very well.",
+        "&eChemistry:&r the blue of lapis is the S₃⁻ radical ion caged in lazurite. Grind it, wash out the grey minerals, and you have ultramarine pigment.",
+        "&eHow:&r 24 lapis lazuli, shaped like any armour set (check JEI).",
+        "&eTip:&r a cheap set to practise enchanting on while your diamonds go into machines."]),
+    Q("hv_leather_set", 0, 0, [item(MC + "leather_helmet"), item(MC + "leather_leggings")], "A Full Leather Set", deps=["gs_leather"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: cap and trousers to match", desc=[
+        "&eWhat:&r the helmet and leggings that finish the leather set from Getting Started. Leather can be dyed any colour.",
+        "&eChemistry:&r leather is tanned hide: tannins (plant polyphenols) or chromium(III) salts cross-link the collagen protein chains, so the skin stops rotting and stays flexible.",
+        "&eHow:&r 5 leather for the cap, 7 for the leggings. Craft a piece with dye to colour it; a water cauldron washes the dye out.",
+        "&eTip:&r leather boots let you walk on powder snow without sinking."]),
+    Q("hv_wolf_armor", 0, 0, [item(MC + "wolf_armor"), item(MC + "armadillo_scute", 2)], "Armour for a Friend", deps=["hv_leather_set"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: armadillo scutes for your wolf", desc=[
+        "&eWhat:&r wolf armour soaks up damage for a tamed wolf. When it cracks, repair it with scutes.",
+        "&eChemistry:&r scutes are keratin plates, the same protein as hair, horn and nails. Disulfide (S–S) bridges between the chains make keratin tough; that's also why burning hair smells of sulfur.",
+        "&eHow:&r brush an armadillo (savanna and badlands) with a brush for scutes. 6 scutes make the armour; keep 2 for repairs.",
+        "&eTip:&r right-click a tamed wolf with the armour to put it on. Dye it if you like."]),
+    Q("hv_horse_armor", 0, 0, [anyof([MC + "leather_horse_armor", MC + "iron_horse_armor", MC + "golden_horse_armor", MC + "diamond_horse_armor"])],
+      "Barding", deps=["hv_leather_set"], xp=20, optional=True, tokens=1, subtitle="Optional: armour for your horse", desc=[
+        "&eWhat:&r horse armour, any kind. Leather horse armour can be crafted and dyed; iron, gold and diamond only turn up in chests.",
+        "&eHow:&r 7 leather for the leather one, or loot dungeons, temples, villages and Ancient Cities for the metal ones.",
+        "&eTip:&r Farmer's Delight Horse Feed heals a horse and speeds it up (Farming page)."]),
 ], links=[("gs_stone", 2, -6), ("gs_ironpick", 6, -6), ("gs_paxel", 6, -8), ("gs_silent", 8, -8), ("gs_opt_paxels", 4, -8),
           ("gs_leather", 2, 4), ("gs_armor", 6, 2), ("gs_opt_chain", 6, 6), ("gs_opt_gold", 4, 4),
           ("t0_opt_paxel", 4, -4), ("t0_opt_drill", 10, -6), ("t1_steel_paxel", 8, -6), ("t2_obsidian", 8, 6), ("t2_debris", 10, 2),

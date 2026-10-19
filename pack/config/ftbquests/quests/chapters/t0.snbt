@@ -501,7 +501,7 @@
 		{
 			id: "0653BB5BC79C83EC"
 			x: 6.0d
-			y: -2.0d
+			y: -4.0d
 			dependencies: [
 				"2574A917B43992A6"
 			]
@@ -1247,12 +1247,83 @@
 				}
 			]
 		}
+		{
+			id: "7D13FE6437607301"
+			x: 22.0d
+			y: 10.5d
+			optional: true
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "11E9C4C0D237F65F"
+					type: "item"
+					item: {
+						id: "minecraft:coal_block"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "17038BEDAC8C3B75"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "1CA272746BE9D4AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "54BC3303179D3C2D"
+			x: 24.0d
+			y: -1.5d
+			optional: true
+			dependencies: [
+				"0653BB5BC79C83EC"
+				"0DCF15D0DDB80EE0"
+			]
+			tasks: [
+				{
+					id: "6D11A7B716EB25F2"
+					type: "item"
+					item: {
+						id: "modern_industrialization:diamond_hammer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "15AACE21199F3A00"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0E3C60EC4CA2254E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
 	]
 	images: [
 		{
 			id: "52B1F018FF412061"
 			x: 0.5d
-			y: -4.0d
+			y: -6.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d

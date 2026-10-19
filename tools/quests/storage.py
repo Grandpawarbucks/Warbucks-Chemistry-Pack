@@ -268,5 +268,186 @@ CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:ba
         "&eHow:&r each kit is the next tier's materials around a block (check JEI). Right-click the placed furnace with it.",
         "&eTip:&r kits are cheaper than crafting a new furnace when you have a whole row to upgrade."]),
 
+    # ===== ATM10-aligned round (2026-10-19): the rest of each storage mod, grouped by job =====
+    # --- vanilla containers and rails -----------------------------------------------------------
+    Q("sto_vanilla", 0, 0, [item("minecraft:barrel", 2), item("minecraft:trapped_chest")], "Barrels and Trapped Chests", deps=["gs_chest"], xp=10,
+      optional=True, tokens=1, subtitle="Optional: the plain vanilla containers", desc=[
+        "&eWhat:&r a barrel holds as much as a chest and opens even with a block on top. A trapped chest gives a redstone signal while someone has it open.",
+        "&eHow:&r barrel: planks and slabs. Trapped chest: a chest and a tripwire hook (check JEI).",
+        "&eTip:&r a trapped chest next to a door makes a cheap 'is anyone in my lab?' alarm."]),
+    Q("sto_ender_chest", 0, 0, [item("minecraft:ender_chest")], "Ender Chest", deps=["sto_vanilla", "t2_obsidian"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: one private inventory, everywhere", desc=[
+        "&eWhat:&r every Ender Chest you open shows the same 27 slots, and only you can see yours.",
+        "&eHow:&r 8 obsidian around an eye of ender.",
+        "&eTip:&r keep spare tools and a water bucket in it; any Ender Chest becomes an emergency kit."]),
+    Q("sto_hopper", 0, 0, [item("minecraft:hopper", 2)], "Hoppers", deps=["sto_vanilla", "gs_iron"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: the first item mover", desc=[
+        "&eWhat:&r a hopper pulls items from the container above it and pushes them into the one it points at.",
+        "&eHow:&r 5 iron ingots around a chest (Utilitarian also has a log recipe; check JEI).",
+        "&eTip:&r a redstone signal locks a hopper, which makes simple item gates."]),
+    Q("sto_rails", 0, 0, [item("minecraft:rail", 32), item("minecraft:minecart"), item("minecraft:chest_minecart"), item("minecraft:hopper_minecart")],
+      "On Rails", deps=["sto_hopper"], xp=40, optional=True, tokens=1, subtitle="Optional: haul ore by cart", desc=[
+        "&eWhat:&r minecarts move players and items along rails. A chest minecart carries cargo; a hopper minecart loads and unloads it.",
+        "&eChemistry:&r steel rails on steel wheels have very low rolling resistance, which is why one locomotive can pull thousands of tonnes.",
+        "&eHow:&r rails from iron and sticks; carts from 5 iron; combine a cart with a chest or a hopper (check JEI). Add powered rails to keep them moving.",
+        "&eTip:&r a hopper under the track at your base empties every chest cart that rolls over it."]),
+
+    # --- Functional Storage, the rest -----------------------------------------------------------
+    Q("sto_fs_simple", 0, 0, [item("functionalstorage:simple_compacting_drawer")], "Simple Compacting Drawer", deps=["s_fs_compacting"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: two forms instead of three", desc=[
+        "&eWhat:&r the simple version handles two forms of one item (ingot and block, say) instead of three.",
+        "&eHow:&r check JEI. Insert the item you want it to track.",
+        "&eTip:&r good for things with no nugget form, like coal and coal blocks."]),
+    Q("sto_fs_tools", 0, 0, [item("functionalstorage:configuration_tool"), item("functionalstorage:linking_tool")], "Drawer Tools", deps=["s_fs_controller"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: lock, link and tidy your drawers", desc=[
+        "&eWhat:&r the Configuration Tool locks drawers to their item and changes how the front displays. The Linking Tool adds far-away drawers to a controller.",
+        "&eHow:&r check JEI for both. Sneak-use cycles the tool's mode; the mode shows on the item.",
+        "&eTip:&r lock every drawer in a sorting wall, so an empty drawer still only accepts its own item."]),
+    Q("sto_fs_access", 0, 0, [item("functionalstorage:controller_extension")], "Controller Access Point", deps=["sto_fs_tools"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: a second door into your drawer wall", desc=[
+        "&eWhat:&r an access point works like the controller itself: pipes and players can use the whole drawer network through it.",
+        "&eHow:&r check JEI, then link it with the Linking Tool.",
+        "&eTip:&r one access point by the smelters, one by the crafting bench."]),
+    Q("sto_fs_tiers", 0, 0, [item("functionalstorage:copper_upgrade"), item("functionalstorage:gold_upgrade")], "Copper and Gold Upgrades", deps=["s_fs_upgrade"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: the cheap capacity steps", desc=[
+        "&eWhat:&r the first two capacity upgrades, before diamond. Each one multiplies how much a drawer holds.",
+        "&eChemistry:&r copper (8.96 g/cm³) and gold (19.3 g/cm³) are both soft and malleable, which is why they were the first metals people worked.",
+        "&eHow:&r copper: copper ingots and blocks, chests and a drawer. Gold builds on copper (check JEI)."]),
+    Q("sto_fs_netherite", 0, 0, [item("functionalstorage:netherite_upgrade")], "Netherite Drawer Upgrade", deps=["sto_fs_tiers", "t2_debris"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: the biggest drawer there is", desc=[
+        "&eWhat:&r the top drawer upgrade. One drawer holds an absurd amount of a single item.",
+        "&eHow:&r smithing table: netherite upgrade template + diamond upgrade + netherite ingot.",
+        "&eTip:&r save it for cobblestone, raw ore or dust, the things you have tens of thousands of."]),
+    Q("sto_fs_void", 0, 0, [item("functionalstorage:void_upgrade"), item("functionalstorage:iron_downgrade")], "Void and Downgrade", deps=["s_fs_upgrade"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: delete the overflow, or hold less", desc=[
+        "&eWhat:&r the Void Upgrade destroys whatever doesn't fit, so a full drawer never backs up a pipe. The Iron Downgrade limits a drawer to one stack per slot.",
+        "&eHow:&r both are drawer upgrades (check JEI).",
+        "&eTip:&r a void-upgraded cobblestone drawer at the end of a quarry line keeps everything flowing."]),
+
+    # --- Sophisticated Storage tiers ------------------------------------------------------------
+    Q("sto_ss_base", 0, 0, [item("sophisticatedstorage:upgrade_base", 2)], "Upgrade Base", deps=["s_barrel"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: the blank every upgrade starts from", desc=[
+        "&eWhat:&r every Sophisticated Storage upgrade card starts from an upgrade base.",
+        "&eHow:&r planks and iron ingots in a checker pattern. The backpack mod has its own base; JEI shows both.",
+        "&eTip:&r make a few at a time; you'll want stack, hopper and compacting upgrades soon."]),
+    Q("sto_ss_copper", 0, 0, [item("sophisticatedstorage:basic_to_copper_tier_upgrade")], "Copper Tier", deps=["s_ss_tier"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: the first small step up", desc=[
+        "&eWhat:&r the copper tier sits between wood and iron: a few more slots for a little copper.",
+        "&eChemistry:&r copper tarnishes green: over years it forms a patina of basic copper carbonate, Cu₂CO₃(OH)₂, which then protects the metal underneath.",
+        "&eHow:&r right-click the placed container with the tier upgrade (check JEI)."]),
+    Q("sto_ss_ladder", 0, 0, [item("sophisticatedstorage:iron_to_gold_tier_upgrade"), item("sophisticatedstorage:gold_to_diamond_tier_upgrade")], "Gold and Diamond Tiers", deps=["s_ss_tier"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: climb the ladder one tier at a time", desc=[
+        "&eWhat:&r tier upgrades for an iron container to gold, then gold to diamond. More slots and more upgrade slots each time.",
+        "&eHow:&r check JEI, then right-click the placed chest or barrel. Nothing inside moves.",
+        "&eTip:&r upgrade the barrel your ore line feeds first; it fills fastest."]),
+    Q("sto_ss_netherite_kit", 0, 0, [item("sophisticatedstorage:diamond_to_netherite_tier_upgrade")], "The Netherite Tier Kit", deps=["sto_ss_ladder", "t2_debris"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: the last tier upgrade", desc=[
+        "&eWhat:&r turns a placed diamond chest or barrel into netherite: the most slots any Sophisticated container gets.",
+        "&eHow:&r a lever and a netherite ingot, shapeless.",
+        "&eTip:&r upgrade in place and every item and upgrade card inside stays where it was."]),
+
+    # --- Sophisticated Backpacks, the rest ------------------------------------------------------
+    Q("sto_bp_copper", 0, 0, [item("sophisticatedbackpacks:copper_backpack")], "Copper Backpack", deps=["gs_backpack"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: one small step before iron", desc=[
+        "&eWhat:&r the copper backpack sits between leather and iron: a few more slots and an extra upgrade slot.",
+        "&eHow:&r surround your backpack with copper ingots (check JEI). Everything inside stays put.",
+        "&eTip:&r copper is plentiful early, so this is the cheapest upgrade in the line."]),
+    Q("sto_bp_stack", 0, 0, [item("sophisticatedbackpacks:stack_upgrade_tier_2"), anyof(["sophisticatedbackpacks:stack_upgrade_tier_3", "sophisticatedbackpacks:stack_upgrade_tier_4"])],
+      "Bigger Stacks", deps=["ql_bp_stack"], xp=40, optional=True, tokens=1, subtitle="Optional: stack upgrades II and up", desc=[
+        "&eWhat:&r each stack tier multiplies how many items fit in every backpack slot. Tier 2 and either tier 3 or 4.",
+        "&eHow:&r each tier is built from the one before with better materials (check JEI).",
+        "&eTip:&r a backpack full of stacked dust is the cheapest way to move a day's mining to your machines."]),
+    Q("sto_bp_compacting", 0, 0, [item("sophisticatedbackpacks:compacting_upgrade"), item("sophisticatedbackpacks:filter_upgrade")], "Compacting and Filters", deps=["q_bp_up"], xp=30,
+      optional=True, tokens=1, subtitle="Optional: nuggets to ingots, and only what you want", desc=[
+        "&eWhat:&r the Compacting Upgrade squeezes 9 of something into its block as you pick it up. The Filter Upgrade decides what pipes and hoppers may put in or take out.",
+        "&eHow:&r an upgrade base with pistons, iron and redstone (compacting), or with string and redstone (filter). Check JEI.",
+        "&eTip:&r compact redstone, lapis and coal while mining; whole blocks take a ninth of the space."]),
+    Q("sto_bp_advanced", 0, 0, [item("sophisticatedbackpacks:advanced_pickup_upgrade"), item("sophisticatedbackpacks:advanced_magnet_upgrade"), item("sophisticatedbackpacks:advanced_filter_upgrade")],
+      "Advanced Pickup", deps=["sto_bp_compacting", "sto_bp_gold"], xp=60, optional=True, tokens=1, subtitle="Optional: more filter slots, tag and mod filters", desc=[
+        "&eWhat:&r the advanced versions of pickup, magnet and filter: more filter slots, plus filters by tag, mod or durability.",
+        "&eHow:&r each one is its basic upgrade with gold, diamonds and redstone (check JEI).",
+        "&eTip:&r a tag filter for 'c:raw_materials' picks up every raw ore in the pack with one entry."]),
+    Q("sto_bp_advanced_more", 0, 0, [anyof(["sophisticatedbackpacks:advanced_feeding_upgrade", "sophisticatedbackpacks:advanced_refill_upgrade",
+                                             "sophisticatedbackpacks:advanced_restock_upgrade", "sophisticatedbackpacks:advanced_deposit_upgrade",
+                                             "sophisticatedbackpacks:advanced_void_upgrade", "sophisticatedbackpacks:advanced_tool_swapper_upgrade",
+                                             "sophisticatedbackpacks:advanced_compacting_upgrade", "sophisticatedbackpacks:advanced_pump_upgrade"], 2)],
+      "Advanced Everything", deps=["sto_bp_advanced"], xp=60, optional=True, tokens=1, subtitle="Optional: any two more advanced upgrades", desc=[
+        "&eWhat:&r almost every upgrade has an advanced form with more slots and finer filters: feeding, refill, restock, deposit, void, tool swapper, compacting, pump. Any two.",
+        "&eHow:&r the basic upgrade plus gold, diamonds and redstone (check JEI for each).",
+        "&eTip:&r advanced feeding can be set to eat only when it won't waste food, so meals last longer."]),
+    Q("sto_bp_cookers", 0, 0, [anyof(["sophisticatedbackpacks:smoking_upgrade", "sophisticatedbackpacks:blasting_upgrade"]),
+                               anyof(["sophisticatedbackpacks:auto_smoking_upgrade", "sophisticatedbackpacks:auto_blasting_upgrade"])],
+      "Smoker and Blast Furnace", deps=["sto_bp_smelting"], xp=40, optional=True, tokens=1, subtitle="Optional: specialist cooking in your pack", desc=[
+        "&eWhat:&r smoking upgrades cook food twice as fast; blasting upgrades smelt ores twice as fast. The auto versions work by themselves.",
+        "&eChemistry:&r a blast furnace forces air through the fuel, so it burns hotter. Real ones blow hot air into the bottom of a coke-and-ore stack: C + O₂ → CO₂, then CO₂ + C → 2CO, and the CO reduces the ore.",
+        "&eHow:&r an upgrade base with a smoker or a blast furnace, iron and redstone; the auto ones add hoppers, gold and diamonds (check JEI).",
+        "&eTip:&r one of each, not both furnace upgrades: they share the backpack's fuel."]),
+    Q("sto_bp_pump", 0, 0, [item("sophisticatedbackpacks:pump_upgrade"), item("sophisticatedbackpacks:xp_pump_upgrade")], "Pumps", deps=["sto_bp_tank"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: fluids and experience on tap", desc=[
+        "&eWhat:&r the Pump Upgrade fills and empties the backpack's tank from the world or from tanks. The XP Pump stores your experience and gives it back.",
+        "&eHow:&r pump: an upgrade base with buckets, glass, a piston and a sticky piston. XP pump: an advanced pump upgrade with ender eyes, bottles o' enchanting and redstone (check JEI).",
+        "&eTip:&r bank your levels in the XP pump before a risky fight; a grave keeps items, not levels."]),
+    Q("sto_bp_battery", 0, 0, [item("sophisticatedbackpacks:battery_upgrade")], "Battery Upgrade", deps=["sto_bp_crafting", "t1_power"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: FE in your backpack", desc=[
+        "&eWhat:&r stores Forge Energy in the backpack, which other upgrades and charging tools can use.",
+        "&eChemistry:&r a battery stores energy as chemistry: two electrodes with different appetites for electrons, kept apart by an electrolyte.",
+        "&eHow:&r an upgrade base with gold ingots and redstone blocks (check JEI).",
+        "&eTip:&r charge it at home, then top up your jetpack or Mining Gadget in the field."]),
+    Q("sto_bp_stonecutter", 0, 0, [item("sophisticatedbackpacks:stonecutter_upgrade")], "Stonecutter Upgrade", deps=["sto_bp_crafting"], xp=25,
+      optional=True, tokens=1, subtitle="Optional: cut stone without a block", desc=[
+        "&eWhat:&r the Stonecutter Upgrade adds a stonecutter to the backpack screen.",
+        "&eHow:&r an upgrade base with a stonecutter, iron and redstone (check JEI).",
+        "&eTip:&r perfect for Create Deco, Rechiseled and laboratory blocks on a building trip."]),
+    Q("sto_bp_inception", 0, 0, [item("sophisticatedbackpacks:inception_upgrade")], "Inception", deps=["sto_bp_diamond", "hn_wither"], xp=100,
+      optional=True, tokens=2, subtitle="Optional: backpacks within backpacks", desc=[
+        "&eWhat:&r with the Inception Upgrade, backpacks stored inside your backpack keep using their own upgrades, and you can open them from the outer one.",
+        "&eHow:&r an upgrade base with ender eyes, diamonds and a Nether Star (check JEI).",
+        "&eTip:&r a small 'mining' backpack inside your main one keeps its magnet and void settings separate."]),
+    Q("sto_bp_jukebox", 0, 0, [item("sophisticatedbackpacks:jukebox_upgrade")], "Mixtape", deps=["sto_bp_crafting"], xp=20,
+      secret=True, loot="secret", subtitle="Secret: music while you mine", desc=[
+        "&6You remember a time when the spheres sang to you. A jukebox in a backpack will have to do.&r",
+        "&eWhat:&r the Jukebox Upgrade plays music discs from inside your backpack, wherever you walk.",
+        "&eTip:&r it plays to everyone nearby. Choose your disc with care."]),
+
+    # --- Iron Furnaces, the rest ----------------------------------------------------------------
+    Q("sto_if_copper", 0, 0, [item("ironfurnaces:copper_furnace")], "Copper Furnace", deps=["gs_furnace"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: the first metal furnace", desc=[
+        "&eWhat:&r the copper furnace is a small step faster than vanilla, and the cheapest Iron Furnace.",
+        "&eChemistry:&r copper conducts heat about five times better than iron, which is why good saucepans have copper bottoms.",
+        "&eHow:&r 8 copper ingots around a furnace."]),
+    Q("sto_if_crystal", 0, 0, [item("ironfurnaces:crystal_furnace")], "Crystal Furnace", deps=["sto_if_diamond"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: a furnace you can see into", desc=[
+        "&eWhat:&r a side tier from diamond: as fast as a diamond furnace, built of clear glass.",
+        "&eChemistry:&r glass lets visible light through because its electrons need more energy than visible light carries to jump up, so the photons pass straight through.",
+        "&eHow:&r clear glass and an eye of ender around a diamond furnace (check JEI)."]),
+    Q("sto_if_more_kits", 0, 0, [anyof(["ironfurnaces:upgrade_copper", "ironfurnaces:upgrade_iron", "ironfurnaces:upgrade_iron2", "ironfurnaces:upgrade_gold2",
+                                       "ironfurnaces:upgrade_silver", "ironfurnaces:upgrade_silver2", "ironfurnaces:upgrade_emerald", "ironfurnaces:upgrade_crystal",
+                                       "ironfurnaces:upgrade_obsidian", "ironfurnaces:upgrade_obsidian2", "ironfurnaces:upgrade_netherite"], 2)],
+      "Every Kit", deps=["sto_if_kits"], xp=30, optional=True, tokens=1, subtitle="Optional: any two more upgrade kits", desc=[
+        "&eWhat:&r there's a kit for every step: vanilla to copper or iron, copper to iron, iron to gold or silver, diamond to emerald or crystal, up to netherite. Any two.",
+        "&eHow:&r each is the next tier's material around a stone tool material or gem (check JEI).",
+        "&eTip:&r kits keep the furnace's augment, so upgrade a generator furnace without losing its setup."]),
+    Q("sto_if_smoking", 0, 0, [item("ironfurnaces:augment_smoking")], "Smoking Augment", deps=["sto_if_factory"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: a furnace that cooks food fast", desc=[
+        "&eWhat:&r turns an Iron Furnace into a smoker: food only, at double speed.",
+        "&eChemistry:&r smoking preserves meat: phenols and other compounds in wood smoke kill microbes and slow the fats going rancid.",
+        "&eHow:&r stone, redstone and paper around a smoker."]),
+    Q("sto_if_wireless", 0, 0, [item("ironfurnaces:heater"), item("ironfurnaces:item_heater")], "Wireless Heat", deps=["sto_if_factory"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: run furnaces on FE without cables", desc=[
+        "&eWhat:&r the Wireless Heat Transmitter takes FE; a Wireless Heat Receiver bound to it goes into a furnace's fuel slot and heats it with that energy. Iron tier and up.",
+        "&eHow:&r the transmitter is stone, a comparator, a redstone block and a furnace; the receiver is stone, redstone and a comparator. Bind the receiver to the transmitter (check its tooltip).",
+        "&eTip:&r one transmitter on your power line, receivers in a whole row of furnaces: no coal ever again."]),
+    Q("sto_if_copy", 0, 0, [item("ironfurnaces:item_copy")], "Settings Linker", deps=["s_furnace"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: copy one furnace's setup to another", desc=[
+        "&eWhat:&r the Furnace Settings Linker copies a furnace's side and redstone settings onto other furnaces.",
+        "&eHow:&r paper around a furnace (check JEI). Use it on the configured furnace, then on the others.",
+        "&eTip:&r set up one furnace's input and output sides, then copy it down the whole row."]),
+    Q("sto_if_rainbow", 0, 0, [item("ironfurnaces:rainbow_plating", 8), item("ironfurnaces:rainbow_core"), item("ironfurnaces:million_furnace")],
+      "The Rainbow Furnace", deps=["sto_if_netherite", "sto_if_crystal", "sto_if_silver", "sto_if_copper"], xp=200,
+      optional=True, tokens=2, subtitle="Optional: every furnace, melted into one", desc=[
+        "&6Every colour of fire at once. You remember when a flame would do whatever you asked.&r",
+        "&eWhat:&r the Rainbow Furnace is the top of Iron Furnaces, built from one of every other furnace.",
+        "&eChemistry:&r flame colours are real chemistry: copper burns green, sodium yellow, strontium red, potassium lilac. Each element's electrons emit their own wavelengths (that's how fireworks get their colours).",
+        "&eHow:&r rainbow plating is iron, gold, diamond, emerald, obsidian, crystal, copper and silver furnaces, shapeless (makes 8). The core is a netherite furnace in rainbow glass. 8 plating around the core makes the furnace."]),
 ], links=[("gs_backpack", -2, 0), ("t3_hull", -2, 7), ("t5_ae2", -2, 4), ("q_bp_iron", -2, 9), ("q_bp_up", -2, 10.5),
           ("gs_iron", -2, 14), ("lg_logistics", -2, 17)])

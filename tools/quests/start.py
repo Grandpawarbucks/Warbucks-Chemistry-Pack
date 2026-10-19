@@ -17,8 +17,8 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
     # --- first minutes: wood -----------------------------------------------------------------
     Q("gs_wake", 0, 0, [tick()], "The Awakening", subtitle="Everything is made of elements",
       size=2.0, shape="gear", xp=10, deps=["wel_ready"], desc=[
-        "&6You remember being more than this.&r The memory is fading, but one idea stays clear: everything is made of elements, and elements can be taken apart and put back together.",
-        "&eWhat:&r This book walks you from your first log to antimatter. Follow the lines: each quest unlocks the next.",
+        "&6You were more than this once. The book in your hands is in your own handwriting, though you don't remember writing it.&r",
+        "&eWhat:&r One idea stayed with you: everything is made of elements, and elements can be taken apart and put back together. This book walks you from your first log to antimatter. Follow the lines: each quest unlocks the next.",
         "&eHow:&r Click the checkmark on the right to begin."]),
     Q("gs_jei", 2, -2, [tick()], "Tip: Recipes and Jade", subtitle="R for recipes, U for uses", deps=["gs_wake"], xp=10, desc=[
         "&eWhat:&r JEI shows every recipe in the pack, including the ones changed for progression. Jade shows a small panel at the top of the screen for whatever block you're looking at.",
@@ -145,7 +145,7 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
 
     # --- iron --------------------------------------------------------------------------------
     Q("gs_iron", 36, 0, [item("minecraft:iron_ingot", 16)], "Iron", subtitle="Ore, heat, and carbon make metal", deps=["gs_leather"], xp=25, desc=[
-        "&6The ore gives up its metal in the fire, and you remember: this is what you used to do with a thought.&r",
+        "&6The ore gives up its metal in the fire. Once, you did this with a thought.&r",
         "&eWhat:&r Iron is the metal of your first real tools, buckets and armour.",
         "&eChemistry:&r Iron ore is iron oxide. In the furnace, carbon pulls the oxygen away: Fe₂O₃ + 3C → 2Fe + 3CO. That's &ereduction&r.",
         "&eHow:&r Mine iron ore with a stone pickaxe (it's common around Y 16 and in mountains) and smelt the raw iron.",
@@ -221,7 +221,7 @@ CHAPTER = Chapter("start", "Getting Started", "minecraft:oak_sapling",
         "&eTip:&r Right-click a claimed chunk to force-load it. You'll need that for the flight pylon later."]),
     Q("gs_ready", 48, 0, [tick()], "Ready for Chemistry", subtitle="Fed, armed, sheltered", size=1.5, shape="hexagon",
       deps=["gs_mine", "gs_claim"], xp=50, items=[("minecraft:copper_ingot", 16), ("modern_industrialization:tin_ingot", 8)], desc=[
-        "&6Fed, armed, sheltered.&r Now the real work begins: fire, ore, alloys, and the slow road back to divinity.",
+        "&6Fed, armed, sheltered: a good day, by mortal standards. Now the real work begins, the long road back to what you were.&r",
         "&eHow:&r Click to open Chapter I. The copper and tin in the reward are a head start on your first alloy.",
         "&eTip:&r Bring spare coal and iron. Chapter I eats both."]),
 

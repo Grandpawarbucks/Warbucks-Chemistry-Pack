@@ -17,7 +17,7 @@ CHAPTER = Chapter("space", "Space", "ad_astra:tier_2_rocket",
         "&6You remember the Moon from above. Now you're standing on it.&r",
         "&eWhat:&r desh ore is found only on the Moon. Desh blocks, engines and tanks build the Tier 2 rocket.",
         "&eChemistry:&r the Moon has no atmosphere and its days swing from about +120 °C to −170 °C, so bring oxygen.",
-        "&eHow:&r mine desh ore on the Moon and process it like any ore."]),
+        "&eHow:&r mine desh ore on the Moon with an iron pickaxe or better (this pack sets its tier) and process it like any ore."]),
     Q("w_mars", 2, 0, [dim("ad_astra:mars"), item("ad_astra:tier_2_rocket")], "Mars", deps=["w_desh"], xp=500,
       subtitle="The red planet", desc=[
         "&eWhat:&r Mars holds ostrum ore, the metal for the Tier 3 rocket.",
@@ -26,7 +26,7 @@ CHAPTER = Chapter("space", "Space", "ad_astra:tier_2_rocket",
     Q("w_ostrum", 4, 0, [item("ad_astra:raw_ostrum", 8)], "Ostrum", deps=["w_mars"], xp=300,
       subtitle="Mars's metal for the Tier 3 rocket", desc=[
         "&eWhat:&r ostrum ore is found only on Mars. It builds the Tier 3 rocket.",
-        "&eHow:&r mine ostrum ore on Mars and process it.",
+        "&eHow:&r mine ostrum ore on Mars and process it. It needs a diamond pickaxe or better (this pack sets its tier).",
         "&eTip:&r grab some extra for the Tier 3 rocket's engine and tank."]),
     Q("w_suit", 6, 0, [item("ad_astra:netherite_space_suit")], "Heat Shielding", deps=["w_ostrum"], xp=300,
       subtitle="A suit that survives 464 °C", desc=[
@@ -41,7 +41,7 @@ CHAPTER = Chapter("space", "Space", "ad_astra:tier_2_rocket",
     Q("sp_calorite", 10, 0, [item(AA + "raw_calorite", 8)], "Calorite", deps=["w_venus"], xp=250,
       subtitle="Venus's metal for the Tier 4 rocket", desc=[
         "&eWhat:&r calorite ore is found on Venus. It builds the Tier 4 rocket, the only one that reaches another star.",
-        "&eHow:&r mine calorite ore in the Venusian stone and process it like any ore.",
+        "&eHow:&r mine calorite ore in the Venusian stone and process it like any ore. Only a netherite pickaxe (or better) can mine it in this pack.",
         "&eTip:&r Venus is hot and its rain is acid; keep the netherite suit on the whole time."]),
     Q("w_space_metals", 12, 0, [item("ad_astra:desh_ingot", 8), item("ad_astra:ostrum_ingot", 4), item("ad_astra:calorite_ingot", 4)], "Alien Metals", deps=["sp_calorite"], xp=600,
       subtitle="Desh, ostrum and calorite", desc=[

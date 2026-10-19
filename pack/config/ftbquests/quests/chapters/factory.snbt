@@ -1138,6 +1138,42 @@
 				}
 			]
 		}
+		{
+			id: "222D824B6476C5A9"
+			x: 2.0d
+			y: 16.0d
+			optional: true
+			dependencies: [
+				"17832D4C895DEFF7"
+				"0213687BA73A9908"
+			]
+			tasks: [
+				{
+					id: "3B146AA99F62083B"
+					type: "item"
+					item: {
+						id: "industrialization_overdrive:terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3FD9BD1E8E8929D0"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "1338DB859B88FBF4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	images: [
 		{
@@ -1167,7 +1203,7 @@
 			id: "1501498B50DB79C9"
 			linked_quest: "17832D4C895DEFF7"
 			x: -2.0d
-			y: 4.0d
+			y: 8.0d
 		}
 		{
 			id: "65CA747B5CDB8096"

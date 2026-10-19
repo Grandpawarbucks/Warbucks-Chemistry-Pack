@@ -193,4 +193,74 @@ CHAPTER = Chapter("logic", "Automation and Logic", "computercraft:computer_advan
         "    OUTPUT TO b",
         "END",
         "&eTip:&r add a side, like &eOUTPUT TO b TOP SIDE&r, to choose which face of the block is used. The manager's built-in examples cover fluids and energy too."]),
+
+    # --- ATM10-alignment round (2026-10-19) ----------------------------------------------------
+    # Integrated Dynamics: the resin line and its machines
+    Q("lg_menril_wood", 0, 0, [item("integrateddynamics:menril_log", 8), item("integrateddynamics:menril_planks", 8), item("integrateddynamics:menril_berries", 4)], "Menril Trees",
+      subtitle="Blue-grey wood full of resin", deps=["t3_hull"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r Menril trees are where Integrated Dynamics starts: logs for resin, planks for building, and berries from the leaves.",
+        "&eChemistry:&r real tree resins are mixtures of terpenes, small hydrocarbons that plants make from units of isoprene (C₅H₈). Amber is resin that hardened over millions of years.",
+        "&eHow:&r find a Menril tree in the Overworld (Jade names it) and plant its saplings near your base.",
+        "&eTip:&r read the berries' tooltip before you eat a stack."]),
+    Q("lg_squeezer", 0, 0, [item("integrateddynamics:squeezer"), item("integrateddynamics:drying_basin"), item("integrateddynamics:bucket_menril_resin")], "Squeezer and Drying Basin",
+      subtitle="Press the resin out, then dry it", deps=["lg_menril_wood"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Squeezer presses Menril logs into liquid resin; the Drying Basin dries resin into crystalized Menril chunks.",
+        "&eChemistry:&r drying is evaporation: the solvent leaves and the dissolved resin is left as a solid, the same way salt is left behind when brine dries.",
+        "&eHow:&r Squeezer: an iron block, iron, planks and sticks. Drying Basin: logs, iron and black dye (check JEI). Put a Menril log in the Squeezer and jump on it a few times; pipe or bucket the resin into the basin and wait.",
+        "&eTip:&r place the Squeezer on top of the basin and the resin flows straight in."]),
+    Q("lg_id_mech", 0, 0, [item("integrateddynamics:mechanical_squeezer"), item("integrateddynamics:mechanical_drying_basin")], "Mechanical Squeezer and Basin",
+      subtitle="The same line, on power", deps=["lg_squeezer", "lg_id_power"], xp=75, optional=True, tokens=1, desc=[
+        "&eWhat:&r powered versions of the Squeezer and Drying Basin: faster, pipe-friendly and no jumping.",
+        "&eHow:&r the hand-powered block with Energy Batteries, a diamond and obsidian (check JEI). Feed them FE.",
+        "&eTip:&r they also squeeze and dry other things; press U on each in JEI."]),
+    Q("lg_id_power", 0, 0, [item("integrateddynamics:coal_generator"), item("integrateddynamics:energy_battery")], "Generator and Energy Battery",
+      subtitle="Power for a logic network", deps=["lg_menril"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r Integrated Dynamics' own Generator burns furnace fuel for FE; the Energy Battery stores it and can feed a network through its cables.",
+        "&eHow:&r the battery is crystalized Menril chunks and blocks around a redstone block; the Generator is a battery plus a furnace (check JEI).",
+        "&eTip:&r any FE source works. Link a cable to your main grid instead if you have one."]),
+    Q("lg_id_book", 0, 0, [item("integrateddynamics:on_the_dynamics_of_integration"), item("integrateddynamics:wrench")], "The Manual and the Wrench",
+      subtitle="Read first, then rotate", deps=["lg_menril"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r On the Dynamics of Integration is the mod's own guide, with worked examples. The Menril wrench rotates and removes ID blocks and parts.",
+        "&eHow:&r the book is a book and two crystalized Menril chunks; the wrench is Menril chunks and redstone (check JEI).",
+        "&eTip:&r the manual's tutorials give rewards too. Do them once."]),
+    Q("lg_id_transformers", 0, 0, [item("integrateddynamics:variable_transformer_input", 2), item("integrateddynamics:variable_transformer_output", 2), item("integrateddynamics:portable_logic_programmer")],
+      "Variable Transformers", subtitle="The parts inside every reader and writer", deps=["lg_id_store"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r input and output variable transformers are the crafting parts of readers, writers and interfaces. The Portable Logic Programmer is the programmer in your pocket.",
+        "&eHow:&r variable cards, Menril chunks and a sticky piston make four transformers (check JEI). Craft extra before a big build.",
+        "&eTip:&r carry the portable programmer while wiring up a factory, so you can fix a card on the spot."]),
+
+    # LaserIO: the rest of the kit
+    Q("lg_laser_kit", 0, 0, [item("laserio:laser_wrench"), item("laserio:logic_chip", 4), item("laserio:laser_connector")], "LaserIO Toolkit",
+      subtitle="Wrench, logic chips and a connector", deps=["lg_laser"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Laser Wrench links nodes (click one, then the other). Logic chips go into every node and card. A Laser Connector relays lasers between nodes without holding cards.",
+        "&eHow:&r raw logic chips are a quartz block, clay, gold nuggets and redstone (4 at a time); smelt them. The connector is glass, redstone, iron and a logic chip; the wrench is iron and a logic chip.",
+        "&eTip:&r nodes link up to a set range; connectors let you go round corners and through walls."]),
+    Q("lg_laser_energy", 0, 0, [item("laserio:card_energy", 2), item("laserio:card_redstone", 2)], "Energy and Redstone Cards",
+      subtitle="Power and signals by laser", deps=["lg_laser_chem"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r Energy Cards move FE between nodes; Redstone Cards read and send redstone signals along the laser network.",
+        "&eHow:&r a logic chip with quartz, gold nuggets and redstone (a redstone block for the energy card). Set Extract and Insert like any card.",
+        "&eTip:&r a Redstone Card can switch a separator on only while the sulfur chest has stock."]),
+    Q("lg_laser_org", 0, 0, [item("laserio:card_holder"), item("laserio:card_cloner"), item("laserio:filter_mod")], "Card Holder, Cloner and Mod Filter",
+      subtitle="Keep your cards in order", deps=["lg_laser_filter"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Card Holder carries spare cards and fills nodes from your inventory; the Card Cloner copies one card's settings onto others; the Mod Filter matches everything from one mod.",
+        "&eHow:&r holder and cloner are a logic chip in iron with chests or paper; the Mod Filter is a basic filter plus a book (check JEI).",
+        "&eTip:&r clone one tuned acid card to every reactor in the line."]),
+
+    # Pipez: beyond item pipes
+    Q("lg_pipez_types", 0, 0, [item("pipez:fluid_pipe", 8), item("pipez:energy_pipe", 8), item("pipez:gas_pipe", 8)], "Pipez for Everything",
+      subtitle="Fluids, power and Mekanism gases", deps=["s_pipes"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r Pipez has a pipe for each thing that moves: fluids, FE, and Mekanism chemicals (the gas pipe).",
+        "&eChemistry:&r one gas pipe network carries one chemical at a time well. Keep H₂ and Cl₂ apart: mixed, they react explosively in light (H₂ + Cl₂ → 2HCl).",
+        "&eHow:&r iron and redstone with buckets (fluid), redstone blocks (energy) or Infused Alloy (gas), 16 at a time. Sneak-click where a pipe meets a machine to make that end extract.",
+        "&eTip:&r Pipez pipes pull only from ends you set to extract, so connecting a machine doesn't drain it."]),
+    Q("lg_pipez_universal", 0, 0, [item("pipez:universal_pipe", 8)], "Universal Pipe",
+      subtitle="One pipe, all four jobs", deps=["lg_pipez_types"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Universal Pipe carries several kinds of thing at once in one line (its tooltip lists which).",
+        "&eHow:&r item, fluid and energy pipes with iron and a redstone block make six (check JEI).",
+        "&eTip:&r set each side's mode per type in its GUI, so one pipe can feed a machine items and power together."]),
+    Q("lg_pipez_tools", 0, 0, [item("pipez:wrench"), item("pipez:filter_destination_tool"), item("pipez:advanced_upgrade")], "Pipe Upgrades and Tools",
+      subtitle="Faster pipes, targeted filters", deps=["lg_pipez_types"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Pipe Wrench disconnects and reconnects pipe sides. The Filter Destination Tool aims a filter at one inventory. Upgrades (basic to infinity) raise speed and unlock filters and redstone modes.",
+        "&eHow:&r each upgrade tier is the one before plus better materials (advanced: an improved upgrade, diamonds and redstone blocks). The wrench is flint and rods; the tool is iron, glass and a button. Put upgrades in the extracting pipe end.",
+        "&eTip:&r an advanced upgrade's round-robin mode spreads ore evenly across a row of machines."]),
 ], links=[("t3_hull", -2, 0), ("t5_ae2", 6, -2), ("s_laser", -2, 6)])

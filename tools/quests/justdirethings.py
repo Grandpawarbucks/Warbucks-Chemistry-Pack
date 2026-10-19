@@ -266,4 +266,116 @@ CHAPTER = Chapter("justdirethings", "Just Dire Things", J + "gooblock_tier1",
         "&eWhat:&r Portal Fluid powers the Advanced Portal Gun, the upgrade of the Portal Gun on the Tools page.",
         "&eHow:&r a Portal Fluid Catalyst (chorus fruit and lapis) dropped into Polymorphic Fluid makes Unstable Portal Fluid; tier 3 goo stabilises it. The gun adds celestigem and a fluid canister (check JEI).",
         "&eTip:&r the Advanced Portal Gun holds 1,000,000 FE; the basic one only 100,000."]),
+
+    # --- ATM10-alignment round (2026-10-19) ----------------------------------------------------
+    # Metals and tool kits by tier
+    Q("jdt_ferricore_ingot", 0, 0, [item(J + "ferricore_ingot", 16), item(J + "template_ferricore")], "Ferricore Ingots",
+      subtitle="The goo's first metal, and its template", deps=["jdt_ferricore"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r ferricore ingots, plus the Ferricore template that smiths ordinary iron gear up into ferricore.",
+        "&eChemistry:&r 'ferri-' means iron (Latin ferrum, symbol Fe). The goo has rearranged the iron into something new; real iron would need an alloying element to change this much.",
+        "&eHow:&r smelt raw ferricore. The template is a blank ringed with ferricore ingots (check JEI).",
+        "&eTip:&r a template plus ingots crafts a copy of itself, so you only make the first one by hand."]),
+    Q("jdt_ferricore_kit", 0, 0, [item(J + "ferricore_sword"), item(J + "ferricore_hoe"), item(J + "ferricore_wrench")], "Sword, Hoe and Wrench",
+      subtitle="The rest of the ferricore set", deps=["jdt_tools_t1"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r the ferricore sword and hoe take abilities like the other tools. The Ferricore Wrench rotates blocks and Just Dire Things machines.",
+        "&eHow:&r the usual tool shapes; the wrench is four ferricore ingots (check JEI).",
+        "&eTip:&r the hoe can take tilling and harvesting abilities at higher tiers; JEI lists which."]),
+    Q("jdt_blazegold_kit", 0, 0, [item(J + "blazegold_ingot", 8), item(J + "blazegold_sword"), item(J + "blazegold_axe"), item(J + "blazegold_shovel"), item(J + "blazegold_hoe")],
+      "The Blazegold Set", subtitle="Every blazegold tool", deps=["jdt_tools_t2"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r blazegold versions of every tool. Each tier holds more abilities and reaches further with them.",
+        "&eHow:&r smith ferricore tools with a blazegold template and a blazegold ingot (check JEI).",
+        "&eTip:&r upgrade the tools you actually use first; the hoe can wait."]),
+    Q("jdt_blazegold_armor", 0, 0, [item(J + "blazegold_helmet"), item(J + "blazegold_chestplate"), item(J + "blazegold_leggings"), item(J + "blazegold_boots")],
+      "Blazegold Armour", subtitle="Armour with more upgrade slots", deps=["jdt_armor"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the second armour tier. More abilities fit, and some only unlock here.",
+        "&eHow:&r smith each ferricore piece with a blazegold template and ingot (check JEI).",
+        "&eChemistry:&r gold reflects infrared well, which is why astronaut visors are gold-coated. Blazegold is the goo's version."]),
+    Q("jdt_celestigem_kit", 0, 0, [item(J + "template_celestigem"), item(J + "celestigem_sword"), item(J + "celestigem_axe"), item(J + "celestigem_shovel"), item(J + "celestigem_hoe")],
+      "The Celestigem Set", subtitle="Every celestigem tool", deps=["jdt_tools_t3"], xp=70, optional=True, tokens=1, desc=[
+        "&eWhat:&r the third tier of every tool, with its template.",
+        "&eHow:&r the template is a blank ringed with celestigem; smith each blazegold tool with it and a celestigem (check JEI).",
+        "&eTip:&r axe, shovel and pickaxe of one tier fuse into the paxel."]),
+    Q("jdt_celestigem_armor", 0, 0, [item(J + "celestigem_helmet"), item(J + "celestigem_leggings"), item(J + "celestigem_boots")],
+      "Celestigem Armour", subtitle="Helmet, leggings and boots", deps=["jdt_blazegold_armor"], xp=80, optional=True, tokens=1, desc=[
+        "&eWhat:&r the rest of the celestigem set (the chestplate has its own quest with the elytra).",
+        "&eHow:&r smith each blazegold piece with a celestigem template and a celestigem (check JEI).",
+        "&eChemistry:&r a celestigem forms from diamond, and diamond is pure carbon in a tetrahedral lattice; the hardest natural material known."]),
+    Q("jdt_eclipse_kit", 0, 0, [item(J + "eclipsealloy_ingot", 4), item(J + "template_eclipsealloy"), item(J + "eclipsealloy_pickaxe"), item(J + "eclipsealloy_axe"),
+                                item(J + "eclipsealloy_shovel"), item(J + "eclipsealloy_sword"), item(J + "eclipsealloy_hoe")],
+      "The Eclipse Alloy Set", subtitle="Challenge: every eclipse alloy tool", deps=["jdt_tools_t4"], xp=150, optional=True, tokens=2, desc=[
+        "&eWhat:&r the last tier of every tool. Each one starts from a netherite block fed to tier 4 goo, so this is a real investment.",
+        "&eHow:&r smelt raw eclipse alloy; the template is a blank ringed with it. Smith each celestigem tool up (check JEI).",
+        "&eTip:&r the sword takes the strongest combat abilities; check JEI before you spend the alloy."]),
+    Q("jdt_eclipse_armor", 0, 0, [item(J + "eclipsealloy_helmet"), item(J + "eclipsealloy_leggings"), item(J + "eclipsealloy_boots")],
+      "Eclipse Alloy Armour", subtitle="Challenge: finish the set", deps=["jdt_flight"], xp=150, optional=True, tokens=2, desc=[
+        "&6Helmet, legs, boots: the last pieces fall into place. You remember being hard to hurt.&r",
+        "&eWhat:&r helmet, leggings and boots in eclipse alloy, matching the chestplate from the Flight quest. The best Just Dire Things armour.",
+        "&eHow:&r smith each celestigem piece with an eclipse alloy template and ingot (check JEI)."]),
+    Q("jdt_bow_set", 0, 0, [item(J + "bow_ferricore"), item(J + "bow_blazegold"), item(J + "bow_celestigem"), item(J + "bow_eclipsealloy")],
+      "Challenge: Every Dire Bow", subtitle="Four tiers of bow", deps=["jdt_bows"], xp=120, optional=True, tokens=2, desc=[
+        "&eWhat:&r one bow of each tier. Higher tiers draw faster and hold more arrow abilities.",
+        "&eHow:&r smith each bow up with the next template (check JEI). Keep one of each, or craft spares on the way up."]),
+
+    # Abilities
+    Q("jdt_arrow_abilities", 0, 0, [anyof([J + "upgrade_potionarrow", J + "upgrade_splash", J + "upgrade_lingering", J + "upgrade_homing", J + "upgrade_epicarrow"], 2)],
+      "Arrow Abilities", subtitle="Any two bow upgrades", deps=["jdt_bows"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r Potion Arrow (fires a potion from a canister), Splash and Lingering (change how that potion spreads), Homing, and Yondu Arrow (arrows that pass through several targets).",
+        "&eChemistry:&r splash and lingering potions are the same mixture delivered as a spray or a cloud; real aerosols work the same way, spreading a dose over more surface.",
+        "&eHow:&r each is a blank plus vanilla items; Yondu Arrow also needs a Nether Star (check JEI)."]),
+    Q("jdt_move_abilities", 0, 0, [anyof([J + "upgrade_stepheight", J + "upgrade_jumpboost", J + "upgrade_walkspeed", J + "upgrade_runspeed", J + "upgrade_swimspeed",
+                                          J + "upgrade_negatefalldamage", J + "upgrade_groundstomp"], 2)],
+      "Light on Your Feet", subtitle="Any two movement abilities", deps=["jdt_armor"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r Step Assist, Jump Boost, Walk Speed, Run Speed, Swim Speed, Negate Fall Damage and Ground Stomp (push mobs away).",
+        "&eHow:&r a blank plus vanilla items, e.g. Step Assist is a blank ringed with ladders (check JEI). Smith onto boots or leggings.",
+        "&eTip:&r none of these is flight. In this pack JDT flight is a late reward on eclipse alloy."]),
+    Q("jdt_sense_abilities", 0, 0, [anyof([J + "upgrade_nightvision", J + "upgrade_glowing", J + "upgrade_mobscanner", J + "upgrade_orexray", J + "upgrade_mindfog",
+                                           J + "upgrade_waterbreathing"], 2)],
+      "Eyes of the Goo", subtitle="Any two helmet or senses abilities", deps=["jdt_armor"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r Night Vision, Mob X-Ray (see mobs through walls), Mob Scanner, Ore X-Ray, Mind Fog (mobs notice you less) and Water Breathing.",
+        "&eChemistry:&r Night Vision's recipe uses golden carrots: carrots really are rich in beta-carotene, which the body turns into vitamin A for the eye's light-sensing pigment.",
+        "&eHow:&r a blank plus vanilla items each (check JEI); Ore X-Ray needs a high tier."]),
+    Q("jdt_combat_abilities", 0, 0, [anyof([J + "upgrade_cauterizewounds", J + "upgrade_debuffremover", J + "upgrade_decoy", J + "upgrade_earthquake",
+                                            J + "upgrade_stupefy", J + "upgrade_noai"], 2)],
+      "Fighting Dirty", subtitle="Any two combat abilities", deps=["jdt_blazegold_kit"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r Cauterize Wounds (heal), Debuff Remover, Decoy (mobs attack a dummy), Earthquake (slows nearby mobs), Stupefy (a mob forgets you) and Mental Obliteration (nearby mobs stop for good).",
+        "&eHow:&r a blank plus vanilla items each, e.g. Earthquake uses soul sand, sticky pistons and fermented spider eyes (check JEI).",
+        "&eTip:&r activated abilities have keybinds; find them under Just Dire Things in Controls."]),
+    Q("jdt_smoker", 0, 0, [item(J + "upgrade_smoker")], "Cooked on the Spot",
+      subtitle="Mob drops come out cooked", deps=["jdt_blank"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Smoker ability auto-smelts mob drops: raw meat drops as cooked meat.",
+        "&eChemistry:&r cooking meat is chemistry: proteins denature, and the Maillard reaction between amino acids and sugars makes the brown crust and the flavour.",
+        "&eHow:&r a blank, a smoker and blaze rods (check JEI). Smith it onto a weapon."]),
+    Q("jdt_instabreak", 0, 0, [item(J + "upgrade_instabreak")], "Instant Break",
+      subtitle="Challenge: every block breaks at once", deps=["jdt_tools_t4"], xp=150, optional=True, tokens=2, desc=[
+        "&eWhat:&r the strongest tool ability: blocks break instantly.",
+        "&eHow:&r a blank, two Nether Stars, two netherite pickaxes and four time crystals (check JEI). Only top-tier tools take it.",
+        "&eTip:&r combine it with a hammer ability and a 5x5 hole is one click."]),
+
+    # Machines and utilities
+    Q("jdt_workshop", 0, 0, [item(J + "blockbreakert2"), item(J + "blockplacert2"), item(J + "clickert2"), item(J + "sensort2"), item(J + "droppert2"),
+                             item(J + "fluidcollectort2"), item(J + "fluidplacert2"), item(J + "blockswappert2")],
+      "Challenge: The Advanced Workshop", subtitle="One of every advanced machine", deps=["jdt_machines_t2"], xp=200, optional=True, tokens=2, desc=[
+        "&eWhat:&r all eight advanced machines: breaker, placer, clicker, sensor, dropper, fluid collector, fluid placer and swapper.",
+        "&eHow:&r each wraps its Simple version in celestigem and more; the Advanced Swapper needs eclipse alloy (check JEI).",
+        "&eTip:&r together they can run a whole goo farm, from feeding iron blocks to collecting the ore."]),
+    Q("jdt_xp_bank", 0, 0, [item(J + "experienceholder"), item(J + "xp_fluid_bucket")], "Liquid Experience",
+      subtitle="Bank your levels as a fluid", deps=["jdt_player_stuff"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Experience Holder stores your levels, and holds them as XP Fluid you can pipe or bucket out.",
+        "&eHow:&r blazegold, a book, an ender pearl and an emerald (check JEI). Use its GUI to deposit or withdraw levels.",
+        "&eTip:&r the fluid lets one XP store feed anvils, enchanters and other XP machines."]),
+    Q("jdt_player_accessor", 0, 0, [item(J + "playeraccessor")], "Player Accessor",
+      subtitle="Pipes into your own inventory", deps=["jdt_player_stuff"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r a block bound to you that pipes can push into or pull out of, as if it were your inventory.",
+        "&eHow:&r blazegold, eyes of ender, ender pearls, a dispenser and lapis (check JEI), then bind it to yourself (its tooltip shows how).",
+        "&eTip:&r pipe arrows or fuel straight into your inventory from base while you're out."]),
+    Q("jdt_canisters", 0, 0, [item(J + "fluid_canister"), item(J + "machinesettingscopier")], "Canister and Settings Copier",
+      subtitle="Carry a fluid, copy a setup", deps=["jdt_ferricore_ingot"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Fluid Canister holds a fluid for wands and guns; the Machine Settings Copier copies one machine's settings onto another.",
+        "&eHow:&r canister: ferricore around glass. Copier: Primal Coal, paper and ferricore (check JEI).",
+        "&eTip:&r set up one breaker perfectly, then copy it down a whole row."]),
+    Q("jdt_portal_catalyst", 0, 0, [item(J + "portal_fluid_catalyst", 2)], "Portal Fluid Catalyst",
+      subtitle="Chorus fruit and lapis", deps=["jdt_polymorphic", "w_end"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r the catalyst that turns Polymorphic Fluid into Unstable Portal Fluid, the first step to the Advanced Portal Gun's fuel.",
+        "&eHow:&r chorus fruit around lapis (check JEI). Drop one into a Polymorphic Fluid source block.",
+        "&eTip:&r chorus fruit grows on the outer End islands. Bring some back and plant it."]),
 ], links=[("gs_iron", -2, 0), ("tc_jdt_goo", -2, 2), ("t2_nether", -2, -2), ("w_dragon", -2, -4), ("w_ancient", -2, -6)])

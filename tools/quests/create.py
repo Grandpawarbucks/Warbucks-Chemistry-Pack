@@ -1,5 +1,5 @@
 """Quest chapter: create. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anyof, anytag, MAIN, SIDE  # noqa: F401
 
 # Layout (grid cells):
 #   y=0          kinetic spine: alloy -> casing -> power -> cogs -> windmill -> belts -> press -> mixer
@@ -379,4 +379,64 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r the Experience Lantern pulls nearby experience orbs in and stores them as liquid XP.",
         "&eHow:&r check JEI for the recipe. Hang it over a mob farm's kill zone and pipe its XP away.",
         "&eTip:&r pair it with the Blaze Enchanter and your farm pays for its own enchanting."]),
+
+    # --- ATM10-alignment round (2026-10-19) ----------------------------------------------------
+    Q("cr_large_wheel", 0, 0, [item("create:large_water_wheel")], "Large Water Wheel",
+      subtitle="Slower, but far stronger", deps=["cr_power"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r a 3x3 water wheel. It turns at half the speed of the small one but gives more stress capacity in total (check with goggles).",
+        "&eChemistry:&r physics again: a bigger wheel catches the flow further from its axle, so the same water gives more torque.",
+        "&eHow:&r a water wheel ringed with planks. Give it flowing water across the whole face.",
+        "&eTip:&r follow it with a large cogwheel to get the speed back."]),
+    Q("cr_rotation_control", 0, 0, [item("create:vertical_gearbox"), item("create:adjustable_chain_gearshift"), item("create:sequenced_gearshift")], "Fine Rotation Control",
+      subtitle="Turn corners, change speed, run a sequence", deps=["cr_chain_drive", "cr_tube"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Vertical Gearbox passes rotation up and down; the Adjustable Chain Gearshift changes its speed ratio with the strength of a redstone signal; the Sequenced Gearshift runs a programmed list of turns, waits and reversals.",
+        "&eHow:&r vertical gearbox: a gearbox in the crafting grid. The other two add an electron tube to a chain drive or to brass casing and a cogwheel (check JEI).",
+        "&eTip:&r a sequenced gearshift on a piston makes a door that opens, waits and closes on one pulse."]),
+    Q("cr_burner_kit", 0, 0, [item("create:empty_blaze_burner", 2), item("create:blaze_cake_base")], "Spare Burners",
+      subtitle="More burners, and the cake base", deps=["cr_mixer"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r empty Blaze Burners to catch more blazes, and a Blaze Cake base ready to fill with lava.",
+        "&eChemistry:&r a superheated burner runs hotter because the cake gives it richer fuel; as a rule of thumb, many reactions run about twice as fast for every 10 °C hotter.",
+        "&eHow:&r burners are iron plates around netherrack; right-click a blaze with one, or use it on a monster spawner. The cake base is compacted egg, sugar and cinder flour (check JEI).",
+        "&eTip:&r a big steam boiler wants nine or more burners. Catch them early."]),
+    Q("cr_fluid_control", 0, 0, [item("create:fluid_valve"), item("create:copper_valve_handle"), item("create:smart_fluid_pipe")], "Valves and Smart Pipes",
+      subtitle="Open, close and filter a fluid line", deps=["cr_pipes", "cr_tube"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r a Fluid Valve opens or closes a pipe when rotation turns it (a valve handle turns it by hand); a Smart Fluid Pipe lets only the fluid you set pass.",
+        "&eChemistry:&r chemical plants are mostly valves: the right reagent, in the right amount, at the right moment.",
+        "&eHow:&r valve: an iron plate and a pipe. Handle: copper plates on andesite alloy. Smart pipe: a pipe with a brass plate and an electron tube (check JEI).",
+        "&eTip:&r a smart pipe after a mixer stops the wrong fluid backing up the line."]),
+    Q("cr_nozzle", 0, 0, [item("create:nozzle")], "Nozzle",
+      subtitle="Spread a fan's effect in a circle", deps=["cr_fan"], xp=30, optional=True, tokens=1, desc=[
+        "&eWhat:&r a Nozzle on the front of an Encased Fan spreads its air all around instead of in a line, and pushes or pulls mobs in range.",
+        "&eHow:&r andesite alloy and wool (check JEI).",
+        "&eTip:&r a fan, a nozzle and a fire behind it make a warm room. A water source behind it, a mob wash."]),
+    Q("cr_plough", 0, 0, [item("create:mechanical_plough"), item("create:radial_chassis", 3)], "Plough and Radial Chassis",
+      subtitle="Till fields, grab whole rings", deps=["cr_glue"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Mechanical Plough tills dirt and breaks small blocks as a contraption moves; Radial Chassis grabs blocks around it in a ring, for bearing contraptions.",
+        "&eHow:&r plough: iron plates, andesite alloy and a casing. Radial chassis: logs and andesite alloy, three at a time (check JEI).",
+        "&eTip:&r a plough leading a row of harvesters and seed deployers is a field that farms itself."]),
+    Q("cr_interfaces", 0, 0, [item("create:portable_storage_interface", 2), item("create:portable_fluid_interface", 2)], "Portable Interfaces",
+      subtitle="Load a moving contraption", deps=["cr_cart", "cr_copper_casing", "cr_chute"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r a pair of Portable Storage (or Fluid) Interfaces, one on the contraption and one on the ground, swap items or fluids whenever they line up.",
+        "&eHow:&r an andesite casing (items) or copper casing (fluids) with a chute (check JEI).",
+        "&eTip:&r a train with fluid interfaces can haul acid from a remote plant without a single pipe."]),
+    Q("cr_seat", 0, 0, [anytag("create:seats")], "Take a Seat",
+      subtitle="Somewhere to sit, and a seat for a conductor", deps=["cr_casing"], xp=20, optional=True, tokens=1, desc=[
+        "&eWhat:&r Create seats. You can sit on them, mobs sit on them, and a seated mob (or you) is what drives a train or moving contraption.",
+        "&eHow:&r a wooden slab and wool of any colour. Dye one seat to recolour it.",
+        "&eTip:&r a villager in a seat behind train controls becomes your conductor."]),
+    Q("cr_displays", 0, 0, [item("create:display_link"), item("create:nixie_tube", 4)], "Display Links and Nixie Tubes",
+      subtitle="Put your numbers on the wall", deps=["cr_stock", "cr_tube"], xp=60, optional=True, tokens=1, desc=[
+        "&eWhat:&r a Display Link reads a block (a stockpile, a tank, a station, a speedometer) and writes it onto Nixie Tubes, signs or display boards.",
+        "&eHow:&r a transmitter on brass casing makes the link; two electron tubes make four nixie tubes (check JEI).",
+        "&eTip:&r link a tank of seed oil to a nixie row and you'll see the level from across the room."]),
+    Q("cr_repackager", 0, 0, [item("create:repackager")], "Re-Packager",
+      subtitle="Merge and split packages", deps=["cr_packager"], xp=40, optional=True, tokens=1, desc=[
+        "&eWhat:&r a Re-Packager opens incoming packages and repacks their contents, so a recipe's ingredients arrive at a machine in one box.",
+        "&eHow:&r a Packager converted in the crafting grid (check JEI).",
+        "&eTip:&r use it in front of a mechanical crafter that needs many different items at once."]),
+    Q("cr_train_fittings", 0, 0, [item("create:train_door", 2), item("create:train_trapdoor", 2), item("create:track_observer")], "Train Fittings",
+      subtitle="Doors that stay shut, and a track sensor", deps=["cr_station"], xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r Train Doors and Trapdoors open only when the train is stopped at a station. A Train Observer gives a redstone signal when a train passes over it.",
+        "&eHow:&r a wooden door or trapdoor with train casing; the observer is train casing and a pressure plate (check JEI).",
+        "&eTip:&r a train observer before a station can open a loading gate in time."]),
 ], links=[("gs_iron", -2, 0), ("t2_blaze", 14, 2), ("t3_analog", 28, -3), ("t6_pu", 36, -3)])

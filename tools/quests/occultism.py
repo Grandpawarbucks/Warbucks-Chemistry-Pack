@@ -278,4 +278,43 @@ CHAPTER = Chapter("occultism", "Occultism", "occultism:datura",
         "&eChemistry:&r tube coral builds its skeleton from calcium carbonate (aragonite), the same CaCO₃ as your chalk.",
         "&eHow:&r impure white chalk with marid essence, lapis dust and tube coral, purified in spiritfire.",
         "&eTip:&r Uphyxes' Inverted Tower, the marid crafting pentacle, makes the master miner and tier 4 stabilizers."]),
+
+    # --- ATM10-aligned additions (2026-10-19): tools of the trade --------------------------------
+    Q("oc_brush", 0, 0, [item("occultism:brush")], "Chalk Brush", deps=["m_chalk"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: clean up after a ritual", desc=[
+        "&eWhat:&r right-click chalk glyphs with the brush to wipe them away much faster than breaking them.",
+        "&eChemistry:&r chalk, CaCO₃, fizzes away in acid: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂. A brush is gentler.",
+        "&eHow:&r three planks over two wool and a string."]),
+    Q("oc_crystal", 0, 0, [item("occultism:spirit_attuned_crystal")], "Spirit-Attuned Crystal", deps=["oc_attuned_gem"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: four gems, one anchor", desc=[
+        "&eWhat:&r the crystal anchors bigger pentacles and goes into the mineshaft, miners and the afrit and marid circles.",
+        "&eChemistry:&r a real crystal is a lattice that repeats in three dimensions; four small gems pressed together would only be a polycrystal.",
+        "&eHow:&r four spirit-attuned gems in a 2×2 grid.",
+        "&eTip:&r make two: the mineshaft and the djinni miner each need one."]),
+    Q("oc_iesnium_pick", 0, 0, [item("occultism:iesnium_pickaxe"), item("occultism:iesnium_block")], "Iesnium Tools", deps=["m_iesnium"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: the pickaxe every miner needs", desc=[
+        "&eWhat:&r the iesnium pickaxe mines otherworld blocks and is an ingredient of every miner spirit. The block goes into the Dimensional Mineshaft.",
+        "&eHow:&r pickaxe: 3 iesnium ingots over 2 sticks. Block: 9 ingots.",
+        "&eTip:&r you'll want a spare pickaxe for each miner upgrade."]),
+    Q("oc_ritual_satchel", 0, 0, [item("occultism:ritual_satchel_t1")], "Apprentice Ritual Satchel", deps=["oc_purple_chalk"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: a foliot draws your pentacles", desc=[
+        "&eWhat:&r fill the satchel with chalks, candles, skulls and crystals; preview a pentacle in the Dictionary and the foliot places the pieces for you.",
+        "&eHow:&r a foliot crafting ritual: a hopper, a dispenser, 2 wool, 2 leather, string and a silver ingot.",
+        "&eTip:&r chalks are used up by durability, so keep spares inside."]),
+    Q("oc_ritual_satchel_t2", 0, 0, [item("occultism:ritual_satchel_t2")], "Artisanal Ritual Satchel", deps=["oc_ritual_satchel", "oc_red_chalk"], xp=100,
+      optional=True, tokens=1, subtitle="Optional: an afrit sets the whole circle at once", desc=[
+        "&eWhat:&r the afrit version places a whole pentacle in one click, and can also pick one up again: chalk, candles and all.",
+        "&eHow:&r an afrit upgrade ritual: the apprentice satchel, afrit essence and 4 ender pearls (it keeps the contents).",
+        "&eTip:&r right-click the golden bowl with it to clear an intact pentacle."]),
+    Q("oc_iesnium_anvil", 0, 0, [item("occultism:iesnium_anvil")], "Iesnium Anvil", deps=["oc_blue_chalk"], xp=150,
+      optional=True, tokens=2, subtitle="Optional: an anvil a marid helps you pay for", desc=[
+        "&eWhat:&r an unbreakable anvil that can go one level past an enchantment's maximum, and the marid pays half the level cost.",
+        "&eHow:&r a marid crafting ritual: an anvil, 3 iesnium blocks and marid essence.",
+        "&eTip:&r pair it with the Enchantment Library from Apotheosis for top-level books."]),
+    Q("oc_rainbow", 0, 0, [item("occultism:chalk_rainbow")], "Rainbow Chalk", deps=["oc_blue_chalk"], xp=200,
+      optional=True, tokens=2, subtitle="Optional: one chalk for every glyph", desc=[
+        "&6You remember not needing a circle at all. This is the next best thing.&r",
+        "&eWhat:&r rainbow chalk can stand in for any coloured chalk glyph and takes on its look.",
+        "&eChemistry:&r chalk colours come from pigments; the oldest, like red ochre (Fe₂O₃), are iron oxides people have used for 100,000 years.",
+        "&eHow:&r the eldritch pentacle with 12 coloured chalks, a sheep as the sacrifice and the brush to start it. The Dictionary shows the circle and the full list."]),
 ], links=[("gs_iron", -2, 0), ("t2_nether", 20, -1.5)])

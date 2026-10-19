@@ -79,7 +79,7 @@ CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
         "&eTip:&r feed the Dissolver from a hopper and it runs while you're in the Nether."]),
     Q("t2_pylon", 24, 0, [item("pylons:infusion_pylon")], "Wings of a God", deps=["t2_filter", "t2_quartz", "t2_blackstone", "t2_hydrogen"], xp=500, size=2.0, shape="hexagon", items=[("minecraft:experience_bottle", 32)],
       subtitle="Permanent flight, built from fire and hydrogen", desc=[
-        "&6The sky is yours again. You had forgotten how small the world looks from here.&r",
+        "&6Your second gift returns, and the sky is yours again. You had forgotten how small the world looks from here.&r",
         "&eWhat:&r the &eInfusion Pylon&r applies a filter's effect to you anywhere. With a Flying filter, that's creative-style flight.",
         "&eHow:&r craft it from Nether quartz, blackstone and &ehydrogen&r from your Dissolver (see JEI), place it, and put the full (one-hour) filter inside.",
         "&eTip:&r the pylon only works while its chunk is loaded. Force-load it (see the next quest)."]),
@@ -90,6 +90,17 @@ CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
         "&eTip:&r force-load your Dissolver and brewing setup too, so they keep working while you travel."]),
 
     # --- Optional side quests (above and below the main line) ---
+    Q("t2_opt_netherite", 0, 0, [item("minecraft:netherite_ingot")], "Netherite", subtitle="Four scrap and four gold", deps=["t2_debris"],
+      xp=100, optional=True, tokens=2, desc=[
+        "&eWhat:&r The toughest metal in the game: netherite gear doesn't burn in lava and outlasts diamond.",
+        "&eChemistry:&r Netherite isn't on the periodic table. In game terms it's an alloy: scrap from ancient debris fused with gold.",
+        "&eHow:&r Smelt ancient debris into netherite scrap, then craft 4 scrap with 4 gold ingots. A smithing table and an upgrade template turn diamond gear into netherite.",
+        "&eTip:&r Keep this in mind for later: calorite ore on Venus needs a netherite-tier pickaxe."]),
+    Q("t2_opt_ender", 0, 0, [item("minecraft:ender_pearl", 4), item("minecraft:ender_eye", 2)], "Eyes of Ender", subtitle="Blaze powder and a pearl", deps=["t2_blaze"],
+      xp=50, optional=True, tokens=1, desc=[
+        "&eWhat:&r An Eye of Ender, thrown, flies towards the nearest stronghold, and twelve of them open the way to the End.",
+        "&eHow:&r Endermen drop ender pearls; they spawn in every dimension but crowd the Nether's warped forests. Craft 1 pearl with 1 blaze powder (shapeless) for an eye.",
+        "&eTip:&r No rush. Flight here runs on hydrogen, so the End can wait until you want its chorus fruit."]),
     Q("t2_fortress", 4, -3, [item("minecraft:nether_brick", 32)], "Fortress Found", deps=["t2_nether"], xp=40, optional=True, tokens=1,
       subtitle="Bring home a piece of a fortress", desc=[
         "&eWhat:&r Nether Fortresses hold blazes, wither skeletons and nether wart.",

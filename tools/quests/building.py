@@ -254,4 +254,103 @@ CHAPTER = Chapter("building", "Building and Decoration", "framedblocks:framed_ha
         "&eWhat:&r a challenge: build a real laboratory around your chemistry machines using these blocks.",
         "&eHow:&r include glowing panels, screens, a fume fan and a glass wall. Click the checkmark when you're proud of it.",
         "&eTip:&r share a screenshot with your server. Bragging rights are a demigod's privilege."]),
+
+    # ===== ATM10-aligned round (2026-10-19): vanilla materials with real geology, and a few tools =====
+    Q("bd_rocks", 0, 0, [anyof(["minecraft:stone", "minecraft:deepslate", "minecraft:andesite", "minecraft:diorite", "minecraft:granite",
+                                "minecraft:tuff", "minecraft:calcite"], 64)], "Know Your Rocks", deps=["bd_start", "gs_stone"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: 64 of any natural stone", desc=[
+        "&eWhat:&r stone, deepslate, andesite, diorite, granite, tuff or calcite, mixed as you like. Each has a polished and brick form for building.",
+        "&eChemistry:&r granite cooled slowly deep underground, so its quartz and feldspar crystals grew big; andesite and diorite are its iron- and calcium-richer cousins. Tuff is welded volcanic ash, and calcite is CaCO₃.",
+        "&eHow:&r mine them with Silk Touch for smooth stone, or smelt cobblestone back into stone.",
+        "&eTip:&r the Trowel (Quality of Life page) mixes them into a natural-looking wall."]),
+    Q("bd_ru_stones", 0, 0, [item("regions_unexplored:chalk", 16), item("regions_unexplored:argillite", 16), item("regions_unexplored:mossy_stone", 8)], "Rocks of Other Biomes",
+      deps=["bd_rocks"], xp=20, optional=True, tokens=1, subtitle="Optional: chalk, argillite and mossy stone", desc=[
+        "&eWhat:&r three building stones from Regions Unexplored biomes: white chalk, dark red argillite and mossy stone.",
+        "&eChemistry:&r chalk is CaCO₃ made of the tiny plates (coccoliths) of ancient sea algae: the white cliffs of Dover are trillions of them. Argillite is clay squeezed into hard rock.",
+        "&eHow:&r find the biomes with Nature's Compass (Quality of Life page) and mine the stone.",
+        "&eTip:&r chalk is soft and white; it lights a room almost like the lab blocks."]),
+    Q("bd_dripstone", 0, 0, [item("minecraft:pointed_dripstone", 8), item("minecraft:dripstone_block", 8)], "Dripstone", deps=["bd_rocks"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: stone that grows", desc=[
+        "&eWhat:&r pointed dripstone grows down from the ceiling and up from the floor in dripstone caves. Hanging under a water source, it slowly fills cauldrons below.",
+        "&eChemistry:&r water carrying calcium bicarbonate drips, loses CO₂ and leaves calcite behind: Ca(HCO₃)₂ → CaCO₃ + H₂O + CO₂. A real stalactite grows about a centimetre a century.",
+        "&eHow:&r mine both in a dripstone cave (Nature's Compass finds one).",
+        "&eTip:&r falling pointed dripstone hurts like an arrow. Mind your head."]),
+    Q("bd_masonry", 0, 0, [item("minecraft:clay_ball", 16), item("minecraft:brick", 16), item("minecraft:chiseled_stone_bricks", 4), item("minecraft:cobblestone_wall", 8)],
+      "Masonry", deps=["bd_start", "gs_furnace"], xp=20, optional=True, tokens=1, subtitle="Optional: clay, bricks and walls", desc=[
+        "&eWhat:&r clay fires into bricks; stone bricks chisel into patterns; walls make fences that mobs can't jump.",
+        "&eChemistry:&r clay is mostly kaolinite, Al₂Si₂O₅(OH)₄. Fired above about 900 °C it loses its water and the particles sinter together into hard, waterproof ceramic.",
+        "&eHow:&r dig clay from riverbeds and lush caves and smelt it into bricks. Chiseled stone bricks come from the stonecutter; walls from cobblestone.",
+        "&eTip:&r a stonecutter makes walls, stairs and slabs with no waste."]),
+    Q("bd_concrete", 0, 0, [item("minecraft:terracotta", 16), anyof([f"minecraft:{c}_concrete_powder" for c in ("white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray",
+                                                                                                                  "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black")], 16)],
+      "Terracotta and Concrete", deps=["bd_masonry"], xp=20, optional=True, tokens=1, subtitle="Optional: colour by the stack", desc=[
+        "&eWhat:&r terracotta is fired clay; concrete powder is sand, gravel and dye that sets into concrete when it touches water.",
+        "&eChemistry:&r real concrete doesn't dry, it reacts: calcium silicates in cement take up water (hydration) and grow interlocking crystals. It even sets underwater.",
+        "&eHow:&r smelt clay blocks into terracotta; 4 sand, 4 gravel and a dye make 8 concrete powder of any colour.",
+        "&eTip:&r place powder in front of a water flow, or run it through Create's bulk washing, to harden a whole stack."]),
+    Q("bd_lights", 0, 0, [item("minecraft:glowstone_dust", 16), item("minecraft:glowstone", 4), item("minecraft:redstone_lamp", 4), item("minecraft:soul_lantern", 2)],
+      "Lighting Without Torches", deps=["bd_start", "t2_nether"], xp=20, optional=True, tokens=1, subtitle="Optional: glowstone, lamps and lanterns", desc=[
+        "&eWhat:&r glowstone gives the brightest block light; redstone lamps switch on and off; soul lanterns burn blue and dim.",
+        "&eChemistry:&r a flame is incandescence (hot soot glowing). Cold light, from LEDs to glow-sticks, is luminescence: electrons drop between energy levels and give off exactly one colour.",
+        "&eHow:&r glowstone from the Nether ceiling (4 dust per block); lamp: glowstone in redstone; soul lantern: a soul torch in iron nuggets.",
+        "&eTip:&r a lamp on a daylight detector lights itself at dusk."]),
+    Q("bd_froglights", 0, 0, [item("minecraft:ochre_froglight"), item("minecraft:verdant_froglight"), item("minecraft:pearlescent_froglight")], "Froglights",
+      deps=["bd_lights", "fd_breed"], xp=60, optional=True, tokens=2, subtitle="Optional: three frogs, three colours", desc=[
+        "&eWhat:&r a frog that eats a small magma cube leaves a froglight. Its colour depends on the frog: temperate, warm or cold.",
+        "&eChemistry:&r real frogs' skin colour comes from pigment cells stacked in layers: yellow pigment over a layer that scatters blue light makes green, the same trick as a blue sky.",
+        "&eHow:&r scoop tadpoles from a swamp in a bucket, raise them in a temperate, a warm and a cold biome, and bring the three frogs to the Nether's magma cubes.",
+        "&eTip:&r a lead is the easiest way to walk frogs through a portal."]),
+    Q("bd_metal_blocks", 0, 0, [item("minecraft:copper_block", 4), item("minecraft:lapis_block", 2), item("minecraft:quartz_block", 8)], "Mineral Blocks",
+      deps=["bd_start", "t2_quartz"], xp=20, optional=True, tokens=1, subtitle="Optional: copper, lapis and quartz to build with", desc=[
+        "&eWhat:&r copper blocks weather from orange to green; lapis and quartz blocks are the classic blue and white trims.",
+        "&eChemistry:&r copper turns green as it reacts with air, water and CO₂ into basic copper carbonate (the Statue of Liberty's patina). Honeycomb wax stops it, an axe scrapes it back.",
+        "&eHow:&r 9 copper ingots or 9 lapis per block; 4 Nether quartz per quartz block. Cut copper and quartz pillars come from the stonecutter.",
+        "&eTip:&r copper blocks in Create Deco and Rechiseled take the same patina."]),
+    Q("bd_amethyst", 0, 0, [item("minecraft:amethyst_shard", 8), item("minecraft:amethyst_block", 2)], "Amethyst", deps=["bd_start", "gs_ironpick"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: purple quartz from a geode", desc=[
+        "&eWhat:&r amethyst clusters grow on budding amethyst inside underground geodes. Shards make spyglasses, tinted glass and amethyst blocks that chime.",
+        "&eChemistry:&r amethyst is quartz, SiO₂, coloured violet by traces of iron that natural radiation has nudged into Fe⁴⁺ colour centres. Heat it and it turns yellow (citrine).",
+        "&eHow:&r break fully grown clusters in a geode (calcite and smooth basalt shells), and craft 4 shards into a block.",
+        "&eTip:&r never break the budding amethyst: it can't be moved and it's the only thing that grows more."]),
+    Q("bd_ice", 0, 0, [item("minecraft:snow_block", 8), item("minecraft:packed_ice", 8), item("minecraft:blue_ice", 2)], "Building with Ice", deps=["bd_start"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: snow, packed ice and blue ice", desc=[
+        "&eWhat:&r snow blocks, packed ice (doesn't melt) and blue ice, the slipperiest block in the game: boats on blue ice outrun horses.",
+        "&eChemistry:&r ice floats because hydrogen bonds lock water into an open hexagonal lattice, about 9% less dense than liquid water. That's why lakes freeze from the top.",
+        "&eHow:&r 4 snowballs make a snow block; 9 ice make packed ice, 9 packed ice make blue ice. Ice needs Silk Touch; icebergs have packed and blue ice.",
+        "&eTip:&r a blue-ice boat road in the Nether makes long trips fast."]),
+    Q("bd_nether_masonry", 0, 0, [item("minecraft:polished_blackstone", 16), item("minecraft:gilded_blackstone"), item("minecraft:chain", 4)], "Nether Masonry",
+      deps=["bd_start", "t2_blackstone"], xp=20, optional=True, tokens=1, subtitle="Optional: blackstone, gold-flecked stone and chains", desc=[
+        "&eWhat:&r polished blackstone and its bricks make dark, gothic builds; gilded blackstone sparkles with gold; chains hang lanterns.",
+        "&eChemistry:&r gold in veins inside dark rock is how real gold is often found: hot water carries dissolved gold through cracks and drops it as it cools.",
+        "&eHow:&r polish blackstone in a stonecutter. Gilded blackstone is found in bastions. Chain: an iron ingot between two iron nuggets.",
+        "&eTip:&r gilded blackstone sometimes drops gold nuggets when mined without Silk Touch."]),
+    Q("bd_end_stone", 0, 0, [item("minecraft:end_stone", 16), item("minecraft:end_stone_bricks", 8)], "End Stone", deps=["bd_start", "w_end"], xp=20,
+      optional=True, tokens=1, subtitle="Optional: pale stone from the void", desc=[
+        "&eWhat:&r end stone and its bricks: pale yellow and very blast-resistant. Chorus plants grow only on it.",
+        "&eHow:&r mine end stone on any End island; 4 end stone make 4 end stone bricks.",
+        "&eTip:&r end stone resists explosions far better than cobblestone, so wall in anything that might blow."]),
+    Q("bd_vanilla_decor", 0, 0, [item("minecraft:painting", 2), item("minecraft:carved_pumpkin"), item("minecraft:cauldron"),
+                                 anyof(["minecraft:stripped_oak_log", "minecraft:stripped_spruce_log", "minecraft:stripped_birch_log", "minecraft:stripped_jungle_log",
+                                        "minecraft:stripped_acacia_log", "minecraft:stripped_dark_oak_log", "minecraft:stripped_mangrove_log",
+                                        "minecraft:stripped_cherry_log"], 8)],
+      "Finishing Touches", deps=["bd_start", "gs_iron"], xp=15, optional=True, tokens=1, subtitle="Optional: paintings, a pumpkin, a cauldron, clean beams", desc=[
+        "&eWhat:&r the small things that make a base feel lived in: paintings, a carved pumpkin, a cauldron and stripped-log beams.",
+        "&eChemistry:&r stripping a log takes off the bark, which is full of tannins: the same polyphenols that tan leather.",
+        "&eHow:&r painting: sticks around wool. Carve a pumpkin with shears. Cauldron: 7 iron. Use an axe on any log to strip it.",
+        "&eTip:&r a cauldron under pointed dripstone fills with water by itself."]),
+    Q("bd_diamond_block", 0, 0, [item("minecraft:diamond_block")], "Showing Off", deps=["bd_metal_blocks", "hv_iron"], xp=50,
+      secret=True, loot="secret", subtitle="Secret: nine diamonds you'll never use", desc=[
+        "&6You remember a throne cut from a single gem. A block of diamond on the mantelpiece is a start.&r",
+        "&eWhat:&r a block of diamond, placed only to be looked at.",
+        "&eChemistry:&r a diamond block's worth of real diamond would be about 3.5 tonnes of pure carbon. Burn it and you'd get about 13 tonnes of CO₂."]),
+    Q("bd_tool_extras", 0, 0, [item("framedblocks:framing_saw"), item("mcwwindows:hammer"), item("constructionstick:template_angel")], "Tool Extras",
+      deps=["bd_framed", "bd_mcw_windows", "bd_stick_diamond"], xp=30, optional=True, tokens=1, subtitle="Optional: a saw, a hammer and an angel template", desc=[
+        "&eWhat:&r the Framing Saw crafts any framed shape from plain framed cubes; the Window Hammer reshapes a placed Macaw's window; the Angel template lets a Construction Stick place blocks in mid-air.",
+        "&eHow:&r check JEI for each. Apply the template to a stick at a smithing table.",
+        "&eTip:&r the angel template is a building aid, not flight. Flight in this pack is a chemistry milestone."]),
+    Q("bd_spikes", 0, 0, [item("supplementaries:bamboo_spikes", 4)], "Bamboo Spikes", deps=["bd_jar"], xp=15,
+      optional=True, tokens=1, subtitle="Optional: a garden of sharp sticks", desc=[
+        "&eWhat:&r Supplementaries bamboo spikes hurt mobs that walk on them; coated with a lingering potion they poison them too.",
+        "&eHow:&r 4 bamboo over 3 wooden slabs (check JEI). Use a lingering potion on placed spikes to coat them.",
+        "&eTip:&r a ring of spikes around a farm keeps zombies off the crops."]),
 ], links=[("gs_table", -2, 0), ("t3_hull", -2, 2), ("cr_deco", -2, 15), ("t2_quartz", -2, 17)])

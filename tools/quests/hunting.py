@@ -293,6 +293,37 @@ CHAPTER = Chapter("hunting", "Monster Hunting", "minecraft:zombie_head",
         "&eWhat:&r the Wither is the Nether's boss, summoned by the player. It drops a Nether Star for beacons and many late recipes.",
         "&eHow:&r four soul sand in a T with three wither skeleton skulls on top. Summon it deep underground or far from base: it destroys blocks.",
         "&eTip:&r below half health it gains armour that stops arrows; switch to a Smite sword."]),
+
+    # --- spoils of the hunt: what the drops are made of (optional) ------------------------------
+    Q("hn_spoil_flesh", 0, 0, [item(MC + "rotten_flesh", 32)], "Spoils: Rotten Flesh", deps=["hn_zombie_1"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: the least wanted drop, put to use", desc=[
+        "&eWhat:&r a stack of rotten flesh. Nobody wants to eat it, but your Dissolver does.",
+        "&eChemistry:&r the Dissolver breaks one rotten flesh into 3 protein. Proteins are chains of amino acids joined by peptide bonds (–CO–NH–); rotting is bacteria cutting those chains.",
+        "&eHow:&r keep the flesh from your zombie hunts instead of throwing it away.",
+        "&eTip:&r dissolve the protein again and it gives ammonia, CO₂, ethylene and sulfur; the sulfur comes from the amino acids cysteine and methionine."]),
+    Q("hn_spoil_bone", 0, 0, [item(MC + "bone", 32)], "Spoils: Bones", deps=["hn_skeleton_1"], xp=50,
+      optional=True, tokens=1, subtitle="Optional: calcium phosphate on legs", desc=[
+        "&eWhat:&r a stack of bones: bone meal, bone blocks and a mineral the Dissolver can use.",
+        "&eChemistry:&r bone is mostly hydroxyapatite, Ca₅(PO₄)₃OH. Half the time the Dissolver gives 3 of it per bone: calcium and phosphorus in one crystal.",
+        "&eHow:&r keep the bones from skeletons.",
+        "&eTip:&r hydroxyapatite is also what tooth enamel is made of; fluoride toothpaste swaps OH⁻ for F⁻ to make it harder."]),
+    Q("hn_spoil_spider", 0, 0, [item(MC + "string", 32), item(MC + "spider_eye", 8)], "Spoils: Silk and Eyes", deps=["hn_spider_1"], xp=75,
+      optional=True, tokens=1, subtitle="Optional: string and spider eyes", desc=[
+        "&eWhat:&r string for bows, wool and machines, and spider eyes for brewing.",
+        "&eChemistry:&r in the Dissolver, string gives keratin and a spider eye gives beta-carotene and chitin. Real spider silk is a different protein, spidroin, and is tougher than steel for its weight.",
+        "&eHow:&r keep the drops from your spider hunts. Witches drop spider eyes too.",
+        "&eTip:&r beta-carotene is the orange pigment in carrots; your body splits it into vitamin A."]),
+    Q("hn_spoil_witch", 0, 0, [item(MC + "glowstone_dust", 8), item(MC + "sugar", 8), item(MC + "glass_bottle", 4)], "Spoils: The Witch's Pantry",
+      deps=["hn_witch"], xp=75, optional=True, tokens=1, subtitle="Optional: glowstone, sugar and bottles", desc=[
+        "&eWhat:&r the ingredients witches carry: glowstone dust, sugar and empty bottles.",
+        "&eChemistry:&r the Dissolver breaks glowstone dust into 4 phosphorus and sugar into sucrose, C₁₂H₂₂O₁₁. Glass itself is mostly SiO₂, melted with soda (Na₂CO₃) and lime so it softens at a workable heat.",
+        "&eHow:&r keep the drops from witches; swamp huts respawn them.",
+        "&eTip:&r sucrose in the Dissolver is one of the easiest early sources of carbon, hydrogen and oxygen."]),
+    Q("hn_trident", 0, 0, [item(MC + "trident")], "The Trident", deps=["hn_undead_kin"], xp=150,
+      optional=True, tokens=2, loot="hunt", subtitle="Optional: take it from a drowned", desc=[
+        "&eWhat:&r the only trident in the game is the one a drowned carries. It can't be crafted.",
+        "&eHow:&r fight drowned in rivers and oceans; only those holding a trident can drop one, and it's rare. Looting helps.",
+        "&eTip:&r enchant it with Loyalty to have it fly back, Riptide to launch yourself in rain, or Channeling to call lightning."]),
 ], links=[("gs_shield", -2, 0), ("t2_nether", 14, 0),
           ("wd_dragon", 0, -3), ("wd_warden", 2, -3), ("wd_catacombs", 4, -3),
           ("tf_courtyard", 0, -5), ("tf_lich_tower", 2, -5), ("tf_labyrinth", 4, -5), ("tf_hydra_lair", 6, -5),

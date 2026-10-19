@@ -4,6 +4,22 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Quest book v11 (2,000 quests): ATM10-aligned coverage and the story arc; fresh world
+- **Live world wiped** (user decision): backup `backups/world-prewipe-20261019-002252.tar.gz` on the VPS; new random seed.
+- **ATM10-aligned quests** (brief: `docs/research/atm10_alignment_brief.md`): ATM10's book (All Rights Reserved) was used
+  only as a checklist of items worth a quest; every quest is our own text. 378 new quests across 6 parallel writers:
+  early path +14, late path +58, basics +103 (vanilla armour/tools/food/building, storage, power, Powah), tech +99
+  (Mekanism, AE2 + addons, Integrated Dynamics, LaserIO, Pipez, Create, JDT), magic +60, worlds +41. Uncovered ATM10
+  items dropped from 1,124 to 138, all skipped for a reason (creative, ATM-only, blocked by our gates, already covered
+  by a tag task).
+- **Hidden endgame chain made visible**: the Seed's Antimatter Cores need MI quantum circuits → plutonium batteries → MI
+  plutonium, which only the MI Nuclear Reactor makes. Kanthal coils, titanium, tungsten, implosion compressor, nuclear
+  reactor, cryofluid, superconductor, qubits, tritium and helium-3 are now required main-path quests (t6/t7).
+- **Story**: one arc from first join to the end (gold lines reviewed welcome → creation), gifts numbered (Dissolver,
+  Combiner, Infusion Pylon), repetition removed; t7 renamed "VIII. Beyond the Sky" (no clash with "Creation").
+- Gate fix: Ars Elemental's `flight_alt` Ritual of Flight recipe removed (it skipped the hydrogen).
+- `tools/quest_compare.py` counts items inside our any-of quests.
+
 ### 2026-10-19: Chemistry by tier, quest book v10 (layout, Basics, pruning), harvest tiers
 Based on three audits in `docs/research/` (chem_tier_audit, quest_layout_audit, tools_harvest_plan); 7 parallel writers.
 - **Chemistry gates** (`phase4_aluminum.js`, new `phase5_chem_gates.js`):
