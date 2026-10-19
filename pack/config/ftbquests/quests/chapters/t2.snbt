@@ -14,6 +14,8 @@
 			id: "206E95EBFA840B9D"
 			x: 0.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"7A1D323C6D2FA6FE"
 			]
@@ -57,6 +59,8 @@
 			id: "04B2CA0DEFD9BEA6"
 			x: 2.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"206E95EBFA840B9D"
 			]
@@ -87,6 +91,8 @@
 			id: "324D521459A0712A"
 			x: 4.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -120,7 +126,10 @@
 		{
 			id: "7C9C1346FF3451C6"
 			x: 4.0d
-			y: -3.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -153,8 +162,10 @@
 		}
 		{
 			id: "75644D12ABEA0664"
-			x: 4.0d
-			y: -6.0d
+			x: 5.5d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -187,8 +198,12 @@
 		}
 		{
 			id: "069E15B497A964D9"
-			x: 8.0d
-			y: 6.5d
+			x: 7.5d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			hide_dependent_lines: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -223,6 +238,8 @@
 			id: "7271A237054B8116"
 			x: 6.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"324D521459A0712A"
 				"7C9C1346FF3451C6"
@@ -258,6 +275,8 @@
 			id: "5BCAB5B85016C31D"
 			x: 8.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"7271A237054B8116"
 			]
@@ -292,6 +311,8 @@
 			id: "51616CABAD571846"
 			x: 10.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"5BCAB5B85016C31D"
 			]
@@ -326,6 +347,8 @@
 			id: "0860B82960107DA5"
 			x: 12.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"51616CABAD571846"
 				"7033201713D3AEDC"
@@ -361,6 +384,8 @@
 			id: "025AF6A3C6CE7426"
 			x: 14.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"0860B82960107DA5"
 			]
@@ -395,6 +420,8 @@
 			id: "06C7CB442A50E345"
 			x: 16.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"025AF6A3C6CE7426"
 			]
@@ -427,8 +454,10 @@
 		}
 		{
 			id: "7033201713D3AEDC"
-			x: 10.0d
-			y: 2.0d
+			x: 6.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"7E15308871B090AE"
 			]
@@ -513,7 +542,9 @@
 		{
 			id: "165366B8F8450DF0"
 			x: 20.0d
-			y: -1.5d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2EE32733B83E0FCA"
@@ -542,8 +573,10 @@
 		}
 		{
 			id: "17FDCFCBC059454A"
-			x: 6.0d
-			y: 3.0d
+			x: 9.5d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"5162E347921E0863"
@@ -577,9 +610,12 @@
 		}
 		{
 			id: "085504B6D2AE4F4C"
-			x: 6.0d
-			y: 1.5d
+			x: 7.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"324D521459A0712A"
 			]
@@ -621,9 +657,12 @@
 		}
 		{
 			id: "7543D8AB321711BF"
-			x: 4.0d
-			y: -4.5d
+			x: 9.0d
+			y: -3.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -656,9 +695,12 @@
 		}
 		{
 			id: "2BF8FDA92111B602"
-			x: 8.0d
-			y: -2.0d
+			x: 9.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"7271A237054B8116"
 			]
@@ -691,9 +733,12 @@
 		}
 		{
 			id: "2A7CD7184FBD641A"
-			x: 4.0d
+			x: 4.5d
 			y: -1.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -726,8 +771,10 @@
 		}
 		{
 			id: "5162E347921E0863"
-			x: 4.0d
-			y: 1.5d
+			x: 7.5d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
@@ -762,7 +809,9 @@
 		{
 			id: "32E9236C34FD4F59"
 			x: 6.0d
-			y: 5.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"04AB64EC70146236"
@@ -797,7 +846,9 @@
 		{
 			id: "7FC86D79A91A5FFB"
 			x: 6.0d
-			y: 6.5d
+			y: -5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"04AB64EC70146236"
@@ -832,7 +883,9 @@
 		{
 			id: "04AB64EC70146236"
 			x: 4.0d
-			y: 3.5d
+			y: -6.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -877,11 +930,38 @@
 		{
 			id: "261D8EDF2FB9E175"
 			x: 0.5d
-			y: -8.0d
+			y: -10.925d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/t2.png"
+		}
+		{
+			id: "402373EF2F59E909"
+			x: 6.7125d
+			y: -9.05d
+			width: 6.425000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t2_whispers_of_magic.png"
+		}
+		{
+			id: "26A99E9836E93566"
+			x: 8.25d
+			y: 1.875d
+			width: 5.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t2_lighter_than_air.png"
+		}
+		{
+			id: "1E03C9331F24558E"
+			x: 22.325d
+			y: -3.05d
+			width: 5.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t2_keep_it_running.png"
 		}
 	]
 	quest_links: [
@@ -890,6 +970,7 @@
 			linked_quest: "7A1D323C6D2FA6FE"
 			x: -2.0d
 			y: 0.0d
+			size: 1.0d
 		}
 	]
 }

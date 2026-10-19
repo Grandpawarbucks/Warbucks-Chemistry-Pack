@@ -35,26 +35,53 @@ Tone: wonder and quiet confidence, a little wry; never purple prose. 1–2 lines
 
 ## Layout
 **Layout is automatic. Don't spend time on `x`/`y`.** `tools/layout.py` places every quest at build time from its
-`deps` (the `x, y` you write in `Q(...)` are ignored; new quests can use `0, 0`). What it does:
-- **Columns follow dependencies:** a quest sits one column (2 cells) right of its deepest dep in the same chapter, so
-  every line points right. Deps on quests in other chapters don't count. So get `deps` right: they ARE the layout.
-- **The spine is on y = 0:** the longest chain of required quests runs along the middle. Other required chains
-  become rows above and below it (2 cells apart); optional quests sit 1.5 cells off their parent's row.
-- Crossings are reduced automatically; groups of quests with no line to the spine are packed below it.
-- **Links** (`links=[("t3_ebf", 0, 0)]`) are placed one column left of the leftmost quest that depends on them (x = -2
-  for column 0, and for links nothing in the chapter depends on); the x/y in the tuple are ignored. The chapter's entry
-  quest automatically gets a link to its deps in other chapters.
+`deps` (the `x, y` you write in `Q(...)` are ignored; new quests can use `0, 0`). Get `deps` right: they ARE the
+layout. Order of the build: `normalize_milestones`, then `tools/quest_style.py` (shapes and sizes by role), then the
+layout (it spaces quests by size), then the quest editor's overrides.
+
+**Sections.** Every auto-layout chapter is split into visual sections: small trees of about 4 to 14 quests, each under
+a labelled header image (`pack/kubejs/assets/warbucks/textures/quests/sections/<chapter>_<slug>.png`, made by the
+build; stale ones are deleted). Sections are found automatically: the branches hanging off the chapter's spine (the
+longest chain of required quests), split along their own subtrees when too big (a hub keeps its small leaves) and
+merged with their neighbours when too small. A prerequisite that only feeds one section joins it. Auto titles come
+from the section's root quest (a loose group of unrelated quests is named "From <chapter>" after where it starts).
+- `Q(..., section="Title")` puts a quest in a named section. Its descendants (through each quest's deepest
+  dependency here) without a section of their own follow it. Use it when an auto title or grouping reads badly.
+- A chapter with one section gets no header (the chapter banner is enough).
+
+**Styles** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"tree"`):
+- `"spine"` (start, t0 to t7, seed, creation): the spine runs left to right on y = 0; sections are left-to-right trees
+  in one lane above and one below it, each next to the spine quest it hangs from (or, for a block that only feeds
+  the spine, just before the spine quest that needs it).
+- `"tree"` (mod pages): sections are top-down trees (root on top, children fanning below), laid out in columns or
+  rows in reading order, whichever fits the 26 x 18 target page better.
+- `"grid"` (hunting, building, completionist, lab_notes, explore): like tree, with tighter, wider rows for collections.
+- The shop chapters stay `Chapter(..., layout="manual")`: hand-written `x`/`y` and link positions are used as they are.
+
+**Hidden lines.** The layout sets FTB's `hide_dependency_lines` on a quest (and `hide_dependent_lines` on a
+dependency) where a line is clutter: a hub with 6 or more dependents here (4 on grid pages), or a line that runs
+through a quest or header, or a long line between two sections. It only hides a line when the dependency stays
+readable without it: same section, a neighbouring section (within 2 in reading order, or touching), the spine, or
+shown as a quest link. Spine steps on spine pages are never hidden. FTB still draws hidden lines on mouse-over.
+
+**Links.** `links=[("t3_ebf", 0, 0)]` (x/y ignored) sit above or beside the quests that depend on them, inside their
+section; links nothing here depends on go in rows above the page. The chapter's entry quest automatically gets links
+to its deps in other chapters. When all of a quest's dependents here are in one far section, the layout adds a link
+to that quest inside that section: FTB draws a dependency line from the LAST button of a quest on the page (links
+come after quests), so the lines then start at the link. That quest's own dependency lines are hidden (FTB would
+draw them at the link too).
+
 - Redundant lines are dropped on output: if A -> B -> C and C also lists A, the A -> C line isn't drawn (what the
   player must do doesn't change).
-- The chapter banner goes above the topmost quest or link.
-- `python3 tools/build_quests.py --layout-report` prints crossings, lines through quests, edges longer than 6 cells
-  and overlaps per chapter (hand x/y vs automatic). Good chapters have few crossings and no overlaps.
+- The chapter banner goes above the topmost quest, link or section header.
+- `python tools/build_quests.py --layout-report` prints, per chapter, the v10 layout vs now: size (with headers),
+  sections, crossings, lines through quests, edges longer than 6 cells, hidden lines, overlaps, line directions and
+  the median line length. `tools/layout_lint.py` (on the built book) compares with ATM10.
 
 Shaping the result, if a chapter reads badly:
-- `Q(..., row=N)` pins a quest to y = 2N (e.g. `row=-1` puts it on the row above the spine).
 - Fewer long lines: depend on the nearest quest that really unlocks this one, not on a far-away hub.
-- A whole chapter can opt out with `Chapter(..., layout="manual")`: then its hand-written `x`/`y` (and link
-  positions) are used as they are. Use this only for special pages (a picture, a map).
+- `section="..."` to regroup; `Q(..., row=N)` still pins a quest's row inside its section's tree.
+- `Q(..., icon="mod:item")` sets the quest's icon (handy for checkmark tips).
 
 **Milestones have exactly two styles** (normalised at build time, so other sizes are converted):
 - **Chapter capstone:** `size=2.0, shape="gear"` (any size of 1.75 or more becomes this).

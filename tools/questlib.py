@@ -67,8 +67,12 @@ class Q:
     def __init__(self, key, x, y, tasks, title=None, desc=(), deps=(), xp=0, items=(),
                  subtitle=None, size=None, shape=None, tokens=None, optional=False,
                  hidden=False, secret=False, any_dep=False, loot=None, choice=None, row=None,
-                 repeat=False, consume=False, locked_hidden=False):
+                 repeat=False, consume=False, locked_hidden=False, section=None, icon=None):
         self.key, self.x, self.y, self.tasks = key, x, y, tasks
+        self.section = section    # layout: put this quest (and its descendants without their own) in this titled section
+        self.icon = check(icon) if icon else None  # item id shown instead of the first task's icon (tips, checkmarks)
+        self.hide_lines = False   # set by tools/layout.py: FTB hide_dependency_lines (lines show on mouse-over)
+        self.hide_dependents = False  # set by tools/layout.py: FTB hide_dependent_lines (lines to its dependents)
         self.repeat = repeat              # FTB can_repeat: the quest resets after its rewards are claimed (shop quests)
         self.consume = consume            # item tasks take the items away on submit (shop quests pay with tokens)
         self.locked_hidden = locked_hidden  # invisible until every dependency is complete (shop entries)
@@ -96,3 +100,5 @@ class Chapter:
         if layout not in ("auto", "manual"):
             raise ValueError(f"Chapter {key}: layout must be 'auto' or 'manual', not {layout!r}")
         self.layout = layout  # "auto" = tools/layout.py places every quest at build time; "manual" = keep the x/y written here
+        self.style = None     # auto layout style: "spine", "tree" or "grid" (set from STYLES in tools/quest_data.py)
+        self.sections = []    # section headers, filled in by tools/layout.py

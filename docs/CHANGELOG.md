@@ -4,6 +4,19 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Quest book appearance (sections, role shapes, legend, lint + gallery)
+- **Sectioned layout** (`tools/layout.py`): 198 sections with header images
+  (`pack/kubejs/assets/warbucks/textures/quests/sections/`); per-chapter styles in `STYLES` (spine / tree / grid);
+  `Q(section=...)` override. Hub fans and long cross-section lines hidden (`hide_dependency_lines` /
+  `hide_dependent_lines`, 705 lines; FTB still shows them on hover), never on quests linked from other pages. The line
+  model matches FTB (links draw their quest's lines; a line starts at the last button showing the dependency). Line
+  crossings 312 → 103, lines through quests 36 → 0, long lines 324 → 67, median line 2.5 → 2.1 cells.
+- **Role shapes** (`tools/quest_style.py`): capstone gear, section hexagon, main rsquare, side square, optional circle,
+  secret diamond, tip pentagon, choice octagon. "How to Read This Book" legend on Welcome (12 optional quests).
+  `Q(icon=...)` per-quest icon. Distinct chapter icons. All 49 chapter banners regenerated (11 were missing).
+- **Tools**: `tools/layout_lint.py` (tidiness per chapter, `--strict`, `--compare` against another book);
+  `test/build_quest_preview.py --gallery` (rendered gallery with lint scores, `quest-gallery` launch config).
+
 ### 2026-10-19: Fast Leaf Decay, quest audit, cleaner quest lines
 - **Fast Leaf Decay** (CurseForge, fastleafdecay-35) added; both sides.
 - **Quest audit** `tools/quest_audit.py`: cycles, unreachable or task-less quests, required quests behind optional ones,

@@ -1,7 +1,7 @@
 """Quest chapter: tools. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
 from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
 
-CHAPTER = Chapter("tools", "Gear and Comfort", "silentgear:pickaxe",
+CHAPTER = Chapter("tools", "Gear and Comfort", "mekanismtools:osmium_paxel",
         ["Better tools from better materials, and a soft place to land."], SIDE, [
     # --- Silent Gear: core line (y=0) ---------------------------------------------------------
     Q("tc_sg_repair", 0, 0, [item("silentgear:crude_repair_kit")], "Repair Kits", deps=["gs_silent"], xp=25,

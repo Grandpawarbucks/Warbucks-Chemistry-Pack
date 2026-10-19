@@ -28,7 +28,7 @@ FACTORIES = ["smelting", "enriching", "crushing", "compressing", "combining",
 FACTORY_TIER = {t: [f"mekanism:{t}_{f}_factory" for f in FACTORIES]
                 for t in ("basic", "advanced", "elite", "ultimate")}
 
-CHAPTER = Chapter("completionist", "Completionist", "minecraft:white_wool",
+CHAPTER = Chapter("completionist", "Completionist", "minecraft:item_frame",
         ["Collections for the thorough demigod. All optional."], SIDE, [
     # --- Colours and trees (y=0) ---------------------------------------------------------------
     Q("cp_wool", 0, 0, [item(f"{MC}:{c}_wool") for c in COLORS], "Sixteen Colours of Wool",

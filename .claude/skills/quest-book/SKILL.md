@@ -41,6 +41,7 @@ files you'll touch. On Windows, use `.venv\Scripts\python.exe` wherever the docs
 5. **Layout:** `.venv\Scripts\python.exe tools\build_quests.py --layout-report`. Look at your chapters' crossings and
    "lines through quests". Fix them with better deps first, then `row=`. Visual check:
    `.venv\Scripts\python.exe test\build_quest_preview.py`, then open test/preview (or the quest-editor launch config).
+   After building, `tools\layout_lint.py --compare --strict` scores the final SNBT; `test\build_quest_preview.py --gallery` renders test/preview/gallery.html.
 6. **Full build:** run `tools\build_quests.py` (no flags), then `packwiz refresh` in `pack\`. In PowerShell, refresh
    PATH first:
    `$env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [Environment]::GetEnvironmentVariable('Path','User')`.

@@ -10,7 +10,7 @@ import os
 import pathlib
 
 from questlib import MAIN, SIDE  # noqa: F401
-from layout import normalize_milestones
+from layout import normalize_milestones, prune_transitive
 from quests._tables import REWARD_TABLES  # noqa: F401  (loot / choice reward tables)
 
 BOOK_TITLE = "Warbucks Chemistry: The Demigod's Codex"
@@ -58,6 +58,44 @@ CHAPTERS = [importlib.import_module(f"quests.{k}").CHAPTER for k in ORDER]
 for _c in CHAPTERS:
     _c.group = next(g for g, ks in LAYOUT.items() if _c.key in ks)
     normalize_milestones(_c)  # capstone = 2.0 gear, section milestone = 1.5 hexagon (tools/layout.py)
+
+# Automatic layout style per chapter (tools/layout.py; manual chapters ignore it):
+#   "spine": the main path runs left to right, its sections branch above and below it (the Demigod's Path);
+#   "tree":  sections as top-down trees in columns, so the page reads as a progression tree (mod pages; default);
+#   "grid":  compact blocks for collection pages.
+STYLES = {**{k: "spine" for k in LAYOUT["main"]},
+          **{k: "grid" for k in ("hunting", "building", "completionist", "lab_notes", "explore")}}
+DEFAULT_STYLE = "tree"
+_HOME = {q.key: c.key for c in CHAPTERS for q in c.quests}
+_TITLES = {c.key: c.title.split(". ", 1)[-1] for c in CHAPTERS}
+_QUESTS = {q.key: q for c in CHAPTERS for q in c.quests}
+for _c in CHAPTERS:
+    _c.style = STYLES.get(_c.key, DEFAULT_STYLE)
+    _c.home_of, _c.chapter_titles = _HOME, _TITLES  # names loose groups after the chapter they follow on from
+    # Every chapter's redundant deps are dropped up front (layout.prune_transitive; what players must do doesn't
+    # change), so a page knows the final deps of the quests its links show: FTB draws those lines too.
+    _c.pruned_deps = prune_transitive(_c.quests)
+    _c.book_quests = _QUESTS
+# Quests other chapters depend on (so they may be shown there as quest links): the layout never sets the hide-line
+# flags on them, because FTB applies a quest's flags to every button of it, links on other pages included.
+def _linked_elsewhere():
+    """Quests shown as a quest link on some other page: the writers' links plus each auto chapter's entry links
+    (the deps in other chapters of its first spine quest, as tools/layout.py adds them)."""
+    from layout import _graph, _spine
+    out = set()
+    for c in CHAPTERS:
+        out |= {lk for lk, _, _ in c.links if _HOME.get(lk) != c.key}
+        if c.layout != "manual" and c.quests:
+            byk, idx, parents, children, order = _graph(c.quests)
+            G = {"byk": byk, "idx": idx, "parents": parents, "children": children, "order": order,
+                 "opt": {k: bool(byk[k].optional) for k in byk}}
+            out |= {d for d in byk[_spine(set(byk), G)[0]].deps if d in _HOME and d not in byk}
+    return out
+
+
+_SHARED = _linked_elsewhere()
+for _c in CHAPTERS:
+    _c.shared_quests = _SHARED
 
 # Demigod Tokens per quest, scaled by tier (milestone quests, size >= 1.5, pay double).
 TOKENS = {"welcome": 1, "start": 1, "t0": 1, "t1": 2, "t2": 2, "t3": 3, "t4": 3, "t5": 4, "t6": 5, "t7": 8,

@@ -14,6 +14,8 @@
 			id: "1EDDC44EC9C4E742"
 			x: 0.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"15BEE6A43E8C4B6E"
 			]
@@ -48,6 +50,8 @@
 			id: "1F11787528A18CB9"
 			x: 2.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"1EDDC44EC9C4E742"
 			]
@@ -82,6 +86,8 @@
 			id: "3E0966482A811593"
 			x: 4.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"1F11787528A18CB9"
 			]
@@ -134,6 +140,8 @@
 			id: "4952190F5A9DACFA"
 			x: 6.0d
 			y: 0.0d
+			shape: "pentagon"
+			size: 0.9d
 			dependencies: [
 				"3E0966482A811593"
 			]
@@ -161,8 +169,11 @@
 		}
 		{
 			id: "5B0DD23AD404D09E"
-			x: 6.0d
-			y: -2.0d
+			x: 4.0d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"3E0966482A811593"
 			]
@@ -197,6 +208,8 @@
 			id: "2E90112C74807A32"
 			x: 8.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"4952190F5A9DACFA"
 			]
@@ -229,8 +242,11 @@
 		}
 		{
 			id: "4E8A54354F577B14"
-			x: 8.0d
-			y: -3.0d
+			x: 6.0d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"4952190F5A9DACFA"
 				"5B0DD23AD404D09E"
@@ -264,8 +280,11 @@
 		}
 		{
 			id: "6788BDC814345011"
-			x: 16.0d
-			y: -6.0d
+			x: 8.0d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"4E8A54354F577B14"
 			]
@@ -300,6 +319,8 @@
 			id: "01D936F8C9EF70C6"
 			x: 10.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"2E90112C74807A32"
 			]
@@ -334,6 +355,8 @@
 			id: "6DFD06FF06C7F3C4"
 			x: 12.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"01D936F8C9EF70C6"
 			]
@@ -368,6 +391,8 @@
 			id: "4991EED8B0E223D1"
 			x: 14.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"6DFD06FF06C7F3C4"
 			]
@@ -400,8 +425,10 @@
 		}
 		{
 			id: "2F826829D36DA434"
-			x: 10.0d
-			y: -3.0d
+			x: 4.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"2E90112C74807A32"
 			]
@@ -443,8 +470,11 @@
 		}
 		{
 			id: "09118CFFDCA49A2D"
-			x: 12.0d
-			y: -3.0d
+			x: 6.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"2F826829D36DA434"
 			]
@@ -528,7 +558,9 @@
 		{
 			id: "5FC7A4838C153DB0"
 			x: 18.0d
-			y: -3.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -562,8 +594,11 @@
 		{
 			id: "750EFDC1E2DC1879"
 			x: 18.0d
-			y: -1.5d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -596,8 +631,11 @@
 		}
 		{
 			id: "1622F5994D7D8D48"
-			x: 18.0d
-			y: -5.0d
+			x: 18.5d
+			y: 9.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -631,7 +669,9 @@
 		{
 			id: "7C26AEBE7939F360"
 			x: 20.0d
-			y: -6.0d
+			y: 6.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"1622F5994D7D8D48"
 				"6788BDC814345011"
@@ -666,7 +706,9 @@
 		{
 			id: "287260F7D5158B76"
 			x: 22.0d
-			y: -8.0d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7C26AEBE7939F360"
@@ -702,6 +744,8 @@
 			id: "3D9A8C810E3CC81C"
 			x: 20.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"3BAD7D0A76461500"
 			]
@@ -736,6 +780,8 @@
 			id: "54E6526368208022"
 			x: 22.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"3D9A8C810E3CC81C"
 			]
@@ -769,7 +815,10 @@
 		{
 			id: "4EF4EA98C358B2AE"
 			x: 20.0d
-			y: -2.0d
+			y: 9.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"1622F5994D7D8D48"
 			]
@@ -812,7 +861,10 @@
 		{
 			id: "7B8C9B9BAD74D427"
 			x: 20.0d
-			y: -4.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"1622F5994D7D8D48"
 				"5FC7A4838C153DB0"
@@ -905,7 +957,7 @@
 		}
 		{
 			id: "29BEA270C571B58C"
-			x: 26.0d
+			x: 24.0d
 			y: -4.0d
 			shape: "gear"
 			size: 2.0d
@@ -949,6 +1001,8 @@
 			id: "6482D732148C9CAB"
 			x: 26.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"7E15308871B090AE"
 			]
@@ -982,7 +1036,9 @@
 		{
 			id: "7A840CDAA02E6E54"
 			x: 26.0d
-			y: -2.0d
+			y: -4.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"7E15308871B090AE"
 			]
@@ -1017,6 +1073,8 @@
 			id: "2C209AB4708A194F"
 			x: 28.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"6482D732148C9CAB"
 				"7A840CDAA02E6E54"
@@ -1121,6 +1179,8 @@
 			id: "3BAD7D0A76461500"
 			x: 18.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -1153,8 +1213,10 @@
 		}
 		{
 			id: "4E77936288D67925"
-			x: 10.0d
-			y: -1.5d
+			x: 7.5d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2E90112C74807A32"
@@ -1188,9 +1250,12 @@
 		}
 		{
 			id: "786BB9183811C265"
-			x: 18.0d
-			y: 1.5d
+			x: 19.5d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"506EB945C083CC2E"
 			]
@@ -1232,8 +1297,10 @@
 		}
 		{
 			id: "34238F774A63B533"
-			x: 30.0d
-			y: -3.5d
+			x: 28.0d
+			y: -4.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2C209AB4708A194F"
@@ -1276,8 +1343,10 @@
 		}
 		{
 			id: "0227C974352048DA"
-			x: 30.0d
-			y: -2.0d
+			x: 29.5d
+			y: -4.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2C209AB4708A194F"
@@ -1311,8 +1380,10 @@
 		}
 		{
 			id: "5228E072334D75AA"
-			x: 30.0d
-			y: 2.0d
+			x: 23.5d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2C209AB4708A194F"
@@ -1346,8 +1417,10 @@
 		}
 		{
 			id: "68D7E29AA3935E8A"
-			x: 22.0d
-			y: -6.5d
+			x: 24.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7C26AEBE7939F360"
@@ -1400,7 +1473,9 @@
 		{
 			id: "48758611BAA2D4CB"
 			x: 24.0d
-			y: -10.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"287260F7D5158B76"
@@ -1444,7 +1519,9 @@
 		{
 			id: "517923AB55DF110A"
 			x: 22.0d
-			y: -5.0d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7C26AEBE7939F360"
@@ -1479,7 +1556,9 @@
 		{
 			id: "5DD432221FD45DC3"
 			x: 24.0d
-			y: -9.0d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"287260F7D5158B76"
@@ -1525,11 +1604,38 @@
 		{
 			id: "1C5FAE6A6C1C7310"
 			x: 0.5d
-			y: -12.5d
+			y: -7.425d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/t1.png"
+		}
+		{
+			id: "476DA0F850CC93B2"
+			x: 8.75d
+			y: -4.625d
+			width: 6.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_byproduct_creosote.png"
+		}
+		{
+			id: "3631183B3E11ED52"
+			x: 20.9625d
+			y: 1.875d
+			width: 6.925000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_steel_plates.png"
+		}
+		{
+			id: "0B64AA42785DFCF4"
+			x: 26.4625d
+			y: -5.55d
+			width: 6.925000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_the_combiner.png"
 		}
 	]
 	quest_links: [
@@ -1538,6 +1644,7 @@
 			linked_quest: "15BEE6A43E8C4B6E"
 			x: -2.0d
 			y: 0.0d
+			size: 1.0d
 		}
 	]
 }

@@ -14,7 +14,7 @@ LANTHANIDES = ["chemlib:" + e for e in ("lanthanum", "cerium", "praseodymium", "
                                         "gadolinium", "terbium", "dysprosium", "holmium", "erbium", "thulium", "ytterbium", "lutetium")]
 NOBLE = ["chemlib:" + e for e in ("helium", "neon", "argon", "krypton", "xenon", "radon")]
 
-CHAPTER = Chapter("creation", "Creation", "minecraft:nether_star",
+CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity",
         ["The Seed is planted. Now shape what grows."], MAIN, [
     # ---------------------------------------------------------------- opening (moved from t7)
     Q("t7_creation", 0, 0, [tick()], "A New World", deps=["t7_seed"], xp=2000, size=2.5, shape="gear", tokens=50,

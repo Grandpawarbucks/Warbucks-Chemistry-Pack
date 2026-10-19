@@ -6,7 +6,7 @@ The Twilight Forest moved to twilight.py and Ad Astra to space.py; the YUNG's / 
 """
 from questlib import Q, Chapter, item, dim, tick, kill, structure, biome, MAIN, SIDE  # noqa: F401
 
-CHAPTER = Chapter("worlds", "Other Worlds", "deeperdarker:heart_of_the_deep",
+CHAPTER = Chapter("worlds", "Other Worlds", "minecraft:ender_eye",
         ["The End, the Otherside and the Undergarden."], SIDE, [
     # --- The End (y=0, extras y=-2) ------------------------------------------------------------
     Q("w_end", 0, 0, [dim("minecraft:the_end")], "The End", deps=["t2_nether"], xp=200,

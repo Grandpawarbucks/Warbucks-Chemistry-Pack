@@ -12,8 +12,11 @@
 	quests: [
 		{
 			id: "4D231017F4253DCD"
-			x: 0.0d
-			y: 19.5d
+			x: 10.0d
+			y: 1.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"4B6B18DEE9511230"
 			]
@@ -46,8 +49,10 @@
 		}
 		{
 			id: "4EA4B955C6925C4B"
-			x: 4.0d
-			y: 10.5d
+			x: 35.0d
+			y: 1.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"4B6B18DEE9511230"
@@ -81,9 +86,12 @@
 		}
 		{
 			id: "4DFE7AFE22B459FA"
-			x: 2.0d
-			y: 18.5d
+			x: 5.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -113,7 +121,9 @@
 		{
 			id: "133A1A361E39E958"
 			x: 4.0d
-			y: 17.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"4DFE7AFE22B459FA"
@@ -150,8 +160,10 @@
 		}
 		{
 			id: "0F7514A8F468C6EF"
-			x: 6.0d
-			y: 13.5d
+			x: 0.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -185,8 +197,10 @@
 		}
 		{
 			id: "757EF0A10E439663"
-			x: 6.0d
-			y: 15.0d
+			x: 2.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -220,8 +234,10 @@
 		}
 		{
 			id: "7F7A757A0C0D6E52"
-			x: 6.0d
-			y: 16.5d
+			x: 3.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -255,8 +271,10 @@
 		}
 		{
 			id: "16949366931715D7"
-			x: 6.0d
-			y: 18.0d
+			x: 5.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"133A1A361E39E958"
@@ -290,8 +308,11 @@
 		}
 		{
 			id: "7CFBB54ED187EDE0"
-			x: 2.0d
-			y: 21.5d
+			x: 27.5d
+			y: 1.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -333,8 +354,10 @@
 		}
 		{
 			id: "4CA9218FA53F5DE1"
-			x: 4.0d
-			y: 24.0d
+			x: 27.5d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"7CFBB54ED187EDE0"
 			]
@@ -367,8 +390,10 @@
 		}
 		{
 			id: "4382AE1CE86BC1A6"
-			x: 6.0d
-			y: 24.0d
+			x: 26.0d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"4CA9218FA53F5DE1"
@@ -402,9 +427,12 @@
 		}
 		{
 			id: "236C4B860AAB5C49"
-			x: 4.0d
-			y: 16.0d
+			x: 24.5d
+			y: 1.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -433,8 +461,10 @@
 		}
 		{
 			id: "2E9E4733D025679D"
-			x: 6.0d
-			y: 12.0d
+			x: 24.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"236C4B860AAB5C49"
@@ -468,8 +498,10 @@
 		}
 		{
 			id: "20296B7B6D4D509C"
-			x: 8.0d
-			y: 10.5d
+			x: 24.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2E9E4733D025679D"
@@ -499,8 +531,10 @@
 		}
 		{
 			id: "11BB4BAFB379C1DA"
-			x: 10.0d
-			y: 9.0d
+			x: 24.5d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"20296B7B6D4D509C"
@@ -537,9 +571,12 @@
 		}
 		{
 			id: "127FD36957AB6CC5"
-			x: 2.0d
-			y: 15.0d
+			x: 7.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -572,8 +609,10 @@
 		}
 		{
 			id: "575CA84F7948FBE4"
-			x: 4.0d
-			y: 13.0d
+			x: 5.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"127FD36957AB6CC5"
@@ -610,8 +649,11 @@
 		}
 		{
 			id: "52D07DFAAE1958CD"
-			x: 4.0d
-			y: 26.0d
+			x: 10.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -653,8 +695,10 @@
 		}
 		{
 			id: "2A8520BC87E05E4F"
-			x: 6.0d
-			y: 27.5d
+			x: 11.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"52D07DFAAE1958CD"
@@ -691,9 +735,12 @@
 		}
 		{
 			id: "04C278B25CA523F3"
-			x: 4.0d
-			y: 19.0d
+			x: 8.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -729,9 +776,12 @@
 		}
 		{
 			id: "5650E651512B60B8"
-			x: 4.0d
-			y: 22.0d
+			x: 23.0d
+			y: 1.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -764,8 +814,10 @@
 		}
 		{
 			id: "2BF59B0595F7B373"
-			x: 6.0d
-			y: 21.0d
+			x: 23.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"5650E651512B60B8"
@@ -808,8 +860,10 @@
 		}
 		{
 			id: "1670158D0136FEDD"
-			x: 8.0d
-			y: 19.5d
+			x: 23.0d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2BF59B0595F7B373"
@@ -846,8 +900,10 @@
 		}
 		{
 			id: "3F245F5BEA0EA889"
-			x: 6.0d
-			y: 22.5d
+			x: 21.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"5650E651512B60B8"
@@ -884,9 +940,12 @@
 		}
 		{
 			id: "31A10F1B06C351EA"
-			x: 2.0d
-			y: 24.0d
+			x: 11.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -928,9 +987,12 @@
 		}
 		{
 			id: "537A527A1114A7B6"
-			x: 4.0d
-			y: 20.5d
+			x: 29.5d
+			y: 1.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -963,8 +1025,10 @@
 		}
 		{
 			id: "18D4A2102F919AE7"
-			x: 6.0d
-			y: 19.5d
+			x: 29.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"537A527A1114A7B6"
@@ -998,8 +1062,10 @@
 		}
 		{
 			id: "7A896DEA1B224171"
-			x: 8.0d
-			y: 18.0d
+			x: 29.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"18D4A2102F919AE7"
@@ -1036,9 +1102,12 @@
 		}
 		{
 			id: "3798CB29F2F9EB96"
-			x: 2.0d
-			y: 16.5d
+			x: 13.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4D231017F4253DCD"
 			]
@@ -1077,8 +1146,10 @@
 		}
 		{
 			id: "3C32DFF182AAB721"
-			x: 4.0d
-			y: 14.5d
+			x: 14.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"3798CB29F2F9EB96"
@@ -1108,8 +1179,10 @@
 		}
 		{
 			id: "3EDECB3F741E7A42"
-			x: 6.0d
-			y: 10.5d
+			x: 16.0d
+			y: 7.0d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -1145,8 +1218,10 @@
 		}
 		{
 			id: "50BB6994DC34E843"
-			x: 8.0d
-			y: 9.0d
+			x: 17.5d
+			y: 8.5d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -1186,8 +1261,10 @@
 		}
 		{
 			id: "3DB2F38D604DB483"
-			x: 10.0d
-			y: 7.5d
+			x: 19.0d
+			y: 10.0d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -1227,8 +1304,10 @@
 		}
 		{
 			id: "30B14071B1D5A576"
-			x: 0.0d
-			y: 0.0d
+			x: 33.5d
+			y: 3.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"4B6B18DEE9511230"
 			]
@@ -1268,8 +1347,10 @@
 		}
 		{
 			id: "5718690DD26FB67B"
-			x: 2.0d
-			y: -1.5d
+			x: 32.0d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"30B14071B1D5A576"
@@ -1312,8 +1393,10 @@
 		}
 		{
 			id: "14B8FA65B7C3829D"
-			x: 2.0d
-			y: 0.0d
+			x: 33.5d
+			y: 5.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"30B14071B1D5A576"
 			]
@@ -1346,8 +1429,10 @@
 		}
 		{
 			id: "573FFFBA26396F1C"
-			x: 4.0d
-			y: 0.0d
+			x: 33.5d
+			y: 7.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"14B8FA65B7C3829D"
 			]
@@ -1387,8 +1472,10 @@
 		}
 		{
 			id: "4EEBFA76B5E993E8"
-			x: 6.0d
-			y: -1.5d
+			x: 32.0d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"573FFFBA26396F1C"
@@ -1449,8 +1536,12 @@
 		}
 		{
 			id: "1B55EFB33077AC2C"
-			x: 6.0d
-			y: 0.0d
+			x: 3.5d
+			y: 13.0d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
+			hide_dependent_lines: true
 			dependencies: [
 				"573FFFBA26396F1C"
 			]
@@ -1483,8 +1574,10 @@
 		}
 		{
 			id: "32F33C12C92BD123"
-			x: 8.0d
-			y: 0.0d
+			x: 10.5d
+			y: 13.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"1B55EFB33077AC2C"
 			]
@@ -1524,9 +1617,12 @@
 		}
 		{
 			id: "352D5D70DB4C3D96"
-			x: 10.0d
-			y: -3.5d
+			x: 9.0d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"32F33C12C92BD123"
 			]
@@ -1559,8 +1655,11 @@
 		}
 		{
 			id: "65BD66A52090130E"
-			x: 10.0d
-			y: -2.0d
+			x: 12.5d
+			y: 16.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"32F33C12C92BD123"
 			]
@@ -1593,9 +1692,12 @@
 		}
 		{
 			id: "72B1C3C4965990E9"
-			x: 10.0d
-			y: 1.5d
+			x: 12.0d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"32F33C12C92BD123"
 			]
@@ -1628,9 +1730,12 @@
 		}
 		{
 			id: "005D8A97125DC3EC"
-			x: 10.0d
-			y: 3.0d
+			x: 7.5d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"32F33C12C92BD123"
 			]
@@ -1672,9 +1777,12 @@
 		}
 		{
 			id: "52E4898C23EA212B"
-			x: 10.0d
-			y: 4.5d
+			x: 14.0d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"32F33C12C92BD123"
 			]
@@ -1707,8 +1815,10 @@
 		}
 		{
 			id: "39DF1364A3BB9256"
-			x: 12.0d
-			y: -2.5d
+			x: 13.5d
+			y: 18.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"65BD66A52090130E"
@@ -1742,8 +1852,10 @@
 		}
 		{
 			id: "3DD75B19D000C358"
-			x: 14.0d
-			y: -3.5d
+			x: 15.0d
+			y: 20.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"39DF1364A3BB9256"
@@ -1777,8 +1889,10 @@
 		}
 		{
 			id: "0DD53DE3BCAD93CA"
-			x: 12.0d
-			y: -4.0d
+			x: 15.0d
+			y: 18.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"65BD66A52090130E"
@@ -1812,8 +1926,10 @@
 		}
 		{
 			id: "7BC4ACBC5EAAC5BD"
-			x: 10.0d
-			y: 0.0d
+			x: 10.5d
+			y: 14.5d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"32F33C12C92BD123"
 			]
@@ -1846,8 +1962,11 @@
 		}
 		{
 			id: "4BC58543EF192729"
-			x: 12.0d
-			y: 0.0d
+			x: 10.5d
+			y: 16.5d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"7BC4ACBC5EAAC5BD"
 			]
@@ -1880,8 +1999,10 @@
 		}
 		{
 			id: "24D5883E6B376D56"
-			x: 14.0d
-			y: 0.0d
+			x: 21.0d
+			y: 13.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"4BC58543EF192729"
 			]
@@ -1921,8 +2042,10 @@
 		}
 		{
 			id: "571F7949936FB1BC"
-			x: 16.0d
-			y: 1.5d
+			x: 19.5d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"24D5883E6B376D56"
@@ -1962,8 +2085,11 @@
 		}
 		{
 			id: "39A9D5474A8012E0"
-			x: 16.0d
-			y: 0.0d
+			x: 21.0d
+			y: 14.5d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"24D5883E6B376D56"
 			]
@@ -2005,8 +2131,10 @@
 		}
 		{
 			id: "6A3D139EDF66F3AB"
-			x: 18.0d
-			y: -3.0d
+			x: 19.0d
+			y: 16.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"39A9D5474A8012E0"
 			]
@@ -2039,8 +2167,10 @@
 		}
 		{
 			id: "492415D794906357"
-			x: 18.0d
-			y: -1.5d
+			x: 22.5d
+			y: 16.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"39A9D5474A8012E0"
@@ -2074,8 +2204,10 @@
 		}
 		{
 			id: "7F3E65B654069BAA"
-			x: 20.0d
-			y: -1.5d
+			x: 17.5d
+			y: 18.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"6A3D139EDF66F3AB"
@@ -2112,8 +2244,10 @@
 		}
 		{
 			id: "2035D7BA15DF5C7D"
-			x: 18.0d
-			y: 2.0d
+			x: 21.0d
+			y: 16.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"39A9D5474A8012E0"
 			]
@@ -2146,8 +2280,10 @@
 		}
 		{
 			id: "457A1193C4EB239D"
-			x: 20.0d
-			y: 2.0d
+			x: 21.0d
+			y: 18.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"2035D7BA15DF5C7D"
 			]
@@ -2189,8 +2325,10 @@
 		}
 		{
 			id: "5CB8CFE1F0ED4E1C"
-			x: 22.0d
-			y: 1.5d
+			x: 18.5d
+			y: 20.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"6A3D139EDF66F3AB"
@@ -2243,8 +2381,10 @@
 		}
 		{
 			id: "60C0DD7EE2931A65"
-			x: 22.0d
-			y: 3.5d
+			x: 22.5d
+			y: 20.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"457A1193C4EB239D"
@@ -2282,7 +2422,9 @@
 		{
 			id: "08AEB9FC16AE3379"
 			x: 24.0d
-			y: 5.0d
+			y: 21.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"60C0DD7EE2931A65"
@@ -2319,8 +2461,10 @@
 		}
 		{
 			id: "075918014C45253D"
-			x: 18.0d
-			y: 0.0d
+			x: 30.0d
+			y: 13.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"39A9D5474A8012E0"
 			]
@@ -2360,8 +2504,10 @@
 		}
 		{
 			id: "2BC7F933F44AED54"
-			x: 20.0d
-			y: 0.0d
+			x: 30.0d
+			y: 15.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"075918014C45253D"
 			]
@@ -2394,8 +2540,10 @@
 		}
 		{
 			id: "64F3BF8672A26176"
-			x: 22.0d
-			y: 0.0d
+			x: 30.0d
+			y: 17.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"2BC7F933F44AED54"
 			]
@@ -2435,8 +2583,10 @@
 		}
 		{
 			id: "7EBA413DC414750D"
-			x: 24.0d
-			y: -2.0d
+			x: 28.0d
+			y: 19.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"64F3BF8672A26176"
 			]
@@ -2469,8 +2619,10 @@
 		}
 		{
 			id: "4CF4753B35BC4EA2"
-			x: 26.0d
-			y: -3.5d
+			x: 26.5d
+			y: 21.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7EBA413DC414750D"
@@ -2507,8 +2659,10 @@
 		}
 		{
 			id: "7D7C2530FE94F90E"
-			x: 24.0d
-			y: 2.0d
+			x: 32.0d
+			y: 19.0d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -2548,8 +2702,8 @@
 		}
 		{
 			id: "24EB5B9F3C30D2F1"
-			x: 24.0d
-			y: 0.0d
+			x: 30.0d
+			y: 19.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -2584,8 +2738,10 @@
 		}
 		{
 			id: "06CC5F9C904C562E"
-			x: 8.0d
-			y: -2.0d
+			x: 3.5d
+			y: 14.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"1B55EFB33077AC2C"
 			]
@@ -2625,8 +2781,10 @@
 		}
 		{
 			id: "7C52CA9E17D044E7"
-			x: 10.0d
-			y: -6.5d
+			x: 2.0d
+			y: 16.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"06CC5F9C904C562E"
@@ -2672,8 +2830,10 @@
 		}
 		{
 			id: "656D7C4735C0CFA8"
-			x: 10.0d
-			y: -5.0d
+			x: 3.5d
+			y: 16.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"06CC5F9C904C562E"
 			]
@@ -2706,8 +2866,10 @@
 		}
 		{
 			id: "350ECB50DEF6DE63"
-			x: 12.0d
-			y: -7.0d
+			x: 2.0d
+			y: 18.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"656D7C4735C0CFA8"
@@ -2741,8 +2903,10 @@
 		}
 		{
 			id: "54DEACECA3E07A58"
-			x: 14.0d
-			y: -9.5d
+			x: 0.5d
+			y: 20.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"350ECB50DEF6DE63"
@@ -2779,8 +2943,10 @@
 		}
 		{
 			id: "7B22307BB2A82650"
-			x: 12.0d
-			y: -5.5d
+			x: 3.5d
+			y: 18.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"656D7C4735C0CFA8"
 			]
@@ -2820,8 +2986,10 @@
 		}
 		{
 			id: "170C7097B314C79D"
-			x: 14.0d
-			y: -8.0d
+			x: 2.0d
+			y: 20.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7B22307BB2A82650"
@@ -2858,8 +3026,10 @@
 		}
 		{
 			id: "73128FC20EA6EAB0"
-			x: 14.0d
-			y: -5.0d
+			x: 5.0d
+			y: 19.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7B22307BB2A82650"
@@ -2893,8 +3063,10 @@
 		}
 		{
 			id: "53A416978B641844"
-			x: 14.0d
-			y: -6.5d
+			x: 3.5d
+			y: 20.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"7B22307BB2A82650"
 			]
@@ -2927,8 +3099,10 @@
 		}
 		{
 			id: "53890000D55CBBAB"
-			x: 16.0d
-			y: -8.5d
+			x: 2.0d
+			y: 21.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"53A416978B641844"
@@ -2965,8 +3139,10 @@
 		}
 		{
 			id: "089D4A7144E8B41C"
-			x: 16.0d
-			y: -6.5d
+			x: 5.0d
+			y: 21.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"53A416978B641844"
@@ -3001,8 +3177,8 @@
 		}
 		{
 			id: "1A1B0B1B03A203F4"
-			x: 26.0d
-			y: 0.0d
+			x: 30.0d
+			y: 21.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -3039,8 +3215,10 @@
 		}
 		{
 			id: "323C64846AFEC17D"
-			x: 28.0d
-			y: -1.5d
+			x: 28.5d
+			y: 23.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1A1B0B1B03A203F4"
@@ -3142,8 +3320,11 @@
 		}
 		{
 			id: "21B4176B92393E04"
-			x: 28.0d
-			y: 0.0d
+			x: 36.5d
+			y: 13.0d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"1A1B0B1B03A203F4"
 			]
@@ -3181,8 +3362,10 @@
 		}
 		{
 			id: "2CC987541BBC6F25"
-			x: 28.0d
-			y: 1.5d
+			x: 31.5d
+			y: 23.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1A1B0B1B03A203F4"
@@ -3216,8 +3399,10 @@
 		}
 		{
 			id: "02D40EB8D976C22D"
-			x: 30.0d
-			y: -1.5d
+			x: 35.0d
+			y: 15.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"21B4176B92393E04"
@@ -3251,8 +3436,10 @@
 		}
 		{
 			id: "438848E256C633EB"
-			x: 30.0d
-			y: 1.5d
+			x: 38.0d
+			y: 15.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"21B4176B92393E04"
@@ -3286,8 +3473,10 @@
 		}
 		{
 			id: "0142C2CF3AF4D2BC"
-			x: 32.0d
-			y: 3.0d
+			x: 39.5d
+			y: 17.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"438848E256C633EB"
@@ -3324,8 +3513,10 @@
 		}
 		{
 			id: "627F1905DCEA1C00"
-			x: 30.0d
-			y: 0.0d
+			x: 36.5d
+			y: 15.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"21B4176B92393E04"
 			]
@@ -3354,8 +3545,8 @@
 		}
 		{
 			id: "025B8EF9A3CE8915"
-			x: 32.0d
-			y: 0.0d
+			x: 36.5d
+			y: 17.0d
 			shape: "gear"
 			size: 2.0d
 			dependencies: [
@@ -3391,8 +3582,10 @@
 		}
 		{
 			id: "66F9A1EE403567F1"
-			x: 34.0d
-			y: -1.5d
+			x: 35.0d
+			y: 19.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"025B8EF9A3CE8915"
@@ -3428,20 +3621,93 @@
 	images: [
 		{
 			id: "429C883956CD3107"
-			x: 0.5d
-			y: -11.5d
+			x: 3.0d
+			y: -1.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/twilight.png"
+		}
+		{
+			id: "219C6F7B48020E97"
+			x: 9.6875d
+			y: 0.375d
+			width: 19.375d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_wood_of_dusk.png"
+		}
+		{
+			id: "62649D216DD9E695"
+			x: 25.3375d
+			y: 0.375d
+			width: 8.925d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_drying_rack.png"
+		}
+		{
+			id: "176C83C0F628BEAC"
+			x: 34.8d
+			y: 0.375d
+			width: 6.9999999999999964d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_the_naga_s_courtyard.png"
+		}
+		{
+			id: "247F34B5D4B00428"
+			x: 2.7125d
+			y: 11.75d
+			width: 5.425d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_the_lich.png"
+		}
+		{
+			id: "411CC4179B31A9FD"
+			x: 11.137500000000001d
+			y: 11.75d
+			width: 8.425d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_the_labyrinth.png"
+		}
+		{
+			id: "6E4B18A4D0730C11"
+			x: 20.5625d
+			y: 11.75d
+			width: 7.425000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_the_hydra_s_lair.png"
+		}
+		{
+			id: "026E5D4871946DE3"
+			x: 29.275000000000006d
+			y: 11.75d
+			width: 7.0000000000000036d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_the_goblin_stronghold.png"
+		}
+		{
+			id: "2571300AF07E9693"
+			x: 36.987500000000004d
+			y: 11.75d
+			width: 5.424999999999997d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/twilight_troll_caves.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "210CEA62C5551D93"
 			linked_quest: "4B6B18DEE9511230"
-			x: -2.0d
-			y: 10.5d
+			x: 33.5d
+			y: 1.5d
+			size: 1.0d
 		}
 	]
 }

@@ -325,6 +325,6 @@ QUESTS = [
     g("permafrost", "Permafrost", "ad_astra:permafrost", 32, 1, "w_glacio", "32 permafrost."),
 ]
 
-CHAPTER = Chapter("shop_world", "Market: Blocks, Food and Wild Goods", "minecraft:oak_sapling",
+CHAPTER = Chapter("shop_world", "Market: Blocks, Food and Wild Goods", "minecraft:grass_block",
         ["Buy more of the blocks, food and wild goods you've already gathered."], SIDE, QUESTS,
         tokens=0, layout="manual")

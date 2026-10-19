@@ -14,6 +14,8 @@
 			id: "3975D5E5733B2029"
 			x: 0.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"17832D4C895DEFF7"
 			]
@@ -98,6 +100,8 @@
 			id: "5C73D62A251E158E"
 			x: 6.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"077B8D568A0E67A4"
 			]
@@ -150,6 +154,8 @@
 			id: "41CD2A6115484870"
 			x: 8.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"5C73D62A251E158E"
 			]
@@ -201,7 +207,9 @@
 		{
 			id: "7CB7FF40BB33AD8F"
 			x: 10.0d
-			y: -2.0d
+			y: 4.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"41CD2A6115484870"
 			]
@@ -245,6 +253,8 @@
 			id: "63562E7CFD3869A1"
 			x: 10.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"41CD2A6115484870"
 			]
@@ -279,6 +289,8 @@
 			id: "2B7050355105A3E8"
 			x: 12.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"63562E7CFD3869A1"
 			]
@@ -313,6 +325,8 @@
 			id: "76071A1B98D9CFD3"
 			x: 14.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"2B7050355105A3E8"
 			]
@@ -346,7 +360,9 @@
 		{
 			id: "4B32EEF0B09F51CB"
 			x: 16.0d
-			y: 2.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"76071A1B98D9CFD3"
 			]
@@ -379,8 +395,11 @@
 		}
 		{
 			id: "1A986E281B98DA89"
-			x: 0.0d
-			y: -2.0d
+			x: 16.0d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"17832D4C895DEFF7"
 			]
@@ -422,8 +441,10 @@
 		}
 		{
 			id: "4083455951FE50A4"
-			x: 2.0d
+			x: 18.0d
 			y: -3.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"1A986E281B98DA89"
 			]
@@ -456,8 +477,10 @@
 		}
 		{
 			id: "589F846BD366467D"
-			x: 4.0d
+			x: 20.0d
 			y: -3.5d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"4083455951FE50A4"
 			]
@@ -499,8 +522,11 @@
 		}
 		{
 			id: "5534AEA7CF93C53D"
-			x: 8.0d
-			y: -2.0d
+			x: 22.0d
+			y: -3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"589F846BD366467D"
 				"0213687BA73A9908"
@@ -536,6 +562,8 @@
 			id: "6630705D72AEB78D"
 			x: 16.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"76071A1B98D9CFD3"
 				"5534AEA7CF93C53D"
@@ -569,8 +597,10 @@
 		}
 		{
 			id: "494A81F2F340497C"
-			x: 18.0d
+			x: 17.5d
 			y: -2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"73B0B0B23BDA8732"
 			]
@@ -664,6 +694,8 @@
 			id: "0977A230BB3A6718"
 			x: 22.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"6D18179563EC6FB4"
 			]
@@ -714,8 +746,11 @@
 		}
 		{
 			id: "61C8ED46F157C456"
-			x: 24.0d
-			y: -2.0d
+			x: 22.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"6D18179563EC6FB4"
 			]
@@ -759,6 +794,8 @@
 			id: "6C079DD7BD5DC36A"
 			x: 24.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"0977A230BB3A6718"
 			]
@@ -850,8 +887,10 @@
 		}
 		{
 			id: "40E5C8E7AFD9DCDB"
-			x: 28.0d
-			y: -1.5d
+			x: 23.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"45849083414E98A3"
@@ -894,8 +933,10 @@
 		}
 		{
 			id: "4B6B18DEE9511230"
-			x: 22.0d
-			y: -2.0d
+			x: 25.5d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"6D18179563EC6FB4"
 			]
@@ -924,9 +965,12 @@
 		}
 		{
 			id: "66878B009C6ABC9F"
-			x: 12.0d
-			y: -1.5d
+			x: 10.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"63562E7CFD3869A1"
 			]
@@ -968,8 +1012,10 @@
 		}
 		{
 			id: "5529968E112BBA9E"
-			x: 14.0d
-			y: -3.5d
+			x: 12.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"66878B009C6ABC9F"
@@ -1012,8 +1058,10 @@
 		}
 		{
 			id: "11E3CE994DD5E91B"
-			x: 18.0d
-			y: -6.5d
+			x: 16.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1A1FFC0C25846B77"
@@ -1048,7 +1096,9 @@
 		{
 			id: "7A05E39EE109E1CA"
 			x: 12.0d
-			y: -4.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7CB7FF40BB33AD8F"
@@ -1092,7 +1142,9 @@
 		{
 			id: "697083271627CD0D"
 			x: 12.0d
-			y: -3.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7CB7FF40BB33AD8F"
@@ -1126,9 +1178,12 @@
 		}
 		{
 			id: "1AAB2F81853CDE86"
-			x: 12.0d
-			y: 1.5d
+			x: 10.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"63562E7CFD3869A1"
 			]
@@ -1170,8 +1225,10 @@
 		}
 		{
 			id: "6879CF7353CD336E"
-			x: 14.0d
-			y: -1.5d
+			x: 12.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"66878B009C6ABC9F"
@@ -1214,8 +1271,10 @@
 		}
 		{
 			id: "66000D449A417BFA"
-			x: 20.0d
-			y: -8.0d
+			x: 18.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"11E3CE994DD5E91B"
@@ -1251,6 +1310,8 @@
 			id: "056317CC7EAC1F12"
 			x: 2.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"3975D5E5733B2029"
 			]
@@ -1285,6 +1346,8 @@
 			id: "4B5C9677207BD72C"
 			x: 18.0d
 			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"6630705D72AEB78D"
 			]
@@ -1345,7 +1408,9 @@
 		{
 			id: "29EB3B57474E09B3"
 			x: 2.0d
-			y: 1.5d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"3975D5E5733B2029"
@@ -1379,8 +1444,10 @@
 		}
 		{
 			id: "3CABA477F26CBEE2"
-			x: 2.0d
-			y: -2.0d
+			x: 18.0d
+			y: -5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1A986E281B98DA89"
@@ -1423,8 +1490,10 @@
 		}
 		{
 			id: "449849B93937E00E"
-			x: 6.0d
+			x: 22.0d
 			y: -5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"589F846BD366467D"
@@ -1467,8 +1536,10 @@
 		}
 		{
 			id: "60DC824132BB1184"
-			x: 16.0d
-			y: 3.5d
+			x: 19.5d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"76071A1B98D9CFD3"
@@ -1502,9 +1573,12 @@
 		}
 		{
 			id: "242CC152863715AD"
-			x: 12.0d
-			y: 3.0d
+			x: 11.5d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"63562E7CFD3869A1"
 			]
@@ -1537,8 +1611,10 @@
 		}
 		{
 			id: "1A1FFC0C25846B77"
-			x: 16.0d
-			y: -5.0d
+			x: 14.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"5529968E112BBA9E"
@@ -1581,9 +1657,12 @@
 		}
 		{
 			id: "5FA794E22BE6574B"
-			x: 10.0d
-			y: -3.5d
+			x: 13.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"41CD2A6115484870"
 				"5534AEA7CF93C53D"
@@ -1617,9 +1696,12 @@
 		}
 		{
 			id: "2FBB61200999B261"
-			x: 22.0d
-			y: 1.5d
+			x: 27.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6D18179563EC6FB4"
 			]
@@ -1664,11 +1746,47 @@
 		{
 			id: "2FA1F2006FE14F91"
 			x: 0.5d
-			y: -10.0d
+			y: -8.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/t5.png"
+		}
+		{
+			id: "0FD3F2029BA23684"
+			x: 4.075d
+			y: -3.05d
+			width: 5.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t5_the_distillery.png"
+		}
+		{
+			id: "34069045CC236348"
+			x: 13.9625d
+			y: 1.875d
+			width: 8.925d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t5_diesel_power.png"
+		}
+		{
+			id: "6EEB7A8DD35ADD96"
+			x: 19.25d
+			y: -6.125d
+			width: 7.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t5_chromium_and_manganese.png"
+		}
+		{
+			id: "70036A66480821D1"
+			x: 24.4625d
+			y: 1.875d
+			width: 5.925000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t5_fluix.png"
 		}
 	]
 	quest_links: [
@@ -1676,7 +1794,8 @@
 			id: "702AF486DF4C9919"
 			linked_quest: "17832D4C895DEFF7"
 			x: -2.0d
-			y: -1.5d
+			y: 0.0d
+			size: 1.0d
 		}
 	]
 }

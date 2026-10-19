@@ -9,7 +9,7 @@ from questlib import Q, Chapter, item, dim, tick, kill, structure, biome, MAIN, 
 AA = "ad_astra:"
 GA = "ad_astra_giselle_addon:"
 
-CHAPTER = Chapter("space", "Space", "ad_astra:tier_2_rocket",
+CHAPTER = Chapter("space", "Space", "ad_astra:space_helmet",
         ["The Moon, the planets and the air you bring with you."], SIDE, [
     # --- the planets (y=0) ---------------------------------------------------------------------
     Q("w_desh", 0, 0, [item("ad_astra:raw_desh", 8)], "Desh on the Moon", deps=["t7_rocket"], xp=300,

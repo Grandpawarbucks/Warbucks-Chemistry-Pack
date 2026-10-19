@@ -12,8 +12,11 @@
 	quests: [
 		{
 			id: "61BB360C973E0F7F"
-			x: 0.0d
-			y: 0.0d
+			x: 8.5d
+			y: 3.0d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"2181236B6834BFDF"
 			]
@@ -55,8 +58,11 @@
 		}
 		{
 			id: "1CD576F80AC49B5F"
-			x: 2.0d
-			y: 0.0d
+			x: 8.0d
+			y: 11.5d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"61BB360C973E0F7F"
 			]
@@ -89,8 +95,11 @@
 		}
 		{
 			id: "2CFFEDC4683607CF"
-			x: 4.0d
-			y: 0.0d
+			x: 17.5d
+			y: 1.5d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"1CD576F80AC49B5F"
 			]
@@ -123,9 +132,12 @@
 		}
 		{
 			id: "6AAF559710229117"
-			x: 6.0d
-			y: -0.5d
+			x: 16.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"2CFFEDC4683607CF"
 				"6D7BCF15F3CF7687"
@@ -159,8 +171,10 @@
 		}
 		{
 			id: "6E91CE0ADEA5ADA6"
-			x: 8.0d
-			y: -2.0d
+			x: 14.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"6AAF559710229117"
@@ -198,8 +212,11 @@
 		{
 			id: "26CA44769AF76A9D"
 			x: 2.0d
-			y: -4.5d
+			y: 11.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"61BB360C973E0F7F"
 			]
@@ -241,8 +258,10 @@
 		}
 		{
 			id: "2FB463350074B333"
-			x: 4.0d
-			y: -1.5d
+			x: 6.5d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1CD576F80AC49B5F"
@@ -276,8 +295,10 @@
 		}
 		{
 			id: "1DF7F1133046DEB1"
-			x: 6.0d
-			y: -2.0d
+			x: 19.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2CFFEDC4683607CF"
@@ -311,8 +332,10 @@
 		}
 		{
 			id: "188A4BC2D2682264"
-			x: 8.0d
-			y: -3.5d
+			x: 20.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1DF7F1133046DEB1"
@@ -355,8 +378,10 @@
 		}
 		{
 			id: "68C63D9C708CAB99"
-			x: 4.0d
-			y: -6.5d
+			x: 0.5d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"26CA44769AF76A9D"
@@ -393,8 +418,10 @@
 		}
 		{
 			id: "05CA20DAF3D6CE4E"
-			x: 6.0d
-			y: -3.5d
+			x: 5.0d
+			y: 15.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"2FB463350074B333"
@@ -428,8 +455,10 @@
 		}
 		{
 			id: "056B1AE78D5B1CCF"
-			x: 8.0d
-			y: -5.0d
+			x: 3.5d
+			y: 17.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"05CA20DAF3D6CE4E"
@@ -472,8 +501,11 @@
 		}
 		{
 			id: "6D7BCF15F3CF7687"
-			x: 4.0d
-			y: 2.5d
+			x: 8.5d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"61BB360C973E0F7F"
 			]
@@ -533,9 +565,12 @@
 		}
 		{
 			id: "2D35837B42389FD6"
-			x: 6.0d
-			y: 1.5d
+			x: 9.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6D7BCF15F3CF7687"
 			]
@@ -568,9 +603,12 @@
 		}
 		{
 			id: "726507D0921F20DA"
-			x: 8.0d
-			y: 2.0d
+			x: 5.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6D7BCF15F3CF7687"
 			]
@@ -606,8 +644,10 @@
 		}
 		{
 			id: "3890E7B5FA9CA044"
-			x: 2.0d
-			y: -3.0d
+			x: 4.0d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"61BB360C973E0F7F"
 			]
@@ -640,9 +680,12 @@
 		}
 		{
 			id: "1449CF00D49726FD"
-			x: 4.0d
-			y: 8.5d
+			x: 5.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"61BB360C973E0F7F"
 			]
@@ -684,8 +727,10 @@
 		}
 		{
 			id: "797F266229BD1FB2"
-			x: 6.0d
-			y: 10.0d
+			x: 0.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1449CF00D49726FD"
@@ -728,8 +773,10 @@
 		}
 		{
 			id: "383BB756C9C76954"
-			x: 0.0d
-			y: 15.5d
+			x: 16.0d
+			y: 8.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"29BEA270C571B58C"
 			]
@@ -780,8 +827,10 @@
 		}
 		{
 			id: "201E746EF18C024B"
-			x: 2.0d
-			y: 15.5d
+			x: 16.0d
+			y: 10.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"383BB756C9C76954"
 				"256D9F2CFA36ADE2"
@@ -816,8 +865,10 @@
 		}
 		{
 			id: "42489EAAE4800867"
-			x: 14.0d
-			y: 14.0d
+			x: 16.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"55AF98DD41956199"
@@ -852,10 +903,13 @@
 		}
 		{
 			id: "4388A334EC12570D"
-			x: 8.0d
-			y: 5.5d
+			x: 10.5d
+			y: 7.0d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6D7BCF15F3CF7687"
 			]
@@ -893,8 +947,10 @@
 		}
 		{
 			id: "795662BF85103267"
-			x: 16.0d
-			y: 14.0d
+			x: 17.5d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"0AF857F7D594D497"
@@ -964,8 +1020,10 @@
 		}
 		{
 			id: "707EBA33CCE0C439"
-			x: 6.0d
+			x: 2.0d
 			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1449CF00D49726FD"
@@ -1029,8 +1087,10 @@
 		}
 		{
 			id: "19B3E12AC6512111"
-			x: 6.0d
-			y: 8.5d
+			x: 3.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1449CF00D49726FD"
@@ -1065,8 +1125,10 @@
 		}
 		{
 			id: "4001ABEC58F9F590"
-			x: 6.0d
-			y: 13.0d
+			x: 5.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"26EAA1BDD3A1CE92"
@@ -1100,8 +1162,10 @@
 		}
 		{
 			id: "4859615A20A98EB3"
-			x: 8.0d
+			x: 2.0d
 			y: 8.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"4001ABEC58F9F590"
@@ -1146,8 +1210,10 @@
 		}
 		{
 			id: "0CEEB0EF247AFEE1"
-			x: 8.0d
-			y: 14.0d
+			x: 14.5d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"5E58EA492DF847CE"
@@ -1190,8 +1256,10 @@
 		}
 		{
 			id: "5B3831A5F122F274"
-			x: 10.0d
-			y: 14.0d
+			x: 14.5d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"0CEEB0EF247AFEE1"
@@ -1243,9 +1311,12 @@
 		}
 		{
 			id: "5008B9812B5F38D8"
-			x: 2.0d
-			y: -1.5d
+			x: 7.0d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"61BB360C973E0F7F"
 			]
@@ -1281,8 +1352,10 @@
 		}
 		{
 			id: "2C27F6E0A24ECFCC"
-			x: 4.0d
-			y: -5.0d
+			x: 2.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"26CA44769AF76A9D"
@@ -1316,8 +1389,10 @@
 		}
 		{
 			id: "4F51D89D9F8829D4"
-			x: 6.0d
-			y: 11.5d
+			x: 6.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"1449CF00D49726FD"
@@ -1351,9 +1426,12 @@
 		}
 		{
 			id: "18F6CFCBB960E126"
-			x: 8.0d
-			y: 4.0d
+			x: 7.0d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6D7BCF15F3CF7687"
 			]
@@ -1389,8 +1467,10 @@
 		}
 		{
 			id: "10DB0AD9FC683E4A"
-			x: 18.0d
-			y: 14.0d
+			x: 19.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"050738B186A5EEB8"
@@ -1442,8 +1522,10 @@
 		}
 		{
 			id: "0E68D7AE1C7DBBA0"
-			x: 6.0d
-			y: -6.5d
+			x: 2.0d
+			y: 15.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
@@ -1487,8 +1569,10 @@
 		}
 		{
 			id: "15F725E5C01D018A"
-			x: 20.0d
-			y: 14.0d
+			x: 21.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"0F5CD98214E3E454"
@@ -1531,9 +1615,12 @@
 		}
 		{
 			id: "37E826F1EDD6F372"
-			x: 6.0d
-			y: 5.0d
+			x: 12.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6D7BCF15F3CF7687"
 			]
@@ -1575,8 +1662,10 @@
 		}
 		{
 			id: "6E4CBAC1961181AC"
-			x: 22.0d
-			y: 14.0d
+			x: 22.5d
+			y: 13.0d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -1618,38 +1707,78 @@
 	images: [
 		{
 			id: "50C448D16CC74A06"
-			x: 0.5d
-			y: -10.0d
+			x: 3.0d
+			y: -3.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/farming.png"
+		}
+		{
+			id: "41C7E650F4D0EE9F"
+			x: 6.2125d
+			y: 0.375d
+			width: 12.425d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_knife_and_board.png"
+		}
+		{
+			id: "069E8CCA6895CA11"
+			x: 4.25d
+			y: 10.3d
+			width: 8.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_rich_soil.png"
+		}
+		{
+			id: "3D1BB058C5A159D3"
+			x: 17.387500000000003d
+			y: 0.375d
+			width: 6.925000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_a_proper_meal.png"
+		}
+		{
+			id: "6810C01B17D7F407"
+			x: 18.3625d
+			y: 11.875d
+			width: 8.875d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_honey_and_wax.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "502781B0E665BBEE"
 			linked_quest: "2181236B6834BFDF"
-			x: -2.0d
-			y: 0.0d
+			x: 8.5d
+			y: 1.5d
+			size: 1.0d
 		}
 		{
 			id: "29CC5B80CEC2E324"
 			linked_quest: "29BEA270C571B58C"
-			x: -2.0d
-			y: 15.5d
+			x: 16.0d
+			y: 6.5d
+			size: 1.0d
 		}
 		{
 			id: "1C41240E7E0F6BD6"
 			linked_quest: "256D9F2CFA36ADE2"
-			x: 0.0d
-			y: 14.0d
+			x: 14.5d
+			y: 8.0d
+			size: 1.0d
 		}
 		{
 			id: "79590D33A354F653"
 			linked_quest: "1D1660D4E4098CF6"
-			x: -2.0d
-			y: -8.0d
+			x: 0.5d
+			y: -1.5d
+			size: 1.0d
 		}
 	]
 }

@@ -6,7 +6,9 @@ Outputs (committed, so other machines don't need Pillow):
   pack/config/fancymenu/assets/background.png   1920x1080 menu / loading background
   pack/config/fancymenu/assets/logo.png         transparent logo: WARBUCKS in real element tiles
   pack/kubejs/assets/warbucks/textures/quests/<chapter>.png   chapter banners (FTB Quests images)
-Run: <python with pillow> tools/build_art.py
+Run: <python with pillow> tools/build_art.py            (everything)
+     <python with pillow> tools/build_art.py --banners  (chapter banners only)
+On Windows the font falls back to Segoe UI (Avenir Next is macOS only): regenerate all banners on one machine.
 """
 import math
 import pathlib
@@ -24,7 +26,12 @@ CYAN, GOLD, WHITE = (79, 209, 197), (242, 181, 68), (236, 242, 248)
 
 
 def font(size, weight=1):
-    return ImageFont.truetype(FONT, size, index=weight)
+    import os
+    if os.path.exists(FONT):
+        return ImageFont.truetype(FONT, size, index=weight)
+    # Windows fallback (Avenir Next ships with macOS only): Segoe UI regular / bold / semibold
+    return ImageFont.truetype({0: "C:/Windows/Fonts/segoeui.ttf", 1: "C:/Windows/Fonts/segoeuib.ttf",
+                               2: "C:/Windows/Fonts/seguisb.ttf"}.get(weight, "C:/Windows/Fonts/segoeuib.ttf"), size)
 
 
 def gradient(w, h, top, bottom):
@@ -163,7 +170,10 @@ def banner(key, title, tag, color, z=0):
     d = ImageDraw.Draw(img)
     d.rounded_rectangle([0, 0, w - 1, h - 1], radius=22, outline=color + (255,), width=4)
     img.alpha_composite(element_tile(128, tag, z, "", fill=(12, 30, 40), edge=color), (16, 16))
-    d.text((170, 30), title, font=font(64, 1), fill=WHITE)
+    size = 64  # shrink long titles until they fit (e.g. "Electrochemistry and Acids")
+    while d.textlength(title, font=font(size, 1)) > w - 170 - 28 and size > 30:
+        size -= 2
+    d.text((170, 30 + (64 - size) // 2), title, font=font(size, 1), fill=WHITE)
     mask = Image.new("L", (w, h), 0)
     ImageDraw.Draw(mask).rounded_rectangle([0, 0, w - 1, h - 1], radius=22, fill=255)
     out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
@@ -218,6 +228,11 @@ def greater_token_texture():
 
 def main():
     from quest_data import CHAPTERS  # noqa: E402  (needs test/ids.tsv like the quest build)
+    if "--banners" in sys.argv:  # chapter banners only (menu art, logo and token textures untouched)
+        qdir = ROOT / "pack/kubejs/assets/warbucks/textures/quests"
+        write_banners(CHAPTERS, qdir)
+        print(f"Wrote {len(CHAPTERS)} chapter banners")
+        return
     fm = ROOT / "pack/config/fancymenu/assets"
     fm.mkdir(parents=True, exist_ok=True)
     background().save(fm / "background.png", optimize=True)
@@ -230,6 +245,11 @@ def main():
     tdir.mkdir(parents=True, exist_ok=True)
     token_texture().save(tdir / "demigod_token.png", optimize=True)
     greater_token_texture().save(tdir / "greater_demigod_token.png", optimize=True)
+    write_banners(CHAPTERS, qdir)
+    print(f"Wrote background, logo and {len(CHAPTERS)} chapter banners")
+
+
+def write_banners(CHAPTERS, qdir):
     # Banner tiles: tier chapters show T0-T7; the rest show a real element that fits the chapter.
     tags = {"welcome": ("H", 1), "start": ("He", 2), "t0": ("T0", 0), "t1": ("T1", 1), "t2": ("T2", 2),
             "t3": ("T3", 3), "t4": ("T4", 4), "t5": ("T5", 5), "t6": ("T6", 6), "t7": ("T7", 7),
@@ -240,12 +260,14 @@ def main():
             "ae2": ("Fl", 114), "building": ("Ca", 20), "ars": ("Ag", 47), "apotheosis": ("Ra", 88),
             "relics": ("Ir", 77), "occultism": ("Hg", 80), "projecte": ("Pb", 82), "twilight": ("Tl", 81),
             "space": ("Ti", 22), "explore": ("Mg", 12), "hunting": ("As", 33), "mystical": ("P", 15),
-            "market": ("Au", 79), "completionist": ("Lr", 103)}
+            "market": ("Au", 79), "completionist": ("Lr", 103),
+            "allthemodium": ("Hf", 72), "deeperdarker": ("Se", 34), "harvest": ("W", 74), "justdirethings": ("Co", 27),
+            "mekanism_power": ("Li", 3), "neovitae": ("Ne", 10), "powah": ("Cs", 55), "undergarden": ("Ni", 28),
+            "shop_gear": ("Sn", 50), "shop_materials": ("Cu", 29), "shop_world": ("Rb", 37)}
     for c in CHAPTERS:
         title = c.title.split(". ", 1)[-1]
         sym, z = tags.get(c.key, ("Ws", 0))
         banner(c.key, title, sym, TIER_COLORS.get(c.key, CYAN), z).save(qdir / f"{c.key}.png", optimize=True)
-    print(f"Wrote background, logo and {len(CHAPTERS)} chapter banners")
 
 
 if __name__ == "__main__":

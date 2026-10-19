@@ -369,6 +369,6 @@ QUESTS = [
       "Heat-Proof Suit", "a full heat-proof netherite space suit."),
 ]
 
-CHAPTER = Chapter("shop_gear", "Market: Tools, Armour and Gear", "minecraft:iron_pickaxe",
+CHAPTER = Chapter("shop_gear", "Market: Tools, Armour and Gear", "minecraft:iron_chestplate",
         ["Replace the tools, armour and comforts you've already earned."], SIDE, QUESTS,
         tokens=0, layout="manual")

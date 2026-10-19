@@ -12,8 +12,8 @@
 	quests: [
 		{
 			id: "202454706F0D6586"
-			x: 0.0d
-			y: 0.0d
+			x: 4.0d
+			y: 3.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -48,8 +48,10 @@
 		}
 		{
 			id: "5DF0000BBA218F93"
-			x: 2.0d
-			y: -3.5d
+			x: 0.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"202454706F0D6586"
@@ -79,7 +81,9 @@
 		{
 			id: "7FE06D3B05479258"
 			x: 2.0d
-			y: -2.0d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"202454706F0D6586"
 			]
@@ -112,8 +116,10 @@
 		}
 		{
 			id: "7AA96CF99DD2EA9A"
-			x: 4.0d
-			y: -3.5d
+			x: 0.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"7FE06D3B05479258"
@@ -142,8 +148,10 @@
 		}
 		{
 			id: "18B513C9D4D8674F"
-			x: 2.0d
-			y: 2.0d
+			x: 6.0d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"202454706F0D6586"
 			]
@@ -194,8 +202,10 @@
 		}
 		{
 			id: "042E22483673AC0E"
-			x: 4.0d
-			y: 2.0d
+			x: 6.0d
+			y: 7.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"18B513C9D4D8674F"
 			]
@@ -228,8 +238,10 @@
 		}
 		{
 			id: "170DD0614698F425"
-			x: 6.0d
-			y: 3.5d
+			x: 7.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"042E22483673AC0E"
@@ -266,8 +278,10 @@
 		}
 		{
 			id: "50BE1EFCA730933B"
-			x: 4.0d
-			y: 3.5d
+			x: 7.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"18B513C9D4D8674F"
@@ -301,9 +315,12 @@
 		}
 		{
 			id: "4435E0CBCBF45F67"
-			x: 10.0d
-			y: -3.5d
+			x: 11.5d
+			y: 3.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"7FE06D3B05479258"
 				"6F6D4836ABF17642"
@@ -337,8 +354,10 @@
 		}
 		{
 			id: "5C6F6C15DC731192"
-			x: 2.0d
-			y: 3.5d
+			x: 7.5d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"202454706F0D6586"
@@ -367,8 +386,10 @@
 		}
 		{
 			id: "3EBFBBF5E8D82173"
-			x: 2.0d
-			y: 0.0d
+			x: 4.0d
+			y: 5.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"202454706F0D6586"
 			]
@@ -402,7 +423,9 @@
 		{
 			id: "41149E66ACB4670C"
 			x: 4.0d
-			y: 0.0d
+			y: 7.0d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"3EBFBBF5E8D82173"
 			]
@@ -435,8 +458,10 @@
 		}
 		{
 			id: "244F034391DF698B"
-			x: 6.0d
-			y: 0.0d
+			x: 4.0d
+			y: 8.5d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"41149E66ACB4670C"
 			]
@@ -469,10 +494,11 @@
 		}
 		{
 			id: "6F6D4836ABF17642"
-			x: 8.0d
-			y: 0.0d
+			x: 13.0d
+			y: 2.0d
 			shape: "hexagon"
 			size: 1.5d
+			hide_dependency_lines: true
 			dependencies: [
 				"244F034391DF698B"
 			]
@@ -505,8 +531,10 @@
 		}
 		{
 			id: "5B4ADDA8DEC0D225"
-			x: 10.0d
-			y: -2.0d
+			x: 15.0d
+			y: 3.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"6F6D4836ABF17642"
@@ -544,7 +572,9 @@
 		{
 			id: "65926BF0E01A33EA"
 			x: 10.0d
-			y: -0.5d
+			y: 3.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"6F6D4836ABF17642"
@@ -605,8 +635,10 @@
 		}
 		{
 			id: "6C81FB35328C5C1E"
-			x: 10.0d
-			y: 1.0d
+			x: 13.5d
+			y: 3.5d
+			shape: "circle"
+			size: 0.85d
 			optional: true
 			dependencies: [
 				"6F6D4836ABF17642"
@@ -640,9 +672,12 @@
 		}
 		{
 			id: "200E2D7438535AEC"
-			x: 10.0d
-			y: 2.5d
+			x: 16.0d
+			y: 5.0d
+			shape: "circle"
+			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"6F6D4836ABF17642"
 			]
@@ -675,8 +710,10 @@
 		}
 		{
 			id: "4AC7BF8F4637BC0C"
-			x: 6.0d
-			y: -1.5d
+			x: 5.5d
+			y: 8.5d
+			shape: "diamond"
+			size: 0.75d
 			optional: true
 			invisible: true
 			dependencies: [
@@ -718,20 +755,39 @@
 	images: [
 		{
 			id: "6D6DC06272B29F1C"
-			x: 0.5d
-			y: -5.5d
+			x: 3.0d
+			y: -1.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/projecte.png"
+		}
+		{
+			id: "5716CEF141F33A29"
+			x: 3.9625d
+			y: 0.375d
+			width: 7.925d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/projecte_the_philosopher_s_stone.png"
+		}
+		{
+			id: "78FEB1C5D1C390D3"
+			x: 12.887500000000001d
+			y: 0.375d
+			width: 6.925000000000001d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/projecte_dark_matter.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "21A7EA15B9FED4EE"
 			linked_quest: "6C2882437A5C659C"
-			x: -2.0d
-			y: 0.0d
+			x: 4.0d
+			y: 1.5d
+			size: 1.0d
 		}
 	]
 }

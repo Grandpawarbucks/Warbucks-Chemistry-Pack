@@ -112,8 +112,10 @@ def build():
     if dup:
         sys.exit("Duplicate quest keys: " + ", ".join(sorted(set(dup))))
     audit()  # tools/quest_audit.py cheap checks: cycles, reachability, ids and their kinds (fails on errors)
+    style_quests()  # tools/quest_style.py: shapes and sizes by role, BEFORE the layout (it spaces quests by size)
     if "--layout-report" in sys.argv:
-        print(layout.report(CHAPTERS, lambda c: layout.apply(c, set(keys))))
+        print(layout.report(CHAPTERS, lambda c: layout.apply(c, set(keys)),
+                            before_fn=lambda c: layout.apply_legacy(c, set(keys))))
         return
     if "--check" in sys.argv:
         for c in CHAPTERS:  # the layout must run cleanly on every chapter too
@@ -201,6 +203,12 @@ def build():
                 entry["can_repeat"] = True
             if q.locked_hidden:
                 entry["hide_until_deps_complete"] = True
+            if getattr(q, "hide_lines", False):  # set by the layout (hub fans, long lines between sections)
+                entry["hide_dependency_lines"] = True
+            if getattr(q, "hide_dependents", False):  # its lines TO its dependents (e.g. a feeder into the spine)
+                entry["hide_dependent_lines"] = True
+            if getattr(q, "icon", None):
+                entry["icon"] = {"id": q.icon, "count": 1}
             if q.deps:
                 entry["dependencies"] = [keys[d] for d in q.deps]
             entry["tasks"] = tasks
@@ -218,6 +226,10 @@ def build():
         bx, by = layout.banner(c)
         images = [{"id": hexid(f"image:{c.key}:banner"), "x": float(bx), "y": float(by),
                    "width": 6.0, "height": 1.0, "rotation": 0.0, "image": f"warbucks:textures/quests/{c.key}.png"}]
+        for h in c.sections:  # section headers (tools/layout.py), art from section_art()
+            images.append({"id": hexid(f"image:{c.key}:section:{h['slug']}"), "x": float(h["x"]), "y": float(h["y"]),
+                           "width": float(h["w"]), "height": float(h["h"]), "rotation": 0.0,
+                           "image": f"warbucks:textures/quests/sections/{c.key}_{h['slug']}.png"})
         if c.key == "welcome":  # the pack logo (1220x360) above the banner
             images.append({"id": hexid("image:welcome:logo"), "x": float(bx + 0.5), "y": float(by - 2.25),
                            "width": 7.0, "height": 2.07, "rotation": 0.0, "image": "warbucks:textures/quests/logo.png"})
@@ -226,11 +238,13 @@ def build():
                    "default_quest_shape": "rsquare" if c.group == "main" or c.key == "welcome" else "circle",
                    "default_hide_dependency_lines": False,
                    "quests": quests, "images": images,
-                   "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly)}
-                                   for lk, lx, ly in c.links]}
+                   # size written out: FTB's QuestLink is 1.0 by default whatever quest it shows (the layout uses 1.0)
+                   "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly),
+                                    "size": 1.0} for lk, lx, ly in c.links]}
         order[c.group] += 1
         (OUT / "chapters" / f"{c.key}.snbt").write_text(snbt(chapter) + "\n", encoding="utf-8", newline="\n")
 
+    section_art()
     (OUT / "reward_tables").mkdir(exist_ok=True)
     for i, (tkey, t) in enumerate(REWARD_TABLES.items()):
         tid = hexid("table:" + tkey)
@@ -245,6 +259,79 @@ def build():
     print(f"Reward tables: {len(REWARD_TABLES)}")
     rel = lambda f: f.relative_to(ROOT) if f.is_relative_to(ROOT) else f
     print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {rel(OUT)} (+ {rel(DOC)})")
+
+
+def style_quests():
+    """Shapes and sizes from each quest's role (tools/quest_style.py, if present). Runs after normalize_milestones
+    (quest_data) and before the layout."""
+    try:
+        import quest_style
+    except ImportError:
+        return
+    for c in CHAPTERS:
+        quest_style.apply(c)
+
+
+SECTION_DIR = ROOT / "pack/kubejs/assets/warbucks/textures/quests/sections"
+SECTION_PX = 96   # pixels per grid cell
+
+
+def _font(size):
+    """A bold sans font that exists on this machine (Windows Segoe UI, macOS Avenir Next), else Pillow's default."""
+    from PIL import ImageFont
+    for path, index in (("C:/Windows/Fonts/segoeuib.ttf", 0), ("/System/Library/Fonts/Avenir Next.ttc", 2),
+                        ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 0)):
+        if os.path.exists(path):
+            return ImageFont.truetype(path, size, index=index)
+    return ImageFont.load_default(size)
+
+
+def section_png(title, w_cells, h_cells):
+    """One section header: gold title on a transparent strip, a thin cyan rule under it running to the right edge."""
+    from PIL import Image, ImageDraw
+    w, h = int(round(w_cells * SECTION_PX)), int(round(h_cells * SECTION_PX))
+    img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    size = int(h * 0.66)
+    f = _font(size)
+    while d.textlength(title, font=f) > w - 12 and size > 12:
+        size -= 2
+        f = _font(size)
+    asc, desc = f.getmetrics()
+    ty = max(0, int(h * 0.70) - asc)  # baseline at 70%: descenders stay above the rule
+    d.text((7, ty + 2), title, font=f, fill=(0, 0, 0, 150))          # soft shadow
+    d.text((5, ty), title, font=f, fill=(242, 181, 68, 255))         # gold, like the chapter banners
+    tw = int(d.textlength(title, font=f))
+    y = int(h * 0.90)
+    d.line([(5, y), (w - 4, y)], fill=(79, 209, 197, 110), width=max(2, h // 40))   # thin cyan rule, full width
+    d.line([(5, y), (min(w - 4, tw + 14), y)], fill=(79, 209, 197, 255), width=max(3, h // 28))
+    return img
+
+
+def section_art():
+    """Write the section header PNGs (one per section of every chapter) and delete stale ones. Files are only
+    rewritten when their bytes change, so packwiz hashes stay stable."""
+    try:
+        import PIL  # noqa: F401
+    except ImportError:
+        print("WARNING: Pillow missing: section header PNGs not regenerated (use the repo .venv)")
+        return
+    import io
+    SECTION_DIR.mkdir(parents=True, exist_ok=True)
+    want = set()
+    for c in CHAPTERS:
+        for h in c.sections:
+            name = f"{c.key}_{h['slug']}.png"
+            want.add(name)
+            buf = io.BytesIO()
+            section_png(h["title"], h["w"], h["h"]).save(buf, format="PNG", optimize=True)
+            f = SECTION_DIR / name
+            if not f.exists() or f.read_bytes() != buf.getvalue():
+                f.write_bytes(buf.getvalue())
+    stale = [f for f in SECTION_DIR.glob("*.png") if f.name not in want]
+    for f in stale:
+        f.unlink()
+    print(f"Section headers: {len(want)} PNGs in {SECTION_DIR.relative_to(ROOT)}" + (f" ({len(stale)} stale removed)" if stale else ""))
 
 
 def audit():
