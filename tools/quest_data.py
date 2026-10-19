@@ -28,11 +28,11 @@ GROUPS = {
 LAYOUT = {
     "main": ["welcome", "start", "t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "seed", "creation"],
     "chem": ["periodic", "lab_notes", "mekanism"],
-    "eng": ["power", "factory", "logic", "create", "tools", "storage", "ae2", "building"],
+    "eng": ["power", "powah", "factory", "logic", "create", "tools", "justdirethings", "storage", "ae2", "building"],
     "magic": ["ars", "apotheosis", "relics", "occultism", "projecte", "magic"],
-    "world": ["worlds", "twilight", "space", "explore", "hunting"],
+    "world": ["worlds", "undergarden", "twilight", "deeperdarker", "space", "explore", "hunting"],
     "life": ["farming", "mystical"],
-    "extra": ["qol", "market", "completionist"],
+    "extra": ["qol", "utilitarian", "market", "completionist"],
 }
 # Chapter files that don't exist yet are skipped, so new chapters can be added one at a time.
 _QDIR = pathlib.Path(__file__).resolve().parent / "quests"
