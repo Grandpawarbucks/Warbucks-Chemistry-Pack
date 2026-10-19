@@ -8,6 +8,7 @@ Validate with `python3 tools/build_quests.py --check` (writes nothing). The real
 2. **Only use ids that exist.** Look them up: `grep -P '^modid:item_name\t' test/ids.tsv`. Item tasks use `item("id", count)`, dimensions use `dim("id")`, tips and story use `tick()`. `--check` fails on unknown ids.
 3. **Don't invent mechanics or recipes.** If unsure how something is made, read the recipe JSON in the mod jar (`unzip -p test/server/mods/<jar> data/<ns>/recipe/<path>.json`) or say "check JEI". Chemistry facts must be real and correct.
 4. Only edit your assigned chapter files. Don't run the full build, don't commit, don't touch `pack/`.
+   The full workflow (checks, layout, audit, build) is the `quest-book` skill: `.claude/skills/quest-book/SKILL.md`.
 5. Multiblocks: point players to where the 3D layout is shown: **JEI** (press R/U), the **MI guidebook**, or **Just Enough Mekanism Multiblocks** in JEI. No hand-drawn diagrams.
 
 ## Every quest gets
@@ -40,8 +41,11 @@ Tone: wonder and quiet confidence, a little wry; never purple prose. 1–2 lines
 - **The spine is on y = 0:** the longest chain of required quests runs along the middle. Other required chains
   become rows above and below it (2 cells apart); optional quests sit 1.5 cells off their parent's row.
 - Crossings are reduced automatically; groups of quests with no line to the spine are packed below it.
-- **Links** (`links=[("t3_ebf", 0, 0)]`) go in a link column at x = -2 beside the rows that use them; the x/y in the
-  tuple are ignored. The chapter's entry quest automatically gets a link to its deps in other chapters.
+- **Links** (`links=[("t3_ebf", 0, 0)]`) are placed one column left of the leftmost quest that depends on them (x = -2
+  for column 0, and for links nothing in the chapter depends on); the x/y in the tuple are ignored. The chapter's entry
+  quest automatically gets a link to its deps in other chapters.
+- Redundant lines are dropped on output: if A -> B -> C and C also lists A, the A -> C line isn't drawn (what the
+  player must do doesn't change).
 - The chapter banner goes above the topmost quest or link.
 - `python3 tools/build_quests.py --layout-report` prints crossings, lines through quests, edges longer than 6 cells
   and overlaps per chapter (hand x/y vs automatic). Good chapters have few crossings and no overlaps.
