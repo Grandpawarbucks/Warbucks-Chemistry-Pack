@@ -40,8 +40,8 @@ LAYOUT = {
     "basics": ["tools", "harvest", "storage", "power", "powah", "farming", "qol", "building"],
     "chem": ["periodic", "mekanism", "mekanism_power"],
     "eng": ["factory", "logic", "create", "justdirethings", "ae2"],
-    "magic": ["ars", "occultism", "apotheosis", "relics", "projecte"],
-    "world": ["worlds", "explore", "undergarden", "twilight", "deeperdarker", "space", "hunting"],
+    "magic": ["ars", "occultism", "neovitae", "apotheosis", "relics", "projecte"],
+    "world": ["worlds", "explore", "undergarden", "twilight", "deeperdarker", "allthemodium", "space", "hunting"],
     "life": ["mystical"],
 }
 # Chapter files that don't exist yet are skipped, so new chapters can be added one at a time.

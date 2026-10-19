@@ -140,8 +140,11 @@ Open items / next steps, in order:
 - Market + editor (2026-10-19): 2,468 quests. "shop" group (market, shop_materials, shop_gear, shop_world): 441 repeatable
   token-shop quests, rule "buy more of what you've made yourself" (docs/research/shop_brief.md); shop chapters use
   layout="manual" grids. Quest editor: tools/quest_editor.py (localhost:8765), user edits land in
-  tools/quest_overrides.json (applied after the auto layout; never change keys/deps/tasks). PENDING user decision:
-  Allthemodium (docs/research/allthemodium.md): Mining dimension with neutered ores or blocked; tier slots T3-T6.
+  tools/quest_overrides.json (applied after the auto layout; never change keys/deps/tasks).
+- Neo Vitae + Allthemodium added 2026-10-19 (224 mods). Allthemodium: Mining dimension KEPT WITH its dense ores (user
+  decision); metals T3-T6. Open: alloy tools have no recipe (hide in JEI or add smithing), argon cost may need tuning,
+  test/emc_check.sh not ported to Windows (EMC for the new metals relies on the broad c: tags in custom_emc.json).
+  Neo Vitae open choices: Magnetism quarry, Torment Nexus, lava+cobble sulfur, meteors removed entirely.
 - Quest book v11 (2026-10-19): 2,000 quests (848 required, 320 on the main path). ATM10-aligned coverage (138 ATM10 items
   left, all skipped on purpose), story arc reviewed end to end, the MI nuclear/quantum chain before the Seed is now
   required on the main path (adds endgame hours; watch pacing vs the 100-120 h target). LIVE WORLD WIPED 2026-10-19 00:22

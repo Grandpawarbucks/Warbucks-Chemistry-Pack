@@ -26,3 +26,5 @@ Parsing error loading recipe createdeco:placard
 reliquary:xp_juice_still specified in data map
 # Mekanism Extras ships loot tables for chemical-infusing factory tiers it doesn't register (harmless)
 loot_table\]:mekanism_extras:blocks/.*Unknown registry key in ResourceKey\[minecraft:root / minecraft:item\]: mekanism_extras:
+# Botany Pots ships a compat recipe for Allthemodium's ancient_cavevines_plant, an item Allthemodium 3.2.1 no longer has (only this one Botany Pots recipe is skipped; harmless)
+botanypots:allthemodium/crop/ancient_soulberries

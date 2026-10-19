@@ -4,6 +4,20 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Neo Vitae and Allthemodium (224 mods, 2,524 quests)
+- **Neo Vitae** 1.1.44 (Modrinth, MIT; Blood Magic's successor), gated in `phase5_neovitae.js`: Athanor ore processing
+  capped at 2x per ore block / 1.5x per raw ore, fragment doubling removed; shipped `config/neovitae/materials.json`
+  (no first-run ore scan, no netherite-scrap loop); Flight flask needs hydrogen, Tenebrae needs hydrogen + an MV circuit;
+  the diamond → Nether Star recipe and all meteor rituals removed; the Athanor needs LV analog circuits. Quest page
+  "neovitae" (31 quests). Research: `docs/research/neo_vitae.md`.
+- **Allthemodium** 3.2.1 (CurseForge only, ARR with third-party download allowed; no AllTheOres), gated in
+  `phase5_allthemodium.js`: no furnace smelting (MI EBF: allthemodium carbothermic at LV, vibranium by the Kroll process,
+  unobtainium by sodium reduction with HF); alloys in the Mixer with a Piglich Heart, then the EBF under argon (antimatter
+  for the unobtainium alloys); Teleport Pad needs MI steel plates and an analog circuit; Occultism's eldritch miners
+  for the three metals removed. The Mining dimension keeps its dense ores (user decision). Quest page "Metals of
+  Legend" (25 quests). Research: `docs/research/allthemodium.md`.
+- Known harmless: Botany Pots' compat recipe for an Allthemodium plant that 3.2.1 no longer has.
+
 ### 2026-10-19: The Demigod's Market (token shop) and the quest editor
 - **Token shop in the quest book** (`docs/research/shop_brief.md`): a new "The Demigod's Market" group with 4 chapters and
   441 repeatable shop quests: Machines (64), Materials and Chemicals (88), Tools, Armour and Gear (129), Blocks, Food and
