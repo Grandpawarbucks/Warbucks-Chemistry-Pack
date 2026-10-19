@@ -4,6 +4,14 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Mining dimension veins for common MI metals
+- All The Ores skipped (user decision: it duplicates MI/Mekanism metals everywhere and skips chemistry milestones).
+- `tools/build_deposits.py` now also writes rich veins for tin, lead, nickel, silver (Mekanism ore) and bauxite into
+  Allthemodium's Mining dimension only (`warbucks:mining_*`, biome tag `#allthemodium:mining_features/mining_biomes`).
+  Platinum, iridium, uranium, osmium, tungsten and other milestone metals stay out. Checked on the test server: every
+  generated Mining chunk with iron also has the five new ores, and none has platinum, iridium or uranium.
+- `build_deposits.py` writes UTF-8/LF (it would have rewritten every deposit file with CRLF on Windows).
+
 ### 2026-10-19: Neo Vitae and Allthemodium (224 mods, 2,524 quests)
 - **Neo Vitae** 1.1.44 (Modrinth, MIT; Blood Magic's successor), gated in `phase5_neovitae.js`: Athanor ore processing
   capped at 2x per ore block / 1.5x per raw ore, fragment doubling removed; shipped `config/neovitae/materials.json`

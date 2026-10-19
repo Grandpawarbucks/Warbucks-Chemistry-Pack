@@ -34,9 +34,23 @@ DEPOSITS = {
 }
 
 
+# Allthemodium's Mining dimension (user decision 2026-10-19): rich veins of the common, non-milestone metals so the
+# mining world is worth the trip. Milestone metals (platinum, iridium, uranium, osmium, tungsten, fluorite...) stay out:
+# they come from chemistry. The dimension is flat: deepslate Y 65-128, stone Y 129-247, so veins sit in Y 65-240.
+# metal: (stone ore block, deepslate ore block, veins per chunk, vein size, (min Y, max Y))
+MINING_BIOMES = "#allthemodium:mining_features/mining_biomes"
+MINING = {
+    "tin":     (f"{MI}:tin_ore", f"{MI}:deepslate_tin_ore", 30, 9, (65, 200)),
+    "lead":    (f"{MI}:lead_ore", f"{MI}:deepslate_lead_ore", 30, 9, (65, 160)),
+    "nickel":  (f"{MI}:nickel_ore", f"{MI}:deepslate_nickel_ore", 20, 9, (65, 140)),
+    "silver":  ("mekanism:silver_ore", "mekanism:deepslate_silver_ore", 16, 8, (65, 140)),  # MI has no silver ore
+    "bauxite": (f"{MI}:bauxite_ore", f"{MI}:deepslate_bauxite_ore", 30, 9, (120, 240)),
+}
+
+
 def write(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, indent=2) + "\n")
+    path.write_text(json.dumps(obj, indent=2) + "\n", encoding="utf-8", newline="\n")
 
 
 def height(lo, hi):
@@ -78,7 +92,23 @@ def main():
         write(DATA / "warbucks/neoforge/biome_modifier" / f"deposit_{metal}.json", {
             "type": "neoforge:add_features", "biomes": "#minecraft:is_overworld",
             "features": f"warbucks:deposit_{metal}", "step": "underground_ores"})
-    print(f"Wrote deposits for {len(DEPOSITS)} metals into {DATA.relative_to(ROOT)}")
+    for metal, (stone, deep, count, size, (lo, hi)) in MINING.items():
+        write(DATA / "warbucks/worldgen/configured_feature" / f"mining_{metal}.json", {
+            "type": "minecraft:ore",
+            "config": {"size": size, "discard_chance_on_air_exposure": 0.0, "targets": [
+                {"target": {"predicate_type": "minecraft:tag_match", "tag": "minecraft:stone_ore_replaceables"},
+                 "state": {"Name": stone}},
+                {"target": {"predicate_type": "minecraft:tag_match", "tag": "minecraft:deepslate_ore_replaceables"},
+                 "state": {"Name": deep}}]}})
+        write(DATA / "warbucks/worldgen/placed_feature" / f"mining_{metal}.json", {
+            "feature": f"warbucks:mining_{metal}",
+            "placement": [{"type": "minecraft:count", "count": count}, {"type": "minecraft:in_square"},
+                          height(lo, hi), {"type": "minecraft:biome"}]})
+    write(DATA / "warbucks/neoforge/biome_modifier/mining_ores.json", {
+        "type": "neoforge:add_features", "biomes": MINING_BIOMES,
+        "features": [f"warbucks:mining_{m}" for m in MINING], "step": "underground_ores"})
+    print(f"Wrote deposits for {len(DEPOSITS)} metals and Mining-dimension veins for {len(MINING)} into "
+          f"{DATA.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

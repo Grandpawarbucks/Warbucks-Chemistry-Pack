@@ -142,7 +142,8 @@ Open items / next steps, in order:
   layout="manual" grids. Quest editor: tools/quest_editor.py (localhost:8765), user edits land in
   tools/quest_overrides.json (applied after the auto layout; never change keys/deps/tasks).
 - Neo Vitae + Allthemodium added 2026-10-19 (224 mods). Allthemodium: Mining dimension KEPT WITH its dense ores (user
-  decision); metals T3-T6. Open: alloy tools have no recipe (hide in JEI or add smithing), argon cost may need tuning,
+  decision) plus our own veins of tin/lead/nickel/silver/bauxite (build_deposits.py MINING); NO AllTheOres (user decision);
+  metals T3-T6. Open: alloy tools have no recipe (hide in JEI or add smithing), argon cost may need tuning,
   test/emc_check.sh not ported to Windows (EMC for the new metals relies on the broad c: tags in custom_emc.json).
   Neo Vitae open choices: Magnetism quarry, Torment Nexus, lava+cobble sulfur, meteors removed entirely.
 - Quest book v11 (2026-10-19): 2,000 quests (848 required, 320 on the main path). ATM10-aligned coverage (138 ATM10 items
