@@ -74,7 +74,8 @@ Open items / next steps, in order:
    ONE balanced path (no packmodes); expand Warbucks Core (Periodic Table perks, reaction conditions, prospecting).
    First step DONE 2026-10-18: aluminium slice (Bayer + Hall-Héroult Cell, T4 quests, Periodic Table perks in Warbucks
    Core 1.1.0; PROGRESSION.md §7). Released (GitHub release warbuckscore-v1.1.0, packwiz points at it) and pushed.
-   The LIVE server has NOT been restarted onto it yet (user: wait). Next: the user playtests the line in-game; then
+   LIVE server restarted onto it 2026-10-18 21:10 (0 players, user OK; Done, 6,269 recipes, 0 failed). Next: the user
+   playtests the line in-game; then
    polymers (design tier T4), rare earths/PGM (T5).
    Note: design tiers (PROGRESSION.md) and quest chapter keys differ by one (design T3 = quest chapter t4).
    Dissolver: no new entries needed (machines are excluded by design; ChemLib Al compounds are native Alchemistry).
