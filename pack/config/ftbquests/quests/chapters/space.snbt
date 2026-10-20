@@ -1,10 +1,10 @@
 {
 	id: "52D4F58B0C6E5EBB"
-	group: "1F07E974EF7D1F07"
-	order_index: 0
+	group: "4045A6EE7751118B"
+	order_index: 6
 	filename: "space"
 	icon: {
-		id: "ad_astra:raw_desh"
+		id: "ad_astra:space_helmet"
 		count: 1
 	}
 	default_quest_shape: "circle"
@@ -12,8 +12,8 @@
 	quests: [
 		{
 			id: "742D7993CB0086CB"
-			x: 5.5d
-			y: 2.0d
+			x: 4.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -48,8 +48,8 @@
 		}
 		{
 			id: "635A241489681170"
-			x: 5.5d
-			y: 4.0d
+			x: 8.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -89,8 +89,8 @@
 		}
 		{
 			id: "1751F7DCDA2801ED"
-			x: 5.5d
-			y: 6.0d
+			x: 10.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -124,9 +124,217 @@
 			]
 		}
 		{
+			id: "7E7B71100CC2752B"
+			x: 12.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1751F7DCDA2801ED"
+			]
+			tasks: [
+				{
+					id: "4CAC2A64D6050DF1"
+					type: "item"
+					item: {
+						id: "ad_astra:netherite_space_suit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "62ED18D81B7CB72F"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "42A32F37AEE04114"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0371D774272DB515"
+			x: 14.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7E7B71100CC2752B"
+			]
+			tasks: [
+				{
+					id: "09DF8C4300EFB4E4"
+					type: "dimension"
+					dimension: "ad_astra:venus"
+				}
+				{
+					id: "14220B063075566B"
+					type: "item"
+					item: {
+						id: "ad_astra:tier_3_rocket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7CF6920D6D114FF6"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "5919CF89D1EEDEC9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "31F2D0605D2E5028"
+			x: 16.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "2BF59D5B7301CFAA"
+					type: "item"
+					item: {
+						id: "ad_astra:raw_calorite"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "61016D264FBFA2AD"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "4762B149E80626A9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1CA5613802C3B7C6"
+			x: 18.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"31F2D0605D2E5028"
+			]
+			tasks: [
+				{
+					id: "16885C14E2E6680D"
+					type: "item"
+					item: {
+						id: "ad_astra:desh_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "6941CD964113D014"
+					type: "item"
+					item: {
+						id: "ad_astra:ostrum_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "328E75FE6BD37922"
+					type: "item"
+					item: {
+						id: "ad_astra:calorite_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6FA2D810A7A77A0B"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "1131531FC47B1337"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "537431DD08EA991F"
+			x: 20.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"1CA5613802C3B7C6"
+			]
+			tasks: [
+				{
+					id: "1D10A53DFE253F17"
+					type: "dimension"
+					dimension: "ad_astra:glacio"
+				}
+				{
+					id: "3290C4605BDBB9B1"
+					type: "item"
+					item: {
+						id: "ad_astra:tier_4_rocket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "535D75A0877D319C"
+					type: "xp"
+					xp: 800
+				}
+				{
+					id: "454AD1D108E4AEE9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "129266E51D79A231"
-			x: 0.5d
-			y: 2.0d
+			x: 10.0d
+			y: -6.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -161,8 +369,8 @@
 		}
 		{
 			id: "18FD507A01896D7C"
-			x: 0.5d
-			y: 7.5d
+			x: 10.0d
+			y: -4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -197,8 +405,8 @@
 		}
 		{
 			id: "0304AF411C0ADEBE"
-			x: 2.0d
-			y: 6.0d
+			x: 8.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -234,8 +442,8 @@
 		}
 		{
 			id: "404C175EA043B30A"
-			x: 2.0d
-			y: 7.5d
+			x: 8.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -271,8 +479,8 @@
 		}
 		{
 			id: "6C46189D0E479A97"
-			x: 1.5d
-			y: 4.0d
+			x: 12.0d
+			y: -6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -309,8 +517,8 @@
 		}
 		{
 			id: "07797DB5628E9DBE"
-			x: 2.5d
-			y: 11.0d
+			x: 10.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -346,9 +554,55 @@
 			]
 		}
 		{
+			id: "19BBF6AF16FB7E15"
+			x: 0.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0C1DD95BA033EAB3"
+			]
+			tasks: [
+				{
+					id: "5F81023F518B1DA3"
+					type: "item"
+					item: {
+						id: "ad_astra_giselle_addon:fuel_loader"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7A0570FE9B639C93"
+					type: "item"
+					item: {
+						id: "ad_astra_giselle_addon:rocket_sensor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1BD1043B00201DCB"
+					type: "xp"
+					xp: 120
+				}
+				{
+					id: "5FCA5A3DF8D71BAB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "62B2455C3CD4B583"
 			x: 4.0d
-			y: 4.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -384,8 +638,8 @@
 		}
 		{
 			id: "25DDA7F730F46AFC"
-			x: 9.0d
-			y: 4.0d
+			x: 4.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -421,8 +675,8 @@
 		}
 		{
 			id: "40442645A8B5A09C"
-			x: 7.5d
-			y: 4.0d
+			x: 6.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -457,9 +711,75 @@
 			]
 		}
 		{
+			id: "3B5922B2AEA252B7"
+			x: 0.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0C1DD95BA033EAB3"
+			]
+			tasks: [
+				{
+					id: "399D510527BEA0C1"
+					type: "structure"
+					structure: "ad_astra:lunarian_village"
+				}
+			]
+			rewards: [
+				{
+					id: "73E2D0218C6A65AA"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "567E6C8455F27406"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "134D3F3BADF7D9BF"
+			x: 2.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0C1DD95BA033EAB3"
+			]
+			tasks: [
+				{
+					id: "34C00D18EF92B7E3"
+					type: "structure"
+					structure: "ad_astra:moon_dungeon"
+				}
+			]
+			rewards: [
+				{
+					id: "630B278423BC8A28"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4F52C8C6CB7B5399"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "12A113F5FF1A0758"
-			x: 3.5d
-			y: 7.5d
+			x: 8.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -496,8 +816,8 @@
 		}
 		{
 			id: "36C2163D475D5DD0"
-			x: 2.0d
-			y: 9.0d
+			x: 8.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -537,9 +857,179 @@
 			]
 		}
 		{
+			id: "5E6BCCAA71BB14F4"
+			x: 14.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "758DE0A1D0C5AA91"
+					type: "structure"
+					structure: "ad_astra:pygro_village"
+				}
+			]
+			rewards: [
+				{
+					id: "0E5DAB5EE512A23C"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "4D66323394A4BF42"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0CCDB1D0755282C7"
+			x: 16.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "0A79A5728684821D"
+					type: "biome"
+					biome: "ad_astra:infernal_venus_barrens"
+				}
+			]
+			rewards: [
+				{
+					id: "250B71434AE1C1CF"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5666E9174402FFED"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "72A1114536C4C6FA"
+			x: 14.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "441C0C92A0447CD0"
+					type: "dimension"
+					dimension: "ad_astra:mercury"
+				}
+			]
+			rewards: [
+				{
+					id: "57B2C90DABC89ABE"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "1D1A3FB336030240"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "706C2B3D42BFE9DD"
+			x: 14.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"72A1114536C4C6FA"
+			]
+			tasks: [
+				{
+					id: "45EE6AFB0159AE8C"
+					type: "biome"
+					biome: "ad_astra:mercury_deltas"
+				}
+			]
+			rewards: [
+				{
+					id: "68D0CBA40E1EF939"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "2A354DA05536447F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "407A51A230482666"
+			x: 20.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"537431DD08EA991F"
+			]
+			tasks: [
+				{
+					id: "0E90E84791EA2790"
+					type: "biome"
+					biome: "ad_astra:glacio_ice_peaks"
+				}
+				{
+					id: "2C24005B7B7D2898"
+					type: "biome"
+					biome: "ad_astra:glacio_snowy_barrens"
+				}
+			]
+			rewards: [
+				{
+					id: "464B355D39EE1407"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "67F95BB01AD66C97"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "482F2CC86AEE5F02"
-			x: 7.0d
-			y: 6.0d
+			x: 10.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -578,27 +1068,61 @@
 	images: [
 		{
 			id: "42277F937CAD85D2"
-			x: 3.0d
-			y: -1.5d
+			x: 2.5d
+			y: -10.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/space.png"
+		}
+		{
+			id: "42553BD597F673C9"
+			x: 2.825d
+			y: 3.05d
+			width: 6.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/space_from_beyond_the_sky.png"
+		}
+		{
+			id: "50338103FCB248A5"
+			x: 6.074999999999999d
+			y: -5.05d
+			width: 4.999999999999999d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/space_a_spare_breath.png"
+		}
+		{
+			id: "69F5A8E4F76DA289"
+			x: 15.075d
+			y: 5.05d
+			width: 3.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/space_mercury.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "3C450D06FAB59532"
 			linked_quest: "0C1DD95BA033EAB3"
-			x: 5.5d
-			y: 0.5d
+			x: 0.0d
+			y: 0.0d
 			size: 1.0d
 		}
 		{
 			id: "52D23759A04E648F"
 			linked_quest: "0D7390621F3F2B9F"
-			x: 2.0d
-			y: 2.0d
+			x: 12.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "729596DE4EFDAA64"
+			linked_quest: "06F69B817832C614"
+			x: 10.0d
+			y: -8.0d
 			size: 1.0d
 		}
 	]

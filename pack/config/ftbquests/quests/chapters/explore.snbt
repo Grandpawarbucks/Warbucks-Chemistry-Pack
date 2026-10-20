@@ -1,10 +1,10 @@
 {
 	id: "409E2F2CFC4C4323"
-	group: "769A7434DC71BDC7"
-	order_index: 0
+	group: "4045A6EE7751118B"
+	order_index: 1
 	filename: "explore"
 	icon: {
-		id: "minecraft:bell"
+		id: "naturescompass:naturescompass"
 		count: 1
 	}
 	default_quest_shape: "circle"
@@ -12,9 +12,9 @@
 	quests: [
 		{
 			id: "19D5348F991D1D5B"
-			x: 3.5d
-			y: 2.0d
-			shape: "rsquare"
+			x: 0.0d
+			y: -2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"1C5E43BCEDA7593F"
@@ -50,7 +50,7 @@
 		{
 			id: "60152F4E87D63285"
 			x: 2.0d
-			y: 4.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -87,12 +87,11 @@
 		}
 		{
 			id: "351DC01BDF9B2F7D"
-			x: 0.5d
-			y: 4.0d
+			x: -2.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"19D5348F991D1D5B"
 			]
@@ -126,8 +125,8 @@
 		}
 		{
 			id: "3E4655FCC160E807"
-			x: 5.0d
-			y: 4.0d
+			x: 2.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -164,8 +163,8 @@
 		}
 		{
 			id: "7A6C1F22C67DC796"
-			x: 4.5d
-			y: 6.0d
+			x: -2.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -202,8 +201,8 @@
 		}
 		{
 			id: "6C0F741B9358A2D2"
-			x: 7.0d
-			y: 4.0d
+			x: 2.0d
+			y: -6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -240,9 +239,9 @@
 		}
 		{
 			id: "514B4137700D8590"
-			x: 3.5d
-			y: 4.0d
-			shape: "rsquare"
+			x: 0.0d
+			y: -4.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"19D5348F991D1D5B"
@@ -277,8 +276,8 @@
 		}
 		{
 			id: "612E99E12D4629B9"
-			x: 2.0d
-			y: 6.0d
+			x: 0.0d
+			y: -6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -315,12 +314,11 @@
 		}
 		{
 			id: "6D0121AD6AFBB06A"
-			x: 0.5d
-			y: 7.0d
+			x: 4.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"1C5E43BCEDA7593F"
 			]
@@ -346,31 +344,1484 @@
 				}
 			]
 		}
+		{
+			id: "4D5D6454D9CCBB6A"
+			x: 2.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "0831FDF0F4A084B4"
+					type: "structure"
+					structure: "betterdungeons:zombie_dungeon"
+				}
+			]
+			rewards: [
+				{
+					id: "49DED0769B4C8B01"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "30659898806685FA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1EBEBD0A0383A25F"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "3C3DB798AE67BB23"
+			x: 4.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4D5D6454D9CCBB6A"
+			]
+			tasks: [
+				{
+					id: "7354C9BBF7DA51CB"
+					type: "structure"
+					structure: "betterdungeons:skeleton_dungeon"
+				}
+			]
+			rewards: [
+				{
+					id: "1826BD731CA1096D"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "7489A208C72994DF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "5E02C8F74954D765"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "23C618FC62DB7FEC"
+			x: 6.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"3C3DB798AE67BB23"
+			]
+			tasks: [
+				{
+					id: "3D61E7170A334AE2"
+					type: "structure"
+					structure: "betterdungeons:spider_dungeon"
+				}
+			]
+			rewards: [
+				{
+					id: "776333E658C3F25A"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "2BBA358A6A798157"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7A8F499943371713"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5440F7447034043F"
+			x: 8.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"23C618FC62DB7FEC"
+			]
+			tasks: [
+				{
+					id: "3ED06C17DA01D9BA"
+					type: "structure"
+					structure: "betterstrongholds:stronghold"
+				}
+			]
+			rewards: [
+				{
+					id: "4FA606558FEE44A0"
+					type: "xp"
+					xp: 120
+				}
+				{
+					id: "63BDC5FB8AA132B9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6E17477338C6AA62"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "68B5AC09A423AA4D"
+			x: -4.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "351CD8717FF7E664"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "504FC9AD20DC5972"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "45C9E1229080B49D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "56FD6ABE6F060C83"
+			x: -2.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "723C728B85BE384F"
+					type: "structure"
+					structure: "bettermineshafts:mineshaft_oak"
+				}
+			]
+			rewards: [
+				{
+					id: "17E07C6F6DA0C89C"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "25311B01B0F4106D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1CDC4825C9093C27"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "28491E1F764497B4"
+			x: -2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"56FD6ABE6F060C83"
+			]
+			tasks: [
+				{
+					id: "5DC57D07C181D9B9"
+					type: "structure"
+					structure: "bettermineshafts:mineshaft_dripstone"
+				}
+				{
+					id: "49B86D31CD03BF3A"
+					type: "structure"
+					structure: "bettermineshafts:mineshaft_lush"
+				}
+			]
+			rewards: [
+				{
+					id: "6B69472089333C7F"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "3301E86ADC201643"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "05DB062059A9347F"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "75E4DF1E89697FCF"
+			x: -4.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "4304023D765C3442"
+					type: "structure"
+					structure: "minecraft:trail_ruins"
+				}
+				{
+					id: "1203F8F98BE0700E"
+					type: "item"
+					item: {
+						id: "minecraft:brush"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5B76ADE67920ACF5"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "1319FB9E33BA0B80"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "48752D92467746AE"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5D9ABBC3297E8F11"
+			x: 10.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"5440F7447034043F"
+			]
+			tasks: [
+				{
+					id: "1BFDEFAF8635DF42"
+					type: "structure"
+					structure: "minecraft:trial_chambers"
+				}
+				{
+					id: "1413DE5640B8B94C"
+					type: "item"
+					item: {
+						id: "minecraft:trial_key"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67452E9DA64947E7"
+					type: "xp"
+					xp: 120
+				}
+				{
+					id: "6F5DFB9E7C9246B1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "42F1C89240FDD62E"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "3D2834AA290BDC3C"
+			x: -6.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "5314F8ABDE7EB732"
+					type: "structure"
+					structure: "minecraft:desert_pyramid"
+				}
+				{
+					id: "75BB87A71A5B2B57"
+					type: "structure"
+					structure: "minecraft:jungle_pyramid"
+				}
+			]
+			rewards: [
+				{
+					id: "7A0AFEA103AE3075"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "4E441AC4EC26F675"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6233DBB19C9A4623"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "6B1ACC106AA8CC7C"
+			x: -2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "4E4349F3A8065FEE"
+					type: "structure"
+					structure: "minecraft:swamp_hut"
+				}
+				{
+					id: "6C6831C606824318"
+					type: "structure"
+					structure: "minecraft:igloo"
+				}
+			]
+			rewards: [
+				{
+					id: "686C1961FD24B59A"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "457652F6041333AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "35AC56D5A2D91CC9"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "696EDE3758F11DDE"
+			x: -6.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "27F7206FC92B9CF7"
+					type: "structure"
+					structure: "minecraft:ruined_portal"
+				}
+			]
+			rewards: [
+				{
+					id: "035CDE0221B21B3E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "00FED71CA6C30665"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "5F4922CA7876C672"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "50F76B15FECDB23D"
+			x: 4.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "3471BFD3378401D5"
+					type: "structure"
+					structure: "minecraft:shipwreck"
+				}
+			]
+			rewards: [
+				{
+					id: "090B9A9B1C19D560"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "515E307B7CF410D0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "70264BF660FF0AB4"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "11B352742B41A2F3"
+			x: 4.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"50F76B15FECDB23D"
+			]
+			tasks: [
+				{
+					id: "70EC98D984509A27"
+					type: "structure"
+					structure: "minecraft:buried_treasure"
+				}
+				{
+					id: "004A5B1E619C0940"
+					type: "item"
+					item: {
+						id: "minecraft:heart_of_the_sea"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "63AF2B70F23A62FF"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "4EEA7F723084BC52"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1DB535BBA771CE92"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "39CC43EB79388B13"
+			x: 6.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"50F76B15FECDB23D"
+			]
+			tasks: [
+				{
+					id: "3DEF37A3E233A7E3"
+					type: "structure"
+					structure: "minecraft:ocean_ruin_warm"
+				}
+				{
+					id: "7A2F5BB00163563E"
+					type: "structure"
+					structure: "minecraft:ocean_ruin_cold"
+				}
+			]
+			rewards: [
+				{
+					id: "78417E85D2D16C3F"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "19BC04E16D98F367"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1ED16077E7321815"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4A7EC6354DC5269B"
+			x: 6.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"50F76B15FECDB23D"
+			]
+			tasks: [
+				{
+					id: "125F7E13BC8F63DF"
+					type: "structure"
+					structure: "towns_and_towers:wreckage_ocean"
+				}
+			]
+			rewards: [
+				{
+					id: "2B3D6F4F4FA6233F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6558F6EDD0452E05"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "4A5964B1C9246938"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "2D328EFF89A3A160"
+			x: 4.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"11B352742B41A2F3"
+			]
+			tasks: [
+				{
+					id: "3C0D29DDE82D97B1"
+					type: "structure"
+					structure: "minecraft:monument"
+				}
+				{
+					id: "4ACA3AC361933ED1"
+					type: "item"
+					item: {
+						id: "minecraft:wet_sponge"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6CF6D33ACBB5FCB2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "4A4525E1B190D0B2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "319C7FC03866102D"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "1A2B391538F70F19"
+			x: 6.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "2243D98A0225AACE"
+					type: "structure"
+					structure: "minecraft:fortress"
+				}
+			]
+			rewards: [
+				{
+					id: "200AE36F6BC9A49F"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "07A99C5DDAE4946D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "2674590887444371"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "782E886E60A354D9"
+			x: 4.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"1A2B391538F70F19"
+			]
+			tasks: [
+				{
+					id: "501F5DF9DC940AAD"
+					type: "structure"
+					structure: "minecraft:bastion_remnant"
+				}
+			]
+			rewards: [
+				{
+					id: "4EB784B5E7019F3E"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5165CE1EDC953762"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7B55A72B386C1308"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "126B19FC8B92ED56"
+			x: 8.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1A2B391538F70F19"
+			]
+			tasks: [
+				{
+					id: "5717C2B2118F64B0"
+					type: "structure"
+					structure: "minecraft:nether_fossil"
+				}
+			]
+			rewards: [
+				{
+					id: "694739913F00F11D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3DC8786F31AA7F69"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "05A63BACF27FAC5A"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "20FE0812FEA6CB0B"
+			x: 6.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1A2B391538F70F19"
+			]
+			tasks: [
+				{
+					id: "7F37BB9EB536A468"
+					type: "structure"
+					structure: "betterdungeons:small_nether_dungeon"
+				}
+			]
+			rewards: [
+				{
+					id: "05BD3D03A564F555"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7EC05072A1C0C692"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "67F8F8657672EA81"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4F755E3FE879848F"
+			x: 2.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"782E886E60A354D9"
+			]
+			tasks: [
+				{
+					id: "6E9516758D39F2BE"
+					type: "structure"
+					structure: "minecraft:ruined_portal_nether"
+				}
+			]
+			rewards: [
+				{
+					id: "10A2F9D95E7078DB"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "56F815F458B50235"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "145CF80CEF18FF1E"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5319A7F7508FDD4C"
+			x: 4.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"782E886E60A354D9"
+			]
+			tasks: [
+				{
+					id: "72BF07198D953C26"
+					type: "biome"
+					biome: "biomesoplenty:erupting_inferno"
+				}
+			]
+			rewards: [
+				{
+					id: "09C26D4E5CF1C4D4"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "6F7C6202507A806A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "11C449EE0EC46D6A"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "2392661194C63179"
+			x: 0.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "172FE6B59EF34252"
+					type: "biome"
+					biome: "regions_unexplored:chalk_cliffs"
+				}
+				{
+					id: "2588270897AE36BC"
+					type: "biome"
+					biome: "regions_unexplored:towering_cliffs"
+				}
+			]
+			rewards: [
+				{
+					id: "61E5DA65FAA31F51"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "585DF5086D3087EE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "654BA40FD38653CA"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4E8EFFB2A502F674"
+			x: 0.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"2392661194C63179"
+			]
+			tasks: [
+				{
+					id: "1D84D889BFB1D5BF"
+					type: "biome"
+					biome: "biomesoplenty:hot_springs"
+				}
+				{
+					id: "7405B8770EFF8002"
+					type: "biome"
+					biome: "biomesoplenty:volcanic_plains"
+				}
+			]
+			rewards: [
+				{
+					id: "65F7D80759188974"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "05A4A624BB99EAC6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "466EF891B7BC66C6"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "7F926E6F393B0BC7"
+			x: 0.0d
+			y: 6.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"4E8EFFB2A502F674"
+			]
+			tasks: [
+				{
+					id: "00385C1690A00DD3"
+					type: "biome"
+					biome: "biomesoplenty:bog"
+				}
+				{
+					id: "13BAFA84CCB50190"
+					type: "biome"
+					biome: "biomesoplenty:marsh"
+				}
+				{
+					id: "223B222EEFBC8A8E"
+					type: "biome"
+					biome: "regions_unexplored:fen"
+				}
+			]
+			rewards: [
+				{
+					id: "0818EEB49965B85B"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "1271B02FE23BD171"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7445FB4F418FD2E3"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "122FF431CDA92EC1"
+			x: 0.0d
+			y: 8.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"7F926E6F393B0BC7"
+			]
+			tasks: [
+				{
+					id: "0EFD395C45D93C25"
+					type: "biome"
+					biome: "regions_unexplored:redstone_caves"
+				}
+				{
+					id: "1847137835DA0E60"
+					type: "biome"
+					biome: "regions_unexplored:bioshroom_caves"
+				}
+				{
+					id: "73E10AADD53CDF56"
+					type: "biome"
+					biome: "biomesoplenty:glowing_grotto"
+				}
+			]
+			rewards: [
+				{
+					id: "0720ED20FB49BA49"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "66E85F6E3148CD98"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "020E04DB231605E3"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "27B9D528EE9E2A4F"
+			x: 2.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2392661194C63179"
+			]
+			tasks: [
+				{
+					id: "095759BDB960628D"
+					type: "biome"
+					biome: "biomesoplenty:maple_woods"
+				}
+				{
+					id: "5E1B54BDCBAE36E3"
+					type: "biome"
+					biome: "regions_unexplored:eucalyptus_forest"
+				}
+				{
+					id: "00F8C8CD05AA6A9E"
+					type: "biome"
+					biome: "biomesoplenty:orchard"
+				}
+			]
+			rewards: [
+				{
+					id: "2EAC9A44DB13E62A"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "12E88BC01D2D8014"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "099ED1E87BB2EFD2"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4FBB33D6AE0D7BF7"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4E8EFFB2A502F674"
+			]
+			tasks: [
+				{
+					id: "7496A60C588D0BB7"
+					type: "biome"
+					biome: "regions_unexplored:joshua_desert"
+				}
+				{
+					id: "1076C58A44B468F4"
+					type: "biome"
+					biome: "regions_unexplored:saguaro_desert"
+				}
+				{
+					id: "1BBB6658018115D0"
+					type: "biome"
+					biome: "regions_unexplored:outback"
+				}
+			]
+			rewards: [
+				{
+					id: "4E685B3021E599D9"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "5F41E1B205556927"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1A584EB1B20E13DC"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "01C187527EBB2E42"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7F926E6F393B0BC7"
+			]
+			tasks: [
+				{
+					id: "409EFD3F27FDABA0"
+					type: "biome"
+					biome: "biomesoplenty:tundra"
+				}
+				{
+					id: "020705E2B3D27650"
+					type: "biome"
+					biome: "regions_unexplored:icy_heights"
+				}
+				{
+					id: "01AC0F0CF87EB803"
+					type: "biome"
+					biome: "biomesoplenty:snowblossom_grove"
+				}
+			]
+			rewards: [
+				{
+					id: "2508EE23CB65D224"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "7E285AD384C6729D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0F287260511E03D8"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "39B8F4EF8E933165"
+			x: -2.0d
+			y: 8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"122FF431CDA92EC1"
+			]
+			tasks: [
+				{
+					id: "6EDA03F091388FD3"
+					type: "biome"
+					biome: "regions_unexplored:poppy_fields"
+				}
+				{
+					id: "2E1C451DBA09D0AE"
+					type: "biome"
+					biome: "biomesoplenty:jacaranda_glade"
+				}
+				{
+					id: "637B9C27CBC85D6E"
+					type: "biome"
+					biome: "regions_unexplored:wisteria_grove"
+				}
+			]
+			rewards: [
+				{
+					id: "2F10E723AC032C33"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "19AA4453C50DA6E8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "769A39391066729D"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5D9AAF892091E191"
+			x: 2.0d
+			y: 8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"122FF431CDA92EC1"
+			]
+			tasks: [
+				{
+					id: "2DC61B9B8AC305E3"
+					type: "biome"
+					biome: "regions_unexplored:spires"
+				}
+				{
+					id: "0B9B8EFD1E98C8B7"
+					type: "biome"
+					biome: "biomesoplenty:crag"
+				}
+			]
+			rewards: [
+				{
+					id: "680AABFD1EF00B88"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "63C435DA527143E6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6BE9752054E3F6EB"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "05E537B097F52D38"
+			x: 0.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"122FF431CDA92EC1"
+			]
+			tasks: [
+				{
+					id: "70DA930DEB6EB849"
+					type: "biome"
+					biome: "biomesoplenty:wasteland"
+				}
+				{
+					id: "49217A1408231154"
+					type: "biome"
+					biome: "biomesoplenty:dead_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "6DEF78D746580D85"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "666290E1D6BCAB19"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0225B279F5644561"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "31A980F1060C1B0E"
+			x: 4.0d
+			y: 8.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"5D9AAF892091E191"
+			]
+			tasks: [
+				{
+					id: "1AA858F7C380C78D"
+					type: "biome"
+					biome: "biomesoplenty:origin_valley"
+				}
+			]
+			rewards: [
+				{
+					id: "4A3EA33A0DCB5945"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4846562F3258FCDC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0E6D8692ACB501F5"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
 	]
 	images: [
 		{
 			id: "27EDAED39E479C7B"
-			x: 3.075d
-			y: -1.5d
+			x: -3.425d
+			y: -12.925d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/explore.png"
+		}
+		{
+			id: "3A55C60E41EC0248"
+			x: -1.6749999999999998d
+			y: -7.05d
+			width: 5.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/explore_a_plains_village.png"
+		}
+		{
+			id: "16C005CD81B71CDA"
+			x: 0.3250000000000002d
+			y: 11.05d
+			width: 5.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/explore_cliffs_of_chalk.png"
+		}
+		{
+			id: "4112DBB17CF676EA"
+			x: 9.5d
+			y: -9.125d
+			width: 4.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/explore_a_shipwreck.png"
+		}
+		{
+			id: "6AD07C3680752F11"
+			x: 4.575d
+			y: -11.05d
+			width: 6.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/explore_a_nether_fortress.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "5640478EDAC5ECD6"
 			linked_quest: "1C5E43BCEDA7593F"
-			x: 3.5d
-			y: 0.5d
+			x: 0.0d
+			y: 0.0d
 			size: 1.0d
 		}
 		{
 			id: "2D101A0BC83EB4B6"
 			linked_quest: "24E1DFE3C86BAB94"
-			x: 2.0d
+			x: 6.0d
 			y: 2.0d
+			size: 1.0d
+		}
+		{
+			id: "2A99473EB06CF51E"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 6.0d
+			y: -6.0d
 			size: 1.0d
 		}
 	]

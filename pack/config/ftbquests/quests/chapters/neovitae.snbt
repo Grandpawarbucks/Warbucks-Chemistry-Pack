@@ -1,10 +1,10 @@
 {
 	id: "6E579A98FE880FED"
-	group: "27E265F4FFAA217A"
-	order_index: 0
+	group: "517E2EE5EE2E76FF"
+	order_index: 2
 	filename: "neovitae"
 	icon: {
-		id: "neovitae:ara_vitae"
+		id: "neovitae:blood_orb_weak"
 		count: 1
 	}
 	default_quest_shape: "circle"
@@ -12,8 +12,8 @@
 	quests: [
 		{
 			id: "5D36CB2BA3E716C5"
-			x: 4.0d
-			y: 2.0d
+			x: 2.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -49,7 +49,7 @@
 		{
 			id: "6698D1F588C53B2D"
 			x: 4.0d
-			y: 4.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -84,8 +84,8 @@
 		}
 		{
 			id: "6EED43714E3E8F31"
-			x: 4.0d
-			y: 6.0d
+			x: 6.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -120,8 +120,8 @@
 		}
 		{
 			id: "68EBC363A4C85F7C"
-			x: 4.0d
-			y: 7.5d
+			x: 8.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -156,9 +156,9 @@
 		}
 		{
 			id: "067F539FCB6023EF"
-			x: 4.0d
-			y: 9.0d
-			shape: "rsquare"
+			x: 8.0d
+			y: 2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"68EBC363A4C85F7C"
@@ -192,8 +192,8 @@
 		}
 		{
 			id: "646A47024D9CB316"
-			x: 2.0d
-			y: 9.0d
+			x: 8.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -228,8 +228,8 @@
 		}
 		{
 			id: "68017FF35A6697CF"
-			x: 2.0d
-			y: 11.0d
+			x: 8.0d
+			y: -4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -264,8 +264,8 @@
 		}
 		{
 			id: "035456673F726A27"
-			x: 0.5d
-			y: 13.0d
+			x: 8.0d
+			y: -6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -310,9 +310,9 @@
 		}
 		{
 			id: "2F31D9AA48043EB7"
-			x: 6.0d
-			y: 9.0d
-			shape: "square"
+			x: 10.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"68EBC363A4C85F7C"
@@ -346,8 +346,8 @@
 		}
 		{
 			id: "1CE190A4D6321064"
-			x: 6.0d
-			y: 11.0d
+			x: 10.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -391,8 +391,8 @@
 		}
 		{
 			id: "1F251E1D6739FDF7"
-			x: 8.0d
-			y: 11.0d
+			x: 12.0d
+			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -427,9 +427,9 @@
 		}
 		{
 			id: "1CDAB99B2BB3535D"
-			x: 8.0d
-			y: 13.0d
-			shape: "square"
+			x: 14.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"1F251E1D6739FDF7"
@@ -472,8 +472,8 @@
 		}
 		{
 			id: "79BA36D342715B75"
-			x: 9.5d
-			y: 14.5d
+			x: 14.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -509,9 +509,9 @@
 		}
 		{
 			id: "303A621549A04817"
-			x: 4.0d
-			y: 11.0d
-			shape: "rsquare"
+			x: 8.0d
+			y: 4.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"067F539FCB6023EF"
@@ -545,9 +545,9 @@
 		}
 		{
 			id: "317BE4308F8FE6FB"
-			x: 4.0d
-			y: 13.0d
-			shape: "rsquare"
+			x: 8.0d
+			y: 6.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"303A621549A04817"
@@ -581,9 +581,9 @@
 		}
 		{
 			id: "5E12ADBD0D83C3F6"
-			x: 4.0d
-			y: 14.5d
-			shape: "rsquare"
+			x: 8.0d
+			y: 8.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"317BE4308F8FE6FB"
@@ -615,24 +615,631 @@
 				}
 			]
 		}
+		{
+			id: "12A553D541821422"
+			x: 16.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"1CDAB99B2BB3535D"
+			]
+			tasks: [
+				{
+					id: "680A0C166B5D5719"
+					type: "item"
+					item: {
+						id: "neovitae:blood_orb_magician"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "44BC60F505DF43FA"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4110404F57CB61E5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6643E667BC436BD7"
+			x: 20.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"12A553D541821422"
+			]
+			tasks: [
+				{
+					id: "098B0B0C4A66E0F5"
+					type: "item"
+					item: {
+						id: "neovitae:master_ritual_stone"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "121AC0DE4DA525D5"
+					type: "item"
+					item: {
+						id: "neovitae:ritual_stone"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "26618392631031C3"
+					type: "item"
+					item: {
+						id: "neovitae:activation_crystal_weak"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DEE6740FF308AD2"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4B4A418DB8796604"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6984375DCD2592CE"
+			x: 20.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6643E667BC436BD7"
+			]
+			tasks: [
+				{
+					id: "6D000312A4D6935D"
+					type: "item"
+					item: {
+						id: "neovitae:ritual_diviner"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6A2BC7829D89A9A7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "347B9B86921705AC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1F756503ABFB5B65"
+			x: 16.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"12A553D541821422"
+				"55AF98DD41956199"
+			]
+			tasks: [
+				{
+					id: "66614480DAA34FF2"
+					type: "item"
+					item: {
+						id: "neovitae:athanor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "21AAB727B02EFE5C"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "55F85ACF84224495"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "38AAD029073B21E9"
+			x: 16.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1F756503ABFB5B65"
+			]
+			tasks: [
+				{
+					id: "0F4496A106EE2E23"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(neovitae:iron_dust)item(neovitae:gold_dust)item(neovitae:copper_dust))"
+						}
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "5F02D406F627F750"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2F803E7126BAD988"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "404C39F1827D431D"
+			x: 22.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"6643E667BC436BD7"
+			]
+			tasks: [
+				{
+					id: "1CFD938ABAA908DC"
+					type: "item"
+					item: {
+						id: "neovitae:weak_tau"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "122D868C41853C13"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "13B11D58BF420929"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3F5BBC5F4250B1CA"
+			x: 24.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"404C39F1827D431D"
+				"1F756503ABFB5B65"
+			]
+			tasks: [
+				{
+					id: "496F68DF985668E8"
+					type: "item"
+					item: {
+						id: "neovitae:weak_blood_shard"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "717F3473BC36276C"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "16BA2D7D5F2C1DBD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "35DCB0A86D3D507F"
+			x: 26.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"3F5BBC5F4250B1CA"
+			]
+			tasks: [
+				{
+					id: "00E32284BC14CE9C"
+					type: "item"
+					item: {
+						id: "neovitae:blood_orb_master"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "02AF089F456B52BB"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "2B2FA545D69A171D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6C8C3EE72DBD4CEB"
+			x: 16.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"12A553D541821422"
+			]
+			tasks: [
+				{
+					id: "11D31E8E354D4483"
+					type: "item"
+					item: {
+						id: "neovitae:sentient_plate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "18257EF77F317CAE"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4B9FBA9CFCF32F8C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "654009A64A9CDD54"
+			x: 26.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"35DCB0A86D3D507F"
+				"6C18ADE33F69C1A9"
+				"7033201713D3AEDC"
+			]
+			tasks: [
+				{
+					id: "78D974AFE6C9865F"
+					type: "item"
+					item: {
+						id: "neovitae:tenebrae_scribe_tool"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6CFF3E32E7975B88"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6210E4AD561B1614"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "16A4D003E9E542B5"
+			x: 24.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"654009A64A9CDD54"
+				"6984375DCD2592CE"
+			]
+			tasks: [
+				{
+					id: "47C81F9045F9577D"
+					type: "item"
+					item: {
+						id: "neovitae:ritual_diviner_tenebrae"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4B6AA2BD93ED1C98"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4E2FBB99164230A0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "46C020E0C1CDA4CB"
+			x: 28.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"35DCB0A86D3D507F"
+			]
+			tasks: [
+				{
+					id: "72CA86CFB7729F63"
+					type: "item"
+					item: {
+						id: "neovitae:ingot_hellforged"
+						count: 1
+					}
+					count: 9L
+				}
+			]
+			rewards: [
+				{
+					id: "1D3F61F7C398E041"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6B58E5D7F1066A58"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "53F7D3A8E2BF03FF"
+			x: 30.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"46C020E0C1CDA4CB"
+			]
+			tasks: [
+				{
+					id: "7D6DC1F7D39CE7B9"
+					type: "item"
+					item: {
+						id: "neovitae:blood_orb_archmage"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "73B69A8B87996F1D"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "3B333C4CC3BE194B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "783F8AF95E019FA0"
+			x: 34.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"53F7D3A8E2BF03FF"
+			]
+			tasks: [
+				{
+					id: "499C89593786EE3C"
+					type: "item"
+					item: {
+						id: "neovitae:blood_orb_transcendent"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "495FD7C3C35B91F2"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "5D43B30B6C575E16"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "05C3D2E2FA44B05B"
+			x: 18.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"12A553D541821422"
+			]
+			tasks: [
+				{
+					id: "18A3FE965991BD81"
+					type: "item"
+					item: {
+						id: "neovitae:experience_tome"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5CFA87217219DE02"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "769FA690F693E277"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	images: [
 		{
 			id: "00808F77C9F055F6"
-			x: 3.075d
-			y: -1.5d
+			x: 2.5d
+			y: -7.925d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/neovitae.png"
+		}
+		{
+			id: "57C328BDA7D3FF2D"
+			x: 10.25d
+			y: 9.125d
+			width: 5.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/neovitae_throwing_daggers.png"
+		}
+		{
+			id: "6076B107FE0F7CD0"
+			x: 17.0d
+			y: 5.05d
+			width: 3.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/neovitae_athanor.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "31EE85B12059F5E7"
 			linked_quest: "1C5E43BCEDA7593F"
-			x: 4.0d
-			y: 0.5d
+			x: 0.0d
+			y: 0.0d
+			size: 1.0d
+		}
+		{
+			id: "131210883E029602"
+			linked_quest: "55AF98DD41956199"
+			x: 18.0d
+			y: 2.0d
+			size: 1.0d
+		}
+		{
+			id: "16C1A5B9AF3D5207"
+			linked_quest: "6C18ADE33F69C1A9"
+			x: 26.0d
+			y: -4.0d
+			size: 1.0d
+		}
+		{
+			id: "1482070C3B5EE14A"
+			linked_quest: "7033201713D3AEDC"
+			x: 28.0d
+			y: -2.0d
 			size: 1.0d
 		}
 	]

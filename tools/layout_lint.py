@@ -4,7 +4,7 @@ Python sources, so it measures exactly what players will see, whatever tools/lay
 
 Per chapter: quest count, page size (cells) and aspect, overlaps, line crossings, lines through quests, long
 lines, line direction mix, quests too close, images over quests, quests outside every section image's column,
-shape/size variety, hidden lines, images, deps into other chapters with no quest link. Each chapter gets a
+orthogonal line % (horizontal or vertical lines), lone quests (no visible line), shape/size variety, hidden lines, images, deps into other chapters with no quest link. Each chapter gets a
 0-100 tidiness score and its worst issues.
 
 usage:
@@ -35,6 +35,7 @@ LONG = 6.0          # a line longer than this (cells) is "long"
 CLOSE = 1.2         # centres closer than CLOSE * mean size are "too close"
 OVERLAP_SLACK = 0.1  # boxes must overlap by more than this (cells) to count as an overlap
 THROUGH = 0.42      # a line passing within THROUGH * size of a quest centre goes "through" it
+ORTHO = 0.1         # a line with |dx| or |dy| below this (cells) is orthogonal (horizontal or vertical)
 
 
 # ---------------------------------------------------------------- SNBT
@@ -353,11 +354,12 @@ def lint_chapter(c, book, target=(18, 14)):
 
     # lines: length, direction, long, crossings, through quests
     lengths, dirs = [], {"R": 0, "D": 0, "L": 0, "U": 0}
-    long_n = 0
+    long_n = ortho = 0
     for l in vis:
         dx, dy = l["b"]["x"] - l["a"]["x"], l["b"]["y"] - l["a"]["y"]
         L = math.hypot(dx, dy)
         lengths.append(L)
+        ortho += abs(dx) < ORTHO or abs(dy) < ORTHO
         if L > 1e-9:
             dirs["R" if dx > 0 else "L"] += abs(dx) >= abs(dy)
             dirs["D" if dy > 0 else "U"] += abs(dy) > abs(dx)
@@ -366,6 +368,10 @@ def lint_chapter(c, book, target=(18, 14)):
             issues.append((2, f"long line ({L:.1f}): '{l['a']['title']}' -> '{l['b']['title']}'"))
     m["median_len"] = round(statistics.median(lengths), 2) if lengths else 0.0
     m["long"], m["dirs"] = long_n, dirs
+    m["ortho_n"], m["ortho"] = ortho, round(100 * ortho / len(vis)) if vis else 100
+    # quests with no visible line at all (on a page that has lines): they look scattered
+    tied = {id(l["a"]) for l in vis} | {id(l["b"]) for l in vis}
+    m["lone"] = sum(1 for q in c["quests"] if id(q) not in tied) if lines else 0
     boxes = []
     for l in vis:
         a, b = _pos(l["a"]), _pos(l["b"])
@@ -495,6 +501,9 @@ def summary(book, results):
         "shapes/chapter": _med(m["shapes"] for _, m in results),
         "sizes/chapter": _med(m["sizes"] for _, m in results),
         "dirs R/D/L/U %": "/".join(str(round(100 * tot_dirs[k] / nd)) for k in "RDLU"),
+        "orthogonal lines %": round(100 * sum(m["ortho_n"] for _, m in results) / nlines, 1),
+        "orthogonal %/chapter": _med(m["ortho"] for _, m in results),
+        "lone quests (no line)": sum(m["lone"] for _, m in results),
         "tidiness": _med(m["score"] for _, m in results),
     }
 
@@ -502,7 +511,7 @@ def summary(book, results):
 def report(book, results, verbose=False, target=(18, 14)):
     lines = []
     hdr = (f"{'chapter':16} {'q':>4} {'W x H':>11} {'asp':>5} {'ovl':>4} {'thru':>4} {'cross':>5} {'long':>4} "
-           f"{'close':>5} {'R/D/L/U':>13} {'img':>3} {'iov':>3} {'out':>3} {'shp':>3} {'siz':>3} {'hid':>4} "
+           f"{'close':>5} {'R/D/L/U':>13} {'orth%':>5} {'lone':>4} {'img':>3} {'iov':>3} {'out':>3} {'shp':>3} {'siz':>3} {'hid':>4} "
            f"{'unl':>3} {'score':>5}")
     lines.append(f"Book: {book['folder']}   target page {target[0]}x{target[1]} cells")
     lines.append(hdr)
@@ -511,7 +520,7 @@ def report(book, results, verbose=False, target=(18, 14)):
         d = m["dirs"]
         lines.append(f"{c['file'][:16]:16} {m['quests']:4} {m['w']:5.0f} x {m['h']:<4.0f} {m['aspect']:5.2f} {m['overlaps']:4} "
                      f"{m['through']:4} {m['crossings']:5} {m['long']:4} {m['close']:5} "
-                     f"{d['R']:>3}/{d['D']}/{d['L']}/{d['U']:<3} {m['images']:3} {m['image_overlaps']:3} {m['outside']:3} "
+                     f"{d['R']:>3}/{d['D']}/{d['L']}/{d['U']:<3} {m['ortho']:5} {m['lone']:4} {m['images']:3} {m['image_overlaps']:3} {m['outside']:3} "
                      f"{m['shapes']:3} {m['sizes']:3} {m['hidden']:4} {m['unlinked']:3} {m['score']:5}")
     lines.append("")
     lines.append("Worst chapters:")

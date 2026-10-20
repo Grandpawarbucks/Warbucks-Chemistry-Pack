@@ -9,6 +9,12 @@ from questlib import Q, Chapter, item, dim, tick, anytag, anyof, MAIN, SIDE  # n
 
 CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:backpack",
         ["A god needs somewhere to keep things."], SIDE, [
+    # --- Your first backpack (moved here from Getting Started; key unchanged) -------------------
+    Q("gs_backpack", 0, 0, [item("sophisticatedbackpacks:backpack")], "A Backpack", subtitle="More pockets, upgradeable later", deps=["gs_leather", "gs_chest"], xp=20, desc=[
+        "&6You remember carrying whole worlds. For now, a leather bag will do.&r",
+        "&eWhat:&r More inventory, and it can be upgraded later (pickup, magnet, feeding and more).",
+        "&eHow:&r Leather, string and a chest (check JEI for the shape). Wear it in the chest slot or keep it in your inventory.",
+        "&eTip:&r Take it on your first mining trip. Backpack upgrades are on the Quality of Life page and in the Demigod Token shop."]),
     # --- Sophisticated Storage (y=0) -----------------------------------------------------------
     Q("s_barrel", 0, 0, [item("sophisticatedstorage:barrel")], "Sophisticated Barrel", deps=["gs_backpack"], xp=25,
       subtitle="Chests and barrels that grow with you", desc=[
@@ -449,5 +455,5 @@ CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:ba
         "&eWhat:&r the Rainbow Furnace is the top of Iron Furnaces, built from one of every other furnace.",
         "&eChemistry:&r flame colours are real chemistry: copper burns green, sodium yellow, strontium red, potassium lilac. Each element's electrons emit their own wavelengths (that's how fireworks get their colours).",
         "&eHow:&r rainbow plating is iron, gold, diamond, emerald, obsidian, crystal, copper and silver furnaces, shapeless (makes 8). The core is a netherite furnace in rainbow glass. 8 plating around the core makes the furnace."]),
-], links=[("gs_backpack", -2, 0), ("t3_hull", -2, 7), ("t5_ae2", -2, 4), ("q_bp_iron", -2, 9), ("q_bp_up", -2, 10.5),
+], links=[("t3_hull", -2, 7), ("t5_ae2", -2, 4), ("q_bp_iron", -2, 9), ("q_bp_up", -2, 10.5),
           ("gs_iron", -2, 14), ("lg_logistics", -2, 17)])

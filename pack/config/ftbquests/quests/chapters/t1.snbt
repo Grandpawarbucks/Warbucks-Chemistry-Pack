@@ -12,7 +12,7 @@
 	quests: [
 		{
 			id: "1EDDC44EC9C4E742"
-			x: 0.0d
+			x: 2.0d
 			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
@@ -47,8 +47,45 @@
 			]
 		}
 		{
+			id: "72877F09B21CFC52"
+			x: 0.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
+			dependencies: [
+				"15BEE6A43E8C4B6E"
+			]
+			tasks: [
+				{
+					id: "1BCF572E53AC8AC3"
+					type: "item"
+					item: {
+						id: "minecraft:coal"
+						count: 1
+					}
+					count: 32L
+				}
+			]
+			rewards: [
+				{
+					id: "585D85FD646D5B05"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "3B1776BE63212BDA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "1F11787528A18CB9"
-			x: 2.5d
+			x: 4.0d
 			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
@@ -84,7 +121,7 @@
 		}
 		{
 			id: "3E0966482A811593"
-			x: 5.0d
+			x: 6.0d
 			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
@@ -137,39 +174,8 @@
 			]
 		}
 		{
-			id: "4952190F5A9DACFA"
-			x: 7.5d
-			y: 0.0d
-			shape: "pentagon"
-			size: 0.9d
-			dependencies: [
-				"3E0966482A811593"
-			]
-			tasks: [
-				{
-					id: "2C4A397880E08B70"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "44EC1B0A8A4E8B8B"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "2A32DFE4010849B1"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "5B0DD23AD404D09E"
-			x: 5.0d
+			x: 6.0d
 			y: -2.0d
 			shape: "square"
 			size: 1.0d
@@ -204,13 +210,45 @@
 			]
 		}
 		{
+			id: "4952190F5A9DACFA"
+			x: 8.0d
+			y: 0.0d
+			shape: "pentagon"
+			size: 0.9d
+			dependencies: [
+				"3E0966482A811593"
+			]
+			tasks: [
+				{
+					id: "2C4A397880E08B70"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "44EC1B0A8A4E8B8B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2A32DFE4010849B1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "2E90112C74807A32"
-			x: 7.5d
-			y: 3.0d
-			shape: "rsquare"
-			size: 1.0d
+			x: 12.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
 			dependencies: [
 				"4952190F5A9DACFA"
+				"72877F09B21CFC52"
 			]
 			tasks: [
 				{
@@ -234,18 +272,59 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 2
+						count: 4
+					}
+				}
+				{
+					id: "35BD5498C523DB6E"
+					type: "random"
+					table_id: 2521071289652623958L
+				}
+			]
+		}
+		{
+			id: "4E77936288D67925"
+			x: 12.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2E90112C74807A32"
+			]
+			tasks: [
+				{
+					id: "5B541271CF4EABB8"
+					type: "item"
+					item: {
+						id: "modern_industrialization:coke_block"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "132F5DB49C427DEE"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "48A3B8CDEE66F8D3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
 					}
 				}
 			]
 		}
 		{
 			id: "4E8A54354F577B14"
-			x: 5.0d
-			y: -3.5d
+			x: 8.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"4952190F5A9DACFA"
 				"5B0DD23AD404D09E"
@@ -279,8 +358,8 @@
 		}
 		{
 			id: "6788BDC814345011"
-			x: 5.0d
-			y: -5.5d
+			x: 10.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
 			hide_dependent_lines: true
@@ -316,8 +395,8 @@
 		}
 		{
 			id: "01D936F8C9EF70C6"
-			x: 5.0d
-			y: 3.0d
+			x: 14.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -352,8 +431,8 @@
 		}
 		{
 			id: "6DFD06FF06C7F3C4"
-			x: 2.5d
-			y: 3.0d
+			x: 16.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -388,8 +467,8 @@
 		}
 		{
 			id: "4991EED8B0E223D1"
-			x: 0.0d
-			y: 3.0d
+			x: 18.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -423,12 +502,48 @@
 			]
 		}
 		{
-			id: "2F826829D36DA434"
-			x: 6.5d
+			id: "5FB052696612D024"
+			x: 18.0d
 			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4991EED8B0E223D1"
+			]
+			tasks: [
+				{
+					id: "20FA8180A687166C"
+					type: "item"
+					item: {
+						id: "modern_industrialization:uncooked_steel_dust"
+						count: 1
+					}
+					count: 27L
+				}
+			]
+			rewards: [
+				{
+					id: "321C7152DEE05E81"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "28C1328C8E1000A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2F826829D36DA434"
+			x: 12.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"2E90112C74807A32"
 			]
@@ -470,8 +585,8 @@
 		}
 		{
 			id: "09118CFFDCA49A2D"
-			x: 6.5d
-			y: -3.5d
+			x: 14.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			hide_dependent_lines: true
@@ -507,8 +622,8 @@
 		}
 		{
 			id: "506EB945C083CC2E"
-			x: -1.0d
-			y: 6.0d
+			x: 18.0d
+			y: 8.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -557,8 +672,8 @@
 		}
 		{
 			id: "5FC7A4838C153DB0"
-			x: -3.5d
-			y: 8.0d
+			x: 22.0d
+			y: 10.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -592,47 +707,9 @@
 			]
 		}
 		{
-			id: "750EFDC1E2DC1879"
-			x: -3.5d
-			y: 9.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"506EB945C083CC2E"
-			]
-			tasks: [
-				{
-					id: "64A26ED5D8BF7140"
-					type: "item"
-					item: {
-						id: "modern_industrialization:steel_boiler"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5ED3C491A6CF8B4F"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "7B7E74CD03E0D470"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "1622F5994D7D8D48"
-			x: -3.5d
-			y: 6.0d
+			x: 18.0d
+			y: 10.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -666,14 +743,70 @@
 			]
 		}
 		{
-			id: "7C26AEBE7939F360"
-			x: -5.5d
-			y: 2.5d
+			id: "3A174F8585AF80D7"
+			x: 24.0d
+			y: 12.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"1622F5994D7D8D48"
+				"506EB945C083CC2E"
 				"6788BDC814345011"
+			]
+			tasks: [
+				{
+					id: "2125866FCBFEB2AF"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_rod"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "0DAE6C0A1DEC7585"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_bolt"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "33AA64449F5A580A"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_ring"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0ADF41A71F2AE41F"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "3E96CB491AE0F028"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "7C26AEBE7939F360"
+			x: 18.0d
+			y: 12.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"1622F5994D7D8D48"
+				"3A174F8585AF80D7"
 			]
 			tasks: [
 				{
@@ -703,9 +836,45 @@
 			]
 		}
 		{
+			id: "66487B00E1F3D5D0"
+			x: 18.0d
+			y: 14.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"7C26AEBE7939F360"
+			]
+			tasks: [
+				{
+					id: "23140CE19716D9DE"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_machine_casing"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "192EF0C40354876C"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "1EBAE628F5E093F4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "287260F7D5158B76"
-			x: -7.5d
-			y: 1.5d
+			x: 16.0d
+			y: 12.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -740,9 +909,813 @@
 			]
 		}
 		{
+			id: "68D7E29AA3935E8A"
+			x: 18.0d
+			y: 16.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"66487B00E1F3D5D0"
+			]
+			tasks: [
+				{
+					id: "11EB8ED4517A03B6"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_item_input_hatch"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "21A89509A186878E"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_item_output_hatch"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1CD606541410ABF7"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_fluid_input_hatch"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5F21E321972349E4"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "3B3C39C039A24F50"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "48758611BAA2D4CB"
+			x: 16.0d
+			y: 14.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"287260F7D5158B76"
+				"66487B00E1F3D5D0"
+			]
+			tasks: [
+				{
+					id: "4A0BF0FA1989E365"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_packer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71BC8833D3CFEA41"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_unpacker"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "72A112EA47347355"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "35E22D88B6492D83"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "25AC6318A5AC0F72"
+			x: 12.0d
+			y: 10.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "390D25D07DD21FD2"
+					type: "item"
+					item: {
+						id: "modern_industrialization:nickel_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "29F18C093E193FD5"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "45C0A4122CB20CD4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "74B157424ED264D1"
+			x: 10.0d
+			y: 10.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"25AC6318A5AC0F72"
+			]
+			tasks: [
+				{
+					id: "1CFB8880493131BC"
+					type: "item"
+					item: {
+						id: "modern_industrialization:invar_dust"
+						count: 1
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "12C58800C9B9A693"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "64727D2EE2D8610D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "3E5534444F9B853B"
+			x: 10.0d
+			y: 12.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"74B157424ED264D1"
+			]
+			tasks: [
+				{
+					id: "36B3F4D7F2396067"
+					type: "item"
+					item: {
+						id: "modern_industrialization:invar_ingot"
+						count: 1
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "158FA54F6C8D3C28"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "75D3AEBA7A7E73BE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6FAF0E8C7E90C6A8"
+			x: 10.0d
+			y: 14.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"3E5534444F9B853B"
+			]
+			tasks: [
+				{
+					id: "581D3959B2AC643F"
+					type: "item"
+					item: {
+						id: "modern_industrialization:invar_plate"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "23D357359EAF2C60"
+					type: "item"
+					item: {
+						id: "modern_industrialization:invar_gear"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "73656EBF0D65D758"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "7E7724664E886DD8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "57DF95F0416DB663"
+			x: 7.0d
+			y: 10.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "39854A3A9BE109FC"
+					type: "item"
+					item: {
+						id: "modern_industrialization:diamond_dust"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "414C3CBC5CB3BD01"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "301F4DFEAB538AB8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "21CDC19EF7130730"
+			x: 10.0d
+			y: 16.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6FAF0E8C7E90C6A8"
+				"57DF95F0416DB663"
+			]
+			tasks: [
+				{
+					id: "6C1860C798D7CEC7"
+					type: "item"
+					item: {
+						id: "modern_industrialization:invar_rotary_blade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6EED820474A18233"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "3A1B464AEAE67F47"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "517923AB55DF110A"
+			x: 14.0d
+			y: 14.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"6FAF0E8C7E90C6A8"
+				"0A1932BF335E6451"
+				"66487B00E1F3D5D0"
+			]
+			tasks: [
+				{
+					id: "1B50B4FD677CCD20"
+					type: "item"
+					item: {
+						id: "extended_industrialization:steel_alloy_smelter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "50A25E48C0BCC6AF"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "33D9D7C816CB3E71"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "749F28A2B915932F"
+			x: 14.0d
+			y: 12.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"287260F7D5158B76"
+			]
+			tasks: [
+				{
+					id: "213AD41A9E237381"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_drill_head"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2222F1F91D22A1DB"
+					type: "item"
+					item: {
+						id: "modern_industrialization:iron_gear"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "581487A84AF99D20"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "01D47D4E630645A0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5DD432221FD45DC3"
+			x: 14.0d
+			y: 16.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"749F28A2B915932F"
+				"21CDC19EF7130730"
+			]
+			tasks: [
+				{
+					id: "236667A8187E1265"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steam_quarry"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "05B101A57EE58F44"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_drill"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4121614C98598EB7"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "288177CFA7A59C7E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "095949D02325D2DB"
+			x: 24.0d
+			y: 10.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "2287ED00A6E788BE"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_blade"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "09D288BA53BDA04A"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "755BB4E4B30A26D3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0A1932BF335E6451"
+			x: 22.0d
+			y: 16.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"095949D02325D2DB"
+			]
+			tasks: [
+				{
+					id: "3364B75476463D02"
+					type: "item"
+					item: {
+						id: "modern_industrialization:bronze_rotor"
+						count: 1
+					}
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "54BA021339BE14EF"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "65B0EFC32E346D91"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "786BB9183811C265"
+			x: 20.0d
+			y: 14.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0A1932BF335E6451"
+				"66487B00E1F3D5D0"
+			]
+			tasks: [
+				{
+					id: "6D76D7ABF6BD365F"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5EDB11545AED67A8"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_macerator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "44027711B0602521"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "0A1288AD6824A214"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0283A0C43718F7C7"
+			x: 16.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1622F5994D7D8D48"
+			]
+			tasks: [
+				{
+					id: "44D330482D642CD5"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_tank"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4639B6C95943C06B"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "0E6C2DE5BFF9847A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "750EFDC1E2DC1879"
+			x: 14.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0283A0C43718F7C7"
+			]
+			tasks: [
+				{
+					id: "64A26ED5D8BF7140"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_boiler"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5ED3C491A6CF8B4F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7B7E74CD03E0D470"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7F6A7163CDEC6B19"
+			x: 20.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1622F5994D7D8D48"
+			]
+			tasks: [
+				{
+					id: "714A379BC0EA174B"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_large_plate"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "213CEA58EEEB43FE"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "6D86579194776E87"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "15A87A4EFD0A441C"
+			x: 20.0d
+			y: 12.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7F6A7163CDEC6B19"
+			]
+			tasks: [
+				{
+					id: "357F39414668D892"
+					type: "item"
+					item: {
+						id: "modern_industrialization:steel_hammer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6BE05EA55F1474EA"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "33BF05F3D8CAB962"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "77F4F93F303CD16D"
+			x: 20.0d
+			y: 8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1622F5994D7D8D48"
+			]
+			tasks: [
+				{
+					id: "4D26F1ED3DDFC909"
+					type: "item"
+					item: {
+						id: "modern_industrialization:trash_can"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "263B6786A9E22864"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "066BC77D48E1FBA1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3BAD7D0A76461500"
+			x: 16.0d
+			y: 8.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "245D2128CBEBEB40"
+					type: "item"
+					item: {
+						id: "minecraft:redstone_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4FE1F4FA48D303BC"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "74E763AF16FD28A5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "3D9A8C810E3CC81C"
-			x: 2.5d
-			y: 9.0d
+			x: 14.0d
+			y: 8.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -777,8 +1750,8 @@
 		}
 		{
 			id: "54E6526368208022"
-			x: 5.0d
-			y: 9.0d
+			x: 12.0d
+			y: 8.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -813,8 +1786,8 @@
 		}
 		{
 			id: "4EF4EA98C358B2AE"
-			x: -5.5d
-			y: 6.0d
+			x: 12.0d
+			y: 12.0d
 			shape: "square"
 			size: 1.0d
 			hide_dependent_lines: true
@@ -859,10 +1832,11 @@
 		}
 		{
 			id: "7B8C9B9BAD74D427"
-			x: -5.5d
-			y: 8.0d
+			x: 22.0d
+			y: 14.0d
 			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			hide_dependent_lines: true
 			dependencies: [
 				"1622F5994D7D8D48"
@@ -906,8 +1880,8 @@
 		}
 		{
 			id: "7E15308871B090AE"
-			x: 7.5d
-			y: 9.0d
+			x: 4.0d
+			y: 8.0d
 			shape: "gear"
 			size: 2.0d
 			dependencies: [
@@ -956,8 +1930,8 @@
 		}
 		{
 			id: "29BEA270C571B58C"
-			x: 5.0d
-			y: 6.0d
+			x: 12.0d
+			y: 5.0d
 			shape: "gear"
 			size: 2.0d
 			dependencies: [
@@ -998,8 +1972,8 @@
 		}
 		{
 			id: "6482D732148C9CAB"
-			x: 8.5d
-			y: 10.5d
+			x: 2.0d
+			y: 8.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -1034,8 +2008,8 @@
 		}
 		{
 			id: "7A840CDAA02E6E54"
-			x: 7.0d
-			y: 6.5d
+			x: 4.0d
+			y: 6.0d
 			shape: "square"
 			size: 1.0d
 			hide_dependent_lines: true
@@ -1071,8 +2045,8 @@
 		}
 		{
 			id: "2C209AB4708A194F"
-			x: 7.5d
-			y: 12.0d
+			x: 0.0d
+			y: 8.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -1136,8 +2110,8 @@
 		}
 		{
 			id: "3D16D152C8C89059"
-			x: 5.0d
-			y: 12.0d
+			x: -4.0d
+			y: 8.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -1176,133 +2150,12 @@
 			]
 		}
 		{
-			id: "3BAD7D0A76461500"
-			x: 0.0d
-			y: 9.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"506EB945C083CC2E"
-			]
-			tasks: [
-				{
-					id: "245D2128CBEBEB40"
-					type: "item"
-					item: {
-						id: "minecraft:redstone_block"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4FE1F4FA48D303BC"
-					type: "xp"
-					xp: 25
-				}
-				{
-					id: "74E763AF16FD28A5"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "4E77936288D67925"
-			x: 8.5d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"2E90112C74807A32"
-			]
-			tasks: [
-				{
-					id: "5B541271CF4EABB8"
-					type: "item"
-					item: {
-						id: "modern_industrialization:coke_block"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "132F5DB49C427DEE"
-					type: "xp"
-					xp: 20
-				}
-				{
-					id: "48A3B8CDEE66F8D3"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "786BB9183811C265"
-			x: -5.0d
-			y: 9.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"506EB945C083CC2E"
-			]
-			tasks: [
-				{
-					id: "6D76D7ABF6BD365F"
-					type: "item"
-					item: {
-						id: "modern_industrialization:steel_upgrade"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "5EDB11545AED67A8"
-					type: "item"
-					item: {
-						id: "modern_industrialization:steel_macerator"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "44027711B0602521"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "0A1288AD6824A214"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "34238F774A63B533"
-			x: 9.0d
-			y: 6.5d
+			x: 0.0d
+			y: 10.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"2C209AB4708A194F"
 			]
@@ -1344,12 +2197,11 @@
 		}
 		{
 			id: "0227C974352048DA"
-			x: 10.5d
-			y: 6.5d
+			x: 0.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"2C209AB4708A194F"
 			]
@@ -1382,12 +2234,11 @@
 		}
 		{
 			id: "5228E072334D75AA"
-			x: 12.0d
-			y: 6.5d
+			x: -2.0d
+			y: 10.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"2C209AB4708A194F"
 			]
@@ -1419,39 +2270,21 @@
 			]
 		}
 		{
-			id: "68D7E29AA3935E8A"
-			x: -9.5d
-			y: 2.5d
+			id: "632D96966BF470C3"
+			x: 4.0d
+			y: 10.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
 			dependencies: [
-				"7C26AEBE7939F360"
+				"7E15308871B090AE"
 			]
 			tasks: [
 				{
-					id: "11EB8ED4517A03B6"
+					id: "2711F19AC4B0E97A"
 					type: "item"
 					item: {
-						id: "modern_industrialization:steel_item_input_hatch"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "21A89509A186878E"
-					type: "item"
-					item: {
-						id: "modern_industrialization:steel_item_output_hatch"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "1CD606541410ABF7"
-					type: "item"
-					item: {
-						id: "modern_industrialization:steel_fluid_input_hatch"
+						id: "alchemistry:atomizer"
 						count: 1
 					}
 					count: 1L
@@ -1459,12 +2292,12 @@
 			]
 			rewards: [
 				{
-					id: "5F21E321972349E4"
+					id: "220AF253F9CF5C18"
 					type: "xp"
 					xp: 40
 				}
 				{
-					id: "3B3C39C039A24F50"
+					id: "539B57EFBD77E378"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1474,30 +2307,21 @@
 			]
 		}
 		{
-			id: "48758611BAA2D4CB"
-			x: -9.5d
-			y: -0.5d
+			id: "24258A11397935DE"
+			x: 4.0d
+			y: 12.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
 			dependencies: [
-				"287260F7D5158B76"
+				"632D96966BF470C3"
 			]
 			tasks: [
 				{
-					id: "4A0BF0FA1989E365"
+					id: "37E9D5A2DDA09F8A"
 					type: "item"
 					item: {
-						id: "modern_industrialization:steel_packer"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "71BC8833D3CFEA41"
-					type: "item"
-					item: {
-						id: "modern_industrialization:steel_unpacker"
+						id: "alchemistry:liquifier"
 						count: 1
 					}
 					count: 1L
@@ -1505,12 +2329,12 @@
 			]
 			rewards: [
 				{
-					id: "72A112EA47347355"
+					id: "43D976B18088B55B"
 					type: "xp"
-					xp: 40
+					xp: 30
 				}
 				{
-					id: "35E22D88B6492D83"
+					id: "72DDD4DDB0A59DBE"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1520,21 +2344,21 @@
 			]
 		}
 		{
-			id: "517923AB55DF110A"
-			x: -7.5d
-			y: 3.0d
+			id: "53F71C712890B511"
+			x: 2.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
 			dependencies: [
-				"7C26AEBE7939F360"
+				"7E15308871B090AE"
 			]
 			tasks: [
 				{
-					id: "1B50B4FD677CCD20"
+					id: "7D28D2D7C59A4AE8"
 					type: "item"
 					item: {
-						id: "extended_industrialization:steel_alloy_smelter"
+						id: "alchemistry:compactor"
 						count: 1
 					}
 					count: 1L
@@ -1542,12 +2366,12 @@
 			]
 			rewards: [
 				{
-					id: "50A25E48C0BCC6AF"
+					id: "5A399BC99CF3C0A4"
 					type: "xp"
-					xp: 40
+					xp: 30
 				}
 				{
-					id: "33D9D7C816CB3E71"
+					id: "05D2707D7B71BCA1"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1557,30 +2381,21 @@
 			]
 		}
 		{
-			id: "5DD432221FD45DC3"
-			x: -9.5d
-			y: 1.0d
+			id: "56F035265D20D7D0"
+			x: -4.0d
+			y: 10.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
 			dependencies: [
-				"287260F7D5158B76"
+				"3D16D152C8C89059"
 			]
 			tasks: [
 				{
-					id: "236667A8187E1265"
+					id: "22180CB9DF80095F"
 					type: "item"
 					item: {
-						id: "modern_industrialization:steam_quarry"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "05B101A57EE58F44"
-					type: "item"
-					item: {
-						id: "modern_industrialization:bronze_drill"
+						id: "chemlib:carbon_dioxide"
 						count: 1
 					}
 					count: 4L
@@ -1588,16 +2403,90 @@
 			]
 			rewards: [
 				{
-					id: "4121614C98598EB7"
+					id: "47480DDE3C0984CB"
 					type: "xp"
-					xp: 75
+					xp: 30
 				}
 				{
-					id: "288177CFA7A59C7E"
+					id: "52B0B3272B0F47DC"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 2
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "65F5627AAA0D86ED"
+			x: -4.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3D16D152C8C89059"
+			]
+			tasks: [
+				{
+					id: "6A7FD7FF0897E169"
+					type: "item"
+					item: {
+						id: "chemlib:methane"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "3F83716D67641BBC"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "2A2AF31C5280676C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "57C619587270D282"
+			x: 2.0d
+			y: 10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7E15308871B090AE"
+			]
+			tasks: [
+				{
+					id: "752D03300278C3FD"
+					type: "item"
+					item: {
+						id: "chemlib:silicon_dioxide"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "7966E72B12AFBCC0"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "6C01B2E80F44AB3F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
 					}
 				}
 			]
@@ -1606,46 +2495,91 @@
 	images: [
 		{
 			id: "1C5FAE6A6C1C7310"
-			x: -6.925000000000001d
-			y: -8.625d
+			x: -1.75d
+			y: -5.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/t1.png"
 		}
 		{
-			id: "476DA0F850CC93B2"
+			id: "4C9ACE8692A47828"
 			x: 7.75d
-			y: -6.75d
-			width: 6.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t1_byproduct_creosote.png"
-		}
-		{
-			id: "0B64AA42785DFCF4"
-			x: 8.3375d
-			y: 4.25d
-			width: 8.425d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t1_the_combiner.png"
-		}
-		{
-			id: "3631183B3E11ED52"
-			x: -5.25d
-			y: -1.625d
+			y: -3.125d
 			width: 4.5d
 			height: 0.75d
 			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t1_steel_plates.png"
+			image: "warbucks:textures/quests/sections/t1_the_coke_oven.png"
+		}
+		{
+			id: "2ADD1C60C6EB19A1"
+			x: 13.75d
+			y: 3.125d
+			width: 4.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_carbon_steel.png"
+		}
+		{
+			id: "3AD7D8052E835015"
+			x: 22.0d
+			y: 17.125d
+			width: 5.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_steel_upgrades.png"
+		}
+		{
+			id: "4E5E102C56515616"
+			x: 16.5d
+			y: 17.05d
+			width: 4.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_steel_parts.png"
+		}
+		{
+			id: "4B607482D8E0CF33"
+			x: 6.25d
+			y: 14.625d
+			width: 4.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_forge_energy.png"
+		}
+		{
+			id: "320B3ECE617D7B7B"
+			x: 11.0d
+			y: 17.125d
+			width: 3.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_invar.png"
+		}
+		{
+			id: "19DFA1AE7723DC04"
+			x: 2.25d
+			y: 4.875d
+			width: 4.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_the_dissolver.png"
+		}
+		{
+			id: "6F73524EAAA620DE"
+			x: 1.9250000000000007d
+			y: 13.05d
+			width: 5.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t1_first_lab_work.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "39C05477F698EB46"
 			linked_quest: "15BEE6A43E8C4B6E"
-			x: -2.0d
+			x: 0.0d
 			y: 0.0d
 			size: 1.0d
 		}

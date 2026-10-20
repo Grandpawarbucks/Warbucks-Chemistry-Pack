@@ -237,7 +237,7 @@ def build():
                    "icon": {"id": c.icon, "count": 1},
                    "default_quest_shape": "rsquare" if c.group == "main" or c.key == "welcome" else "circle",
                    "default_hide_dependency_lines": False,
-                   **({"progression_mode": "linear"} if c.group == "shop" else {}),
+                   **({"progression_mode": "linear"} if getattr(c, "linear", False) else {}),
                    "quests": quests, "images": images,
                    # size written out: FTB's QuestLink is 1.0 by default whatever quest it shows (the layout uses 1.0)
                    "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly),
@@ -246,7 +246,7 @@ def build():
         (OUT / "chapters" / f"{c.key}.snbt").write_text(snbt(chapter) + "\n", encoding="utf-8", newline="\n")
 
     section_art()
-    page_banners()
+    chapter_banners()
     (OUT / "reward_tables").mkdir(exist_ok=True)
     for i, (tkey, t) in enumerate(REWARD_TABLES.items()):
         tid = hexid("table:" + tkey)
@@ -339,10 +339,12 @@ def section_art():
 BANNER_DIR = ROOT / "pack/kubejs/assets/warbucks/textures/quests"
 
 
-def page_banners():
-    """Banners for the chapters split from a mod page (tools/quest_data.py, "Mod = category"): the chapter's own
-    title on its page's banner style (tools/build_art.py: the page's element tile and colour). Files are only
-    rewritten when their bytes change; banners of split chapters that no longer exist are deleted."""
+def chapter_banners():
+    """Chapter banners (tools/build_art.py: the page's element tile and colour, the chapter's sidebar title) for
+    every chapter outside the Demigod's Path (its tier art is made by build_art.py itself). A chapter split from a
+    mod page (only if quest_data.SPLIT_TABS is switched on) renders in its page's style. Files are only rewritten
+    when their bytes change; banners of chapters that no longer exist (old split chapters such as
+    "mekanism_the_chemical_plant") are deleted."""
     try:
         import build_art
     except ImportError:
@@ -350,25 +352,26 @@ def page_banners():
         return
     import tempfile
     from types import SimpleNamespace
-    split = [c for c in CHAPTERS if getattr(c, "page", None)]
+    todo = [c for c in CHAPTERS if c.group != "main"]
     n = 0
     with tempfile.TemporaryDirectory() as tmp:
-        for c in split:
+        for c in todo:
             # write_banners names the file and picks the tile by key: render as the page, then store as the chapter
-            build_art.write_banners([SimpleNamespace(key=c.page, title=c.title)], pathlib.Path(tmp))
-            data = (pathlib.Path(tmp) / f"{c.page}.png").read_bytes()
+            src = getattr(c, "page", None) or c.key
+            build_art.write_banners([SimpleNamespace(key=src, title=c.title)], pathlib.Path(tmp))
+            data = (pathlib.Path(tmp) / f"{src}.png").read_bytes()
             f = BANNER_DIR / f"{c.key}.png"
             if not f.exists() or f.read_bytes() != data:
                 f.write_bytes(data)
                 n += 1
     if ONLY:
         return
-    keys = {c.key for c in CHAPTERS}
-    pages = {c.page for c in split}
-    stale = [f for f in BANNER_DIR.glob("*.png") if f.stem not in keys and any(f.stem.startswith(p + "_") for p in pages)]
+    keys = {c.key for c in CHAPTERS} | {getattr(c, "page", None) for c in CHAPTERS} - {None}
+    # A stale banner is "<chapter or page key>_<slug>.png" that is no chapter's own (logo/background never match).
+    stale = [f for f in BANNER_DIR.glob("*.png") if f.stem not in keys and any(f.stem.startswith(k + "_") for k in keys)]
     for f in stale:
         f.unlink()
-    print(f"Chapter banners: {len(split)} split chapters ({n} written)" + (f", {len(stale)} stale removed" if stale else ""))
+    print(f"Chapter banners: {len(todo)} chapters ({n} written)" + (f", {len(stale)} stale removed" if stale else ""))
 
 
 def audit():

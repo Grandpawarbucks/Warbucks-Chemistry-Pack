@@ -54,8 +54,21 @@ CHAPTER = Chapter("tools", "Gear and Comfort", "mekanismtools:osmium_paxel",
         "&eChemistry:&r Tyrian purple was a real dye made from sea snails, once worth its weight in silver. The steel just borrowed the colour.",
         "&eHow:&r Alloy Forge (check JEI). Crush shulker shells first."]),
 
-    # --- Mekanism paxels (y=2). Bronze and steel paxels are on the main path (t0_opt_paxel, t1_steel_paxel);
+    # --- Mekanism paxels (y=2). The iron paxel (gs_paxel) moved here from Getting Started. Bronze and steel paxels are on the main path (t0_opt_paxel, t1_steel_paxel);
     #     harvest tiers are in the harvest chapter. -------------------------------------------------
+    Q("gs_paxel", 0, 2, [item("mekanismtools:iron_paxel")], "The Paxel", subtitle="Pickaxe, axe and shovel in one", deps=["gs_irontools"], xp=25, desc=[
+        "&eWhat:&r A &epaxel&r is a pickaxe, axe and shovel in one tool. Mekanism Tools adds them for every material, from wood to refined obsidian.",
+        "&eHow:&r Craft an iron pickaxe, axe and shovel together with 2 sticks (check JEI).",
+        "&eTip:&r One tool slot instead of three leaves more room for ore."]),
+    Q("gs_opt_paxels", 0, 3.5, [item("mekanismtools:wood_paxel"), item("mekanismtools:stone_paxel"), item("mekanismtools:gold_paxel"), item("mekanismtools:diamond_paxel")],
+      "Paxel Collector", subtitle="Wood, stone, gold and diamond", deps=["gs_paxel"], optional=True, tokens=2, xp=30, desc=[
+        "&eWhat:&r Craft the early paxels you skipped, plus a diamond one for the long haul.",
+        "&eChemistry:&r Gold is soft because its atoms slide past each other easily. Diamond is the hardest natural material because every carbon atom is locked to four neighbours.",
+        "&eHow:&r Same recipe as the iron paxel: pickaxe, axe and shovel of one material, plus 2 sticks."]),
+    Q("gs_opt_smithing", 0, 5, [item("minecraft:smithing_table")], "Smithing Table", subtitle="Upgrades without starting over", deps=["gs_iron"], optional=True, tokens=1, xp=15, desc=[
+        "&eWhat:&r A smithing table upgrades tools and armour in place and applies armour trims. You'll use it for netherite later.",
+        "&eHow:&r 2 iron ingots over 4 planks.",
+        "&eTip:&r Apotheosis adds smithing recipes too, such as upgrading chainmail to iron (check JEI)."]),
     Q("tc_osmium_paxel", 2, 2, [item("mekanismtools:osmium_paxel")], "Osmium Paxel", deps=["t3_infuser"], xp=40,
       subtitle="The densest natural element, as a tool", desc=[
         "&eWhat:&r Mekanism's signature metal as a paxel: more durability and speed than bronze, iron tier for mining.",
@@ -223,4 +236,4 @@ CHAPTER = Chapter("tools", "Gear and Comfort", "mekanismtools:osmium_paxel",
         "&eWhat:&r a storage block of crimson steel, azure electrum and tyrian steel: Silent Gear's three great alloys, side by side.",
         "&eChemistry:&r alloys aren't mixtures you can see: the atoms share one crystal lattice. Bronze, steel and electrum are all solid solutions or mixed phases at the atomic scale.",
         "&eHow:&r nine ingots of each make a block (check JEI)."]),
-], links=[("gs_silent", -2, 0), ("t1_steel_paxel", 0, 2), ("t3_infuser", -2, 5.5), ("t3_analog", -2, 9.5), ("jdt_goo", 2, 17.5)])
+], links=[("gs_silent", -2, 0), ("gs_irontools", -2, 2), ("t1_steel_paxel", 0, 2), ("t3_infuser", -2, 5.5), ("t3_analog", -2, 9.5), ("jdt_goo", 2, 17.5)])

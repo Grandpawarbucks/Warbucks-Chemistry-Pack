@@ -15,37 +15,48 @@ from quests._tables import REWARD_TABLES  # noqa: F401  (loot / choice reward ta
 
 BOOK_TITLE = "Warbucks Chemistry: The Demigod's Codex"
 
-# Chapter groups (the left-hand tabs in the book), in display order. Since "Mod = category" (2026-10-19, see _split
-# below) the side tabs here only hold pages that come out as a single chapter; every other page gets its own group. Each chapter's group is set
-# here by key, so splitting or moving a chapter never touches quest keys (player progress is safe).
-# "top" is the ungrouped area above the first tab (title None): FTB Quests shows chapters whose group is ""
-# there, as ATM10 does with Welcome and its market pages. A group's id comes from its key, so keys never change;
-# titles can. Groups with no chapter (e.g. while a QUEST_ONLY check runs) are not written.
+# Chapter groups (the left-hand tabs in the book), in display order: ONE chapter per mod, grouped by category like
+# All the Mods 10's book (user decision 2026-10-19, "I really like the breakdown of ATM10"; structure only, ATM10's
+# text is All Rights Reserved). A mod's layout sections are section headers on its page. Each chapter's group is set
+# here by key, so moving a chapter never touches quest keys (player progress is safe).
+# "top" is the ungrouped area above the first tab (title None): FTB Quests shows chapters whose group is "" there,
+# as ATM10 does with Welcome, its market, bounty board and tips pages. A group's id comes from its key; titles can
+# change freely. Groups with no chapter (e.g. while a QUEST_ONLY check runs) are not written.
 GROUPS = {
     "top": None,
-    "main": "The Demigod's Path",
+    "main": "The Demigod's Path (Main Questline)",
     "shop": "The Demigod's Market",
-    "basics": "Basics",
-    "chem": "Chemistry Lab",
-    "eng": "Industry and Automation",
-    "magic": "Magic and Relics",
+    "gear": "Tools and Gear",
+    "storage": "Storage",
+    "logistics": "Logistics",
+    "resources": "Resources",
+    "tech": "Tech",
+    "chem": "Chemistry",          # our own identity, where ATM10 has its Modern Industrialization group
+    "energy": "Energy",
+    "magic": "Magic",
     "world": "Exploration",
-    "life": "Resources",
 }
 LAYOUT = {
-    "top": ["welcome", "lab_notes", "completionist"],
+    # ATM10's top: Welcome, Market, Market Tiers, Bounty Board, Building Tips, Tips and Tricks.
+    "top": ["welcome", "market", "tips", "building", "hunting", "lab_notes", "completionist"],
     "main": ["start", "t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "seed", "creation"],
-    # Token shop (docs/research/shop_brief.md): buy more of anything you've already made yourself.
-    "shop": ["market", "shop_materials", "shop_gear", "shop_world"],
-    # Beginner "comfort" pages (ATM10's Basic Tools/Storage/Power idea). utilitarian is merged into qol.
-    "basics": ["tools", "harvest", "storage", "power", "powah", "farming", "qol", "building"],
-    "chem": ["periodic", "mekanism", "mekanism_power"],
-    "eng": ["factory", "logic", "create", "justdirethings", "ae2"],
-    "magic": ["ars", "occultism", "neovitae", "apotheosis", "relics", "projecte"],
-    "world": ["worlds", "explore", "undergarden", "twilight", "deeperdarker", "allthemodium", "space", "hunting"],
-    "life": ["mystical"],
+    # Token shop (docs/research/shop_brief.md): buy more of anything you've already made yourself. Its entry page
+    # (market) sits in the top area; the shelves are this group.
+    "shop": ["shop_materials", "shop_gear", "shop_world"],
+    "gear": ["tools", "harvest", "apotheosis", "relics", "qol"],
+    "storage": ["storage", "ae2"],
+    "logistics": ["logic"],
+    "resources": ["farming", "mystical", "factory"],   # factory = mob data (HNN) + big crafting, as ATM10 files HNN
+    "tech": ["create", "mekanism", "mekanism_power", "justdirethings"],
+    "chem": ["periodic"],
+    "energy": ["power", "powah"],
+    "magic": ["ars", "occultism", "neovitae", "projecte"],
+    "world": ["worlds", "explore", "undergarden", "twilight", "deeperdarker", "allthemodium", "space"],
 }
-# Chapter files that don't exist yet are skipped, so new chapters can be added one at a time.
+# Sidebar titles that differ from the chapter file's own title (ATM10-style names for the top pages).
+TITLES = {"building": "Building Tips", "hunting": "Bounty Board", "tips": "Tips and Tricks",
+          "mekanism_power": "Mekanism: Power"}
+# Chapter files that don't exist yet are skipped quietly, so new chapters can be added one at a time.
 _QDIR = pathlib.Path(__file__).resolve().parent / "quests"
 ORDER = [k for g in LAYOUT.values() for k in g if (_QDIR / f"{k}.py").exists()]
 # A chapter file that isn't in LAYOUT is not built: say so (its quests would silently vanish otherwise).
@@ -58,39 +69,42 @@ if ONLY:
 PAGES = [importlib.import_module(f"quests.{k}").CHAPTER for k in ORDER]  # one per chapter file
 for _c in PAGES:
     _c.group = next(g for g, ks in LAYOUT.items() if _c.key in ks)
+    _c.title = TITLES.get(_c.key, _c.title)
     normalize_milestones(_c)  # capstone = 2.0 gear, section milestone = 1.5 hexagon (tools/layout.py)
 
-# Automatic layout style per chapter (tools/layout.py; manual chapters ignore it). Motifs (v12), picked by looking at
-# test/build_quest_preview.py --gallery and tools/layout_lint.py:
-#   "winding":  the main path snakes in rows of 4-7 quests that alternate direction; sections hang above and below
-#               each row as small trees (the Demigod's Path, and Occultism's long ritual chain);
+# Automatic layout style per chapter (tools/layout.py; manual chapters ignore it). Picked by looking at
+# test/build_quest_preview.py --gallery next to ATM10's "The Beginning" and at tools/layout_lint.py (orthogonal %,
+# lone quests, crossings, size). v13 (2026-10-19): "comb" everywhere it beats the older motif:
+#   "comb":     ATM10-style main questline: one straight spine (wrapped into 2-3 serpentine rows past ~16 quests),
+#               everything else hangs straight down or up from it as small trees on a 2-cell grid; nearly every
+#               line horizontal or vertical (default);
 #   "radial":   the hub sits in the middle with its own quests ringed around it; the other sections are spokes
-#               (pages where one quest unlocks most of the page);
-#   "molecule": sections drawn as rings of 5-6 quests joined by bonds, with short side chains (chemistry pages);
-#   "tree":     sections as top-down trees in columns or rows (mod pages; default);
-#   "grid":     compact blocks for collection pages;
-#   "spine":    the v11 main-path style (one straight row with branches above and below), kept for comparison.
-STYLES = {**{k: "winding" for k in LAYOUT["main"]}, "occultism": "winding",
-          **{k: "radial" for k in ("qol", "building", "storage", "harvest", "undergarden", "deeperdarker")},
-          **{k: "molecule" for k in ("periodic", "mekanism", "mekanism_power", "power", "factory")},
-          **{k: "grid" for k in ("hunting", "completionist", "lab_notes", "explore")}}
-DEFAULT_STYLE = "tree"
+#               (kept for building: a page of independent hubs, where the comb tangles);
+#   "winding", "molecule", "tree", "grid", "spine": older motifs (v11/v12), kept for comparison and LAYOUT_STYLE.
+# Per chapter on 2026-10-19 (comb vs the old motif): every auto page is comb except building (radial).
+STYLES = {"building": "radial", "tips": "grid"}
+DEFAULT_STYLE = "comb"
 # Section shapes on a page whose motif otherwise draws plain trees: "molecule" rings (where a section fits a ring).
-BLOCKS = {"t4": "molecule"}
+# Only the winding/radial/molecule motifs use it (none at the moment).
+BLOCKS = {}
 # Trying a motif without editing this file: LAYOUT_STYLE=t6=radial,t3=tree (style or style+molecule) for a build/check.
 for _kv in filter(None, os.environ.get("LAYOUT_STYLE", "").split(",")):
     _k, _, _v = _kv.partition("=")
     STYLES[_k], _, _b = _v.partition("+")
     BLOCKS[_k] = _b or None
+import layout as _layout  # noqa: E402
+# Comb pages add a quest link for every quest whose deps are all in other chapters; those linked quests then never
+# get hide flags (tools/layout.py _ext_targets), like shared_quests.
+_layout.COMB_PAGES = {c.key for c in PAGES if c.layout != "manual" and STYLES.get(c.key, DEFAULT_STYLE) == "comb"}
 
 
-# --- "Mod = category" (user decision 2026-10-19) -------------------------------------------------
-# Every page in SPLIT_TABS becomes its own category (an FTB chapter group, titled after the page) and the layout's
+# --- "Mod = category" split (v12, 2026-10-19; SWITCHED OFF by the ATM10-style regroup the same day) -------------
+# One chapter per mod is the current design. The old split is kept, off, in case it's wanted again: every page in a
+# group listed in SPLIT_TABS becomes its own category (an FTB chapter group, titled after the page) and the layout's
 # sections of that page become its chapters, in progression order. Quest keys never change: only which chapter
 # shows a quest. The first chapter keeps the page's key (so links and docs still resolve); the others are
-# "<page>_<slug of the chapter title>". A page that comes out as one chapter stays in its old tab's group.
-# The Demigod's Path, the top area and the shop are not split.
-SPLIT_TABS = ("basics", "chem", "eng", "magic", "world", "life")
+# "<page>_<slug of the chapter title>". A page that comes out as one chapter stays in its own group.
+SPLIT_TABS = ()                         # e.g. ("tech", "magic") to split those groups' pages again
 JOIN = {"mekanism_power": "mekanism"}   # page -> page whose category its chapters join (one category per mod)
 SPLIT_MIN, SPLIT_MAX = 5, 25            # a section under SPLIT_MIN quests joins a neighbour; merges stay <= SPLIT_MAX
 PAGE_TITLES = {}                        # category title when the page title doesn't read well as one
@@ -343,7 +357,9 @@ def _split(pages):
     the GROUPS dict (group key -> title) in display order."""
     import layout
     from questlib import Chapter
-    groups = {g: GROUPS[g] for g in ("top", "main", "shop")}
+    if not SPLIT_TABS:  # one chapter per mod (current design): pages are the chapters, in LAYOUT order
+        return list(pages), dict(GROUPS)
+    groups = {g: GROUPS[g] for g in GROUPS if g not in SPLIT_TABS}
     chapters = [c for c in pages if c.group in groups]
     taken = {c.key for c in pages}
     for tab in SPLIT_TABS:
@@ -450,8 +466,10 @@ for _c in CHAPTERS:
 # Demigod Tokens per quest, scaled by tier (milestone quests, size >= 1.5, pay double).
 TOKENS = {"welcome": 1, "start": 1, "t0": 1, "t1": 2, "t2": 2, "t3": 3, "t4": 3, "t5": 4, "t6": 5, "t7": 8,
           "seed": 10, "creation": 10, "completionist": 3, "harvest": 1}
-for _c in CHAPTERS:  # a split page's chapters all pay the page's rate
+for _c in CHAPTERS:  # a split page's chapters (if the split is ever switched on) all pay the page's rate
     _c.tokens = TOKENS.get(getattr(_c, "page", None) or _c.key, 1)
+    # Shop pages (the market entry and its shelves) unlock in order: FTB progression_mode linear.
+    _c.linear = (getattr(_c, "page", None) or _c.key) in ("market", *LAYOUT["shop"])
 
 # Tier milestones (size >= 1.5 in t0..t7) also roll that tier's loot table, unless set by hand.
 for _c in CHAPTERS:

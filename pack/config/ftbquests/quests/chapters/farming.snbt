@@ -1,10 +1,10 @@
 {
 	id: "355E4A964218121E"
-	group: "0D7DA448984E3BB9"
+	group: "22D02A9EFAC9B3FB"
 	order_index: 0
 	filename: "farming"
 	icon: {
-		id: "farmersdelight:cutting_board"
+		id: "farmersdelight:cooking_pot"
 		count: 1
 	}
 	default_quest_shape: "circle"
@@ -12,10 +12,11 @@
 	quests: [
 		{
 			id: "61BB360C973E0F7F"
-			x: 6.5d
-			y: 2.0d
+			x: 12.0d
+			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"2181236B6834BFDF"
 			]
@@ -59,10 +60,451 @@
 			]
 		}
 		{
-			id: "6D7BCF15F3CF7687"
-			x: 13.5d
-			y: 0.5d
+			id: "1CD576F80AC49B5F"
+			x: 18.0d
+			y: 0.0d
 			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"61BB360C973E0F7F"
+			]
+			tasks: [
+				{
+					id: "726860A8A34A7807"
+					type: "item"
+					item: {
+						id: "farmersdelight:cooking_pot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1EEB58905F6D60A6"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "20A02205C715431E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2CFFEDC4683607CF"
+			x: 20.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1CD576F80AC49B5F"
+			]
+			tasks: [
+				{
+					id: "314E2DB7DE840CDF"
+					type: "item"
+					item: {
+						id: "farmersdelight:vegetable_soup"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "416AA52ECC3122E3"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "6E4297F52DFE4B90"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6AAF559710229117"
+			x: 20.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"2CFFEDC4683607CF"
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "26952E315D6BA08F"
+					type: "item"
+					item: {
+						id: "farmersdelight:pasta_with_meatballs"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "471B18E4361B3C63"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6959263DB292FEAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6E91CE0ADEA5ADA6"
+			x: 20.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6AAF559710229117"
+			]
+			tasks: [
+				{
+					id: "003A3A61E5FFD296"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(farmersdelight:meals)"
+						}
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "3EC68920D63C98F4"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "16CB4ACFFF488934"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "26CA44769AF76A9D"
+			x: 16.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"61BB360C973E0F7F"
+			]
+			tasks: [
+				{
+					id: "7B8B3FD25E302663"
+					type: "item"
+					item: {
+						id: "farmersdelight:organic_compost"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "20DEF44DA4C2EC30"
+					type: "item"
+					item: {
+						id: "farmersdelight:rich_soil"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6E70AA862514DC7B"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "25685996C9C00B28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FB463350074B333"
+			x: 18.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1CD576F80AC49B5F"
+			]
+			tasks: [
+				{
+					id: "66B43AF858FAED04"
+					type: "item"
+					item: {
+						id: "farmersdelight:stove"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0C73A9660A646023"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "2B4A9966A1AB44DD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1DF7F1133046DEB1"
+			x: 20.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2CFFEDC4683607CF"
+			]
+			tasks: [
+				{
+					id: "4C44FECF0C925E4B"
+					type: "item"
+					item: {
+						id: "farmersdelight:honey_glazed_ham_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DB94581A39DFEEF"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "798B4C0CB738F5BE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "188A4BC2D2682264"
+			x: 20.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1DF7F1133046DEB1"
+			]
+			tasks: [
+				{
+					id: "0CCEF1CA74E89C24"
+					type: "item"
+					item: {
+						id: "farmersdelight:roast_chicken_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2DF05F6EADF2A243"
+					type: "item"
+					item: {
+						id: "farmersdelight:shepherds_pie_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4ED35F41FC4842B7"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1F7615D9B9FBE0AC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "68C63D9C708CAB99"
+			x: 18.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"26CA44769AF76A9D"
+			]
+			tasks: [
+				{
+					id: "630743E521C409CA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(farmersdelight:mushroom_colonies)"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "5C005B08FEC59E36"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "3E260889F03F0776"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05CA20DAF3D6CE4E"
+			x: 18.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2FB463350074B333"
+			]
+			tasks: [
+				{
+					id: "43AF14583D215BE6"
+					type: "item"
+					item: {
+						id: "farmersdelight:skillet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "38EBE9D5209D5811"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "714F8CAFA6E6BCC4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "056B1AE78D5B1CCF"
+			x: 18.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"05CA20DAF3D6CE4E"
+			]
+			tasks: [
+				{
+					id: "317CD0FF6B7A7073"
+					type: "item"
+					item: {
+						id: "farmersdelight:fried_egg"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "7C3F8AB80CC8B690"
+					type: "item"
+					item: {
+						id: "farmersdelight:cooked_bacon"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "531D7069CC36A2C3"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "4E78DBD28C7D5010"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6D7BCF15F3CF7687"
+			x: 12.0d
+			y: -2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"61BB360C973E0F7F"
@@ -124,7 +566,7 @@
 		{
 			id: "2D35837B42389FD6"
 			x: 12.0d
-			y: 2.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -160,8 +602,8 @@
 		}
 		{
 			id: "726507D0921F20DA"
-			x: 15.5d
-			y: 2.0d
+			x: 14.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -200,8 +642,8 @@
 		}
 		{
 			id: "3890E7B5FA9CA044"
-			x: 6.5d
-			y: 4.0d
+			x: 8.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -239,8 +681,8 @@
 		}
 		{
 			id: "1449CF00D49726FD"
-			x: 5.0d
-			y: 4.0d
+			x: 12.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -285,8 +727,8 @@
 		}
 		{
 			id: "797F266229BD1FB2"
-			x: 0.5d
-			y: 6.0d
+			x: 10.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -330,9 +772,139 @@
 			]
 		}
 		{
+			id: "383BB756C9C76954"
+			x: 2.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"29BEA270C571B58C"
+			]
+			tasks: [
+				{
+					id: "53B177A562D08B4B"
+					type: "item"
+					item: {
+						id: "chemlib:urea"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "62A56D89C50F4AC7"
+					type: "item"
+					item: {
+						id: "chemlib:diammonium_phosphate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4FD655CFDE2D215E"
+					type: "item"
+					item: {
+						id: "chemlib:potassium_nitrate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1B4D0ED28E0DD11F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "1114401212106978"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "201E746EF18C024B"
+			x: 2.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"383BB756C9C76954"
+				"256D9F2CFA36ADE2"
+				"4377040E34093CBC"
+			]
+			tasks: [
+				{
+					id: "6807046FB74D2F85"
+					type: "item"
+					item: {
+						id: "extended_industrialization:npk_fertilizer_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "54A7DA0551A248C9"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3EE31DEE28CE4997"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "42489EAAE4800867"
+			x: 4.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"55AF98DD41956199"
+				"2082C655C0D3F03A"
+			]
+			tasks: [
+				{
+					id: "2E2E1F6F89601455"
+					type: "item"
+					item: {
+						id: "extended_industrialization:steam_farmer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5957254DA91773E5"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "04330F3E4DE3765D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "4388A334EC12570D"
-			x: 10.5d
-			y: 2.0d
+			x: 10.0d
+			y: -2.0d
 			shape: "diamond"
 			size: 0.75d
 			optional: true
@@ -373,9 +945,82 @@
 			]
 		}
 		{
-			id: "707EBA33CCE0C439"
+			id: "795662BF85103267"
 			x: 2.0d
-			y: 6.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0AF857F7D594D497"
+			]
+			tasks: [
+				{
+					id: "5DB0B57903602829"
+					type: "item"
+					item: {
+						id: "minecraft:wheat_seeds"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "0796F57F661A7D48"
+					type: "item"
+					item: {
+						id: "minecraft:potato"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "49B9701194F55DDF"
+					type: "item"
+					item: {
+						id: "minecraft:carrot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "3A4E95CE6FD0DCCE"
+					type: "item"
+					item: {
+						id: "minecraft:melon_slice"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "6EDA3EBB2D7EDCA4"
+					type: "item"
+					item: {
+						id: "minecraft:sweet_berries"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "4B2269C76D854A91"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "1793E3984C7E8146"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "707EBA33CCE0C439"
+			x: 12.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -441,8 +1086,8 @@
 		}
 		{
 			id: "19B3E12AC6512111"
-			x: 3.5d
-			y: 6.0d
+			x: 8.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -479,8 +1124,8 @@
 		}
 		{
 			id: "4001ABEC58F9F590"
-			x: 5.0d
-			y: 6.0d
+			x: 2.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -516,11 +1161,12 @@
 		}
 		{
 			id: "4859615A20A98EB3"
-			x: 2.0d
-			y: 7.5d
+			x: 10.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4001ABEC58F9F590"
 				"19B3E12AC6512111"
@@ -563,9 +1209,110 @@
 			]
 		}
 		{
-			id: "5008B9812B5F38D8"
+			id: "0CEEB0EF247AFEE1"
+			x: 6.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5E58EA492DF847CE"
+			]
+			tasks: [
+				{
+					id: "2384B04672CAFD70"
+					type: "item"
+					item: {
+						id: "minecraft:honeycomb"
+						count: 1
+					}
+					count: 6L
+				}
+				{
+					id: "7F2627AE6FA2373C"
+					type: "item"
+					item: {
+						id: "minecraft:honey_bottle"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "25C57BD6C525A136"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "55CFD9B6ADA58BE4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5B3831A5F122F274"
 			x: 8.0d
-			y: 4.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0CEEB0EF247AFEE1"
+			]
+			tasks: [
+				{
+					id: "3A860C6199A7DB66"
+					type: "item"
+					item: {
+						id: "minecraft:beehive"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7199E8AC50E91BFC"
+					type: "item"
+					item: {
+						id: "minecraft:honey_block"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "467BB8FEC959C555"
+					type: "item"
+					item: {
+						id: "minecraft:honeycomb_block"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "24C55FB9EA552E72"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1E8244C0018DC3E9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5008B9812B5F38D8"
+			x: 16.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -603,9 +1350,46 @@
 			]
 		}
 		{
+			id: "2C27F6E0A24ECFCC"
+			x: 16.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"26CA44769AF76A9D"
+			]
+			tasks: [
+				{
+					id: "05EE9A8F7F97A6F8"
+					type: "item"
+					item: {
+						id: "minecraft:bone_meal"
+						count: 1
+					}
+					count: 32L
+				}
+			]
+			rewards: [
+				{
+					id: "727F3EFC8B5F392A"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "7DD836F6B54BB958"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "4F51D89D9F8829D4"
-			x: 6.5d
-			y: 6.0d
+			x: 14.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -642,7 +1426,7 @@
 		{
 			id: "18F6CFCBB960E126"
 			x: 14.0d
-			y: 2.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -680,9 +1464,157 @@
 			]
 		}
 		{
+			id: "10DB0AD9FC683E4A"
+			x: 6.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"050738B186A5EEB8"
+			]
+			tasks: [
+				{
+					id: "3620BC0E3071DE47"
+					type: "item"
+					item: {
+						id: "minecraft:kelp"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "70D8CFC22704B00B"
+					type: "item"
+					item: {
+						id: "minecraft:dried_kelp"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "2BB8443A24040A87"
+					type: "item"
+					item: {
+						id: "minecraft:tropical_fish"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1DC09C6428907E98"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "66E5F57C396AA61F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0E68D7AE1C7DBBA0"
+			x: 16.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+				"2C27F6E0A24ECFCC"
+			]
+			tasks: [
+				{
+					id: "2B66F6F5D0F95D40"
+					type: "item"
+					item: {
+						id: "minecraft:crimson_fungus"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "3F1960F399610990"
+					type: "item"
+					item: {
+						id: "minecraft:warped_fungus"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "403837E9C05C9ED9"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "2D01F05DA5663385"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "15F725E5C01D018A"
+			x: 8.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "004204797CC43248"
+					type: "item"
+					item: {
+						id: "minecraft:chorus_fruit"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "5B0C72C17E210C8F"
+					type: "item"
+					item: {
+						id: "minecraft:popped_chorus_fruit"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "44C3EBD52B30F570"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "2CCDB54A65CDAF6A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
 			id: "37E826F1EDD6F372"
-			x: 16.5d
-			y: 4.0d
+			x: 10.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -725,31 +1657,173 @@
 				}
 			]
 		}
+		{
+			id: "6E4CBAC1961181AC"
+			x: 8.0d
+			y: -4.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"694B6BC236B91267"
+			]
+			tasks: [
+				{
+					id: "68B9441ED5C83C56"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "028F34D088FFC726"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7FCB9EFCA56BC7D5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "63BBD8D3F992860F"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
 	]
 	images: [
 		{
 			id: "50C448D16CC74A06"
-			x: 3.0d
-			y: -3.5d
+			x: 2.5d
+			y: -11.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/farming.png"
+		}
+		{
+			id: "1C24ADDED7223083"
+			x: 3.5d
+			y: -9.125d
+			width: 4.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_n_p_and_k.png"
+		}
+		{
+			id: "7EC123E0AED31FE6"
+			x: 10.25d
+			y: 5.05d
+			width: 5.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_animal_husbandry.png"
+		}
+		{
+			id: "7191AEE149C93463"
+			x: 11.825d
+			y: -5.05d
+			width: 4.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_the_new_crops.png"
+		}
+		{
+			id: "41EC97F1B53F612F"
+			x: 21.075d
+			y: 7.05d
+			width: 7.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/farming_pasta_with_meatballs.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "502781B0E665BBEE"
 			linked_quest: "2181236B6834BFDF"
-			x: 6.5d
-			y: 0.5d
+			x: 0.0d
+			y: 0.0d
+			size: 1.0d
+		}
+		{
+			id: "29CC5B80CEC2E324"
+			linked_quest: "29BEA270C571B58C"
+			x: 0.0d
+			y: -6.0d
+			size: 1.0d
+		}
+		{
+			id: "1C41240E7E0F6BD6"
+			linked_quest: "256D9F2CFA36ADE2"
+			x: 0.0d
+			y: -8.0d
 			size: 1.0d
 		}
 		{
 			id: "79590D33A354F653"
 			linked_quest: "1D1660D4E4098CF6"
-			x: 0.5d
-			y: -1.5d
+			x: 4.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "4C429B5D21D6D343"
+			linked_quest: "55AF98DD41956199"
+			x: 4.0d
+			y: -4.0d
+			size: 1.0d
+		}
+		{
+			id: "692728F3A811450A"
+			linked_quest: "0AF857F7D594D497"
+			x: 0.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "63263FBBB7379264"
+			linked_quest: "26EAA1BDD3A1CE92"
+			x: 0.0d
+			y: -4.0d
+			size: 1.0d
+		}
+		{
+			id: "0C92F4E78D164D23"
+			linked_quest: "5E58EA492DF847CE"
+			x: 4.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "6BAC0298886912AD"
+			linked_quest: "050738B186A5EEB8"
+			x: 6.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "6034C6F3ACA9C54D"
+			linked_quest: "0F5CD98214E3E454"
+			x: 6.0d
+			y: -6.0d
+			size: 1.0d
+		}
+		{
+			id: "447477C529DEA2A6"
+			linked_quest: "694B6BC236B91267"
+			x: 8.0d
+			y: -2.0d
 			size: 1.0d
 		}
 	]

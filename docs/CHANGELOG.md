@@ -4,6 +4,17 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-20: ATM10-style quest book (50 chapters, 2,832 quests)
+- Categories and top pages follow ATM10's breakdown; one chapter per mod again (the category split is off).
+- New Tips and Tricks page; Welcome reshaped as a small showcase; Building Tips (96 quests, radial clusters);
+  Bounty Board (62 hunts). Getting Started rebuilt on ATM10 chapter 1's flow; backpacks, paxel and sleeping bags moved
+  to Storage, Tools and QoL.
+- Demigod's Path at ATM10 detail: T0-T3 144 -> 228, T4-T7 + Seed + Creation 255 -> 401 quests, all from the real
+  (post-KubeJS) recipes; the Seed is a full component tree. Distillation Tower and Large Diesel moved to T6 (EV parts).
+- Layout motif "comb" by default: straight spine, straight teeth; median orthogonal lines 41% -> 86%.
+- Quest map viewer and local ATM10 side-by-side compare page (test/build_quest_map.py --compare).
+- Live world wiped again.
+
 ### 2026-10-19: Mod categories (33 groups, 156 chapters) and the quest map
 - Every side page is now its own sidebar category, and its sections are chapters (5 to 24 quests each), ordered by
   dependency; cross-chapter deps inside a category get quest links. Main path, top pages and the shop are unchanged.

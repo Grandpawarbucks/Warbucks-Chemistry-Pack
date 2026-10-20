@@ -9,65 +9,65 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         ["Purity and precision: semiconductors, PVC, isotopes.",
          "Then transmutation: any element from any other."], MAIN, [
     # ---------------------------------------------------------------- silicon
-    Q("t6_argon", 2, -4, [item(MI + "argon_bucket")], "Argon from Air", deps=["t5_hv"], xp=150,
+    Q("t6_argon", 2, -4, [item(MI + "argon_bucket")], "Argon from Air", deps=["t6_liquid_air", "t4_centrifuge"], xp=150,
       subtitle="The lazy gas that protects hot silicon", desc=[
         "&6You once stirred the sky. Now you pour it, liquid, into a tank.&r",
         "&eWhat:&r argon is an inert blanket gas. Growing a silicon crystal in air would ruin it.",
         "&eChemistry:&r air is 78% N₂, 21% O₂ and about 0.9% argon. Cool it until it liquefies, then separate the parts.",
         "&eHow:&r the Vacuum Freezer (or Pressurizer) with an Air Intake makes liquid air. The Centrifuge splits it into oxygen, nitrogen and a little argon.",
         "&eTip:&r the Heat Exchanger gives far more argon while it cools hot ingots."]),
-    Q("t6_silicon", 4, -4, [item(MI + "monocrystalline_silicon"), item(MI + "silicon_wafer", 4)], "Semiconductor Silicon", deps=["t6_argon"], xp=250,
+    Q("t6_silicon", 4, -4, [item(MI + "silicon_wafer", 8)], "Semiconductor Silicon", deps=["t6_mono"], xp=250,
       subtitle="One perfect crystal, sliced thin", desc=[
         "&eWhat:&r computer chips need silicon purer than 99.9999999%, grown as one single crystal.",
         "&eChemistry:&r a seed crystal is pulled slowly out of molten silicon (the Czochralski process). Every atom lines up with the one below it.",
-        "&eHow:&r EBF: 32 silicon dust + 1 tiny iridium dust + argon → monocrystalline silicon. Cut it into wafers with lubricant.",
-        "&eTip:&r iridium comes from osmium byproducts or the platinum line's residue (below)."]),
-    Q("t6_chips", 6, -4, [item(MI + "random_access_memory", 2), item(MI + "arithmetic_logic_unit"), item(MI + "memory_management_unit")], "Chips", deps=["t6_silicon"], xp=200,
+        "&eHow:&r Cutting Machine: 1 monocrystalline silicon + 500 mB lubricant → 32 wafers.",
+        "&eTip:&r one boule is 32 wafers: enough for a long run of RAM and MMUs."]),
+    Q("t6_chips", 6, -4, [item(MI + "random_access_memory", 2), item(MI + "arithmetic_logic_unit"), item(MI + "memory_management_unit")], "Chips", deps=["t6_ram", "t6_alu", "t6_mmu"], section="Chips", xp=200,
       subtitle="Memory, logic and control on silicon", desc=[
         "&eWhat:&r a processing unit needs RAM, an ALU and an MMU.",
         "&eChemistry:&r a pinch of aluminum (p-type) or phosphorus (n-type) in silicon changes how it carries current. That's 'doping', the basis of every transistor.",
-        "&eHow:&r Assembler. The ALU uses a diamond plate and logic gates, the MMU silicon wafers and platinum fine wire. Check JEI for RAM."]),
+        "&eHow:&r one of each, made in the quests around this one. The processing unit takes 2 RAM, 1 ALU and 1 MMU."]),
     # ---------------------------------------------------------------- PVC
-    Q("t6_acetylene", 2, -2, [item(MI + "acetylene_bucket")], "Acetylene", deps=["t5_hv"], xp=150,
+    Q("t6_acetylene", 2, -2, [item(MI + "acetylene_bucket")], "Acetylene", deps=["t5_methane", "t5_hv"], section="PVC", xp=150,
       subtitle="The welding gas, from methane", desc=[
         "&eWhat:&r acetylene (C₂H₂) has a triple bond, which makes it very reactive.",
         "&eChemistry:&r heat methane hard enough and pairs of molecules lose hydrogen and join: 2CH₄ → C₂H₂ + 3H₂.",
         "&eHow:&r Electric Blast Furnace: 200 mB methane → 200 mB acetylene. Cracked naphtha also gives a little."]),
-    Q("t6_vinyl", 4, -2, [item(MI + "vinyl_chloride_bucket")], "Vinyl Chloride", deps=["t6_acetylene", "t4_salt"], xp=150,
+    Q("t6_vinyl", 4, -2, [item(MI + "vinyl_chloride_bucket")], "Vinyl Chloride", deps=["t6_acetylene", "t4_mi_hcl"], xp=150,
       subtitle="Acetylene meets hydrochloric acid", desc=[
         "&eChemistry:&r C₂H₂ + HCl → C₂H₃Cl. HCl adds across the triple bond. This was the original industrial route to PVC.",
         "&eHow:&r Chemical Reactor: 1 B acetylene + 1 B hydrochloric acid → 1 B vinyl chloride.",
         "&eTip:&r your salt line's chlorine and hydrogen make the HCl."]),
-    Q("t6_pvc", 6, -2, [item(MI + "polyvinyl_chloride_bucket")], "PVC", deps=["t6_vinyl"], xp=250,
+    Q("t6_pvc", 6, -2, [item(MI + "polyvinyl_chloride_bucket")], "PVC", deps=["t6_vinyl", "t5_catalyst"], xp=250,
       subtitle="Petrochemistry meets chlor-alkali", desc=[
         "&eWhat:&r polyvinyl chloride, (C₂H₃Cl)ₙ, is tough, fire-resistant and insulates EV circuit boards.",
         "&eChemistry:&r just like polyethylene, but every other carbon carries a chlorine atom. That's why PVC doesn't burn easily.",
         "&eHow:&r Chemical Reactor: 500 mB vinyl chloride + 4 tiny lead or chromium dust → 300 mB PVC."]),
     # ---------------------------------------------------------------- EV
-    Q("t6_cadmium", 4, 0, [item(MI + "cadmium_dust", 4), item(MI + "cadmium_battery", 2)], "Cadmium Battery", deps=["t5_hv"], xp=200,
+    Q("t6_cadmium", 4, 0, [item(MI + "cadmium_dust", 4), item(MI + "cadmium_battery", 2)], "Cadmium Battery", deps=["t6_monazite_dust", "t6_annealed_cable"], xp=200,
       subtitle="Nickel-cadmium cells for the EV hull", desc=[
         "&eWhat:&r the EV hull and processing unit board each need 2 cadmium batteries.",
         "&eChemistry:&r a NiCd cell runs Cd + 2NiO(OH) + 2H₂O → Cd(OH)₂ + 2Ni(OH)₂, and it can be recharged by running it backwards.",
-        "&eHow:&r MI centrifuges monazite dust into cadmium (in reality, it's mostly a by-product of zinc refining). Then craft the battery with annealed copper cable.",
+        "&eHow:&r Centrifuge: 9 monazite dust → 3 cadmium dust (plus neodymium, yttrium and helium). Battery: 2 cadmium dust, a battery alloy plate, 4 curved plates and 2 annealed copper cable. In reality cadmium is mostly a by-product of zinc refining.",
         "&eTip:&r cadmium is toxic in real life. Here it just needs a lot of monazite."]),
-    Q("t6_board", 8, -1, [item(MI + "processing_unit_board")], "Processing Unit Board", deps=["t6_pvc", "t6_cadmium", "t6_annealed"], xp=200,
+    Q("t6_board", 8, -1, [item(MI + "processing_unit_board")], "Processing Unit Board", deps=["t6_pvc", "t6_cadmium", "t6_annealed_cable", "t6_pt_plate"], section="The Processing Unit", xp=200,
       subtitle="PVC, platinum and cadmium in one board", desc=[
         "&eHow:&r Assembler: digital circuit board + 4 platinum plates + 2 cadmium batteries + 8 annealed copper cable + 1500 mB PVC.",
         "&eChemistry:&r platinum never corrodes, so it makes contacts that last forever.",
         "&eTip:&r platinum comes from MI's ore processing or the Platinum Line below (check JEI)."]),
-    Q("t6_pu", 10, -2, [item(MI + "processing_unit"), item(MI + "highly_advanced_machine_hull")], "EV: Processing Units", deps=["t6_board", "t6_chips"], xp=400, size=1.5,
+    Q("t6_pu", 10, -2, [item(MI + "processing_unit"), item(MI + "highly_advanced_machine_hull")], "EV: Processing Units", deps=["t6_board", "t6_chips", "t6_ha_casing"], xp=400, size=1.5,
       items=[(MI + "processing_unit", 2)], subtitle="Extreme Voltage, built on purity", desc=[
         "&6A mind of silicon, insulated in salt and oil. It thinks the way you used to.&r",
         "&eWhat:&r processing units unlock EV machines, the NASA Workbench, Flux Networks and Alchemistry's chambers.",
-        "&eHow:&r Assembler: processing unit board + 4 digital circuits + 2 RAM + ALU + MMU. The &eEV hull&r adds 2 cadmium batteries."]),
+        "&eHow:&r Assembler: processing unit board + 4 digital circuits + 2 RAM + ALU + MMU. The &eEV hull&r is a highly advanced casing + a processing unit + 2 cadmium batteries + 3 annealed copper cable."]),
     # ---------------------------------------------------------------- nuclear
-    Q("t6_yellowcake", 12, -5, [item(MEK + "yellow_cake_uranium", 4)], "Yellowcake", deps=["t6_pu"], xp=150,
+    Q("t6_yellowcake", 12, -5, [item(MEK + "yellow_cake_uranium", 4)], "Yellowcake", deps=["t6_pu", "t6_uranium_ingot"], section="Mekanism Fission", xp=150,
       subtitle="The first step from ore to fuel", desc=[
         "&eWhat:&r yellowcake is concentrated uranium oxide powder, the raw material of nuclear fuel.",
         "&eChemistry:&r natural uranium is only 0.72% U-235, the isotope that splits. The rest is U-238.",
         "&eHow:&r Enrichment Chamber: 1 uranium ingot → 2 yellowcake. Then the Chemical Oxidizer turns it into uranium oxide gas.",
         "&eTip:&r a Geiger counter tells you when you're standing too close to anything radioactive."]),
-    Q("t6_hf", 12, -7, [item(MEK + "fluorite_gem", 16)], "Hydrofluoric Acid", deps=["t6_pu"], xp=150,
+    Q("t6_hf", 12, -7, [item(MEK + "fluorite_gem", 16)], "Hydrofluoric Acid", deps=["t6_pu", "t4_fluorite"], xp=150,
       subtitle="The acid that eats glass", desc=[
         "&eChemistry:&r CaF₂ + H₂SO₄ → CaSO₄ + 2HF. Hydrogen fluoride dissolves glass and is one of the most dangerous acids there is.",
         "&eHow:&r Chemical Dissolution Chamber: fluorite + sulfuric acid → hydrofluoric acid gas.",
@@ -77,12 +77,12 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eWhat:&r UF₆ is the only uranium compound that becomes a gas at low temperature (it sublimes at 56 °C), so it can be spun.",
         "&eChemistry:&r real plants go UO₂ → UF₄ → UF₆ with HF and then fluorine. Mekanism combines the steps.",
         "&eHow:&r Chemical Infuser: uranium oxide + hydrofluoric acid → uranium hexafluoride."]),
-    Q("t6_centrifuge", 16, -6, [item(MEK + "isotopic_centrifuge")], "Isotope Separation", deps=["t6_uf6"], xp=300,
+    Q("t6_centrifuge", 16, -6, [item(MEK + "isotopic_centrifuge")], "Isotope Separation", deps=["t6_uf6", "t6_ult_circuit"], xp=300,
       subtitle="Only mass tells U-235 and U-238 apart", desc=[
         "&eWhat:&r the two isotopes behave identically in every reaction, so chemistry can't separate them.",
         "&eChemistry:&r U-235 is about 1% lighter. Spin UF₆ fast enough and the heavier molecules drift outward.",
-        "&eHow:&r Isotopic Centrifuge: uranium hexafluoride → fissile fuel."]),
-    Q("t6_fission_parts", 18, -6, [item(GEN + "fission_fuel_assembly", 4), item(GEN + "control_rod_assembly"), item(GEN + "fission_reactor_port", 4)], "Reactor Parts", deps=["t6_centrifuge"], xp=250,
+        "&eHow:&r Isotopic Centrifuge (6 lead ingots, 2 ultimate control circuits, a chemical tank): uranium hexafluoride → fissile fuel."]),
+    Q("t6_fission_parts", 18, -6, [item(GEN + "fission_fuel_assembly", 4), item(GEN + "control_rod_assembly"), item(GEN + "fission_reactor_port", 4)], "Reactor Parts", deps=["t6_centrifuge", "t6_elite"], xp=250,
       subtitle="Fuel, control rods and ports", desc=[
         "&eWhat:&r fuel assemblies hold the fuel, control rods absorb neutrons, and ports move fuel, coolant and waste.",
         "&eChemistry:&r each split releases 2 to 3 neutrons. Absorb too few and the chain reaction runs away.",
@@ -93,15 +93,15 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eChemistry:&r U-235 + n → two lighter nuclei + 2-3 n + about 200 MeV, millions of times more than any chemical bond.",
         "&eHow:&r Just Enough Mekanism Multiblocks shows the layout in JEI. Pair it with a turbine (see Power).",
         "&eTip:&r wire a Logic Adapter to SCRAM the reactor if it overheats."]),
-    Q("t6_plutonium", 22, -7, [item(MEK + "pellet_plutonium")], "Plutonium", deps=["t6_fission"], xp=250,
+    Q("t6_plutonium", 22, -7, [item(MEK + "pellet_plutonium")], "Plutonium", deps=["t6_fission", "t6_fluorite_dust"], xp=250,
       subtitle="An element made by neutrons", desc=[
         "&eChemistry:&r U-238 captures a neutron and beta-decays twice into Pu-239, which is itself fissile.",
         "&eHow:&r Isotopic Centrifuge: 10 nuclear waste → 1 plutonium. Pressurized Reaction Chamber: plutonium + fluorite dust + water → pellet.",
         "&eTip:&r the pellet reaction also gives spent nuclear waste. Store it in a Radioactive Waste Barrel."]),
-    Q("t6_polonium", 22, -5, [item(MEK + "solar_neutron_activator"), item(MEK + "pellet_polonium")], "Polonium", deps=["t6_fission"], xp=250,
+    Q("t6_polonium", 22, -5, [item(MEK + "pellet_polonium")], "Polonium", deps=["t6_fission", "t6_sna", "t6_fluorite_dust"], xp=250,
       subtitle="The element Marie Curie named for Poland", desc=[
         "&eChemistry:&r polonium-210 is made by neutron capture; it is intensely radioactive and gives off heat on its own.",
-        "&eHow:&r Solar Neutron Activator (needs open sky and daylight): 10 nuclear waste → 1 polonium. Pellets come from the Pressurized Reaction Chamber, as with plutonium.",
+        "&eHow:&r Solar Neutron Activator (open sky, daylight): 10 nuclear waste → 1 polonium. Pellets come from the Pressurized Reaction Chamber, as with plutonium.",
         "&eTip:&r polonium is the input for the SPS and for Energy Cores."]),
     Q("t6_waste", 24, -6, [item(MEK + "pellet_plutonium"), item(MEK + "pellet_polonium")], "Transmutation by Neutron", deps=["t6_plutonium", "t6_polonium"], xp=500, size=1.5,
       subtitle="Lead to gold was never the hard part", desc=[
@@ -111,11 +111,11 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eTip:&r spent waste still goes in a Radioactive Waste Barrel. Never dump it."]),
     # ---------------------------------------------------------------- transmutation
     Q("t6_reactor_parts", 12, 0, [item("alchemistry:reactor_casing", 16), item("alchemistry:reactor_energy"), item("alchemistry:reactor_input"), item("alchemistry:reactor_output")],
-      "Chamber Frame", deps=["t6_pu"], xp=200, subtitle="The shell around an element reactor", desc=[
+      "Chamber Frame", deps=["t6_pu"], section="Transmutation", xp=200, subtitle="The shell around an element reactor", desc=[
         "&eWhat:&r Alchemistry's fission and fusion chambers share the same casing, energy, input and output blocks.",
         "&eHow:&r craft the frame blocks (check JEI) and build the chamber around its controller. The controllers themselves are crafted with a reactor casing.",
         "&eTip:&r build both chambers side by side so one can feed the other."]),
-    Q("t6_chambers", 14, 0, [item("alchemistry:fission_chamber_controller"), item("alchemistry:fusion_chamber_controller")], "Element Transmutation", deps=["t6_reactor_parts"], xp=500, size=1.5,
+    Q("t6_chambers", 14, 0, [item("alchemistry:fission_chamber_controller"), item("alchemistry:fusion_chamber_controller")], "Element Transmutation", deps=["t6_reactor_parts", "t6_nether_star"], xp=500, size=1.5,
       subtitle="Split or merge any element", desc=[
         "&eWhat:&r the fission chamber splits one element into two lighter ones; the fusion chamber merges two into a heavier one.",
         "&eChemistry:&r atomic numbers simply add or divide: fuse sodium (11) with chlorine (17) and you get nickel (28).",
@@ -134,7 +134,7 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eHow:&r the Flux Core needs a processing unit in this pack. Add plugs at sources and points at machines.",
         "&eTip:&r set a password on your network if you share a server."]),
     # ---------------------------------------------------------------- nitrogen chemistry and the platinum line
-    Q("t6_haber", 0, 4, [item("chemlib:ammonia_bucket")], "Haber-Bosch", deps=["t4_reactor", "t5_hv"], xp=250,
+    Q("t6_haber", 0, 4, [item("chemlib:ammonia_bucket")], "Haber-Bosch", deps=["t6_nitrogen", "t4_mi_h2o"], section="Nitrogen and Platinum", xp=250,
       subtitle="Bread from air", desc=[
         "&6Feeding a world used to take a harvest god. Now it takes a reactor and some hydrogen.&r",
         "&eWhat:&r ammonia is the root of fertiliser, nitric acid and ammonium salts.",
@@ -202,12 +202,12 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
 
     # ---------------------------------------------------------------- ATM10-aligned additions (2026-10-19)
     # Hotter furnaces: Kanthal coils open the EBF recipes for annealed copper, titanium, uranium and superconductor.
-    Q("t6_kanthal", 0, 0, [item(MI + "kanthal_dust", 3), item(MI + "kanthal_hot_ingot"), item(MI + "kanthal_ingot", 4)], "Kanthal", deps=["t5_hv"], xp=150,
+    Q("t6_kanthal", 0, 0, [item(MI + "kanthal_dust", 3), item(MI + "kanthal_hot_ingot"), item(MI + "kanthal_ingot", 4)], "Kanthal", deps=["t5_hv"], section="Hotter Furnaces", xp=150,
       subtitle="Iron, chromium, aluminium: the heating-element alloy", desc=[
         "&eWhat:&r Kanthal is the wire inside toasters and kilns. Coiled around your Blast Furnace it reaches recipes cupronickel can't.",
         "&eChemistry:&r FeCrAl alloy. When hot, its aluminium forms a thin skin of alumina (Al₂O₃) that stops the wire burning away, even near 1400 °C.",
         "&eHow:&r Mixer: 1 stainless steel + 1 chromium + 1 aluminum dust → 3 Kanthal dust. EBF → hot ingot, then the Vacuum Freezer."]),
-    Q("t6_kanthal_coil", 0, 0, [item(MI + "kanthal_coil", 16)], "A Hotter Furnace", deps=["t6_kanthal"], xp=250, size=1.5, shape="hexagon",
+    Q("t6_kanthal_coil", 0, 0, [item(MI + "kanthal_coil", 16)], "A Hotter Furnace", deps=["t6_kanthal_cable"], xp=250, size=1.5, shape="hexagon",
       subtitle="Swap your cupronickel coils for Kanthal", desc=[
         "&eWhat:&r an Electric Blast Furnace built with Kanthal coils unlocks a new set of recipes. JEI lists them under 'EBF (Kanthal Tier)'.",
         "&eHow:&r each coil is 8 Kanthal cables (crafting table or Assembler). The EBF's two coil rings take 16.",
@@ -222,33 +222,33 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eWhat:&r titanium builds the toughest MI machines: the Implosion Compressor, the Pressurizer and their casings.",
         "&eChemistry:&r titanium grabs oxygen and nitrogen when hot, so real plants reduce TiCl₄ with molten magnesium under argon (the Kroll process). Here the EBF does it in one step.",
         "&eHow:&r MI titanium ore needs an iron pick; macerate it to dust (bauxite digestion leaves tiny titanium too). Kanthal-tier EBF → hot ingot → Vacuum Freezer."]),
-    Q("t6_nitrogen", 0, 0, [item(MI + "air_intake"), item(MI + "nitrogen_bucket"), item(MI + "oxygen_bucket")], "The Rest of the Air", deps=["t6_argon"], xp=100,
+    Q("t6_nitrogen", 0, 0, [item(MI + "nitrogen_bucket"), item(MI + "oxygen_bucket")], "The Rest of the Air", deps=["t6_liquid_air", "t4_centrifuge"], xp=100,
       subtitle="Nitrogen and oxygen, by the bucket", desc=[
         "&eWhat:&r the liquid air you split for argon is mostly nitrogen and oxygen. Nitrogen goes into explosives; oxygen into almost everything.",
         "&eChemistry:&r nitrogen boils at −196 °C, oxygen at −183 °C and argon in between. Real air-separation plants distil liquid air exactly along those steps.",
-        "&eHow:&r Air Intake (stainless and aluminum plates, a stainless rotor) in the Vacuum Freezer or Pressurizer → liquid air. Centrifuge: 3000 mB liquid air → 2315 nitrogen + 650 oxygen + 35 argon."]),
-    Q("t6_itnt", 0, 0, [item(MI + "industrial_tnt", 8)], "Industrial TNT", deps=["t6_nitrogen"], xp=150,
+        "&eHow:&r Centrifuge: 3000 mB liquid air → 2315 nitrogen + 650 oxygen + 35 argon."]),
+    Q("t6_itnt", 0, 0, [item(MI + "industrial_tnt", 8)], "Industrial TNT", deps=["t6_nitrogen", "t5_aromatics"], xp=150,
       subtitle="Controlled violence for compression", desc=[
         "&eWhat:&r Industrial TNT drives the Implosion Compressor, the only way to press the hardest alloys.",
         "&eChemistry:&r real TNT is 2,4,6-trinitrotoluene: toluene with three nitro groups, made with nitric and sulfuric acid. It's stable enough to melt and cast, which is why it was used so widely.",
         "&eHow:&r Mixer: 4 sand + 3 flint + 250 mB toluene (from cracked naphtha) + 1000 mB nitrogen → 4 Industrial TNT."]),
-    Q("t6_tungsten", 0, 0, [item(MI + "tungsten_tiny_dust", 9), item(MI + "tungsten_nugget", 9), item(MI + "tungsten_ingot")], "Tungsten", deps=["t6_kanthal"], xp=150,
+    Q("t6_tungsten", 0, 0, [item(MI + "tungsten_tiny_dust", 9), item(MI + "tungsten_nugget", 9), item(MI + "tungsten_ingot")], "Tungsten", deps=["t6_kanthal"], section="The Implosion Compressor", xp=150,
       subtitle="The metal with the highest melting point", desc=[
         "&eWhat:&r tungsten goes into blastproof alloy and, much later, the ultradense metal ball.",
         "&eChemistry:&r tungsten melts at 3422 °C, so no furnace casts it. Real tungsten parts are pressed from powder and sintered: powder metallurgy.",
         "&eHow:&r tungsten ore (iron pick, deep) → dust → tiny dust. Compressor: 1 tiny dust → 1 nugget (slow). Once you have an Implosion Compressor: 9 tiny dust + a stainless nugget + Industrial TNT → 1 ingot."]),
-    Q("t6_advmotor", 0, 0, [item(MI + "advanced_motor", 2), item(MI + "advanced_pump")], "Stainless Motors", deps=["t6_annealed"], xp=150,
+    Q("t6_advmotor", 0, 0, [item(MI + "advanced_motor", 2), item(MI + "advanced_pump")], "Stainless Motors", deps=["t6_annealed_cable", "t6_mag_rod", "t6_ss_rotor", "t5_al_cable"], section="Stainless Motors", xp=150,
       subtitle="Motors and pumps for the EV age", desc=[
         "&eWhat:&r advanced motors and pumps run the Implosion Compressor, the heat exchangers and the best upgrades.",
         "&eHow:&r advanced motor: a magnetic stainless rod, 2 stainless rods, 2 aluminum cable, 4 annealed copper wire. Advanced pump: advanced motor, 2 stainless rotors, fluid pipes and stainless bolts.",
-        "&eTip:&r magnetise the stainless rod in the Polarizer."]),
+        "&eTip:&r advanced pumps also build the Distillation Tower, the EV refinery."]),
     Q("t6_blastproof", 0, 0, [item(MI + "mixed_ingot_blastproof", 2), item(MI + "blastproof_alloy_plate", 4)], "Blastproof Alloy", deps=["t6_titanium", "t6_tungsten"], xp=200,
       subtitle="Tungsten, titanium and stainless, pressed as one", desc=[
         "&eWhat:&r the armour of the Implosion Compressor and every nuclear fuel rod.",
         "&eChemistry:&r tungsten for heat, titanium for lightness, stainless for toughness: a composite does what no single metal can.",
         "&eHow:&r Packer: 1 tungsten + 1 titanium + 1 stainless steel ingot → mixed blastproof ingot. Compressor: 2 mixed ingots → 1 plate (slow). With an Implosion Compressor: 1 mixed ingot + TNT → 3 ingots.",
         "&eTip:&r the Compressor route is only for your first compressor's 16 plates. After that, use the bang."]),
-    Q("t6_implosion", 0, 0, [item(MI + "implosion_compressor"), item(MI + "blastproof_casing", 4)], "The Implosion Compressor", deps=["t6_blastproof", "t6_advmotor", "t6_itnt"], xp=300, size=1.5, shape="hexagon",
+    Q("t6_implosion", 0, 0, [item(MI + "implosion_compressor"), item(MI + "blastproof_casing", 4)], "The Implosion Compressor", deps=["t6_blastproof", "t6_advmotor", "t6_itnt", "t6_ti_plates"], xp=300, size=1.5, shape="hexagon",
       subtitle="Squeeze metal with a shockwave", desc=[
         "&eWhat:&r a multiblock that uses Industrial TNT to press tungsten, blastproof alloy, beryllium and nuclear alloy.",
         "&eChemistry:&r explosive compaction is real: a shockwave can squeeze powder past what any press reaches. Explosions even make tiny diamonds from graphite.",
@@ -258,7 +258,7 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eWhat:&r beryllium is one third of nuclear alloy.",
         "&eChemistry:&r emerald is the mineral beryl, Be₃Al₂Si₆O₁₈. Beryllium is light, stiff and reflects neutrons back into a reactor core.",
         "&eHow:&r Electrolyzer: 23 emerald dust → 3 beryllium + 2 aluminum + 6 silicon dust + oxygen. Implosion Compressor: 9 tiny beryllium dust + a stainless nugget + TNT → 1 ingot. Compress it into plates."]),
-    Q("t6_monazite", 0, 0, [item(MI + "neodymium_dust", 3), item(MI + "yttrium_dust", 3), item(MI + "helium_bucket")], "Rare Earths and Helium", deps=["t6_cadmium"], xp=150,
+    Q("t6_monazite", 0, 0, [item(MI + "neodymium_dust", 3), item(MI + "yttrium_dust", 3), item(MI + "helium_bucket")], "Rare Earths and Helium", deps=["t6_monazite_dust"], xp=150,
       subtitle="Everything else hiding in monazite", desc=[
         "&eWhat:&r the same centrifuge run that gives cadmium also gives neodymium, yttrium and sometimes helium. You'll need all three for superconductors and fuel rods.",
         "&eChemistry:&r monazite is a rare-earth phosphate, (Ce,La,Nd,Th)PO₄. Its thorium slowly decays and the alpha particles it fires become helium atoms trapped in the crystal.",
@@ -274,22 +274,22 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eWhat:&r the metal the MI Nuclear Reactor is built from.",
         "&eChemistry:&r a reactor wall must survive heat and handle neutrons: beryllium reflects them, cadmium absorbs them, blastproof alloy holds it all together.",
         "&eHow:&r Packer: blastproof plate + beryllium plate + cadmium plate → mixed nuclear plate. Implosion Compressor with TNT → 3 nuclear alloy plates. Four plates make a large plate."]),
-    Q("t6_control_rod", 0, 0, [item(MI + "cadmium_control_rod", 2)], "Control Rods", deps=["t6_blastproof", "t6_solder", "t6_monazite"], xp=200,
+    Q("t6_control_rod", 0, 0, [item(MI + "cadmium_control_rod", 2)], "Control Rods", deps=["t6_blastproof", "t6_solder", "t6_monazite", "t6_cd_rods"], xp=200,
       subtitle="The brakes of a reactor", desc=[
         "&eWhat:&r cadmium control rods soak up neutrons. The reactor controller needs two, and they tame a hot core.",
         "&eChemistry:&r cadmium-113 swallows slow neutrons more readily than almost any other nucleus, so a little cadmium stops a chain reaction from running away.",
         "&eHow:&r Assembler: 18 cadmium rods, 2 blastproof curved plates, a large motor, 2 robot arms, 500 mB solder and 100 mB helium."]),
     Q("t6_mi_casing", 0, 0, [item(MI + "nuclear_casing", 4), item(MI + "nuclear_item_hatch"), item(MI + "nuclear_fluid_hatch"), item(MI + "nuclear_alloy_machine_casing_pipe")],
-      "Reactor Shell", deps=["t6_nuclear_alloy", "t6_pu"], xp=200,
+      "Reactor Shell", deps=["t6_nuclear_alloy", "t6_pu"], section="The MI Nuclear Reactor", xp=200,
       subtitle="Casings and hatches in nuclear alloy", desc=[
         "&eWhat:&r the walls and the top grid of the reactor. Item hatches hold fuel and rods; fluid hatches hold water to boil into steam.",
         "&eHow:&r nuclear casing: 8 nuclear alloy plates around an HV hull. Hatches: 8 plates around an EV item or fluid input hatch. Check JEI for the pipe casing.",
         "&eTip:&r the reactor comes in several sizes. Start small; the MI guidebook shows them all."]),
-    Q("t6_fuel_rod", 0, 0, [item(MI + "uranium_fuel_rod", 2), item(MI + "uranium_fuel_rod_double")], "Fuel Rods", deps=["t6_blastproof", "t6_solder", "t6_monazite", "t6_nuclear_alloy"], xp=200,
+    Q("t6_fuel_rod", 0, 0, [item(MI + "uranium_fuel_rod", 2), item(MI + "uranium_fuel_rod_double")], "Fuel Rods", deps=["t6_blastproof", "t6_solder", "t6_monazite", "t6_nuclear_alloy", "t6_uranium_rods"], xp=200,
       subtitle="Natural uranium, sealed in blastproof", desc=[
         "&eWhat:&r plain uranium fuel rods need no enrichment. They burn slowly, and that slowness breeds plutonium.",
         "&eChemistry:&r natural uranium is 99.3% U-238 and 0.7% fissile U-235. U-238 catches a neutron and decays twice: ²³⁸U → ²³⁹U → ²³⁹Np → ²³⁹Pu.",
-        "&eHow:&r uranium dust → Kanthal-tier EBF → ingot → 18 rods. Assembler: 18 uranium rods, 2 blastproof curved plates, a large motor, 2 robot arms, 500 mB solder, 100 mB helium. Packer: 2 rods + a nuclear alloy plate → double rod."]),
+        "&eHow:&r 18 uranium rods (see Uranium Rods). Assembler: 18 uranium rods, 2 blastproof curved plates, a large motor, 2 robot arms, 500 mB solder, 100 mB helium. Packer: 2 rods + a nuclear alloy plate → double rod."]),
     Q("t6_mi_reactor", 0, 0, [item(MI + "nuclear_reactor")], "The Nuclear Reactor", deps=["t6_mi_casing", "t6_control_rod"], xp=400, size=1.5, shape="hexagon",
       subtitle="MI's fission reactor, a puzzle of neutrons", desc=[
         "&eWhat:&r a big power source, and the only place in the pack that makes MI plutonium. Quantum circuits need it.",
@@ -363,4 +363,156 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
       optional=True, tokens=2, subtitle="Optional: the last upgrade before quantum", desc=[
         "&eHow:&r Assembler: 8 large advanced motors, 4 large advanced pumps, 4 turbo upgrades, a processing unit board and 2500 mB PVC → 4.",
         "&eTip:&r the Quantum Upgrade, after the Seed, needs 32 of these."]),
+    Q("t5_distill", 2, 0, [item(MI + "distillation_tower")], "Fractional Distillation", deps=["t6_advmotor", "t5_opt_distillery"], section="The Full Refinery", xp=300, size=1.5,
+      subtitle="The refinery of the pack", desc=[
+        "&eWhat:&r the Distillation Tower is a multiblock that splits one fluid into several fractions at once.",
+        "&eChemistry:&r heat the crude and each fraction boils off at its own temperature. Light molecules rise to the top, heavy ones stay low.",
+        "&eHow:&r controller: 4 advanced pumps, 2 Distilleries, 2 digital circuits and a Turbo hull. The layout is in JEI. Each extra layer adds one more output, up to eight.",
+        "&eTip:&r one tower replaces a whole row of Distilleries: steam-cracked naphtha gives methane, acetylene, ethylene, propene, butadiene, benzene, toluene and ethylbenzene in one pass."]),
+    # ===== ATM10-style detail pass (2026-10-19) =====
+    # --- air separation
+    Q("t6_ss_rotor", 0, 0, [item(MI + "stainless_steel_rotor", 3)], "Stainless Rotors", deps=["t5_ss_plate"], xp=80,
+      subtitle="Blades that survive heat and acid", desc=[
+        "&eWhat:&r the air intake spins one; every advanced pump spins three.",
+        "&eHow:&r blades: 2 stainless curved plates + 1 stainless rod → 4 blades. Ring: Compressor, 1 rod → 1 ring. Rotor: 4 blades, 4 bolts and a ring on a crafting table.",
+        "&eTip:&r the Assembler recipe needs soldering alloy; craft by hand until your solder line runs."]),
+    Q("t6_air_intake", 0, 0, [item(MI + "air_intake")], "Air Intake", deps=["t6_ss_rotor"], xp=80,
+      section="Air Separation", subtitle="A fan that feeds the freezer", desc=[
+        "&eWhat:&r the Air Intake sits in the Vacuum Freezer or Pressurizer and lets it pull in air to liquefy. It isn't used up.",
+        "&eHow:&r 4 stainless plates, 4 aluminum plates and a stainless rotor."]),
+    Q("t6_liquid_air", 0, 0, [item(MI + "liquid_air_bucket")], "Liquid Air", deps=["t6_air_intake", "t5_freezer"], xp=80,
+      subtitle="Air, cooled until it pours", desc=[
+        "&eWhat:&r air cold enough to be a liquid: the raw material for nitrogen, oxygen and argon.",
+        "&eChemistry:&r air liquefies below about −194 °C. Carl von Linde did it industrially in 1895 by compressing air, cooling it, and letting it expand again and again.",
+        "&eHow:&r Vacuum Freezer with an Air Intake inside: 1000 mB liquid air per run."]),
+    # --- chips
+    Q("t6_mono", 0, 0, [item(MI + "monocrystalline_silicon")], "A Perfect Crystal", deps=["t6_argon", "t6_rare_pgm"], xp=150,
+      subtitle="Grow one silicon crystal under argon", desc=[
+        "&eWhat:&r a monocrystalline silicon boule, the start of every chip.",
+        "&eChemistry:&r in the Czochralski process a seed crystal is drawn slowly out of molten silicon, and every atom lines up with the one below. Argon keeps oxygen and nitrogen out of the melt.",
+        "&eHow:&r Electric Blast Furnace: 32 silicon dust + 1 tiny iridium dust + 1250 mB argon → 1 monocrystalline silicon.",
+        "&eTip:&r the tiny iridium is from the Platinum Line's residue. Keep a few."]),
+    Q("t6_ram", 0, 0, [item(MI + "random_access_memory", 2)], "RAM", deps=["t6_silicon", "t5_sbr"], xp=100,
+      subtitle="Memory, grown on a wafer", desc=[
+        "&eWhat:&r random access memory; each processing unit takes 2.",
+        "&eChemistry:&r a DRAM cell is one transistor and one tiny capacitor. The capacitor's charge is the bit, and it leaks away, so the chip refreshes itself thousands of times a second.",
+        "&eHow:&r Chemical Reactor: 1 silicon wafer + 1 antimony dust + 1 aluminum dust + 250 mB argon + 500 mB styrene-butadiene rubber → 2 RAM."]),
+    Q("t6_diamond_plate", 0, 0, [item(MI + "diamond_plate", 2)], "Diamond Plates", deps=["t5_hv"], xp=40,
+      subtitle="The hardest substrate there is", desc=[
+        "&eWhat:&r each ALU is built on a diamond plate.",
+        "&eChemistry:&r diamond conducts heat better than any metal while insulating electrically: ideal for a chip that runs hot.",
+        "&eHow:&r Compressor: 1 diamond → 1 diamond plate (slow)."]),
+    Q("t6_alu", 0, 0, [item(MI + "arithmetic_logic_unit")], "Arithmetic Logic Unit", deps=["t6_diamond_plate", "t5_gates"], xp=100,
+      subtitle="Eight gates that do sums", desc=[
+        "&eWhat:&r the part of a processor that adds, compares and decides. Qubits need two each later.",
+        "&eChemistry:&r binary addition is just XOR and AND: a half adder is two gates. Chain them and you can add numbers of any size.",
+        "&eHow:&r 1 diamond plate, 2 AND gates, 2 OR gates and 4 NOT gates."]),
+    Q("t6_emerald_plate", 0, 0, [item(MI + "emerald_plate", 2)], "Emerald Plates", deps=["t5_hv"], xp=40,
+      subtitle="Beryl, pressed flat", desc=[
+        "&eWhat:&r the MMU sits on an emerald plate.",
+        "&eHow:&r Compressor: 1 emerald → 1 emerald plate (slow)."]),
+    Q("t6_pt_plate", 0, 0, [item(MI + "platinum_plate", 8)], "Platinum Plates", deps=["t6_pgm"], xp=60,
+      subtitle="The noble metal, rolled", desc=[
+        "&eWhat:&r every processing unit board takes 4 platinum plates; wire for the MMU comes from them too.",
+        "&eHow:&r smelt platinum dust into ingots, then Compressor: 1 ingot → 1 plate."]),
+    Q("t6_pt_wire", 0, 0, [item(MI + "platinum_fine_wire", 6)], "Platinum Fine Wire", deps=["t6_pt_plate"], xp=40,
+      subtitle="Contacts that never corrode", desc=[
+        "&eWhat:&r each MMU takes 6.",
+        "&eHow:&r Wiremill: plate → 2 platinum wire; wire → 4 fine wire."]),
+    Q("t6_mmu", 0, 0, [item(MI + "memory_management_unit")], "Memory Management Unit", deps=["t6_silicon", "t6_emerald_plate", "t6_pt_wire"], xp=100,
+      subtitle="The chip that keeps track of memory", desc=[
+        "&eWhat:&r the MMU translates the addresses a program asks for into real places in RAM.",
+        "&eHow:&r 1 emerald plate, 2 silicon wafers and 6 platinum fine wire."]),
+    # --- EV parts
+    Q("t6_monazite_dust", 0, 0, [item(MI + "monazite_dust", 9)], "Monazite", deps=["t4_centrifuge"], xp=60,
+      subtitle="A rare-earth phosphate", desc=[
+        "&eWhat:&r monazite is the pack's source of cadmium, neodymium, yttrium and helium, all from one centrifuge run.",
+        "&eChemistry:&r (Ce,La,Nd,Th)PO₄: a phosphate of rare earths with a little thorium, which makes it faintly radioactive.",
+        "&eHow:&r mine MI monazite ore and macerate it. A stainless steel drill in a quarry also brings some up."]),
+    Q("t6_annealed_cable", 0, 0, [item(MI + "annealed_copper_wire", 8), item(MI + "annealed_copper_cable", 8)], "Annealed Copper Cable", deps=["t6_annealed"], xp=60,
+      subtitle="The EV cable", desc=[
+        "&eWhat:&r annealed copper cable carries EV power and goes into cadmium batteries, the processing unit board and the EV hull. Advanced motors use the bare wire.",
+        "&eHow:&r Compressor: ingot → plate. Wiremill: plate → 2 wire. 3 wire + rubber (sheets or liquid SBR) → 3 cable."]),
+    Q("t6_cr_plate", 0, 0, [item(MI + "chromium_ingot", 4), item(MI + "chromium_plate", 4)], "Chromium Plates", deps=["t5_chromium", "t5_freezer"], xp=60,
+      subtitle="Bright, hard and stubborn", desc=[
+        "&eWhat:&r the highly advanced casing is half chromium plates.",
+        "&eChemistry:&r chromium is the hardest pure metal and the reason chrome plating shines: its oxide film is clear and self-healing.",
+        "&eHow:&r EBF: chromium dust → hot ingot. Vacuum Freezer → ingot. Compressor → plate."]),
+    Q("t6_ti_plates", 0, 0, [item(MI + "titanium_plate", 8), item(MI + "titanium_large_plate", 2)], "Titanium Plates", deps=["t6_titanium"], xp=60,
+      subtitle="Light armour for EV machines", desc=[
+        "&eWhat:&r the highly advanced casing takes 4 titanium plates; the Implosion Compressor takes 2 large plates.",
+        "&eHow:&r Compressor: ingot → plate. 4 plates → 1 large plate (crafting table or Packer)."]),
+    Q("t6_ha_casing", 0, 0, [item(MI + "highly_advanced_machine_casing")], "Highly Advanced Casing", deps=["t6_ti_plates", "t6_cr_plate", "t5_hv"], xp=80,
+      subtitle="A Turbo hull in titanium and chromium", desc=[
+        "&eWhat:&r the shell of the EV hull.",
+        "&eHow:&r 4 titanium plates and 4 chromium plates around a Turbo (HV) machine hull."]),
+    Q("t6_ev_power", 0, 0, [item(MI + "hv_ev_transformer"), item(MI + "ev_storage_unit")], "An EV Grid", deps=["t6_pu"], xp=60,
+      optional=True, tokens=1, subtitle="Optional: the next step up", desc=[
+        "&eWhat:&r an HV-to-EV transformer and an EV storage unit.",
+        "&eHow:&r transformer: a Turbo hull, 4 aluminum cable, 1 annealed copper cable. Storage: an EV hull, 6 cadmium batteries, 2 battery alloy plates."]),
+    Q("t6_kanthal_cable", 0, 0, [item(MI + "kanthal_wire", 6), item(MI + "kanthal_cable", 16)], "Kanthal Cable", deps=["t6_kanthal"], xp=60,
+      subtitle="Heating wire, insulated", desc=[
+        "&eWhat:&r Kanthal coils are wound from Kanthal cable, 8 per coil.",
+        "&eHow:&r Compressor: ingot → plate. Wiremill: plate → 2 wire. 3 wire + rubber → 3 cable.",
+        "&eTip:&r a full furnace needs 16 coils, so 128 cables. Set the Wiremill and Packer running early."]),
+    Q("t6_mag_rod", 0, 0, [item(MI + "stainless_steel_rod_magnetic", 2)], "Magnetic Stainless Rods", deps=["t6_monazite", "t5_ebf"], xp=60,
+      subtitle="Neodymium makes the magnet", desc=[
+        "&eWhat:&r the rotor core of every advanced motor.",
+        "&eChemistry:&r neodymium-iron-boron magnets are the strongest permanent magnets made. Every wind turbine and electric car motor has them.",
+        "&eHow:&r Polarizer: 1 stainless steel rod + 1 neodymium dust → 1 magnetic stainless rod."]),
+    # --- Mekanism nuclear parts
+    Q("t6_elite", 0, 0, [item(MEK + "elite_control_circuit", 4)], "Elite Control Circuits", deps=["t5_hv", "t4_reinforced"], xp=80,
+      subtitle="Mekanism's HV circuit", desc=[
+        "&eWhat:&r fission ports, control rods and the Solar Neutron Activator all need elite circuits.",
+        "&eHow:&r 1 MI digital circuit, 2 reinforced alloy and 1 advanced control circuit."]),
+    Q("t6_ult_circuit", 0, 0, [item(MEK + "alloy_atomic", 4), item(MEK + "ultimate_control_circuit", 2)], "Ultimate Control Circuits", deps=["t6_pu", "t6_elite"], xp=100,
+      subtitle="Mekanism's EV circuit", desc=[
+        "&eWhat:&r the Isotopic Centrifuge and the SPS run on ultimate circuits.",
+        "&eHow:&r atomic alloy: Metallurgic Infuser, reinforced alloy + refined obsidian. Circuit: 1 MI processing unit, 2 atomic alloy and 1 elite circuit."]),
+    Q("t6_uranium_ingot", 0, 0, [item(MI + "uranium_ingot", 4)], "Uranium Ingots", deps=["t4_uranium"], xp=60,
+      subtitle="The fuel, as metal", desc=[
+        "&eWhat:&r Mekanism's enrichment starts from ingots, and MI's fuel rods are cut from them.",
+        "&eChemistry:&r uranium metal is dense (19 g/cm³, about as heavy as gold) and burns in air when finely divided.",
+        "&eHow:&r smelt raw uranium in any furnace, or melt uranium dust in a Kanthal-tier Electric Blast Furnace."]),
+    Q("t6_fluorite_dust", 0, 0, [item(MEK + "dust_fluorite", 8)], "Fluorite Dust", deps=["t4_fluorite"], xp=40,
+      subtitle="The binder of every pellet", desc=[
+        "&eWhat:&r each plutonium or polonium pellet takes 1 fluorite dust.",
+        "&eHow:&r Crusher: 1 fluorite gem → 1 dust. Fluorite ore crushed in Occultism gives more."]),
+    Q("t6_hf_bucket", 0, 0, [item(MEK + "hydrofluoric_acid_bucket")], "HF in a Bucket", deps=["t6_hf"], xp=60,
+      subtitle="The Seed wants four of these", desc=[
+        "&eWhat:&r hydrofluoric acid as a liquid. The Seed of a New World takes 4 buckets.",
+        "&eChemistry:&r HF boils at 19.5 °C, so on a warm day it's barely a liquid. Real plants keep it cooled under pressure in steel, never glass.",
+        "&eHow:&r Rotary Condensentrator in liquid mode, HF gas in, fluid out."]),
+    Q("t6_sna", 0, 0, [item(MEK + "solar_neutron_activator")], "Solar Neutron Activator", deps=["t6_elite", "t5_hdpe"], xp=100,
+      subtitle="Sunlight, focused on waste", desc=[
+        "&eWhat:&r the machine that turns nuclear waste into polonium.",
+        "&eHow:&r reinforced alloy, an HDPE sheet, 2 elite circuits, a steel casing and bronze ingots (check JEI). It needs a clear view of the sky and works only in daylight."]),
+    Q("t6_waste_barrel", 0, 0, [item(MEK + "radioactive_waste_barrel", 2)], "Waste Barrels", deps=["t6_fission"], xp=40,
+      subtitle="Somewhere safe for what's left", desc=[
+        "&eWhat:&r radioactive waste barrels hold spent waste and let it decay slowly instead of leaking.",
+        "&eChemistry:&r every radioactive isotope halves on its own schedule. Real spent fuel is kept cool for years before it is moved anywhere.",
+        "&eHow:&r 4 steel and 4 lead ingots."]),
+    Q("t6_logic_adapter", 0, 0, [item(GEN + "fission_reactor_logic_adapter")], "Reactor Logic", deps=["t6_fission"], xp=40,
+      optional=True, tokens=1, subtitle="Optional: an automatic SCRAM", desc=[
+        "&eWhat:&r a logic adapter outputs redstone on conditions like high temperature or damage, and can shut the reactor down.",
+        "&eHow:&r a fission casing with 4 redstone dust. Set it to 'activation' or a damage threshold in its GUI."]),
+    Q("t6_nether_star", 0, 0, [item("minecraft:nether_star")], "A Nether Star", deps=["t6_reactor_parts"], xp=150,
+      subtitle="The Fusion Chamber's heart", desc=[
+        "&eWhat:&r the Fusion Chamber controller needs a Nether Star.",
+        "&eHow:&r defeat a Wither (soul sand T, three wither skeleton skulls). Fight it in a sealed room, deep underground.",
+        "&eTip:&r save the skulls you find from now on: the Seed of a New World needs four more stars."]),
+    # --- MI nuclear parts
+    Q("t6_cd_rods", 0, 0, [item(MI + "cadmium_ingot", 2), item(MI + "cadmium_rod", 18)], "Cadmium Rods", deps=["t6_cadmium"], xp=60,
+      subtitle="Neutron sponges, cut to length", desc=[
+        "&eWhat:&r each cadmium control rod is 18 of these.",
+        "&eHow:&r smelt cadmium dust into ingots. Cutting Machine with lubricant: 1 ingot → 2 rods."]),
+    Q("t6_uranium_rods", 0, 0, [item(MI + "uranium_rod", 18)], "Uranium Rods", deps=["t6_uranium_ingot"], xp=60,
+      subtitle="Fuel, cut to length", desc=[
+        "&eWhat:&r each MI uranium fuel rod is 18 of these.",
+        "&eHow:&r Cutting Machine with lubricant: 1 uranium ingot → 2 rods."]),
+    Q("t5_large_diesel", 0, 0, [item(MI + "large_diesel_generator")], "Large Diesel Generator", deps=["t6_advmotor", "t5_diesel"], xp=80,
+      optional=True, tokens=1, subtitle="Optional: burn diesel in bulk", desc=[
+        "&eWhat:&r a multiblock generator that gets far more energy per bucket than the single-block ones.",
+        "&eHow:&r the controller needs advanced pumps, so it waits for the stainless motors of this chapter. Check JEI and the MI guidebook for the recipe and layout.",
+        "&eTip:&r boosted diesel (diesel + diethyl ether) burns even better."]),
 ])

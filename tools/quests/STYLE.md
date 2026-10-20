@@ -47,62 +47,77 @@ merged with their neighbours when too small. A prerequisite that only feeds one 
 from the section's root quest (a loose group of unrelated quests is named "From <chapter>" after where it starts).
 - `Q(..., section="Title")` puts a quest in a named section. Its descendants (through each quest's deepest
   dependency here) without a section of their own follow it. Use it when an auto title or grouping reads badly.
-- A chapter with one section gets no header (the chapter banner is enough).
-- Mod pages are split into chapters by these same sections (see "Mod = category" below), so on a mod page a section
-  becomes a sidebar chapter, not a header. Headers are only drawn on the Demigod's Path and the top-area pages.
+- A chapter with one section gets no header (the chapter banner is enough). Every other auto-layout page, main path
+  and mod pages alike, shows its sections as headers (one chapter per mod; see "Where chapters go").
 
-**Shape motifs** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"tree"`). Every page is a shape, not a
-long row. All of them keep progression readable: only straight lines, no line through a quest, no overlaps, and
-FTB's real geometry (a quest of size s is about s cells wide). A motif that doesn't fit a section falls back to a
-plain tree for that section. Pick them by looking at `testuild_quest_preview.py --gallery`; try one without editing
-the file: `$env:LAYOUT_STYLE="t6=radial,t4=winding+molecule"` before a build (`QUEST_OUT=<folder>` keeps it out of pack/).
-- `"winding"` (start, t0 to t7, seed, creation, occultism): the main path snakes like an S. Rows of 4 to 7 spine
-  quests alternate direction (left to right, then right to left) and are joined by a vertical step at each bend; when
-  two rows are far apart, up to 2 spine quests sit on the bend as a rounded corner. Sections hang off their spine quest
-  as small trees: below a row (pointing down, header beside the root, or sideways with the row's flow) or above it
-  (pointing up, header on top), in the lane between two rows; a section hanging from a bend quest sits outside the
-  bend. The row length and pitch are chosen per page so it comes out compact (close to square).
-- `"radial"` (qol, building, storage, harvest, undergarden, deeperdarker): hub pages. The hub (the quest most of the
-  page hangs from) sits in the middle with its own section as a radial tree around it: its children share the circle
-  (a crowded first ring alternates two radii), deeper quests fan out one ring further. The other sections are spokes
-  in compass slots (sideways first, then down, up and the diagonals), each a short tree pointing outward with its
-  header at the far end; the core leaves a gap in the ring where each spoke's line goes out. Sections hanging from a
-  spoke sit beyond it. Small leaf branches of a hub stay in the hub's own section here, so they ring the hub.
-- `"molecule"` (periodic, mekanism, mekanism_power, power, factory): a section whose quests form a tree is drawn as
-  rings of 5 or 6 quests (benzene-like hexagons) joined by bonds, with short side chains pointing outward. Ring order
-  follows the dependency order (depth first, biggest branch first, so a chain closes into a hexagon); the ring's
-  closing side is not a dependency, so FTB draws no line there. `BLOCKS` in quest_data.py asks for molecule sections
-  on another motif's page (t4 uses it on its winding page).
-- `"tree"` (other mod pages): sections are top-down trees (root on top, children fanning below), laid out in columns
-  or rows in reading order, whichever fits the 26 x 18 target page better.
-- `"grid"` (hunting, completionist, lab_notes, explore): like tree, with tighter, wider rows for collections.
-- `"spine"`: the v11 main-path style (one straight row with sections above and below), kept for comparison.
-- The shop chapters stay `Chapter(..., layout="manual")`: hand-written `x`/`y` and link positions are used as they are.
+**Shape motifs** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"comb"`). Every page keeps progression
+readable: only straight lines, no line through a quest, no overlaps, and FTB's real geometry (a quest of size s is
+about s cells wide). Pick a motif by looking at `test/build_quest_preview.py --gallery` (and ATM10's "The Beginning"
+on the `test/build_quest_map.py --compare` page); try one without editing the file:
+`$env:LAYOUT_STYLE="t6=winding,qol=radial"` before a build (`QUEST_OUT=<folder>` keeps it out of pack/).
+- `"comb"` (v13, 2026-10-19; every auto page but building): the grammar of ATM10's hand-made main questline, as an
+  algorithm (never its coordinates).
+  - **One straight spine** on y = 0: the longest chain of required quests, left to right, on the 2-cell grid. The
+    chapter's way in (a link to the quest it follows on from) leads the row. A spine of more than 16 quests (18 when
+    one row reads better) wraps into 2 or 3 stacked rows that run back and forth, joined by one straight vertical step
+    at the end of each row; the cut is chosen so the rows come out about as long as each other.
+  - **Teeth.** Everything else hangs off its spine quest (through each quest's deepest dependency here) as a tooth:
+    a small tree that grows straight down or up. Each quest goes on the free grid spot next to the quest it hangs from
+    where its lines are horizontal or vertical (45 degrees only when nothing straight is free), so a chain runs
+    straight down and side branches leave it at right angles; a tooth deeper than 8 cells turns sideways instead.
+    A spine quest's branches are split over its two sides, and each tooth goes up or down so the page stays
+    balanced. Spine quests spread apart only as far as their teeth need (teeth interlock without touching), and a
+    quest with lines into other teeth leans towards them.
+  - **Nothing floats.** A quest whose deps are all in other chapters gets a quest link to its first dep, one cell
+    away. Links (yours and these) sit next to the quest they feed. A small group with no line to the spine joins the
+    tooth of the quest it feeds (else it sits by the chapter's way in). A quest or link that needs two quests far
+    apart moves to the free spot where both lines are shortest and straightest.
+  - **Section headers** label the spine from outside: just past the teeth of their section, on the side most of
+    its quests hang, clear of every quest and line. A section of only one or two quests gets no header unless the
+    writer named it (`section=`).
+  - **Hidden lines** on comb pages are settled by a small search over the flags (FTB can only hide ALL of a quest's
+    lines, or all lines from a dependency): a line through a quest or a header is never drawn; after that it avoids,
+    in order, a quest with no line at all, lines over 10 cells, crossings, lines over 6 cells and slanted lines.
+- `"radial"` (building): hub pages. The hub (the quest most of the page hangs from) sits in the middle with its own
+  section as a radial tree around it; the other sections are spokes in compass slots, each a short tree pointing
+  outward with its header at the far end. Kept where a page is a set of independent hubs (the comb tangles there).
+- Older motifs, kept for comparison and `LAYOUT_STYLE`: `"winding"` (the spine snakes in rows of 4 to 7 with
+  sections hanging above and below each row), `"molecule"` (sections as rings of 5 or 6 quests joined by bonds;
+  `BLOCKS` in quest_data.py can ask for them on a winding/radial page), `"tree"` (sections as top-down trees in
+  columns or rows), `"grid"` (tighter rows for collections) and `"spine"` (v11: one straight row, sections above and
+  below).
+- The shop chapters (and welcome, tips) stay `Chapter(..., layout="manual")`: hand-written `x`/`y` and link positions
+  are used as they are. A page the comb can't draw cleanly can be hand-placed the same way (use the comb grammar).
 - No "periodic" element grid: the periodic chapter is family by family (alkali metals, halogens, ...), not one quest
   per element, so a period/group grid wouldn't fit it.
 
-**Hidden lines.** The layout sets FTB's `hide_dependency_lines` on a quest (and `hide_dependent_lines` on a
-dependency) where a line is clutter: a hub with 6 or more dependents here (4 on grid pages; never on radial pages,
-whose spokes are short), a line that runs through a quest or header, a long line between two sections, or (every
-page but `"spine"`) a line that crosses two or more others. It only hides a line when the dependency stays readable
-without it: same section, a neighbouring section (within 2 in reading order, or touching), the spine, or shown as a
-quest link; on motif, tree and grid pages any line between two sections counts as readable, since sections sit by
-shape rather than in reading order. Spine steps on spine and winding pages are never hidden, and a radial page's hub
-keeps its own lines. FTB still draws hidden lines on mouse-over.
+**Hidden lines (other motifs).** The layout sets FTB's `hide_dependency_lines` on a quest (and `hide_dependent_lines`
+on a dependency) where a line is clutter: a hub with 6 or more dependents here (4 on grid pages; never on radial
+pages, whose spokes are short), a line that runs through a quest or header, a long line between two sections, or
+(every page but `"spine"`) a line that crosses two or more others. It only hides a line when the dependency stays
+readable without it: same section, a neighbouring section (within 2 in reading order, or touching), the spine, or
+shown as a quest link; on motif, tree and grid pages any line between two sections counts as readable, since sections
+sit by shape rather than in reading order. Spine steps are never hidden, and a radial page's hub keeps its own lines.
+FTB still draws hidden lines on mouse-over. Quests shown as a link on another page never get these flags (FTB applies
+a quest's flags to every button of it).
 
-**Links.** `links=[("t3_ebf", 0, 0)]` (x/y ignored) sit above or beside the quests that depend on them, inside their
-section; links nothing here depends on go in rows above the page. The chapter's entry quest automatically gets links
-to its deps in other chapters. When all of a quest's dependents here are in one far section, the layout adds a link
-to that quest inside that section: FTB draws a dependency line from the LAST button of a quest on the page (links
-come after quests), so the lines then start at the link. That quest's own dependency lines are hidden (FTB would
-draw them at the link too).
+**Links.** `links=[("t3_ebf", 0, 0)]` (x/y ignored) sit beside the quests that depend on them (comb: one cell from the
+first one; other motifs: inside their section; links nothing here depends on go next to the quest they follow on
+from, or in rows above the page). The chapter's entry quest automatically gets links to its deps in other chapters.
+On non-comb pages, when all of a quest's dependents here are in one far section, the layout adds a link to that quest
+inside that section: FTB draws a dependency line from the LAST button of a quest on the page (links come after
+quests), so the lines then start at the link. That quest's own dependency lines are hidden (FTB would draw them at
+the link too).
 
 - Redundant lines are dropped on output: if A -> B -> C and C also lists A, the A -> C line isn't drawn (what the
   player must do doesn't change).
 - The chapter banner goes at the top left, above the topmost quest, link or section header.
 - `python tools/build_quests.py --layout-report` prints, per chapter, the v10 layout vs now: size (with headers),
-  sections, crossings, lines through quests, edges longer than 6 cells, hidden lines, overlaps, line directions and
-  the median line length. `tools/layout_lint.py` (on the built book) compares with ATM10.
+  sections, crossings, lines through quests, edges longer than 6 cells, hidden lines, overlaps, line directions,
+  the **orthogonal %** (drawn lines that are horizontal or vertical) and the median line length.
+  `tools/layout_lint.py` (on the built book) has the same orthogonal % per chapter (`orth%`) and in the medians, plus
+  `lone` (quests with no visible line); `--compare` puts ATM10 beside it. Targets for a comb page: orthogonal 85% or
+  more, no lone quests, no crossings.
 
 Shaping the result, if a chapter reads badly:
 - Fewer long lines: depend on the nearest quest that really unlocks this one, not on a far-away hub.
@@ -114,36 +129,29 @@ Shaping the result, if a chapter reads badly:
 - **Section milestone:** `size=1.5, shape="hexagon"` (sizes 1.25 to 1.5 become this).
 - Everything else is size 1 in the chapter's default shape. Milestones (size >= 1.5) pay double tokens.
 
-**Where chapters go** (`GROUPS`/`LAYOUT` in `tools/quest_data.py`; the group is set there by chapter key):
-- **Top area, no group:** welcome, lab_notes, completionist. These are listed above the first category (FTB
-  Quests' ungrouped area, like ATM10's Welcome pages).
-- Then The Demigod's Path (start, t0 to t7, seed, creation: one chapter per tier, sections with headers) and The
-  Demigod's Market (market, shop_*: manual grids, linear progression). Neither is split.
-- **Mod = category** (user decision 2026-10-19). Every other chapter file (a "page") becomes its own category (an
-  FTB chapter group titled after the page) and its layout sections become the chapters inside it, so the sidebar
-  reads "Mekanism > Factories and Upgrades, Alloys and Teleporters, ...". FTB has one level of groups only.
-  - The split runs at load time in `tools/quest_data.py` (`_split`): the page's sections (`layout.page_sections`, as
-    trees; grid pages as grids) are merged so each chapter has about 5 to 25 quests (a section under `SPLIT_MIN`
-    joins the neighbour it shares the most deps with), then ordered by progression (a chapter after the chapters it
-    needs; the page's first quest opens the first chapter).
-  - Chapter keys: the FIRST chapter keeps the page's key (links and docs still resolve); the others are
-    `<page>_<slug of the title>`. Quest keys never change; only which chapter shows a quest.
-  - Titles, one-line subtitles and optional icons: `CHAPTER_TITLES` in quest_data.py, keyed by the chapter's root
-    quest (the quest the layout would name the section after). Unlisted chapters keep the auto title, so check new
-    or regrouped ones in `docs/QUESTS.md` (its "Sidebar" list) and add a title. Never use "From <chapter>".
-    Icons default to the root quest's item (another member's if a sibling chapter already shows it).
-  - `JOIN` puts a page's chapters into another page's category (mekanism_power joins Mekanism); `PAGE_TITLES`
-    renames a category. Category order follows the old tabs: Basics pages, Chemistry Lab, Industry and Automation,
-    Magic and Relics, Exploration, Resources (`SPLIT_TABS` and `LAYOUT`).
-  - A page that comes out as a single chapter stays in its old tab's group ("Basics", "Exploration", ...).
-  - Tokens: a split chapter pays its page's `TOKENS` rate. Each chapter gets its own banner (`<key>.png`, the
-    page's element tile with the chapter title), written by the build; stale split-chapter banners are deleted.
-  - Links: the page's writer links go to the chapters whose quests depend on them (loose ones stay in the first
-    chapter), and every quest a chapter needs from another chapter of its category is shown there as a quest link.
-  - Layout: split chapters have no section headers. Their style is the page's motif (molecule, grid), except that
-    only the hub chapter of a radial page stays radial and winding pages become trees. On these small chapters a
-    hub's fan lines stay drawn unless a fan line crosses another line.
-- A new chapter file must be added to `LAYOUT`, or it isn't built (`--check` warns about unlisted files).
+**Where chapters go** (`GROUPS`/`LAYOUT` in `tools/quest_data.py`; the group is set there by chapter key). The
+sidebar follows All the Mods 10's book (user decision 2026-10-19; its structure only, never its text): **one chapter
+per mod**, grouped by category. A mod's sections are section headers on its page.
+- **Top area, no group** (FTB's ungrouped area, like ATM10's Welcome/Market/Bounty Board/Tips pages), in order:
+  welcome, market (the token shop's entry), tips ("Tips and Tricks"), building ("Building Tips"), hunting
+  ("Bounty Board"), lab_notes, completionist.
+- **The Demigod's Path (Main Questline):** start, t0 to t7, seed, creation (our story replaces ATM10's main questline).
+- **The Demigod's Market:** shop_materials, shop_gear, shop_world (manual grids).
+- **Tools and Gear:** tools, harvest, apotheosis, relics, qol. **Storage:** storage, ae2. **Logistics:** logic.
+- **Resources:** farming, mystical, factory (mob data and big crafting; ATM10 files Hostile Neural Networks here).
+- **Tech:** create, mekanism, mekanism_power ("Mekanism: Power", like ATM10's Mekanism Reactors), justdirethings.
+- **Chemistry:** periodic (the pack's own group, where ATM10 has Modern Industrialization).
+- **Energy:** power, powah. **Magic:** ars, occultism, neovitae, projecte.
+- **Exploration:** worlds, explore, undergarden, twilight, deeperdarker, allthemodium, space.
+- `TITLES` in quest_data.py renames a chapter in the sidebar (and on its banner) without touching its file.
+- A new chapter file must be added to `LAYOUT`, or it isn't built (`--check` warns about unlisted files). A key in
+  `LAYOUT` whose file doesn't exist yet is skipped quietly.
+- Progression is `flexible`; the shop pages (market and the Market group) are `linear`. Tokens per quest come from
+  `TOKENS` by chapter key (default 1).
+- Banners: the build writes every chapter's banner outside the Demigod's Path (`<key>.png`: the page's element tile,
+  the chapter's sidebar title) and deletes stale ones (such as old split-chapter banners).
+- The v12 "Mod = category" split (each mod its own group, its sections as chapters) is switched off but kept in
+  quest_data.py: list group keys in `SPLIT_TABS` to split those groups' pages again (`CHAPTER_TITLES` names the parts).
 
 ## Pack facts to respect (gates set in KubeJS; see docs/PROGRESSION.md §6–7)
 - Tech spine = Modern Industrialization tiers: LV analog circuit, MV electronic circuit (aluminum), HV digital circuit (polyethylene), EV processing unit (PVC), IV quantum.
@@ -177,8 +185,8 @@ Import what you need: `from questlib import Q, Chapter, item, dim, tick, kill, s
   Use links to connect a mod page to where that mod enters the main path.
 
 ## Mod pages
-Side chapters are "pages", one file per mod or mod family (see LAYOUT in `tools/quest_data.py`); each page becomes a
-category of small chapters in the book ("Mod = category", above). The group is set in quest_data.py; the group
-argument in `Chapter(...)` is ignored, so just pass `SIDE`. Write deps as usual: they decide how the page splits.
+Side chapters are "pages", one file per mod or mod family (see LAYOUT in `tools/quest_data.py`); each page is one
+chapter in its category's group ("Where chapters go", above). The group is set in quest_data.py; the group argument
+in `Chapter(...)` is ignored, so just pass `SIDE`. Write deps as usual: they decide the page's sections.
 A page's first quest should depend on the main-path quest where the mod becomes available, and the page should carry a
 `links=[...]` entry back to that quest.

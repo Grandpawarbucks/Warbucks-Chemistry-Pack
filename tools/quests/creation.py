@@ -13,6 +13,8 @@ PB = "{@pagebreak}"
 LANTHANIDES = ["chemlib:" + e for e in ("lanthanum", "cerium", "praseodymium", "neodymium", "promethium", "samarium", "europium",
                                         "gadolinium", "terbium", "dysprosium", "holmium", "erbium", "thulium", "ytterbium", "lutetium")]
 NOBLE = ["chemlib:" + e for e in ("helium", "neon", "argon", "krypton", "xenon", "radon")]
+ACTINIDES = ["chemlib:" + e for e in ("actinium", "thorium", "protactinium", "uranium", "neptunium", "plutonium", "americium",
+                                      "curium", "berkelium", "californium", "einsteinium", "fermium", "mendelevium", "nobelium", "lawrencium")]
 
 CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity",
         ["The Seed is planted. Now shape what grows."], MAIN, [
@@ -28,13 +30,13 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&eTo the left:&r walking the worlds you can now reach, and holding the rarest parts of the periodic table in your hand."]),
     # ---------------------------------------------------------------- right, y=-4: rewriting nuclei
     # --- the Terraformer (Warbucks Core): the Seed, planted ------------------------------------------
-    Q("cn_capsule", -1, 3, [item("warbuckscore:biome_capsule")], "A Sample of Somewhere", deps=["t7_creation"], xp=200,
+    Q("cn_capsule", -1, 3, [item("warbuckscore:biome_capsule")], "A Sample of Somewhere", deps=["t7_creation"], section="The Seed, Planted", xp=200,
       tokens=10, subtitle="Bottle a biome", desc=[
         "&6Every world you have walked through, you can carry with you.&r",
         "&eWhat:&r a Biome Capsule records the biome you stand in (sneak + right-click). It tells the Terraformer what to grow.",
         "&eHow:&r glass bottle, rubber sheet and any sapling. Travel to the biome you want, then record it.",
         "&eTip:&r capsules stack until filled; each one holds one biome."]),
-    Q("cn_terraformer", 1, 3, [item("warbuckscore:terraformer")], "The Terraformer", deps=["cn_capsule"], xp=1500,
+    Q("cn_terraformer", 1, 3, [item("warbuckscore:terraformer")], "The Terraformer", deps=["cn_capsule", "cn_charged_cores"], xp=1500,
       size=1.5, shape="gear", tokens=20, choice="pick_late", subtitle="The Seed, planted", desc=[
         "&6The Seed was never meant to stay in your pocket.&r",
         "&eWhat:&r the Terraformer (Warbucks Core) rewrites the biome around it, nearest chunks first, out to a 9x9 chunk area.",
@@ -47,7 +49,7 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&6This is what the power was for.&r",
         "&eWhat:&r let a Terraformer finish its whole area (status shows 81 / 81), then tick this off.",
         "&eTip:&r 9 Charged Energy Cores finish one Terraformer."]),
-    Q("cn_nucleo", 3, -4, [item(MEK + "antiprotonic_nucleosynthesizer")], "Nucleosynthesis", deps=["t7_creation"], xp=500,
+    Q("cn_nucleo", 3, -4, [item(MEK + "antiprotonic_nucleosynthesizer")], "Nucleosynthesis", deps=["t7_creation"], section="Nucleosynthesis", xp=500,
       tokens=10, choice="pick_late", subtitle="Turn one thing into another with antimatter", desc=[
         "&6Making something out of nothing was once your trade. This is close.&r",
         "&eWhat:&r Mekanism's Antiprotonic Nucleosynthesizer feeds a few millibuckets of antimatter into an item and rebuilds it as something rarer.",
@@ -71,7 +73,7 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&eHow:&r amethyst shards from geodes or a budding amethyst farm. Nucleosynthesizer, 2 mB antimatter each.",
         "&eTip:&r echo shards make Recovery Compasses, which point to where you last died."]),
     # ---------------------------------------------------------------- right, y=-2: MI quantum line
-    Q("cn_nuke", 3, -2, [item(MI + "nuke", 64)], "Sixty-Four Nukes", deps=["t7_creation"], xp=600,
+    Q("cn_nuke", 3, -2, [item(MI + "nuke", 64)], "Sixty-Four Nukes", deps=["cn_first_nukes"], xp=600,
       tokens=15, loot="boss", subtitle="Not for throwing", desc=[
         "&eWhat:&r MI's Nuke block. Sixty-four of them are crushed together to make a singularity.",
         "&eChemistry:&r a nuke combines fission (plutonium) and fusion fuel (deuterium and tritium, the heavy isotopes of hydrogen) around industrial TNT.",
@@ -92,13 +94,13 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "A real singularity is the centre of a black hole, where matter is crushed past every limit we know. Stars more than about 20 times the Sun's mass end this way.",
         "Before that, there's neutron-star matter: electrons are pushed into protons until only neutrons remain. A teaspoon would weigh about a billion tonnes.",
         "MI's singularity is a game item, not physics. But the idea, matter compressed until it becomes a source of something new, fits a demigod well."]),
-    Q("cn_quantum_upgrade", 7, -2, [item(MI + "quantum_upgrade")], "Quantum Upgrade", deps=["cn_mi_singularity"], xp=800,
+    Q("cn_quantum_upgrade", 7, -2, [item(MI + "quantum_upgrade")], "Quantum Upgrade", deps=["cn_mi_singularity", "cn_ha_upgrades", "cn_qc8"], xp=800,
       tokens=20, choice="pick_late", subtitle="UU-matter, circuits and a singularity", desc=[
         "&eWhat:&r the part that turns netherite armour into MI quantum armour.",
         "&eHow:&r MI Assembler: 32 highly advanced upgrades, 8 quantum circuits, 1 singularity, 1 quantum circuit board, 50 mB UU-matter.",
         "&eTip:&r 50 mB of UU-matter takes one Electrolyzer and singularity about 1.7 hours (1 mB per 2500 ticks). More singularities, more Electrolyzers."]),
     Q("cn_quantum_armor", 9, -2, [item(MI + "quantum_helmet"), item(MI + "quantum_chestplate"), item(MI + "quantum_leggings"), item(MI + "quantum_boots")],
-      "Quantum Armour", deps=["cn_quantum_upgrade"], xp=2000, size=1.5, shape="hexagon",
+      "Quantum Armour", deps=["cn_quantum_upgrade", "cn_netherite"], xp=2000, size=1.5, shape="hexagon",
       tokens=30, loot="boss", items=[(GT, 3)], subtitle="Armour fit for a god", desc=[
         "&6Once you needed no armour at all. This is the next best thing.&r",
         "&eWhat:&r MI's quantum armour: a full set, each piece a netherite piece plus a quantum upgrade.",
@@ -110,35 +112,35 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&eHow:&r MI Assembler: quantum machine hull, 2 quantum upgrades, 4 quantum circuits, 500 mB UU-matter. Check JEI for what it can copy.",
         "&eTip:&r 500 mB is about 17 hours for one Electrolyzer. A long-term goal for a server, not a weekend."]),
     # ---------------------------------------------------------------- right, y=0: fusion and alloys
-    Q("cn_fusion", 3, 0, [item(MI + "fusion_reactor"), item(MI + "plasma_turbine")], "A Star in a Box", deps=["t7_creation"], xp=800,
+    Q("cn_fusion", 3, 0, [item(MI + "fusion_reactor"), item(MI + "plasma_turbine")], "A Star in a Box", deps=["cn_fusion_chamber", "cn_qhull"], xp=800,
       tokens=15, choice="pick_late", subtitle="MI's fusion reactor and plasma turbine", desc=[
         "&eWhat:&r MI's fusion reactor makes helium plasma; the plasma turbine turns it into a flood of EU.",
         "&eChemistry:&r D + T → ⁴He + n. MI's reactor turns 1000 mB each of deuterium and tritium into helium plasma and hydrogen.",
-        "&eHow:&r fusion reactor: 6 fusion chambers, a quantum machine hull and 2 quantum circuits in the MI Assembler. The multiblock layout is in JEI and the MI guidebook.",
+        "&eHow:&r fusion reactor: 6 fusion chambers, a quantum machine hull and 2 quantum circuits. Plasma turbine: 4 superconductor coils, 2 quantum circuits, 2 titanium rotors and a quantum hull. The multiblock layout is in JEI and the MI guidebook.",
         "&eTip:&r deuterium-deuterium and helium-3 routes exist too (check JEI under the fusion reactor).",
         PB,
         "&eDeep dive: why fusion is hard&r",
         "Nuclei are positively charged and repel each other. To fuse, they need temperatures over 100 million °C, hotter than the Sun's core.",
         "The Sun manages at 15 million °C only because of its crushing gravity and its sheer size. On Earth we use magnetic bottles (tokamaks) or lasers instead.",
         "In 2022 the US National Ignition Facility got more energy out of a fusion shot than its lasers put in, for the first time."]),
-    Q("cn_superconductor", 5, 0, [item(MI + "superconductor_ingot", 64)], "Sixty-Four Superconductors", deps=["cn_fusion"], xp=800,
+    Q("cn_superconductor", 5, 0, [item(MI + "superconductor_ingot", 64)], "Sixty-Four Superconductors", deps=["t7_creation"], section="A Star in a Box", xp=800,
       tokens=15, items=[(GT, 1)], subtitle="Wire with no resistance at all", desc=[
         "&eWhat:&r a stack of MI superconductor ingots, the material of MI's best cables and coils.",
         "&eChemistry:&r below a critical temperature, a superconductor carries current with zero resistance. Real high-temperature ones, like YBa₂Cu₃O₇, are copper oxides with yttrium and rare earths.",
         "&eHow:&r Mixer: iridium, annealed copper, yttrium and neodymium dusts → superconductor dust. Electric Blast Furnace → hot ingot → Vacuum Freezer.",
-        "&eTip:&r 64 ingots need 64 EBF runs at 128 EU/t. Run several furnaces."]),
-    Q("cn_shining", 7, 0, [item("mekanism_extras:alloy_shining", 8)], "Shining Alloy", deps=["cn_superconductor"], xp=800,
+        "&eTip:&r the fusion chambers alone eat 30 superconductor coils (240 cables). Run several furnaces."]),
+    Q("cn_shining", 7, 0, [item("mekanism_extras:alloy_shining", 8)], "Shining Alloy", deps=["cn_thermo", "cn_nucleo"], xp=800,
       tokens=15, choice="pick_late", subtitle="Mekanism Extras' antimatter alloy", desc=[
         "&eWhat:&r Mekanism Extras' alloys go beyond atomic: radiance → thermonuclear → shining → spectrum. Shining is the first that needs antimatter.",
-        "&eHow:&r enriched thermonuclear material + antimatter in the Nucleosynthesizer gives enriched shining. Turn it into shining infusion and infuse a thermonuclear alloy (check JEI for each step).",
+        "&eHow:&r Nucleosynthesizer: enriched thermonuclear + antimatter → enriched shining. Metallurgic Infuser: thermonuclear alloy + shining infusion → shining alloy (check JEI).",
         "&eTip:&r these alloys build Mekanism Extras' higher tiers of factories, cables and energy cubes."]),
-    Q("cn_atomic", 9, 0, [item(MEK + "alloy_atomic", 64)], "A Stack of Atomic Alloy", deps=["cn_shining"], xp=600,
+    Q("cn_atomic", 9, 0, [item(MEK + "alloy_atomic", 64)], "A Stack of Atomic Alloy", deps=["t7_creation"], section="Beyond Atomic", xp=600,
       tokens=12, items=[(GT, 1)], subtitle="Quantity is its own kind of power", desc=[
         "&eWhat:&r 64 atomic alloys, Mekanism's top standard alloy.",
         "&eHow:&r Metallurgic Infuser: reinforced alloy + refined obsidian dust (check JEI). Each step up uses the alloy before it.",
         "&eTip:&r a Metallurgic Infusing Factory makes this a matter of minutes."]),
     # ---------------------------------------------------------------- right, y=2: Extended Crafting
-    Q("cn_compressor", 3, 2, [item("extendedcrafting:compressor")], "Quantum Compressor", deps=["t7_creation"], xp=500,
+    Q("cn_compressor", 3, 2, [item("extendedcrafting:compressor")], "Quantum Compressor", deps=["cn_ec_parts"], xp=500,
       tokens=10, choice="pick_late", subtitle="Ten thousand of anything, made one", desc=[
         "&eWhat:&r Extended Crafting's Quantum Compressor squeezes huge amounts of one material into a singularity.",
         "&eHow:&r crafting table: black iron ingots, a black iron slate, 2 elite components, 2 elite catalysts and a frame (check JEI).",
@@ -211,13 +213,13 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "Separating them took chemists over a century. Their outer electrons are nearly the same, so their chemistry is nearly the same; only the slow shrinking of the atoms across the row (the lanthanide contraction) tells them apart.",
         "Industry separates them by solvent extraction, hundreds of stages long. Your Fusion Chamber skips all that."]),
     Q("cn_superheavy", -7, 2, [anyof(["chemlib:oganesson", "chemlib:tennessine", "chemlib:livermorium", "chemlib:moscovium", "chemlib:flerovium", "chemlib:nihonium"], 64)],
-      "Island of Stability", deps=["cn_lanthanides"], xp=800, tokens=20, items=[(GT, 2)], subtitle="64 superheavy atoms, elements 113 to 118", desc=[
+      "Island of Stability", deps=["cn_actinides"], xp=800, tokens=20, items=[(GT, 2)], subtitle="64 superheavy atoms, elements 113 to 118", desc=[
         "&eWhat:&r any 64 of the six newest elements: nihonium, flerovium, moscovium, livermorium, tennessine and oganesson.",
         "&eChemistry:&r all six were made in the last 25 years, a few atoms at a time, and decay within seconds or less.",
         "&eHow:&r Alchemistry Fusion Chamber. Automate the inputs and let it run.",
         "&eTip:&r physicists predict an 'island of stability' near 114 protons and 184 neutrons, where superheavy nuclei might last much longer. No one has reached it yet."]),
     # ---------------------------------------------------------------- finale
-    Q("cn_demigod", 0, 7, [tick()], "Demigod", deps=["cn_terraformer", "cn_quantum_armor", "cn_atomic", "cn_ec_singularity", "cn_bio_space", "cn_superheavy", "cn_echo"],
+    Q("cn_demigod", 0, 7, [tick()], "Demigod", deps=["cn_terraformer", "cn_quantum_armor", "cn_shining", "cn_ec_singularity", "cn_bio_space", "cn_superheavy", "cn_echo"],
       xp=5000, size=2.0, shape="gear", tokens=30, loot="boss", items=[(GT, 5)], subtitle="Nothing left to remember", desc=[
         "&6You don't remember being this any more. You simply are.&r",
         "&eWhat:&r you've planted the Seed, walked every world, built armour from a collapsed star, and held the whole periodic table.",
@@ -236,7 +238,7 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&eTip:&r it's rare. If you found it by chance, consider it a gift."]),
 
     # ---------------------------------------------------------------- ATM10-aligned additions (2026-10-19)
-    Q("cn_ultradense", 3, -3, [item(MI + "ultradense_metal_ball")], "Ultradense Metal Ball", deps=["t7_creation"], xp=500,
+    Q("cn_ultradense", 3, -3, [item(MI + "ultradense_metal_ball")], "Ultradense Metal Ball", deps=["cn_tungsten_large"], xp=500,
       tokens=10, subtitle="The heaviest thing you can hold", desc=[
         "&eWhat:&r the core that 64 nukes crush into a singularity.",
         "&eChemistry:&r tungsten, lead and iridium are among the densest metals there are. Iridium and osmium tie for the record at about 22.6 g/cm³, twice as dense as lead.",
@@ -246,4 +248,99 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&eWhat:&r MI's quantum sword: the MI guidebook claims it vaporises anything it hits.",
         "&eHow:&r MI Packer: netherite sword + 1 quantum upgrade, at the same huge draw as the armour (check JEI).",
         "&eTip:&r a quantum upgrade is a lot to spend on a sword. Finish the armour first."]),
+
+    # ===== ATM10-style detail pass (2026-10-19) =====
+    Q("cn_charged_cores", 0, 0, [item("kubejs:energy_core", 2)], "Two Charged Cores", deps=["t7_creation"], xp=300,
+      tokens=5, subtitle="The Terraformer's battery", desc=[
+        "&eWhat:&r the Terraformer is built around 2 charged Energy Cores, and every 9 chunks it reshapes burns one more.",
+        "&eHow:&r empty core (4 stainless plates, 4 polonium pellets, a processing unit) → MI Assembler at 512 EU/t for 6000 ticks.",
+        "&eTip:&r keep the charging Assembler running for the rest of the game."]),
+    # --- the nuke
+    Q("cn_tnt", 0, 0, [item(MI + "industrial_tnt", 64)], "A Stack of Industrial TNT", deps=["t7_creation"], xp=300,
+      tokens=5, section="Collapse", subtitle="Six per pair of nukes", desc=[
+        "&eWhat:&r 32 nuke crafts take 192 Industrial TNT. Start with a stack.",
+        "&eChemistry:&r nitrogen compounds store energy because the N≡N triple bond they release is so stable. Making N₂ again sets it all free at once.",
+        "&eHow:&r Mixer: 4 sand + 3 flint + 250 mB toluene + 1000 mB nitrogen → 4 TNT."]),
+    Q("cn_pu_ingots", 0, 0, [item(MI + "plutonium_ingot", 16)], "Plutonium Ingots", deps=["t7_creation"], xp=300,
+      tokens=5, subtitle="Four per pair of nukes", desc=[
+        "&eWhat:&r 32 nuke crafts take 128 plutonium ingots. This is the first eighth.",
+        "&eChemistry:&r plutonium metal has six different crystal forms between room temperature and its melting point, more than any other element.",
+        "&eHow:&r Electric Blast Furnace (128 EU/t): 1 plutonium dust → 1 ingot. The dust comes from centrifuging depleted fuel rods."]),
+    Q("cn_dt", 0, 0, [item(MI + "deuterium_bucket"), item(MI + "tritium_bucket")], "Deuterium and Tritium", deps=["t7_creation"], xp=300,
+      tokens=5, subtitle="Heavy hydrogen, both kinds", desc=[
+        "&eWhat:&r every nuke craft takes 100 mB deuterium and 50 mB tritium; the fusion reactor burns both by the bucket.",
+        "&eChemistry:&r deuterium has one neutron, tritium two. Tritium is radioactive (half-life about 12 years), so nature has almost none.",
+        "&eHow:&r Centrifuge hydrogen, or let the Nuclear Reactor's fluid hatches turn hydrogen and deuterium into heavier isotopes (check JEI)."]),
+    Q("cn_first_nukes", 0, 0, [item(MI + "nuke", 2)], "The First Two", deps=["cn_tnt", "cn_pu_ingots", "cn_dt"], xp=400,
+      tokens=8, subtitle="One craft, two nukes", desc=[
+        "&eWhat:&r one Assembler run of MI's nuke recipe.",
+        "&eHow:&r Assembler at 32 EU/t: 6 industrial TNT, 4 plutonium ingots, 2 processing units, 4 nuclear alloy plates, 100 mB deuterium and 50 mB tritium → 2 nukes.",
+        "&eTip:&r 31 more runs to go. Automate the inputs before you start."]),
+    Q("cn_tungsten_large", 0, 0, [item(MI + "tungsten_large_plate", 4)], "Tungsten Large Plates", deps=["t7_creation"], xp=300,
+      tokens=5, subtitle="The shell of the ultradense ball", desc=[
+        "&eWhat:&r the ultradense metal ball is wrapped in 4 tungsten large plates.",
+        "&eChemistry:&r tungsten is almost as dense as gold (19.3 g/cm³) and has the highest melting point of any metal, 3422 °C.",
+        "&eHow:&r Implosion Compressor makes tungsten ingots; Compressor → plates; 4 plates → 1 large plate."]),
+    # --- the quantum upgrade
+    Q("cn_ha_upgrades", 0, 0, [item(MI + "highly_advanced_upgrade", 32)], "Thirty-Two Upgrades", deps=["t7_creation"], xp=600,
+      tokens=10, section="Quantum Armour", subtitle="The bulk of a quantum upgrade", desc=[
+        "&eWhat:&r every quantum upgrade eats 32 highly advanced upgrades.",
+        "&eHow:&r Assembler: 8 large advanced motors, 4 large advanced pumps, 4 turbo upgrades, a processing unit board and 2500 mB PVC → 4. Eight runs.",
+        "&eTip:&r the Electrochemistry, Petrochemistry and Materials side quests walk through basic, advanced and turbo upgrades."]),
+    Q("cn_qc8", 0, 0, [item(MI + "quantum_circuit", 8), item(MI + "quantum_circuit_board")], "Eight More Quantum Circuits", deps=["t7_creation"], xp=600,
+      tokens=10, subtitle="Plus a spare board", desc=[
+        "&eWhat:&r a quantum upgrade takes 8 quantum circuits and 1 quantum circuit board on top.",
+        "&eHow:&r the same line that fed your Antimatter Cores. Helium-3 and iridium plates are the slow inputs."]),
+    Q("cn_netherite", 0, 0, [item("minecraft:netherite_helmet"), item("minecraft:netherite_chestplate"), item("minecraft:netherite_leggings"), item("minecraft:netherite_boots")],
+      "Netherite Set", deps=["t7_creation"], xp=300, tokens=5, subtitle="The base of quantum armour", desc=[
+        "&eWhat:&r each quantum armour piece is a netherite piece plus a quantum upgrade.",
+        "&eHow:&r diamond armour + netherite ingot + netherite upgrade template in a smithing table."]),
+    # --- fusion
+    Q("cn_qhull", 0, 0, [item(MI + "quantum_machine_hull", 2)], "Quantum Hulls", deps=["t7_creation"], xp=500,
+      tokens=8, subtitle="One for the reactor, one for the turbine", desc=[
+        "&eWhat:&r the IV machine hull. The fusion reactor and the plasma turbine each sit on one.",
+        "&eHow:&r quantum machine casing (8 iridium plates around an EV hull) + a quantum circuit + 2 plutonium batteries + 3 superconductor cable."]),
+    Q("cn_sc_coil", 0, 0, [item(MI + "superconductor_coil", 8)], "Superconductor Coils", deps=["cn_superconductor"], xp=500,
+      tokens=8, subtitle="The magnetic bottle", desc=[
+        "&eWhat:&r coils of superconductor cable hold the plasma in place.",
+        "&eChemistry:&r a superconductor carries enormous current with no loss, so it makes the strongest steady magnets we can build. Real tokamaks like ITER use niobium-tin coils cooled by liquid helium.",
+        "&eHow:&r 8 superconductor cable → 1 coil."]),
+    Q("cn_plasma_casing", 0, 0, [item(MI + "plasma_handling_iridium_machine_casing", 6)], "Plasma Casings", deps=["cn_sc_coil"], xp=500,
+      tokens=8, subtitle="Iridium around a coil", desc=[
+        "&eWhat:&r every fusion chamber holds one plasma-handling casing.",
+        "&eHow:&r 8 iridium plates around a superconductor coil."]),
+    Q("cn_large_hx", 0, 0, [item(MI + "large_heat_exchanger", 2)], "Large Heat Exchangers", deps=["t7_creation"], xp=500,
+      tokens=8, subtitle="Carry the heat out of the chamber", desc=[
+        "&eWhat:&r each fusion chamber needs 2. Six chambers, twelve exchangers.",
+        "&eHow:&r 2 small heat exchangers, a large advanced pump, 2 aluminum rotors and 4 invar gears."]),
+    Q("cn_fusion_chamber", 0, 0, [item(MI + "fusion_chamber", 6)], "Six Fusion Chambers", deps=["cn_plasma_casing", "cn_large_hx"], xp=800,
+      tokens=12, subtitle="The ring of the reactor", desc=[
+        "&eWhat:&r the fusion reactor controller takes six.",
+        "&eHow:&r 4 superconductor coils, 2 large heat exchangers, 2 nuclear alloy large plates and a plasma casing each."]),
+    # --- Mekanism Extras alloys
+    Q("cn_radiance", 0, 0, [item("mekanism_extras:alloy_radiance", 4)], "Radiance Alloy", deps=["cn_atomic"], xp=500,
+      tokens=8, subtitle="Glowstone and uranium oxide", desc=[
+        "&eWhat:&r the first alloy past atomic.",
+        "&eHow:&r Osmium Compressor: glowstone dust + uranium oxide gas → radiance dust. Enrichment Chamber → enriched radiance. Metallurgic Infuser: atomic alloy + radiance infusion → radiance alloy."]),
+    Q("cn_thermo", 0, 0, [item("mekanism_extras:alloy_thermonuclear", 4)], "Thermonuclear Alloy", deps=["cn_radiance"], xp=600,
+      tokens=10, subtitle="Born in superheated sodium", desc=[
+        "&eWhat:&r the alloy between radiance and shining.",
+        "&eHow:&r Pressurized Reaction Chamber: lava + superheated sodium → molten thermonuclear; then enriched radiance + lava + molten thermonuclear → enriched thermonuclear. Infuse a radiance alloy with it (check JEI).",
+        "&eTip:&r superheated sodium comes from a sodium-cooled fission reactor."]),
+    Q("cn_spectrum", 0, 0, [item("mekanism_extras:alloy_spectrum")], "Spectrum Alloy", deps=["cn_shining"], xp=800,
+      optional=True, tokens=3, items=[(GT, 1)], subtitle="Optional: the last alloy", desc=[
+        "&eWhat:&r the top of Mekanism Extras' alloy ladder.",
+        "&eHow:&r Metallurgic Infuser: shining alloy + spectrum infusion (check JEI for where the infusion comes from)."]),
+    # --- Extended Crafting
+    Q("cn_ec_parts", 0, 0, [item("extendedcrafting:elite_component"), item("extendedcrafting:elite_catalyst", 2), item("extendedcrafting:frame")], "Compressor Parts", deps=["t7_creation"], xp=300,
+      tokens=5, section="Singularities", subtitle="Elite components and a frame", desc=[
+        "&eWhat:&r the Quantum Compressor needs an elite component, 2 elite catalysts and a frame.",
+        "&eHow:&r elite component: black iron slate, luminessence and 2 diamonds. Catalyst: 4 elite components around a black iron ingot (check JEI for the frame)."]),
+    # --- the rarest elements
+    Q("cn_actinides", 0, 0, [anyof(ACTINIDES, 64)], "The Actinides", deps=["cn_lanthanides"], xp=700,
+      tokens=15, items=[(GT, 1)], subtitle="64 of any element 89 to 103", desc=[
+        "&eWhat:&r any 64 actinides from ChemLib: actinium through lawrencium.",
+        "&eChemistry:&r every actinide is radioactive. Only thorium and uranium last long enough to be mined; everything past uranium was first made in reactors and accelerators.",
+        "&eHow:&r Fusion Chamber, or split heavier elements in the Fission Chamber (check JEI).",
+        "&eTip:&r americium-241 is in most household smoke detectors: a fraction of a microgram each."]),
 ], links=[("t7_seed", -3, 0), ("t7_opt_nucleo", 3, -6)])

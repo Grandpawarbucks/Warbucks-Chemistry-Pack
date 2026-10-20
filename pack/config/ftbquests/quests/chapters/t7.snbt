@@ -12,9 +12,9 @@
 	quests: [
 		{
 			id: "7F5D0246011FE307"
-			x: 5.5d
-			y: -2.5d
-			shape: "square"
+			x: 6.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"009FBA775299B910"
@@ -48,12 +48,16 @@
 		}
 		{
 			id: "2D71A1E8E2859236"
-			x: 1.5d
-			y: -4.5d
+			x: 16.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
-				"7F5D0246011FE307"
+				"61523CE96DFF035F"
+				"74E75282187BBBDB"
+				"267AD1619973D069"
+				"632B1C7B9603E35E"
 			]
 			tasks: [
 				{
@@ -111,12 +115,13 @@
 		}
 		{
 			id: "06F69B817832C614"
-			x: 5.5d
-			y: -4.5d
-			shape: "square"
+			x: 20.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
-				"7F5D0246011FE307"
+				"4EC783427EFDC360"
+				"3B09953F94C52113"
 			]
 			tasks: [
 				{
@@ -156,12 +161,13 @@
 		}
 		{
 			id: "494D2FBE3172520A"
-			x: 5.5d
-			y: -6.5d
-			shape: "square"
+			x: 22.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"06F69B817832C614"
+				"47A0C8FA79699AB0"
 			]
 			tasks: [
 				{
@@ -210,12 +216,13 @@
 		}
 		{
 			id: "6DDB2C2ACDAA5443"
-			x: 1.5d
-			y: -6.5d
+			x: 22.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
-				"2D71A1E8E2859236"
+				"6C7D6DE142EE3F93"
 			]
 			tasks: [
 				{
@@ -246,10 +253,11 @@
 		}
 		{
 			id: "44A4B4888AF3AF27"
-			x: 3.5d
-			y: -6.5d
+			x: 6.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
 				"7F5D0246011FE307"
 				"7CB7FF40BB33AD8F"
@@ -283,8 +291,8 @@
 		}
 		{
 			id: "0C1DD95BA033EAB3"
-			x: 5.5d
-			y: -8.5d
+			x: 24.0d
+			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -331,8 +339,8 @@
 		}
 		{
 			id: "1B2FF1921BFAFACF"
-			x: 7.5d
-			y: -10.5d
+			x: 24.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -377,8 +385,8 @@
 		}
 		{
 			id: "17759B5826DD9CB6"
-			x: 9.0d
-			y: -12.5d
+			x: 24.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -414,12 +422,14 @@
 		}
 		{
 			id: "243C3A96FE99DD8D"
-			x: 11.0d
-			y: 2.5d
+			x: 28.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"69D67DF12EE0C400"
+				"1F9FB98489AD3CB8"
+				"337E7617284AA92C"
+				"5AEF9772995532C8"
 			]
 			tasks: [
 				{
@@ -459,11 +469,11 @@
 		}
 		{
 			id: "1CB50F40C6DA26D6"
-			x: 11.0d
-			y: 4.0d
+			x: 30.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
+			hide_dependent_lines: true
 			dependencies: [
 				"243C3A96FE99DD8D"
 			]
@@ -496,8 +506,8 @@
 		}
 		{
 			id: "1E6BA9227B6B280F"
-			x: 5.5d
-			y: -10.5d
+			x: 32.0d
+			y: 0.0d
 			shape: "gear"
 			size: 2.0d
 			dependencies: [
@@ -547,8 +557,8 @@
 		}
 		{
 			id: "25E45CBEE34D9D34"
-			x: 14.5d
-			y: -2.0d
+			x: 36.0d
+			y: -4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -583,8 +593,8 @@
 		}
 		{
 			id: "4EF6FFBCA6DD55AD"
-			x: 14.5d
-			y: -3.5d
+			x: 36.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -619,7 +629,7 @@
 		}
 		{
 			id: "39868F66D40B59DD"
-			x: 12.0d
+			x: 36.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
@@ -662,8 +672,8 @@
 		}
 		{
 			id: "37BAEF06294D5602"
-			x: 9.0d
-			y: -10.5d
+			x: 24.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -699,8 +709,8 @@
 		}
 		{
 			id: "17ABF0CEA1A27F7B"
-			x: 10.5d
-			y: -10.5d
+			x: 26.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -732,8 +742,8 @@
 		}
 		{
 			id: "3AC9108E8851EEA2"
-			x: 12.0d
-			y: -10.5d
+			x: 26.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -785,8 +795,8 @@
 		}
 		{
 			id: "2DD64AE9BEF9A844"
-			x: 7.5d
-			y: -8.5d
+			x: 22.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -832,8 +842,8 @@
 		}
 		{
 			id: "5F38F7B1EF8C809A"
-			x: 3.0d
-			y: 2.5d
+			x: 0.0d
+			y: -6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -874,8 +884,8 @@
 		}
 		{
 			id: "4E04F8FE399BBE55"
-			x: 4.0d
-			y: -12.5d
+			x: 32.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -911,9 +921,9 @@
 		}
 		{
 			id: "1A9E3337C7DEAE2B"
-			x: 0.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 2.0d
+			y: -8.0d
+			shape: "square"
 			size: 1.0d
 			hide_dependency_lines: true
 			dependencies: [
@@ -949,9 +959,9 @@
 		}
 		{
 			id: "75E50688ECDFF583"
-			x: 2.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 4.0d
+			y: -8.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"1A9E3337C7DEAE2B"
@@ -986,13 +996,14 @@
 		}
 		{
 			id: "647752E13B8E7FFC"
-			x: 4.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 2.0d
+			y: 2.0d
+			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
+				"781F6CAF5F4C04B9"
 				"75E50688ECDFF583"
-				"2C530BDB9215DABC"
 			]
 			tasks: [
 				{
@@ -1032,8 +1043,8 @@
 		}
 		{
 			id: "72071E03AD4FE648"
-			x: 3.5d
-			y: -4.5d
+			x: 6.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -1077,10 +1088,11 @@
 		}
 		{
 			id: "5D33AA216320D3F3"
-			x: 4.5d
-			y: 2.5d
+			x: 4.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"0912E79710C67213"
 			]
@@ -1113,16 +1125,15 @@
 		}
 		{
 			id: "4384A7C5B8E334FB"
-			x: 6.5d
-			y: 2.5d
+			x: 4.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
 			dependencies: [
 				"647752E13B8E7FFC"
 				"72071E03AD4FE648"
 				"5D33AA216320D3F3"
+				"688CAAECBD19E29C"
 			]
 			tasks: [
 				{
@@ -1153,10 +1164,11 @@
 		}
 		{
 			id: "32F2BF68A18309D7"
-			x: 6.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 0.0d
+			y: 2.0d
+			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"647752E13B8E7FFC"
 				"41BE4334905A4A11"
@@ -1190,11 +1202,10 @@
 		}
 		{
 			id: "12237BFAFD2ECDED"
-			x: 8.5d
-			y: 2.5d
+			x: 4.0d
+			y: 6.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"50D273F200006CD0"
 			]
@@ -1227,13 +1238,14 @@
 		}
 		{
 			id: "2668316C90F7DEAA"
-			x: 8.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 0.0d
+			y: 6.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"32F2BF68A18309D7"
 				"12237BFAFD2ECDED"
+				"05DCDF8E7AE0C37C"
 			]
 			tasks: [
 				{
@@ -1264,10 +1276,12 @@
 		}
 		{
 			id: "53D0FAD0F5540C32"
-			x: 10.0d
-			y: 0.0d
+			x: 4.0d
+			y: 8.0d
 			shape: "hexagon"
 			size: 1.5d
+			hide_dependency_lines: true
+			hide_dependent_lines: true
 			dependencies: [
 				"2668316C90F7DEAA"
 				"4384A7C5B8E334FB"
@@ -1314,14 +1328,15 @@
 		}
 		{
 			id: "23EA3647A908E952"
-			x: 16.0d
-			y: -2.0d
+			x: 0.0d
+			y: 8.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
 			hide_dependency_lines: true
 			dependencies: [
 				"53D0FAD0F5540C32"
+				"1EA8E5E4724F249F"
 			]
 			tasks: [
 				{
@@ -1350,81 +1365,791 @@
 				}
 			]
 		}
+		{
+			id: "6C7D6DE142EE3F93"
+			x: 10.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7F5D0246011FE307"
+			]
+			tasks: [
+				{
+					id: "54B22A3D06B9BE2A"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(ad_astra:steel_plates)"
+						}
+					}
+					count: 32L
+				}
+				{
+					id: "110A757EF4BBD2D2"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(ad_astra:steel_blocks)"
+						}
+					}
+					count: 7L
+				}
+			]
+			rewards: [
+				{
+					id: "01567F86C897AD10"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "597800C093DFD525"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "61523CE96DFF035F"
+			x: 10.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6C7D6DE142EE3F93"
+			]
+			tasks: [
+				{
+					id: "10FF14E9EB3751C7"
+					type: "item"
+					item: {
+						id: "ad_astra:rocket_nose_cone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "60835EE775242471"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6BECA0D649FEA8CA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "74E75282187BBBDB"
+			x: 12.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6C7D6DE142EE3F93"
+			]
+			tasks: [
+				{
+					id: "364775965D6B37E8"
+					type: "item"
+					item: {
+						id: "ad_astra:rocket_fin"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "29381DE39526CCFD"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "66846DC264349932"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "4EC783427EFDC360"
+			x: 12.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"7F5D0246011FE307"
+			]
+			tasks: [
+				{
+					id: "5AC27F6CF4A9C8DA"
+					type: "item"
+					item: {
+						id: "ad_astra:gas_tank"
+						count: 1
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "478E3AC577AA5011"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2898B1CE82C741D6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "267AD1619973D069"
+			x: 12.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"4EC783427EFDC360"
+				"6C7D6DE142EE3F93"
+			]
+			tasks: [
+				{
+					id: "2A7C53F26F2DC92B"
+					type: "item"
+					item: {
+						id: "ad_astra:steel_tank"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "168F96417EA84B67"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "62B8CA566077BA92"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "3B09953F94C52113"
+			x: 18.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"6C7D6DE142EE3F93"
+			]
+			tasks: [
+				{
+					id: "6766020D8A192EA6"
+					type: "item"
+					item: {
+						id: "ad_astra:fan"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "512DAEA51E0C257B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "175CF10162726F22"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "43B9E13767C30682"
+			x: 14.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6C7D6DE142EE3F93"
+			]
+			tasks: [
+				{
+					id: "1914A1F026768E39"
+					type: "item"
+					item: {
+						id: "ad_astra:engine_frame"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "12AB77FD7163B6FB"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6613FA1314B3C2AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "632B1C7B9603E35E"
+			x: 18.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"43B9E13767C30682"
+				"3B09953F94C52113"
+			]
+			tasks: [
+				{
+					id: "7328A171EE1A0884"
+					type: "item"
+					item: {
+						id: "ad_astra:steel_engine"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2C6AB6E54EE21DDF"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "13899A08315AEB50"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "47A0C8FA79699AB0"
+			x: 20.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"6C7D6DE142EE3F93"
+			]
+			tasks: [
+				{
+					id: "7D6EB30C252DD254"
+					type: "item"
+					item: {
+						id: "ad_astra:oxygen_gear"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3E85FE60EE45EA8D"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "418F9A99C0CEC208"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6150D1C981380BDD"
+			x: 30.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"4B32EEF0B09F51CB"
+			]
+			tasks: [
+				{
+					id: "29194714006EC867"
+					type: "item"
+					item: {
+						id: "mekanism:hdpe_sheet"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "76234AE9B22CD339"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "5720BB88047E4113"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "1F9FB98489AD3CB8"
+			x: 28.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"6150D1C981380BDD"
+				"69D67DF12EE0C400"
+			]
+			tasks: [
+				{
+					id: "6480D405EE5ACCC6"
+					type: "item"
+					item: {
+						id: "mekanism:sps_casing"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4BDA0E12D3603980"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "166565F4E5F7C875"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "337E7617284AA92C"
+			x: 4.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
+			dependencies: [
+				"4F4B814D55858228"
+				"4C1246CDEE81ED65"
+			]
+			tasks: [
+				{
+					id: "0BFD6F1E352559AD"
+					type: "item"
+					item: {
+						id: "mekanism:laser"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1E1A672030E69918"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "091298DDC960E949"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6AA2AE9C9E9B347D"
+			x: 6.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"2C530BDB9215DABC"
+				"30C3A897D0CE563A"
+				"50D273F200006CD0"
+			]
+			tasks: [
+				{
+					id: "5DB3528DD7F89788"
+					type: "item"
+					item: {
+						id: "modern_industrialization:superconductor_dust"
+						count: 1
+					}
+					count: 9L
+				}
+			]
+			rewards: [
+				{
+					id: "4DD4440E030CDFA2"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "2E4474D7DBE7EDB3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6B8CBB0B7768D95A"
+			x: 4.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6AA2AE9C9E9B347D"
+				"670B5856D35E61A3"
+			]
+			tasks: [
+				{
+					id: "171E0FEC6163B141"
+					type: "item"
+					item: {
+						id: "modern_industrialization:superconductor_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "5F57C9D014F71F43"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "72DA66718C8F54C2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "781F6CAF5F4C04B9"
+			x: 2.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"6B8CBB0B7768D95A"
+			]
+			tasks: [
+				{
+					id: "45905D23A79400AF"
+					type: "item"
+					item: {
+						id: "modern_industrialization:superconductor_plate"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "56149ECD93714621"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6AB75276E6A8F52C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "05DCDF8E7AE0C37C"
+			x: 4.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"7981F4614531D764"
+				"2C530BDB9215DABC"
+			]
+			tasks: [
+				{
+					id: "40A768DCEFFD7FAC"
+					type: "item"
+					item: {
+						id: "modern_industrialization:iridium_plate"
+						count: 1
+					}
+					count: 6L
+				}
+			]
+			rewards: [
+				{
+					id: "21172C793C536803"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0DB158590CE3FA02"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "1EA8E5E4724F249F"
+			x: 6.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"05DCDF8E7AE0C37C"
+			]
+			tasks: [
+				{
+					id: "317DF186FF3BF7F3"
+					type: "item"
+					item: {
+						id: "modern_industrialization:quantum_machine_casing"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "33B2AA0691DC8C15"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6DA5530A4519FA56"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
 	]
 	images: [
 		{
 			id: "2E326B1FEA8E4F46"
-			x: -2.0d
-			y: -17.5d
+			x: 2.5d
+			y: -11.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/t7.png"
 		}
 		{
-			id: "3FE68341BC5BCDB5"
-			x: -1.25d
-			y: 2.25d
-			width: 7.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t7_from_venus_and_mercury.png"
-		}
-		{
-			id: "3AA77D8E1749B786"
-			x: 6.7125d
-			y: -13.5d
-			width: 11.425d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t7_leaving_the_cradle.png"
-		}
-		{
-			id: "32E4742EE3C6C360"
-			x: 17.0d
-			y: -4.625d
-			width: 6.0d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t7_empty_energy_core.png"
-		}
-		{
-			id: "5EAFB1224FD2F41D"
-			x: 15.0d
-			y: 2.25d
+			id: "6E64288BD6692052"
+			x: 2.75d
+			y: 9.375d
 			width: 6.5d
 			height: 0.75d
 			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/t7_supercritical_phase.png"
+			image: "warbucks:textures/quests/sections/t7_superconductor_dust.png"
+		}
+		{
+			id: "2D2C9665DEABAD7F"
+			x: 4.75d
+			y: -9.125d
+			width: 6.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t7_the_quantum_circuit.png"
+		}
+		{
+			id: "76A6957B28D31EF2"
+			x: 11.5d
+			y: 3.125d
+			width: 4.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t7_launch_pad.png"
+		}
+		{
+			id: "17FCE894FCBFC36E"
+			x: 17.5d
+			y: 3.125d
+			width: 4.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t7_the_rocket.png"
+		}
+		{
+			id: "50330AB94DA24387"
+			x: 25.075d
+			y: 5.05d
+			width: 3.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t7_desh.png"
+		}
+		{
+			id: "1B1F9522B6D2B425"
+			x: 29.5d
+			y: 5.125d
+			width: 4.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t7_antimatter.png"
+		}
+		{
+			id: "1E0971A547A421F8"
+			x: 37.75d
+			y: -5.125d
+			width: 4.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/t7_energy_cores.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "32F3401A61422DCF"
 			linked_quest: "3A6618C9323E34D8"
-			x: -4.5d
-			y: -15.5d
+			x: 0.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "5F2C6E5487E5A697"
+			linked_quest: "009FBA775299B910"
+			x: 0.0d
+			y: 0.0d
+			size: 1.0d
+		}
+		{
+			id: "1D480ECA9AB356F6"
+			linked_quest: "69D67DF12EE0C400"
+			x: 34.0d
+			y: -4.0d
+			size: 1.0d
+		}
+		{
+			id: "4576061DC1459E20"
+			linked_quest: "0371D774272DB515"
+			x: 0.0d
+			y: -4.0d
 			size: 1.0d
 		}
 		{
 			id: "596641ECA8625C49"
 			linked_quest: "4EB7F33F66AC90E1"
-			x: -2.0d
-			y: 0.0d
+			x: 0.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "0B0FEA80693F10B9"
+			linked_quest: "0912E79710C67213"
+			x: 2.0d
+			y: -2.0d
 			size: 1.0d
 		}
 		{
 			id: "3C3071B6FFA20F4E"
 			linked_quest: "50D273F200006CD0"
-			x: -3.5d
-			y: 0.0d
+			x: 6.0d
+			y: 6.0d
 			size: 1.0d
 		}
 		{
-			id: "309ED1CE477DB4A9"
-			linked_quest: "1CB50F40C6DA26D6"
-			x: 4.0d
-			y: -8.5d
+			id: "7AC307595C2D7507"
+			linked_quest: "4B32EEF0B09F51CB"
+			x: 32.0d
+			y: 4.0d
+			size: 1.0d
+		}
+		{
+			id: "1BCB73881741C23F"
+			linked_quest: "4F4B814D55858228"
+			x: 2.0d
+			y: -4.0d
+			size: 1.0d
+		}
+		{
+			id: "7C8923A7629A5371"
+			linked_quest: "7981F4614531D764"
+			x: 2.0d
+			y: -6.0d
 			size: 1.0d
 		}
 	]

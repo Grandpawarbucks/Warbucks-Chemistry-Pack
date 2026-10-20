@@ -4,8 +4,9 @@ build_quests.py calls apply(chapter) for every chapter before writing it. Writer
 v11 (apply): the chapter is split into SECTIONS (_sections), each laid out as its own small drawing with the
 v10 engine below (_apply_once, per connected group), turned top-down for "tree"/"grid" pages, then arranged on
 the page by the chapter's style ("spine", "tree", "grid"; see the sections block further down) or shape motif
-(v12: "winding", "radial", "molecule"; see the motifs block), with header images (chapter.sections), hidden
-lines (q.hide_lines / q.hide_dependents) and a last nudge pass. The v10
+(v12: "winding", "radial", "molecule"; v13: "comb"; see the motifs blocks), with header images (chapter.sections),
+hidden lines (q.hide_lines / q.hide_dependents) and a last nudge pass. A comb page is drawn quest by quest on a
+2-cell grid (_comb_page) instead of block by block; its sections only name and label it. The v10
 whole-chapter drawing described next is still there as apply_legacy (the report's "before" column).
 FTB draws every dependency as one straight line (also from a quest link to its dependents here), so the goal
 is lines that don't run through other quests, cross little and stay short. It is a Sugiyama-style drawing:
@@ -738,7 +739,7 @@ import re
 
 DEFAULT_STYLE = "tree"
 SEC_MIN, SEC_IDEAL, SEC_MAX = 4, 9, 14   # section sizes (quests)
-HUB = {"spine": 6, "tree": 6, "grid": 4, "winding": 6, "radial": 99, "molecule": 6}  # dependents that make a
+HUB = {"spine": 6, "tree": 6, "grid": 4, "winding": 6, "radial": 99, "molecule": 6, "comb": 10}  # dependents that make a
 # quest a hub (its fan's lines are hidden; radial pages draw the hub's spokes, they are short)
 HEAD_H = 0.75      # section header image height (cells)
 HEAD_PAD = 0.25    # header bottom to the top edge of the section's quests
@@ -1190,7 +1191,9 @@ def _free_spot(x, y, taken, lo_x=None):
 #               quests (benzene-like hexagons, ring order = dependency order) joined by bonds, with short chains
 #               (substituents) pointing outward. A ring's closing side isn't a dependency, so FTB draws no line there.
 # BLOCK_KIND (quest_data.BLOCKS) can also ask for molecule-shaped sections on a winding page (e.g. t4, t6).
-MOTIF_BASE = {"spine": "spine", "tree": "tree", "grid": "grid", "winding": "spine", "radial": "tree", "molecule": "tree"}
+# v13 adds "comb" (the default since 2026-10-19), ATM10's main-questline grammar: see the comb block below.
+MOTIF_BASE = {"spine": "spine", "tree": "tree", "grid": "grid", "winding": "spine", "radial": "tree", "molecule": "tree",
+              "comb": "spine"}
 WIND_ROWS = (4, 5, 6, 7)   # spine quests per row tried
 WIND_PITCH = (2.0, 2.5)    # spine pitch tried (cells)
 WIND_GAP = 3.0             # minimum distance between two spine rows
@@ -1978,6 +1981,830 @@ def _radial_page(secs, byk, idx, mk, header, gx, hub_min=4):
     return P, blocks, heads
 
 
+# --- "comb" motif (v13) -------------------------------------------------------------------------
+# The grammar of ATM10's hand-made main questline ("The Beginning"), as an algorithm (never its coordinates):
+# - ONE straight horizontal spine on y = 0 (the longest required chain). A spine longer than COMB_WRAP quests wraps
+#   into 2-3 stacked rows that run back and forth (a serpentine), joined by one straight vertical step.
+# - Everything else hangs off its spine quest as a "tooth": a small tree that grows straight down (or up, the side
+#   is picked to balance the page) on a 2-cell grid. Each quest is placed next to the quest it hangs from at the
+#   free grid spot whose lines are horizontal or vertical (45 degrees when nothing straight is free), so a chain
+#   runs straight down and side branches leave it at right angles. Deep teeth turn sideways (L shapes).
+# - Spine quests are spread apart only as far as their teeth need (teeth interlock without touching).
+# - Quest links sit one cell from the quest they feed; a quest whose deps are all in other chapters gets a link to
+#   its first dep (so nothing floats). Loose groups (no line to the spine) go in a tidy row under the page.
+# - Section headers label the spine from outside: above or below the teeth of their section, spanning them.
+COMB_WRAP = 16        # a spine of more quests than this wraps into 2-3 stacked rows
+COMB_DEEP = 8.0       # a tooth deeper than this (cells below the spine) pays extra per row: it turns sideways
+COMB_PAD = 0.75       # clearance between two teeth (edge to edge, cells)
+COMB_R = 8            # search radius (cells) around a quest's anchor for a free grid spot
+COMB_TARGET = (30.0, 16.0)
+COMB_FLOAT_MAX = 10.0  # a quest left without lines gets them back unless one is longer than this (or crosses 3+)
+COMB_TOOTH_W = 0.02   # spine packing: weight of a tooth's own cost (slanted lines, size) against spreading the spine
+COMB_GRID = 2.0       # spine quests (and so their teeth) sit on this grid  # page size the comb aims for (ATM10's "The Beginning" is about 30 x 14)
+
+
+def _ortho(p, q):
+    return abs(p[0] - q[0]) < 0.1 or abs(p[1] - q[1]) < 0.1
+
+
+def _edge_cost(p, q):
+    """How much a line from p to q costs on a comb page: straight lines are cheap, 45 degrees costs some, other
+    slants more, and length counts (lines over MAX_EDGE cells extra)."""
+    dx, dy = abs(p[0] - q[0]), abs(p[1] - q[1])
+    L = math.hypot(dx, dy)
+    extra = 4.0 + 0.5 * (L - MAX_EDGE) if L > MAX_EDGE + 1e-9 else 0.0
+    if dx < 0.1 or dy < 0.1:
+        return 0.3 * L + extra
+    if abs(dx - dy) < 0.1:
+        return 3.0 + 0.3 * L + extra
+    return 6.0 + 0.3 * L + extra
+
+
+def _comb_graph(byk, idx, parents, order, spine, links, book):
+    """The comb's view of a chapter. Nodes: quests and ("link", key). Returns (edges, tp, entry):
+    edges = every line FTB draws here as (dependency node, dependent node); tp = the node each non-spine node
+    hangs from (None: a root); entry = links that feed the first spine quest (they sit left of it)."""
+    lset = set(links)
+    btn = lambda d: ("link", d) if d in lset else (d if d in byk else None)
+    edges = []
+    for k in byk:
+        for d in dict.fromkeys(byk[k].deps):
+            b = btn(d)
+            if b is not None and b != k:
+                edges.append((b, k))
+    for lk in links:
+        L = ("link", lk)
+        for d in dict.fromkeys(book[lk].deps if lk in book else []):
+            b = btn(d)
+            if b is not None and b != L:
+                edges.append((b, L))
+    edges = list(dict.fromkeys(edges))
+    depth = {}
+    for k in order:
+        depth[k] = max((depth[p] + 1 for p in parents[k]), default=0)
+    sset = set(spine)
+    tp = {}
+    for k in order:
+        if k in sset:
+            continue
+        if parents[k]:
+            tp[k] = max(parents[k], key=lambda p: (depth[p], p in sset, -idx[p]))
+        else:
+            ld = [("link", d) for d in byk[k].deps if d in lset]
+            tp[k] = ld[0] if ld else None
+    entry = []
+    for lk in links:
+        L = ("link", lk)
+        D = sorted((b for a, b in edges if a == L and b in byk), key=idx.get)
+        if spine and spine[0] in D and not entry:
+            entry.append(L)  # the way in: it sits on the spine row, left of the first spine quest
+        elif any(tp.get(k) == L for k in D):
+            tp[L] = None
+        elif D:
+            tp[L] = D[0]
+        else:
+            ds = [a for a, b in edges if b == L]
+            ds.sort(key=lambda a: (not isinstance(a, str), -depth.get(a, 0) if isinstance(a, str) else 0,
+                                   -idx.get(a, 0) if isinstance(a, str) else 0))
+            tp[L] = ds[0] if ds else None
+    for L in entry:
+        tp.pop(L, None)
+    for lk in links:  # a link heading its own little tree hangs from what its quest needs here, if anything
+        L = ("link", lk)
+        if L in tp and tp[L] is None:
+            ds = [a for a, b in edges if b == L and a not in entry]
+            ds.sort(key=lambda a: (a not in sset, not isinstance(a, str), idx.get(a, 0) if isinstance(a, str) else 0))
+            if ds:
+                tp[L] = ds[0]
+    return edges, tp, entry
+
+
+def _comb_tooth(roots, kids, tp, size, adj, anchor, row0=0, side=1, mode="dfs", deep=COMB_DEEP, pull=None):
+    """One tooth: the trees under roots, hanging from anchor (the spine quest, at (0, 0)) and growing towards +y.
+    anchor None: a loose group (its roots start on row 0). row0: +1/-1 lets quests use the spine row to that side
+    (the free end of a spine row). pull: {node: -1/+1} leans a quest left/right, towards its lines to other teeth.
+    Returns (pos {node: (x, y)}, cost) or None."""
+    seq = []
+    if mode == "dfs":
+        def walk(n):
+            seq.append(n)
+            for c in kids.get(n, []):
+                walk(c)
+        for r in roots:
+            walk(r)
+    else:
+        lvl = list(roots)
+        while lvl:
+            seq += lvl
+            lvl = [c for n in lvl for c in kids.get(n, [])]
+    P = {}
+    if anchor is not None:
+        P[anchor] = (0.0, 0.0)
+    E = []  # placed lines [(p, q, a, b)]
+    treeE = set()  # (node, the node it hangs from): lines that must stay clean
+    box = None
+    offs = sorted(((dx, dy) for dx in range(-COMB_R, COMB_R + 1) for dy in range(-COMB_R, COMB_R + 1) if dx or dy),
+                  key=lambda d: (abs(d[0]) + abs(d[1]), d))
+    big = sorted(((dx, dy) for dx in range(-2 * COMB_R, 2 * COMB_R + 1) for dy in range(-2 * COMB_R, 2 * COMB_R + 1)
+                  if max(abs(dx), abs(dy)) > COMB_R), key=lambda d: (abs(d[0]) + abs(d[1]), d))
+    loose_x = 0.0
+    todo = list(seq)
+    while todo:
+        n = next((m for m in todo if tp.get(m) in P or any(o in P for o in adj.get(m, ()))), todo[0])
+        todo.remove(n)
+        s = size[n]
+        a = tp.get(n)
+        if a not in P:
+            a = None
+        nb = [m for m in adj.get(n, ()) if m in P]
+        if a is None and nb:
+            a = nb[0]
+        if a is None and anchor is not None:  # nothing placed to hang from (yet): near the anchor
+            a = anchor
+        if a is None:  # a loose root: next free spot along row 0
+            ax, ay = loose_x, 0.0
+            cand = [(ax + 2 * i, 0.0) for i in range(40)]
+        else:
+            ax, ay = P[a]
+            cand = [(ax + dx, ay + dy) for dx, dy in offs]
+        best = None
+        for attempt in range(2):
+            scored = []
+            for x, y in cand:
+                if anchor is not None and y < 2 - 1e-9:
+                    if not (row0 and abs(y) < 1e-9 and x * row0 >= 2 - 1e-9):
+                        continue
+                if anchor is None and y < -1e-9:
+                    continue
+                lb = sum(_edge_cost((x, y), P[m]) for m in nb)
+                if anchor is not None and y > deep:
+                    lb += 1.5 * (y - deep)
+                lb += 0.5 * ((x % 2 != 0) + (y % 2 != 0))
+                if a is not None and y < ay - 1e-9:
+                    lb += 1.0
+                if a is not None and (x - ax) * side < -1e-9:
+                    lb += 0.05
+                if pull and pull.get(n):
+                    lb -= 0.6 * pull[n] * x
+                scored.append((lb, x, y))
+            scored.sort()
+            for lb, x, y in scored:
+                if best is not None and lb >= best[0]:
+                    break
+                ok = True
+                for m, (mx, my) in P.items():
+                    if math.hypot(mx - x, my - y) < max(MIN_SEP, (s + size[m]) / 2 + 0.5) - 1e-9:
+                        ok = False
+                        break
+                if not ok:
+                    continue
+                new = [((x, y), P[m], n, m) for m in nb]
+                soft = 0  # lines other than the one to the quest it hangs from may run through a quest (they get
+                #           hidden), at a price; the tree line may not
+                for p1, p2, e1, e2 in new:
+                    for k, (kx, ky) in P.items():
+                        if k != e2 and _seg_dist(p1, p2, (kx, ky)) < 0.5 + (size[k] - 1) / 2:
+                            if e2 == a:
+                                ok = False
+                                break
+                            soft += 1
+                    if not ok:
+                        break
+                if not ok:
+                    continue
+                if any(_seg_dist(p1, p2, (x, y)) < 0.5 + (s - 1) / 2 for p1, p2, e1, e2 in E if (e1, e2) in treeE):
+                    continue
+                soft += sum(1 for p1, p2, e1, e2 in E if (e1, e2) not in treeE and _seg_dist(p1, p2, (x, y)) < 0.5 + (s - 1) / 2)
+                cross = sum(1 for p1, p2, e1, e2 in new for q1, q2, f1, f2 in E
+                            if not ({e1, e2} & {f1, f2}) and _cross((p1, p2), (q1, q2)))
+                grow = 0.0
+                if box is not None:
+                    grow = 1.25 * (max(0.0, x - box[2]) + max(0.0, box[0] - x)) + 0.75 * (max(0.0, y - box[3]) + max(0.0, box[1] - y))
+                full = lb + 0.4 * grow + 15 * cross + 8 * soft
+                if best is None or full < best[0]:
+                    best = (full, x, y, new)
+            if best is not None:
+                break
+            if a is None:
+                return None
+            cand = [(ax + dx, ay + dy) for dx, dy in big]
+        if best is None:
+            return None
+        _, x, y, new = best
+        P[n] = (x, y)
+        E += new
+        if a is not None:
+            treeE.add((n, a))
+        box = (x, y, x, y) if box is None else (min(box[0], x), min(box[1], y), max(box[2], x), max(box[3], y))
+        if a is None and anchor is None:
+            loose_x = max(loose_x, x + 2)
+    pos = {n: p for n, p in P.items() if n != anchor}
+    lines = set()
+    for n in P:
+        for m in adj.get(n, ()):
+            if m in P:
+                lines.add(tuple(sorted((n, m), key=str)))
+    nonortho = sum(1 for a_, b_ in lines if not _ortho(P[a_], P[b_]))
+    segs = [(P[a_], P[b_], a_, b_) for a_, b_ in lines]
+    cross = sum(1 for i in range(len(segs)) for j in range(i + 1, len(segs))
+                if not ({segs[i][2], segs[i][3]} & {segs[j][2], segs[j][3]}) and _cross(segs[i][:2], segs[j][:2]))
+    xs = [p[0] for p in pos.values()] or [0.0]
+    ys = [p[1] for p in pos.values()] or [0.0]
+    w, h = max(xs) - min(xs) + 1, max(ys) + 1
+    long_ = sum(1 for a_, b_ in lines if math.dist(P[a_], P[b_]) > MAX_EDGE + 1e-9)
+    return pos, 3 * nonortho + 8 * cross + 4 * long_ + 0.6 * w + 0.3 * h
+
+
+def _comb_polish(P, edges, fixed, rounds=3):
+    """Last pass on one spine row: a quest with a slanted line moves to a free spot in line with one of its
+    neighbours (same row or column) when that makes its lines straighter, shorter or crossing less; nothing may
+    end up too close or on a line. P: {node: (x, y, size)} (changed in place); fixed: nodes that never move."""
+    E = [(a, b) for a, b in edges if a in P and b in P]
+    inc = {}
+    for e in E:
+        inc.setdefault(e[0], []).append(e)
+        inc.setdefault(e[1], []).append(e)
+
+    def crosses(n, c):
+        k = 0
+        for a, b in inc[n]:
+            o = b if a == n else a
+            for f in E:
+                if n in f or o in f:
+                    continue
+                if _cross((c, P[o][:2]), (P[f[0]][:2], P[f[1]][:2])):
+                    k += 1
+        return k
+
+    def val(n, c):
+        return sum(_edge_cost(c, P[b if a == n else a][:2]) for a, b in inc[n]) + 15 * crosses(n, c)
+
+    def free(n, c):
+        s = P[n][2]
+        for m, (x, y, sm) in P.items():
+            if m != n and math.hypot(x - c[0], y - c[1]) < max(MIN_SEP, (s + sm) / 2 + 0.5) - 1e-9:
+                return False
+        for a, b in inc[n]:
+            o = b if a == n else a
+            for m, (x, y, sm) in P.items():
+                if m not in (n, o) and _seg_dist(c, P[o][:2], (x, y)) < 0.5 + (sm - 1) / 2:
+                    return False
+        for a, b in E:
+            if n not in (a, b) and _seg_dist(P[a][:2], P[b][:2], c) < 0.5 + (s - 1) / 2:
+                return False
+        return True
+
+    for _ in range(rounds):
+        moved = False
+        for n in list(P):
+            if n in fixed or n not in inc:
+                continue
+            x0, y0, s = P[n]
+            if abs(y0) < 1e-9 or all(_ortho((x0, y0), P[b if a == n else a][:2]) for a, b in inc[n]):
+                continue
+            nbr = [P[b if a == n else a][:2] for a, b in inc[n]]
+            slant = lambda c: sum(1 for o in nbr if not _ortho(c, o))
+            cur, cs, cx_ = val(n, (x0, y0)), slant((x0, y0)), crosses(n, (x0, y0))
+            longest = max([4.5] + [math.dist((x0, y0), o) for o in nbr])
+            cands = set()
+            for ox, oy in nbr:  # in line with a neighbour, at most 2 cells from where it is
+                for t in (-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2):
+                    cands.add((ox, y0 + t))
+                    cands.add((x0 + t, oy))
+            best = None
+            for c in cands:
+                if c == (x0, y0) or c[1] * y0 <= 0 or abs(c[1]) < 2 - 1e-9 or abs(c[0] - x0) > 2 or abs(c[1] - y0) > 2:
+                    continue
+                if slant(c) >= cs or crosses(n, c) > cx_ or any(math.dist(c, o) > longest for o in nbr):
+                    continue
+                v = val(n, c) + 0.15 * math.hypot(c[0] - x0, c[1] - y0)
+                if v < cur - 0.5 and (best is None or v < best[0]) and free(n, c):
+                    best = (v, c)
+            if best:
+                P[n] = (best[1][0], best[1][1], s)
+                moved = True
+        if not moved:
+            break
+
+
+def _comb_items(pos, size, lines, sgn=1.0, ox=0.0, oy=0.0):
+    """Boxes that a tooth occupies (its quests and its lines), mirrored by sgn on y and moved by (ox, oy)."""
+    out = []
+    for n, (x, y) in pos.items():
+        s = size[n]
+        out.append((ox + x - s / 2, oy + sgn * y - s / 2, ox + x + s / 2, oy + sgn * y + s / 2))
+    for (x1, y1), (x2, y2) in lines:
+        a = (ox + min(x1, x2) - 0.25, oy + min(sgn * y1, sgn * y2) - 0.25, ox + max(x1, x2) + 0.25, oy + max(sgn * y1, sgn * y2) + 0.25)
+        out.append(a)
+    return out
+
+
+def _comb_page(chapter, byk, idx, parents, order, spine, secs, links, book, header):
+    """The comb motif. Returns (P {node: (x, y, size)}, heads [(section index, x0, y0, x1, y1)])."""
+    edges, tp, entry = _comb_graph(byk, idx, parents, order, spine, links, book)
+    spine = entry + list(spine)  # the entry link leads the spine row (its own teeth hang from it)
+    size = {k: _size(byk[k]) for k in byk}
+    size.update({("link", lk): 1.0 for lk in links})
+    adj = {}
+    for a, b in edges:
+        adj.setdefault(a, []).append(b)
+        adj.setdefault(b, []).append(a)
+    kids = {}
+    for n, p in tp.items():
+        if p is not None:
+            kids.setdefault(p, []).append(n)
+    sub = {}
+
+    def subsize(n):
+        if n not in sub:
+            sub[n] = 1 + sum(subsize(c) for c in kids.get(n, []))
+        return sub[n]
+
+    nidx = lambda n: idx[n] if isinstance(n, str) else len(idx) + idx.get(n[1], 0)
+    for n in list(kids):
+        kids[n].sort(key=lambda c: (-subsize(c), nidx(c)))
+    sidx = {k: i for i, k in enumerate(spine)}
+    cache = {}
+    home, feed_home = {}, {}
+
+    def home_of(n):
+        """Spine index of the tooth a node hangs in (its own index for a spine quest)."""
+        if n not in home:
+            m, seen = n, set()
+            while m not in sidx and tp.get(m) is not None and m not in seen:
+                seen.add(m)
+                m = tp[m]
+            home[n] = sidx.get(m, feed_home.get(m))
+        return home[n]
+
+    def pull_of(a):
+        """For the quests of spine quest a's teeth: which way their lines to other teeth go (-1 left, +1 right)."""
+        out = {}
+        for n in tp:
+            if home_of(n) != a:
+                continue
+            v = 0
+            for m in adj.get(n, ()):
+                h = home_of(m)
+                if h is not None and h != a and m != spine[a]:
+                    v += 1 if h > a else -1
+            if v:
+                out[n] = max(-1, min(1, v))
+        return out
+
+    def tooth(a, roots, row0):
+        """Best tooth (pos, lines, items in down coords) for these roots under spine quest a."""
+        key = (a, tuple(roots), row0)
+        if key not in cache:
+            best = None
+            for mode in ("dfs", "bfs"):
+                for side in (1, -1):
+                    for deep in (COMB_DEEP, COMB_DEEP + 4):
+                        got = _comb_tooth(roots, kids, tp, size, adj, spine[a], row0, side, mode, deep, pull_of(a))
+                        if got and (best is None or got[1] < best[1] - 1e-9):
+                            best = got
+            if best is None:
+                cache[key] = None
+            else:
+                pos = best[0]
+                P_ = dict(pos)
+                P_[spine[a]] = (0.0, 0.0)
+                lines = [(P_[u], P_[v]) for u in P_ for v in adj.get(u, ()) if v in P_ and str(u) < str(v)]
+                cache[key] = {"pos": pos, "lines": lines, "cost": best[1],
+                              "h": max([y + size[n] / 2 for n, (x, y) in pos.items()] + [0.0])}
+        return cache[key]
+
+    # A loose tree (no line from the spine) that feeds a quest here joins the tooth of that quest, so it sits
+    # beside what it feeds instead of in the row under the page.
+    def top(n):
+        seen = set()
+        while n in tp and tp[n] is not None and n not in seen:
+            seen.add(n)
+            n = tp[n]
+        return n
+
+    def members(r):
+        out, st = [], [r]
+        while st:
+            v = st.pop()
+            out.append(v)
+            st += kids.get(v, [])
+        return out
+
+    feed = {}
+    for r in sorted((n for n, p_ in tp.items() if p_ is None), key=nidx):
+        T = set(members(r))
+        outs = [b for a_, b in edges if a_ in T and b not in T] + [a_ for a_, b in edges if b in T and a_ not in T]
+        hits = []
+        for c in outs:
+            t_ = c if c in sidx else top(c)
+            if t_ in sidx:
+                hits.append((sidx[t_], c))
+        if hits:
+            a_, c = min(hits, key=lambda h: h[0])
+            feed.setdefault(a_, []).append((r, c))
+    # branches per spine quest, split into two groups (one per side) by size
+    groups = {}
+    for a, k in enumerate(spine):
+        br = list(kids.get(k, []))
+        if not br:
+            groups[a] = []
+            continue
+        g = [[], []]
+        tot = [0, 0]
+        for c in br:  # heaviest first
+            j = 0 if tot[0] <= tot[1] else 1
+            g[j].append(c)
+            tot[j] += subsize(c)
+        groups[a] = [x for x in g if x]
+    feed_home.update({r: a_ for a_, fs in feed.items() for r, _ in fs})
+    fed = {r for fs in feed.values() for r, _ in fs}
+    for r in sorted((n for n, p_ in tp.items() if p_ is None and n not in fed), key=nidx):
+        feed.setdefault(0, []).append((r, spine[0]))  # unconnected: by the way in
+        feed_home[r] = 0
+    for a, fs in feed.items():  # feeders follow the branch that holds what they feed
+        for r, c in fs:
+            b = c
+            while b in tp and tp[b] is not None and tp[b] != spine[a]:
+                b = tp[b]
+            gi = next((j for j, g_ in enumerate(groups[a]) if b in g_), None)
+            if gi is None:
+                if not groups[a]:
+                    groups[a].append([])
+                gi = min(range(len(groups[a])), key=lambda j: sum(subsize(x) for x in groups[a][j]))
+            groups[a][gi].append(r)
+
+    def strip(ids, first_strip, last_strip, inner):
+        """One spine row, left to right (local x from 0): spine quests and their teeth. inner: {+1/-1: weight of
+        growing that lane}. Returns (P, items [(x0, y0, x1, y1)], xs {spine index: x})."""
+        placed = {1: [], -1: []}
+        if not first_strip:  # the step comes in from above at the first quest: keep the lane above it clear
+            placed[-1].append((-1e9, -1e9, 0.5, -0.6))
+        P, xs, depth = {}, {}, {1: 0.0, -1: 0.0}
+        last_side, prev = 1, None
+        for j, a in enumerate(ids):
+            k = spine[a]
+            is_last, is_first = j == len(ids) - 1, j == 0
+            gr = groups[a]
+            row0 = 1 if is_last else (-1 if (is_first and not first_strip) else 0)
+            opts = []
+            if not gr:
+                opts = [[]]
+            elif len(gr) == 1:
+                opts = [[(1, gr[0])], [(-1, gr[0])]]
+            else:
+                opts = [[(1, gr[0]), (-1, gr[1])], [(-1, gr[0]), (1, gr[1])]]
+            if is_last and not last_strip:  # the vertical step leaves downwards: no tooth below
+                opts = [[(-1, [c for g_ in gr for c in g_])]] if gr else [[]]
+            if is_first and not first_strip:
+                opts = [[(1, [c for g_ in gr for c in g_])]] if gr else [[]]
+            pitch = 0.0
+            if prev is not None:
+                pitch = xs[prev] + max(COL, math.ceil(((size[spine[prev]] + size[k]) / 2 + 0.5) * 2) / 2)
+            best = None
+            for opt in opts:
+                need = pitch
+                tl = []
+                for sd, roots in opt:
+                    t = tooth(a, roots, row0 if (sd == 1 or len(opt) == 1) else 0)
+                    if t is None:
+                        need = None
+                        break
+                    its = _comb_items(t["pos"], size, t["lines"], sd)
+                    for b in its:
+                        lane = [sd] if b[1] * sd > 0.5 - 1e-9 or b[3] * sd > 0.5 + 1e-9 else [1, -1]
+                        for ln in lane:
+                            for p in placed[ln]:
+                                if b[1] < p[3] + COMB_PAD and p[1] < b[3] + COMB_PAD:
+                                    need = max(need, p[2] + COMB_PAD - b[0])
+                    tl.append((sd, t, its))
+                if need is None:
+                    continue
+                if is_last and not last_strip:
+                    need = max([need] + [p[2] + COMB_PAD + 0.5 for p in placed[1]])
+                grow = sum(inner.get(sd, 0.4) * max(0.0, t["h"] - depth[sd]) for sd, t, _ in tl)
+                same = 0.15 if len(tl) == 1 and tl[0][0] == last_side else 0.0
+                cost = need + grow + same + COMB_TOOTH_W * sum(t["cost"] for _, t, _ in tl)
+                if best is None or cost < best[0]:
+                    best = (cost, need, tl)
+            if best is None:
+                return None
+            _, x, tl = best
+            x = math.ceil(x / COMB_GRID - 1e-9) * COMB_GRID  # every spine quest on the grid: straight lines between teeth
+            xs[a] = x
+            P[k] = (x, 0.0, size[k])
+            for sd, t, its in tl:
+                for n, (tx, ty) in t["pos"].items():
+                    P[n] = (x + tx, sd * ty, size[n])
+                for b in its:
+                    bb = (b[0] + x, b[1], b[2] + x, b[3])
+                    if abs(bb[1] + bb[3]) / 2 < 0.6 and bb[3] - bb[1] < 1.6:  # on the spine row (a free end)
+                        placed[1].append(bb)
+                        placed[-1].append(bb)
+                    else:
+                        placed[sd].append(bb)
+                depth[sd] = max(depth[sd], t["h"])
+                last_side = sd
+            prev = a
+        _comb_polish(P, edges, {spine[a] for a in ids})
+        items = [(x - s_ / 2, y - s_ / 2, x + s_ / 2, y + s_ / 2) for x, y, s_ in P.values()]
+        for u, v in edges:  # lines, sampled every half cell
+            if u in P and v in P:
+                (x1, y1), (x2, y2) = P[u][:2], P[v][:2]
+                m = max(1, int(math.hypot(x2 - x1, y2 - y1) / 0.5))
+                items += [(x1 + (x2 - x1) * t / m - 0.2, y1 + (y2 - y1) * t / m - 0.2,
+                           x1 + (x2 - x1) * t / m + 0.2, y1 + (y2 - y1) * t / m + 0.2) for t in range(1, m)]
+        return P, items, xs
+
+    named = {i: any(getattr(byk[m], "section", None) for m in s["members"]) for i, s in enumerate(secs)}
+
+    def headers(P, items):
+        """Section headers for the sections whose quests are mostly in this strip: a label just outside the
+        section's quests (on the side most of them hang), clear of every quest and line. Returns
+        [(section index, x0, y0, x1, y1)] in strip coordinates."""
+        out = []
+        if not header:
+            return out
+        taken = list(items)
+        for a, b in edges:  # every line here, sampled, so a label never sits on one
+            if a in P and b in P:
+                (x1, y1), (x2, y2) = P[a][:2], P[b][:2]
+                m = max(1, int(math.hypot(x2 - x1, y2 - y1) / 0.5))
+                taken += [(x1 + (x2 - x1) * t / m - 0.05, y1 + (y2 - y1) * t / m - 0.05,
+                           x1 + (x2 - x1) * t / m + 0.05, y1 + (y2 - y1) * t / m + 0.05) for t in range(m + 1)]
+        todo = []
+        for i, s in enumerate(secs):
+            inP = [m for m in s["members"] if m in P]
+            if not inP or len(inP) * 2 < len(s["members"]):
+                continue
+            down = sum(1 for m in inP if P[m][1] > 0)
+            sd = 1 if down * 2 >= len(inP) else -1
+            side = [m for m in inP if P[m][1] * sd > 0] or inP
+            if len(side) < 3 and not named.get(i):
+                continue  # a quest or two: the spine and its neighbours say enough
+            xs_ = sorted(P[m][0] for m in side)
+            todo.append((xs_[len(xs_) // 2], i, sd, side))
+        for cx, i, sd, side in sorted(todo):
+            hw = _head_w(secs[i]["title"])
+            near = [m for m in side if abs(P[m][0] - cx) <= hw]
+            x0 = min(P[m][0] - P[m][2] / 2 for m in near)
+            best = None
+            for dx in (0.0, -1.0, 1.0, -2.0, 2.0, -3.0, 3.0, -4.0, 4.0):
+                bx0 = x0 + dx
+                cover = [m for m in side if bx0 - 0.5 < P[m][0] < bx0 + hw + 0.5] or near
+                if sd == 1:
+                    y = max(P[m][1] + P[m][2] / 2 for m in cover) + HEAD_PAD
+                else:
+                    y = min(P[m][1] - P[m][2] / 2 for m in cover) - HEAD_PAD - HEAD_H
+                for step in range(9):
+                    hb = (bx0, y + sd * 0.5 * step, bx0 + hw, y + sd * 0.5 * step + HEAD_H)
+                    if not any(_rects_hit(hb, t, 0.15) for t in taken):
+                        sc = step + abs(dx) * 0.75
+                        if best is None or sc < best[0]:
+                            best = (sc, hb)
+                        break
+                if best is not None and best[0] <= abs(dx) * 0.75 + 1e-9:
+                    break
+            if best is None:
+                continue
+            out.append((i, *best[1]))
+            taken.append(best[1])
+        return out
+
+    n = len(spine)
+    tries = [1] if n <= COMB_WRAP else [1, 2] if n <= COMB_WRAP + 2 else [2] if n <= 24 else [2, 3]
+    best = None
+    for R in tries:
+        cuts = [round(n * r / R) for r in range(R + 1)]
+        variants = [cuts]
+        if R == 2:
+            variants += [[0, cuts[1] + d, n] for d in (-4, -3, -2, -1, 1, 2, 3, 4) if 3 <= cuts[1] + d <= n - 3]
+        elif R == 3:
+            variants += [[0, cuts[1] + d1, cuts[2] + d2, n] for d1 in (-2, 0, 2) for d2 in (-2, 0, 2) if (d1, d2) != (0, 0)
+                         and 3 <= cuts[1] + d1 < cuts[2] + d2 - 2 <= n - 5]
+        for cuts_ in variants:
+            res = _comb_rows(spine, cuts_, strip, headers, size, R)
+            if res is None:
+                continue
+            P, heads, widths = res
+            # loose trees (no line to the spine): a tidy row under the page
+            P, heads = _comb_loose(P, heads, tp, kids, size, adj, spine, secs, header, nidx)
+            _comb_settle(P, heads, edges, size, kids, set(spine))
+            sc = _comb_score(P, heads, edges) + 0.1 * (R - 1) + 0.3 * (max(widths) - min(widths)) / max(1.0, max(widths))
+            if best is None or sc < best[0] - 1e-9:
+                best = (sc, P, heads)
+    if best is None:
+        return None
+    return best[1], best[2], tp
+
+
+def _comb_rows(spine, cuts, strip, headers, size, R):
+    """Lay out each spine row (strip) and stack them as a serpentine. Returns (P, heads) or None."""
+    P, heads, items_all, widths = {}, [], [], []
+    join = None  # x of the previous row's last quest (absolute)
+    for r in range(R):
+        ids = list(range(cuts[r], cuts[r + 1]))
+        inner = {}
+        if R > 1:
+            inner = {1: 0.9 if r < R - 1 else 0.4, -1: 0.9 if r > 0 else 0.4}
+        res = strip(ids, r == 0, r == R - 1, inner)
+        if res is None:
+            return None
+        sP, items, xs = res
+        steps = []  # the vertical steps between rows: no header on them
+        if r > 0:
+            steps.append((xs[ids[0]] - 0.3, -60.0, xs[ids[0]] + 0.3, 0.0))
+        if r < R - 1:
+            steps.append((xs[ids[-1]] - 0.3, 0.0, xs[ids[-1]] + 0.3, 60.0))
+        hd = headers(sP, items + steps)
+        items = items + [h[1:] for h in hd]
+        mirror = r % 2 == 1
+        x_first = xs[ids[0]]
+        if r == 0:
+            tx = lambda x: x
+            dy = 0.0
+        else:
+            jx = join
+            tx = (lambda x, jx=jx, xf=x_first: jx - (x - xf)) if mirror else (lambda x, jx=jx, xf=x_first: jx + (x - xf))
+            # lowest offset that keeps this row's boxes clear of everything above
+            dy = 4.0
+            for b in items:
+                bx0, bx1 = sorted((tx(b[0]), tx(b[2])))
+                for o in items_all:
+                    if bx0 < o[2] + COMB_PAD and o[0] < bx1 + COMB_PAD:
+                        dy = max(dy, o[3] + COMB_PAD - b[1])
+            dy = math.ceil(dy / COMB_GRID - 1e-9) * COMB_GRID
+        widths.append(max(x for x, _, _ in sP.values()) - min(x for x, _, _ in sP.values()))
+        for nd, (x, y, s) in sP.items():
+            P[nd] = (tx(x), y + dy, s)
+        for b in items:
+            bx0, bx1 = sorted((tx(b[0]), tx(b[2])))
+            items_all.append((bx0, b[1] + dy, bx1, b[3] + dy))
+        for i, x0, y0, x1, y1 in hd:
+            hx0, hx1 = sorted((tx(x0), tx(x1)))
+            heads.append((i, hx0, y0 + dy, hx1, y1 + dy))
+        join = tx(xs[ids[-1]])
+    return P, heads, widths
+
+
+def _comb_settle(P, heads, edges, size, kids, fixed):
+    """Whole-page pass: a leaf (a quest or link nothing here hangs from) with two or more lines moves to the free
+    grid spot where its lines are straightest and shortest and cross least (e.g. a link whose quest needs two
+    quests far apart sits where both lines are short). P is changed in place."""
+    E = [(a, b) for a, b in edges if a in P and b in P]
+    inc = {}
+    for e in E:
+        inc.setdefault(e[0], []).append(e)
+        inc.setdefault(e[1], []).append(e)
+    hb = [h[1:] for h in heads]
+    rows = {P[k][1] for k in fixed if k in P}
+
+    def score(n, c):
+        v = 0.0
+        for a, b in inc[n]:
+            o = b if a == n else a
+            q = P[o][:2]
+            v += _edge_cost(c, q)
+            for f in E:
+                if n in f or o in f:
+                    continue
+                if _cross((c, q), (P[f[0]][:2], P[f[1]][:2])):
+                    v += 15
+        return v
+
+    def ok(n, c):
+        s = P[n][2]
+        for m, (x, y, sm) in P.items():
+            if m != n and math.hypot(x - c[0], y - c[1]) < max(MIN_SEP, (s + sm) / 2 + 0.5) - 1e-9:
+                return False
+        if any(_rects_hit((c[0] - s / 2, c[1] - s / 2, c[0] + s / 2, c[1] + s / 2), h, 0.25) for h in hb):
+            return False
+        for a, b in inc[n]:
+            o = b if a == n else a
+            q = P[o][:2]
+            for m, (x, y, sm) in P.items():
+                if m not in (n, o) and _seg_dist(c, q, (x, y)) < 0.5 + (sm - 1) / 2:
+                    return False
+            for t in range(1, 12):
+                x, y = c[0] + (q[0] - c[0]) * t / 12, c[1] + (q[1] - c[1]) * t / 12
+                if any(h[0] < x < h[2] and h[1] < y < h[3] for h in hb):
+                    return False
+        for a, b in E:
+            if n not in (a, b) and _seg_dist(P[a][:2], P[b][:2], c) < 0.5 + (s - 1) / 2:
+                return False
+        return True
+
+    for n in sorted((n for n in inc if n not in fixed and not kids.get(n) and len(inc[n]) >= 2), key=str):
+        x0, y0 = P[n][:2]
+        cur = score(n, (x0, y0))
+        cands = set()
+        nb = [P[b if a == n else a][:2] for a, b in inc[n]]
+        for ox, oy in nb:
+            for dx, dy in ((2, 0), (-2, 0), (0, 2), (0, -2), (2, 2), (-2, 2), (2, -2), (-2, -2)):
+                cands.add((ox + dx, oy + dy))
+        for ax, _ in nb:
+            for _, by in nb:
+                cands.add((ax, by))
+        best = None
+        for c in cands:
+            if any(abs(c[1] - ry) < 1.5 for ry in rows) and not any(abs(y0 - ry) < 1e-9 for ry in rows):
+                continue  # never onto (or right beside) a spine row
+            v = score(n, c)
+            if v < cur - 1.0 and (best is None or v < best[0]) and ok(n, c):
+                best = (v, c)
+        if best:
+            P[n] = (best[1][0], best[1][1], P[n][2])
+
+
+def _comb_loose(P, heads, tp, kids, size, adj, spine, secs, header, nidx):
+    roots = [n for n, p in tp.items() if p is None and n not in P]
+    if not roots:
+        return P, heads
+    P = dict(P)
+    heads = list(heads)
+    x0, y0, x1, y1 = _page_box(P, heads)
+    y = y1 + 1.5 + (HEAD_H + HEAD_PAD if header else 0.0)
+    cx = x0
+    width = max(x1 - x0, 16.0)
+    shelf = 0.0
+    for r in sorted(roots, key=nidx):
+        got = _comb_tooth([r], kids, tp, size, adj, None)
+        if got is None:
+            continue
+        pos = got[0]
+        bx0 = min(px - size[n] / 2 for n, (px, py) in pos.items())
+        bx1 = max(px + size[n] / 2 for n, (px, py) in pos.items())
+        by1 = max(py + size[n] / 2 for n, (px, py) in pos.items())
+        if cx > x0 and cx + (bx1 - bx0) > x0 + width:
+            cx, y, shelf = x0, y + shelf + 1.5, 0.0
+        for n, (px, py) in pos.items():
+            P[n] = (cx - bx0 + px, y + 0.5 + py, size[n])
+        cx += bx1 - bx0 + 1.5
+        shelf = max(shelf, by1 + 0.5)
+    return P, heads
+
+
+def _comb_score(P, heads, edges):
+    x0, y0, x1, y1 = _page_box(P, heads)
+    w, h = x1 - x0, y1 - y0
+    segs = [(P[a][:2], P[b][:2], a, b) for a, b in edges if a in P and b in P]
+    non = sum(1 for p, q, _, _ in segs if not _ortho(p, q))
+    cross = sum(1 for i in range(len(segs)) for j in range(i + 1, len(segs))
+                if not ({segs[i][2], segs[i][3]} & {segs[j][2], segs[j][3]}) and _cross(segs[i][:2], segs[j][:2]))
+    tw, th = COMB_TARGET
+    return (max(w / tw, h / th) + 0.25 * abs(math.log(max(w, 1) / max(h, 1) / 1.8)) + 2.0 * non / max(1, len(segs))
+            + 0.05 * cross)
+
+
+def _ext_targets(chapter):
+    """Quests that some comb page may show as a quest link (the first dep of a quest whose deps are all in other
+    chapters): like shared_quests, they never get hide flags (FTB applies them to every button of a quest)."""
+    book = getattr(chapter, "book_quests", None) or {}
+    home = getattr(chapter, "home_of", None) or {}
+    key = (id(book), frozenset(COMB_PAGES))
+    if key not in _EXT_CACHE:
+        out = set()
+        for k, q in book.items():
+            h = home.get(k)
+            if q.deps and h in COMB_PAGES and all(home.get(d) != h for d in q.deps):
+                d = next((d for d in q.deps if d in book), None)
+                if d:
+                    out.add(d)
+        _EXT_CACHE.clear()
+        _EXT_CACHE[key] = out
+    return _EXT_CACHE[key]
+
+
+_EXT_CACHE = {}
+COMB_PAGES = set()  # chapter keys drawn as combs (set by tools/quest_data.py from STYLES)
+
+
+def _comb_apply(chapter, book_keys, byk, idx, parents, order, spine, secs, header):
+    """Links for a comb page (the chapter's own, the entry quest's deps in other chapters, and a link for every
+    quest whose deps are all in other chapters), then the comb. Returns (P, links, heads) or None."""
+    links = [lk for lk, _, _ in chapter.links]
+    if book_keys is not None:
+        for d in byk[spine[0]].deps:
+            if d not in byk and d in book_keys and d not in links:
+                links.append(d)
+        for q in chapter.quests:
+            if q.deps and all(d not in byk for d in q.deps) and not any(d in links for d in q.deps):
+                d = next((d for d in q.deps if d in book_keys), None)
+                if d is not None:
+                    links.append(d)
+    book = getattr(chapter, "book_quests", None) or {}
+    got = _comb_page(chapter, byk, idx, parents, order, spine, secs, links, book, header)
+    if got is None:
+        return None
+    P, heads, tp = got
+    missing = [k for k in byk if k not in P] + [lk for lk in links if ("link", lk) not in P]
+    if missing:
+        return None
+    chapter.comb_tree = {k: (p[1] if isinstance(p, tuple) else p) for k, p in tp.items() if isinstance(k, str) and p is not None}
+    chapter.comb_tree.update({b: a for a, b in zip(spine, spine[1:])})
+    return P, links, heads
+
+
 def page_sections(chapter, style=None):
     """The sections apply() would draw on this chapter, as [{"title", "members" (keys, declaration order), "root",
     "explicit" (title from Q(section=...))}] in reading order. tools/quest_data.py uses it to split a mod page into
@@ -2023,6 +2850,18 @@ def apply(chapter, book_keys=None, style=None):
     # Section headers: only where a page has 2+ sections, and never on a chapter split from a mod page (its title
     # in the sidebar names it; chapter.headers = False, set by tools/quest_data.py).
     header = len(secs) + (1 if base == "spine" else 0) > 1 and getattr(chapter, "headers", True)
+    if style == "comb":
+        got = _comb_apply(chapter, book_keys, byk, idx, parents, order, spine, secs, header)
+        if got is not None:
+            P, links, heads = got
+            sec_of = {k: i for i, s in enumerate(secs) for k in s["members"]}
+            blocks = []
+            for s in secs:
+                pts = {k: P[k] for k in s["members"] if k in P}
+                blocks.append({"box": _extent(pts) if pts else None})
+            _finish(chapter, P, links, heads, secs, blocks, style, spine, sec_of, set(spine))
+            return
+        style = chapter.style = "winding"  # the comb didn't fit: the winding page instead
 
     # Quest links: the chapter's own plus the entry quest's deps in other chapters.
     links = [lk for lk, _, _ in chapter.links]
@@ -2200,6 +3039,13 @@ def apply(chapter, book_keys=None, style=None):
         for lk, (x, y) in pts.items():
             P[("link", lk)] = (left + x, top - 1.0 - h + y, 1.0)
 
+    _finish(chapter, P, links, heads, secs, blocks, style, spine, sec_of, spine_set)
+
+
+def _finish(chapter, P, links, heads, secs, blocks, style, spine, sec_of, spine_set):
+    """Write the positions (snapped to the 0.5 grid), links and section headers to the chapter, hide cluttered
+    lines and nudge quests off lines that still run through them."""
+    quests = chapter.quests
     snap = lambda v: round(v * 2) / 2 + 0.0
     for q in quests:
         q.x, q.y = snap(P[q.key][0]), snap(P[q.key][1])
@@ -2284,6 +3130,7 @@ def _nudge(chapter, fixed, reach=3.0):
         return all(not (x0 - s / 2 < x < x1 + s / 2 and y0 - s / 2 < y < y1 + s / 2) for x0, y0, x1, y1 in heads)
 
     moves = 0
+    comb = getattr(chapter, "style", None) == "comb"
     r2 = int(reach * 2)
     steps = sorted({(dx * 0.5, dy * 0.5) for dx in range(-r2, r2 + 1) for dy in range(-r2, r2 + 1)} - {(0.0, 0.0)},
                    key=lambda d: (abs(d[0]) + abs(d[1]), d))
@@ -2300,7 +3147,12 @@ def _nudge(chapter, fixed, reach=3.0):
                 x0, y0 = P[m][0], P[m][1]
                 before = local(m)
                 done = False
-                for dx, dy in steps:
+                order_ = steps
+                if comb:  # moves that keep this quest's lines straight first
+                    nb_ = [e[1] if e[0] == m else e[0] for e in inc.get(m, [])]
+                    order_ = sorted(steps, key=lambda d: (-sum(1 for o in nb_ if o in P and _ortho((x0 + d[0], y0 + d[1]), P[o][:2])),
+                                                           abs(d[0]) + abs(d[1]), d))
+                for dx, dy in order_:
                     x, y = x0 + dx, y0 + dy
                     if not free(m, x, y):
                         continue
@@ -2355,6 +3207,18 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
             return False
         return max(A[0] - B[2], B[0] - A[2], 0.0) <= NEAR_GAP and max(A[1] - B[3], B[1] - A[3], 0.0) <= NEAR_GAP
 
+    def severe(p1, p2, a, b):
+        """A line through a quest or across a section header (never left drawn)."""
+        for k, p in list(pos.items()) + [(("link", lk), p) for lk, p in lpos.items()]:
+            if k not in (a, b) and _seg_dist(p1, p2, p) < 0.45 + (size.get(k, 1.0) - 1) / 2:
+                return True
+        for x0, y0, x1, y1 in heads:
+            for t in range(1, 20):
+                x, y = p1[0] + (p2[0] - p1[0]) * t / 20, p1[1] + (p2[1] - p1[1]) * t / 20
+                if x0 < x < x1 and y0 < y < y1:
+                    return True
+        return False
+
     def messy(p1, p2, a, b, long_counts=True):
         if long_counts and math.dist(p1, p2) > MAX_EDGE:
             return True
@@ -2372,10 +3236,14 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
     # unless its line crosses another one; otherwise only messy lines (long, through a quest, crossing two others).
     small = not getattr(chapter, "headers", True)
     hub = 99 if small else HUB[style]
+    # Comb pages: no quest is left without a drawn line (step 3 below), unless every line it has runs through a
+    # quest or a header; a short hub fan isn't clutter there.
+    comb = style == "comb"
+    tree = getattr(chapter, "comb_tree", None) or {}
     relaxed = style != "spine"
     # A quest with a quest link on its own page: FTB draws its dependency lines at the link too (every button of
     # the quest draws them), so those would run to the far link. Its own lines are hidden (they show on hover).
-    shared = getattr(chapter, "shared_quests", None) or set()
+    shared = (getattr(chapter, "shared_quests", None) or set()) | _ext_targets(chapter)
     for q in qs:
         if q.key in lpos and any(d in pos for d in q.deps):
             q.hide_lines = True
@@ -2396,7 +3264,9 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
                 messy_, ok, step = messy(p1, pos[q.key], ("link", d), q.key), True, False
             if relaxed and d in pos and sec(d) != sec(q.key):
                 ok = True  # motif pages: sections sit by shape, not in reading order; any line between them may go
-            E[(d, q.key)] = {"clutter": messy_ or nkids.get(d, 0) >= hub, "ok": ok, "step": step, "seg": (p1, pos[q.key]),
+            fan_ = nkids.get(d, 0) >= hub and (not comb or math.dist(p1, pos[q.key]) > 3.0)  # comb: short fans stay
+            E[(d, q.key)] = {"clutter": messy_ or fan_, "ok": ok, "step": step, "seg": (p1, pos[q.key]),
+                             "severe": severe(p1, pos[q.key], ("link", d) if d in lpos else d, q.key) if messy_ else False,
                              "fan": nkids.get(d, 0) >= HUB[style]}
     if relaxed:  # a line crossing two or more others is clutter too (one other, for a hub's fan on a small chapter)
         segs = list(E.items())
@@ -2429,6 +3299,99 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
         left = [e for k, e in os_ if k not in shut]
         if q.key not in shared and any(e["clutter"] for e in left) and all(e["ok"] and not e["step"] for _, e in os_):
             q.hide_dependents = True
+    if comb:
+        _comb_flags(chapter, shared, set(zip(spine, spine[1:])), heads)
+
+
+def _comb_flags(chapter, shared, steps, heads):
+    """Comb pages: settle the hide flags by local search, since FTB can only hide all of a quest's lines (or all
+    lines from a dependency) at once. Cost: a line through a quest or header that is drawn (never), a quest left
+    with no line at all, long lines, crossings and slanted lines that are drawn, and (a little) every hidden line.
+    Flags flip one at a time while that lowers the cost. Quests shown as links elsewhere keep no flags."""
+    qs = chapter.quests
+    byk = {q.key: q for q in qs}
+    pos = {q.key: (float(q.x), float(q.y)) for q in qs}
+    size = {q.key: _size(q) for q in qs}
+    lpos = {("link", lk): (float(x), float(y)) for lk, x, y in chapter.links}
+    allp = {**pos, **lpos}
+    book = getattr(chapter, "book_quests", None) or {}
+    L = []  # (dep node, dependent node, quest whose hide_lines hides it, quest whose hide_dependents hides it)
+    btn = {k: k for k in byk}
+    btn.update({lk: ("link", lk) for lk, _, _ in chapter.links})
+    owners = [(k, byk[k]) for k in byk] + [(("link", lk), book.get(lk) or byk.get(lk)) for lk, _, _ in chapter.links]
+    for node, q in owners:
+        if q is None:
+            continue
+        for d in dict.fromkeys(q.deps):
+            if d == q.key or d not in btn:
+                continue
+            L.append((btn[d], node, q.key if q.key in byk else None, d if d in byk else None))
+    if not L:
+        return
+    seg = [(allp[a], allp[b]) for a, b, _, _ in L]
+    n = len(L)
+    sev = []
+    for i, (a, b, _, _) in enumerate(L):
+        p1, p2 = seg[i]
+        bad = any(k not in (a, b) and _seg_dist(p1, p2, pp) < 0.45 + (size.get(k, 1.0) - 1) / 2 for k, pp in allp.items())
+        if not bad:
+            for x0, y0, x1, y1 in heads:
+                if any(x0 < p1[0] + (p2[0] - p1[0]) * t / 20 < x1 and y0 < p1[1] + (p2[1] - p1[1]) * t / 20 < y1 for t in range(1, 20)):
+                    bad = True
+                    break
+        sev.append(bad)
+    step = [(a, b) in steps for a, b, _, _ in L]
+    ln = [math.dist(*sg) for sg in seg]
+    slant = [not _ortho(*sg) for sg in seg]
+    xs = [[] for _ in range(n)]
+    for i in range(n):
+        for j in range(i + 1, n):
+            if not ({L[i][0], L[i][1]} & {L[j][0], L[j][1]}) and _cross(seg[i], seg[j]):
+                xs[i].append(j)
+                xs[j].append(i)
+    touch = {}
+    for i, (a, b, _, _) in enumerate(L):
+        touch.setdefault(a, []).append(i)
+        touch.setdefault(b, []).append(i)
+    HL = {k: bool(byk[k].hide_lines) for k in byk}
+    HD = {k: bool(byk[k].hide_dependents) for k in byk}
+
+    def shown(i):
+        a, b, qk, dk = L[i]
+        return not ((qk is not None and HL[qk]) or (dk is not None and HD[dk]))
+
+    def cost():
+        vis = [shown(i) for i in range(n)]
+        c = 0.0
+        for i in range(n):
+            if vis[i]:
+                c += (100 if sev[i] else 0) + (4 if ln[i] > COMB_FLOAT_MAX else 1.5 if ln[i] > MAX_EDGE else 0) + 0.5 * slant[i]
+                c += 0.75 * sum(1 for j in xs[i] if vis[j] and j > i) * 2
+            else:
+                c += 100 if step[i] else 0.2
+        for node, ii in touch.items():
+            if isinstance(node, str) and not any(vis[i] for i in ii):
+                c += 12
+        return c
+
+    flip = [("HL", k) for k in byk if k not in shared] + [("HD", k) for k in byk if k not in shared]
+    cur = cost()
+    for _ in range(60):
+        best = None
+        for kind, k in flip:
+            D = HL if kind == "HL" else HD
+            D[k] = not D[k]
+            c = cost()
+            D[k] = not D[k]
+            if c < cur - 1e-9 and (best is None or c < best[0]):
+                best = (c, kind, k)
+        if best is None:
+            break
+        cur, kind, k = best
+        D = HL if kind == "HL" else HD
+        D[k] = not D[k]
+    for k in byk:
+        byk[k].hide_lines, byk[k].hide_dependents = HL[k], HD[k]
 
 
 # --- banner (L12) -----------------------------------------------------------------------------
@@ -2493,6 +3456,7 @@ def metrics(chapter, old_banner=False):
     down = sum(1 for (p1, p2, _, _) in segs if p2[1] - p1[1] > abs(p2[0] - p1[0]))
     up = len(segs) - right - down - left
     lens = sorted(math.dist(p1, p2) for p1, p2, _, _ in segs)
+    ortho = sum(1 for p1, p2, _, _ in segs if abs(p1[0] - p2[0]) < 0.1 or abs(p1[1] - p2[1]) < 0.1)
     heads = getattr(chapter, "sections", None) or []
     boxes = [(x, y, size[k]) for k, (x, y) in qpos.items()] + [(float(x), float(y), 1.0) for _, x, y in chapter.links]
     overlaps = close = 0
@@ -2516,7 +3480,7 @@ def metrics(chapter, old_banner=False):
             "long": long_, "left": left, "right": right, "down": down, "up": up, "lines": len(segs),
             "median": lens[len(lens) // 2] if lens else 0.0, "hidden": len(hid | hid_out), "hidden_edges": hidden_edges,
             "sections": len(heads), "overlap": overlaps + on_banner + on_head, "close": close,
-            "links": len(chapter.links)}
+            "links": len(chapter.links), "ortho": ortho}
 
 
 def report(chapters, apply_fn, before_fn=None):
@@ -2532,9 +3496,10 @@ def report(chapters, apply_fn, before_fn=None):
         rows.append((c, before, after))
     rows.sort(key=lambda r: (getattr(r[0], "layout", "auto") == "manual", -r[2]["w"] * r[2]["h"], r[0].key))
     head = ("| chapter | style | n | sections | size WxH | crossings | lines thru quests | edges > 6 | "
-            "hidden lines | overlaps | lines right/down/up/left % | median line |")
-    out = [head, "|" + "---|" * 12]
-    keys = ("cross", "thru", "long", "hidden_edges", "overlap", "sections", "lines", "right", "down", "up", "left")
+            "hidden lines | overlaps | lines right/down/up/left % | orthogonal % | median line |")
+    out = [head, "|" + "---|" * 13]
+    keys = ("cross", "thru", "long", "hidden_edges", "overlap", "sections", "lines", "right", "down", "up", "left", "ortho")
+    opct = lambda m: round(100 * m["ortho"] / m["lines"]) if m["lines"] else 100
     tot_b = {k: 0 for k in keys}
     tot_a = dict(tot_b)
     pct = lambda m: "/".join(str(round(100 * m[k] / m["lines"])) if m["lines"] else "0" for k in ("right", "down", "up", "left"))
@@ -2546,17 +3511,18 @@ def report(chapters, apply_fn, before_fn=None):
         out.append(f"| {c.key} | {style} | {a['n']} | {a['sections']} | {b['w']:g}x{b['h']:g} -> {a['w']:g}x{a['h']:g} | "
                    f"{b['cross']}->{a['cross']} | {b['thru']}->{a['thru']} | {b['long']}->{a['long']} | "
                    f"{b['hidden_edges']}->{a['hidden_edges']} | {b['overlap']}->{a['overlap']} | {pct(b)} -> {pct(a)} | "
-                   f"{b['median']:.1f}->{a['median']:.1f} |")
+                   f"{opct(b)}->{opct(a)} | {b['median']:.1f}->{a['median']:.1f} |")
     auto = [r for r in rows if getattr(r[0], "layout", "auto") != "manual"]
     med = lambda v: sorted(v)[len(v) // 2] if v else 0
     out.append(f"| **total** | | {sum(r[2]['n'] for r in rows)} | {tot_a['sections']} | median "
                f"{med([r[1]['w'] for r in auto]):g}x{med([r[1]['h'] for r in auto]):g} -> "
                f"{med([r[2]['w'] for r in auto]):g}x{med([r[2]['h'] for r in auto]):g} | {tot_b['cross']}->{tot_a['cross']} | "
                f"{tot_b['thru']}->{tot_a['thru']} | {tot_b['long']}->{tot_a['long']} | {tot_b['hidden_edges']}->{tot_a['hidden_edges']} | "
-               f"{tot_b['overlap']}->{tot_a['overlap']} | {pct(tot_b)} -> {pct(tot_a)} | "
+               f"{tot_b['overlap']}->{tot_a['overlap']} | {pct(tot_b)} -> {pct(tot_a)} | {opct(tot_b)}->{opct(tot_a)} | "
                f"{med([r[1]['median'] for r in auto]):.1f}->{med([r[2]['median'] for r in auto]):.1f} |")
     big = [r[0].key for r in auto if r[2]["w"] > PAGE_W + 4 or r[2]["h"] > PAGE_H + 4]
-    out += ["", "Size includes section headers and links. Crossings, lines through quests, edges and directions count "
+    out += ["", "Size includes section headers and links. Orthogonal % = drawn lines that are horizontal or vertical "
+            "(|dx| or |dy| < 0.1). Crossings, lines through quests, edges and directions count "
             "only drawn lines (including the lines FTB draws from quest links); hidden lines show on mouse-over. "
             f"Redundant deps dropped (prune_transitive): {sum(getattr(c, 'pruned_deps', 0) for c in chapters)}.",
             f"Pages over {PAGE_W + 4:g} wide or {PAGE_H + 4:g} tall: {', '.join(big) or 'none'}."]

@@ -47,6 +47,10 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         "&eHow:&r check JEI. Place it at your Nether base or portal hub.",
         "&eTip:&r place it before building in the Nether so your base stays quiet."]),
 
+    Q("gs_sleep", 0, 0, [anytag("comforts:sleeping_bags")], "Rest Anywhere", subtitle="Skip the night, keep your spawn", deps=["ql_start", "gs_bed"], xp=20, desc=[
+        "&eWhat:&r A &esleeping bag&r from Comforts skips the night without moving your spawn point, so it's ideal while exploring.",
+        "&eHow:&r 3 wool of one colour in a vertical column. Any colour of sleeping bag counts.",
+        "&eTip:&r Hammocks skip the day instead (Gear and Comfort page)."]),
     # --- Backpacks (y=2) -----------------------------------------------------------------------
     Q("q_stick", 8, 2, [item("crafting_on_a_stick:crafting_table")], "Crafting on a Stick", deps=["ql_start"], xp=20,
       subtitle="A crafting table that fits in your pocket", desc=[
@@ -387,4 +391,4 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         "&eWhat:&r the Protection Pylon stops you breaking chosen blocks or hurting chosen mobs in its range (so a pet or a showpiece is safe from your own sword). The Expulsion Pylon sends other players out of your chunks; whitelist friends with a Player Filter.",
         "&eHow:&r the pylon frame around a honeycomb block (protection) or a diamond block (expulsion). Filters: cyan terracotta, green dye and glass around honeycomb (block) or a diamond (player).",
         "&eTip:&r with FTB Teams, your team is whitelisted automatically."]),
-], links=[("gs_table", -3, 0), ("gs_iron", -3, 2), ("gs_backpack", -3, 3.5), ("gs_stone", 10, -1.5)])
+], links=[("gs_table", -3, 0), ("gs_bed", -3, -1.5), ("gs_iron", -3, 2), ("gs_backpack", -3, 3.5), ("gs_stone", 10, -1.5)])

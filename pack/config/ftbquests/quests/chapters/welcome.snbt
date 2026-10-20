@@ -12,10 +12,14 @@
 	quests: [
 		{
 			id: "54E4F62471779F14"
-			x: 4.0d
-			y: 1.0d
+			x: 0.0d
+			y: 0.0d
 			shape: "gear"
 			size: 2.0d
+			icon: {
+				id: "minecraft:nether_star"
+				count: 1
+			}
 			tasks: [
 				{
 					id: "3431BF0454E09CE5"
@@ -42,11 +46,160 @@
 			]
 		}
 		{
+			id: "022F679599389147"
+			x: -3.5d
+			y: -1.5d
+			shape: "hexagon"
+			size: 1.5d
+			icon: {
+				id: "modern_industrialization:bronze_ingot"
+				count: 1
+			}
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "74F3CB916B560BD0"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "59B9393C6393D0C6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "32306651C1085697"
+			x: 3.5d
+			y: -1.5d
+			shape: "hexagon"
+			size: 1.5d
+			icon: {
+				id: "kubejs:demigod_token"
+				count: 1
+			}
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "2EDBE071EC70ED83"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7C748632D42BE06A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 5
+					}
+				}
+			]
+		}
+		{
+			id: "745DBEEE9AE746C7"
+			x: -3.5d
+			y: 1.5d
+			shape: "hexagon"
+			size: 1.5d
+			icon: {
+				id: "minecraft:spyglass"
+				count: 1
+			}
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "5319E4740EAE7FA8"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "797D1B9C30A2CD3E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5EFC77C0525603E5"
+			x: 3.5d
+			y: 1.5d
+			shape: "hexagon"
+			size: 1.5d
+			icon: {
+				id: "framedblocks:framed_hammer"
+				count: 1
+			}
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "48338EB9C6B02D90"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7DBDC565793F497D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "61103C80A99526F9"
+			x: 0.0d
+			y: 3.25d
+			shape: "hexagon"
+			size: 1.5d
+			icon: {
+				id: "minecraft:oak_sapling"
+				count: 1
+			}
+			dependencies: [
+				"54E4F62471779F14"
+			]
+			tasks: [
+				{
+					id: "05FA26D4F1CB4D1E"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "2F10C065D831C5DF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
 			id: "14851AEFE672966D"
-			x: 4.0d
-			y: 3.0d
-			shape: "pentagon"
-			size: 0.9d
+			x: -1.75d
+			y: -3.0d
+			optional: true
 			dependencies: [
 				"54E4F62471779F14"
 			]
@@ -68,119 +221,16 @@
 			]
 		}
 		{
-			id: "022F679599389147"
-			x: 4.0d
-			y: 5.0d
-			shape: "pentagon"
-			size: 0.9d
-			dependencies: [
-				"14851AEFE672966D"
-			]
-			tasks: [
-				{
-					id: "74F3CB916B560BD0"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "59B9393C6393D0C6"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "745DBEEE9AE746C7"
-			x: 2.0d
-			y: 5.0d
-			shape: "pentagon"
-			size: 0.9d
-			dependencies: [
-				"14851AEFE672966D"
-			]
-			tasks: [
-				{
-					id: "5319E4740EAE7FA8"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "797D1B9C30A2CD3E"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "32306651C1085697"
-			x: 4.0d
-			y: 7.0d
-			shape: "pentagon"
-			size: 0.9d
-			dependencies: [
-				"022F679599389147"
-			]
-			tasks: [
-				{
-					id: "2EDBE071EC70ED83"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "7C748632D42BE06A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 5
-					}
-				}
-			]
-		}
-		{
-			id: "61103C80A99526F9"
-			x: 4.0d
-			y: 9.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"32306651C1085697"
-				"745DBEEE9AE746C7"
-			]
-			tasks: [
-				{
-					id: "05FA26D4F1CB4D1E"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "2F10C065D831C5DF"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "5F462A144226867C"
-			x: 5.5d
-			y: 5.0d
-			shape: "circle"
-			size: 0.85d
+			x: 1.75d
+			y: -3.0d
 			optional: true
+			icon: {
+				id: "chemlib:hydrogen"
+				count: 1
+			}
 			dependencies: [
-				"14851AEFE672966D"
+				"54E4F62471779F14"
 			]
 			tasks: [
 				{
@@ -199,39 +249,12 @@
 				}
 			]
 		}
-		{
-			id: "5EFC77C0525603E5"
-			x: 0.5d
-			y: 7.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"745DBEEE9AE746C7"
-			]
-			tasks: [
-				{
-					id: "48338EB9C6B02D90"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "7DBDC565793F497D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
 	]
 	images: [
 		{
 			id: "64EA6B5BC9A940C8"
-			x: 3.075d
-			y: -1.5d
+			x: -1.25d
+			y: -5.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
@@ -239,8 +262,8 @@
 		}
 		{
 			id: "5C02A206CED00D77"
-			x: 3.575d
-			y: -3.75d
+			x: -0.75d
+			y: -7.25d
 			width: 7.0d
 			height: 2.07d
 			rotation: 0.0d

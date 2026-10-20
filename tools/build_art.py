@@ -251,7 +251,7 @@ def main():
 
 def write_banners(CHAPTERS, qdir):
     # Banner tiles: tier chapters show T0-T7; the rest show a real element that fits the chapter.
-    tags = {"welcome": ("H", 1), "start": ("He", 2), "t0": ("T0", 0), "t1": ("T1", 1), "t2": ("T2", 2),
+    tags = {"welcome": ("H", 1), "tips": ("Ti", 4), "start": ("He", 2), "t0": ("T0", 0), "t1": ("T1", 1), "t2": ("T2", 2),
             "t3": ("T3", 3), "t4": ("T4", 4), "t5": ("T5", 5), "t6": ("T6", 6), "t7": ("T7", 7),
             "tools": ("Fe", 26), "factory": ("C", 6), "qol": ("Ar", 18), "storage": ("Si", 14),
             "magic": ("Au", 79), "worlds": ("O", 8), "farming": ("N", 7),
