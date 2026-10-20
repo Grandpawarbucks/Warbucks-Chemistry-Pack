@@ -40,6 +40,10 @@ else:
 TOP = "top"  # ungrouped chapters: written with group "" so FTB Quests lists them above the first group tab
 
 
+COINS_PER_TOKEN = 100  # 1 old Demigod Token = 100 Wardaddy Market coins (tools/build_market_prices.py uses the same scale)
+TOKEN_ITEMS = {"kubejs:demigod_token": COINS_PER_TOKEN, "kubejs:greater_demigod_token": 9 * COINS_PER_TOKEN}
+
+
 def hexid(key):
     """Stable 16-hex-digit id from a key (first digit 0-7 so it parses as a signed long)."""
     n = int(hashlib.sha1(key.encode()).hexdigest()[:16], 16) & 0x7FFFFFFFFFFFFFFF
@@ -150,7 +154,7 @@ def build():
         lang[f"chapter_group.{group_ids[g]}.title"] = GROUPS[g]
 
     order = {g: 0 for g in GROUPS}
-    total = 0
+    total = total_coins = 0
     for c in CHAPTERS:
         cid = hexid("chapter:" + c.key)
         lang[f"chapter.{cid}.title"] = c.title
@@ -180,15 +184,20 @@ def build():
                     tasks.append({"id": tid, "type": "checkmark"})
             if q.xp:
                 rewards.append({"id": hexid(f"reward:{q.key}:xp"), "type": "xp", "xp": q.xp})
+            # Coins replace tokens (2026-10-20): the chapter's token rate (x2 for milestones) plus any old token item
+            # rewards are paid as Wardaddy Market coins (FTB Quests "currency" reward -> SG-Economy wallet).
             tokens = q.tokens if q.tokens is not None else c.tokens * (2 if (q.size or 1) >= 1.5 else 1)
-            if tokens:
-                rewards.append({"id": hexid(f"reward:{q.key}:tokens"), "type": "item",
-                                "item": {"id": "kubejs:demigod_token", "count": tokens}})
+            coins = tokens * COINS_PER_TOKEN + sum(n * TOKEN_ITEMS[rid] for rid, n in q.items if rid in TOKEN_ITEMS)
+            if coins:
+                rewards.append({"id": hexid(f"reward:{q.key}:coins"), "type": "currency", "amount": coins})
+                total_coins += coins
             for kind, tkey in (("random", q.loot), ("choice", q.choice)):
                 if tkey:
                     rewards.append({"id": hexid(f"reward:{q.key}:{kind}"), "type": kind,
                                     "table_id": Long(int(hexid("table:" + tkey), 16))})
             for i, (rid, n) in enumerate(q.items):
+                if rid in TOKEN_ITEMS:
+                    continue  # paid as coins above
                 rewards.append({"id": hexid(f"reward:{q.key}:{i}"), "type": "item", "item": {"id": rid, "count": n}})
             entry = {"id": qid, "x": float(q.x), "y": float(q.y)}
             if q.shape:
@@ -270,7 +279,7 @@ def build():
     write_doc(total)
     print(f"Reward tables: {len(REWARD_TABLES)}")
     rel = lambda f: f.relative_to(ROOT) if f.is_relative_to(ROOT) else f
-    print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {rel(OUT)} (+ {rel(DOC)})")
+    print(f"Built {len(CHAPTERS)} chapters, {total} quests -> {rel(OUT)} (+ {rel(DOC)}); quests pay {total_coins:,} coins")
 
 
 def style_quests():

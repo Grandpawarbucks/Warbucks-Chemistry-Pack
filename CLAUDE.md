@@ -93,7 +93,7 @@ Open items / next steps, in order:
 - Monifactory review (2026-10-18): added HNN, Extended Crafting, PackagedAuto(+ExCrafting), Compact Machines,
   Cable Facades, TelePastries (gated in phase4_monifactory.js). Flight gating done (Angel Ring + Iron Jetpacks added). 177 mods.
 - Chemistry mechanics (2026-10-18): phase4_chemistry.js + startup_scripts/chemistry_items.js (byproducts,
-  Haber/Ostwald, PGM line, energy cores, capstone Seed of a New World, Demigod Token shop).
+  Haber/Ostwald, PGM line, energy cores, capstone Seed of a New World; the Demigod Token shop is retired).
   ChemLib fluid ids are <name>_fluid (verified at runtime). GTMOGS ore veins rejected (broken KubeJS).
 - Aesthetic (2026-10-18): FancyMenu + Drippy layouts in pack/config/fancymenu; art from tools/build_art.py
   (needs Pillow: use a venv). Banners in pack/kubejs/assets/warbucks/textures/quests. Ore deposits from
@@ -137,6 +137,11 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Wardaddy Market (2026-10-20, user: "Coins replace tokens", "Everything, priced high", all services on): the user's
+  own wdmarket 1.24.6 + SG-Economy 1.0.5 (227 mods). Quests pay coins (100 per old token; `COINS_PER_TOKEN` in
+  build_quests.py), token shop retired (chapters in `RETIRED`, recipes gone). Prices: `tools/build_market_prices.py`
+  -> pack/config/wdmarket/prices.json + settings.json tier fields; re-run after quest/recipe/mod changes. Notes in
+  docs/research/wdmarket.md. 67 chapters, 3,640 quests. Not yet checked in a client: the Market screen and coin claims.
 - Quest book v14 (2026-10-20, user: ATM10 "heavily used for inspiration"): 71 chapters, 4,116 quests. Mod pages mirror
   ATM10 quest-for-quest where we have the mod (Q(mirror=<ATM10 quest id>), Chapter(mirror=<stem>), MIRROR map; ATM10 is
   ARR: requirements/order only, own text). New pages: silentgear, artifacts, apothic_enchanting, eae, pylons,

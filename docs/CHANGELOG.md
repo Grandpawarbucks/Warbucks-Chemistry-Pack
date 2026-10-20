@@ -4,6 +4,26 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-20: Wardaddy Market replaces the Demigod Token shop (67 chapters, 3,640 quests)
+- **New mods:** Wardaddy Market 1.24.6 (the user's own mod, GitHub release) and SG-Economy API 1.0.5 (pinned; 1.1.0
+  breaks FTB XMod Compat's currency provider). 227 mods. Research notes: docs/research/wdmarket.md.
+- **Coins replace tokens** (user decision): every quest pays Wardaddy Market coins (FTB Quests `currency` reward into
+  the SG-Economy wallet) at 100 coins per old token, milestones x2; Creation's Greater Token rewards pay 900 each.
+  3,523 quests pay coins, 623,500 in all. Claim in the quest window or with the Market's Claim button.
+- **Market config** (pack/config/wdmarket/): prices.json for 21,126 items from tools/build_market_prices.py (recipe
+  costs from the post-KubeJS recipe dump, metal families, Rechiseled variants, anti-arbitrage on sell prices).
+  Everything is buyable except creative-only items (no Creative category). Chemistry (ChemLib, MI circuits and hulls,
+  rare/milestone metals, acids and petrochemicals, KubeJS-gated items) is priced very high by tier; the Seed of a New
+  World, antimatter and energy cores have their own floors and need their quest first. 11 Market tiers = the
+  Demigod's Path chapters, each opened by a main-path quest. settings.json: every service on (claims, force-loads,
+  XP, repairs, day/weather, flight, loot booster, perks, deals, bounties), prices rescaled to our coins.
+- **Removed:** the four token-shop chapters (market, shop_materials, shop_gear, shop_world: 476 quests; files kept,
+  listed in `RETIRED` in tools/quest_data.py), the 52 token-shop recipes (phase4_chemistry.js §5) and the token entries
+  in 13 reward tables. kubejs:demigod_token / greater_demigod_token stay registered but unused.
+- Welcome, Tips, Storage, QoL and Deeper and Darker text now point to the Market key and coins.
+- pack/kubejs/data/wdmarket/loot_table/structure_fill/magic.json: the mod's table without Iron's Spellbooks items
+  (an ATM10-only mod; the original failed to parse). Fast Leaf Decay got its missing modlist-meta row.
+
 ### 2026-10-20: Worldgen deadlock fix, longer view distance
 - Regions Unexplored 0.6.2 + Lithostitched 1.8.1 deadlocked chunk generation (Chunky stuck at 50%: a worker parked in
   InStructurePredicate). tools/build_ru_fix.py writes 8 RU placed features into pack/kubejs/data without the

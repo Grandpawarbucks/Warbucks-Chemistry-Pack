@@ -145,7 +145,7 @@ CHAPTER = Chapter("deeperdarker", "Deeper and Darker", "deeperdarker:warden_cara
       mirror="7CBAA67204CC258C", subtitle="A sword or an axe beyond netherite", desc=[
         "&eWhat:&r a Warden sword or axe: the Otherside's best weapons.",
         "&eHow:&r smithing table: Warden template + netherite sword or axe + reinforced echo shard.",
-        "&eTip:&r echo shards also come from the Demigod Token shop (check JEI) if Ancient City chests run dry."]),
+        "&eTip:&r echo shards are also sold in the Market (press Y) if Ancient City chests run dry."]),
     Q("dd_warden_digging", 0, 0, [anyof([DD + "warden_pickaxe", DD + "warden_shovel", DD + "warden_hoe"])], "A Warden Tool",
       deps=["dd_warden_template", "w_echo"], xp=300, mirror="726A627BD7654E0C", subtitle="A pickaxe, shovel or hoe beyond netherite", desc=[
         "&eWhat:&r a Warden pickaxe, shovel or hoe.",

@@ -302,7 +302,7 @@ CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:ba
         "&6You remember carrying whole worlds. For now, a leather bag will do.&r",
         "&eWhat:&r more inventory, and it can be upgraded later (pickup, magnet, feeding and more).",
         "&eHow:&r leather, string and a chest (check JEI for the shape). Wear it in the chest slot or keep it in your inventory.",
-        "&eTip:&r take it on your first mining trip. The upgrade base is also sold in the Demigod Token shop."]),
+        "&eTip:&r take it on your first mining trip. The upgrade base is also sold in the Market."]),
     Q("sto_bp_copper", 0, 0, [item("sophisticatedbackpacks:copper_backpack")], "Copper Backpack", section=S_BP, deps=["gs_backpack"], xp=20,
       **OPT, mirror="0E057B7F76401421", subtitle="Optional: one small step before iron", desc=[
         "&eWhat:&r the copper backpack sits between leather and iron: a few more slots and an extra upgrade slot.",
@@ -323,7 +323,7 @@ CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:ba
     Q("sto_bp_base", 0, 0, [item("sophisticatedbackpacks:upgrade_base")], "Backpack Upgrade Base", section=S_BP, deps=["gs_backpack"], xp=15,
       mirror="1FE052F643401232", subtitle="The blank behind every backpack upgrade", desc=[
         "&eWhat:&r every backpack upgrade starts from this base. The upgrades below each add one thing the pack does by itself.",
-        "&eHow:&r leather, string and iron (check JEI). It's also in the Demigod Token shop.",
+        "&eHow:&r leather, string and iron (check JEI). It's also sold in the Market.",
         "&eTip:&r upgrades go in the slots on the left of the backpack screen; sneak-right-click the slot to open an upgrade's settings."]),
     Q("sto_bp_tank", 0, 0, [item("sophisticatedbackpacks:tank_upgrade")], "Tank Upgrade", section=S_BP, deps=["sto_bp_base"], xp=40,
       **OPT, mirror="0D4C64DD58567758", subtitle="Optional: carry fluids in your backpack", desc=[

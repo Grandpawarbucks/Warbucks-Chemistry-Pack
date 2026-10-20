@@ -25,7 +25,6 @@ BOOK_TITLE = "Warbucks Chemistry: The Demigod's Codex"
 GROUPS = {
     "top": None,
     "main": "The Demigod's Path (Main Questline)",
-    "shop": "The Demigod's Market",
     "gear": "Tools and Gear",
     "storage": "Storage",
     "logistics": "Logistics",
@@ -38,11 +37,8 @@ GROUPS = {
 }
 LAYOUT = {
     # ATM10's top: Welcome, Market, Market Tiers, Bounty Board, Building Tips, Tips and Tricks.
-    "top": ["welcome", "market", "tips", "building", "hunting", "lab_notes", "completionist"],
+    "top": ["welcome", "tips", "building", "hunting", "lab_notes", "completionist"],
     "main": ["start", "t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7", "seed", "creation"],
-    # Token shop (docs/research/shop_brief.md): buy more of anything you've already made yourself. Its entry page
-    # (market) sits in the top area; the shelves are this group.
-    "shop": ["shop_materials", "shop_gear", "shop_world"],
     "gear": ["tools", "harvest", "apotheosis", "relics", "artifacts", "silentgear", "qol"],
     "storage": ["storage", "ae2", "eae"],
     "logistics": ["logic", "integrated", "pylons"],
@@ -81,7 +77,11 @@ MIRROR = {
 _QDIR = pathlib.Path(__file__).resolve().parent / "quests"
 ORDER = [k for g in LAYOUT.values() for k in g if (_QDIR / f"{k}.py").exists()]
 # A chapter file that isn't in LAYOUT is not built: say so (its quests would silently vanish otherwise).
-UNLISTED = sorted(f.stem for f in _QDIR.glob("*.py") if not f.stem.startswith("_") and f.stem not in ORDER)
+# Retired chapter files, kept on disk but never built (2026-10-20, user: "Coins replace tokens"): the Demigod Token
+# shop pages. The Wardaddy Market (Market key, coins) is the only shop now; see tools/quests/STYLE.md.
+RETIRED = {"market", "shop_materials", "shop_gear", "shop_world"}
+UNLISTED = sorted(f.stem for f in _QDIR.glob("*.py")
+                  if not f.stem.startswith("_") and f.stem not in ORDER and f.stem not in RETIRED)
 # Writers can validate just their own chapters (plus the main tiers) while others are mid-edit:
 #   QUEST_ONLY=ars,apotheosis python3 tools/build_quests.py --check
 ONLY = [k for k in os.environ.get("QUEST_ONLY", "").split(",") if k]
@@ -552,13 +552,14 @@ _SHARED = _linked_elsewhere()
 for _c in CHAPTERS:
     _c.shared_quests = _SHARED
 
-# Demigod Tokens per quest, scaled by tier (milestone quests, size >= 1.5, pay double).
+# Quest reward rate per chapter, in the old Demigod Token units (milestone quests, size >= 1.5, pay double).
+# tools/build_quests.py pays it as Wardaddy Market coins: COINS_PER_TOKEN coins per unit (FTB Quests "currency"
+# reward, paid into the SG-Economy wallet through FTB XMod Compat).
 TOKENS = {"welcome": 1, "start": 1, "t0": 1, "t1": 2, "t2": 2, "t3": 3, "t4": 3, "t5": 4, "t6": 5, "t7": 8,
           "seed": 10, "creation": 10, "completionist": 3, "harvest": 1}
 for _c in CHAPTERS:  # a split page's chapters (if the split is ever switched on) all pay the page's rate
     _c.tokens = TOKENS.get(getattr(_c, "page", None) or _c.key, 1)
-    # Shop pages (the market entry and its shelves) unlock in order: FTB progression_mode linear.
-    _c.linear = (getattr(_c, "page", None) or _c.key) in ("market", *LAYOUT["shop"])
+    _c.linear = False  # the retired token-shop pages were the only linear chapters
 
 # Tier milestones (size >= 1.5 in t0..t7) also roll that tier's loot table, unless set by hand.
 for _c in CHAPTERS:

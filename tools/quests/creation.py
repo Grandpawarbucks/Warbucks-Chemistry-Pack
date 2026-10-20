@@ -8,7 +8,7 @@ from questlib import Q, Chapter, item, dim, tick, biome, anyof, MAIN, SIDE  # no
 
 MI = "modern_industrialization:"
 MEK = "mekanism:"
-GT = "kubejs:greater_demigod_token"
+GT = "kubejs:greater_demigod_token"  # old reward item: tools/build_quests.py pays it as 900 coins (TOKEN_ITEMS)
 PB = "{@pagebreak}"
 LANTHANIDES = ["chemlib:" + e for e in ("lanthanum", "cerium", "praseodymium", "neodymium", "promethium", "samarium", "europium",
                                         "gadolinium", "terbium", "dysprosium", "holmium", "erbium", "thulium", "ytterbium", "lutetium")]

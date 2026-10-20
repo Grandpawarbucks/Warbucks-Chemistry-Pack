@@ -12,9 +12,9 @@ StartupEvents.registry('item', event => {
   // Ammonium chloride precipitates the platinum as (NH₄)₂PtCl₆, which is calcined to pure platinum.
   event.create('ammonium_hexachloroplatinate').displayName('Ammonium Hexachloroplatinate').texture('minecraft:item/sugar')
 
-  // --- Demigod Token: quest-reward currency, spent on convenience items ---
+  // --- Demigod Tokens: RETIRED 2026-10-20 ("Coins replace tokens": quests pay Wardaddy Market coins). Still
+  // registered so old ids resolve (harmless; no recipe, quest or loot table uses them any more).
   event.create('demigod_token').displayName('Demigod Token').rarity('uncommon') // texture: kubejs/assets/kubejs/textures/item/demigod_token.png
-  // Worth 9 Demigod Tokens (2-way crafting in phase4_chemistry.js); pays for the big shop trades.
   event.create('greater_demigod_token').displayName('Greater Demigod Token').rarity('rare') // texture: greater_demigod_token.png
 
   // --- Endgame energy cores (the Monifactory "energy core" idea, chemistry flavoured) ---

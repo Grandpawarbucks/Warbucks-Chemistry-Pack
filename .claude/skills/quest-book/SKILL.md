@@ -1,6 +1,6 @@
 ---
 name: quest-book
-description: Write, extend, fix or reorganize the Warbucks Chemistry FTB quest book (tools/quests/*.py). Use for new quests, new chapters or mod pages, token-shop entries, ATM10 coverage passes, impossible or unreachable quests, messy quest lines, and in-game quest edits that must be copied back.
+description: Write, extend, fix or reorganize the Warbucks Chemistry FTB quest book (tools/quests/*.py). Use for new quests, new chapters or mod pages, quest coin rewards, ATM10 coverage passes, impossible or unreachable quests, messy quest lines, and in-game quest edits that must be copied back.
 ---
 
 # Quest book workflow
@@ -24,7 +24,7 @@ files you'll touch. On Windows, use `.venv\Scripts\python.exe` wherever the docs
    in the jar (`test/server/mods`) or write "check JEI". Never invent a recipe.
 7. **Deps are the layout.** Don't spend time on x/y; `tools/layout.py` places quests from `deps`. Depend on the
    nearest quest that truly unlocks this one, not a far-off hub. Use `row=N` only to fix a bad result.
-8. New chapter files must be added to `LAYOUT` in `tools/quest_data.py` (with their token rate in `TOKENS`).
+8. New chapter files must be added to `LAYOUT` in `tools/quest_data.py` (with their reward rate in `TOKENS`; 1 = 100 coins).
 
 ## Steps
 1. **Scope.** Name the chapter(s) and where the content enters the main path (the main-path quest the page's first
@@ -52,9 +52,9 @@ files you'll touch. On Windows, use `.venv\Scripts\python.exe` wherever the docs
    pushing. Pushing and live restarts follow CLAUDE.md and the user's say-so.
 
 ## Special cases
-- **Token shop** (market, shop_* chapters, `layout="manual"` grids): entries use
-  `repeat=True, consume=True, locked_hidden=True, tokens=0`. Each one depends on a quest where the player makes or
-  gets that item themselves ("buy more of what you've made"). Prices are in docs/research/shop_brief.md.
+- **Shop = Wardaddy Market** (2026-10-20): the token-shop chapters are retired (`RETIRED` in quest_data.py) and quests
+  pay coins. Prices live in pack/config/wdmarket/ (`tools/build_market_prices.py`, re-run after quest or recipe
+  changes: item tiers come from the chapter that first asks for an item, and tier unlocks are main-path quest keys).
 - **In-game edits** (FTB editor on a test client) are overwritten by the next build. Copy them into
   `tools/quests/<chapter>.py` first. Position tweaks from `tools/quest_editor.py` live in `tools/quest_overrides.json`
   and need no copying.

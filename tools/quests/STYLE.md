@@ -25,7 +25,7 @@ Validate with `python3 tools/build_quests.py --check` (writes nothing). The real
 Split big leaps into one quest per new machine or intermediate (e.g. sulfur → SO₂ → SO₃ → H₂SO₄, each its own quest with its own machine). New quest keys use the chapter prefix (e.g. `t3_so2`). Wire `deps` so the line reads left to right. Keep existing quests as the milestones.
 
 ## Optional side quests
-Bonus content off the main line: collections, challenges, fun facts, alternative routes. Mark them `optional=True` and give `tokens=1` (or 2 for hard ones). The layout places them off the main line automatically. Main-line quests never depend on optional ones.
+Bonus content off the main line: collections, challenges, fun facts, alternative routes. Mark them `optional=True` and give `tokens=1` (or 2 for hard ones; 1 = 100 coins). The layout places them off the main line automatically. Main-line quests never depend on optional ones.
 
 ## Story and lore
 The player is a demigod who woke without their power and regains it by mastering chemistry. Each chapter should have:
@@ -123,7 +123,7 @@ on the `test/build_quest_map.py --compare` page); try one without editing the fi
   `BLOCKS` in quest_data.py can ask for them on a winding/radial page), `"tree"` (sections as top-down trees in
   columns or rows), `"grid"` (tighter rows for collections) and `"spine"` (v11: one straight row, sections above and
   below).
-- The shop chapters (and welcome, tips) stay `Chapter(..., layout="manual")`: hand-written `x`/`y` and link positions
+- Welcome and tips stay `Chapter(..., layout="manual")`: hand-written `x`/`y` and link positions
   are used as they are. A page the comb can't draw cleanly can be hand-placed the same way (use the comb grammar).
 - No "periodic" element grid: the periodic chapter is family by family (alkali metals, halogens, ...), not one quest
   per element, so a period/group grid wouldn't fit it.
@@ -164,16 +164,15 @@ Shaping the result, if a chapter reads badly:
 **Milestones have exactly two styles** (normalised at build time, so other sizes are converted):
 - **Chapter capstone:** `size=2.0, shape="gear"` (any size of 1.75 or more becomes this).
 - **Section milestone:** `size=1.5, shape="hexagon"` (sizes 1.25 to 1.5 become this).
-- Everything else is size 1 in the chapter's default shape. Milestones (size >= 1.5) pay double tokens.
+- Everything else is size 1 in the chapter's default shape. Milestones (size >= 1.5) pay double coins.
 
 **Where chapters go** (`GROUPS`/`LAYOUT` in `tools/quest_data.py`; the group is set there by chapter key). The
 sidebar follows All the Mods 10's book (user decision 2026-10-19; its structure only, never its text): **one chapter
 per mod**, grouped by category. A mod's sections are section headers on its page.
 - **Top area, no group** (FTB's ungrouped area, like ATM10's Welcome/Market/Bounty Board/Tips pages), in order:
-  welcome, market (the token shop's entry), tips ("Tips and Tricks"), building ("Building Tips"), hunting
+  welcome, tips ("Tips and Tricks"), building ("Building Tips"), hunting
   ("Bounty Board"), lab_notes, completionist.
 - **The Demigod's Path (Main Questline):** start, t0 to t7, seed, creation (our story replaces ATM10's main questline).
-- **The Demigod's Market:** shop_materials, shop_gear, shop_world (manual grids).
 - **Tools and Gear:** tools, harvest, apotheosis, relics, artifacts, silentgear, qol. **Storage:** storage, ae2, eae.
   **Logistics:** logic, integrated (Integrated Dynamics), pylons.
 - **Resources:** farming, mystical, factory (mob data and big crafting; ATM10 files Hostile Neural Networks here).
@@ -184,8 +183,8 @@ per mod**, grouped by category. A mod's sections are section headers on its page
 - `TITLES` in quest_data.py renames a chapter in the sidebar (and on its banner) without touching its file.
 - A new chapter file must be added to `LAYOUT`, or it isn't built (`--check` warns about unlisted files). A key in
   `LAYOUT` whose file doesn't exist yet is skipped quietly.
-- Progression is `flexible`; the shop pages (market and the Market group) are `linear`. Tokens per quest come from
-  `TOKENS` by chapter key (default 1).
+- Progression is `flexible` everywhere. Rewards per quest come from `TOKENS` by chapter key (default 1), paid as
+  Wardaddy Market coins: `tokens=N` on a quest or chapter means N x 100 coins (`COINS_PER_TOKEN` in build_quests.py).
 - Banners: the build writes every chapter's banner outside the Demigod's Path (`<key>.png`: the page's element tile,
   the chapter's sidebar title) and deletes stale ones (such as old split-chapter banners).
 - The v12 "Mod = category" split (each mod its own group, its sections as chapters) is switched off but kept in
@@ -200,7 +199,14 @@ per mod**, grouped by category. A mod's sections are section headers on its page
 - Blocked: Mystical Agriculture seeds for uranium, uraninite, osmium, fluorite, silicon, steel, aluminum, graphite, platinum, iridium, refined obsidian and refined glowstone (phase4_mysticalagriculture.js). Occultism miners for uranium, uraninite, osmium, fluorite, platinum, iridium and tungsten (phase4_occultism.js). Occultism miners still give other ores (aluminium/bauxite, titanium and more): that's ore, which still needs the chemistry lines.
 - Occultism crusher spirits all give 2 dust per ore (pack/config/occultism-server.toml); higher tiers are only faster.
 - Custom chemistry (MI machines): Haber-Bosch (N₂ + 3H₂ → 2NH₃), Ostwald (NH₃ → HNO₃), NH₃ + HCl → NH₄Cl, the PGM line (anode sludge from nickel/copper electrolysis → aqua regia → chloroplatinic acid + residue → ammonium hexachloroplatinate → calcine to platinum; residue centrifuged into Ir/Os/Rh/Ru), uraninite = uranium dust + O₂ (Chemical Reactor), energy cores, Seed of a New World (9x9 Ultimate Table).
-- Demigod Tokens are quest rewards; shop recipes are in JEI (search "Demigod Token").
+- **Coins, not tokens (2026-10-20, user: "Coins replace tokens").** Every quest pays Wardaddy Market coins (FTB Quests
+  `currency` reward -> SG-Economy wallet via FTB XMod Compat). The Market (Market key, `Y` by default, or `/market`) is
+  the only shop: almost everything is buyable, chemistry priced very high, shelves open along the main path
+  (pack/config/wdmarket/, built by `tools/build_market_prices.py`; see docs/research/wdmarket.md). Don't write token
+  shop entries or mention Demigod Tokens in quest text; point players to the Market and coins.
+- **Retired token-shop chapters:** `market.py`, `shop_materials.py`, `shop_gear.py` and `shop_world.py` stay on disk
+  (keys kept) but are listed in `RETIRED` in tools/quest_data.py and are not built. Don't add them back to `LAYOUT`.
+  The `kubejs:demigod_token` items are still registered but nothing uses them.
 
 ## New task types and quest options (engine v8)
 Import what you need: `from questlib import Q, Chapter, item, dim, tick, kill, structure, biome, anytag, anyof`.

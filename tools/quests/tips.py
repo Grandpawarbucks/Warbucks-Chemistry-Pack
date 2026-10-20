@@ -71,7 +71,7 @@ CHAPTER = Chapter("tips", "Tips and Tricks", "minecraft:spyglass",
     tip("tp_backpack", -1, R2, "Carry More", "A backpack, and what it can learn", "sophisticatedbackpacks:backpack", [
         "&eWhat:&r Sophisticated Backpacks hold far more than your inventory and take upgrades: pickup, magnet, feeding, crafting and more.",
         "&eHow:&r get a backpack (leather, string and a chest, check JEI).",
-        "&eTip:&r the Market sells upgrade bases, so tokens turn into upgrades early. The backpack quest itself is on the Storage page."]),
+        "&eTip:&r the Market (press &eY&r) sells upgrade bases, so early coins turn into upgrades. The backpack quest itself is on the Storage page."]),
     tip("tp_shortcuts", 1, R2, "Fewer Clicks", "Bulk recipes and a crafting table on a stick", "crafting_on_a_stick:crafting_table", [
         "&eWhat:&r Utilitarian adds bulk wood recipes (two logs in a column make 16 sticks; chests and ladders straight from logs). Crafting on a Stick puts a crafting table, stonecutter or anvil in your hand.",
         "&eHow:&r press &eU&r on any log in JEI to see the shortcuts.",
@@ -86,10 +86,10 @@ CHAPTER = Chapter("tips", "Tips and Tricks", "minecraft:spyglass",
         "&eTip:&r on a server, form the party early so claims and quest progress are shared from the start."]),
 
     # --- row 3: this pack's own rules ----------------------------------------------------------------------
-    tip("tp_tokens", -4, R3, "Tokens and the Market", "What quests pay, and what it buys", "kubejs:demigod_token", [
-        "&eWhat:&r most quests pay Demigod Tokens; nine of them make one Greater Demigod Token.",
-        "&eHow:&r the Demigod's Market pages trade tokens for supplies, and JEI shows every crafting trade (search &eDemigod Token&r, press &eU&r).",
-        "&eTip:&r the Market sells more of what you've already made, never a way past a tier."]),
+    tip("tp_tokens", -4, R3, "Coins and the Market", "What quests pay, and what it buys", "minecraft:emerald", [
+        "&eWhat:&r every quest pays coins, more in later chapters. They sit in your wallet (shown in your inventory), not in a chest, and death doesn't take them.",
+        "&eHow:&r press &eY&r (or &e/market&r): buy, sell from your inventory, and check today's Deals (cheaper) and Bounties (sell for more). The Bank tab sells services: extra claimed and force-loaded chunks, repairs, XP levels, daytime, clear weather, flight time and a loot booster.",
+        "&eTip:&r a Sell Bin or Trading Post sells whatever a hopper feeds it, even while you're away. Shelves open chapter by chapter along the Demigod's Path."]),
     tip("tp_perks", -2, R3, "Periodic Table Perks", "Collect a whole group for a permanent bonus", "chemlib:aluminum", [
         "&eWhat:&r the pack remembers every element you've held. Hold every element of a group once and you keep a bonus for good, even after death.",
         "&eHow:&r type &e/warbucks elements&r to see your progress. Aluminium, tin, lead and indium (the post-transition metals) give +2 armour toughness.",

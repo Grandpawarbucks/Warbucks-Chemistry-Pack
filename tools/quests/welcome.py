@@ -24,11 +24,11 @@ CHAPTER = Chapter("welcome", "Welcome", "minecraft:nether_star",
         "&eWhat:&r the Demigod's Path is the spine of the book: eight tiers, each opened by a chemistry milestone. Fire and bronze, then steel, hydrogen, electricity, acids, plastics, the atom and antimatter.",
         "&eHow:&r every other page hangs off it. Modern Industrialization's voltages (LV, MV, HV, EV) set the pace, and other mods open alongside.",
         "&eTip:&r if a recipe looks different from what you remember, it was changed on purpose. JEI always shows the real one."]),
-    Q("wel_tokens", 3.5, -1.5, [tick()], "The Demigod's Market", subtitle="What your Demigod Tokens buy",
-      deps=["wel_hello"], size=1.5, shape="hexagon", tokens=5, icon="kubejs:demigod_token", desc=[
-        "&eWhat:&r most quests pay Demigod Tokens. The Market turns them into supplies and comforts, never into shortcuts past a tier.",
-        "&eHow:&r open the Demigod's Market pages, or search &eDemigod Token&r in JEI and press &eU&r: every trade is a crafting recipe.",
-        "&eTip:&r the Market sells more of what you have already made yourself, so finishing quests opens new stalls."]),
+    Q("wel_tokens", 3.5, -1.5, [tick()], "The Market", subtitle="Quests pay coins; the Market spends them",
+      deps=["wel_hello"], size=1.5, shape="hexagon", tokens=5, icon="minecraft:emerald", desc=[
+        "&eWhat:&r every quest pays coins into your wallet. The Market sells almost anything for them, and buys back what you don't need.",
+        "&eHow:&r press the &eMarket key&r (&eY&r by default) or type &e/market&r. Claim a quest's coins in its reward box, or press &eClaim&r in the Market to collect every finished quest at once.",
+        "&eTip:&r new shelves open as you start each chapter of the Demigod's Path. Chemistry (elements, acids, circuits, rare metals) costs far more than making it yourself."]),
     Q("wel_keys", -3.5, 1.5, [tick()], "Tips and Tricks", subtitle="Keys, shortcuts and how this pack differs",
       deps=["wel_hello"], size=1.5, shape="hexagon", icon="minecraft:spyglass", desc=[
         "&eWhat:&r the Tips and Tricks page collects short lessons: JEI lookups, Jade, claiming land, Ultimine, waystones, perks and the pack's own changes.",

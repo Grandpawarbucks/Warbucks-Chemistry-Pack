@@ -206,7 +206,7 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
     Q("ql_warpstone", 5, 7, [item("waystones:warp_stone")], "Warp Stone", deps=["ql_waystones"], xp=40,
       optional=True, tokens=1, subtitle="Optional: warp from anywhere", desc=[
         "&eWhat:&r a reusable item that opens the waystone menu wherever you stand. It recharges after each use.",
-        "&eHow:&r amethyst shards, ender pearls and an emerald (check JEI). It's also in the Demigod Token shop.",
+        "&eHow:&r amethyst shards, ender pearls and an emerald (check JEI). It's also sold in the Market.",
         "&eTip:&r with a Warp Stone, warp scrolls become backup only."]),
     Q("ql_waypoints", 7, 7, [tick()], "Waypoints", deps=["q_map"], xp=10,
       optional=True, tokens=1, subtitle="Optional: never lose a deposit again", desc=[
