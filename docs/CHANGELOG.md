@@ -4,6 +4,13 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-20: Worldgen deadlock fix, longer view distance
+- Regions Unexplored 0.6.2 + Lithostitched 1.8.1 deadlocked chunk generation (Chunky stuck at 50%: a worker parked in
+  InStructurePredicate). tools/build_ru_fix.py writes 8 RU placed features into pack/kubejs/data without the
+  `not(lithostitched:in_structure)` filter (they still generate, just not structure-aware). Delete once RU or
+  Lithostitched fixes it.
+- Live server: view distance 8 -> 12, simulation distance 6 -> 8; world regenerated (new random seed).
+
 ### 2026-10-20: ATM10 quest-for-quest mod pages (71 chapters, 4,116 quests)
 - Every mod page we share with ATM10 now asks for the same items in the same order and sections (own text; ATM10 is
   ARR). Biggest: Ars 76 -> 166, JDT 65 -> 159, Mystical 42 -> 142, Powah 47 -> 120, Mekanism Reactors 30 -> 113.
