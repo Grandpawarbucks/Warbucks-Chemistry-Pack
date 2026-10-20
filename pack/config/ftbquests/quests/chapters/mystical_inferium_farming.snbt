@@ -1,0 +1,332 @@
+{
+	id: "64E5CBCD9CB6BC26"
+	group: "64BBDAC11E439459"
+	order_index: 2
+	filename: "mystical_inferium_farming"
+	icon: {
+		id: "mysticalagriculture:inferium_farmland"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "08D5A196E95B09AF"
+			x: 2.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7592FE8784DA7D0E"
+			]
+			tasks: [
+				{
+					id: "53B5B14C5A22EE1F"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(mysticalagriculture:seeds)"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "405FCBD5AAF39AA4"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "780DE2CD82C924CB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05CAB1D55ED3D024"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"08D5A196E95B09AF"
+			]
+			tasks: [
+				{
+					id: "79522E2266D0E31F"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:inferium_farmland"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "45BA6D4B5D1CA4EE"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "73A9232F98987BBC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "54A29771FF1DDF78"
+			x: 1.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"08D5A196E95B09AF"
+			]
+			tasks: [
+				{
+					id: "4EB28D847218FDD8"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:mystical_fertilizer"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "333647424D5654DA"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "5AEA2CC5C2A4043E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "31B95BF1B78FC771"
+			x: 2.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"08D5A196E95B09AF"
+			]
+			tasks: [
+				{
+					id: "494A889840B17154"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:watering_can"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "59FC1EA16E24D0D7"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "59B923104E8970FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3BC7002FEB68725F"
+			x: 4.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"31B95BF1B78FC771"
+				"2AE6F05324BA2C59"
+				"54A29771FF1DDF78"
+			]
+			tasks: [
+				{
+					id: "5F6C58A6D40B91DF"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:inferium_watering_can"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "08EFFCB083ED5667"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "71D8E6FFA82C7350"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "08F7E833C88C6704"
+			x: 3.5d
+			y: 4.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"08D5A196E95B09AF"
+			]
+			tasks: [
+				{
+					id: "460EAD844CA46ED9"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:fertilized_essence"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "030AEFF86F5DA536"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "29B89AFBA63E924D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "711FDB1458DAD4A4"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "2E34A7CBAE7C47D5"
+			x: 6.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3890E7B5FA9CA044"
+				"08D5A196E95B09AF"
+			]
+			tasks: [
+				{
+					id: "69E8F966156AEE5F"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(botanypots:black_concrete_hopper_botany_pot)item(botanypots:black_glazed_terracotta_hopper_botany_pot)item(botanypots:black_terracotta_hopper_botany_pot)item(botanypots:blue_concrete_hopper_botany_pot)item(botanypots:blue_glazed_terracotta_hopper_botany_pot)item(botanypots:blue_terracotta_hopper_botany_pot)item(botanypots:bricks_hopper_botany_pot)item(botanypots:brown_concrete_hopper_botany_pot)item(botanypots:brown_glazed_terracotta_hopper_botany_pot)item(botanypots:brown_terracotta_hopper_botany_pot)item(botanypots:cyan_concrete_hopper_botany_pot)item(botanypots:cyan_glazed_terracotta_hopper_botany_pot)item(botanypots:cyan_terracotta_hopper_botany_pot)item(botanypots:deepslate_bricks_hopper_botany_pot)item(botanypots:end_stone_bricks_hopper_botany_pot)item(botanypots:gray_concrete_hopper_botany_pot)item(botanypots:gray_glazed_terracotta_hopper_botany_pot)item(botanypots:gray_terracotta_hopper_botany_pot)item(botanypots:green_concrete_hopper_botany_pot)item(botanypots:green_glazed_terracotta_hopper_botany_pot)item(botanypots:green_terracotta_hopper_botany_pot)item(botanypots:light_blue_concrete_hopper_botany_pot)item(botanypots:light_blue_glazed_terracotta_hopper_botany_pot)item(botanypots:light_blue_terracotta_hopper_botany_pot)item(botanypots:light_gray_concrete_hopper_botany_pot)item(botanypots:light_gray_glazed_terracotta_hopper_botany_pot)item(botanypots:light_gray_terracotta_hopper_botany_pot)item(botanypots:lime_concrete_hopper_botany_pot)item(botanypots:lime_glazed_terracotta_hopper_botany_pot)item(botanypots:lime_terracotta_hopper_botany_pot)item(botanypots:magenta_concrete_hopper_botany_pot)item(botanypots:magenta_glazed_terracotta_hopper_botany_pot)item(botanypots:magenta_terracotta_hopper_botany_pot)item(botanypots:mossy_stone_bricks_hopper_botany_pot)item(botanypots:mud_bricks_hopper_botany_pot)item(botanypots:nether_bricks_hopper_botany_pot)item(botanypots:orange_concrete_hopper_botany_pot)item(botanypots:orange_glazed_terracotta_hopper_botany_pot)item(botanypots:orange_terracotta_hopper_botany_pot)item(botanypots:pink_concrete_hopper_botany_pot)item(botanypots:pink_glazed_terracotta_hopper_botany_pot)item(botanypots:pink_terracotta_hopper_botany_pot)item(botanypots:polished_blackstone_bricks_hopper_botany_pot)item(botanypots:prismarine_bricks_hopper_botany_pot)item(botanypots:purple_concrete_hopper_botany_pot)item(botanypots:purple_glazed_terracotta_hopper_botany_pot)item(botanypots:purple_terracotta_hopper_botany_pot)item(botanypots:quartz_bricks_hopper_botany_pot)item(botanypots:red_concrete_hopper_botany_pot)item(botanypots:red_glazed_terracotta_hopper_botany_pot)item(botanypots:red_nether_bricks_hopper_botany_pot)item(botanypots:red_terracotta_hopper_botany_pot)item(botanypots:stone_bricks_hopper_botany_pot)item(botanypots:terracotta_hopper_botany_pot)item(botanypots:tuff_bricks_hopper_botany_pot)item(botanypots:white_concrete_hopper_botany_pot)item(botanypots:white_glazed_terracotta_hopper_botany_pot)item(botanypots:white_terracotta_hopper_botany_pot)item(botanypots:yellow_concrete_hopper_botany_pot)item(botanypots:yellow_glazed_terracotta_hopper_botany_pot)item(botanypots:yellow_terracotta_hopper_botany_pot))"
+						}
+					}
+					count: 8L
+				}
+				{
+					id: "1408F67C8C77F782"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(mysticalagriculture:seeds)"
+						}
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "659479224CDA16A4"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "1D00808A19F14357"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "638944939414685F"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/mystical_inferium_farming.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "30A049EB4DD27B24"
+			linked_quest: "3890E7B5FA9CA044"
+			x: 6.5d
+			y: 4.0d
+			size: 1.0d
+		}
+		{
+			id: "20130CB3326FFC5C"
+			linked_quest: "7592FE8784DA7D0E"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "0435873F0DADF66B"
+			linked_quest: "2AE6F05324BA2C59"
+			x: 4.5d
+			y: 6.0d
+			size: 1.0d
+		}
+	]
+}

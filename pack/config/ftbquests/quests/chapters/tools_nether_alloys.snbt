@@ -1,0 +1,420 @@
+{
+	id: "5EBC0B6E99A3CAC1"
+	group: "2EDA99E2D9462147"
+	order_index: 3
+	filename: "tools_nether_alloys"
+	icon: {
+		id: "silentgear:crimson_iron_ingot"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "2A06D8DD04609B9C"
+			x: 2.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4ABA9DD08B8F9ACD"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "1837EA0A0F4E02EC"
+					type: "item"
+					item: {
+						id: "silentgear:crimson_iron_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "38F41E23175E4479"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "39633E385B5D2CAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4E659FFA072CD2C6"
+			x: 2.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"2A06D8DD04609B9C"
+			]
+			tasks: [
+				{
+					id: "393B65899EA48ABD"
+					type: "item"
+					item: {
+						id: "silentgear:crimson_steel_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "5BA3FB42B7322489"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "3805B5F2A69AC6E7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5C0C129959F2C62D"
+			x: 2.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4E659FFA072CD2C6"
+			]
+			tasks: [
+				{
+					id: "7026981480641F7E"
+					type: "item"
+					item: {
+						id: "silentgear:alloy_forge"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "636F2AA909312E70"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1995812E872B1BC3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6628750FED7710A3"
+			x: 4.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5C0C129959F2C62D"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "31D10160019EBD1B"
+					type: "item"
+					item: {
+						id: "silentgear:azure_electrum_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4F6E66CE63EAF826"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "67F2A03FFE693D52"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "39DF5C695F1B32EB"
+			x: 6.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6628750FED7710A3"
+			]
+			tasks: [
+				{
+					id: "5BF8BD5AF5F2B10D"
+					type: "item"
+					item: {
+						id: "silentgear:tyrian_steel_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "482B0608B20D624D"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "0F474E5093FA85AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5FAAB59A05382846"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6B1EAD376672743D"
+				"4E659FFA072CD2C6"
+			]
+			tasks: [
+				{
+					id: "7AD927046A2DB90C"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(silentgear:helmet)item(silentgear:chestplate)item(silentgear:leggings)item(silentgear:boots))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6A21E0F7BBA816B1"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6ABACBA8C3F3CA98"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "384FF8341B7900ED"
+			x: 4.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6628750FED7710A3"
+				"2FAA0AA31B106DF9"
+				"62C34C9BAFF44652"
+			]
+			tasks: [
+				{
+					id: "78D2B449E8AB0652"
+					type: "item"
+					item: {
+						id: "silentgear:azure_silver_dust"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "19EDA89A0D074A55"
+					type: "item"
+					item: {
+						id: "silentgear:starmetal_dust"
+						count: 1
+					}
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "0BE1B69072CA8B11"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "43F326DD0F4F2228"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "2515563461325E04"
+			x: 7.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6628750FED7710A3"
+			]
+			tasks: [
+				{
+					id: "197269362745EC2B"
+					type: "item"
+					item: {
+						id: "silentgear:recrystallizer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "16368EB95002E346"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "439E6EFAF3E0D991"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "04D6247E9D3D6485"
+			x: 7.5d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"39DF5C695F1B32EB"
+			]
+			tasks: [
+				{
+					id: "0E7A7E8DF9E2C845"
+					type: "item"
+					item: {
+						id: "silentgear:crimson_steel_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3D25F04091138CA3"
+					type: "item"
+					item: {
+						id: "silentgear:azure_electrum_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "35161CDE51E7EAC1"
+					type: "item"
+					item: {
+						id: "silentgear:tyrian_steel_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "652046B63B6797F6"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6CC966CE5B9D8992"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "10A42F519D8AC678"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/tools_nether_alloys.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "2D0FF212F0CA3EC8"
+			linked_quest: "4ABA9DD08B8F9ACD"
+			x: 1.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "0A1795AC94237823"
+			linked_quest: "6B1EAD376672743D"
+			x: 1.0d
+			y: 4.0d
+			size: 1.0d
+		}
+		{
+			id: "27BCA87361F26616"
+			linked_quest: "2FAA0AA31B106DF9"
+			x: 3.0d
+			y: 7.5d
+			size: 1.0d
+		}
+		{
+			id: "0E8912BA19B7288E"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

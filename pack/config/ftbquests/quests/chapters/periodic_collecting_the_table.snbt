@@ -1,0 +1,1259 @@
+{
+	id: "099EA8391B014B78"
+	group: "481AEA62621468D7"
+	order_index: 3
+	filename: "periodic_collecting_the_table"
+	icon: {
+		id: "chemlib:helium"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "38880DD5F24455C0"
+			x: 0.5d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"67AFDB4F1145AF74"
+			]
+			tasks: [
+				{
+					id: "7D0CBF0B8918BBFD"
+					type: "item"
+					item: {
+						id: "chemlib:hydrogen"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5DBCC706DBB68813"
+					type: "item"
+					item: {
+						id: "chemlib:helium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "782DE3E0889FBF41"
+					type: "item"
+					item: {
+						id: "chemlib:lithium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "185C89B586F4F8C3"
+					type: "item"
+					item: {
+						id: "chemlib:beryllium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2D3E0B81E921C393"
+					type: "item"
+					item: {
+						id: "chemlib:boron"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1FD974908751C143"
+					type: "item"
+					item: {
+						id: "chemlib:carbon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0BA74FC99200E49B"
+					type: "item"
+					item: {
+						id: "chemlib:nitrogen"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "43DCD9D7DFE30CEF"
+					type: "item"
+					item: {
+						id: "chemlib:oxygen"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0DEB2B14D407EE88"
+					type: "item"
+					item: {
+						id: "chemlib:fluorine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7A60A5A303DB02E6"
+					type: "item"
+					item: {
+						id: "chemlib:neon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "55F240ACE190A602"
+					type: "item"
+					item: {
+						id: "chemlib:sodium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7027257CC06498DC"
+					type: "item"
+					item: {
+						id: "chemlib:magnesium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "47E06C84746BC1FE"
+					type: "item"
+					item: {
+						id: "chemlib:aluminum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1FD41559038B2F76"
+					type: "item"
+					item: {
+						id: "chemlib:silicon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "394E047FA639CDD1"
+					type: "item"
+					item: {
+						id: "chemlib:phosphorus"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3A6665CA63EB8FE9"
+					type: "item"
+					item: {
+						id: "chemlib:sulfur"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "34E8921B2B0C9BE7"
+					type: "item"
+					item: {
+						id: "chemlib:chlorine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7A16E53F6A61DCA0"
+					type: "item"
+					item: {
+						id: "chemlib:argon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "047422443E014DFE"
+					type: "item"
+					item: {
+						id: "chemlib:potassium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "63628F2AB30731E7"
+					type: "item"
+					item: {
+						id: "chemlib:calcium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "75E67D74101E7839"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "7B5735D9FE3F6DA1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "67AFDB4F1145AF74"
+			x: 3.5d
+			y: 2.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"58998E87C50508C4"
+				"0710D708F34467AF"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "6129921A5D55EFAD"
+					type: "item"
+					item: {
+						id: "chemlib:helium"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "5DE972C5A42CD50E"
+					type: "item"
+					item: {
+						id: "chemlib:neon"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "5E3E8857FB675F62"
+					type: "item"
+					item: {
+						id: "chemlib:argon"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "7E5D7304A7FC69F3"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "2FFF9C3DFEAA6BCD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FCFC5332C725FC5"
+			x: 2.0d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"67AFDB4F1145AF74"
+			]
+			tasks: [
+				{
+					id: "00AF43F8C74355EC"
+					type: "item"
+					item: {
+						id: "chemlib:xenon"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "6AC57B2FAAEDB7CE"
+					type: "item"
+					item: {
+						id: "chemlib:radon"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "67A9D0A3CBED42F3"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "55FECA98955616F5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4FDD1C7682843FC7"
+			x: 3.5d
+			y: 4.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"67AFDB4F1145AF74"
+			]
+			tasks: [
+				{
+					id: "14BA4CE0A772C26C"
+					type: "item"
+					item: {
+						id: "chemlib:lanthanum"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "19F107D6EB880254"
+					type: "item"
+					item: {
+						id: "chemlib:cerium"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "42C63C097796CFD1"
+					type: "item"
+					item: {
+						id: "chemlib:neodymium"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "40281A2AEAEA1405"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "4B847DA98EEE9B5C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "28B0DD716F969942"
+			x: 5.5d
+			y: 4.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"67AFDB4F1145AF74"
+				"69D67DF12EE0C400"
+			]
+			tasks: [
+				{
+					id: "7E24F07770AA54E5"
+					type: "item"
+					item: {
+						id: "chemlib:thorium"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "0233505060DE1BBC"
+					type: "item"
+					item: {
+						id: "chemlib:uranium"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "24099456D589EC61"
+					type: "item"
+					item: {
+						id: "chemlib:plutonium"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2A0216F63C5A1C26"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "703C99A7021594AA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6092229653F9D8E1"
+			x: 3.5d
+			y: 6.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4FDD1C7682843FC7"
+				"28B0DD716F969942"
+			]
+			tasks: [
+				{
+					id: "6AEB36723DE74D6B"
+					type: "item"
+					item: {
+						id: "chemlib:tennessine"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "45783680EE93F577"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "4DDC8F75116B1D26"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1488AD40E664A1B0"
+			x: 3.5d
+			y: 8.5d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"6092229653F9D8E1"
+				"6C2882437A5C659C"
+			]
+			tasks: [
+				{
+					id: "2C7E5946A5B01EFE"
+					type: "item"
+					item: {
+						id: "chemlib:oganesson"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "55BE6EEC6A8533CC"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "68DF4EF3BC24F640"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "588B21981793812F"
+			x: 7.0d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"67AFDB4F1145AF74"
+			]
+			tasks: [
+				{
+					id: "3ACAA89FE9A8FCAB"
+					type: "item"
+					item: {
+						id: "chemlib:lithium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0F2300AAE807C5BD"
+					type: "item"
+					item: {
+						id: "chemlib:sodium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5B6DBDB6B23F1EFD"
+					type: "item"
+					item: {
+						id: "chemlib:potassium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2CD4CA564DF0C658"
+					type: "item"
+					item: {
+						id: "chemlib:rubidium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2A1BB58EC78D2E9D"
+					type: "item"
+					item: {
+						id: "chemlib:cesium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "74EA59B66DCF307A"
+					type: "item"
+					item: {
+						id: "chemlib:francium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DB1CD1F3BF116A8"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "1DA9DC57B78705A0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "4D4D8F69EA0E51DA"
+			x: 8.5d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"588B21981793812F"
+			]
+			tasks: [
+				{
+					id: "16FB63B886C9F212"
+					type: "item"
+					item: {
+						id: "chemlib:beryllium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2E33B1946B6C3610"
+					type: "item"
+					item: {
+						id: "chemlib:magnesium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "660BAEC872359BD4"
+					type: "item"
+					item: {
+						id: "chemlib:calcium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "21D30ACD5C0F2A8D"
+					type: "item"
+					item: {
+						id: "chemlib:strontium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "70DFC2CC231713B9"
+					type: "item"
+					item: {
+						id: "chemlib:barium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0AAEB57147A5B189"
+					type: "item"
+					item: {
+						id: "chemlib:radium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "39D4BA24C62D3D7E"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "46655E81B73D4E3C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "7A6D3E363800E95F"
+			x: 10.0d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4D4D8F69EA0E51DA"
+			]
+			tasks: [
+				{
+					id: "313F5B579FCBBEE6"
+					type: "item"
+					item: {
+						id: "chemlib:boron"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "51463B9257C60BF6"
+					type: "item"
+					item: {
+						id: "chemlib:aluminum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0939D3BFDB68CCE4"
+					type: "item"
+					item: {
+						id: "chemlib:gallium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "40FF9C7039765FD0"
+					type: "item"
+					item: {
+						id: "chemlib:indium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7164A92F0EA1837E"
+					type: "item"
+					item: {
+						id: "chemlib:thallium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0E02E4B84EF953AE"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "0F2318DE76CA1E43"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1475430F54A37D4C"
+			x: 11.5d
+			y: 10.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7A6D3E363800E95F"
+			]
+			tasks: [
+				{
+					id: "13A1C6CF8CA7701D"
+					type: "item"
+					item: {
+						id: "chemlib:fluorine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "369CB7B17F146488"
+					type: "item"
+					item: {
+						id: "chemlib:chlorine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "56A1B5B3AFD62EBC"
+					type: "item"
+					item: {
+						id: "chemlib:bromine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4C04E0A3601FDDE1"
+					type: "item"
+					item: {
+						id: "chemlib:iodine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4DA49CB1867F1FEE"
+					type: "item"
+					item: {
+						id: "chemlib:astatine"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "62A94975C33BD95C"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "3672FCCBC7C9D831"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "237F3EB96853A0D3"
+			x: 0.5d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2FCFC5332C725FC5"
+			]
+			tasks: [
+				{
+					id: "5170F6CACD945BD0"
+					type: "item"
+					item: {
+						id: "chemlib:helium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "01BFF02BC8956F98"
+					type: "item"
+					item: {
+						id: "chemlib:neon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "09FDD0293BD239D5"
+					type: "item"
+					item: {
+						id: "chemlib:argon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2F41B3867808EAEA"
+					type: "item"
+					item: {
+						id: "chemlib:krypton"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0BEA2B17DAD9BF27"
+					type: "item"
+					item: {
+						id: "chemlib:xenon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "18F913A8545C7123"
+					type: "item"
+					item: {
+						id: "chemlib:radon"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0EF5D0DC8BB5AD5F"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "30CD9525DC563202"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "74C0A65252881167"
+			x: 2.0d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4FDD1C7682843FC7"
+			]
+			tasks: [
+				{
+					id: "616EBF0AB0BAAA29"
+					type: "item"
+					item: {
+						id: "chemlib:lanthanum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "482006D67FAFF5B4"
+					type: "item"
+					item: {
+						id: "chemlib:cerium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "49FECEDBE2D68E88"
+					type: "item"
+					item: {
+						id: "chemlib:praseodymium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "46B38237F6821EDB"
+					type: "item"
+					item: {
+						id: "chemlib:neodymium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "65E42548F2DA22DB"
+					type: "item"
+					item: {
+						id: "chemlib:promethium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "61D7C9E368D6F1E1"
+					type: "item"
+					item: {
+						id: "chemlib:samarium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "470BD196DE02A97C"
+					type: "item"
+					item: {
+						id: "chemlib:europium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "76B0796D95CE1F27"
+					type: "item"
+					item: {
+						id: "chemlib:gadolinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "33489AD48B61BD42"
+					type: "item"
+					item: {
+						id: "chemlib:terbium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "493347D2E029098D"
+					type: "item"
+					item: {
+						id: "chemlib:dysprosium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "26B8A508C6F7E2E5"
+					type: "item"
+					item: {
+						id: "chemlib:holmium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7F7F25B49A88F9E4"
+					type: "item"
+					item: {
+						id: "chemlib:erbium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7EBBD673CE1A1C60"
+					type: "item"
+					item: {
+						id: "chemlib:thulium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2B95889B4D846849"
+					type: "item"
+					item: {
+						id: "chemlib:ytterbium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4B1155917400FB7C"
+					type: "item"
+					item: {
+						id: "chemlib:lutetium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "66E476F78E9FBB83"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "60CE87CC1EA9090A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6C84E4F71745246F"
+			x: 7.0d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"28B0DD716F969942"
+			]
+			tasks: [
+				{
+					id: "1CCBD4B4E69ECA39"
+					type: "item"
+					item: {
+						id: "chemlib:actinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "48577A12D321233D"
+					type: "item"
+					item: {
+						id: "chemlib:thorium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "61C53F83BA7C70A1"
+					type: "item"
+					item: {
+						id: "chemlib:protactinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "65993C6F4E1D1CFF"
+					type: "item"
+					item: {
+						id: "chemlib:uranium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7BBB40DF4717D743"
+					type: "item"
+					item: {
+						id: "chemlib:neptunium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0856C345A58F9192"
+					type: "item"
+					item: {
+						id: "chemlib:plutonium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4D3AF0EEFEA4499D"
+					type: "item"
+					item: {
+						id: "chemlib:americium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "76B471C72F67F30B"
+					type: "item"
+					item: {
+						id: "chemlib:curium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "737468666B82E41D"
+					type: "item"
+					item: {
+						id: "chemlib:berkelium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3CCF9D06ACC2E483"
+					type: "item"
+					item: {
+						id: "chemlib:californium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "76540C73DB36422D"
+					type: "item"
+					item: {
+						id: "chemlib:einsteinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5564E90A2AB11338"
+					type: "item"
+					item: {
+						id: "chemlib:fermium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "333A14E050FAB7B9"
+					type: "item"
+					item: {
+						id: "chemlib:mendelevium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "67312E94677E0C07"
+					type: "item"
+					item: {
+						id: "chemlib:nobelium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "662762136F05FC6B"
+					type: "item"
+					item: {
+						id: "chemlib:lawrencium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "18B2F482F1F724B8"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "77166658A4B38A37"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "54208D0391D86726"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/periodic_collecting_the_table.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "09BB2A4F910AD735"
+			linked_quest: "58998E87C50508C4"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "7608E60FD394ADD0"
+			linked_quest: "0710D708F34467AF"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "7175E0D2FF72570D"
+			linked_quest: "009FBA775299B910"
+			x: 5.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

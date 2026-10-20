@@ -1,0 +1,370 @@
+{
+	id: "070A9B573E4E3C65"
+	group: "769A7434DC71BDC7"
+	order_index: 2
+	filename: "explore_temples_and_the_sea"
+	icon: {
+		id: "minecraft:heart_of_the_sea"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "3D2834AA290BDC3C"
+			x: 5.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "5314F8ABDE7EB732"
+					type: "structure"
+					structure: "minecraft:desert_pyramid"
+				}
+				{
+					id: "75BB87A71A5B2B57"
+					type: "structure"
+					structure: "minecraft:jungle_pyramid"
+				}
+			]
+			rewards: [
+				{
+					id: "7A0AFEA103AE3075"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "4E441AC4EC26F675"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6233DBB19C9A4623"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "6B1ACC106AA8CC7C"
+			x: 6.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "4E4349F3A8065FEE"
+					type: "structure"
+					structure: "minecraft:swamp_hut"
+				}
+				{
+					id: "6C6831C606824318"
+					type: "structure"
+					structure: "minecraft:igloo"
+				}
+			]
+			rewards: [
+				{
+					id: "686C1961FD24B59A"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "457652F6041333AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "35AC56D5A2D91CC9"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "696EDE3758F11DDE"
+			x: 0.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "27F7206FC92B9CF7"
+					type: "structure"
+					structure: "minecraft:ruined_portal"
+				}
+			]
+			rewards: [
+				{
+					id: "035CDE0221B21B3E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "00FED71CA6C30665"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "5F4922CA7876C672"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "50F76B15FECDB23D"
+			x: 2.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "3471BFD3378401D5"
+					type: "structure"
+					structure: "minecraft:shipwreck"
+				}
+			]
+			rewards: [
+				{
+					id: "090B9A9B1C19D560"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "515E307B7CF410D0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "70264BF660FF0AB4"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "11B352742B41A2F3"
+			x: 2.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"50F76B15FECDB23D"
+			]
+			tasks: [
+				{
+					id: "70EC98D984509A27"
+					type: "structure"
+					structure: "minecraft:buried_treasure"
+				}
+				{
+					id: "004A5B1E619C0940"
+					type: "item"
+					item: {
+						id: "minecraft:heart_of_the_sea"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "63AF2B70F23A62FF"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "4EEA7F723084BC52"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1DB535BBA771CE92"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "39CC43EB79388B13"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"50F76B15FECDB23D"
+			]
+			tasks: [
+				{
+					id: "3DEF37A3E233A7E3"
+					type: "structure"
+					structure: "minecraft:ocean_ruin_warm"
+				}
+				{
+					id: "7A2F5BB00163563E"
+					type: "structure"
+					structure: "minecraft:ocean_ruin_cold"
+				}
+			]
+			rewards: [
+				{
+					id: "78417E85D2D16C3F"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "19BC04E16D98F367"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1ED16077E7321815"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4A7EC6354DC5269B"
+			x: 3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"50F76B15FECDB23D"
+			]
+			tasks: [
+				{
+					id: "125F7E13BC8F63DF"
+					type: "structure"
+					structure: "towns_and_towers:wreckage_ocean"
+				}
+			]
+			rewards: [
+				{
+					id: "2B3D6F4F4FA6233F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6558F6EDD0452E05"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "4A5964B1C9246938"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "2D328EFF89A3A160"
+			x: 2.0d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"11B352742B41A2F3"
+			]
+			tasks: [
+				{
+					id: "3C0D29DDE82D97B1"
+					type: "structure"
+					structure: "minecraft:monument"
+				}
+				{
+					id: "4ACA3AC361933ED1"
+					type: "item"
+					item: {
+						id: "minecraft:wet_sponge"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6CF6D33ACBB5FCB2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "4A4525E1B190D0B2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "319C7FC03866102D"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "71C5C24F33BD10DE"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/explore_temples_and_the_sea.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "1D895E8A3668AABF"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

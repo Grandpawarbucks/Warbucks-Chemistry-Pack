@@ -137,6 +137,12 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Quest book v12 (2026-10-19, user decision "Mod = category"): 33 chapter groups, 156 chapters, 2,524 quests. Main path,
+  top pages and shop unchanged; every side page is its own category and its layout sections are chapters (split in
+  quest_data._split; titles in CHAPTER_TITLES; first chapter keeps the page key, others <page>_<slug>). progression_mode
+  flexible (shop linear). Shape motifs in STYLES. Viewers: test/build_quest_map.py -> test/preview/map (published:
+  https://claude.ai/artifact/7SNpPd8oe43AbUTn2Cko4b), gallery `test/build_quest_preview.py --gallery`, lint
+  tools/layout_lint.py --strict. The user rejected a full re-layout once in another pack: show the map before shipping.
 - Market + editor (2026-10-19): 2,468 quests. "shop" group (market, shop_materials, shop_gear, shop_world): 441 repeatable
   token-shop quests, rule "buy more of what you've made yourself" (docs/research/shop_brief.md); shop chapters use
   layout="manual" grids. Quest editor: tools/quest_editor.py (localhost:8765), user edits land in

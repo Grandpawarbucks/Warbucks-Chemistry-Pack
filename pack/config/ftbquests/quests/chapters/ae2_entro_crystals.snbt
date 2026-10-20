@@ -1,0 +1,289 @@
+{
+	id: "672B85CAA75413E4"
+	group: "4DCF0E6958BD47BC"
+	order_index: 7
+	filename: "ae2_entro_crystals"
+	icon: {
+		id: "extendedae:entro_seed"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "68089090A4D213E6"
+			x: 3.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"76110B693DBF6FF2"
+			]
+			tasks: [
+				{
+					id: "4A0321068AE815C2"
+					type: "item"
+					item: {
+						id: "extendedae:entro_seed"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7E2428AEF50B52FD"
+					type: "item"
+					item: {
+						id: "extendedae:entro_crystal"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "455908636C2B3B77"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4A3FFC857032E49F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "66ED4FE9373A352B"
+			x: 3.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"68089090A4D213E6"
+			]
+			tasks: [
+				{
+					id: "156CBB0FB7B25D81"
+					type: "item"
+					item: {
+						id: "extendedae:machine_frame"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "264EAF822B72CE27"
+					type: "item"
+					item: {
+						id: "extendedae:crystal_assembler"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4DC435CDD1DD34AA"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "1441E23A61B1B593"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7A9D33953F39D9E9"
+			x: 3.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"66ED4FE9373A352B"
+			]
+			tasks: [
+				{
+					id: "419873FAD7420E25"
+					type: "item"
+					item: {
+						id: "extendedae:concurrent_processor"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "21356B6E046B2AAD"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "54C67791B3910D79"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3A03AD5658BF5053"
+			x: 2.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7A9D33953F39D9E9"
+			]
+			tasks: [
+				{
+					id: "63E12F7A08017F45"
+					type: "item"
+					item: {
+						id: "extendedae:ex_inscriber"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "36BEB7778369973C"
+					type: "item"
+					item: {
+						id: "extendedae:ex_charger"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "46F49FC1A44ED2F7"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "7E6D61284E059330"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6A53C98F6B5D669D"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3A03AD5658BF5053"
+			]
+			tasks: [
+				{
+					id: "40E1D666F804DE76"
+					type: "item"
+					item: {
+						id: "extendedae:circuit_cutter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6729D2B7FE76C987"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7DCF758769169FCA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3F280E221B8CB5BE"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"68089090A4D213E6"
+			]
+			tasks: [
+				{
+					id: "400939342695EF83"
+					type: "item"
+					item: {
+						id: "extendedae:entro_budding_half"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "02502B1B5D0C17A5"
+					type: "item"
+					item: {
+						id: "extendedae:crystal_fixer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "604AEFD6D3076B9E"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "5EFD867CE1379F59"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "43DA4F1705B28829"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/ae2_entro_crystals.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "0871F1681C332643"
+			linked_quest: "76110B693DBF6FF2"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

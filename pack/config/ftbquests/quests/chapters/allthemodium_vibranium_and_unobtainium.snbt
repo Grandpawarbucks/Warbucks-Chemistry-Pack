@@ -1,0 +1,556 @@
+{
+	id: "4374A82AB7612FAB"
+	group: "0D811EE0A885BBA7"
+	order_index: 1
+	filename: "allthemodium_vibranium_and_unobtainium"
+	icon: {
+		id: "allthemodium:allthemodium_pickaxe"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "7FADA5DEE250D019"
+			x: 5.0d
+			y: 2.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"5E5769AD5749CA25"
+				"148A9565625B6739"
+			]
+			tasks: [
+				{
+					id: "5D21BA94BCBBB1DA"
+					type: "item"
+					item: {
+						id: "allthemodium:allthemodium_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "09F1F07715DCF325"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "26C675B163D29DCC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3171C01B77F60495"
+			x: 2.0d
+			y: 4.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"7FADA5DEE250D019"
+			]
+			tasks: [
+				{
+					id: "4A0C5CE68E8A9C75"
+					type: "item"
+					item: {
+						id: "allthemodium:allthemodium_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "620EE2DAE4838AE8"
+					type: "item"
+					item: {
+						id: "allthemodium:allthemodium_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "09D292598745431E"
+					type: "item"
+					item: {
+						id: "allthemodium:allthemodium_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "412F044AEFD9696B"
+					type: "item"
+					item: {
+						id: "allthemodium:allthemodium_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "27B073BEE0C80EE8"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "7A89F0672C60D9AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "11C5F76536F38D43"
+			x: 5.0d
+			y: 4.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7FADA5DEE250D019"
+			]
+			tasks: [
+				{
+					id: "237FAD9D5CDB5E96"
+					type: "item"
+					item: {
+						id: "allthemodium:raw_vibranium"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "413921D0B8DCAD55"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "1F3C657BEFB1BBFD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "58CDB46235307897"
+			x: 5.0d
+			y: 6.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"11C5F76536F38D43"
+				"670B5856D35E61A3"
+				"7EFA01609EB9CAE8"
+			]
+			tasks: [
+				{
+					id: "077E92FEF388ACB0"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_ingot"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "09448BAED565C5F7"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "526D1E8EECAB1C52"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "391BA35508956395"
+			x: 7.0d
+			y: 6.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"7FADA5DEE250D019"
+			]
+			tasks: [
+				{
+					id: "0AFB100DB455AD07"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_upgrade_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0C8C0E3A5E7DD093"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "2F51621A2CBA2636"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5EF91D72548DE6BC"
+			x: 5.0d
+			y: 8.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"58CDB46235307897"
+				"391BA35508956395"
+			]
+			tasks: [
+				{
+					id: "3A5790E423D6E16E"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0626D78BA69AAF78"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "00FEDDBD3544D033"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "150C76053DA40504"
+			x: 0.5d
+			y: 10.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"5EF91D72548DE6BC"
+				"3171C01B77F60495"
+			]
+			tasks: [
+				{
+					id: "19E904FC4F51FDD7"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3FD359822E393789"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1BE7E3E1A79B5EE6"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71E33416F37CCD58"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3FBB6F7CAB4DC5BC"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "3114089042AFA353"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "314CCC5282A02269"
+			x: 5.0d
+			y: 10.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"5EF91D72548DE6BC"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "019684C92C2A3D7F"
+					type: "item"
+					item: {
+						id: "allthemodium:raw_unobtainium"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4C0F5E758EE824C2"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "682E877D02C3B044"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7857FF3F88FECDC1"
+			x: 5.0d
+			y: 12.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"314CCC5282A02269"
+				"6DA3A8FA4B30A712"
+				"73B0B0B23BDA8732"
+			]
+			tasks: [
+				{
+					id: "6F08712086A0D3EB"
+					type: "item"
+					item: {
+						id: "allthemodium:unobtainium_ingot"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "2717D766C8DA3AF6"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "105A2B542D66418D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "46DA2E17B992C9EC"
+			x: 3.0d
+			y: 14.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"7857FF3F88FECDC1"
+				"637155B176290CED"
+				"150C76053DA40504"
+			]
+			tasks: [
+				{
+					id: "14E238E9251DB4C1"
+					type: "item"
+					item: {
+						id: "allthemodium:unobtainium_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3615BD9E6419D418"
+					type: "item"
+					item: {
+						id: "allthemodium:unobtainium_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2EC2D8357BF58A2F"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "1C4B35DF6B8AC589"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "758670EFED31C601"
+			x: 5.0d
+			y: 14.5d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"7857FF3F88FECDC1"
+				"190762EAFF8AD47D"
+				"1E6BA9227B6B280F"
+			]
+			tasks: [
+				{
+					id: "24359F0BAC7E71FF"
+					type: "item"
+					item: {
+						id: "allthemodium:unobtainium_vibranium_alloy_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "512F6B32D4A8CAAB"
+					type: "item"
+					item: {
+						id: "allthemodium:unobtainium_allthemodium_alloy_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "0DCBA8793A522DCE"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "208EE72E02B6CC8B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "704B0A4B4BDDC358"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/allthemodium_vibranium_and_unobtainium.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "1B255B494CEE7B9F"
+			linked_quest: "670B5856D35E61A3"
+			x: 3.5d
+			y: 4.5d
+			size: 1.0d
+		}
+		{
+			id: "3EB5556B05884D5B"
+			linked_quest: "6DA3A8FA4B30A712"
+			x: 3.5d
+			y: 10.5d
+			size: 1.0d
+		}
+		{
+			id: "2D707EB075927AD0"
+			linked_quest: "1E6BA9227B6B280F"
+			x: 6.5d
+			y: 12.5d
+			size: 1.0d
+		}
+		{
+			id: "5483810317B6FEB9"
+			linked_quest: "5E5769AD5749CA25"
+			x: 4.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "0BF422510265B777"
+			linked_quest: "148A9565625B6739"
+			x: 6.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "6ACE6B1D45FCD7E0"
+			linked_quest: "637155B176290CED"
+			x: 2.5d
+			y: 12.5d
+			size: 1.0d
+		}
+		{
+			id: "287A2C36417969B5"
+			linked_quest: "190762EAFF8AD47D"
+			x: 8.0d
+			y: 12.5d
+			size: 1.0d
+		}
+	]
+}

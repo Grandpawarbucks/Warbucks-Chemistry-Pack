@@ -1978,6 +1978,24 @@ def _radial_page(secs, byk, idx, mk, header, gx, hub_min=4):
     return P, blocks, heads
 
 
+def page_sections(chapter, style=None):
+    """The sections apply() would draw on this chapter, as [{"title", "members" (keys, declaration order), "root",
+    "explicit" (title from Q(section=...))}] in reading order. tools/quest_data.py uses it to split a mod page into
+    one chapter per section (the "Mod = category" sidebar)."""
+    style = style or getattr(chapter, "style", None) or DEFAULT_STYLE
+    base = MOTIF_BASE[style]
+    byk, idx, parents, children, order = _graph(chapter.quests)
+    G = {"byk": byk, "idx": idx, "parents": parents, "children": children, "order": order,
+         "opt": {k: bool(byk[k].optional) for k in byk}}
+    spine = _spine(set(byk), G)
+    secs = _sections(chapter, G, spine, base if base == "spine" else style if style in ("grid", "radial") else "tree",
+                     getattr(chapter, "home_of", None) or {}, getattr(chapter, "chapter_titles", None) or {})
+    named = {_plain(q.section) for q in chapter.quests if getattr(q, "section", None)}
+    for s in secs:
+        s["explicit"] = s["title"] in named
+    return secs
+
+
 def apply(chapter, book_keys=None, style=None):
     """Place every quest of an auto-layout chapter, its quest links and its section headers, and set q.hide_lines.
     chapter.sections becomes [{"title", "slug", "x", "y", "w", "h", "members"}] (header centre and size, in cells).
@@ -2002,7 +2020,9 @@ def apply(chapter, book_keys=None, style=None):
     spine = _spine(set(byk), G)
     secs = _sections(chapter, G, spine, base if base == "spine" else style if style in ("grid", "radial") else "tree",
                      getattr(chapter, "home_of", None) or {}, getattr(chapter, "chapter_titles", None) or {})
-    header = len(secs) + (1 if base == "spine" else 0) > 1
+    # Section headers: only where a page has 2+ sections, and never on a chapter split from a mod page (its title
+    # in the sidebar names it; chapter.headers = False, set by tools/quest_data.py).
+    header = len(secs) + (1 if base == "spine" else 0) > 1 and getattr(chapter, "headers", True)
 
     # Quest links: the chapter's own plus the entry quest's deps in other chapters.
     links = [lk for lk, _, _ in chapter.links]
@@ -2157,6 +2177,20 @@ def apply(chapter, book_keys=None, style=None):
         P[node] = (px, py, 1.0)
         taken.append(P[node])
     loose = [lk for lk in links if not dependents[lk]]
+    # A loose link whose quest needs another link placed here: FTB draws a line between the two links, so it sits
+    # right under that link (a short line) instead of in the block above the page.
+    book = getattr(chapter, "book_quests", None) or {}
+    moved = True
+    while moved:
+        moved = False
+        for lk in list(loose):
+            ds = [("link", d) for d in (book[lk].deps if lk in book else []) if ("link", d) in P]
+            if ds:
+                dx, dy, _ = P[ds[0]]
+                P[("link", lk)] = _free_spot(dx, dy + 1.5, taken) + (1.0,)
+                taken.append(P[("link", lk)])
+                loose.remove(lk)
+                moved = True
     if loose:  # links nothing here depends on: their own small drawing above the page, in dependency order
         top = min([y - s / 2 for _, y, s in P.values()] + [b for _, _, b, _, _ in heads])
         left = min([x - s / 2 for x, _, s in P.values()] + [a for _, a, _, _, _ in heads])
@@ -2334,7 +2368,10 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
                     return True
         return False
 
-    hub = HUB[style]
+    # A chapter split from a mod page (no headers) is small: a hub's fan is short and IS the page, so it stays drawn
+    # unless its line crosses another one; otherwise only messy lines (long, through a quest, crossing two others).
+    small = not getattr(chapter, "headers", True)
+    hub = 99 if small else HUB[style]
     relaxed = style != "spine"
     # A quest with a quest link on its own page: FTB draws its dependency lines at the link too (every button of
     # the quest draws them), so those would run to the far link. Its own lines are hidden (they show on hover).
@@ -2359,15 +2396,16 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
                 messy_, ok, step = messy(p1, pos[q.key], ("link", d), q.key), True, False
             if relaxed and d in pos and sec(d) != sec(q.key):
                 ok = True  # motif pages: sections sit by shape, not in reading order; any line between them may go
-            E[(d, q.key)] = {"clutter": messy_ or nkids.get(d, 0) >= hub, "ok": ok, "step": step, "seg": (p1, pos[q.key])}
-    if relaxed:  # a line crossing two or more others is clutter too
+            E[(d, q.key)] = {"clutter": messy_ or nkids.get(d, 0) >= hub, "ok": ok, "step": step, "seg": (p1, pos[q.key]),
+                             "fan": nkids.get(d, 0) >= HUB[style]}
+    if relaxed:  # a line crossing two or more others is clutter too (one other, for a hub's fan on a small chapter)
         segs = list(E.items())
         for i, (key_i, e) in enumerate(segs):
             n = 0
             for key_j, f in segs:
                 if key_j != key_i and not ({*key_i} & {*key_j}) and _cross(e["seg"], f["seg"]):
                     n += 1
-                    if n >= 2:
+                    if n >= 2 or (small and e["fan"]):
                         e["clutter"] = True
                         break
     ins, outs = {}, {}

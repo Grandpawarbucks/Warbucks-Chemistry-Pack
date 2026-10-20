@@ -1,0 +1,260 @@
+{
+	id: "3FE6AB917DEBE3BC"
+	group: "769A7434DC71BDC7"
+	order_index: 3
+	filename: "explore_the_nether"
+	icon: {
+		id: "minecraft:nether_bricks"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "1A2B391538F70F19"
+			x: 2.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "2243D98A0225AACE"
+					type: "structure"
+					structure: "minecraft:fortress"
+				}
+			]
+			rewards: [
+				{
+					id: "200AE36F6BC9A49F"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "07A99C5DDAE4946D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "2674590887444371"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "782E886E60A354D9"
+			x: 2.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1A2B391538F70F19"
+			]
+			tasks: [
+				{
+					id: "501F5DF9DC940AAD"
+					type: "structure"
+					structure: "minecraft:bastion_remnant"
+				}
+			]
+			rewards: [
+				{
+					id: "4EB784B5E7019F3E"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5165CE1EDC953762"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7B55A72B386C1308"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "126B19FC8B92ED56"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1A2B391538F70F19"
+			]
+			tasks: [
+				{
+					id: "5717C2B2118F64B0"
+					type: "structure"
+					structure: "minecraft:nether_fossil"
+				}
+			]
+			rewards: [
+				{
+					id: "694739913F00F11D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3DC8786F31AA7F69"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "05A63BACF27FAC5A"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "20FE0812FEA6CB0B"
+			x: 3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1A2B391538F70F19"
+			]
+			tasks: [
+				{
+					id: "7F37BB9EB536A468"
+					type: "structure"
+					structure: "betterdungeons:small_nether_dungeon"
+				}
+			]
+			rewards: [
+				{
+					id: "05BD3D03A564F555"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7EC05072A1C0C692"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "67F8F8657672EA81"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4F755E3FE879848F"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"782E886E60A354D9"
+			]
+			tasks: [
+				{
+					id: "6E9516758D39F2BE"
+					type: "structure"
+					structure: "minecraft:ruined_portal_nether"
+				}
+			]
+			rewards: [
+				{
+					id: "10A2F9D95E7078DB"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "56F815F458B50235"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "145CF80CEF18FF1E"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5319A7F7508FDD4C"
+			x: 3.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"782E886E60A354D9"
+			]
+			tasks: [
+				{
+					id: "72BF07198D953C26"
+					type: "biome"
+					biome: "biomesoplenty:erupting_inferno"
+				}
+			]
+			rewards: [
+				{
+					id: "09C26D4E5CF1C4D4"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "6F7C6202507A806A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "11C449EE0EC46D6A"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "1C33CE9DBA8F4C93"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/explore_the_nether.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "3E0A045B65984769"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

@@ -1,0 +1,740 @@
+{
+	id: "168C20D8296FA791"
+	group: "331065B6943FE119"
+	order_index: 1
+	filename: "building_gadgets_and_stone"
+	icon: {
+		id: "minecraft:stone"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "7AD94AAAA5254B9E"
+			x: 6.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"41199268F6357478"
+			]
+			tasks: [
+				{
+					id: "7B55A68EF5D31E98"
+					type: "item"
+					item: {
+						id: "effortlessbuilding:randomizer_tool"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5B0B2741ED330D55"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "17E8352BED11A8AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "256D3D0FC72501EE"
+			x: 7.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"41199268F6357478"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "3D5618565F4A6D1C"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "594EC42FE71CBD1A"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "314FFB1478B15A6F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "171C251ED5512ABD"
+			x: 3.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"41199268F6357478"
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "190053E52C826225"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_building"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "30272B71463C76EB"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2824CCB33F5F7CE3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "34C2506F0D77DBC7"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"171C251ED5512ABD"
+			]
+			tasks: [
+				{
+					id: "5BA5E3244FB4D9B1"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_copy_paste"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0EC4AD2F56592D4A"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:template_manager"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0CE020750E14118F"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "04FC90B52DF70142"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "78B3985AFEC9753C"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"171C251ED5512ABD"
+			]
+			tasks: [
+				{
+					id: "2A004234AD688740"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_exchanging"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2BE9AF5EE0E1C41E"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "51CBE92DD6C0AE7B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6264FFAD4D805503"
+			x: 4.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"171C251ED5512ABD"
+			]
+			tasks: [
+				{
+					id: "40DEE9A960CE6076"
+					type: "item"
+					item: {
+						id: "buildinggadgets2:gadget_destruction"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A7FD3FCB7C0A918"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5E0874E464D40B7B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05D2EE647B7C6620"
+			x: 9.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"41199268F6357478"
+				"4075A74B2774D3BD"
+			]
+			tasks: [
+				{
+					id: "6ED4E29CDED95051"
+					type: "item"
+					item: {
+						id: "copycats:copycat_block"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "7C249F30547E97C5"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(copycats:copycat_slope)item(copycats:copycat_stairs)item(copycats:copycat_board)item(copycats:copycat_beam)item(copycats:copycat_slice)item(copycats:copycat_vertical_slope))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0ECAAC9DCB4ED4B9"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "1E331386590DB4A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3D96DF2EBED7106F"
+			x: 2.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"41199268F6357478"
+				"1E339D434FEA09CE"
+			]
+			tasks: [
+				{
+					id: "125656F9B9FD8401"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:stone)item(minecraft:deepslate)item(minecraft:andesite)item(minecraft:diorite)item(minecraft:granite)item(minecraft:tuff)item(minecraft:calcite))"
+						}
+					}
+					count: 64L
+				}
+			]
+			rewards: [
+				{
+					id: "4843576567BCA1AD"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "14914C4C5CD31D86"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "28C35CCC84851B27"
+			x: 2.0d
+			y: 9.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3D96DF2EBED7106F"
+			]
+			tasks: [
+				{
+					id: "2BB69B5440080452"
+					type: "item"
+					item: {
+						id: "regions_unexplored:chalk"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "78F7338144F06DD4"
+					type: "item"
+					item: {
+						id: "regions_unexplored:argillite"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "4116C23DC1E251A1"
+					type: "item"
+					item: {
+						id: "regions_unexplored:mossy_stone"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "38F60F613ACBC426"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "53ACFA86DB0DA5A9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "65382426023CF47F"
+			x: 0.5d
+			y: 9.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3D96DF2EBED7106F"
+			]
+			tasks: [
+				{
+					id: "6740699D07000C43"
+					type: "item"
+					item: {
+						id: "minecraft:pointed_dripstone"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "3A7FE94F8FFB91C2"
+					type: "item"
+					item: {
+						id: "minecraft:dripstone_block"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "000E1B9661F7753A"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "40F5071BC5504C4B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6F93CF01FD65C4E4"
+			x: 3.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"41199268F6357478"
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "56C22651EF59F866"
+					type: "item"
+					item: {
+						id: "minecraft:amethyst_shard"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "379BCD220C5D9E43"
+					type: "item"
+					item: {
+						id: "minecraft:amethyst_block"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "58F4B0DCDEB51425"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "5D80E2E4D35BC145"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7884D09F7FBE7978"
+			x: 5.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"41199268F6357478"
+			]
+			tasks: [
+				{
+					id: "465CEF1C80E63075"
+					type: "item"
+					item: {
+						id: "minecraft:snow_block"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "2425351C069232C8"
+					type: "item"
+					item: {
+						id: "minecraft:packed_ice"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "10990600F673859A"
+					type: "item"
+					item: {
+						id: "minecraft:blue_ice"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "52F5E1CCDBAE997F"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "02433587BEFF02DA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2E96863B3A582666"
+			x: 7.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"41199268F6357478"
+				"069E15B497A964D9"
+			]
+			tasks: [
+				{
+					id: "6396697F36C02F1A"
+					type: "item"
+					item: {
+						id: "minecraft:polished_blackstone"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "3375D4C8B5956E73"
+					type: "item"
+					item: {
+						id: "minecraft:gilded_blackstone"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "72F63E46C28EE5C6"
+					type: "item"
+					item: {
+						id: "minecraft:chain"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "664AD50C15DA27BD"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "3E52020713E6E9A3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4A79D247060404DF"
+			x: 8.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"41199268F6357478"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "25CC064D92C614D7"
+					type: "item"
+					item: {
+						id: "minecraft:end_stone"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "5E5EB4E851CBFDDE"
+					type: "item"
+					item: {
+						id: "minecraft:end_stone_bricks"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "34F37C4A901453A0"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "5000DB16F92DA4BE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2F7FCB7F23390898"
+			x: 0.5d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"41199268F6357478"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "7F9F6329BF8051AC"
+					type: "item"
+					item: {
+						id: "minecraft:painting"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "041F1391EA8EF865"
+					type: "item"
+					item: {
+						id: "minecraft:carved_pumpkin"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1C681CBF99870A0F"
+					type: "item"
+					item: {
+						id: "minecraft:cauldron"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2D74DBE9AE065FD6"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:stripped_oak_log)item(minecraft:stripped_spruce_log)item(minecraft:stripped_birch_log)item(minecraft:stripped_jungle_log)item(minecraft:stripped_acacia_log)item(minecraft:stripped_dark_oak_log)item(minecraft:stripped_mangrove_log)item(minecraft:stripped_cherry_log))"
+						}
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "5AFD36C741D0D49F"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "245EC7FEF924E741"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "428E18A3FCCB05CA"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/building_gadgets_and_stone.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "79E34F03521EB370"
+			linked_quest: "392A7909301184E2"
+			x: 3.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "7F07EE62FDA3A0D6"
+			linked_quest: "41199268F6357478"
+			x: 2.0d
+			y: 6.0d
+			size: 1.0d
+		}
+	]
+}

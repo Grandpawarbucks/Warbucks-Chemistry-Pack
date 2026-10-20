@@ -1,0 +1,352 @@
+{
+	id: "6F1142673CC2697C"
+	group: "63291DCDA2FBC716"
+	order_index: 1
+	filename: "hunting_creepers_and_crawlers"
+	icon: {
+		id: "minecraft:gunpowder"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "3FA449155D4FEA25"
+			x: 3.5d
+			y: 5.5d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0A8F569FBAF9D8B1"
+			]
+			tasks: [
+				{
+					id: "16F39B05ECF5D634"
+					type: "kill"
+					entity: "minecraft:creeper"
+					value: 25L
+				}
+			]
+			rewards: [
+				{
+					id: "441B293DF68B814A"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "20D580F508DB5F68"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "2361415545202C95"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "06935A94927B14A4"
+			x: 2.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3FA449155D4FEA25"
+			]
+			tasks: [
+				{
+					id: "0EDEC717845AF4D4"
+					type: "kill"
+					entity: "minecraft:creeper"
+					value: 100L
+				}
+			]
+			rewards: [
+				{
+					id: "7B1AF1DD9DF4C049"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "1CBEE43A94DCDCC3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "3A8B74661A12F121"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "7F28D5737D25033D"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"06935A94927B14A4"
+			]
+			tasks: [
+				{
+					id: "31A78AC29DCB9F4A"
+					type: "kill"
+					entity: "minecraft:creeper"
+					value: 250L
+				}
+			]
+			rewards: [
+				{
+					id: "606D099302AA0784"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "7E70B016C93E2E90"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+				{
+					id: "73F640846E974B67"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "0F182C0FD3BF28FC"
+			x: 2.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0A8F569FBAF9D8B1"
+			]
+			tasks: [
+				{
+					id: "70D1C3079560A2A9"
+					type: "kill"
+					entity: "minecraft:spider"
+					value: 25L
+				}
+			]
+			rewards: [
+				{
+					id: "3A54D3A835F8A193"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2D4E3060D5944F10"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0EA934A8A8990B06"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "68FD0B5C8685AEC6"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F182C0FD3BF28FC"
+			]
+			tasks: [
+				{
+					id: "5E628E044A56F748"
+					type: "kill"
+					entity: "minecraft:spider"
+					value: 100L
+				}
+			]
+			rewards: [
+				{
+					id: "3E5D1A6BBC5C85AC"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6F9CAFB26F302CE1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "51641B1CBF56655F"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "6E22D2D1C73AD43E"
+			x: 6.5d
+			y: 5.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0A8F569FBAF9D8B1"
+			]
+			tasks: [
+				{
+					id: "54AC15A6D642EFDA"
+					type: "kill"
+					entity: "minecraft:cave_spider"
+					value: 25L
+				}
+			]
+			rewards: [
+				{
+					id: "6C33531DC92AF8A6"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1F73F773801652C4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "708A5AC9C298743B"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "7C77F3713A93792F"
+			x: 5.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6E22D2D1C73AD43E"
+			]
+			tasks: [
+				{
+					id: "66FE6CC7F8F79235"
+					type: "kill"
+					entity: "minecraft:silverfish"
+					value: 50L
+				}
+			]
+			rewards: [
+				{
+					id: "4AC582A421438392"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "64FA46A52E6BF467"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0B48D082E24A93DC"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "6FD9C1EAEB0CC958"
+			x: 3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F182C0FD3BF28FC"
+			]
+			tasks: [
+				{
+					id: "253AABA74E3A90D7"
+					type: "item"
+					item: {
+						id: "minecraft:string"
+						count: 1
+					}
+					count: 32L
+				}
+				{
+					id: "547F374004BF3413"
+					type: "item"
+					item: {
+						id: "minecraft:spider_eye"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "32E38701D9F68D8F"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "2EBA87C3276D80B0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "011ADE36B0CBBDB2"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/hunting_creepers_and_crawlers.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "0E511536A1AF1B96"
+			linked_quest: "0A8F569FBAF9D8B1"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

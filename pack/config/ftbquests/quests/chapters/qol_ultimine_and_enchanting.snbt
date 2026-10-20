@@ -1,0 +1,303 @@
+{
+	id: "55ECA885A96F2FC4"
+	group: "7269E73C0E9C03B0"
+	order_index: 2
+	filename: "qol_ultimine_and_enchanting"
+	icon: {
+		id: "minecraft:enchanting_table"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "295E46752750C4C1"
+			x: 1.5d
+			y: 2.0d
+			shape: "pentagon"
+			size: 0.9d
+			dependencies: [
+				"082FF7126C739233"
+				"1E339D434FEA09CE"
+			]
+			tasks: [
+				{
+					id: "6ED12E5E10E77274"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "483DA8F53F951C3F"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "208A6729180E9806"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3419EC047902045A"
+			x: 4.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"082FF7126C739233"
+			]
+			tasks: [
+				{
+					id: "786F9314896702E9"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "0987EDDE7AD61370"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "1A7357CABA2C2CAF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3698C36E49E28F11"
+			x: 6.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "70A71F2F085A72C5"
+					type: "item"
+					item: {
+						id: "minecraft:enchanting_table"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5A9E5A0EBAF2A5D5"
+					type: "item"
+					item: {
+						id: "minecraft:bookshelf"
+						count: 1
+					}
+					count: 15L
+				}
+				{
+					id: "4CEC8F7E8FEF3562"
+					type: "item"
+					item: {
+						id: "minecraft:book"
+						count: 1
+					}
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "39F8EA5A21E032A9"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "388BE58FB648279A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "28ED4E6CDA9DEBA2"
+			x: 7.5d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"082FF7126C739233"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "5074F79D9858AA96"
+					type: "item"
+					item: {
+						id: "minecraft:anvil"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "49C923E93C4B2E7A"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "695DBFABEB536F5E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0507C4360C804E7C"
+			x: 9.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "374DCF8A47F911C5"
+					type: "item"
+					item: {
+						id: "minecraft:map"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0D8ED9175057BFD5"
+					type: "item"
+					item: {
+						id: "minecraft:compass"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "36B6084E135D06EF"
+					type: "item"
+					item: {
+						id: "minecraft:clock"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "16AECFF1FD216886"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "4790D2092DBCF86A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6F16D17B0B750F06"
+			x: 0.5d
+			y: 3.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+				"11B352742B41A2F3"
+			]
+			tasks: [
+				{
+					id: "778B621399CDDA24"
+					type: "item"
+					item: {
+						id: "minecraft:conduit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "79DBDB58C5BA0169"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6E588C34CC716B77"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "5B387DB10E59FB05"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/qol_ultimine_and_enchanting.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "2702B6EDF503F18F"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: 7.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "61C97D8292D63641"
+			linked_quest: "1E339D434FEA09CE"
+			x: 0.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "584A19341DB0CC4F"
+			linked_quest: "082FF7126C739233"
+			x: 2.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

@@ -1,0 +1,529 @@
+{
+	id: "054DAF34AF52BF59"
+	group: "769A7434DC71BDC7"
+	order_index: 4
+	filename: "explore_biomes"
+	icon: {
+		id: "minecraft:cherry_sapling"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "2392661194C63179"
+			x: 3.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "172FE6B59EF34252"
+					type: "biome"
+					biome: "regions_unexplored:chalk_cliffs"
+				}
+				{
+					id: "2588270897AE36BC"
+					type: "biome"
+					biome: "regions_unexplored:towering_cliffs"
+				}
+			]
+			rewards: [
+				{
+					id: "61E5DA65FAA31F51"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "585DF5086D3087EE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "654BA40FD38653CA"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4E8EFFB2A502F674"
+			x: 3.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"2392661194C63179"
+			]
+			tasks: [
+				{
+					id: "1D84D889BFB1D5BF"
+					type: "biome"
+					biome: "biomesoplenty:hot_springs"
+				}
+				{
+					id: "7405B8770EFF8002"
+					type: "biome"
+					biome: "biomesoplenty:volcanic_plains"
+				}
+			]
+			rewards: [
+				{
+					id: "65F7D80759188974"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "05A4A624BB99EAC6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "466EF891B7BC66C6"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "7F926E6F393B0BC7"
+			x: 3.0d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4E8EFFB2A502F674"
+			]
+			tasks: [
+				{
+					id: "00385C1690A00DD3"
+					type: "biome"
+					biome: "biomesoplenty:bog"
+				}
+				{
+					id: "13BAFA84CCB50190"
+					type: "biome"
+					biome: "biomesoplenty:marsh"
+				}
+				{
+					id: "223B222EEFBC8A8E"
+					type: "biome"
+					biome: "regions_unexplored:fen"
+				}
+			]
+			rewards: [
+				{
+					id: "0818EEB49965B85B"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "1271B02FE23BD171"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7445FB4F418FD2E3"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "122FF431CDA92EC1"
+			x: 3.0d
+			y: 7.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7F926E6F393B0BC7"
+			]
+			tasks: [
+				{
+					id: "0EFD395C45D93C25"
+					type: "biome"
+					biome: "regions_unexplored:redstone_caves"
+				}
+				{
+					id: "1847137835DA0E60"
+					type: "biome"
+					biome: "regions_unexplored:bioshroom_caves"
+				}
+				{
+					id: "73E10AADD53CDF56"
+					type: "biome"
+					biome: "biomesoplenty:glowing_grotto"
+				}
+			]
+			rewards: [
+				{
+					id: "0720ED20FB49BA49"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "66E85F6E3148CD98"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "020E04DB231605E3"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "27B9D528EE9E2A4F"
+			x: 1.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2392661194C63179"
+			]
+			tasks: [
+				{
+					id: "095759BDB960628D"
+					type: "biome"
+					biome: "biomesoplenty:maple_woods"
+				}
+				{
+					id: "5E1B54BDCBAE36E3"
+					type: "biome"
+					biome: "regions_unexplored:eucalyptus_forest"
+				}
+				{
+					id: "00F8C8CD05AA6A9E"
+					type: "biome"
+					biome: "biomesoplenty:orchard"
+				}
+			]
+			rewards: [
+				{
+					id: "2EAC9A44DB13E62A"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "12E88BC01D2D8014"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "099ED1E87BB2EFD2"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4FBB33D6AE0D7BF7"
+			x: 1.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4E8EFFB2A502F674"
+			]
+			tasks: [
+				{
+					id: "7496A60C588D0BB7"
+					type: "biome"
+					biome: "regions_unexplored:joshua_desert"
+				}
+				{
+					id: "1076C58A44B468F4"
+					type: "biome"
+					biome: "regions_unexplored:saguaro_desert"
+				}
+				{
+					id: "1BBB6658018115D0"
+					type: "biome"
+					biome: "regions_unexplored:outback"
+				}
+			]
+			rewards: [
+				{
+					id: "4E685B3021E599D9"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "5F41E1B205556927"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1A584EB1B20E13DC"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "01C187527EBB2E42"
+			x: 1.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7F926E6F393B0BC7"
+			]
+			tasks: [
+				{
+					id: "409EFD3F27FDABA0"
+					type: "biome"
+					biome: "biomesoplenty:tundra"
+				}
+				{
+					id: "020705E2B3D27650"
+					type: "biome"
+					biome: "regions_unexplored:icy_heights"
+				}
+				{
+					id: "01AC0F0CF87EB803"
+					type: "biome"
+					biome: "biomesoplenty:snowblossom_grove"
+				}
+			]
+			rewards: [
+				{
+					id: "2508EE23CB65D224"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "7E285AD384C6729D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0F287260511E03D8"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "39B8F4EF8E933165"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"122FF431CDA92EC1"
+			]
+			tasks: [
+				{
+					id: "6EDA03F091388FD3"
+					type: "biome"
+					biome: "regions_unexplored:poppy_fields"
+				}
+				{
+					id: "2E1C451DBA09D0AE"
+					type: "biome"
+					biome: "biomesoplenty:jacaranda_glade"
+				}
+				{
+					id: "637B9C27CBC85D6E"
+					type: "biome"
+					biome: "regions_unexplored:wisteria_grove"
+				}
+			]
+			rewards: [
+				{
+					id: "2F10E723AC032C33"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "19AA4453C50DA6E8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "769A39391066729D"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5D9AAF892091E191"
+			x: 2.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"122FF431CDA92EC1"
+			]
+			tasks: [
+				{
+					id: "2DC61B9B8AC305E3"
+					type: "biome"
+					biome: "regions_unexplored:spires"
+				}
+				{
+					id: "0B9B8EFD1E98C8B7"
+					type: "biome"
+					biome: "biomesoplenty:crag"
+				}
+			]
+			rewards: [
+				{
+					id: "680AABFD1EF00B88"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "63C435DA527143E6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6BE9752054E3F6EB"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "05E537B097F52D38"
+			x: 4.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"122FF431CDA92EC1"
+			]
+			tasks: [
+				{
+					id: "70DA930DEB6EB849"
+					type: "biome"
+					biome: "biomesoplenty:wasteland"
+				}
+				{
+					id: "49217A1408231154"
+					type: "biome"
+					biome: "biomesoplenty:dead_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "6DEF78D746580D85"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "666290E1D6BCAB19"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0225B279F5644561"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "31A980F1060C1B0E"
+			x: 1.0d
+			y: 11.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"5D9AAF892091E191"
+			]
+			tasks: [
+				{
+					id: "1AA858F7C380C78D"
+					type: "biome"
+					biome: "biomesoplenty:origin_valley"
+				}
+			]
+			rewards: [
+				{
+					id: "4A3EA33A0DCB5945"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4846562F3258FCDC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0E6D8692ACB501F5"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "47EC7343F2C1366D"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/explore_biomes.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "1BB11975FD4D85C0"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: 3.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

@@ -1,0 +1,586 @@
+{
+	id: "596756E3DE0A3CD5"
+	group: "1BA44B612377A477"
+	order_index: 1
+	filename: "mekanism_alloys_and_teleporters"
+	icon: {
+		id: "mekanism:energy_tablet"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "628207C2E816696C"
+			x: 1.5d
+			y: 1.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"30B33E37D8C75001"
+				"354E125FC5D3BB01"
+			]
+			tasks: [
+				{
+					id: "5EC27CEF794ECA95"
+					type: "item"
+					item: {
+						id: "mekanism:energy_tablet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6D50A07FF309D42D"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "58C3B4465F828E39"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "15B4A19FFE957B9C"
+			x: 9.0d
+			y: 3.0d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"30B33E37D8C75001"
+				"354E125FC5D3BB01"
+			]
+			tasks: [
+				{
+					id: "045702373EBEE876"
+					type: "item"
+					item: {
+						id: "mekanism:alloy_reinforced"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "36429C9B17B61DBB"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "642722BC17A0AE03"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "430AB97A415B41E0"
+			x: 7.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"15B4A19FFE957B9C"
+			]
+			tasks: [
+				{
+					id: "629A698174E4915F"
+					type: "item"
+					item: {
+						id: "mekanism:alloy_atomic"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "108E9E744A3FD5CB"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "2802709F1960E59C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "74EB548B9C9A8966"
+			x: 7.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"430AB97A415B41E0"
+			]
+			tasks: [
+				{
+					id: "0C329DE759EDBF4C"
+					type: "item"
+					item: {
+						id: "mekanism:osmium_compressor"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4A1C07C282454054"
+					type: "item"
+					item: {
+						id: "mekanism:ingot_refined_obsidian"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2510B3FB06E71301"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "29C5C31B814B5F20"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "56344C09388A02E9"
+			x: 9.0d
+			y: 7.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"74EB548B9C9A8966"
+			]
+			tasks: [
+				{
+					id: "6A9C2687F64AC505"
+					type: "item"
+					item: {
+						id: "mekanism:teleportation_core"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "6B9C6480A20BA3D0"
+					type: "xp"
+					xp: 120
+				}
+				{
+					id: "3D98BE262F95F009"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "476F4F55DB74C16A"
+			x: 10.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"56344C09388A02E9"
+			]
+			tasks: [
+				{
+					id: "6C59FBF8ECFF0E5D"
+					type: "item"
+					item: {
+						id: "mekanism:teleporter"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0139EC34A266EED4"
+					type: "item"
+					item: {
+						id: "mekanism:teleporter_frame"
+						count: 1
+					}
+					count: 9L
+				}
+			]
+			rewards: [
+				{
+					id: "4560464C26BC90A2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "657E1E59A83B916F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4208DF1E90D16803"
+			x: 10.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"56344C09388A02E9"
+			]
+			tasks: [
+				{
+					id: "22D3CAF57B0CE547"
+					type: "item"
+					item: {
+						id: "mekanism:portable_teleporter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2041B722451F66CA"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "401EEBC353D134CE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "50BBE1B998118759"
+			x: 5.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"74EB548B9C9A8966"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "29E1B331C3DE35D9"
+					type: "item"
+					item: {
+						id: "mekanism:dimensional_stabilizer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "43D7FEF627200795"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "42B2B37D3F7BDAD4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "07EED935F7FA3E41"
+			x: 9.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"56344C09388A02E9"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "43CAC6BEBC2CC692"
+					type: "item"
+					item: {
+						id: "mekanism:quantum_entangloporter"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "224CAAB56FA5F327"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "16D80A95209F8DE5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "379346C489EA37E0"
+			x: 6.0d
+			y: 7.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"74EB548B9C9A8966"
+			]
+			tasks: [
+				{
+					id: "2DBC61209528C7F7"
+					type: "item"
+					item: {
+						id: "mekanism:robit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A94391F50B1B83B"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "268C7067C5E9A659"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "69E6901DA16854A9"
+			x: 5.0d
+			y: 9.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"379346C489EA37E0"
+				"56344C09388A02E9"
+			]
+			tasks: [
+				{
+					id: "6B2B35DD1BCBCF5E"
+					type: "item"
+					item: {
+						id: "mekanism:digital_miner"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "667F5CD853B8AA90"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "73C2C09092CC4019"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "228199BA6C4245DA"
+			x: 9.0d
+			y: 1.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"15B4A19FFE957B9C"
+			]
+			tasks: [
+				{
+					id: "3A0FB9111516A801"
+					type: "item"
+					item: {
+						id: "mekanism:dust_obsidian"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "17E57D25A91C4F4B"
+					type: "item"
+					item: {
+						id: "mekanism:dust_refined_obsidian"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "120F1B1EC1EE203E"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "74CBAD4D35841DEE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6CD748997C2CC496"
+			x: 2.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"628207C2E816696C"
+			]
+			tasks: [
+				{
+					id: "2BE22E66829E1927"
+					type: "item"
+					item: {
+						id: "mekanism:chargepad"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "188A2F5F5F0E6DC7"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6548C28EA0775E76"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7AE81F60788EADD0"
+			x: 0.5d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"628207C2E816696C"
+			]
+			tasks: [
+				{
+					id: "672CCC88D142109A"
+					type: "item"
+					item: {
+						id: "mekanism:electric_bow"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "367C726CC635B8E6"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "620BE21D60BB6AC1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "39CB77F95F38CDB9"
+			x: 1.5d
+			y: -2.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/mekanism_alloys_and_teleporters.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "78CE3D74730B189B"
+			linked_quest: "30B33E37D8C75001"
+			x: 0.5d
+			y: -0.5d
+			size: 1.0d
+		}
+		{
+			id: "15BD486FEF36A460"
+			linked_quest: "354E125FC5D3BB01"
+			x: -1.0d
+			y: -0.5d
+			size: 1.0d
+		}
+	]
+}

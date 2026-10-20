@@ -1,0 +1,542 @@
+{
+	id: "35D78C9F142C9214"
+	group: "45BAE1EA8498AD8D"
+	order_index: 3
+	filename: "harvest_netherite_and_beyond"
+	icon: {
+		id: "minecraft:netherite_scrap"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "694B6BC236B91267"
+			x: 2.0d
+			y: 2.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"131B5FE96A4605BB"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "1512DC2BDC6FDCED"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_scrap"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "164016D8FC94518B"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_upgrade_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2ABCDFA1E469450D"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "212AFD8F38C643E7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "42D79AC9616538D3"
+			x: 6.5d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"694B6BC236B91267"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "4E8442E620639877"
+					type: "item"
+					item: {
+						id: "silentgear:raw_azure_silver"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4ABDF550AEE015BA"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "181EC2C2392EB78A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6D9600C7F52BED6B"
+			x: 2.0d
+			y: 4.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"694B6BC236B91267"
+				"6CD23CD722EC696F"
+				"765D740D175B0667"
+			]
+			tasks: [
+				{
+					id: "288F505F635CF10C"
+					type: "item"
+					item: {
+						id: "undergarden:dreadrock"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "4A05F319CBF13BAE"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "3030DD4FE49A2D55"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1192D454BBE6D5C5"
+			x: 6.5d
+			y: 6.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"694B6BC236B91267"
+				"143395D7328062B5"
+			]
+			tasks: [
+				{
+					id: "34D0E8B214A43EA8"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "75609F3E56CC6E5D"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "501C603E916EC3CE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "643C93A070C57511"
+			x: 4.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"694B6BC236B91267"
+			]
+			tasks: [
+				{
+					id: "46F85DEBD36FC3FD"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanismtools:refined_obsidian_pickaxe)item(mekanismtools:refined_obsidian_paxel)item(mekanismtools:netherite_paxel)item(justdirethings:eclipsealloy_pickaxe)item(justdirethings:eclipsealloy_paxel)item(twilightforest:fiery_pickaxe)item(modern_industrialization:diesel_mining_drill))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "20615049C3F05FB8"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "2D098646C2BED0F9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "37F636BFE7E37758"
+			x: 8.0d
+			y: 4.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"694B6BC236B91267"
+				"5C190CBD956F8F68"
+			]
+			tasks: [
+				{
+					id: "6D412BBE351A8F2B"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "746FF4E00475A281"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4B4B4068F51EADD5"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "62DA620A1DAEBBA9"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6DCF508B01B706A3"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "211A3925ABE62BF8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "10136D8201F4A3F9"
+			x: 5.0d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"694B6BC236B91267"
+			]
+			tasks: [
+				{
+					id: "6ACBC954CE226F41"
+					type: "structure"
+					structure: "minecraft:bastion_remnant"
+				}
+			]
+			rewards: [
+				{
+					id: "5C038ABEADBCF5F9"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "673774E7CD6DB9C7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3728FFD02FB4DBFA"
+			x: 7.0d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"694B6BC236B91267"
+				"5C98652AE96904AD"
+			]
+			tasks: [
+				{
+					id: "38C02682C10254FF"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "26D813611C364D1E"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "514AE9133EA04084"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "322E25AE504F1593"
+			x: 2.0d
+			y: 11.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2575EE3D3B863D1D"
+			]
+			tasks: [
+				{
+					id: "69D8F8779A30700E"
+					type: "item"
+					item: {
+						id: "minecraft:leather_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5C776FF5BDC5C1E2"
+					type: "item"
+					item: {
+						id: "minecraft:leather_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "60EA87FE37C4E9AD"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "49A37A3070AE7ADA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "209C0E4096417699"
+			x: 2.0d
+			y: 13.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"322E25AE504F1593"
+			]
+			tasks: [
+				{
+					id: "2CFEB30C613295EB"
+					type: "item"
+					item: {
+						id: "minecraft:wolf_armor"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "255F75E605B2CC61"
+					type: "item"
+					item: {
+						id: "minecraft:armadillo_scute"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0173ACB7D56677D9"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "056806E7B287AA69"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0BC7913B1AAE9567"
+			x: 0.5d
+			y: 13.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"322E25AE504F1593"
+			]
+			tasks: [
+				{
+					id: "17406CC53EC42DE2"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:leather_horse_armor)item(minecraft:iron_horse_armor)item(minecraft:golden_horse_armor)item(minecraft:diamond_horse_armor))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "72C1E21454854D7C"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "7379D938C1599040"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "297578EF2CCCA60B"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/harvest_netherite_and_beyond.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "75DC2838274DAAAE"
+			linked_quest: "2575EE3D3B863D1D"
+			x: 2.0d
+			y: 10.0d
+			size: 1.0d
+		}
+		{
+			id: "34B075A4807DF020"
+			linked_quest: "765D740D175B0667"
+			x: 0.5d
+			y: 2.5d
+			size: 1.0d
+		}
+		{
+			id: "03214C775DB86468"
+			linked_quest: "131B5FE96A4605BB"
+			x: 1.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "4B3BD8906C1B58AA"
+			linked_quest: "143395D7328062B5"
+			x: 10.5d
+			y: 4.5d
+			size: 1.0d
+		}
+		{
+			id: "69CB4C1CD905D2F1"
+			linked_quest: "5C190CBD956F8F68"
+			x: 8.5d
+			y: 2.5d
+			size: 1.0d
+		}
+		{
+			id: "7DF2D6B0172EC3EF"
+			linked_quest: "5C98652AE96904AD"
+			x: 4.5d
+			y: 6.5d
+			size: 1.0d
+		}
+		{
+			id: "79508CBFE954E392"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 3.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

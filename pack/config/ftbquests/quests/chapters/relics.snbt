@@ -1,7 +1,7 @@
 {
 	id: "37F569BC21D75E5E"
-	group: "517E2EE5EE2E76FF"
-	order_index: 4
+	group: "15E93EB5160FB5F3"
+	order_index: 0
 	filename: "relics"
 	icon: {
 		id: "reliquary:mob_charm_fragment"
@@ -13,10 +13,9 @@
 		{
 			id: "2CAD2D054CB09ACA"
 			x: 2.0d
-			y: 1.5d
+			y: 2.0d
 			shape: "rsquare"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"1C5E43BCEDA7593F"
 			]
@@ -50,7 +49,7 @@
 		{
 			id: "66B6DA99BDA6AD30"
 			x: 2.0d
-			y: 3.0d
+			y: 4.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -86,7 +85,7 @@
 		{
 			id: "43308A673FF653BF"
 			x: 0.5d
-			y: 3.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -118,7 +117,7 @@
 		{
 			id: "08F23BEDD14FD31D"
 			x: 0.5d
-			y: 5.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -153,201 +152,9 @@
 			]
 		}
 		{
-			id: "65639548C2C2E03A"
-			x: 18.5d
-			y: 1.5d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "7CB2216D6D780760"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(relics:chorus_staff)item(relics:experience_disperser)item(relics:ghostly_mantle)item(relics:glitchy_mantle)item(relics:hunting_belt)item(relics:jellyfish_necklace)item(relics:kinetic_belt)item(relics:leafy_mantle)item(relics:midnight_mantle)item(relics:pet_bone)item(relics:piglin_mask)item(relics:reflective_necklace)item(relics:rider_flute)item(relics:ring_of_the_seven_deadly_sins)item(relics:roller_skate)item(relics:shield_of_retaliation)item(relics:sphere_of_self_sacrifice)item(relics:springy_boot)item(relics:chef_hat)item(relics:clot_of_time)item(relics:cut_glass_boot))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5C9504B7963E8E1B"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "085509967DE8B748"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1C39B10303C8A4FB"
-			x: 17.0d
-			y: 3.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"65639548C2C2E03A"
-			]
-			tasks: [
-				{
-					id: "0DB23073DF16512D"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "51F4B14CE5877864"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "426EF68EF2D06F0D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "155D611580258963"
-			x: 12.5d
-			y: 3.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"1C5E43BCEDA7593F"
-			]
-			tasks: [
-				{
-					id: "19D4A7CC143A2186"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(artifacts:anglers_hat)item(artifacts:antidote_vessel)item(artifacts:aqua_dashers)item(artifacts:bunny_hoppers)item(artifacts:charm_of_shrinking)item(artifacts:charm_of_sinking)item(artifacts:chorus_totem)item(artifacts:cloud_in_a_bottle)item(artifacts:cowboy_hat)item(artifacts:cross_necklace)item(artifacts:crystal_heart)item(artifacts:digging_claws)item(artifacts:eternal_steak)item(artifacts:everlasting_beef)item(artifacts:feral_claws)item(artifacts:fire_gauntlet)item(artifacts:flame_pendant)item(artifacts:flippers)item(artifacts:golden_hook)item(artifacts:helium_flamingo)item(artifacts:kitty_slippers)item(artifacts:lucky_scarf)item(artifacts:night_vision_goggles)item(artifacts:novelty_drinking_hat)item(artifacts:obsidian_skull)item(artifacts:onion_ring)item(artifacts:panic_necklace)item(artifacts:pickaxe_heater)item(artifacts:plastic_drinking_hat)item(artifacts:pocket_piston)item(artifacts:power_glove)item(artifacts:rooted_boots)item(artifacts:running_shoes)item(artifacts:scarf_of_invisibility)item(artifacts:shock_pendant)item(artifacts:snorkel)item(artifacts:snowshoes)item(artifacts:steadfast_spikes)item(artifacts:strider_shoes)item(artifacts:superstitious_hat)item(artifacts:thorn_pendant)item(artifacts:umbrella)item(artifacts:universal_attractor)item(artifacts:vampiric_glove)item(artifacts:villager_hat)item(artifacts:warp_drive)item(artifacts:whoopee_cushion)item(artifacts:withered_bracelet))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "19A20F1A5B4E38E8"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "78C72D3B6A4CEF6E"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "138734AE1F0C3A87"
-			x: 11.0d
-			y: 5.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"155D611580258963"
-			]
-			tasks: [
-				{
-					id: "2AD246DA317735BB"
-					type: "kill"
-					entity: "artifacts:mimic"
-					value: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "3778F48F04E20E60"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "4B056B96AA537717"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-				{
-					id: "76DCFF671052A131"
-					type: "random"
-					table_id: 7840789827906242800L
-				}
-			]
-		}
-		{
-			id: "73D8CBFF0B71205A"
-			x: 14.0d
-			y: 5.0d
-			shape: "diamond"
-			size: 0.75d
-			optional: true
-			invisible: true
-			dependencies: [
-				"155D611580258963"
-			]
-			tasks: [
-				{
-					id: "6A634DDF32392C2F"
-					type: "item"
-					item: {
-						id: "artifacts:whoopee_cushion"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "21D844EFF88E478C"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "702B7AB577D839AE"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-				{
-					id: "60E64492692683FD"
-					type: "random"
-					table_id: 8682264593899658817L
-				}
-			]
-		}
-		{
 			id: "344B4E30A304E85A"
 			x: 5.5d
-			y: 3.0d
+			y: 4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -383,7 +190,7 @@
 		{
 			id: "77C7E8214CABA7DB"
 			x: 3.5d
-			y: 5.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -420,7 +227,7 @@
 		{
 			id: "1B9288F0EB08F5B2"
 			x: 8.5d
-			y: 7.0d
+			y: 7.5d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -458,7 +265,7 @@
 		{
 			id: "7C823E959B36BA96"
 			x: 5.0d
-			y: 5.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -495,7 +302,7 @@
 		{
 			id: "37897CAA67020AFC"
 			x: 8.0d
-			y: 5.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -532,7 +339,7 @@
 		{
 			id: "064A1813B7F32692"
 			x: 6.5d
-			y: 5.0d
+			y: 6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -567,79 +374,24 @@
 				}
 			]
 		}
-		{
-			id: "5E6FBB34947A8DDF"
-			x: 15.5d
-			y: 5.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"1C39B10303C8A4FB"
-			]
-			tasks: [
-				{
-					id: "53E44BAD0E1AFD38"
-					type: "item"
-					item: {
-						id: "relics:golden_tooth"
-						count: 1
-					}
-					count: 9L
-				}
-			]
-			rewards: [
-				{
-					id: "26F083178D3E13CE"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "5D88134561841292"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
 	]
 	images: [
 		{
 			id: "570FB61A9CBB02AC"
-			x: 3.0d
+			x: 3.075d
 			y: -1.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/relics.png"
 		}
-		{
-			id: "2E3029F14AD4752B"
-			x: 4.4625d
-			y: 0.375d
-			width: 8.925d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/relics_relics.png"
-		}
-		{
-			id: "5949719DC1FE7AB4"
-			x: 14.675d
-			y: 0.375d
-			width: 8.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/relics_an_artifact.png"
-		}
 	]
 	quest_links: [
 		{
 			id: "2723994877168630"
 			linked_quest: "1C5E43BCEDA7593F"
-			x: 12.5d
-			y: 1.5d
+			x: 2.0d
+			y: 0.5d
 			size: 1.0d
 		}
 	]

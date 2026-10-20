@@ -1,0 +1,563 @@
+{
+	id: "742E9AECB4396170"
+	group: "1BA44B612377A477"
+	order_index: 6
+	filename: "mekanism_power_induction_and_extras"
+	icon: {
+		id: "mekanism:advanced_induction_cell"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "1178EDB5E27173C0"
+			x: 0.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7565AF89927B950A"
+				"54C26C329300A347"
+				"43B12CDF9223A242"
+			]
+			tasks: [
+				{
+					id: "3757B5A47027224A"
+					type: "item"
+					item: {
+						id: "mekanism:advanced_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4A958280CA0BEA1E"
+					type: "item"
+					item: {
+						id: "mekanism:advanced_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "63AA7ADD393054D4"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "19EB1CBE3A7838BF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5F711391262BEFD1"
+			x: 0.5d
+			y: 2.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1178EDB5E27173C0"
+				"11991CAC308F74E6"
+			]
+			tasks: [
+				{
+					id: "24ED0280214683DA"
+					type: "item"
+					item: {
+						id: "mekanism:elite_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "264FFB1F11B4E664"
+					type: "item"
+					item: {
+						id: "mekanism:elite_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2F46843672F6A578"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "0EBA10FE3C6C0E28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6624297467DA9646"
+			x: 0.5d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5F711391262BEFD1"
+				"28F257A509393BA0"
+				"6C11AB2E4E625255"
+			]
+			tasks: [
+				{
+					id: "40E89496E31320DD"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0D1383632E7CCDE0"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3D4E0931834998EC"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "67259C43974B09FE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5E8F3647B73A0992"
+			x: 6.5d
+			y: 0.5d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"7565AF89927B950A"
+				"515EABDC83B26416"
+			]
+			tasks: [
+				{
+					id: "74411F45DC5EAC75"
+					type: "item"
+					item: {
+						id: "mekanism_extras:dust_radiance"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "068C55FE68202980"
+					type: "item"
+					item: {
+						id: "mekanism_extras:alloy_radiance"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0BA064AC306C6D79"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "38CD451BC02E1E71"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6C057847340B18C8"
+			x: 4.5d
+			y: 1.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"5E8F3647B73A0992"
+			]
+			tasks: [
+				{
+					id: "7E095A1F72E46751"
+					type: "item"
+					item: {
+						id: "mekanism_extras:absolute_control_circuit"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "317A857A353A4E34"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "60BE535E72145D4C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "62708C199FD0F204"
+			x: 4.5d
+			y: 3.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"6C057847340B18C8"
+			]
+			tasks: [
+				{
+					id: "085125A4B26DF8D9"
+					type: "item"
+					item: {
+						id: "mekanism_extras:alloy_thermonuclear"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "6B59F1B9AA5F13BB"
+					type: "item"
+					item: {
+						id: "mekanism_extras:supreme_control_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A25945AB41A2E15"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "6D11F294BE0B9033"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "271EF9B3ECA8898F"
+			x: 6.5d
+			y: 4.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"62708C199FD0F204"
+				"1E6BA9227B6B280F"
+			]
+			tasks: [
+				{
+					id: "4A08C5EB849835AF"
+					type: "item"
+					item: {
+						id: "mekanism_extras:alloy_shining"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "39EBB6247FC9A82E"
+					type: "item"
+					item: {
+						id: "mekanism_extras:cosmic_control_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "11A5450ED14BBDC2"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "21A855EE5A53290F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "412F542BFE77DA7C"
+			x: 8.5d
+			y: 3.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"271EF9B3ECA8898F"
+			]
+			tasks: [
+				{
+					id: "3D9BD1890620F5EB"
+					type: "item"
+					item: {
+						id: "mekanism_extras:alloy_spectrum"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "57EDCC8B0423658C"
+					type: "item"
+					item: {
+						id: "mekanism_extras:infinite_control_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4410386B42D205F0"
+					type: "xp"
+					xp: 600
+				}
+				{
+					id: "558EFEA6097FE28C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "20AADC7F057BBBD9"
+			x: 3.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6C057847340B18C8"
+			]
+			tasks: [
+				{
+					id: "1B6C6B3CBD5FD1C7"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism_extras:absolute_smelting_factory)item(mekanism_extras:absolute_enriching_factory)item(mekanism_extras:absolute_crushing_factory)item(mekanism_extras:absolute_compressing_factory)item(mekanism_extras:absolute_combining_factory)item(mekanism_extras:absolute_purifying_factory)item(mekanism_extras:absolute_injecting_factory)item(mekanism_extras:absolute_infusing_factory)item(mekanism_extras:absolute_sawing_factory)item(mekanism_extras:absolute_oxidizing_factory)item(mekanism_extras:absolute_dissolving_factory)item(mekanism_extras:absolute_washing_factory)item(mekanism_extras:absolute_crystallizing_factory)item(mekanism_extras:absolute_centrifuging_factory))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6E3C0435D978B8B9"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "47312A9325185586"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "76F42EC41A7A87E6"
+			x: 8.5d
+			y: 1.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"62708C199FD0F204"
+			]
+			tasks: [
+				{
+					id: "4C45CA63D5C1FE0F"
+					type: "item"
+					item: {
+						id: "mekanism_extras:raw_naquadah"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "6AE48D682CD3F0BE"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "75F1C10CEF7787B3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "472EF62A30C14D95"
+			x: 10.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"271EF9B3ECA8898F"
+				"76F42EC41A7A87E6"
+			]
+			tasks: [
+				{
+					id: "2C9D131922E0D365"
+					type: "item"
+					item: {
+						id: "mekanism_extras:naquadah_reactor_controller"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6EA93B45A1A42677"
+					type: "item"
+					item: {
+						id: "mekanism_extras:naquadah_reactor_casing"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "2318370D7A5673EF"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "164117857E426A2D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "47EA08888BA973AE"
+			x: -1.5d
+			y: -3.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/mekanism_power_induction_and_extras.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "4A39E832203FE359"
+			linked_quest: "515EABDC83B26416"
+			x: 5.5d
+			y: -1.0d
+			size: 1.0d
+		}
+		{
+			id: "71D7A36CBC32EBDA"
+			linked_quest: "1E6BA9227B6B280F"
+			x: 6.0d
+			y: 3.0d
+			size: 1.0d
+		}
+		{
+			id: "25E59EAB9DF904B0"
+			linked_quest: "7565AF89927B950A"
+			x: -0.5d
+			y: -1.0d
+			size: 1.0d
+		}
+		{
+			id: "6CEA708F226458F1"
+			linked_quest: "43B12CDF9223A242"
+			x: -2.0d
+			y: -1.0d
+			size: 1.0d
+		}
+		{
+			id: "11DC8F01261AA38A"
+			linked_quest: "11991CAC308F74E6"
+			x: -1.5d
+			y: 1.0d
+			size: 1.0d
+		}
+		{
+			id: "27610DE8B00CCB47"
+			linked_quest: "28F257A509393BA0"
+			x: -4.0d
+			y: 3.0d
+			size: 1.0d
+		}
+		{
+			id: "437F598B8FF14A2D"
+			linked_quest: "6C11AB2E4E625255"
+			x: -1.0d
+			y: 4.5d
+			size: 1.0d
+		}
+	]
+}

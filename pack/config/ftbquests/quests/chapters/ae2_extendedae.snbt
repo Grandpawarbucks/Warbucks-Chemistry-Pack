@@ -1,0 +1,549 @@
+{
+	id: "1815823D60D87130"
+	group: "4DCF0E6958BD47BC"
+	order_index: 8
+	filename: "ae2_extendedae"
+	icon: {
+		id: "extendedae:ex_pattern_provider"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "33967F89E0530A95"
+			x: 5.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"66ED4FE9373A352B"
+			]
+			tasks: [
+				{
+					id: "4340A33F3436270C"
+					type: "item"
+					item: {
+						id: "extendedae:ex_pattern_provider"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "14A2A66A7CDA2B92"
+					type: "item"
+					item: {
+						id: "extendedae:ex_drive"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "38277F436C9F92F4"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "496149A327528ECC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "671135248AAD6760"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "0446268AB0BCB746"
+					type: "item"
+					item: {
+						id: "extendedae:wireless_connect"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "4AF91D5E2549FEEA"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "6DB933BBF6730E1E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3770AEAFDC83097B"
+			x: 3.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "70EAB327CBC2C910"
+					type: "item"
+					item: {
+						id: "extendedae:assembler_matrix_frame"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "7D6B83D64DEBF3DB"
+					type: "item"
+					item: {
+						id: "extendedae:assembler_matrix_crafter"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3723541C455B86B8"
+					type: "item"
+					item: {
+						id: "extendedae:assembler_matrix_pattern"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4C1D7D10F3A70AA2"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "1ED672BEB10DE09C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "64B349EC2D6CA5B6"
+			x: 3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "61450508B74803A0"
+					type: "item"
+					item: {
+						id: "extendedae:ex_interface"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "22CAC7B0CEC2D620"
+					type: "item"
+					item: {
+						id: "extendedae:ex_io_port"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7DA980F7FAC626C3"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "557DA2FC77859880"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "261AE8C2C2D39AC5"
+			x: 9.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "270449C6C346D243"
+					type: "item"
+					item: {
+						id: "extendedae:ex_pattern_access_part"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "13F02A47E4C74DB0"
+					type: "item"
+					item: {
+						id: "extendedae:wireless_ex_pat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0FF69F454936E1F8"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6CBBBD1F5B283A19"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7231154AB582EF98"
+			x: 5.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "7EC28D2426990E93"
+					type: "item"
+					item: {
+						id: "extendedae:tag_storage_bus"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0B85DE0C637A76E3"
+					type: "item"
+					item: {
+						id: "extendedae:threshold_level_emitter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "586B43C5E2E4371A"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4C1A9C348A95204A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4FBB5D1C1A7FC218"
+			x: 7.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "261FC346535762E1"
+					type: "item"
+					item: {
+						id: "advanced_ae:adv_pattern_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "44A92BFC19820679"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0300460BD35CE42A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "167FA55B833918AF"
+			x: 1.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3770AEAFDC83097B"
+			]
+			tasks: [
+				{
+					id: "61B8FD0CC7047CBD"
+					type: "item"
+					item: {
+						id: "extendedae:assembler_matrix_speed"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "0CBA07D289BA320A"
+					type: "item"
+					item: {
+						id: "extendedae:assembler_matrix_wall"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "29703A5404EC6807"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "7AF3638838B987B7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "61E774E4778CD356"
+			x: 7.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "781F270BACDEAE12"
+					type: "item"
+					item: {
+						id: "extendedae:caner"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "66498B81FD7502C6"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "14BE304A449DD893"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7EF291158B90A46F"
+			x: 4.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"33967F89E0530A95"
+			]
+			tasks: [
+				{
+					id: "64E1FF9D18A56118"
+					type: "item"
+					item: {
+						id: "extendedae:void_cell"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1D515071F6E14D7E"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "267343E6A3D455C2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3785AD22B4BFBE03"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"671135248AAD6760"
+			]
+			tasks: [
+				{
+					id: "1461C9834B7B001F"
+					type: "item"
+					item: {
+						id: "extendedae:wireless_tool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6D42F15B6E67166C"
+					type: "item"
+					item: {
+						id: "extendedae:wireless_hub"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4B1DAB737A5CAC26"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "42C17CBFDD718DB6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7090BF1A6ACCFCD5"
+			x: 9.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4FBB5D1C1A7FC218"
+			]
+			tasks: [
+				{
+					id: "6FFD28691D951CE7"
+					type: "item"
+					item: {
+						id: "advanced_ae:adv_pattern_encoder"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1E01DB9A33912B21"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6102681BD02238A9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "3BA88AF3D3FD5DF8"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/ae2_extendedae.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "077C402B4768A688"
+			linked_quest: "66ED4FE9373A352B"
+			x: 5.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

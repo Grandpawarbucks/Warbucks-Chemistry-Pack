@@ -1,0 +1,368 @@
+{
+	id: "25C6493A08CD875B"
+	group: "74521B393BB76111"
+	order_index: 3
+	filename: "powah_the_energizing_orb"
+	icon: {
+		id: "powah:energizing_orb"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "06B6BF3F2F8FAC26"
+			x: 7.5d
+			y: 2.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"41599518B7C0EF66"
+				"6C18ADE33F69C1A9"
+			]
+			tasks: [
+				{
+					id: "031E409C33AE1787"
+					type: "item"
+					item: {
+						id: "powah:energizing_orb"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5CAC01D154F4B613"
+					type: "item"
+					item: {
+						id: "powah:energizing_rod_starter"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "1115B39655A1FDF8"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "10E9DDEB73C4EC8A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "188B2C143B0497A6"
+			x: 3.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"06B6BF3F2F8FAC26"
+			]
+			tasks: [
+				{
+					id: "66CAE2F63C1B2F10"
+					type: "item"
+					item: {
+						id: "powah:charged_snowball"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6C7C1AA591F605E7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "0B4EE04BCA05D891"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "139DB00CF3298722"
+			x: 7.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"06B6BF3F2F8FAC26"
+			]
+			tasks: [
+				{
+					id: "203F47FE18DAC404"
+					type: "item"
+					item: {
+						id: "powah:energizing_rod_basic"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "7438175892EAE811"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "489EF427586B4919"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2CBDC3EEA3E611E3"
+			x: 7.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"139DB00CF3298722"
+				"5D0F8D07E1576330"
+			]
+			tasks: [
+				{
+					id: "4BD0196D78E13758"
+					type: "item"
+					item: {
+						id: "powah:energizing_rod_hardened"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "2B2FDE6E9A4EE63C"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "610E7B3815C319D8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2F421D309B1AEF31"
+			x: 4.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"06B6BF3F2F8FAC26"
+			]
+			tasks: [
+				{
+					id: "36063210E2570BB8"
+					type: "item"
+					item: {
+						id: "powah:ender_core"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "657625B017B4DB0D"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "2344E4082171E53C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4D202C36DDF07F68"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2F421D309B1AEF31"
+			]
+			tasks: [
+				{
+					id: "14FF9D618C545356"
+					type: "item"
+					item: {
+						id: "powah:ender_gate_starter"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "65BF533863C510D0"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "7D1B1CB1B7A2CF23"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "77EBF5790B6539B7"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2F421D309B1AEF31"
+			]
+			tasks: [
+				{
+					id: "582FC3F725953A89"
+					type: "item"
+					item: {
+						id: "powah:ender_cell_starter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "137F5F1DDA95A43B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "248290B24D438C14"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "62E8661443403399"
+			x: 2.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"77EBF5790B6539B7"
+				"4D202C36DDF07F68"
+				"5D0F8D07E1576330"
+			]
+			tasks: [
+				{
+					id: "14E17052DA46C307"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(powah:ender_cell_hardened)item(powah:ender_cell_blazing)item(powah:ender_cell_niotic)item(powah:ender_cell_spirited)item(powah:ender_cell_nitro))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "71333D9BA5E2C60B"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(powah:ender_gate_basic)item(powah:ender_gate_hardened)item(powah:ender_gate_blazing)item(powah:ender_gate_niotic)item(powah:ender_gate_spirited)item(powah:ender_gate_nitro))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3E2B25AC89E15FD1"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "00CDB97DF7CF38BE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "1A713D378F7D7D69"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/powah_the_energizing_orb.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "206803E9A6851025"
+			linked_quest: "6C18ADE33F69C1A9"
+			x: 6.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "72E81ED0D9BDAC34"
+			linked_quest: "41599518B7C0EF66"
+			x: 8.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "0AC9239E52C81B4C"
+			linked_quest: "5D0F8D07E1576330"
+			x: 6.0d
+			y: 4.0d
+			size: 1.0d
+		}
+	]
+}

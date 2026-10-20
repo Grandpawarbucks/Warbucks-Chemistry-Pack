@@ -1,0 +1,517 @@
+{
+	id: "7E0EB2D87B466BD0"
+	group: "5F01357190A9B864"
+	order_index: 3
+	filename: "occultism_afrit_and_marid"
+	icon: {
+		id: "occultism:book_of_binding_bound_afrit"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "582DDE5701841D1D"
+			x: 4.0d
+			y: 14.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"7128DCEDF4AA3FCF"
+				"0EAE054A4927480F"
+			]
+			tasks: [
+				{
+					id: "2687C366ADAEDD76"
+					type: "item"
+					item: {
+						id: "occultism:miner_marid_master"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "44F9F9EAFBC8EDA6"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "4289B946E3413460"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5E236E6AE2C06A35"
+			x: 4.0d
+			y: 2.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"312300639D5FB8C9"
+			]
+			tasks: [
+				{
+					id: "76F05D399C3569F9"
+					type: "item"
+					item: {
+						id: "occultism:book_of_binding_bound_afrit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "36EDB2F87B3DA868"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "2187E3FF1D3614A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2A9367B90A0DFF1B"
+			x: 4.0d
+			y: 4.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"5E236E6AE2C06A35"
+				"4F9CDFF94B4D9ACC"
+				"5FDAF6F05B133169"
+			]
+			tasks: [
+				{
+					id: "7B00B712BA0BCCEC"
+					type: "kill"
+					entity: "occultism:afrit_wild"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "55B8C9EF298C973E"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "19B6FEC0CF27632B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+				{
+					id: "25DF2D4A627E9550"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "74374AFF946AA880"
+			x: 4.0d
+			y: 6.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"2A9367B90A0DFF1B"
+			]
+			tasks: [
+				{
+					id: "51B542F47758B3DF"
+					type: "item"
+					item: {
+						id: "occultism:chalk_red"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0D7634B9DEEE9AA1"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "09664130145B79EC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1CF5C54EFC2D1E7E"
+			x: 2.0d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2A9367B90A0DFF1B"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "5F448F280F7CC041"
+					type: "kill"
+					entity: "occultism:wild_hunt_wither_skeleton"
+					value: 5L
+				}
+			]
+			rewards: [
+				{
+					id: "0C00169800F227E6"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "1EE5224F7C762328"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "60A30C6C2BFF802E"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "0E4356789E613F84"
+			x: 4.0d
+			y: 8.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"74374AFF946AA880"
+			]
+			tasks: [
+				{
+					id: "6E7C2094DFA0BAB6"
+					type: "item"
+					item: {
+						id: "occultism:chalk_black"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "618874131DAB1A0E"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "03B09D8F163B4F18"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "47FB4F3415A4549B"
+			x: 2.0d
+			y: 8.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"74374AFF946AA880"
+			]
+			tasks: [
+				{
+					id: "1C14E181E0BECF64"
+					type: "item"
+					item: {
+						id: "occultism:book_of_binding_bound_marid"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4A92356821310C41"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6E4F8DF3A28BFD28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0EDBA37C95386B2E"
+			x: 4.0d
+			y: 10.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"0E4356789E613F84"
+				"47FB4F3415A4549B"
+			]
+			tasks: [
+				{
+					id: "68DE28CBB2054FAF"
+					type: "kill"
+					entity: "occultism:marid_unbound"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "216316E7EB30117D"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "15F2D9EA45E704EA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+				{
+					id: "1811EA6C80C2961C"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "0EAE054A4927480F"
+			x: 4.0d
+			y: 12.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"0EDBA37C95386B2E"
+			]
+			tasks: [
+				{
+					id: "73C23B6FD0A8EC7D"
+					type: "item"
+					item: {
+						id: "occultism:chalk_blue"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "560BD45363430014"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "62B78D711DD40F40"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5F44A5C536C013A8"
+			x: 0.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"771B8F5296757381"
+				"74374AFF946AA880"
+			]
+			tasks: [
+				{
+					id: "175EB4296C5991D5"
+					type: "item"
+					item: {
+						id: "occultism:ritual_satchel_t2"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "12A09E414BE00664"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5B5A60A859A1A95B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "09D8A61036B3E57D"
+			x: 6.0d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0EAE054A4927480F"
+			]
+			tasks: [
+				{
+					id: "0A456A9E49742FE3"
+					type: "item"
+					item: {
+						id: "occultism:iesnium_anvil"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "547DB4CBFAC25600"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "27F14B7D88EBEB3A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "29EA9B8274FEABF7"
+			x: 7.5d
+			y: 14.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0EAE054A4927480F"
+			]
+			tasks: [
+				{
+					id: "42151D68D391FFA9"
+					type: "item"
+					item: {
+						id: "occultism:chalk_rainbow"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "03F3DD45BF4CAFC2"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "5FDFB3AF217A1E0F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "3DED17A6CC7DE0C6"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/occultism_afrit_and_marid.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "39CED4D5A8712E19"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 2.5d
+			y: 4.5d
+			size: 1.0d
+		}
+		{
+			id: "533D7B3A632C4D88"
+			linked_quest: "7128DCEDF4AA3FCF"
+			x: 2.5d
+			y: 12.5d
+			size: 1.0d
+		}
+		{
+			id: "57861E665AFD8AB4"
+			linked_quest: "312300639D5FB8C9"
+			x: 4.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "5AEAE90520831C07"
+			linked_quest: "4F9CDFF94B4D9ACC"
+			x: 2.5d
+			y: 2.5d
+			size: 1.0d
+		}
+		{
+			id: "7211765EE2CF301F"
+			linked_quest: "5FDAF6F05B133169"
+			x: 5.5d
+			y: 2.5d
+			size: 1.0d
+		}
+		{
+			id: "79BDD2D066BADA4F"
+			linked_quest: "771B8F5296757381"
+			x: 0.5d
+			y: 6.5d
+			size: 1.0d
+		}
+	]
+}

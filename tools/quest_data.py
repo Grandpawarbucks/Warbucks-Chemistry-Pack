@@ -15,7 +15,8 @@ from quests._tables import REWARD_TABLES  # noqa: F401  (loot / choice reward ta
 
 BOOK_TITLE = "Warbucks Chemistry: The Demigod's Codex"
 
-# Chapter groups (the left-hand tabs in the book), in display order. Each chapter's group is set
+# Chapter groups (the left-hand tabs in the book), in display order. Since "Mod = category" (2026-10-19, see _split
+# below) the side tabs here only hold pages that come out as a single chapter; every other page gets its own group. Each chapter's group is set
 # here by key, so splitting or moving a chapter never touches quest keys (player progress is safe).
 # "top" is the ungrouped area above the first tab (title None): FTB Quests shows chapters whose group is ""
 # there, as ATM10 does with Welcome and its market pages. A group's id comes from its key, so keys never change;
@@ -54,8 +55,8 @@ UNLISTED = sorted(f.stem for f in _QDIR.glob("*.py") if not f.stem.startswith("_
 ONLY = [k for k in os.environ.get("QUEST_ONLY", "").split(",") if k]
 if ONLY:
     ORDER = [k for k in ORDER if k in ONLY or k in ("welcome", "start", *(f"t{i}" for i in range(8)))]
-CHAPTERS = [importlib.import_module(f"quests.{k}").CHAPTER for k in ORDER]
-for _c in CHAPTERS:
+PAGES = [importlib.import_module(f"quests.{k}").CHAPTER for k in ORDER]  # one per chapter file
+for _c in PAGES:
     _c.group = next(g for g, ks in LAYOUT.items() if _c.key in ks)
     normalize_milestones(_c)  # capstone = 2.0 gear, section milestone = 1.5 hexagon (tools/layout.py)
 
@@ -81,12 +82,345 @@ for _kv in filter(None, os.environ.get("LAYOUT_STYLE", "").split(",")):
     _k, _, _v = _kv.partition("=")
     STYLES[_k], _, _b = _v.partition("+")
     BLOCKS[_k] = _b or None
+
+
+# --- "Mod = category" (user decision 2026-10-19) -------------------------------------------------
+# Every page in SPLIT_TABS becomes its own category (an FTB chapter group, titled after the page) and the layout's
+# sections of that page become its chapters, in progression order. Quest keys never change: only which chapter
+# shows a quest. The first chapter keeps the page's key (so links and docs still resolve); the others are
+# "<page>_<slug of the chapter title>". A page that comes out as one chapter stays in its old tab's group.
+# The Demigod's Path, the top area and the shop are not split.
+SPLIT_TABS = ("basics", "chem", "eng", "magic", "world", "life")
+JOIN = {"mekanism_power": "mekanism"}   # page -> page whose category its chapters join (one category per mod)
+SPLIT_MIN, SPLIT_MAX = 5, 25            # a section under SPLIT_MIN quests joins a neighbour; merges stay <= SPLIT_MAX
+PAGE_TITLES = {}                        # category title when the page title doesn't read well as one
+# Chapter names and subtitles, by the chapter's root quest (the quest the layout names a section after); icon is
+# optional (default: the root quest's item). A chapter not listed here keeps the layout's auto title.
+CHAPTER_TITLES = {
+    # Gear and Comfort (tools)
+    "tc_sg_repair": ("Silent Gear", "Repair kits, parts, grading and jewellery"),
+    "tc_crimson": ("Nether Alloys", "Crimson iron, the Alloy Forge and armour from parts"),
+    "tc_scuba": ("Mekanism Gear", "Paxels, the Disassembler, scuba gear and the MekaSuit"),
+    "tc_jetpack": ("Flight and Gadgets", "Iron Jetpacks, the Angel Ring and handy gadgets"),
+    # Tools, Armour and Harvest Tiers (harvest)
+    "hv_intro": ("Stone and Bronze", "Why ores need a better pick: the early tiers"),
+    "hv_iron": ("Iron and Diamond", "Hard ores, diamond tools and the scratch test"),
+    "hv_steel": ("Steel and Obsidian", "The diamond tier without diamonds, and beyond"),
+    "hv_netherite": ("Netherite and Beyond", "Netherite gear, azure silver and armour for pets"),
+    # Storage and Logistics (storage)
+    "s_barrel": ("Sophisticated Storage", "Barrels, chests, tiers and upgrades"),
+    "s_drawers": ("Drawers and Terminals", "Functional Storage drawers and Tom's networks"),
+    "s_furnace": ("Iron Furnaces", "Faster furnaces, one metal at a time"),
+    "s_pipes": ("Pipes and Augments", "Pipez, LaserIO and furnace augments"),
+    "sto_bp_gold": ("Backpack Tiers", "Gold, diamond and netherite backpacks"),
+    "sto_bp_crafting": ("Backpack Upgrades", "Crafting, smelting, tanks and more on your back"),
+    "sto_vanilla": ("Vanilla Storage", "Barrels, hoppers, ender chests and rails"),
+    # Power
+    "pw_iron_gen": ("Generators", "Your first power: fuel, sun, wind and diesel"),
+    "pw_heat": ("Mekanism Power", "Heat generators, energy cubes, induction and fusion"),
+    "pw_mi_storage": ("Steam and Crystals", "EU storage, steam turbines and Powah crystals"),
+    # Powah!
+    "pw_paste": ("Dielectric Basics", "Paste, rods, casings and the first generators", "powah:dielectric_paste"),
+    "pw_cable": ("Cables and Cells", "Moving and storing FE"),
+    "pw_orb": ("The Energizing Orb", "Charging crystals and ender networks"),
+    "pw_cap_hardened": ("The Hardened Tier", "Hardened capacitors, cells and reactor"),
+    "pw_blazing_gear": ("Crystal Tiers", "Blazing, niotic, spirited and nitro"),
+    # Farming and Food
+    "f_knife": ("Farmer's Delight", "Knives, cutting boards and new crops"),
+    "f_compost": ("Cooking Pot and Soil", "The cooking pot, the stove and rich soil", "farmersdelight:cooking_pot"),
+    "f_meal": ("Meals and Fertilizer", "Proper meals, feasts and NPK fertilizer"),
+    "fd_bees": ("Gardens and Bees", "Bees, kitchen gardens and odd orchards"),
+    # Quality of Life
+    "ql_start": ("Comfort First", "Graves, backpacks, teams and other comforts"),
+    "q_waystone": ("Waystones and Shortcuts", "Travel, the all-in-one manual and crafting sticks"),
+    "ql_ultimine": ("Ultimine and Enchanting", "Mining in bulk, zoom, enchanting and anvils"),
+    "ut_sticks": ("Utilitarian", "Shortcuts for building and moving things"),
+    "ut_snad": ("Odds and Ends", "Snad, clocks, mufflers and pylons"),
+    # Building and Decoration
+    "bd_start": ("Building Basics", "Macaw's blocks, lamps and laboratory decor"),
+    "bd_rocks": ("Gadgets and Stone", "Building gadgets and every kind of rock"),
+    "bd_jar": ("Furniture and Fun", "Framed blocks, seats, jars and soap"),
+    # The Periodic Table
+    "pt_intro": ("Reading the Table", "Metalloids, non-metals and the p-block families"),
+    "pt_alkali": ("The Metals", "Alkali, alkaline earth and transition metals"),
+    "pt_noble": ("Collecting the Table", "Noble gases, rare earths and complete groups"),
+    "pt_co2": ("Compounds", "Bonds, acids, salts and everyday chemicals"),
+    # Mekanism (mekanism + mekanism_power)
+    "mk2_intro": ("Factories and Upgrades", "The configurator, factories, upgrades and infusion"),
+    "mk2_tablet": ("Alloys and Teleporters", "Reinforced and atomic alloys, teleporters and the miner"),
+    "mk2_adv_circuit": ("Circuits, QIO and Tanks", "Control circuits, QIO storage and portable tanks"),
+    "mk2_dynamic_tank": ("The Chemical Plant", "Reaction chamber, substrate, HDPE and the Meka-Tool"),
+    "mk2_cables": ("Logistics and Armour", "Cables, transporters, sorters and armour"),
+    "mkp_intro": ("Power and Big Machines", "Boilers, turbines, fusion and More Machine"),
+    "mkp_induction_adv": ("Induction and Extras", "Induction cells, Mekanism Extras and naquadah"),
+    # Mob Data and Big Crafting (factory)
+    "mf_learner": ("Mob Data", "Deep learners, data models and loot fabrication"),
+    "mf_components": ("Extended Crafting", "Black iron, bigger tables and crafting cores"),
+    "mf_compact": ("Compact Machines", "Rooms inside blocks, and cake that teleports"),
+    # Automation and Logic
+    "lg_computer": ("Computers and Autocrafting", "CC: Tweaked, peripherals and a first chemical line"),
+    "lg_menril": ("Integrated Dynamics", "Menril, SFM programs and logistics networks"),
+    "lg_id_store": ("Variables and Tunnels", "Variable stores, tunnels, terminals and crafting"),
+    "lg_laser": ("LaserIO", "Cards for items, fluids, gases and energy"),
+    "lg_pipez_types": ("Pipez and Menril", "Menril trees, the squeezer and Pipez for everything"),
+    # The Mechanical Age (create)
+    "cr_alloy": ("The Andesite Age", "Andesite alloy, casings and a hand crank"),
+    "cr_power": ("Contraptions", "Bearings, pistons, pulleys and drills"),
+    "cr_cogs": ("Gears and Windmills", "Ratios, gauges, shifting and chain drives"),
+    "cr_belts": ("Belts and Logistics", "Millstones, saws, depots, funnels and vaults"),
+    "cr_press": ("Pressing and Fluids", "The press, pipes, spouts, steam and fans"),
+    "cr_mixer": ("Brass and Packages", "Heated mixing, brass, packagers and stock keeping"),
+    "cr_precision": ("Precision and Electricity", "Arms, alternators and Create: New Age"),
+    "cr_xp": ("Deployers and Experience", "Deployers, crushing wheels and liquid experience"),
+    "cr_sturdy": ("Trains", "Sturdy sheets, tracks, stations and signals"),
+    # Just Dire Things
+    "jdt_goo": ("Feeding the Goo", "Primordial goo, coal and a first generator"),
+    "jdt_ferricore": ("Ferricore", "Ferricore tools, bows and abilities"),
+    "jdt_blazegold": ("Blazegold", "Blazebloom, fuels, polymorphic fluid and portals"),
+    "jdt_celestigem": ("Celestigem", "VoidShimmer, the paxel and a built-in elytra"),
+    "jdt_eclipse": ("Eclipse Alloy", "Time crystals, the paradox machine and flight"),
+    "jdt_armor": ("Machines and Armour", "Ferricore armour, breakers, clickers and collectors"),
+    "jdt_player_stuff": ("Wands and Utilities", "Blazejet, voidshift and the player accessor"),
+    # Applied Energistics
+    "ae_certus": ("Certus Quartz", "Sky stone, charged certus and fluix"),
+    "ae_presses": ("Processors", "Inscriber presses, processors and upgrade cards"),
+    "s_ae_drive": ("The ME Network", "Drives, channels, P2P and wireless access"),
+    "ae_condenser": ("Quantum Tech", "The condenser, quantum computer and armour cards"),
+    "s_ae_cell": ("Storage Cells", "Cells, MEGA cells and flux storage"),
+    "ae_cell_tiers": ("Autocrafting", "Bigger components, autocrafting and gas storage"),
+    "ae_entro": ("Entro Crystals", "Entro, crystal assemblers and the circuit slicer"),
+    "s_exae": ("ExtendedAE", "Assembler matrix, extended interfaces and buses"),
+    "ae_packaged_ex": ("Bigger Crafting", "Packaged crafting, co-processors and interfaces"),
+    # Ars Nouveau
+    "m_book": ("Novice Spell Book", "Archwood, essences and the first spells"),
+    "m_scribe": ("Source and Glyphs", "The scribe's table, source jars and sourcelinks"),
+    "m_apparatus": ("Enchanting Apparatus", "Mage armour, magebloom and helpful spirits"),
+    "m_brazier": ("Rituals", "The ritual brazier, archmage book and familiars"),
+    "ars_storage": ("Storage and Charms", "Storage lectern, turrets, charms and rings"),
+    "ars_fire_essence": ("Elemental Essences", "Fire, earth, water and the caster's tools"),
+    "ars_anima": ("Mastery", "Anima, foci and elemental armour"),
+    # Occultism
+    "m_datura": ("Spirit Sight", "Datura, spiritfire and your first foliot"),
+    "oc_gold_chalk": ("Chalks and Possession", "Golden chalk, possessed mobs and research"),
+    "oc_djinni": ("Djinni and Storage", "Djinni, spirit miners and dimensional storage"),
+    "oc_afrit": ("Afrit and Marid", "The strongest spirits and the rainbow chalk"),
+    # Neo Vitae
+    "nv_altar": ("The Blood Altar", "Ara Vitae, the first orb, sigils and runes"),
+    "nv_magician": ("Rituals", "The Veneficus orb, ritual stones and sentient armour"),
+    "nv_shard": ("Blood Shards", "Shards, hellforged metal and the highest orbs"),
+    # Apotheosis
+    "m_gems": ("Gems and Spawners", "Gem dust, bottled spawners and runes"),
+    "m_shelves": ("Enchanting", "Better bookshelves, infusion and the library"),
+    "m_simple_reforge": ("Reforging", "Salvage, rarity materials and spawner upgrades"),
+    "m_gem_cut": ("Gem Cutting", "Gems, sockets, augments and gateways"),
+    # Relics and Artifacts
+    "m_reliquary": ("Reliquary", "Alkahestry, mob charms and odd relics"),
+    "rl_artifacts": ("Artifacts and Mimics", "Relics that grow with use, and mimic treasure"),
+    # Equivalent Exchange
+    "pe_stone": ("The Philosopher's Stone", "Transmutation, covalence dust and fuels"),
+    "pe_dm": ("Dark Matter", "Dark and red matter tools and armour"),
+    # Other Worlds
+    "w_end": ("The End and the Deep Dark", "The dragon, End cities, ancient cities and the Otherside"),
+    "w_undergarden": ("Undergarden Metals", "Regalium, catacombs and the forgotten ingot"),
+    # Exploration
+    "ex_village": ("Villages and Mansions", "Every kind of village, outposts and mansions", "minecraft:bell"),
+    "ex_zombie_dungeon": ("Dungeons and Mines", "Catacombs, strongholds, mineshafts and trials", "minecraft:trial_key"),
+    "ex_shipwreck": ("Temples and the Sea", "Temples, shipwrecks, ruins and monuments", "minecraft:heart_of_the_sea"),
+    "ex_fortress": ("The Nether", "Fortresses, bastions and fossils", "minecraft:nether_bricks"),
+    "ex_bio_chalk": ("Biomes", "Chalk cliffs, hot springs, wetlands and more", "minecraft:cherry_sapling"),
+    # The Undergarden
+    "ug_arrival": ("Arrival", "Depthrock, dark woods, mushrooms and beasts"),
+    "ug_cloggrum_tools": ("Cloggrum and Froststeel", "The first metals of the dark"),
+    "ug_cloggrum_armor": ("The Forgotten", "Cloggrum armour, the depths and forgotten gear"),
+    "ug_rogdorium": ("Utherium", "Rogdorium, the infuser and utherium gear"),
+    # The Twilight Forest
+    "tf_oak": ("Into the Twilight", "Magic trees, steeleaf, ironwood and the questing ram"),
+    "tf_courtyard": ("The Naga and the Lich Tower", "The grounds of the first two bosses"),
+    "tf_drying_rack": ("Maps and Charms", "Magic maps, hollow hills, tanning and charms"),
+    "w_lich": ("The Frozen North", "The Lich, the Alpha Yeti and the Snow Queen"),
+    "tf_labyrinth": ("The Labyrinth", "The mazebreaker, the minoshroom and uncrafting"),
+    "tf_hydra_lair": ("The Hydra", "Fiery metal, knightmetal and the hydra"),
+    "tf_stronghold": ("The Dark Tower", "Knight phantoms, carminite and the Ur-Ghast"),
+    "tf_troll_cave": ("The Highlands", "Troll caves, giants and the final castle"),
+    # Deeper and Darker
+    "dd_stones": ("The Otherside", "Sculk stone, echo trees and Otherside creatures"),
+    "dd_carapace": ("Resonarium and the Warden", "Resonarium, warden carapace and sculk gear"),
+    # Metals of Legend (allthemodium)
+    "atm_raw": ("Allthemodium", "Reducing the ore, and the Mining dimension"),
+    "atm_pick": ("Vibranium and Unobtainium", "The higher metals and their alloys"),
+    # Space
+    "w_desh": ("The Moon and Mars", "Desh, ostrum, oxygen and the rover"),
+    "w_suit": ("Venus and Mercury", "Heat suits, calorite and the hot planets"),
+    "w_space_metals": ("Glacio", "Alien metals, launch sites and moon dungeons"),
+    # Monster Hunting
+    "hn_zombie_1": ("The Undead", "Zombies, skeletons and the drowned", "minecraft:rotten_flesh"),
+    "hn_spider_1": ("Creepers and Crawlers", "Creepers, spiders and silverfish", "minecraft:gunpowder"),
+    "hn_witch": ("Night Creatures", "Endermen, witches, slimes and phantoms", "minecraft:ender_pearl"),
+    "hn_pillager": ("Raiders and Guardians", "Pillagers, ravagers and elder guardians", "minecraft:crossbow"),
+    "hn_blaze_1": ("Nether Hunts", "Blazes, ghasts, magma cubes and bastions", "minecraft:blaze_rod"),
+    "hn_wither_skel_1": ("Skulls and Giants", "Wither skeletons, Twilight beasts and the Wither",
+                         "minecraft:wither_skeleton_skull"),
+    "hn_sculk": ("Strange Creatures", "Shulkers, Undergarden beasts, sculk and aliens", "minecraft:shulker_shell"),
+    # Mystical Agriculture
+    "f_altar": ("Infusion and Souls", "The altar, soulium and soul jars"),
+    "f_prosperity": ("Prosperity", "Prudentium, agglomeratio and essence gear"),
+    "f_tertium": ("Higher Seeds", "Tertium, imperium, supremium and awakening"),
+    "ma_seeds": ("Inferium Farming", "Seeds, farmland, fertilizer and watering cans"),
+}
+
+
+def _icon_of(q):
+    """The item a quest shows: its icon, else its first item task (or the first item of an anyof filter)."""
+    import re
+    if getattr(q, "icon", None):
+        return q.icon
+    for t in q.tasks:
+        if t[0] == "item":
+            return t[1]
+        if t[0] == "filter":
+            m = re.search(r"item\(([^()]+)\)", t[1])
+            if m:
+                return m.group(1)
+    return None
+
+
+def _split_page(page):
+    """The page's sections merged into chapter-sized parts: [{"members": [keys], "root": key}] in progression
+    order (a part comes after the parts it depends on; ties keep reading order)."""
+    import layout
+    secs = layout.page_sections(page, "grid" if page.style == "grid" else "tree")
+    parts = [{"members": list(s["members"]), "root": s["root"], "title": s["title"]} for s in secs]
+    byk = {q.key: q for q in page.quests}
+    idx = {q.key: i for i, q in enumerate(page.quests)}
+
+    def links(a, b):
+        sa, sb = set(a["members"]), set(b["members"])
+        return sum(1 for k in sa for d in byk[k].deps if d in sb) + sum(1 for k in sb for d in byk[k].deps if d in sa)
+
+    while len(parts) > 1:
+        small = [i for i, p in enumerate(parts) if len(p["members"]) < SPLIT_MIN]
+        if not small:
+            break
+        i = min(small, key=lambda i: (len(parts[i]["members"]), i))
+        cand = [j for j in range(len(parts)) if j != i and (abs(j - i) == 1 or links(parts[i], parts[j]))]
+        j = min(cand, key=lambda j: (len(parts[i]["members"]) + len(parts[j]["members"]) > SPLIT_MAX,
+                                     -links(parts[i], parts[j]), abs(j - i), len(parts[j]["members"])))
+        keep, gone = (parts[j], parts[i])
+        keep["members"] = sorted(keep["members"] + gone["members"], key=idx.get)
+        parts.pop(i)
+    # Progression order: Kahn's algorithm over the deps between parts, ties by the earliest quest.
+    part_of = {k: n for n, p in enumerate(parts) for k in p["members"]}
+    need = {n: {part_of[d] for k in p["members"] for d in byk[k].deps if d in part_of and part_of[d] != n}
+            for n, p in enumerate(parts)}
+    depth = {}  # longest chain of in-page deps above a quest: early parts (shallow roots) come first among equals
+    for q in page.quests:
+        depth.setdefault(q.key, 0)
+    for _ in range(len(page.quests)):
+        moved = False
+        for q in page.quests:
+            dd = max((depth[d] + 1 for d in q.deps if d in depth), default=0)
+            if dd > depth[q.key] and dd <= len(page.quests):
+                depth[q.key], moved = dd, True
+        if not moved:
+            break
+    first = {n: (depth[p["root"]], min(idx[k] for k in p["members"])) for n, p in enumerate(parts)}
+    entry = part_of.get(page.quests[0].key, 0)  # the page's first quest (its way in) opens the first chapter
+    out, done = [], set()
+    while len(out) < len(parts):
+        todo = [n for n in range(len(parts)) if n not in done]
+        ready = [entry] if not out else [n for n in todo if need[n] <= done]
+        if not ready:  # parts that need each other: the one with the fewest unmet needs first
+            least = min(len(need[n] - done) for n in todo)
+            ready = [n for n in todo if len(need[n] - done) == least]
+        n = min(ready, key=first.get)
+        out.append(parts[n])
+        done.add(n)
+    return out
+
+
+def _split(pages):
+    """Pages -> (chapters, groups): the "Mod = category" sidebar. Returns the chapter list in sidebar order and
+    the GROUPS dict (group key -> title) in display order."""
+    import layout
+    from questlib import Chapter
+    groups = {g: GROUPS[g] for g in ("top", "main", "shop")}
+    chapters = [c for c in pages if c.group in groups]
+    taken = {c.key for c in pages}
+    for tab in SPLIT_TABS:
+        for page in [c for c in pages if c.group == tab]:
+            page.style = STYLES.get(page.key, DEFAULT_STYLE)
+            parts = _split_page(page)
+            if len(parts) < 2:
+                groups.setdefault(tab, GROUPS[tab])
+                page.page = None
+                chapters.append(page)
+                continue
+            gkey = "p_" + JOIN.get(page.key, page.key)
+            if gkey not in groups:
+                owner = next((c for c in pages if c.key == gkey[2:]), page)
+                groups[gkey] = PAGE_TITLES.get(owner.key, owner.title.split(". ", 1)[-1])
+            home = {k: n for n, p in enumerate(parts) for k in p["members"]}
+            byk = {q.key: q for q in page.quests}
+            used_icons = {c2.icon for c2 in chapters if c2.group == gkey}
+            subs = []
+            for n, p in enumerate(parts):
+                root = byk[p["root"]]
+                title, sub, icon = (tuple(CHAPTER_TITLES[p["root"]]) + (None, None))[:3] \
+                    if p["root"] in CHAPTER_TITLES else (p["title"], None, None)
+                if n == 0:
+                    key = page.key
+                else:
+                    key = f"{page.key}_{layout.slug(title)}"
+                    while key in taken:
+                        key += "_2"
+                taken.add(key)
+                if icon is None:  # the root quest's item; another member's if a sibling chapter already shows it
+                    for k in [p["root"]] + p["members"]:
+                        icon = _icon_of(byk[k])
+                        if icon and icon not in used_icons:
+                            break
+                    icon = icon or page.icon
+                used_icons.add(icon)
+                quests = [q for q in page.quests if home.get(q.key) == n]
+                # Quest links: the page's own links go to the chapters whose quests depend on them (the first
+                # chapter keeps those nothing depends on); every quest a chapter needs from a sibling is linked.
+                lks = [l for l in page.links if any(l[0] in q.deps for q in quests)]
+                if n == 0:
+                    lks += [l for l in page.links if not any(l[0] in q.deps for q in page.quests)]
+                ch = Chapter(key, title, icon, [sub or title], SIDE, quests, links=lks, layout=page.layout)
+                ch.group, ch.page, ch.page_title, ch.headers = gkey, page.key, groups[gkey], False
+                ch.style = STYLES.get(page.key, DEFAULT_STYLE)
+                if ch.style == "winding":
+                    ch.style = "tree"   # a winding page's chapters are short: plain trees
+                elif ch.style == "radial" and n:
+                    ch.style = "tree"   # only the hub's chapter is a radial hub page
+                subs.append(ch)
+            chapters += subs
+    # Every quest a chapter needs from another chapter of its category is shown there as a quest link.
+    home = {q.key: c for c in chapters for q in c.quests}
+    for c in chapters:
+        if not getattr(c, "page", None):
+            continue
+        for q in c.quests:
+            for d in q.deps:
+                h = home.get(d)
+                if h is not None and h is not c and h.group == c.group and all(d != l[0] for l in c.links):
+                    c.links.append((d, 0, 0))
+    return chapters, groups
+
+
+for _c in PAGES:  # the layout finds sections on pruned deps (as apply() does), and names loose groups by page
+    _c.pruned_deps = prune_transitive(_c.quests)
+    _c.home_of = {q.key: c.key for c in PAGES for q in c.quests}
+    _c.chapter_titles = {c.key: c.title.split(". ", 1)[-1] for c in PAGES}
+CHAPTERS, GROUPS = _split(PAGES)
 _HOME = {q.key: c.key for c in CHAPTERS for q in c.quests}
 _TITLES = {c.key: c.title.split(". ", 1)[-1] for c in CHAPTERS}
 _QUESTS = {q.key: q for c in CHAPTERS for q in c.quests}
 for _c in CHAPTERS:
-    _c.style = STYLES.get(_c.key, DEFAULT_STYLE)
-    _c.block_kind = BLOCKS.get(_c.key)
+    if not getattr(_c, "page", None):  # split chapters got their style from their page in _split
+        _c.style = STYLES.get(_c.key, DEFAULT_STYLE)
+    _c.block_kind = BLOCKS.get(getattr(_c, "page", None) or _c.key)
     _c.home_of, _c.chapter_titles = _HOME, _TITLES  # names loose groups after the chapter they follow on from
     # Every chapter's redundant deps are dropped up front (layout.prune_transitive; what players must do doesn't
     # change), so a page knows the final deps of the quests its links show: FTB draws those lines too.
@@ -116,8 +450,8 @@ for _c in CHAPTERS:
 # Demigod Tokens per quest, scaled by tier (milestone quests, size >= 1.5, pay double).
 TOKENS = {"welcome": 1, "start": 1, "t0": 1, "t1": 2, "t2": 2, "t3": 3, "t4": 3, "t5": 4, "t6": 5, "t7": 8,
           "seed": 10, "creation": 10, "completionist": 3, "harvest": 1}
-for _c in CHAPTERS:
-    _c.tokens = TOKENS.get(_c.key, 1)
+for _c in CHAPTERS:  # a split page's chapters all pay the page's rate
+    _c.tokens = TOKENS.get(getattr(_c, "page", None) or _c.key, 1)
 
 # Tier milestones (size >= 1.5 in t0..t7) also roll that tier's loot table, unless set by hand.
 for _c in CHAPTERS:

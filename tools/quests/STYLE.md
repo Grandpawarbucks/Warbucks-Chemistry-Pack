@@ -48,6 +48,8 @@ from the section's root quest (a loose group of unrelated quests is named "From 
 - `Q(..., section="Title")` puts a quest in a named section. Its descendants (through each quest's deepest
   dependency here) without a section of their own follow it. Use it when an auto title or grouping reads badly.
 - A chapter with one section gets no header (the chapter banner is enough).
+- Mod pages are split into chapters by these same sections (see "Mod = category" below), so on a mod page a section
+  becomes a sidebar chapter, not a header. Headers are only drawn on the Demigod's Path and the top-area pages.
 
 **Shape motifs** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"tree"`). Every page is a shape, not a
 long row. All of them keep progression readable: only straight lines, no line through a quest, no overlaps, and
@@ -113,11 +115,34 @@ Shaping the result, if a chapter reads badly:
 - Everything else is size 1 in the chapter's default shape. Milestones (size >= 1.5) pay double tokens.
 
 **Where chapters go** (`GROUPS`/`LAYOUT` in `tools/quest_data.py`; the group is set there by chapter key):
-- **Top area, no group:** welcome, market, lab_notes, completionist. These are listed above the first tab (FTB
+- **Top area, no group:** welcome, lab_notes, completionist. These are listed above the first category (FTB
   Quests' ungrouped area, like ATM10's Welcome pages).
-- Then the tabs: The Demigod's Path (start, t0 to t7, seed, creation), **Basics** (the beginner "comfort" pages:
-  tools, harvest, storage, power, powah, farming, qol, building), Chemistry Lab, Industry and Automation,
-  Magic and Relics, Exploration, Resources.
+- Then The Demigod's Path (start, t0 to t7, seed, creation: one chapter per tier, sections with headers) and The
+  Demigod's Market (market, shop_*: manual grids, linear progression). Neither is split.
+- **Mod = category** (user decision 2026-10-19). Every other chapter file (a "page") becomes its own category (an
+  FTB chapter group titled after the page) and its layout sections become the chapters inside it, so the sidebar
+  reads "Mekanism > Factories and Upgrades, Alloys and Teleporters, ...". FTB has one level of groups only.
+  - The split runs at load time in `tools/quest_data.py` (`_split`): the page's sections (`layout.page_sections`, as
+    trees; grid pages as grids) are merged so each chapter has about 5 to 25 quests (a section under `SPLIT_MIN`
+    joins the neighbour it shares the most deps with), then ordered by progression (a chapter after the chapters it
+    needs; the page's first quest opens the first chapter).
+  - Chapter keys: the FIRST chapter keeps the page's key (links and docs still resolve); the others are
+    `<page>_<slug of the title>`. Quest keys never change; only which chapter shows a quest.
+  - Titles, one-line subtitles and optional icons: `CHAPTER_TITLES` in quest_data.py, keyed by the chapter's root
+    quest (the quest the layout would name the section after). Unlisted chapters keep the auto title, so check new
+    or regrouped ones in `docs/QUESTS.md` (its "Sidebar" list) and add a title. Never use "From <chapter>".
+    Icons default to the root quest's item (another member's if a sibling chapter already shows it).
+  - `JOIN` puts a page's chapters into another page's category (mekanism_power joins Mekanism); `PAGE_TITLES`
+    renames a category. Category order follows the old tabs: Basics pages, Chemistry Lab, Industry and Automation,
+    Magic and Relics, Exploration, Resources (`SPLIT_TABS` and `LAYOUT`).
+  - A page that comes out as a single chapter stays in its old tab's group ("Basics", "Exploration", ...).
+  - Tokens: a split chapter pays its page's `TOKENS` rate. Each chapter gets its own banner (`<key>.png`, the
+    page's element tile with the chapter title), written by the build; stale split-chapter banners are deleted.
+  - Links: the page's writer links go to the chapters whose quests depend on them (loose ones stay in the first
+    chapter), and every quest a chapter needs from another chapter of its category is shown there as a quest link.
+  - Layout: split chapters have no section headers. Their style is the page's motif (molecule, grid), except that
+    only the hub chapter of a radial page stays radial and winding pages become trees. On these small chapters a
+    hub's fan lines stay drawn unless a fan line crosses another line.
 - A new chapter file must be added to `LAYOUT`, or it isn't built (`--check` warns about unlisted files).
 
 ## Pack facts to respect (gates set in KubeJS; see docs/PROGRESSION.md §6–7)
@@ -152,7 +177,8 @@ Import what you need: `from questlib import Q, Chapter, item, dim, tick, kill, s
   Use links to connect a mod page to where that mod enters the main path.
 
 ## Mod pages
-Side chapters are "pages", one per mod or mod family, grouped by category (see LAYOUT in `tools/quest_data.py`).
-The group is set there by key; the group argument in `Chapter(...)` is ignored, so just pass `SIDE`.
+Side chapters are "pages", one file per mod or mod family (see LAYOUT in `tools/quest_data.py`); each page becomes a
+category of small chapters in the book ("Mod = category", above). The group is set in quest_data.py; the group
+argument in `Chapter(...)` is ignored, so just pass `SIDE`. Write deps as usual: they decide how the page splits.
 A page's first quest should depend on the main-path quest where the mod becomes available, and the page should carry a
 `links=[...]` entry back to that quest.

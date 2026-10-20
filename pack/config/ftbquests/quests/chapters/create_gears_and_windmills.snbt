@@ -1,0 +1,329 @@
+{
+	id: "720E2C42E1A880EE"
+	group: "2BB92DE87B71623A"
+	order_index: 2
+	filename: "create_gears_and_windmills"
+	icon: {
+		id: "create:large_cogwheel"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "730C4B4582649D81"
+			x: 3.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"3B8CA867BEED2744"
+			]
+			tasks: [
+				{
+					id: "4A08E37336C6D948"
+					type: "item"
+					item: {
+						id: "create:large_cogwheel"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "00869E26B8A90D2C"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "16C6FD9AC82DFF99"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "744DE466E8633CF3"
+			x: 3.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"730C4B4582649D81"
+			]
+			tasks: [
+				{
+					id: "61CA71D891D18E67"
+					type: "item"
+					item: {
+						id: "create:windmill_bearing"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5AF1852515CF4CC3"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(create:white_sail)item(create:sail_frame))"
+						}
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "3BFF979161E5E909"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "54AC13F8BFD8EABD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "337C8FD68BAD4AE5"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"730C4B4582649D81"
+			]
+			tasks: [
+				{
+					id: "13DEA78A7A410CB2"
+					type: "item"
+					item: {
+						id: "create:speedometer"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4C248E0886027F95"
+					type: "item"
+					item: {
+						id: "create:stressometer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "47ABB134DD9B2955"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "685BDA1223EEE6E1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6B18E15CBED2C58D"
+			x: 5.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"730C4B4582649D81"
+			]
+			tasks: [
+				{
+					id: "50CFC6AE9FB70559"
+					type: "item"
+					item: {
+						id: "create:clutch"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2F2E1CDD6E40EA80"
+					type: "item"
+					item: {
+						id: "create:gearshift"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "344AC26D521B2683"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "22B68C74F8F42665"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "046177CACEBE5530"
+			x: 7.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6B18E15CBED2C58D"
+			]
+			tasks: [
+				{
+					id: "2EA275EAB89A2664"
+					type: "item"
+					item: {
+						id: "create:encased_chain_drive"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "073DB0B269BA6338"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "1C42984EBAF407C4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "054CDC887B5F6350"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"744DE466E8633CF3"
+			]
+			tasks: [
+				{
+					id: "2DD9F277211D7FE7"
+					type: "item"
+					item: {
+						id: "create_connected:brass_gearbox"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "701FDCB14E0B4C8D"
+					type: "item"
+					item: {
+						id: "create_connected:kinetic_bridge"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "35BC5641CC38992B"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "1A521B969BF6D6F3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "20EF956BB16A02B8"
+			x: 0.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"054CDC887B5F6350"
+			]
+			tasks: [
+				{
+					id: "3EFCA4FA4A73B37A"
+					type: "item"
+					item: {
+						id: "create_connected:kinetic_battery"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "23FA4B9FC8D8C65B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "645F257A70DA5732"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "4C68D72E18447195"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/create_gears_and_windmills.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "67CFA888D8806CFE"
+			linked_quest: "3B8CA867BEED2744"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

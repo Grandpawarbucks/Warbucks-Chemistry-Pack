@@ -1,0 +1,333 @@
+{
+	id: "52C2B8FD577EE0D1"
+	group: "798245F2E893F738"
+	order_index: 3
+	filename: "storage_backpack_tiers"
+	icon: {
+		id: "sophisticatedbackpacks:gold_backpack"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "3E28F4295DA98B59"
+			x: 4.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"288CF747C2D939F7"
+			]
+			tasks: [
+				{
+					id: "6E16B43E5BDFB1D6"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:gold_backpack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0884965D3A690E0B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5D45D7434AF80E22"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "38D0C0420E9CD61E"
+			x: 3.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3E28F4295DA98B59"
+			]
+			tasks: [
+				{
+					id: "652B0A9859530379"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:diamond_backpack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "750CAC147F1CE4EF"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "587D29F99D3BDF3A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5962C913253DCBED"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"38D0C0420E9CD61E"
+				"62C34C9BAFF44652"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "47B9FEF7A54B6A29"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:everlasting_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "46AB2D07C5534147"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "4B6C277CDA90816D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1C8600E724F1113E"
+			x: 11.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4BC3CD31C26ED641"
+			]
+			tasks: [
+				{
+					id: "718BF571B64ED5D3"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:compacting_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6BFEC5E59A8EF352"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:filter_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0070567A7BD07AC5"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "5CD687B5738D3F66"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4BB6003995F45994"
+			x: 9.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1C8600E724F1113E"
+				"3E28F4295DA98B59"
+			]
+			tasks: [
+				{
+					id: "11D9D25758AD7329"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:advanced_pickup_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3C8A6478F6A5A4BB"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:advanced_magnet_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7840367101DFA299"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:advanced_filter_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "08E43D9B84F7F0B1"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "456D1D7A6906EE26"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "39A06D5C8360B8C7"
+			x: 11.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4BB6003995F45994"
+			]
+			tasks: [
+				{
+					id: "08A8CE402D9CBC82"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(sophisticatedbackpacks:advanced_feeding_upgrade)item(sophisticatedbackpacks:advanced_refill_upgrade)item(sophisticatedbackpacks:advanced_restock_upgrade)item(sophisticatedbackpacks:advanced_deposit_upgrade)item(sophisticatedbackpacks:advanced_void_upgrade)item(sophisticatedbackpacks:advanced_tool_swapper_upgrade)item(sophisticatedbackpacks:advanced_compacting_upgrade)item(sophisticatedbackpacks:advanced_pump_upgrade))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "63E681FE11782CF8"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "282DC256B529A272"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0A0D6B351BA1796A"
+			x: 2.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"38D0C0420E9CD61E"
+				"62C34C9BAFF44652"
+			]
+			tasks: [
+				{
+					id: "7A7C544E83860C18"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:inception_upgrade"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4C204D37DA7A470B"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "1A8EBC8FCCE373D7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "67E40C773653EA11"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/storage_backpack_tiers.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "21067871549CD909"
+			linked_quest: "288CF747C2D939F7"
+			x: 4.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "6BB8D422B9CCED71"
+			linked_quest: "4BC3CD31C26ED641"
+			x: 9.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

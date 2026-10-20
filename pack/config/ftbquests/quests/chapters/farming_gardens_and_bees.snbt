@@ -1,0 +1,390 @@
+{
+	id: "11C65B34B988DF67"
+	group: "0D7DA448984E3BB9"
+	order_index: 1
+	filename: "farming_gardens_and_bees"
+	icon: {
+		id: "minecraft:honeycomb"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "42489EAAE4800867"
+			x: 2.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"55AF98DD41956199"
+				"2082C655C0D3F03A"
+			]
+			tasks: [
+				{
+					id: "2E2E1F6F89601455"
+					type: "item"
+					item: {
+						id: "extended_industrialization:steam_farmer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5957254DA91773E5"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "04330F3E4DE3765D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "795662BF85103267"
+			x: 4.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0AF857F7D594D497"
+			]
+			tasks: [
+				{
+					id: "5DB0B57903602829"
+					type: "item"
+					item: {
+						id: "minecraft:wheat_seeds"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "0796F57F661A7D48"
+					type: "item"
+					item: {
+						id: "minecraft:potato"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "49B9701194F55DDF"
+					type: "item"
+					item: {
+						id: "minecraft:carrot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "3A4E95CE6FD0DCCE"
+					type: "item"
+					item: {
+						id: "minecraft:melon_slice"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "6EDA3EBB2D7EDCA4"
+					type: "item"
+					item: {
+						id: "minecraft:sweet_berries"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "4B2269C76D854A91"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "1793E3984C7E8146"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0CEEB0EF247AFEE1"
+			x: 0.5d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5E58EA492DF847CE"
+			]
+			tasks: [
+				{
+					id: "2384B04672CAFD70"
+					type: "item"
+					item: {
+						id: "minecraft:honeycomb"
+						count: 1
+					}
+					count: 6L
+				}
+				{
+					id: "7F2627AE6FA2373C"
+					type: "item"
+					item: {
+						id: "minecraft:honey_bottle"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "25C57BD6C525A136"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "55CFD9B6ADA58BE4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5B3831A5F122F274"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0CEEB0EF247AFEE1"
+			]
+			tasks: [
+				{
+					id: "3A860C6199A7DB66"
+					type: "item"
+					item: {
+						id: "minecraft:beehive"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7199E8AC50E91BFC"
+					type: "item"
+					item: {
+						id: "minecraft:honey_block"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "467BB8FEC959C555"
+					type: "item"
+					item: {
+						id: "minecraft:honeycomb_block"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "24C55FB9EA552E72"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1E8244C0018DC3E9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "10DB0AD9FC683E4A"
+			x: 5.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"050738B186A5EEB8"
+			]
+			tasks: [
+				{
+					id: "3620BC0E3071DE47"
+					type: "item"
+					item: {
+						id: "minecraft:kelp"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "70D8CFC22704B00B"
+					type: "item"
+					item: {
+						id: "minecraft:dried_kelp"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "2BB8443A24040A87"
+					type: "item"
+					item: {
+						id: "minecraft:tropical_fish"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1DC09C6428907E98"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "66E5F57C396AA61F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "15F725E5C01D018A"
+			x: 7.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "004204797CC43248"
+					type: "item"
+					item: {
+						id: "minecraft:chorus_fruit"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "5B0C72C17E210C8F"
+					type: "item"
+					item: {
+						id: "minecraft:popped_chorus_fruit"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "44C3EBD52B30F570"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "2CCDB54A65CDAF6A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6E4CBAC1961181AC"
+			x: 8.5d
+			y: 0.5d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"694B6BC236B91267"
+			]
+			tasks: [
+				{
+					id: "68B9441ED5C83C56"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "028F34D088FFC726"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7FCB9EFCA56BC7D5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "63BBD8D3F992860F"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "3111B4FF08BC21D0"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/farming_gardens_and_bees.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "4BAF1A9D4C294EE4"
+			linked_quest: "5E58EA492DF847CE"
+			x: 0.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

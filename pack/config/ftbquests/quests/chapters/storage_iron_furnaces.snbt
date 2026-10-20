@@ -1,0 +1,550 @@
+{
+	id: "1B86B88625620349"
+	group: "798245F2E893F738"
+	order_index: 1
+	filename: "storage_iron_furnaces"
+	icon: {
+		id: "ironfurnaces:iron_furnace"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "28340CD18CB88A6E"
+			x: 10.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "742108DB29021DE7"
+					type: "item"
+					item: {
+						id: "ironfurnaces:iron_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2C79E64CA19715BC"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "3CA74442B8A494F3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7F7F7AE8FCCD5830"
+			x: 7.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"28340CD18CB88A6E"
+			]
+			tasks: [
+				{
+					id: "5FFF244590CDF146"
+					type: "item"
+					item: {
+						id: "ironfurnaces:gold_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "635F761C2102AB57"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "73BB7EFC139E2111"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "120BEFA94919009C"
+			x: 5.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7F7F7AE8FCCD5830"
+			]
+			tasks: [
+				{
+					id: "46F301AEBC36E1B7"
+					type: "item"
+					item: {
+						id: "ironfurnaces:diamond_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4A9144DD92866B6F"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "4D331388EAB579C7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "31D9AF350D35865B"
+			x: 3.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"120BEFA94919009C"
+			]
+			tasks: [
+				{
+					id: "3C9FE274345EDF7E"
+					type: "item"
+					item: {
+						id: "ironfurnaces:emerald_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "504A5813DBDECE6B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "73CAFF575E1750AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "015A0B700439D32C"
+			x: 2.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"31D9AF350D35865B"
+				"324D521459A0712A"
+			]
+			tasks: [
+				{
+					id: "678FB6DD94ECECE7"
+					type: "item"
+					item: {
+						id: "ironfurnaces:obsidian_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "522ED0A30EB580B5"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "30810C5E92C14100"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "049DBCCC2E53857E"
+			x: 0.5d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"015A0B700439D32C"
+				"5162E347921E0863"
+			]
+			tasks: [
+				{
+					id: "10E732532D4B5036"
+					type: "item"
+					item: {
+						id: "ironfurnaces:netherite_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "159C8129AC6894E7"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5A459E326D2F1F6A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4D47DB0CB8D48178"
+			x: 9.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"28340CD18CB88A6E"
+				"5610598250CF6B1D"
+			]
+			tasks: [
+				{
+					id: "5D62C9E82692032C"
+					type: "item"
+					item: {
+						id: "ironfurnaces:silver_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5593D392F2EFEB8B"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "575E087873C3C846"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1B903ED1F099C34F"
+			x: 7.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7F7F7AE8FCCD5830"
+			]
+			tasks: [
+				{
+					id: "2780A691D4263023"
+					type: "item"
+					item: {
+						id: "ironfurnaces:upgrade_gold"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "22E5C1662B6C5CDC"
+					type: "item"
+					item: {
+						id: "ironfurnaces:upgrade_diamond"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "38936B7EAF858502"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "5D3AAA99D3833276"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "34FFD4956363A3AB"
+			x: 2.0d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"324A651EE9DDF0ED"
+			]
+			tasks: [
+				{
+					id: "18C6F6A0340B635A"
+					type: "item"
+					item: {
+						id: "ironfurnaces:copper_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4474DB4E090147A2"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "4BA6695DFE422CA7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "00E5D0622F31D483"
+			x: 3.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"120BEFA94919009C"
+			]
+			tasks: [
+				{
+					id: "6F86ECF9367DFE1D"
+					type: "item"
+					item: {
+						id: "ironfurnaces:crystal_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7D1165501F35BA50"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "58801C58772F0B07"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6C22B8BC24D08909"
+			x: 5.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1B903ED1F099C34F"
+			]
+			tasks: [
+				{
+					id: "4F27268293CAF2E6"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ironfurnaces:upgrade_copper)item(ironfurnaces:upgrade_iron)item(ironfurnaces:upgrade_iron2)item(ironfurnaces:upgrade_gold2)item(ironfurnaces:upgrade_silver)item(ironfurnaces:upgrade_silver2)item(ironfurnaces:upgrade_emerald)item(ironfurnaces:upgrade_crystal)item(ironfurnaces:upgrade_obsidian)item(ironfurnaces:upgrade_obsidian2)item(ironfurnaces:upgrade_netherite))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "2C9CB96296BFE5F4"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "09211395B1B62D9A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7714F7B6CE6E8C98"
+			x: 9.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"28340CD18CB88A6E"
+			]
+			tasks: [
+				{
+					id: "58D1741AD86F426E"
+					type: "item"
+					item: {
+						id: "ironfurnaces:item_copy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7F1C0EE24EAFFFD3"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "0B8987DC1DC95D00"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "067098268A78E98D"
+			x: 2.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"049DBCCC2E53857E"
+				"00E5D0622F31D483"
+				"4D47DB0CB8D48178"
+				"34FFD4956363A3AB"
+			]
+			tasks: [
+				{
+					id: "506F4BAAF5625FBD"
+					type: "item"
+					item: {
+						id: "ironfurnaces:rainbow_plating"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "76B37B0DCB6DF5DA"
+					type: "item"
+					item: {
+						id: "ironfurnaces:rainbow_core"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "031112B73CCD5378"
+					type: "item"
+					item: {
+						id: "ironfurnaces:million_furnace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "343D9BDECAF21F2E"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "0567AD7074BB4E5C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "0E85EFDC698066D9"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/storage_iron_furnaces.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "4EFE3BD101B1FC13"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: 10.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

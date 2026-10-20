@@ -1,0 +1,745 @@
+{
+	id: "7C818DE3CFA974B2"
+	group: "4DCF0E6958BD47BC"
+	order_index: 5
+	filename: "ae2_quantum_tech"
+	icon: {
+		id: "ae2:condenser"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "29DF6C2F77C3462E"
+			x: 6.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"5A12756B50F4FE84"
+			]
+			tasks: [
+				{
+					id: "6C2633686051D521"
+					type: "item"
+					item: {
+						id: "ae2:condenser"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7DBE52DAE4BB259A"
+					type: "item"
+					item: {
+						id: "ae2:singularity"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "74247FE3E7709564"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "76A5DF983AD23309"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2DC9FE73876C2216"
+			x: 4.5d
+			y: 4.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"29DF6C2F77C3462E"
+			]
+			tasks: [
+				{
+					id: "044022FF0EBA4DAB"
+					type: "item"
+					item: {
+						id: "ae2:quantum_entangled_singularity"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "1F14B3302A024810"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "15522A46CA8D128D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "303E2F4CA00A15B2"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "7FFFA15128FCBD88"
+			x: 6.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"29DF6C2F77C3462E"
+			]
+			tasks: [
+				{
+					id: "4FE2B7EBB5A14631"
+					type: "item"
+					item: {
+						id: "advanced_ae:reaction_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2CB910AD5A8FF908"
+					type: "item"
+					item: {
+						id: "advanced_ae:shattered_singularity"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "08987D89267F9E51"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "4D0F5C2645FA5279"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "43A72FAC8EB012CB"
+			x: 6.0d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7FFFA15128FCBD88"
+			]
+			tasks: [
+				{
+					id: "5545B8A4BE6B3906"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_alloy"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "1EAD16660E2E1DC8"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "7DE3C3E8748C173F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "423E95AFA4363CFD"
+			x: 4.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"43A72FAC8EB012CB"
+			]
+			tasks: [
+				{
+					id: "35D6615423F4A9C3"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_core"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4436A3E34C505AA0"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_structure"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "158BBCC10BEFF891"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_multi_threader"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "09A898ACFE00591A"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "19869EB7B820501C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "39E28A8F48D7260F"
+			x: 6.0d
+			y: 7.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"43A72FAC8EB012CB"
+			]
+			tasks: [
+				{
+					id: "5CC6908C77FCDC76"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_processor"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0BE904B5AD57EF98"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "321803FB9541D366"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "007EDC75C12A0DBE"
+			x: 4.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"39E28A8F48D7260F"
+			]
+			tasks: [
+				{
+					id: "42A8CA54421FFAD8"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "207EC624296840AA"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "11A78132A30295EC"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4F988AFFA16A60C9"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "506C376B2FBDFD9C"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "16029F72B63977AA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6DB07A0E0C18A4CB"
+			x: 9.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"29DF6C2F77C3462E"
+			]
+			tasks: [
+				{
+					id: "2C77AE0A1CBA83D6"
+					type: "item"
+					item: {
+						id: "ae2:tiny_tnt"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2BFCAF5470600472"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "09CDF389BB39A837"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "67C615814E0346D9"
+			x: 7.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"29DF6C2F77C3462E"
+			]
+			tasks: [
+				{
+					id: "5114D2DF72395091"
+					type: "item"
+					item: {
+						id: "ae2:matter_cannon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "626852EF5D36CFEA"
+					type: "item"
+					item: {
+						id: "ae2:matter_ball"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "7809BA2D3EB851F8"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "0B4A8F254B6BA2E3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4A0F9E21A373D41D"
+			x: 3.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"423E95AFA4363CFD"
+			]
+			tasks: [
+				{
+					id: "019FAC102C623E99"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_unit"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "02340A536F2DAFA6"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_accelerator"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0874B4B1EDDD0555"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_storage_component"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "757192343C4052E3"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_storage_128"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "39135D16F672F4CC"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "0F16353A6B0724AB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "45B43718DAF8FF7C"
+			x: 0.5d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4A0F9E21A373D41D"
+			]
+			tasks: [
+				{
+					id: "3EE33A23CB082C4F"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_storage_256"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4DB665EDCAD7A96A"
+					type: "item"
+					item: {
+						id: "advanced_ae:data_entangler"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "04F0CAAC02B195FD"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "159BCBF4FAD1B660"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "641030E10A5328A9"
+			x: 2.0d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4A0F9E21A373D41D"
+			]
+			tasks: [
+				{
+					id: "421EB4EBB38313CA"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_crafter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "610922169FAD3773"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6B62F04B1FBE1A04"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "139AEA4F1FC0C461"
+			x: 9.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"39E28A8F48D7260F"
+			]
+			tasks: [
+				{
+					id: "4C9AE9FF7F5191BB"
+					type: "item"
+					item: {
+						id: "advanced_ae:quantum_upgrade_base"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "4A38AF68F6FA3368"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "51406EC61ECE6062"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "396979F7EE253206"
+			x: 8.5d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"139AEA4F1FC0C461"
+			]
+			tasks: [
+				{
+					id: "735B7B79F5CCC0BC"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(advanced_ae:walk_speed_card)item(advanced_ae:sprint_speed_card)item(advanced_ae:step_assist_card)item(advanced_ae:jump_height_card)item(advanced_ae:swim_speed_card)item(advanced_ae:reach_card))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "6D15A78634483EDC"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "080C8EB8A4488C14"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "149697C62123CCCA"
+			x: 9.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"139AEA4F1FC0C461"
+			]
+			tasks: [
+				{
+					id: "5FA45AFA2196765B"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(advanced_ae:hp_buffer_card)item(advanced_ae:regeneration_card)item(advanced_ae:evasion_card)item(advanced_ae:lava_immunity_card)item(advanced_ae:water_breathing_card)item(advanced_ae:night_vision_card)item(advanced_ae:auto_feeding_card))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "02DC57550AC1CE62"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "7493353A125997D9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6E6993C23E508954"
+			x: 10.0d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"139AEA4F1FC0C461"
+			]
+			tasks: [
+				{
+					id: "156A788368672082"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(advanced_ae:magnet_card)item(advanced_ae:pick_craft_card)item(advanced_ae:portable_workbench_card)item(advanced_ae:auto_stock_card)item(advanced_ae:recharging_card)item(advanced_ae:luck_card)item(advanced_ae:strength_card)item(advanced_ae:attack_speed_card))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "1CA97F07272C6E41"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "63AF2A453085CB27"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "7DFB0517CCBA1632"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/ae2_quantum_tech.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "15C9E6165754DD4C"
+			linked_quest: "5A12756B50F4FE84"
+			x: 6.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

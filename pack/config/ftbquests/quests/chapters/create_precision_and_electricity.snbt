@@ -1,0 +1,679 @@
+{
+	id: "2666887A15B8D6AF"
+	group: "2BB92DE87B71623A"
+	order_index: 6
+	filename: "create_precision_and_electricity"
+	icon: {
+		id: "create:precision_mechanism"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "77FA7755F842A8D2"
+			x: 2.0d
+			y: 2.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"28E8E77EF5C671EB"
+			]
+			tasks: [
+				{
+					id: "34EF48C3B1E6A9A8"
+					type: "item"
+					item: {
+						id: "create:precision_mechanism"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "231EE7D78F38FE2C"
+					type: "item"
+					item: {
+						id: "create:mechanical_crafter"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2F8C3D829B25DBB2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "72C6365DF9277D23"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5191CA10F7F0E39F"
+			x: 3.5d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"77FA7755F842A8D2"
+			]
+			tasks: [
+				{
+					id: "4192067F066224DF"
+					type: "item"
+					item: {
+						id: "create:mechanical_arm"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6348F628DBD1DA97"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3AD8716091AE5195"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "58DA1F2D41B82800"
+			x: 5.0d
+			y: 4.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"77FA7755F842A8D2"
+			]
+			tasks: [
+				{
+					id: "6F53E29F8CA4BAEA"
+					type: "item"
+					item: {
+						id: "create:rotation_speed_controller"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5544D17BB2A8DBF0"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "78219A27846C257A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "79D324D3D42641AD"
+			x: 2.0d
+			y: 4.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"77FA7755F842A8D2"
+				"55AF98DD41956199"
+			]
+			tasks: [
+				{
+					id: "52CA1010074D2BFA"
+					type: "item"
+					item: {
+						id: "createaddition:alternator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1A7CB94D6B29271E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "32D18F3FE1DB9A39"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2B4C4B280D8E7AC8"
+			x: 0.5d
+			y: 6.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"79D324D3D42641AD"
+			]
+			tasks: [
+				{
+					id: "4997CEE3D0818E98"
+					type: "item"
+					item: {
+						id: "createaddition:electric_motor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C209BD16240A565"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3C995B27B0875B1F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "53AD12F81CBB1F0A"
+			x: 4.0d
+			y: 6.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"79D324D3D42641AD"
+			]
+			tasks: [
+				{
+					id: "75E1859BCAC9B26D"
+					type: "item"
+					item: {
+						id: "createaddition:rolling_mill"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4C9C18161BF9BE62"
+					type: "item"
+					item: {
+						id: "createaddition:connector"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "745973F895711905"
+					type: "item"
+					item: {
+						id: "createaddition:copper_spool"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5337A1946EC51291"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0915DB3FA55F6491"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "07D97B34A6E5B266"
+			x: 6.5d
+			y: 8.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"53AD12F81CBB1F0A"
+			]
+			tasks: [
+				{
+					id: "079E1AE27F2917AE"
+					type: "item"
+					item: {
+						id: "createaddition:capacitor"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "46245383533A14DA"
+					type: "item"
+					item: {
+						id: "createaddition:modular_accumulator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2422D5920B0DCCC0"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4BC6C66B33C805B4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "24FF50E20F1EA5BC"
+			x: 8.0d
+			y: 10.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"07D97B34A6E5B266"
+			]
+			tasks: [
+				{
+					id: "4615BE1E8B279E1D"
+					type: "item"
+					item: {
+						id: "createaddition:tesla_coil"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7DFC9D4DE14A213C"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "1CE3ACA0CC938FC8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4B937C395BAB0201"
+			x: 2.0d
+			y: 6.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"79D324D3D42641AD"
+			]
+			tasks: [
+				{
+					id: "60236DDFF0451679"
+					type: "item"
+					item: {
+						id: "create_new_age:generator_coil"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1E616439CD170090"
+					type: "item"
+					item: {
+						id: "create_new_age:basic_energiser"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3606CF1505DF7363"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "78560472F6310C4D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "52C094F29194B559"
+			x: 3.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4B937C395BAB0201"
+			]
+			tasks: [
+				{
+					id: "2CA1294FBDABCD08"
+					type: "item"
+					item: {
+						id: "create_new_age:basic_motor"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "496E0BB1468FEA52"
+					type: "item"
+					item: {
+						id: "create_new_age:carbon_brushes"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "71E67FCE0B529978"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5A8F62424C22A836"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4751D19651EF6413"
+			x: 5.0d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4B937C395BAB0201"
+			]
+			tasks: [
+				{
+					id: "756ABA7504DF52BC"
+					type: "item"
+					item: {
+						id: "create_new_age:stirling_engine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "39DC1753B8674682"
+					type: "item"
+					item: {
+						id: "create_new_age:basic_solar_heating_plate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "256961A8AEAE8E6A"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "63DCE0B714CD3782"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "55B52C24164AD4E0"
+			x: 2.0d
+			y: 8.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4B937C395BAB0201"
+			]
+			tasks: [
+				{
+					id: "7B2785D55DF5EF29"
+					type: "item"
+					item: {
+						id: "create_new_age:overcharged_iron"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "35E024AF8831441F"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3DC36ED4B41D0193"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7FEB4F6BF2712680"
+			x: 3.5d
+			y: 10.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"55B52C24164AD4E0"
+			]
+			tasks: [
+				{
+					id: "26148D4E558452A6"
+					type: "item"
+					item: {
+						id: "create_new_age:blank_circuit"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "081CFC14D4EA488B"
+					type: "item"
+					item: {
+						id: "create_new_age:copper_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "249038DD3A398437"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4064511325E4B6C5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "24AA4CAED5C9CBF5"
+			x: 5.0d
+			y: 10.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"55B52C24164AD4E0"
+			]
+			tasks: [
+				{
+					id: "3A8A43EE05138180"
+					type: "item"
+					item: {
+						id: "create_new_age:layered_magnet"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2B2DBF42D0DC310B"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "5C7E2FAB96FE5A60"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4A4E6C320C2A7399"
+			x: 2.0d
+			y: 10.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"55B52C24164AD4E0"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "3CA54EE50E76D57D"
+					type: "item"
+					item: {
+						id: "create_new_age:thorium"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "5EBF6FB1AA887C54"
+					type: "item"
+					item: {
+						id: "create_new_age:reactor_rod"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3AEB16AEFDC76C69"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "5FC1F68D998536A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "76047BB322CB69C5"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/create_precision_and_electricity.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "498CB48242AB8B32"
+			linked_quest: "55AF98DD41956199"
+			x: 0.5d
+			y: 2.5d
+			size: 1.0d
+		}
+		{
+			id: "70E28A2A69C8B6FA"
+			linked_quest: "009FBA775299B910"
+			x: 0.5d
+			y: 8.5d
+			size: 1.0d
+		}
+		{
+			id: "58020C5294CF9B33"
+			linked_quest: "28E8E77EF5C671EB"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

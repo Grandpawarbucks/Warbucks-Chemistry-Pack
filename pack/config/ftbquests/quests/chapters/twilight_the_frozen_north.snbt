@@ -1,0 +1,509 @@
+{
+	id: "5369F4B555D06774"
+	group: "441678A7516B6729"
+	order_index: 3
+	filename: "twilight_the_frozen_north"
+	icon: {
+		id: "twilightforest:lich_trophy"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "1B55EFB33077AC2C"
+			x: 3.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"573FFFBA26396F1C"
+			]
+			tasks: [
+				{
+					id: "5AFF6912071E2BE1"
+					type: "item"
+					item: {
+						id: "twilightforest:lich_trophy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A1283418CF74107"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "4C0F52E2202EA4AF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "06CC5F9C904C562E"
+			x: 3.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1B55EFB33077AC2C"
+			]
+			tasks: [
+				{
+					id: "286D1FE7269E2F7A"
+					type: "structure"
+					structure: "twilightforest:yeti_cave"
+				}
+				{
+					id: "0426212DA7A82D3D"
+					type: "kill"
+					entity: "twilightforest:alpha_yeti"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "19D663B39F2753C8"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "25D12865E27EFDEB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "5AE36E0A3FC28275"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "7C52CA9E17D044E7"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"06CC5F9C904C562E"
+			]
+			tasks: [
+				{
+					id: "7C2DBE1F468E0C37"
+					type: "item"
+					item: {
+						id: "twilightforest:arctic_fur"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "7DFCC16AABBFA451"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(twilightforest:arctic_helmet)item(twilightforest:arctic_chestplate)item(twilightforest:arctic_leggings)item(twilightforest:arctic_boots))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4C48CB9050200803"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "3CFA2AEFA3B525B9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "656D7C4735C0CFA8"
+			x: 3.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"06CC5F9C904C562E"
+			]
+			tasks: [
+				{
+					id: "49672C51D4FF7BD5"
+					type: "item"
+					item: {
+						id: "twilightforest:alpha_yeti_trophy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "007E566D6F2E21C0"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "5E83696750BBF746"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "350ECB50DEF6DE63"
+			x: 2.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"656D7C4735C0CFA8"
+			]
+			tasks: [
+				{
+					id: "52BFAACA40467A42"
+					type: "item"
+					item: {
+						id: "twilightforest:alpha_yeti_fur"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "1B0CBA512B5F1446"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "30A2606E707EDFC5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "54DEACECA3E07A58"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"350ECB50DEF6DE63"
+			]
+			tasks: [
+				{
+					id: "0D5422FC38BA4EDA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(twilightforest:yeti_helmet)item(twilightforest:yeti_chestplate)item(twilightforest:yeti_leggings)item(twilightforest:yeti_boots))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "65FB37BE32BDE040"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "3A95817FD4FA6963"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7B22307BB2A82650"
+			x: 3.5d
+			y: 7.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"656D7C4735C0CFA8"
+			]
+			tasks: [
+				{
+					id: "0A564EBFE0FEE975"
+					type: "structure"
+					structure: "twilightforest:aurora_palace"
+				}
+				{
+					id: "6C1ABB159A6CF5C5"
+					type: "kill"
+					entity: "twilightforest:snow_queen"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "090062F5D1A2D2AB"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "66AA5D20BA59E271"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "45D7E3CDFC17C459"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "170C7097B314C79D"
+			x: 2.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7B22307BB2A82650"
+			]
+			tasks: [
+				{
+					id: "3165BD3F757AD45E"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(twilightforest:ice_sword)item(twilightforest:ice_bow)item(twilightforest:ender_bow))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3B617FC1E585FD5E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0AA4CFE9AC592197"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "73128FC20EA6EAB0"
+			x: 5.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7B22307BB2A82650"
+			]
+			tasks: [
+				{
+					id: "37EF058F8DD1E651"
+					type: "item"
+					item: {
+						id: "twilightforest:glass_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "577935CBA93168F8"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "732677095DA5F787"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "53A416978B641844"
+			x: 3.5d
+			y: 9.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7B22307BB2A82650"
+			]
+			tasks: [
+				{
+					id: "7E6D7DD095A7E949"
+					type: "item"
+					item: {
+						id: "twilightforest:snow_queen_trophy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5DDD40DA3FEE8223"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "2308A43197B83AA3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "53890000D55CBBAB"
+			x: 2.0d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"53A416978B641844"
+			]
+			tasks: [
+				{
+					id: "2023464BAB0686C3"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(twilightforest:triple_bow)item(twilightforest:seeker_bow))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "51D6F47CE6AB77CD"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "043EBC4DBBFFEA9A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "089D4A7144E8B41C"
+			x: 5.0d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"53A416978B641844"
+			]
+			tasks: [
+				{
+					id: "2A8B73525B8096E0"
+					type: "biome"
+					biome: "twilightforest:snowy_forest"
+				}
+				{
+					id: "228E207CCD1C5692"
+					type: "biome"
+					biome: "twilightforest:glacier"
+				}
+			]
+			rewards: [
+				{
+					id: "4E09F5247AB539A7"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "70316C8812956919"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "0CDE897BD6AB1C30"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/twilight_the_frozen_north.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "1E994F87EF421CAE"
+			linked_quest: "573FFFBA26396F1C"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

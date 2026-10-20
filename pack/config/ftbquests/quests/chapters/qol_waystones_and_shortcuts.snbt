@@ -1,0 +1,597 @@
+{
+	id: "3245D2816CBC5272"
+	group: "7269E73C0E9C03B0"
+	order_index: 1
+	filename: "qol_waystones_and_shortcuts"
+	icon: {
+		id: "waystones:waystone"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "7861E90E0F778D26"
+			x: 5.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"082FF7126C739233"
+			]
+			tasks: [
+				{
+					id: "508331910B52167D"
+					type: "item"
+					item: {
+						id: "akashictome:tome"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "70BCA87BF225D7D5"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "240A156BD82CF154"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "24E1DFE3C86BAB94"
+			x: 7.0d
+			y: 0.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"082FF7126C739233"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "44E2FBFADF923ADA"
+					type: "item"
+					item: {
+						id: "naturescompass:naturescompass"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "10C586E3F909158A"
+					type: "item"
+					item: {
+						id: "explorerscompass:explorerscompass"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "66CE8E7B66716B1E"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "2955CB0A2C8DBEF5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6DE92B29EF0F35A9"
+			x: 8.5d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+			]
+			tasks: [
+				{
+					id: "26117F4715EE716D"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "32AB2E8C44F1DEFE"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "01836755D35987BA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7B910D75AE5CB5BE"
+			x: 3.5d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"082FF7126C739233"
+			]
+			tasks: [
+				{
+					id: "26E5377CB5A79BC3"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:crafting_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2926E2475A893EC1"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "0C75CEE807DA35A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0168A13FA2435F4D"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7B910D75AE5CB5BE"
+			]
+			tasks: [
+				{
+					id: "17C69C22BD62366E"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:stonecutter"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "388C1D2C489E2A3B"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:smithing_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2F9D0CBBB46B92CB"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "583261E2EC6DCB79"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5B094C907C8047AF"
+			x: 12.5d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "072F6953747547D5"
+					type: "item"
+					item: {
+						id: "waystones:waystone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "102F7FEEFCFD8E1C"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "78E0AC2354721FDE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "491A989F2FB877C8"
+			x: 11.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5B094C907C8047AF"
+			]
+			tasks: [
+				{
+					id: "12AA1A826EE014AD"
+					type: "item"
+					item: {
+						id: "waystones:warp_scroll"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "24C3697E6B092806"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "7B22A76764690D99"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "697F3B912ADA9643"
+			x: 18.5d
+			y: 0.5d
+			shape: "pentagon"
+			size: 0.9d
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+			]
+			tasks: [
+				{
+					id: "7890D60BC4722536"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "79DEC3BFBD514112"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "6E2891925DCF44F7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7A2E8D54084A7224"
+			x: 11.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "6F59C3BC82EB7145"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7A57381C4D5D1800"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "442997EC390EC563"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32CFD45D94EE955E"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0168A13FA2435F4D"
+			]
+			tasks: [
+				{
+					id: "5E66C60B5889D3B9"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:anvil"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "03F5326214DFC64E"
+					type: "item"
+					item: {
+						id: "crafting_on_a_stick:grindstone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4D4477BB2AD88A24"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "15CBA89188C0030A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7966EBF899C9AB72"
+			x: 14.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5B094C907C8047AF"
+			]
+			tasks: [
+				{
+					id: "6FD26650EE934F75"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(waystones:waystone)item(waystones:mossy_waystone)item(waystones:sandy_waystone)item(waystones:deepslate_waystone)item(waystones:blackstone_waystone)item(waystones:end_stone_waystone))"
+						}
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "0AB27F2FC2509AE2"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6EFC9C4FEB220E50"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2367545F51E52EA0"
+			x: 15.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7966EBF899C9AB72"
+			]
+			tasks: [
+				{
+					id: "271B56E6ACFE13AF"
+					type: "item"
+					item: {
+						id: "waystones:warp_stone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "11E5AF47B878AF8A"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "424A59AD6349642B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "44D2755744253F5A"
+			x: 17.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"082FF7126C739233"
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "62E420BAA050142C"
+					type: "item"
+					item: {
+						id: "minecraft:lever"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "499649D4B653A27E"
+					type: "item"
+					item: {
+						id: "minecraft:redstone_torch"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "64AB3C20F8B24244"
+					type: "item"
+					item: {
+						id: "minecraft:repeater"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "21FD85D661F120C1"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "1B81485D1767F233"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "50AAFA04623459C4"
+			x: 17.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"44D2755744253F5A"
+				"75644D12ABEA0664"
+			]
+			tasks: [
+				{
+					id: "4B42C787D19EDC2A"
+					type: "item"
+					item: {
+						id: "minecraft:daylight_detector"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6B27373D6E0C522B"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "3C873C61C451CCF9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "25D6EE9B63904BB3"
+			x: 3.075d
+			y: -2.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/qol_waystones_and_shortcuts.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "232ADF7211B0A3C7"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: 12.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "0B0E05F27BDF885C"
+			linked_quest: "082FF7126C739233"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

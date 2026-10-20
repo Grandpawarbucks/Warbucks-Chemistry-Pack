@@ -4,6 +4,14 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Mod categories (33 groups, 156 chapters) and the quest map
+- Every side page is now its own sidebar category, and its sections are chapters (5 to 24 quests each), ordered by
+  dependency; cross-chapter deps inside a category get quest links. Main path, top pages and the shop are unchanged.
+  No quest keys changed. Per-chapter banners for split chapters; 142 stale section headers removed.
+- `test/build_quest_map.py`: interactive quest map (sidebar by category, real positions, item names, quest panel,
+  search, deep links), output in test/preview/map.
+- Live world wiped again for the new structure.
+
 ### 2026-10-19: Shaped quest pages and better quest discovery
 - **Discovery:** the book is now `progression_mode: "flexible"` (data.snbt), so item tasks count before a quest's
   dependencies are done (crafting a wooden pickaxe completes its quest right away); shop chapters stay linear.

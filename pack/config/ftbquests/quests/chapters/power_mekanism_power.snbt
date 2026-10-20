@@ -1,0 +1,561 @@
+{
+	id: "5FECAA298D897BA8"
+	group: "2A3E4B0BF397949D"
+	order_index: 1
+	filename: "power_mekanism_power"
+	icon: {
+		id: "mekanismgenerators:heat_generator"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "4104964F0EF1348C"
+			x: 7.0d
+			y: 1.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1EDE182DE2183A9C"
+			]
+			tasks: [
+				{
+					id: "6DFCF84A3C423EF2"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:bio_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "64955D960EBBC610"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "546DDF837EF1D036"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1EDE182DE2183A9C"
+			x: 7.0d
+			y: 3.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"664799749DFCE0E4"
+				"42B76D3BDE21F0DC"
+			]
+			tasks: [
+				{
+					id: "07EC3D71B6C2749B"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:heat_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2100D402E5ADE22C"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "57D21DFC85FF38D1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "63E2812122315EC2"
+			x: 9.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1EDE182DE2183A9C"
+			]
+			tasks: [
+				{
+					id: "32A72E31DCC0D00C"
+					type: "item"
+					item: {
+						id: "mekanism:basic_energy_cube"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0F04A3A4C8BA1798"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "3FD5E041DC301D61"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "70651DDC383EDB77"
+			x: 9.0d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"63E2812122315EC2"
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "1D6934A81B9B6503"
+					type: "item"
+					item: {
+						id: "mekanism:advanced_energy_cube"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "459C52E2941982BA"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "2BD6574BF8076F0B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "44993050A3DC3B80"
+			x: 7.0d
+			y: 7.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"70651DDC383EDB77"
+			]
+			tasks: [
+				{
+					id: "3F12CA2073491504"
+					type: "item"
+					item: {
+						id: "mekanism:thermal_evaporation_controller"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "77F90CD4B3D21EE1"
+					type: "item"
+					item: {
+						id: "mekanism:brine_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "21B1F8887F624EB0"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "1C2D32070E09B0D5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "02BB51B61A42F1E1"
+			x: 5.0d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"44993050A3DC3B80"
+			]
+			tasks: [
+				{
+					id: "4BFA98C7B568B53A"
+					type: "item"
+					item: {
+						id: "mekanism:dust_lithium"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "1DA2A2BD1360861D"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "77BA674789D0524C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "54C26C329300A347"
+			x: 5.0d
+			y: 4.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"02BB51B61A42F1E1"
+			]
+			tasks: [
+				{
+					id: "1B3AB48B02FAB493"
+					type: "item"
+					item: {
+						id: "mekanism:induction_casing"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "6C8901AA26519DAF"
+					type: "item"
+					item: {
+						id: "mekanism:induction_port"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1E213B14227FF654"
+					type: "item"
+					item: {
+						id: "mekanism:basic_induction_cell"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1B7592AE3FA55009"
+					type: "item"
+					item: {
+						id: "mekanism:basic_induction_provider"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3DFD4C48D452A0CD"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "2C6A00F0D98AF862"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "392C4F4FA0F31627"
+			x: 3.0d
+			y: 3.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"54C26C329300A347"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "706038A2C57690E9"
+					type: "item"
+					item: {
+						id: "fluxnetworks:basic_flux_storage"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "66598E89DD20E1CC"
+					type: "item"
+					item: {
+						id: "fluxnetworks:flux_plug"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6C492F40CDB139BF"
+					type: "item"
+					item: {
+						id: "fluxnetworks:flux_point"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3713250E88123C43"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "5EA171B5F3704D3A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3CE4B1A7FBAD8566"
+			x: 3.5d
+			y: 7.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"0A9EE595B44C9104"
+				"02BB51B61A42F1E1"
+			]
+			tasks: [
+				{
+					id: "6D4E82048407091C"
+					type: "item"
+					item: {
+						id: "mekanism:solar_neutron_activator"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "029CFB6A2A87D37B"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:hohlraum"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "658877444D9DCB14"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "1591DFB7E0A5F763"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2D19FF2F88C95DEA"
+			x: 1.0d
+			y: 8.5d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"3CE4B1A7FBAD8566"
+				"69D67DF12EE0C400"
+			]
+			tasks: [
+				{
+					id: "4822BF85E8E48C76"
+					type: "item"
+					item: {
+						id: "mekanismgenerators:fusion_reactor_controller"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2B413405C6AC2A0E"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "0AAF041BDE61B5B9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "17B72E750B2DA75E"
+			x: 1.0d
+			y: 2.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"392C4F4FA0F31627"
+			]
+			tasks: [
+				{
+					id: "1FA923198935A39C"
+					type: "item"
+					item: {
+						id: "fluxnetworks:herculean_flux_storage"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5798BA8AA231A732"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "78F6C12B3FC1DB89"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "59B570AD2FBBC34F"
+			x: 2.0d
+			y: 1.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"392C4F4FA0F31627"
+			]
+			tasks: [
+				{
+					id: "19313BFC22C7E619"
+					type: "item"
+					item: {
+						id: "fluxnetworks:flux_controller"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2B1B69B18E79062A"
+					type: "item"
+					item: {
+						id: "fluxnetworks:flux_configurator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "327F5D5F6337AAB1"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "11023CE92E3CD5A8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "09F1128005C0D47E"
+			x: 3.0d
+			y: -2.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/power_mekanism_power.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "3EC39BE8ACEEADD2"
+			linked_quest: "664799749DFCE0E4"
+			x: 5.5d
+			y: 1.5d
+			size: 1.0d
+		}
+		{
+			id: "7294FE3D7796D735"
+			linked_quest: "0A9EE595B44C9104"
+			x: 2.5d
+			y: 5.5d
+			size: 1.0d
+		}
+		{
+			id: "64707F851A2180B0"
+			linked_quest: "42B76D3BDE21F0DC"
+			x: 5.5d
+			y: 0.0d
+			size: 1.0d
+		}
+	]
+}

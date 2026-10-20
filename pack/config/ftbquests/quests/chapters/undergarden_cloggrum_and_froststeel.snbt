@@ -1,0 +1,536 @@
+{
+	id: "70FF637602A08B0B"
+	group: "24E2AE4D02D457BA"
+	order_index: 1
+	filename: "undergarden_cloggrum_and_froststeel"
+	icon: {
+		id: "undergarden:cloggrum_pickaxe"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "486778256DB43A64"
+			x: 5.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "7D113834A265651B"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3E851A70BADFA59B"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7CE4A78262B501F2"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "75D2B1DE145FFA9C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F7594687DE1EAEA"
+			x: 2.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"486778256DB43A64"
+			]
+			tasks: [
+				{
+					id: "4C5B6114E754480F"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1388A55F89EBFB82"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0BBCF26CD44DCE78"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0B16125CEB8F31EF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "701BAFF30660B586"
+			x: 4.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"486778256DB43A64"
+			]
+			tasks: [
+				{
+					id: "4AD3BC5771A4CCAA"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3A74CD38767B6A4E"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4B21342B2543A058"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "78EB15EA643F7329"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_shield"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "14B948F5514412FF"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "570C2F5824B2631F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0828CA49B524F49E"
+			x: 0.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F7594687DE1EAEA"
+			]
+			tasks: [
+				{
+					id: "14BB4C31EBFFC2F7"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7FDAE2DF0F0F55E4"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1FF071E037265820"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1DAE0EEB02A9BCB0"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A40C7577D42ACB4"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "456B4BE6FD61A3B2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "487D13B22151070D"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F7594687DE1EAEA"
+			]
+			tasks: [
+				{
+					id: "760ACB01AE11C240"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "623D7F5A27A44AD9"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "494D8E554E448AC5"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4AFC2D389BE0FC3C"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6D67CE616ED05E28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "16698236D54811EB"
+			x: 6.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "2FA53B2C293CC0B4"
+					type: "kill"
+					entity: "undergarden:denizen"
+					value: 5L
+				}
+				{
+					id: "336ABFA6B01AFE16"
+					type: "item"
+					item: {
+						id: "undergarden:denizen_mask"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "76758F47241DF1A6"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "188B393CE84C47C1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "2F22ECE8333C2171"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4B11A4B67E7AA6C4"
+			x: 8.0d
+			y: 0.5d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "22D579222C32490C"
+					type: "kill"
+					entity: "undergarden:scintling"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4936BB3C575DB237"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "1AB4AC9EA6DAFD2F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0BBDC30A87035FD0"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "5D0D993B4956B38D"
+			x: 0.5d
+			y: 7.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "48B9B1F1B39FA4AD"
+					type: "item"
+					item: {
+						id: "undergarden:music_disc_gloomper_secret"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DF027348BE5573A"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "47082B91161D78EF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "20F54B3DB3C534E0"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "7337CAB0B300E8DB"
+			x: 2.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "7C536E9C6B353793"
+					type: "item"
+					item: {
+						id: "undergarden:blisterberry"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "15620BB47BDAEC81"
+					type: "item"
+					item: {
+						id: "undergarden:rotten_blisterberry"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "488EF14041E524A8"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "100F90B640BE1EAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "564E8DB3682690EC"
+			x: 3.5d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "763CA5AA365AB9C5"
+					type: "item"
+					item: {
+						id: "undergarden:droopvine_item"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "709DF3B97D311764"
+					type: "item"
+					item: {
+						id: "undergarden:glitterkelp"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "1F2D06889C14E7BD"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "50245E069D2CB17A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "02BB1A82A87B93AB"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/undergarden_cloggrum_and_froststeel.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "55E9CC56CF81ACFC"
+			linked_quest: "0EB52209EC2A14E4"
+			x: 5.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

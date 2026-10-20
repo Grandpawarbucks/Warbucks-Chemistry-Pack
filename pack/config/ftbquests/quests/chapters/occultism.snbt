@@ -1,7 +1,7 @@
 {
 	id: "717248739CAC3545"
-	group: "517E2EE5EE2E76FF"
-	order_index: 1
+	group: "5F01357190A9B864"
+	order_index: 0
 	filename: "occultism"
 	icon: {
 		id: "occultism:datura"
@@ -12,8 +12,8 @@
 	quests: [
 		{
 			id: "5F9B839BB34A9A16"
-			x: 0.0d
-			y: 0.0d
+			x: 6.0d
+			y: 2.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -48,8 +48,8 @@
 		}
 		{
 			id: "78F4BD2F6AF9E2BE"
-			x: 2.0d
-			y: 0.0d
+			x: 6.0d
+			y: 4.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -84,8 +84,8 @@
 		}
 		{
 			id: "0BA278E85EFFD02A"
-			x: -1.0d
-			y: -2.0d
+			x: 2.0d
+			y: 6.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -120,8 +120,8 @@
 		}
 		{
 			id: "603A14E7F1E5BEF2"
-			x: 2.0d
-			y: -2.0d
+			x: 9.0d
+			y: 11.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -159,8 +159,8 @@
 		}
 		{
 			id: "05E11B298B4EDE10"
-			x: 4.0d
-			y: 0.0d
+			x: 6.0d
+			y: 6.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -205,10 +205,9 @@
 		{
 			id: "1C4A9DF1826EB0BF"
 			x: 4.0d
-			y: -2.0d
+			y: 6.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependent_lines: true
 			dependencies: [
 				"78F4BD2F6AF9E2BE"
 			]
@@ -242,7 +241,7 @@
 		{
 			id: "0CBD62BC2D8578CE"
 			x: 6.0d
-			y: 0.0d
+			y: 7.5d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -297,7 +296,7 @@
 		{
 			id: "34926D9EB18DDD3C"
 			x: 6.0d
-			y: 3.0d
+			y: 9.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -332,8 +331,8 @@
 		}
 		{
 			id: "498816364D001224"
-			x: 4.0d
-			y: 3.0d
+			x: 6.0d
+			y: 11.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
@@ -382,228 +381,11 @@
 			]
 		}
 		{
-			id: "6F0703EECF1B4A99"
-			x: 2.0d
-			y: 3.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"498816364D001224"
-			]
-			tasks: [
-				{
-					id: "1E98A5ABB95EB793"
-					type: "item"
-					item: {
-						id: "occultism:chalk_gold"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "2C4CAB09D7326CE3"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "6A056B23993A3CCA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "511BA28692361258"
-			x: 0.0d
-			y: 3.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"6F0703EECF1B4A99"
-			]
-			tasks: [
-				{
-					id: "173753A7BB6F16AD"
-					type: "kill"
-					entity: "occultism:possessed_endermite"
-					value: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "3A2473828126CEC3"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "21B5781CF24F8141"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "39020A6B0F63177F"
-			x: 6.5d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
-			dependencies: [
-				"6F0703EECF1B4A99"
-			]
-			tasks: [
-				{
-					id: "799BCDCB7E2D4344"
-					type: "item"
-					item: {
-						id: "minecraft:skeleton_skull"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "70382D6A01017A37"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "15E19BB43ADC506D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5D15157DFC452720"
-			x: -1.0d
-			y: 4.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"511BA28692361258"
-			]
-			tasks: [
-				{
-					id: "533F716BB6533133"
-					type: "item"
-					item: {
-						id: "occultism:chalk_purple"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5E1FE7ADA545D3E4"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "6B48B1E7EF745706"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "573A759E9F1FCC52"
-			x: -1.0d
-			y: 5.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"5D15157DFC452720"
-			]
-			tasks: [
-				{
-					id: "71D00A7CD6D4630B"
-					type: "item"
-					item: {
-						id: "occultism:research_fragment_dust"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "30DF453A3776AAD4"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "02CB57D855BA37D7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "61D9732EE25B31B5"
-			x: 0.0d
-			y: 6.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"573A759E9F1FCC52"
-			]
-			tasks: [
-				{
-					id: "51CBCA32E861379B"
-					type: "item"
-					item: {
-						id: "occultism:chalk_lime"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "3BBCA0CE8F26E85A"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "03877AA608203794"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "6826F6BC78244DE3"
-			x: 8.0d
-			y: -2.0d
-			shape: "square"
+			x: 6.0d
+			y: 13.0d
+			shape: "rsquare"
 			size: 1.0d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
 			dependencies: [
 				"498816364D001224"
 				"603A14E7F1E5BEF2"
@@ -636,283 +418,12 @@
 			]
 		}
 		{
-			id: "312300639D5FB8C9"
-			x: 2.0d
-			y: 6.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"61D9732EE25B31B5"
-				"6826F6BC78244DE3"
-				"39020A6B0F63177F"
-			]
-			tasks: [
-				{
-					id: "764B2EDBC2CAD3FC"
-					type: "item"
-					item: {
-						id: "occultism:book_of_binding_bound_djinni"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4270E48E0D6DA0F9"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "2112B6EB881813E8"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "3FDBDF6D763139AC"
-			x: -3.5d
-			y: 3.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			dependencies: [
-				"312300639D5FB8C9"
-				"0BA278E85EFFD02A"
-			]
-			tasks: [
-				{
-					id: "1AB7B3220F603D03"
-					type: "item"
-					item: {
-						id: "occultism:infused_pickaxe"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "018B86725867DDDC"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "542E8AAEF45C1679"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1668E0C4B6468525"
-			x: -5.5d
-			y: 3.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"3FDBDF6D763139AC"
-				"04B2CA0DEFD9BEA6"
-			]
-			tasks: [
-				{
-					id: "18924A2D4815F210"
-					type: "item"
-					item: {
-						id: "occultism:iesnium_ingot"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "2D80F7783214C747"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "768D2E9E93201F7B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "6E0E0CD99AFBE407"
-			x: -7.5d
-			y: 3.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"1668E0C4B6468525"
-			]
-			tasks: [
-				{
-					id: "4431F3471830E0A4"
-					type: "item"
-					item: {
-						id: "occultism:dimensional_mineshaft"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2211272AE57D0BA3"
-					type: "item"
-					item: {
-						id: "occultism:miner_foliot_unspecialized"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "00F442D5A0EB068F"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "4C5C040A66F921C9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "1E72E45C7693EAF9"
-			x: -9.5d
-			y: 3.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"6E0E0CD99AFBE407"
-			]
-			tasks: [
-				{
-					id: "44D883DCDB1CF1A2"
-					type: "item"
-					item: {
-						id: "occultism:miner_djinni_ores"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "10160FA340920D9B"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "01B9DD8E4F98CDB6"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "7128DCEDF4AA3FCF"
-			x: -11.5d
-			y: 3.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
-			dependencies: [
-				"1E72E45C7693EAF9"
-				"74374AFF946AA880"
-			]
-			tasks: [
-				{
-					id: "2C2D824A22F42FDB"
-					type: "item"
-					item: {
-						id: "occultism:miner_afrit_deeps"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7C3F9B85B8075011"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "0DDF31996480B698"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "582DDE5701841D1D"
-			x: 2.0d
-			y: 14.5d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"7128DCEDF4AA3FCF"
-				"0EAE054A4927480F"
-			]
-			tasks: [
-				{
-					id: "2687C366ADAEDD76"
-					type: "item"
-					item: {
-						id: "occultism:miner_marid_master"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "44F9F9EAFBC8EDA6"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "4289B946E3413460"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "630FF9CD0C40458F"
-			x: 10.0d
-			y: -2.0d
+			x: 4.5d
+			y: 9.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"0CBD62BC2D8578CE"
 			]
@@ -954,12 +465,11 @@
 		}
 		{
 			id: "0BD7691FC034B936"
-			x: 11.5d
-			y: -2.0d
+			x: 7.5d
+			y: 11.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"34926D9EB18DDD3C"
 			]
@@ -994,85 +504,9 @@
 			]
 		}
 		{
-			id: "3573C8631E3C0C8D"
-			x: -3.5d
-			y: 4.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"5D15157DFC452720"
-			]
-			tasks: [
-				{
-					id: "0C67AE5201AEC932"
-					type: "item"
-					item: {
-						id: "occultism:satchel"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "673E4F530C6D8FA1"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "523A1459046604D0"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "751FA6C7610576BF"
-			x: -5.0d
-			y: 4.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"5D15157DFC452720"
-			]
-			tasks: [
-				{
-					id: "7A4588079E3F4720"
-					type: "item"
-					item: {
-						id: "occultism:otherworld_goggles"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "46718EC896DECA71"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "66963D49638890EA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "71B513E95B37ECAD"
-			x: -2.5d
-			y: -3.5d
+			x: 0.5d
+			y: 7.5d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1107,764 +541,12 @@
 			]
 		}
 		{
-			id: "639ACBFA868A3605"
-			x: -6.5d
-			y: 4.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"312300639D5FB8C9"
-			]
-			tasks: [
-				{
-					id: "79FCC96C267F271B"
-					type: "item"
-					item: {
-						id: "occultism:book_of_calling_djinni_manage_machine"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "267602CCA92040C2"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "3BE3700462C24742"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1AB48F1F7BE43200"
-			x: -5.0d
-			y: 9.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			dependencies: [
-				"312300639D5FB8C9"
-			]
-			tasks: [
-				{
-					id: "2EE606E5100DE112"
-					type: "item"
-					item: {
-						id: "occultism:dimensional_matrix"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5AA265835C46956B"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "3B6B9D2EB77C7755"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "4546FB3608214B1A"
-			x: -3.0d
-			y: 9.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"1AB48F1F7BE43200"
-			]
-			tasks: [
-				{
-					id: "2D2A8ECB6C559366"
-					type: "item"
-					item: {
-						id: "occultism:storage_controller"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "42CC4870CB73C1CB"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "03F34A9C633A00A5"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "39B0D17ED843DF29"
-			x: -1.0d
-			y: 9.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"4546FB3608214B1A"
-			]
-			tasks: [
-				{
-					id: "35CC03572CE226A5"
-					type: "item"
-					item: {
-						id: "occultism:storage_stabilizer_tier1"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "14E254154C1E3123"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "205C655804AE0F37"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0F76D8949B1CCBEF"
-			x: 1.0d
-			y: 9.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			dependencies: [
-				"39B0D17ED843DF29"
-			]
-			tasks: [
-				{
-					id: "6CEB39A52BD8450E"
-					type: "item"
-					item: {
-						id: "occultism:storage_stabilizer_tier2"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "0DA73220F7FD38A5"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "5A947FC0CD478479"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "25505398FD3FA1AB"
-			x: 3.0d
-			y: 7.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"0F76D8949B1CCBEF"
-			]
-			tasks: [
-				{
-					id: "0D077CAE9DC1B768"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(occultism:storage_stabilizer_tier3)item(occultism:storage_stabilizer_tier4))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "016AB4CCFC829995"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "0152BEF538924BF8"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "7BF2913DF4513A2E"
-			x: -1.0d
-			y: 7.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"4546FB3608214B1A"
-			]
-			tasks: [
-				{
-					id: "31B28A86233E744A"
-					type: "item"
-					item: {
-						id: "occultism:storage_remote"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5B1DFA41B6C35CEC"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "54CDB4D68F89E3D7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1BEF4D3D43C28E59"
-			x: -1.0d
-			y: 10.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"4546FB3608214B1A"
-			]
-			tasks: [
-				{
-					id: "0B31BC731D43787F"
-					type: "item"
-					item: {
-						id: "occultism:stable_wormhole"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "39ABA6AFFDB766CC"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "1FE42ABDACDA1F69"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "30756D89D79CE096"
-			x: -5.0d
-			y: 12.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"312300639D5FB8C9"
-			]
-			tasks: [
-				{
-					id: "30CE0321D5B23CBB"
-					type: "item"
-					item: {
-						id: "occultism:soul_gem"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "60F13C842CB8D432"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "49D12FDC0B036283"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "3B705B3C46B4208C"
-			x: -3.0d
-			y: 12.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"30756D89D79CE096"
-			]
-			tasks: [
-				{
-					id: "5C77286C101F8D4C"
-					type: "item"
-					item: {
-						id: "occultism:familiar_ring"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "71CE628B7B409DF1"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "74E614E8F12DDEB1"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5E236E6AE2C06A35"
-			x: 4.0d
-			y: 6.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"312300639D5FB8C9"
-			]
-			tasks: [
-				{
-					id: "76F05D399C3569F9"
-					type: "item"
-					item: {
-						id: "occultism:book_of_binding_bound_afrit"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "36EDB2F87B3DA868"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "2187E3FF1D3614A8"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "4F9CDFF94B4D9ACC"
-			x: -1.0d
-			y: 12.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
-			dependencies: [
-				"312300639D5FB8C9"
-			]
-			tasks: [
-				{
-					id: "108E71CA9C3B359C"
-					type: "item"
-					item: {
-						id: "occultism:chalk_gray"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "2F41DDC72E6ADDEF"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "5641796622603BCA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5FDAF6F05B133169"
-			x: 1.0d
-			y: 12.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
-			dependencies: [
-				"312300639D5FB8C9"
-			]
-			tasks: [
-				{
-					id: "3BCBCDAE466B0F53"
-					type: "item"
-					item: {
-						id: "occultism:chalk_orange"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4725DBC9E63A3463"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "6D2DAB7B28333EDF"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "2A9367B90A0DFF1B"
-			x: 6.0d
-			y: 6.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"5E236E6AE2C06A35"
-				"4F9CDFF94B4D9ACC"
-				"5FDAF6F05B133169"
-			]
-			tasks: [
-				{
-					id: "7B00B712BA0BCCEC"
-					type: "kill"
-					entity: "occultism:afrit_wild"
-					value: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "55B8C9EF298C973E"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "19B6FEC0CF27632B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-				{
-					id: "25DF2D4A627E9550"
-					type: "random"
-					table_id: 9189603052265653930L
-				}
-			]
-		}
-		{
-			id: "74374AFF946AA880"
-			x: 7.0d
-			y: 9.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"2A9367B90A0DFF1B"
-			]
-			tasks: [
-				{
-					id: "51B542F47758B3DF"
-					type: "item"
-					item: {
-						id: "occultism:chalk_red"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "0D7634B9DEEE9AA1"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "09664130145B79EC"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1CF5C54EFC2D1E7E"
-			x: 2.0d
-			y: 12.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"2A9367B90A0DFF1B"
-				"04B2CA0DEFD9BEA6"
-			]
-			tasks: [
-				{
-					id: "5F448F280F7CC041"
-					type: "kill"
-					entity: "occultism:wild_hunt_wither_skeleton"
-					value: 5L
-				}
-			]
-			rewards: [
-				{
-					id: "0C00169800F227E6"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "1EE5224F7C762328"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-				{
-					id: "60A30C6C2BFF802E"
-					type: "random"
-					table_id: 7840789827906242800L
-				}
-			]
-		}
-		{
-			id: "0E4356789E613F84"
-			x: 7.0d
-			y: 11.5d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"74374AFF946AA880"
-			]
-			tasks: [
-				{
-					id: "6E7C2094DFA0BAB6"
-					type: "item"
-					item: {
-						id: "occultism:chalk_black"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "618874131DAB1A0E"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "03B09D8F163B4F18"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "47FB4F3415A4549B"
-			x: 9.5d
-			y: 9.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependent_lines: true
-			dependencies: [
-				"74374AFF946AA880"
-			]
-			tasks: [
-				{
-					id: "1C14E181E0BECF64"
-					type: "item"
-					item: {
-						id: "occultism:book_of_binding_bound_marid"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4A92356821310C41"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "6E4F8DF3A28BFD28"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0EDBA37C95386B2E"
-			x: 6.0d
-			y: 14.5d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"0E4356789E613F84"
-				"47FB4F3415A4549B"
-			]
-			tasks: [
-				{
-					id: "68DE28CBB2054FAF"
-					type: "kill"
-					entity: "occultism:marid_unbound"
-					value: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "216316E7EB30117D"
-					type: "xp"
-					xp: 400
-				}
-				{
-					id: "15F2D9EA45E704EA"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-				{
-					id: "1811EA6C80C2961C"
-					type: "random"
-					table_id: 9189603052265653930L
-				}
-			]
-		}
-		{
-			id: "0EAE054A4927480F"
-			x: 4.0d
-			y: 14.5d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"0EDBA37C95386B2E"
-			]
-			tasks: [
-				{
-					id: "73C23B6FD0A8EC7D"
-					type: "item"
-					item: {
-						id: "occultism:chalk_blue"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "560BD45363430014"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "62B78D711DD40F40"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "4AF0ABD9381C2468"
-			x: 13.0d
-			y: -2.0d
+			x: 7.5d
+			y: 9.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			hide_dependency_lines: true
 			dependencies: [
 				"0CBD62BC2D8578CE"
 			]
@@ -1897,8 +579,8 @@
 		}
 		{
 			id: "18E119A9C71591E9"
-			x: 0.5d
-			y: -3.5d
+			x: 2.0d
+			y: 7.5d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1932,282 +614,24 @@
 				}
 			]
 		}
-		{
-			id: "5E12AED3193EBD58"
-			x: -7.5d
-			y: 1.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"1668E0C4B6468525"
-			]
-			tasks: [
-				{
-					id: "4B84546001E035A2"
-					type: "item"
-					item: {
-						id: "occultism:iesnium_pickaxe"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "7E867B0CFF2C6D28"
-					type: "item"
-					item: {
-						id: "occultism:iesnium_block"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "05D443EC86A6A724"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "6D8473BC355B7A75"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "771B8F5296757381"
-			x: -8.0d
-			y: 4.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"5D15157DFC452720"
-			]
-			tasks: [
-				{
-					id: "30428190BFA9E91C"
-					type: "item"
-					item: {
-						id: "occultism:ritual_satchel_t1"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "1305C7E2E8A71BD2"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "17709C172D5DC31C"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5F44A5C536C013A8"
-			x: 13.0d
-			y: 9.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"771B8F5296757381"
-				"74374AFF946AA880"
-			]
-			tasks: [
-				{
-					id: "175EB4296C5991D5"
-					type: "item"
-					item: {
-						id: "occultism:ritual_satchel_t2"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "12A09E414BE00664"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "5B5A60A859A1A95B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "09D8A61036B3E57D"
-			x: 15.0d
-			y: 9.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"0EAE054A4927480F"
-			]
-			tasks: [
-				{
-					id: "0A456A9E49742FE3"
-					type: "item"
-					item: {
-						id: "occultism:iesnium_anvil"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "547DB4CBFAC25600"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "27F14B7D88EBEB3A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "29EA9B8274FEABF7"
-			x: 9.5d
-			y: 10.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"0EAE054A4927480F"
-			]
-			tasks: [
-				{
-					id: "42151D68D391FFA9"
-					type: "item"
-					item: {
-						id: "occultism:chalk_rainbow"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "03F3DD45BF4CAFC2"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "5FDFB3AF217A1E0F"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
 	]
 	images: [
 		{
 			id: "644955B810B0F303"
-			x: -9.0d
-			y: -7.175d
+			x: 3.075d
+			y: -1.5d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/occultism.png"
-		}
-		{
-			id: "34D98BF340C58CE1"
-			x: 0.75d
-			y: -5.3d
-			width: 7.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/occultism_spirit_attuned_gems.png"
-		}
-		{
-			id: "08AA59B62F0F08D1"
-			x: 9.7125d
-			y: -3.25d
-			width: 7.425000000000001d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/occultism_possessed_skeleton.png"
-		}
-		{
-			id: "462814849D00CC0A"
-			x: -8.5d
-			y: 9.0d
-			width: 6.0d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/occultism_dimensional_matrix.png"
-		}
-		{
-			id: "02B2376D118BF5D6"
-			x: -5.75d
-			y: -0.17499999999999982d
-			width: 5.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/occultism_infused_pickaxe.png"
-		}
-		{
-			id: "5E23DC4C18B5EE81"
-			x: 12.2125d
-			y: 7.875d
-			width: 6.425000000000001d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/occultism_bind_a_marid.png"
 		}
 	]
 	quest_links: [
 		{
 			id: "3B57CB050C2685F5"
 			linked_quest: "1C5E43BCEDA7593F"
-			x: -1.5d
+			x: 6.0d
 			y: 0.5d
-			size: 1.0d
-		}
-		{
-			id: "1F47C29664D25E27"
-			linked_quest: "04B2CA0DEFD9BEA6"
-			x: -3.5d
-			y: 1.5d
-			size: 1.0d
-		}
-		{
-			id: "1457B7AFDE28440F"
-			linked_quest: "771B8F5296757381"
-			x: 11.0d
-			y: 9.0d
 			size: 1.0d
 		}
 	]

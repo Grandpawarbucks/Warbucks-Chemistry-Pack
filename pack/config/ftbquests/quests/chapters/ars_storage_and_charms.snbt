@@ -1,0 +1,382 @@
+{
+	id: "50DC9A0A8A58407B"
+	group: "0C00853CD7C980E1"
+	order_index: 5
+	filename: "ars_storage_and_charms"
+	icon: {
+		id: "ars_nouveau:storage_lectern"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "099469C78FF652DF"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"16561B8FB81C8360"
+			]
+			tasks: [
+				{
+					id: "758E7B4FF9C104EB"
+					type: "item"
+					item: {
+						id: "ars_additions:ender_source_jar"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "57999DE591792F5D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "551F4F4011696758"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "16561B8FB81C8360"
+			x: 2.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"37432FA85E0B250D"
+			]
+			tasks: [
+				{
+					id: "7EED5FC7FB98E05C"
+					type: "item"
+					item: {
+						id: "ars_nouveau:storage_lectern"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71107AFBF2A97033"
+					type: "item"
+					item: {
+						id: "ars_nouveau:repository"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "0C043710B1741988"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "35B235B669438125"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3E935F6461903A8B"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"16561B8FB81C8360"
+			]
+			tasks: [
+				{
+					id: "31B644E468D984D2"
+					type: "item"
+					item: {
+						id: "ars_nouveau:spell_turret"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3B3590B36AE4B373"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "4919180FC5780509"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6BF1C2A90E137F34"
+			x: 6.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1825EF6F5141669B"
+			]
+			tasks: [
+				{
+					id: "11EB7E2068A13DF8"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ars_additions:undying_charm)item(ars_additions:fall_prevention_charm)item(ars_additions:fire_resistance_charm)item(ars_additions:night_vision_charm)item(ars_additions:water_breathing_charm)item(ars_additions:void_protection_charm))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "33BF8E1D0EEAFBC6"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "3B8A474B09D8AFCA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2286BDE9BF97D7A6"
+			x: 3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"16561B8FB81C8360"
+			]
+			tasks: [
+				{
+					id: "47DC48AB0E9B6723"
+					type: "item"
+					item: {
+						id: "ars_additions:handy_haversack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "17F2807C121676C5"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "240ED33073333064"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "467B08B8BAB4A217"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"099469C78FF652DF"
+			]
+			tasks: [
+				{
+					id: "1D827AEBE0A2988E"
+					type: "item"
+					item: {
+						id: "ars_nouveau:stable_warp_scroll"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1988BA06C81BEF64"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "36040DBF31D6B825"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "10B493F58C8B1550"
+			x: 6.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"37432FA85E0B250D"
+			]
+			tasks: [
+				{
+					id: "3C7E634E68045391"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ars_nouveau:amulet_of_mana_boost)item(ars_nouveau:amulet_of_mana_regen))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2A2D48B1F3B22671"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "40ECDE65D9C125FC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1825EF6F5141669B"
+			x: 6.5d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"10B493F58C8B1550"
+			]
+			tasks: [
+				{
+					id: "13C671D629DC030A"
+					type: "item"
+					item: {
+						id: "ars_nouveau:ring_of_lesser_discount"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2978C1326DD380C8"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "70FB9146393D2F21"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1CC6523D2748AC7F"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1825EF6F5141669B"
+			]
+			tasks: [
+				{
+					id: "33453E2FB71FCABD"
+					type: "item"
+					item: {
+						id: "ars_nouveau:ring_of_greater_discount"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "07126D32668A56BF"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6BA6387DD04B52A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "22A88C593420CE09"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/ars_storage_and_charms.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "7AA52DDD08C18745"
+			linked_quest: "37432FA85E0B250D"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

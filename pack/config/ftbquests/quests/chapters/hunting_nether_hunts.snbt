@@ -1,0 +1,276 @@
+{
+	id: "5BDEA6D6FEAE780B"
+	group: "63291DCDA2FBC716"
+	order_index: 4
+	filename: "hunting_nether_hunts"
+	icon: {
+		id: "minecraft:blaze_rod"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "3B3FCDB389203401"
+			x: 3.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "4AB5FC548FD5DD22"
+					type: "kill"
+					entity: "minecraft:zombified_piglin"
+					value: 50L
+				}
+			]
+			rewards: [
+				{
+					id: "1224B2AB5F819FEF"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "67434E7A59894575"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "73B15A1ACC8169D7"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "25C1958DAE2F684A"
+			x: 2.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "709FEB3D058D8874"
+					type: "kill"
+					entity: "minecraft:blaze"
+					value: 25L
+				}
+			]
+			rewards: [
+				{
+					id: "250CF859F9AAE725"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "17EDD90A41666DBA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "72B2BCF0AE1ED411"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "701B865E5BC4BFC5"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"25C1958DAE2F684A"
+			]
+			tasks: [
+				{
+					id: "7D9870C0EBD4D879"
+					type: "kill"
+					entity: "minecraft:blaze"
+					value: 100L
+				}
+			]
+			rewards: [
+				{
+					id: "5D5D6B231BF5FA0D"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "25D14A200B466309"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "18F550D91C908714"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4BDCC9A8EB40A6B9"
+			x: 5.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "129572FC077C3EA5"
+					type: "kill"
+					entity: "minecraft:ghast"
+					value: 10L
+				}
+			]
+			rewards: [
+				{
+					id: "49212BD37DAEBA97"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "50A9586627BA39DC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7D594A7ECD341418"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "6C85B3B27CEA7AB0"
+			x: 6.5d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "430EF26131FA9B41"
+					type: "kill"
+					entity: "minecraft:magma_cube"
+					value: 50L
+				}
+			]
+			rewards: [
+				{
+					id: "3E51F27AC8A58810"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "38B8CEF98DCDD22D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "24A3D658C72E8C88"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "6463056EC87BB840"
+			x: 0.5d
+			y: 5.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "0A2220E3D97B1097"
+					type: "kill"
+					entity: "minecraft:piglin_brute"
+					value: 5L
+				}
+				{
+					id: "7520F64AA9BFB321"
+					type: "kill"
+					entity: "minecraft:hoglin"
+					value: 10L
+				}
+			]
+			rewards: [
+				{
+					id: "5F80457A7ABE3D9A"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6473BEB19CE1B3A5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "4F6A7C671B23F192"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "74D04C3E28F27EAC"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/hunting_nether_hunts.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "1A0B4C35AC95B4C2"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

@@ -1,0 +1,360 @@
+{
+	id: "3D92AB7F124ADACD"
+	group: "0D7DA448984E3BB9"
+	order_index: 2
+	filename: "farming_cooking_pot_and_soil"
+	icon: {
+		id: "farmersdelight:cooking_pot"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "1CD576F80AC49B5F"
+			x: 8.0d
+			y: 0.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"61BB360C973E0F7F"
+			]
+			tasks: [
+				{
+					id: "726860A8A34A7807"
+					type: "item"
+					item: {
+						id: "farmersdelight:cooking_pot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1EEB58905F6D60A6"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "20A02205C715431E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "26CA44769AF76A9D"
+			x: 2.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"61BB360C973E0F7F"
+			]
+			tasks: [
+				{
+					id: "7B8B3FD25E302663"
+					type: "item"
+					item: {
+						id: "farmersdelight:organic_compost"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "20DEF44DA4C2EC30"
+					type: "item"
+					item: {
+						id: "farmersdelight:rich_soil"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6E70AA862514DC7B"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "25685996C9C00B28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FB463350074B333"
+			x: 6.5d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1CD576F80AC49B5F"
+			]
+			tasks: [
+				{
+					id: "66B43AF858FAED04"
+					type: "item"
+					item: {
+						id: "farmersdelight:stove"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0C73A9660A646023"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "2B4A9966A1AB44DD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "68C63D9C708CAB99"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"26CA44769AF76A9D"
+			]
+			tasks: [
+				{
+					id: "630743E521C409CA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(farmersdelight:mushroom_colonies)"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "5C005B08FEC59E36"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "3E260889F03F0776"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05CA20DAF3D6CE4E"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2FB463350074B333"
+			]
+			tasks: [
+				{
+					id: "43AF14583D215BE6"
+					type: "item"
+					item: {
+						id: "farmersdelight:skillet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "38EBE9D5209D5811"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "714F8CAFA6E6BCC4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "056B1AE78D5B1CCF"
+			x: 3.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"05CA20DAF3D6CE4E"
+			]
+			tasks: [
+				{
+					id: "317CD0FF6B7A7073"
+					type: "item"
+					item: {
+						id: "farmersdelight:fried_egg"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "7C3F8AB80CC8B690"
+					type: "item"
+					item: {
+						id: "farmersdelight:cooked_bacon"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "531D7069CC36A2C3"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "4E78DBD28C7D5010"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2C27F6E0A24ECFCC"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"26CA44769AF76A9D"
+			]
+			tasks: [
+				{
+					id: "05EE9A8F7F97A6F8"
+					type: "item"
+					item: {
+						id: "minecraft:bone_meal"
+						count: 1
+					}
+					count: 32L
+				}
+			]
+			rewards: [
+				{
+					id: "727F3EFC8B5F392A"
+					type: "xp"
+					xp: 15
+				}
+				{
+					id: "7DD836F6B54BB958"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0E68D7AE1C7DBBA0"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+				"2C27F6E0A24ECFCC"
+			]
+			tasks: [
+				{
+					id: "2B66F6F5D0F95D40"
+					type: "item"
+					item: {
+						id: "minecraft:crimson_fungus"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "3F1960F399610990"
+					type: "item"
+					item: {
+						id: "minecraft:warped_fungus"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "403837E9C05C9ED9"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "2D01F05DA5663385"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "434019E7EBE84927"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/farming_cooking_pot_and_soil.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "4893DB04A5939FB9"
+			linked_quest: "61BB360C973E0F7F"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

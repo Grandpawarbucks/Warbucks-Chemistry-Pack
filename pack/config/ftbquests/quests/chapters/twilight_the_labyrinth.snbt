@@ -1,0 +1,453 @@
+{
+	id: "292ED92CC282E412"
+	group: "441678A7516B6729"
+	order_index: 4
+	filename: "twilight_the_labyrinth"
+	icon: {
+		id: "twilightforest:mazebreaker_pickaxe"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "32F33C12C92BD123"
+			x: 3.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1B55EFB33077AC2C"
+			]
+			tasks: [
+				{
+					id: "197CC70DA209A3BD"
+					type: "structure"
+					structure: "twilightforest:labyrinth"
+				}
+				{
+					id: "7195666C8DD44E98"
+					type: "kill"
+					entity: "twilightforest:minoshroom"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "48F265FDD87930A3"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "7B22014E4E37D519"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "3CB4965D1BB719A7"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "352D5D70DB4C3D96"
+			x: 2.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "3F93FC2611DF168B"
+					type: "item"
+					item: {
+						id: "twilightforest:mazebreaker_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67A55270308A5B22"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "01C1AE462813DB54"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "65BD66A52090130E"
+			x: 5.5d
+			y: 6.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "2ECE9D97A822946C"
+					type: "item"
+					item: {
+						id: "twilightforest:maze_map_focus"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7BFA8F8FC422A04C"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "35A45B4824C2E3E2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "72B1C3C4965990E9"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "797FED717A60064C"
+					type: "item"
+					item: {
+						id: "twilightforest:diamond_minotaur_axe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1DA6D33D5EBC61EB"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "5E66DD37CFE3C7BC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "005D8A97125DC3EC"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "10BDA66D639D77CB"
+					type: "item"
+					item: {
+						id: "twilightforest:raw_meef"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "615B08CD72F8226F"
+					type: "item"
+					item: {
+						id: "twilightforest:cooked_meef"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "050B53AD32CB8B6C"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "66FB4770CA768374"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "52E4898C23EA212B"
+			x: 7.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "56265DEBF4463F94"
+					type: "item"
+					item: {
+						id: "twilightforest:maze_wafer"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "009E86631D4293F6"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "36F750C66424821E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "39DF1364A3BB9256"
+			x: 6.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"65BD66A52090130E"
+			]
+			tasks: [
+				{
+					id: "5755976F80BADF6C"
+					type: "item"
+					item: {
+						id: "twilightforest:filled_maze_map"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1A478CA200007DD3"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "44E9342CD9DA7ACA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3DD75B19D000C358"
+			x: 8.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"39DF1364A3BB9256"
+			]
+			tasks: [
+				{
+					id: "0FD787973DDA175F"
+					type: "item"
+					item: {
+						id: "twilightforest:filled_ore_map"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "51DABC5FF334DF81"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "54342C95367B4834"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0DD53DE3BCAD93CA"
+			x: 8.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"65BD66A52090130E"
+			]
+			tasks: [
+				{
+					id: "02047735C96E6830"
+					type: "item"
+					item: {
+						id: "twilightforest:uncrafting_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3164D62DB8ACD566"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1E1CE45CCB82A464"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7BC4ACBC5EAAC5BD"
+			x: 3.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"32F33C12C92BD123"
+			]
+			tasks: [
+				{
+					id: "1E7A2C443515AC3E"
+					type: "item"
+					item: {
+						id: "twilightforest:minoshroom_trophy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5F7DBE1533B1315F"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "32C59246B7A12E47"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4BC58543EF192729"
+			x: 3.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7BC4ACBC5EAAC5BD"
+			]
+			tasks: [
+				{
+					id: "091F809E53254017"
+					type: "item"
+					item: {
+						id: "twilightforest:meef_stroganoff"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "56E1C1318F85008B"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6069137BBA776684"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "6CFC7025D1587861"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/twilight_the_labyrinth.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "46DB7746C46465BD"
+			linked_quest: "1B55EFB33077AC2C"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

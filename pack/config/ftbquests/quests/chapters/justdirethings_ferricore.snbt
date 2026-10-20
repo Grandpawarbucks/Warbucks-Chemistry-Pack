@@ -1,0 +1,564 @@
+{
+	id: "62406B1DF2D0AEE8"
+	group: "20FCC3B9E7C391AA"
+	order_index: 1
+	filename: "justdirethings_ferricore"
+	icon: {
+		id: "justdirethings:raw_ferricore"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "12DFAC850D78DC82"
+			x: 5.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"2232B59A6FDB6BB1"
+			]
+			tasks: [
+				{
+					id: "7B2740665A169E29"
+					type: "item"
+					item: {
+						id: "justdirethings:raw_ferricore"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "265FC9ABC5BC8953"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "263D415A215ADB25"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "712073365D239874"
+			x: 5.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"4408031B4D0E368F"
+			]
+			tasks: [
+				{
+					id: "28BF9FC464EB6722"
+					type: "item"
+					item: {
+						id: "justdirethings:upgrade_blank"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "513D9D3E11461291"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "262B38BCD14A63C0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4408031B4D0E368F"
+			x: 5.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"12DFAC850D78DC82"
+			]
+			tasks: [
+				{
+					id: "5D5C2AA5EF0A7109"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6147C7B63F5B2A61"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7A664A82A836E980"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "34477C7E937CC942"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "37B4B9A0D41F414E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "694BC0F994FD0B39"
+			x: 5.5d
+			y: 7.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"712073365D239874"
+			]
+			tasks: [
+				{
+					id: "69C8ED021FE898E8"
+					type: "item"
+					item: {
+						id: "justdirethings:upgrade_oreminer"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "30662BE6F6BA2C7C"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6211E132A79090A5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2B4C038D1E902E2C"
+			x: 2.5d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4408031B4D0E368F"
+			]
+			tasks: [
+				{
+					id: "5F30D4FA6485252C"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(justdirethings:bow_ferricore)item(justdirethings:bow_blazegold)item(justdirethings:bow_celestigem)item(justdirethings:bow_eclipsealloy))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1776EBFEF493653D"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "52D2B3A3C8361B82"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1E92D647D258E222"
+			x: 4.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"694BC0F994FD0B39"
+			]
+			tasks: [
+				{
+					id: "7C543785C53DADFD"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(justdirethings:upgrade_hammer)item(justdirethings:upgrade_treefeller)item(justdirethings:upgrade_smelter)item(justdirethings:upgrade_orescanner)item(justdirethings:upgrade_lawnmower)item(justdirethings:upgrade_leafbreaker)item(justdirethings:upgrade_skysweeper)item(justdirethings:upgrade_dropteleport))"
+						}
+					}
+					count: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "120F7E8E3FF77F29"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3B1F2F8A60078D6B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "73433D9F76AD2B25"
+			x: 4.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"12DFAC850D78DC82"
+			]
+			tasks: [
+				{
+					id: "4E905BA5CC500E20"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_ingot"
+						count: 1
+					}
+					count: 16L
+				}
+				{
+					id: "13FA5D8ACDCF8334"
+					type: "item"
+					item: {
+						id: "justdirethings:template_ferricore"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "29F218FDD52FD328"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "027868E8BEBCBF17"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "263A3EE38E34F561"
+			x: 4.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4408031B4D0E368F"
+			]
+			tasks: [
+				{
+					id: "5F55E4381D1536D7"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6C95E0B7BC986902"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "161E328A5485E838"
+					type: "item"
+					item: {
+						id: "justdirethings:ferricore_wrench"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0F89AB610454A045"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "6DEF1446739E5421"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2208B80C133DBEBA"
+			x: 0.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2B4C038D1E902E2C"
+			]
+			tasks: [
+				{
+					id: "75711A61C0900572"
+					type: "item"
+					item: {
+						id: "justdirethings:bow_ferricore"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "65903021837C9F8B"
+					type: "item"
+					item: {
+						id: "justdirethings:bow_blazegold"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "640E4F84261263E2"
+					type: "item"
+					item: {
+						id: "justdirethings:bow_celestigem"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "319F0F6A9870FFB2"
+					type: "item"
+					item: {
+						id: "justdirethings:bow_eclipsealloy"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2DD796EF2DC0BD11"
+					type: "xp"
+					xp: 120
+				}
+				{
+					id: "58846BF017DEE225"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "40F4F3AC965317C2"
+			x: 2.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"2B4C038D1E902E2C"
+			]
+			tasks: [
+				{
+					id: "7F814302989FBD3C"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(justdirethings:upgrade_potionarrow)item(justdirethings:upgrade_splash)item(justdirethings:upgrade_lingering)item(justdirethings:upgrade_homing)item(justdirethings:upgrade_epicarrow))"
+						}
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "28512C4585FAF139"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3F8EC0DF692A1DDF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3E1D1A8CBB130C82"
+			x: 7.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"712073365D239874"
+			]
+			tasks: [
+				{
+					id: "36064A930A0BC7D4"
+					type: "item"
+					item: {
+						id: "justdirethings:upgrade_smoker"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "56E64385528B521A"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "7ACF4DC934B6949F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3724FBBCAC0F3D26"
+			x: 1.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"73433D9F76AD2B25"
+			]
+			tasks: [
+				{
+					id: "180B3D14F21A05D5"
+					type: "item"
+					item: {
+						id: "justdirethings:fluid_canister"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "10065E5EB74137B9"
+					type: "item"
+					item: {
+						id: "justdirethings:machinesettingscopier"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "029B6A4CF26BE04E"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "5855FBCC99A03CE7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "28ECCE1BD56548A3"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/justdirethings_ferricore.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "2E7FBF1140D55EB2"
+			linked_quest: "2232B59A6FDB6BB1"
+			x: 5.5d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

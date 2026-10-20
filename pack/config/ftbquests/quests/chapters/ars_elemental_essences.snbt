@@ -1,0 +1,491 @@
+{
+	id: "1D3CD2A806441728"
+	group: "0C00853CD7C980E1"
+	order_index: 4
+	filename: "ars_elemental_essences"
+	icon: {
+		id: "ars_nouveau:fire_essence"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "33F8C0D7689BA016"
+			x: 3.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"3C8BCCCB478BE602"
+			]
+			tasks: [
+				{
+					id: "055512041086455A"
+					type: "item"
+					item: {
+						id: "ars_nouveau:fire_essence"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "7551A1EA439768A8"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0A8B4914AB88983A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "508F9F928B091261"
+			x: 3.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"33F8C0D7689BA016"
+			]
+			tasks: [
+				{
+					id: "30BC16EC470A4604"
+					type: "item"
+					item: {
+						id: "ars_nouveau:earth_essence"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0CC26712AD21F7A9"
+					type: "item"
+					item: {
+						id: "ars_nouveau:water_essence"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A7245CF54E05F69"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "255DA2E1FAF9DC79"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7EE93737C3D00550"
+			x: 3.5d
+			y: 6.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"508F9F928B091261"
+			]
+			tasks: [
+				{
+					id: "5AF66C4DFB9808B3"
+					type: "item"
+					item: {
+						id: "ars_nouveau:abjuration_essence"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "406EEC5A883B25D3"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "3191BB784E94105E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "64D109A658B14856"
+			x: 3.5d
+			y: 7.5d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"7EE93737C3D00550"
+			]
+			tasks: [
+				{
+					id: "69C9963A7165EFC7"
+					type: "item"
+					item: {
+						id: "ars_nouveau:manipulation_essence"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "704D918D450B7EAF"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "7B1711406EFEC19F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "12A5EADCA037CB52"
+			x: 2.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"508F9F928B091261"
+			]
+			tasks: [
+				{
+					id: "0E384A57E99F0731"
+					type: "item"
+					item: {
+						id: "ars_elemental:everfull_urn"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "60E8CB9CFDE203F7"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6DC124C9351693EA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "662465DCA194057C"
+			x: 3.0d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"64D109A658B14856"
+			]
+			tasks: [
+				{
+					id: "7A66C28D99777DFE"
+					type: "item"
+					item: {
+						id: "ars_elemental:caster_bag"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "08DC3C5B1E81DE60"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "7D7190C08C7637AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3EBCDC7434CE7F17"
+			x: 6.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"64D109A658B14856"
+			]
+			tasks: [
+				{
+					id: "0C21210BC5100B9D"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ars_nouveau:enchanters_sword)item(ars_nouveau:spell_bow)item(ars_nouveau:enchanters_shield))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "043B89623F199BA9"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "6AE18112BF97F0F6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "53C17139F5A23A68"
+			x: 5.0d
+			y: 13.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"64D109A658B14856"
+				"68EB39940451FDA6"
+			]
+			tasks: [
+				{
+					id: "678543C898F5475B"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ars_nouveau:wand)item(ars_nouveau:enchanters_mirror))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2A0A35BB1576B10E"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "41E2FDE952C21B10"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "36895B07D4FA2698"
+			x: 2.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7EE93737C3D00550"
+			]
+			tasks: [
+				{
+					id: "723FB2BA600BA599"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ars_nouveau:jar_of_light)item(ars_nouveau:void_jar)item(ars_nouveau:potion_jar))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0F7D3EE06BEFD7B3"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "176409043575EDC2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "707C3618147E2664"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"64D109A658B14856"
+				"5B85AC6D5C703756"
+			]
+			tasks: [
+				{
+					id: "3279E2E954E0455F"
+					type: "item"
+					item: {
+						id: "ars_nouveau:mob_jar"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "656FAF2A81CED464"
+					type: "item"
+					item: {
+						id: "ars_nouveau:ritual_containment"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A343171BFB671C3"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4D02A2FCC0576801"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "015AB28EEF81B46C"
+			x: 7.5d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5D6E13185E33FC72"
+				"64D109A658B14856"
+			]
+			tasks: [
+				{
+					id: "5EDCC84156C4C90F"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(ars_nouveau:runic_chalk)item(ars_nouveau:mirrorweave))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "037395EC79522AE3"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5439A9482C20DF10"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "0ADEA8CB06C57BAC"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/ars_elemental_essences.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "38688D00EF43EC15"
+			linked_quest: "3C8BCCCB478BE602"
+			x: 3.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "1BDCACC67B9E5B09"
+			linked_quest: "68EB39940451FDA6"
+			x: 5.5d
+			y: 11.0d
+			size: 1.0d
+		}
+		{
+			id: "7461B0D425DD471B"
+			linked_quest: "5B85AC6D5C703756"
+			x: 0.5d
+			y: 7.5d
+			size: 1.0d
+		}
+		{
+			id: "69B5E7A567D75004"
+			linked_quest: "5D6E13185E33FC72"
+			x: 4.5d
+			y: 9.0d
+			size: 1.0d
+		}
+	]
+}

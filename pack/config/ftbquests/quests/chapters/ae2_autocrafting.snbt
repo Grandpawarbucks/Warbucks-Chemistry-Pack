@@ -1,0 +1,393 @@
+{
+	id: "3273D07D59441962"
+	group: "4DCF0E6958BD47BC"
+	order_index: 6
+	filename: "ae2_autocrafting"
+	icon: {
+		id: "ae2:cell_component_16k"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "7D7098581E0AE024"
+			x: 2.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"58932D295CE4DB3B"
+			]
+			tasks: [
+				{
+					id: "2C6D93DF39C2E585"
+					type: "item"
+					item: {
+						id: "ae2:cell_component_16k"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0BC0404FE391DB17"
+					type: "item"
+					item: {
+						id: "ae2:cell_component_64k"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A110FF4A1EDED1A"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "62A6D4237DCFC0FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "76110B693DBF6FF2"
+			x: 8.0d
+			y: 0.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"58932D295CE4DB3B"
+			]
+			tasks: [
+				{
+					id: "68446AB7B38B8CEB"
+					type: "item"
+					item: {
+						id: "ae2:crafting_terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "568463DE39921348"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "75F91F332F47F20A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3E6BB0338E3344C9"
+			x: 6.5d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"76110B693DBF6FF2"
+			]
+			tasks: [
+				{
+					id: "26A5AF5C49A86DDD"
+					type: "item"
+					item: {
+						id: "merequester:requester"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1E1341488191DB4A"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "7409C3A2BF0D8421"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0CC9A52C043BEE4C"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3E6BB0338E3344C9"
+			]
+			tasks: [
+				{
+					id: "59EF45F915A1A54A"
+					type: "item"
+					item: {
+						id: "merequester:requester_terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1D350A19986D0121"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "330FCB7D4D49FBA7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6ABB15806114CC83"
+			x: 3.5d
+			y: 5.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"58932D295CE4DB3B"
+			]
+			tasks: [
+				{
+					id: "4CFC3D28AB6423C4"
+					type: "item"
+					item: {
+						id: "appmek:chemical_storage_cell_1k"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5D59384784AB0C99"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "36FE291E72AB7FD3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "52CB2FB63C5C2051"
+			x: 2.0d
+			y: 7.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6ABB15806114CC83"
+			]
+			tasks: [
+				{
+					id: "1AB1B6C9E24F72D3"
+					type: "item"
+					item: {
+						id: "appmek:chemical_storage_cell_64k"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "09D2D1483FF39F4E"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "2942021D7D959937"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "049F324F4DE92733"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"52CB2FB63C5C2051"
+				"79D73BB7E003DB38"
+			]
+			tasks: [
+				{
+					id: "17A74CAF4A948CC9"
+					type: "item"
+					item: {
+						id: "megacells:radioactive_chemical_cell"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "681331D6D3F25F45"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6590221AB95F7420"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0D2DB0C5B5689C1A"
+			x: 0.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7D7098581E0AE024"
+			]
+			tasks: [
+				{
+					id: "7861FED453F02C68"
+					type: "item"
+					item: {
+						id: "ae2:cell_component_256k"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "64D674148A63260A"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "20333DA3BDECDA0F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "41E4A1BAA00E0A6E"
+			x: 3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7D7098581E0AE024"
+			]
+			tasks: [
+				{
+					id: "0F6C9CF3983D831A"
+					type: "item"
+					item: {
+						id: "ae2:spatial_io_port"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1C8862F294F67769"
+					type: "item"
+					item: {
+						id: "ae2:spatial_pylon"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "514E90B52F577874"
+					type: "item"
+					item: {
+						id: "ae2:spatial_anchor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "61BBB2C92441C377"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "139FABAA848E22D1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "5CA33E110EE70174"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/ae2_autocrafting.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "19B7394E1BD38592"
+			linked_quest: "58932D295CE4DB3B"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

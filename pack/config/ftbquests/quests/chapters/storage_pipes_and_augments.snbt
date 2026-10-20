@@ -1,0 +1,333 @@
+{
+	id: "7D2F69AE64A30187"
+	group: "798245F2E893F738"
+	order_index: 2
+	filename: "storage_pipes_and_augments"
+	icon: {
+		id: "pipez:item_pipe"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "2AA6E5D8AD92D260"
+			x: 2.0d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "0FF1F4C38D60CEC1"
+					type: "item"
+					item: {
+						id: "pipez:item_pipe"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "16FF3D36628314F7"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "2F45242E09525B92"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3391DEB52E24862E"
+			x: 2.0d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"2AA6E5D8AD92D260"
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "447F35BDD10EF613"
+					type: "item"
+					item: {
+						id: "laserio:laser_node"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "7A324E20A6521278"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "27DDB8FAF27D9B84"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3D68B879966847C4"
+			x: 5.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"28340CD18CB88A6E"
+			]
+			tasks: [
+				{
+					id: "592947A7BED27731"
+					type: "item"
+					item: {
+						id: "ironfurnaces:augment_speed"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "44862B6B684931F8"
+					type: "item"
+					item: {
+						id: "ironfurnaces:augment_fuel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "28F417B50E72377B"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "615EF9299F1DADE8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "654A264E4B2127B7"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3D68B879966847C4"
+			]
+			tasks: [
+				{
+					id: "4FEF77BA581C33AC"
+					type: "item"
+					item: {
+						id: "ironfurnaces:augment_generator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6AE972B7ABC7ED62"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "077B87237D205F71"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "10C32F4F5C98A2A3"
+			x: 5.0d
+			y: 6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"654A264E4B2127B7"
+			]
+			tasks: [
+				{
+					id: "4403A65A56BA2318"
+					type: "item"
+					item: {
+						id: "ironfurnaces:augment_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "671BDEC6D4D8BC9C"
+					type: "item"
+					item: {
+						id: "ironfurnaces:augment_blasting"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67B1F0E24357BA37"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0DA09F2C6F16D2DB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "765C3CFF7AB22005"
+			x: 5.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"10C32F4F5C98A2A3"
+			]
+			tasks: [
+				{
+					id: "30408D8E25ADF285"
+					type: "item"
+					item: {
+						id: "ironfurnaces:augment_smoking"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2D481091CEFB12DE"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "580692CED049C2E6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "51B6B34D8378335D"
+			x: 3.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"10C32F4F5C98A2A3"
+			]
+			tasks: [
+				{
+					id: "5FF5C3414643A3F6"
+					type: "item"
+					item: {
+						id: "ironfurnaces:heater"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "225EA05936D0490D"
+					type: "item"
+					item: {
+						id: "ironfurnaces:item_heater"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0265B1594CF35168"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "0B34C86701C06658"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "4BFAC53A16EB12E9"
+			x: 3.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/storage_pipes_and_augments.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "69B8E97A634F13A8"
+			linked_quest: "392A7909301184E2"
+			x: 0.5d
+			y: 2.0d
+			size: 1.0d
+		}
+		{
+			id: "295790CA50D9DD93"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: 2.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "53FD05B1E1FFC7C4"
+			linked_quest: "28340CD18CB88A6E"
+			x: 5.0d
+			y: 0.5d
+			size: 1.0d
+		}
+	]
+}

@@ -1,0 +1,419 @@
+{
+	id: "2A9A7720E894A10F"
+	group: "64BBDAC11E439459"
+	order_index: 3
+	filename: "mystical_higher_seeds"
+	icon: {
+		id: "mysticalagriculture:tertium_essence"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "63BC9482303C7949"
+			x: 3.5d
+			y: 2.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"05F6FABCA51A5D27"
+				"55AF98DD41956199"
+			]
+			tasks: [
+				{
+					id: "7E5B82B262E383F8"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:tertium_essence"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "25F898C100BA19E4"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4571FFB73DD7FABC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "429B4A2ABF9C8710"
+			x: 3.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"63BC9482303C7949"
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "1C41CC79561C527B"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:imperium_essence"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "32D23D36D85A6684"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6337AE9DA0843335"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "329417D2B6B5EF41"
+			x: 3.5d
+			y: 6.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"429B4A2ABF9C8710"
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "18305BC3701233D4"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:supremium_essence"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "17681D889A1DC804"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "5B1B2E04106D30B2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "4D32DDE3DA6B6767"
+			x: 4.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"329417D2B6B5EF41"
+			]
+			tasks: [
+				{
+					id: "4E731C00E2B79229"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:awakening_altar"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2B84F1973A7533BE"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:awakened_supremium_essence"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "5C5E98702163B184"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "051C5CF91B7160FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "7B1B5EF67E8690E8"
+			x: 6.0d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"329417D2B6B5EF41"
+			]
+			tasks: [
+				{
+					id: "1B108FB7768D5FAE"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:master_infusion_crystal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "729D758B76C6228F"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "66CA1F5D06B4DC4F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "24AE5486AE474342"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"63BC9482303C7949"
+			]
+			tasks: [
+				{
+					id: "56C93DB3995A7E2E"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "379AB568E17F7D89"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "64C4AFDA9343446B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7BF7865AB438BD4F"
+			x: 6.5d
+			y: 4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"26B2F788E44A88FF"
+				"63BC9482303C7949"
+			]
+			tasks: [
+				{
+					id: "266E83359461431F"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:soulium_seed_base"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3D7917B4D7ABA218"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "03B3D26F939ED3F2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5CA7AAE7C8DAE7C6"
+			x: 0.5d
+			y: 9.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"329417D2B6B5EF41"
+				"1A6616EA3169DE4E"
+			]
+			tasks: [
+				{
+					id: "2990CA4F683B797B"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:awakening_pedestal"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "74FF00A6932D80A6"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:essence_vessel"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "7DCB4E82804B4E0F"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "242D52830B8105C2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4449C276C65D5AC5"
+			x: 1.5d
+			y: 7.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"329417D2B6B5EF41"
+				"1A6616EA3169DE4E"
+			]
+			tasks: [
+				{
+					id: "75400A7DDD55984A"
+					type: "item"
+					item: {
+						id: "mysticalagriculture:witherproof_bricks"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "38082632A853CF35"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "23F413E09AB3C989"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "06A17461E9FCC512"
+			x: 3.075d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/mystical_higher_seeds.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "516C95C99360FE11"
+			linked_quest: "55AF98DD41956199"
+			x: 3.0d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "6844CF659B0528BE"
+			linked_quest: "17832D4C895DEFF7"
+			x: 2.0d
+			y: 2.0d
+			size: 1.0d
+		}
+		{
+			id: "6C75BFA7A41399C3"
+			linked_quest: "6D18179563EC6FB4"
+			x: 2.0d
+			y: 4.0d
+			size: 1.0d
+		}
+		{
+			id: "7BE84CDDB04B7DE8"
+			linked_quest: "05F6FABCA51A5D27"
+			x: 4.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "2382B91BDA9B6F42"
+			linked_quest: "26B2F788E44A88FF"
+			x: 6.5d
+			y: 2.0d
+			size: 1.0d
+		}
+		{
+			id: "662B5C32E10E5559"
+			linked_quest: "1A6616EA3169DE4E"
+			x: 1.5d
+			y: 6.0d
+			size: 1.0d
+		}
+	]
+}
