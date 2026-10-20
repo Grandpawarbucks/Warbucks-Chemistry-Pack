@@ -4,6 +4,12 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-20: Enchantment caps, retired tokens cleared
+- pack/config/apotheosis/enchantments.cfg: every enchantment's Max Level and Max Loot Level raised to 127 (Apotheosis'
+  ceiling), as in ATM10. 105 enchantments, including our extra mods'.
+- server_scripts/qol_retire_tokens.js: on login, removes Demigod Tokens (normal and Greater) from the player's
+  inventory and ender chest, and tells them.
+
 ### 2026-10-20: Wardaddy Market replaces the Demigod Token shop (67 chapters, 3,640 quests)
 - **New mods:** Wardaddy Market 1.24.6 (the user's own mod, GitHub release) and SG-Economy API 1.0.5 (pinned; 1.1.0
   breaks FTB XMod Compat's currency provider). 227 mods. Research notes: docs/research/wdmarket.md.
