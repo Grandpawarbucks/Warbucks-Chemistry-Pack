@@ -4,7 +4,7 @@ from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
 CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_ingot",
         ["Heat drives chemistry: reduce ore with carbon, mix metals into alloys, and let steam do the work."], MAIN, [
     # --- raw materials --------------------------------------------------------------------
-    Q("t0_charcoal", 0, -1, [item("minecraft:charcoal", 16)], "Pyrolysis", subtitle="Wood, heat, and no air", deps=["gs_ready"], xp=25, desc=[
+    Q("t0_charcoal", 0, -1, [item("minecraft:charcoal", 8)], "Pyrolysis", subtitle="Wood, heat, and no air", deps=["gs_ready"], xp=25, desc=[
         "&6You remember the first fire you ever tamed. It was smaller than this, and it frightened you more.&r",
         "&eWhat:&r &eCharcoal&r is almost pure carbon: fuel, and the reducing agent that turns ore into metal.",
         "&eChemistry:&r Heat wood without enough oxygen to burn and the volatile compounds escape as smoke, tar, methanol and acetic acid. What's left is carbon. This is &epyrolysis&r.",
@@ -14,7 +14,7 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eWhat:&r Copper is three quarters of bronze, and MI uses it for rotors, gears and wires.",
         "&eChemistry:&r Smelting is &ereduction&r: carbon pulls oxygen away from the metal oxide and leaves metal behind, CuO + C → Cu + CO.",
         "&eHow:&r Copper ore is common near the surface, especially in dripstone caves. Smelt the raw copper."]),
-    Q("t0_tin", 2, 2, [item("modern_industrialization:raw_tin", 8), item("modern_industrialization:tin_ingot", 8)], "Tin", subtitle="The other quarter of bronze", deps=["t0_copper"], xp=25, desc=[
+    Q("t0_tin", 2, 2, [item("modern_industrialization:raw_tin", 4), item("modern_industrialization:tin_ingot", 4)], "Tin", subtitle="The other quarter of bronze", deps=["t0_copper"], xp=25, desc=[
         "&eWhat:&r Tin is soft on its own, but a little of it makes copper much harder.",
         "&eChemistry:&r Real tin comes from cassiterite, SnO₂. Carbon reduces it the same way: SnO₂ + 2C → Sn + 2CO.",
         "&eHow:&r Tin ore here comes from Modern Industrialization (MI). It's grey with pale specks and fairly common underground. Mine it and smelt the raw tin."]),
@@ -34,18 +34,18 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eWhat:&r Solid ingots can't blend. Powders can.",
         "&eChemistry:&r Grinding a metal to powder gives it a huge surface area, so the two metals mix evenly when they melt together.",
         "&eHow:&r Put copper and tin ingots in the Forge Hammer: 1 ingot makes 1 dust."]),
-    Q("t0_bronze_dust", 6, 0, [item("modern_industrialization:bronze_dust", 6)], "Mixing Bronze", subtitle="3 copper + 1 tin", deps=["t0_dust"], xp=25, desc=[
+    Q("t0_bronze_dust", 6, 0, [item("modern_industrialization:bronze_dust", 3)], "Mixing Bronze", subtitle="3 copper + 1 tin", deps=["t0_dust"], xp=25, desc=[
         "&eWhat:&r Bronze dust is the blended alloy, ready to melt into ingots.",
         "&eChemistry:&r Traditional bronze is about 88% copper and 12% tin by mass. Tin atoms jam the copper crystal so its layers can't slide, which makes it harder.",
         "&eHow:&r Craft 3 copper dust with 1 tin dust to get 3 bronze dust.",
         "&eTip:&r The Steam Mixer later turns the same inputs into 4 bronze dust instead of 3."]),
-    Q("t0_bronze", 8, 0, [item("modern_industrialization:bronze_ingot", 16)], "The First Alloy", subtitle="Humanity's first engineered material",
+    Q("t0_bronze", 8, 0, [item("modern_industrialization:bronze_ingot", 8)], "The First Alloy", subtitle="Humanity's first engineered material",
       deps=["t0_bronze_dust"], xp=50, size=1.5, desc=[
         "&6Metal that never existed until a mind decided it should. The feeling is an old friend.&r",
         "&eWhat:&r &eBronze&r is harder than either copper or tin alone, and it's the frame of your whole steam age.",
         "&eChemistry:&r An &ealloy&r is a mixture of metals. Its properties can beat its ingredients because the mixed atoms resist being pushed out of line.",
         "&eHow:&r Smelt bronze dust in any furnace."]),
-    Q("t0_plates", 10, 0, [item("modern_industrialization:bronze_plate", 8)], "Bronze Plates", subtitle="The sheet metal of the steam age", deps=["t0_bronze"], xp=25, desc=[
+    Q("t0_plates", 10, 0, [item("modern_industrialization:bronze_plate", 4)], "Bronze Plates", subtitle="The sheet metal of the steam age", deps=["t0_bronze"], xp=25, desc=[
         "&eWhat:&r Almost every steam machine is built from plates.",
         "&eHow:&r Hammer bronze ingots in the Forge Hammer. Without a hammer tool, 2 ingots make 1 plate.",
         "&eTip:&r With an Iron Hammer in the tool slot it's 1 ingot per plate, and the Steam Compressor later does it 1:1 for free."]),
@@ -54,7 +54,7 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eWhat:&r Gears need bolts and a ring; rings need rods and bolts.",
         "&eHow:&r In the Forge Hammer, 1 bronze ingot makes 1 rod or 2 bolts. Craft rods and bolts into rings (check JEI).",
         "&eTip:&r Make a few extra of each. Every gear takes 4 bolts and a ring."]),
-    Q("t0_gear", 14, 0, [item("modern_industrialization:bronze_gear", 2)], "Bronze Gears", subtitle="The heart of every machine casing", deps=["t0_parts"], xp=25, desc=[
+    Q("t0_gear", 14, 0, [item("modern_industrialization:bronze_gear")], "Bronze Gears", subtitle="The heart of every machine casing", deps=["t0_parts"], xp=25, desc=[
         "&eWhat:&r Each machine casing needs a gear at its centre.",
         "&eHow:&r 4 bronze plates, 4 bolts and 1 ring (check JEI for the shape).",
         "&eTip:&r Make extra rings and bolts while you're at it. You'll need several casings."]),
@@ -82,7 +82,7 @@ CHAPTER = Chapter("t0", "I. Fire and Bronze", "modern_industrialization:bronze_i
         "&eWhat:&r Fire clay is a &erefractory&r: a material that stays solid at temperatures that would ruin ordinary brick.",
         "&eChemistry:&r Refractory clays are rich in alumina (Al₂O₃) and silica (SiO₂), which melt far above a fire's temperature.",
         "&eHow:&r Craft 2 clay balls with 2 brick dust to make 3 fire clay dust."]),
-    Q("t0_fire_brick", 13, -2, [item("modern_industrialization:fire_clay_brick", 8)], "Fire Clay Bricks", subtitle="Fired once, hard forever", deps=["t0_fire_clay"], xp=20, desc=[
+    Q("t0_fire_brick", 13, -2, [item("modern_industrialization:fire_clay_brick", 4)], "Fire Clay Bricks", subtitle="Fired once, hard forever", deps=["t0_fire_clay"], xp=20, desc=[
         "&eWhat:&r Single fire bricks, ready to stack into blocks.",
         "&eChemistry:&r Firing drives the bound water out of clay minerals and fuses the grains together. That change can't be undone.",
         "&eHow:&r Smelt fire clay dust in a furnace."]),

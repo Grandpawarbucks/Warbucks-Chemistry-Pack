@@ -14,29 +14,29 @@ from questlib import Q, Chapter, item, dim, tick, kill, anyof, anytag, MAIN, SID
 CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         ["Create: rotation, presses and mixers. An early mechanical age that runs alongside steam and feeds into Modern Industrialization."], SIDE, [
     # --- Kinetic spine (y = 0) ----------------------------------------------------------------
-    Q("cr_alloy", 0, 0, [item("create:andesite_alloy", 16)], "Andesite Alloy", subtitle="The frame of every early machine", deps=["gs_iron"], xp=30, desc=[
+    Q("cr_alloy", 0, 0, [item("create:andesite_alloy", 8)], "Andesite Alloy", subtitle="The frame of every early machine", deps=["gs_iron"], xp=30, desc=[
         "&6Gears and shafts. You remember a world that ran on clockwork, and you liked it.&r",
         "&eWhat:&r andesite alloy, Create's first building material.",
         "&eHow:&r craft andesite with iron nuggets (zinc nuggets work too). Later a Mechanical Mixer makes it in bulk.",
         "&eTip:&r hold &eW&r over almost any Create block to watch its Ponder tutorial."]),
-    Q("cr_casing", 2, 0, [item("create:andesite_casing", 8)], "Andesite Casing", subtitle="Alloy pressed onto wood", deps=["cr_alloy"], xp=30, desc=[
+    Q("cr_casing", 2, 0, [item("create:andesite_casing", 4)], "Andesite Casing", subtitle="Alloy pressed onto wood", deps=["cr_alloy"], xp=30, desc=[
         "&eWhat:&r casing blocks are the shell for gearboxes, deployers and more.",
         "&eHow:&r right-click a stripped log or stripped wood with andesite alloy. That's 'item application', and Create uses it a lot.",
         "&eTip:&r strip logs with an axe first. Any wood type works."]),
-    Q("cr_power", 4, 0, [item("create:shaft", 8), item("create:cogwheel", 8), item("create:water_wheel")], "Rotational Power", subtitle="Create runs on rotation", deps=["cr_casing"], xp=40, desc=[
+    Q("cr_power", 4, 0, [item("create:shaft", 4), item("create:cogwheel", 4), item("create:water_wheel")], "Rotational Power", subtitle="Create runs on rotation", deps=["cr_casing"], xp=40, desc=[
         "&eWhat:&r Create runs on rotation, not electricity. A water wheel on flowing water turns shafts and cogs.",
         "&eHow:&r water must flow across the wheel's blades. Shafts carry rotation straight; cogwheels pass it sideways.",
         "&eTip:&r every machine costs stress units (SU). If the network is over capacity, everything stops."]),
-    Q("cr_cogs", 6, 0, [item("create:large_cogwheel", 4)], "Gear Ratios", subtitle="Big gear, small gear, double speed", deps=["cr_power"], xp=40, desc=[
+    Q("cr_cogs", 6, 0, [item("create:large_cogwheel", 2)], "Gear Ratios", subtitle="Big gear, small gear, double speed", deps=["cr_power"], xp=40, desc=[
         "&eWhat:&r a large cogwheel meshed with a small one doubles the speed (or halves it the other way).",
         "&eChemistry:&r physics, really: power is torque times speed. Gearing trades one for the other, and Create shows the trade as stress: a machine's SU cost grows with its speed.",
         "&eHow:&r a shaft and two planks make a large cogwheel. Place it diagonally next to a small one so the teeth mesh.",
         "&eTip:&r run slow machines (like mixers you don't need fast) at low speed to save stress."]),
-    Q("cr_windmill", 8, 0, [item("create:windmill_bearing"), item("create:white_sail", 8)], "Windmills", subtitle="More stress capacity, anywhere", deps=["cr_cogs"], xp=50, desc=[
+    Q("cr_windmill", 8, 0, [item("create:windmill_bearing"), anyof(["create:white_sail", "create:sail_frame"], 8)], "Windmills", subtitle="More stress capacity, anywhere", deps=["cr_cogs"], xp=50, desc=[
         "&eWhat:&r a windmill bearing with sails attached spins without water.",
         "&eHow:&r place the bearing, build at least 8 sails onto the front of it (the Ponder shows how), and right-click the bearing.",
         "&eTip:&r more sails means more stress capacity but slower speed. Check the numbers with your goggles."]),
-    Q("cr_belts", 10, 0, [item("create:gearbox", 2), item("create:belt_connector", 4)], "Gearboxes and Belts", subtitle="Move rotation and items", deps=["cr_windmill"], xp=50, desc=[
+    Q("cr_belts", 10, 0, [item("create:gearbox"), item("create:belt_connector", 2)], "Gearboxes and Belts", subtitle="Move rotation and items", deps=["cr_windmill"], xp=50, desc=[
         "&eWhat:&r gearboxes turn rotation through corners; belts carry both rotation and items between two shafts.",
         "&eHow:&r belts are made from dried kelp. Click one shaft with a belt, then the other, to link them.",
         "&eTip:&r belts make great machine feeders: items ride past presses and fans on their own."]),
@@ -54,7 +54,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r brass, the key metal of Create's second age.",
         "&eChemistry:&r brass is a copper-zinc alloy, usually about two-thirds copper. Zinc makes it harder and gives the gold colour.",
         "&eHow:&r 1 copper + 1 zinc in a heated mixer gives 2 brass. Zinc ore generates in the world."]),
-    Q("cr_brass_casing", 18, 0, [item("create:brass_casing", 8)], "Brass Casing", subtitle="The shell of smart machines", deps=["cr_brass"], xp=60, desc=[
+    Q("cr_brass_casing", 18, 0, [item("create:brass_casing", 2)], "Brass Casing", subtitle="The shell of smart machines", deps=["cr_brass"], xp=60, desc=[
         "&eWhat:&r brass casing, for mechanical crafters, arms and brass tunnels.",
         "&eHow:&r right-click a stripped log or stripped wood with a brass ingot.",
         "&eTip:&r a deployer holding brass ingots can apply it automatically."]),
@@ -116,7 +116,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r the Rope Pulley lowers and raises a contraption on a rope, which makes a simple lift.",
         "&eHow:&r an andesite casing, wool and an iron plate. Glue a platform under it and power it.",
         "&eTip:&r the brass Elevator Pulley (check JEI) adds floor buttons and stops at contacts."]),
-    Q("cr_piston", 4, 6, [item("create:mechanical_piston"), item("create:piston_extension_pole", 8)], "Mechanical Piston", subtitle="Push a contraption in a line", deps=["cr_glue"], xp=50, desc=[
+    Q("cr_piston", 4, 6, [item("create:mechanical_piston"), item("create:piston_extension_pole", 4)], "Mechanical Piston", subtitle="Push a contraption in a line", deps=["cr_glue"], xp=50, desc=[
         "&eWhat:&r a mechanical piston pushes and pulls glued blocks along a straight line, as far as its poles reach.",
         "&eHow:&r a wooden slab, an andesite casing and an extension pole. Put poles behind the piston head; each pole adds one block of travel.",
         "&eTip:&r rotation direction decides push or pull, so a gearshift reverses it."]),
@@ -143,11 +143,11 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r a still saw over a belt cuts logs into planks and acts as a stonecutter; on a contraption it fells whole trees.",
         "&eHow:&r iron plates, an iron ingot and an andesite casing. Set its target recipe with a filter if it has several.",
         "&eTip:&r a row of saws on a bearing makes a tree farm that never misses a log."]),
-    Q("cr_copper_casing", 12, -2, [item("create:copper_casing", 8)], "Copper Casing", subtitle="The shell for fluid machines", deps=["cr_press"], xp=40, desc=[
+    Q("cr_copper_casing", 12, -2, [item("create:copper_casing", 2)], "Copper Casing", subtitle="The shell for fluid machines", deps=["cr_press"], xp=40, desc=[
         "&eWhat:&r copper casing is the base for spouts, item drains and hose pulleys.",
         "&eHow:&r right-click a stripped log or stripped wood with a copper ingot.",
         "&eTip:&r press a stack of copper sheets while you're at it. Pipes need them next."]),
-    Q("cr_pipes", 12, -4, [item("create:fluid_pipe", 16), item("create:mechanical_pump")], "Pipes and Pumps", subtitle="Fluids go where you push them", deps=["cr_copper_casing"], xp=50, desc=[
+    Q("cr_pipes", 12, -4, [item("create:fluid_pipe", 4), item("create:mechanical_pump")], "Pipes and Pumps", subtitle="Fluids go where you push them", deps=["cr_copper_casing"], xp=50, desc=[
         "&eWhat:&r fluid pipes carry liquids, but only while a Mechanical Pump pushes them along.",
         "&eChemistry:&r a pump makes a pressure difference, and fluid always flows from high pressure to low.",
         "&eHow:&r copper sheets around a copper ingot make 4 pipes; a pipe and a cogwheel make a pump. The arrow on the pump shows the flow direction.",
@@ -226,7 +226,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eTip:&r a brass tunnel set to 'synchronise' only lets items through when every lane has one: perfect for 1:1 recipes."]),
 
     # --- Packages (x = 14..20, y = 6..8) --------------------------------------------------------
-    Q("cr_cardboard", 14, 6, [item("create:cardboard", 8)], "Cardboard", subtitle="Pulp, pressed flat", deps=["cr_mixer"], xp=40, desc=[
+    Q("cr_cardboard", 14, 6, [item("create:cardboard", 4)], "Cardboard", subtitle="Pulp, pressed flat", deps=["cr_mixer"], xp=40, desc=[
         "&eWhat:&r cardboard, for Create's package logistics.",
         "&eChemistry:&r paper and card are mats of cellulose fibres; water lets the fibres bond as it dries, which is why pulp holds together.",
         "&eHow:&r mix 4 pulpable items (like sticks or sugar cane; check JEI) with 250 mB of water for pulp, then press the pulp into cardboard."]),
@@ -286,11 +286,11 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eChemistry:&r obsidian is volcanic glass: lava cooled so fast that its silica never formed crystals.",
         "&eHow:&r crush obsidian into powder, then a sequenced assembly: spout 500 mB of lava onto it, press, press. JEI shows the loop.",
         "&eTip:&r the crushing wheels give the obsidian back 75% of the time, so feed it in until it's all powder."]),
-    Q("cr_railway", 26, 7, [item("create:railway_casing", 8)], "Train Casing", subtitle="The body of every train", deps=["cr_sturdy"], xp=50, desc=[
+    Q("cr_railway", 26, 7, [item("create:railway_casing", 4)], "Train Casing", subtitle="The body of every train", deps=["cr_sturdy"], xp=50, desc=[
         "&eWhat:&r train casing is the base block for stations, controls, signals and bogeys.",
         "&eHow:&r right-click a brass casing with a sturdy sheet.",
         "&eTip:&r right-clicking a track with train casing places a bogey: the wheels your train sits on."]),
-    Q("cr_track", 28, 7, [item("create:track", 32)], "Train Track", subtitle="Sleepers, nuggets, a press", deps=["cr_railway"], xp=60, desc=[
+    Q("cr_track", 28, 7, [item("create:track", 16)], "Train Track", subtitle="Sleepers, nuggets, a press", deps=["cr_railway"], xp=60, desc=[
         "&eWhat:&r Create's train track, which can curve, slope and cross.",
         "&eHow:&r sequenced assembly on stone slabs (the 'sleepers'): deploy an iron or zinc nugget, deploy another, then press. Check JEI.",
         "&eTip:&r click one track end, then another, to lay a curve or slope between them."]),
@@ -298,7 +298,7 @@ CHAPTER = Chapter("create", "The Mechanical Age", "create:cogwheel",
         "&eWhat:&r a Train Station assembles a train from the casing, bogeys and blocks on the track beside it; Train Controls let you drive it.",
         "&eHow:&r a station is train casing and a compass; controls are a lever, train casing and a precision mechanism.",
         "&eTip:&r stand at the station's GUI and press assemble once the controls face the way you want to go."]),
-    Q("cr_train", 32, 7, [item("create:schedule", 2)], "Your First Train", subtitle="A schedule and somewhere to go", deps=["cr_station"], xp=200, size=1.5, shape="gear", desc=[
+    Q("cr_train", 32, 7, [item("create:schedule")], "Your First Train", subtitle="A schedule and somewhere to go", deps=["cr_station"], xp=200, size=1.5, shape="gear", desc=[
         "&6A machine that carries itself across the world. You used to move whole mountains like this.&r",
         "&eWhat:&r a Train Schedule tells a train where to stop and when to leave, so it runs by itself.",
         "&eHow:&r a sturdy sheet and paper make 4. Write stops in it and give it to the conductor (a mob in a seat behind the controls).",

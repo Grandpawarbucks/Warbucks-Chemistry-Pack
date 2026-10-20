@@ -27,7 +27,7 @@
 						id: "create:andesite_alloy"
 						count: 1
 					}
-					count: 16L
+					count: 8L
 				}
 			]
 			rewards: [
@@ -63,7 +63,7 @@
 						id: "create:andesite_casing"
 						count: 1
 					}
-					count: 8L
+					count: 4L
 				}
 			]
 			rewards: [
@@ -100,7 +100,7 @@
 						id: "create:shaft"
 						count: 1
 					}
-					count: 8L
+					count: 4L
 				}
 				{
 					id: "36030632A3DA10BE"
@@ -109,7 +109,7 @@
 						id: "create:cogwheel"
 						count: 1
 					}
-					count: 8L
+					count: 4L
 				}
 				{
 					id: "244339BEDF0F65E6"
@@ -155,7 +155,7 @@
 						id: "create:large_cogwheel"
 						count: 1
 					}
-					count: 4L
+					count: 2L
 				}
 			]
 			rewards: [
@@ -197,8 +197,11 @@
 					id: "5AF1852515CF4CC3"
 					type: "item"
 					item: {
-						id: "create:white_sail"
+						id: "ftbfiltersystem:smart_filter"
 						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(create:white_sail)item(create:sail_frame))"
+						}
 					}
 					count: 8L
 				}
@@ -237,7 +240,7 @@
 						id: "create:gearbox"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 				{
 					id: "0D9B10F23D173FD0"
@@ -246,7 +249,7 @@
 						id: "create:belt_connector"
 						count: 1
 					}
-					count: 4L
+					count: 2L
 				}
 			]
 			rewards: [
@@ -422,7 +425,7 @@
 						id: "create:brass_casing"
 						count: 1
 					}
-					count: 8L
+					count: 2L
 				}
 			]
 			rewards: [
@@ -1009,7 +1012,7 @@
 						id: "create:piston_extension_pole"
 						count: 1
 					}
-					count: 8L
+					count: 4L
 				}
 			]
 			rewards: [
@@ -1247,7 +1250,7 @@
 						id: "create:copper_casing"
 						count: 1
 					}
-					count: 8L
+					count: 2L
 				}
 			]
 			rewards: [
@@ -1283,7 +1286,7 @@
 						id: "create:fluid_pipe"
 						count: 1
 					}
-					count: 16L
+					count: 4L
 				}
 				{
 					id: "11D85F7BA67E6835"
@@ -1976,7 +1979,7 @@
 						id: "create:cardboard"
 						count: 1
 					}
-					count: 8L
+					count: 4L
 				}
 			]
 			rewards: [
@@ -2515,7 +2518,7 @@
 						id: "create:railway_casing"
 						count: 1
 					}
-					count: 8L
+					count: 4L
 				}
 			]
 			rewards: [
@@ -2551,7 +2554,7 @@
 						id: "create:track"
 						count: 1
 					}
-					count: 32L
+					count: 16L
 				}
 			]
 			rewards: [
@@ -2632,7 +2635,7 @@
 						id: "create:schedule"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -2768,6 +2771,7 @@
 			y: 6.0d
 			shape: "square"
 			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
 				"79D324D3D42641AD"
 			]
@@ -2996,6 +3000,7 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"4B937C395BAB0201"
 			]
@@ -3400,6 +3405,7 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"046177CACEBE5530"
 				"0182206067908BB0"
@@ -3731,6 +3737,7 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			hide_dependency_lines: true
 			dependencies: [
 				"049C8A27289976E8"
 				"0182206067908BB0"

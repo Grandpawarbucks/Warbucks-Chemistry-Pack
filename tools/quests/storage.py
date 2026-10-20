@@ -5,7 +5,7 @@ y=7 moving things (Pipez, LaserIO, Entangled, SS in Motion), y=9/10.5 Sophistica
 QoL page's q_bp_iron / q_bp_up), y=12.5..15.5 Iron Furnaces (s_furnace moved here).
 The Logistics Networks row was removed in the 2026-10-18 build round: logic.py teaches it (lg_logistics).
 """
-from questlib import Q, Chapter, item, dim, tick, anyof, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, anytag, anyof, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:backpack",
         ["A god needs somewhere to keep things."], SIDE, [
@@ -33,10 +33,10 @@ CHAPTER = Chapter("storage", "Storage and Logistics", "sophisticatedbackpacks:ba
         "&eTip:&r one pipe into the controller is a simple sorting system: items go where matching items already are."]),
 
     # --- Functional Storage (y=2) --------------------------------------------------------------
-    Q("s_drawers", 0, 2, [item("functionalstorage:oak_1")], "Drawers", deps=["s_barrel"], xp=25,
+    Q("s_drawers", 0, 2, [anytag("functionalstorage:drawer")], "Drawers", deps=["s_barrel"], xp=25,
       subtitle="Huge stacks of one item each", desc=[
         "&eWhat:&r Functional Storage drawers hold lots of a single item and show it on the front.",
-        "&eHow:&r craft an oak drawer (1, 2 or 4 slots; check JEI). Right-click to insert, left-click to take.",
+        "&eHow:&r craft a drawer of any wood (1, 2 or 4 slots; check JEI). Right-click to insert, left-click to take.",
         "&eTip:&r upgrades (copper, gold, diamond, netherite) multiply drawer capacity."]),
     Q("s_fs_compacting", 2, 2, [item("functionalstorage:compacting_drawer")], "Compacting Drawer", deps=["s_drawers"], xp=40,
       optional=True, tokens=1, subtitle="Optional: one drawer, three sizes of the same metal", desc=[

@@ -12,8 +12,8 @@
 	quests: [
 		{
 			id: "54E4F62471779F14"
-			x: 2.0d
-			y: 2.0d
+			x: 4.0d
+			y: 1.0d
 			shape: "gear"
 			size: 2.0d
 			tasks: [
@@ -43,8 +43,8 @@
 		}
 		{
 			id: "14851AEFE672966D"
-			x: 2.0d
-			y: 4.0d
+			x: 4.0d
+			y: 3.0d
 			shape: "pentagon"
 			size: 0.9d
 			dependencies: [
@@ -69,12 +69,10 @@
 		}
 		{
 			id: "022F679599389147"
-			x: 12.5d
-			y: 1.5d
+			x: 4.0d
+			y: 5.0d
 			shape: "pentagon"
 			size: 0.9d
-			hide_dependency_lines: true
-			hide_dependent_lines: true
 			dependencies: [
 				"14851AEFE672966D"
 			]
@@ -98,10 +96,9 @@
 		{
 			id: "745DBEEE9AE746C7"
 			x: 2.0d
-			y: 6.0d
+			y: 5.0d
 			shape: "pentagon"
 			size: 0.9d
-			hide_dependent_lines: true
 			dependencies: [
 				"14851AEFE672966D"
 			]
@@ -124,8 +121,8 @@
 		}
 		{
 			id: "32306651C1085697"
-			x: 8.0d
-			y: 12.5d
+			x: 4.0d
+			y: 7.0d
 			shape: "pentagon"
 			size: 0.9d
 			dependencies: [
@@ -150,8 +147,8 @@
 		}
 		{
 			id: "61103C80A99526F9"
-			x: 8.0d
-			y: 14.0d
+			x: 4.0d
+			y: 9.0d
 			shape: "hexagon"
 			size: 1.5d
 			dependencies: [
@@ -177,8 +174,8 @@
 		}
 		{
 			id: "5F462A144226867C"
-			x: 0.5d
-			y: 6.0d
+			x: 5.5d
+			y: 5.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -205,7 +202,7 @@
 		{
 			id: "5EFC77C0525603E5"
 			x: 0.5d
-			y: 8.0d
+			y: 7.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -229,237 +226,11 @@
 				}
 			]
 		}
-		{
-			id: "1C9DE989AB20F174"
-			x: 12.5d
-			y: 3.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"022F679599389147"
-			]
-			tasks: [
-				{
-					id: "0D56F12CE0D0BDDF"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "7AEA0CCA7EE25609"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5E47E28011C858EE"
-			x: 16.0d
-			y: 5.5d
-			shape: "gear"
-			size: 2.0d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "7EC7373FFAC8F004"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "1D3216294D10DBEF"
-			x: 8.5d
-			y: 7.5d
-			shape: "hexagon"
-			size: 1.5d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "2EE9C760087E203B"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "607B5517C2F099C8"
-			x: 12.0d
-			y: 7.5d
-			shape: "rsquare"
-			size: 1.0d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "25D9557460C90380"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "0A3A087690E21B3E"
-			x: 7.5d
-			y: 5.5d
-			shape: "square"
-			size: 1.0d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "3D6D28402944942B"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "4D638C5C76432812"
-			x: 8.0d
-			y: 9.5d
-			shape: "octagon"
-			size: 1.0d
-			optional: true
-			dependency_requirement: "one_completed"
-			dependencies: [
-				"607B5517C2F099C8"
-				"0A3A087690E21B3E"
-			]
-			tasks: [
-				{
-					id: "4A062536C189B71F"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "59B9543B466C5480"
-			x: 9.0d
-			y: 5.5d
-			shape: "pentagon"
-			size: 0.9d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "634C94D0D8C3277C"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "02DDA2649564EEEC"
-			x: 10.5d
-			y: 7.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "3B723190E643BF1F"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "2BB4A2B14B2E83C5"
-			x: 11.0d
-			y: 5.5d
-			shape: "diamond"
-			size: 0.75d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "57C66CB5D6C37C3F"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "4DC8A1D9FB34F06E"
-			x: 15.0d
-			y: 7.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "36F57C3506AB9953"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "3682AEBB5FA999EB"
-			x: 13.0d
-			y: 5.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "7B0BCE448833D041"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			id: "4DED5BE7E54648B8"
-			x: 16.5d
-			y: 7.5d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"1C9DE989AB20F174"
-			]
-			tasks: [
-				{
-					id: "6DB0E3E778F78775"
-					type: "checkmark"
-				}
-			]
-		}
 	]
 	images: [
 		{
 			id: "64EA6B5BC9A940C8"
-			x: 3.0d
+			x: 3.075d
 			y: -1.5d
 			width: 6.0d
 			height: 1.0d
@@ -467,35 +238,8 @@
 			image: "warbucks:textures/quests/welcome.png"
 		}
 		{
-			id: "17771EC623860D5D"
-			x: 2.75d
-			y: 0.375d
-			width: 5.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/welcome_welcome_demigod.png"
-		}
-		{
-			id: "47B48E6421E13A25"
-			x: 12.0d
-			y: 0.375d
-			width: 10.0d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/welcome_how_progression_works.png"
-		}
-		{
-			id: "7C6A634BA93C77C7"
-			x: 9.5d
-			y: 11.375d
-			width: 5.0d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/welcome_demigod_tokens.png"
-		}
-		{
 			id: "5C02A206CED00D77"
-			x: 3.5d
+			x: 3.575d
 			y: -3.75d
 			width: 7.0d
 			height: 2.07d

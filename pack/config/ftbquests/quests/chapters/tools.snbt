@@ -874,8 +874,11 @@
 					id: "12931F58B1B1EA2D"
 					type: "item"
 					item: {
-						id: "comforts:hammock_white"
+						id: "ftbfiltersystem:smart_filter"
 						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(comforts:hammocks)"
+						}
 					}
 					count: 1L
 				}

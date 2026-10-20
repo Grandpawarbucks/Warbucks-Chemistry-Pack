@@ -59,18 +59,34 @@ for _c in CHAPTERS:
     _c.group = next(g for g, ks in LAYOUT.items() if _c.key in ks)
     normalize_milestones(_c)  # capstone = 2.0 gear, section milestone = 1.5 hexagon (tools/layout.py)
 
-# Automatic layout style per chapter (tools/layout.py; manual chapters ignore it):
-#   "spine": the main path runs left to right, its sections branch above and below it (the Demigod's Path);
-#   "tree":  sections as top-down trees in columns, so the page reads as a progression tree (mod pages; default);
-#   "grid":  compact blocks for collection pages.
-STYLES = {**{k: "spine" for k in LAYOUT["main"]},
-          **{k: "grid" for k in ("hunting", "building", "completionist", "lab_notes", "explore")}}
+# Automatic layout style per chapter (tools/layout.py; manual chapters ignore it). Motifs (v12), picked by looking at
+# test/build_quest_preview.py --gallery and tools/layout_lint.py:
+#   "winding":  the main path snakes in rows of 4-7 quests that alternate direction; sections hang above and below
+#               each row as small trees (the Demigod's Path, and Occultism's long ritual chain);
+#   "radial":   the hub sits in the middle with its own quests ringed around it; the other sections are spokes
+#               (pages where one quest unlocks most of the page);
+#   "molecule": sections drawn as rings of 5-6 quests joined by bonds, with short side chains (chemistry pages);
+#   "tree":     sections as top-down trees in columns or rows (mod pages; default);
+#   "grid":     compact blocks for collection pages;
+#   "spine":    the v11 main-path style (one straight row with branches above and below), kept for comparison.
+STYLES = {**{k: "winding" for k in LAYOUT["main"]}, "occultism": "winding",
+          **{k: "radial" for k in ("qol", "building", "storage", "harvest", "undergarden", "deeperdarker")},
+          **{k: "molecule" for k in ("periodic", "mekanism", "mekanism_power", "power", "factory")},
+          **{k: "grid" for k in ("hunting", "completionist", "lab_notes", "explore")}}
 DEFAULT_STYLE = "tree"
+# Section shapes on a page whose motif otherwise draws plain trees: "molecule" rings (where a section fits a ring).
+BLOCKS = {"t4": "molecule"}
+# Trying a motif without editing this file: LAYOUT_STYLE=t6=radial,t3=tree (style or style+molecule) for a build/check.
+for _kv in filter(None, os.environ.get("LAYOUT_STYLE", "").split(",")):
+    _k, _, _v = _kv.partition("=")
+    STYLES[_k], _, _b = _v.partition("+")
+    BLOCKS[_k] = _b or None
 _HOME = {q.key: c.key for c in CHAPTERS for q in c.quests}
 _TITLES = {c.key: c.title.split(". ", 1)[-1] for c in CHAPTERS}
 _QUESTS = {q.key: q for c in CHAPTERS for q in c.quests}
 for _c in CHAPTERS:
     _c.style = STYLES.get(_c.key, DEFAULT_STYLE)
+    _c.block_kind = BLOCKS.get(_c.key)
     _c.home_of, _c.chapter_titles = _HOME, _TITLES  # names loose groups after the chapter they follow on from
     # Every chapter's redundant deps are dropped up front (layout.prune_transitive; what players must do doesn't
     # change), so a page knows the final deps of the quests its links show: FTB draws those lines too.

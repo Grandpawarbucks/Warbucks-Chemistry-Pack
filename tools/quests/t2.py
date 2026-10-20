@@ -1,5 +1,5 @@
 """Quest chapter: t2. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, anytag, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
         ["Walk through fire, brew in the dark, and take back the sky.",
@@ -45,12 +45,12 @@ CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
         "&eChemistry:&r brewing is extraction and reaction: each ingredient changes what's dissolved in the bottle.",
         "&eHow:&r 1 blaze rod + 3 cobblestone. Blaze powder in the top-left slot fuels 20 brews. Then brew an &eAwkward Potion&r: three water bottles in the stand, nether wart on top. Almost every potion starts from it.",
         "&eTip:&r look up &ePotion of Flying&r in JEI (from Apothic Attributes). The next quests walk the whole chain."]),
-    Q("t2_slowfall", 10, 0, [item("minecraft:phantom_membrane", 4)], "Slow Falling", deps=["t2_brewing"], xp=50,
+    Q("t2_slowfall", 10, 0, [item("minecraft:phantom_membrane", 2)], "Slow Falling", deps=["t2_brewing"], xp=50,
       subtitle="Awkward + phantom membrane", desc=[
         "&eWhat:&r step 1 toward flight. Awkward Potion + phantom membrane = Potion of Slow Falling.",
         "&eHow:&r phantoms appear at night when someone in the world hasn't slept for three or more days. Fight them on a roof.",
-        "&eTip:&r one membrane brews three bottles, so four membranes go a long way."]),
-    Q("t2_levitation", 12, 0, [item("minecraft:fermented_spider_eye", 4)], "Levitation", deps=["t2_slowfall"], xp=50,
+        "&eTip:&r one membrane brews three bottles, so two membranes go a long way."]),
+    Q("t2_levitation", 12, 0, [item("minecraft:fermented_spider_eye")], "Levitation", deps=["t2_slowfall"], xp=50,
       subtitle="Slow Falling + fermented spider eye", desc=[
         "&eWhat:&r step 2. Slow Falling + fermented spider eye = Potion of Levitation (Apothic Attributes).",
         "&eChemistry:&r fermentation is yeast turning sugar into alcohol and acids. Here it 'corrupts' the effect into its opposite.",
@@ -126,10 +126,10 @@ CHAPTER = Chapter("t2", "III. Divine Ascent", "pylons:infusion_pylon",
         "&eWhat:&r the Volcanic Sourcelink turns burning fuel into Source, the energy behind Ars Nouveau.",
         "&eHow:&r craft it from source gems, gold and a lava bucket, place it near a Source Jar and give it fuel. The Worn Notebook explains the details.",
         "&eTip:&r it suits a Nether-themed base: blaze rods and lava-adjacent fuels keep it going."]),
-    Q("t2_archwood", 4, 3, [item("ars_nouveau:blue_archwood_log", 8)], "Archwood", deps=["t2_ars"], xp=40, optional=True, tokens=1,
+    Q("t2_archwood", 4, 3, [anytag("c:logs/archwood", 8)], "Archwood", deps=["t2_ars"], xp=40, optional=True, tokens=1,
       subtitle="Magic trees in the archwood forests", desc=[
         "&eWhat:&r archwood is Ars Nouveau's magic wood, used for its jars, tables and rituals.",
-        "&eHow:&r look for brightly coloured trees in archwood forests; any colour works, but this quest wants blue.",
+        "&eHow:&r look for brightly coloured trees in archwood forests; any colour of archwood log counts.",
         "&eTip:&r archwood saplings grow at home, so a few logs become a farm."]),
 
     # --- Magic branch (kept from v1) ---

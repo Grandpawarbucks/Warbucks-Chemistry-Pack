@@ -242,7 +242,7 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eChemistry:&r heated atoms give off light only at certain wavelengths, an emission spectrum unique to each element. That's how helium was found in the Sun before anyone found it on Earth.",
         "&eHow:&r amethyst prism, steel plates, copper wire and an analog circuit (check JEI). It lists each element with its strength, direction, distance and depth.",
         "&eTip:&r a \"strong\" signal is usually a rich deposit. Walk towards it and scan again."]),
-    Q("t3_lead_deposit", 0, 5, [item(MI + "lead_ore", 64)], "A Rich Lead Deposit", deps=["t1_steel"], xp=60, optional=True, tokens=1,
+    Q("t3_lead_deposit", 0, 5, [item(MI + "raw_lead", 64)], "A Rich Lead Deposit", deps=["t1_steel"], xp=60, optional=True, tokens=1,
       subtitle="Find a chunk full of lead", desc=[
         "&eWhat:&r rich ore deposits hold hundreds of ores in one chunk, at a metal-specific depth. Lead's sits around Y -24 to 16.",
         "&eHow:&r strip-mine at that depth and check ore with Jade. FTB Ultimine clears a vein in one go.",

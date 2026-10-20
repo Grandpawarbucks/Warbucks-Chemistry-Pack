@@ -5,7 +5,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         ["Destructive distillation turns coal into coke, and coke turns iron into steel.",
          "At the end of this chapter, matter itself opens up to you."], MAIN, [
     # --- the coke oven --------------------------------------------------------------------
-    Q("t1_bricks", 0, 0, [item("minecraft:bricks", 32)], "A Kiln's Worth of Bricks", subtitle="The Coke Oven's shell", deps=["t0_pump"], xp=30, desc=[
+    Q("t1_bricks", 0, 0, [item("minecraft:bricks", 16)], "A Kiln's Worth of Bricks", subtitle="The Coke Oven's shell", deps=["t0_pump"], xp=30, desc=[
         "&6Smoke rising from a hill of earth, and what came out of it burning hotter than anything before. That memory is older than any city.&r",
         "&eWhat:&r The Coke Oven is built from ordinary brick blocks: one ring of 8 for the controller, and more for its walls.",
         "&eChemistry:&r Firing clay drives out the water bound in its minerals and fuses the grains, turning soft mud into ceramic.",
@@ -50,7 +50,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r Steel is mixed as dust, so the carbon has to be a powder too.",
         "&eChemistry:&r Coke is the reducing agent in a real blast furnace: it pulls oxygen out of iron ore and supplies the carbon that becomes steel.",
         "&eHow:&r Grind coke in the Steam Macerator, or coke coal dust directly in the Coke Oven."]),
-    Q("t1_iron_dust", 12, 0, [item("modern_industrialization:iron_dust", 14)], "Iron Dust", subtitle="Seven parts of the recipe", deps=["t1_coke_dust"], xp=25, desc=[
+    Q("t1_iron_dust", 12, 0, [item("modern_industrialization:iron_dust", 7)], "Iron Dust", subtitle="Seven parts of the recipe", deps=["t1_coke_dust"], xp=25, desc=[
         "&eWhat:&r The other ingredient of steel.",
         "&eHow:&r Grind iron ingots in the Steam Macerator or the Forge Hammer (1 ingot makes 1 dust).",
         "&eTip:&r Macerating iron ore gives 2 raw iron per ore, which smelts into more ingots than mining alone."]),
@@ -58,8 +58,8 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r A blend of iron and carbon, ready for the blast furnace.",
         "&eChemistry:&r Real steel holds far less carbon than this mix suggests, but the idea is right: carbon is the ingredient that turns soft iron into steel.",
         "&eHow:&r Craft 7 iron dust with 2 coke dust to get 7 uncooked steel dust."]),
-    Q("t1_sbf_parts", 12, -2, [item("modern_industrialization:fire_clay_bricks", 32), item("minecraft:blast_furnace")], "Blast Furnace Materials",
-      subtitle="Dozens of firebricks and a blast furnace", deps=["t1_coke"], xp=40, desc=[
+    Q("t1_sbf_parts", 12, -2, [item("modern_industrialization:fire_clay_bricks", 16), item("minecraft:blast_furnace")], "Blast Furnace Materials",
+      subtitle="A stack of firebricks and a blast furnace", deps=["t1_coke"], xp=40, desc=[
         "&eWhat:&r The Steam Blast Furnace is a tower of fire clay bricks, hotter than anything you've built.",
         "&eHow:&r Make fire clay bricks as in Chapter I (the Steam Macerator grinds bricks into brick dust now). A vanilla blast furnace is 5 iron, a furnace and 3 smooth stone.",
         "&eTip:&r Automate it: macerator → crafting → steam furnace. You'll want a lot of these."]),
@@ -68,7 +68,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r A multiblock that gets hot enough to melt iron and dissolve carbon into it.",
         "&eHow:&r Craft the controller from 8 fire clay brick blocks around a blast furnace. Check the structure in JEI: a 3x3 tower, four blocks tall, with bronze hatches for items and steam.",
         "&eTip:&r Some later recipes in this furnace need a steel hatch. Steel itself only needs bronze ones."]),
-    Q("t1_steel", 18, 0, [item("modern_industrialization:steel_ingot", 16)], "Steel", subtitle="Iron and carbon in the right ratio",
+    Q("t1_steel", 18, 0, [item("modern_industrialization:steel_ingot", 8)], "Steel", subtitle="Iron and carbon in the right ratio",
       deps=["t1_blast", "t1_uncooked"], xp=100, size=1.5, items=[("modern_industrialization:steel_ingot", 16)], desc=[
         "&6Iron that bends without breaking. You once forged weapons for gods out of something very like this.&r",
         "&eWhat:&r Iron with a small, controlled amount of carbon (about 0.2-2%) is &esteel&r: strong, tough, and the backbone of every machine to come.",
@@ -83,7 +83,7 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eWhat:&r More steam per tick than the bronze boiler.",
         "&eHow:&r Steel plates, a steel tank, a furnace and 3 fire clay brick blocks (check JEI).",
         "&eTip:&r Steel versions of the steam machines (macerator, compressor and others) run faster too."]),
-    Q("t1_steel_plate", 20, 0, [item("modern_industrialization:steel_plate", 16)], "Steel Plates", subtitle="For gears, pipes and Alchemistry", deps=["t1_steel"], xp=40, desc=[
+    Q("t1_steel_plate", 20, 0, [item("modern_industrialization:steel_plate", 8)], "Steel Plates", subtitle="For gears, pipes and Alchemistry", deps=["t1_steel"], xp=40, desc=[
         "&eWhat:&r The Dissolver and Combiner are framed in steel plates, and steel gears need them too.",
         "&eHow:&r The Steam Compressor presses 1 steel ingot into 1 plate.",
         "&eTip:&r You need at least 8 for the Dissolver and Combiner, plus more for gears. Keep the compressor busy."]),
@@ -147,8 +147,8 @@ CHAPTER = Chapter("t1", "II. Steam and Steel", "modern_industrialization:coke",
         "&eChemistry:&r 2H₂ + O₂ → 2H₂O. Hydrogen and oxygen share electrons in covalent bonds, and the bent shape of the molecule makes it polar.",
         "&eHow:&r Pick water as the target in the Combiner's GUI, then supply 2 hydrogen and 1 oxygen per water."]),
 
-    Q("t1_redstone", 0, 0, [item("minecraft:redstone_block", 2)], "Blocks of Redstone", subtitle="One for each generator", deps=["t1_steel"], xp=25, desc=[
-        "&eWhat:&r The Copper Generator and its Iron upgrade each have a block of redstone in their recipe, so make two.",
+    Q("t1_redstone", 0, 0, [item("minecraft:redstone_block")], "Blocks of Redstone", subtitle="One for each generator", deps=["t1_steel"], xp=25, desc=[
+        "&eWhat:&r The Copper Generator and its Iron upgrade each have a block of redstone in their recipe, so you'll need two in all.",
         "&eHow:&r 9 redstone dust make 1 block. Redstone ore sits deep, mostly below Y 16, and needs an iron pickaxe.",
         "&eTip:&r Ultimine a redstone vein: one gives plenty, and lubricant needs dust too."]),
 

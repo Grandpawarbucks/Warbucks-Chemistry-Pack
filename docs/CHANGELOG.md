@@ -4,6 +4,18 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-19: Shaped quest pages and better quest discovery
+- **Discovery:** the book is now `progression_mode: "flexible"` (data.snbt), so item tasks count before a quest's
+  dependencies are done (crafting a wooden pickaxe completes its quest right away); shop chapters stay linear.
+  ~50 early quests ask for fewer or any-variant items (no stockpiles of things crafting uses up; sleeping bags,
+  drawers, knives, hopper pots, hammocks by tag). Fluid-bucket and multiblock-part asks are flagged for later.
+- **Legend removed:** the "How to Read This Book" quests on Welcome are gone (wel_legend, wel_lg_*).
+- **Shape motifs** (`tools/layout.py`, `STYLES` in quest_data): `winding` (main path snakes in rows: start, t0..t7,
+  seed, creation, occultism), `radial` (hub in the centre with spokes: qol, building, storage, harvest, undergarden,
+  deeperdarker), `molecule` (rings of 5 to 6 quests: periodic, mekanism, mekanism_power, power, factory; t4 sections).
+  Lint: tidiness 89, page median 23.9 x 19.9, line directions R/D/L/U 25/43/21/10 (was 32/51/16/1).
+  `LAYOUT_STYLE` env var to try a motif per chapter.
+
 ### 2026-10-19: Quest book appearance (sections, role shapes, legend, lint + gallery)
 - **Sectioned layout** (`tools/layout.py`): 198 sections with header images
   (`pack/kubejs/assets/warbucks/textures/quests/sections/`); per-chapter styles in `STYLES` (spine / tree / grid);

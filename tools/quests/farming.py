@@ -1,14 +1,17 @@
 """Quest chapter: farming (Farmer's Delight, Botany Pots, animals, fertiliser). See tools/quests/STYLE.md."""
 from questlib import Q, Chapter, item, dim, tick, kill, anytag, anyof, MAIN, SIDE  # noqa: F401
 
+# Any hopper botany pot (every material and colour) counts.
+HOPPER_POTS = ["botanypots:black_concrete_hopper_botany_pot", "botanypots:black_glazed_terracotta_hopper_botany_pot", "botanypots:black_terracotta_hopper_botany_pot", "botanypots:blue_concrete_hopper_botany_pot", "botanypots:blue_glazed_terracotta_hopper_botany_pot", "botanypots:blue_terracotta_hopper_botany_pot", "botanypots:bricks_hopper_botany_pot", "botanypots:brown_concrete_hopper_botany_pot", "botanypots:brown_glazed_terracotta_hopper_botany_pot", "botanypots:brown_terracotta_hopper_botany_pot", "botanypots:cyan_concrete_hopper_botany_pot", "botanypots:cyan_glazed_terracotta_hopper_botany_pot", "botanypots:cyan_terracotta_hopper_botany_pot", "botanypots:deepslate_bricks_hopper_botany_pot", "botanypots:end_stone_bricks_hopper_botany_pot", "botanypots:gray_concrete_hopper_botany_pot", "botanypots:gray_glazed_terracotta_hopper_botany_pot", "botanypots:gray_terracotta_hopper_botany_pot", "botanypots:green_concrete_hopper_botany_pot", "botanypots:green_glazed_terracotta_hopper_botany_pot", "botanypots:green_terracotta_hopper_botany_pot", "botanypots:light_blue_concrete_hopper_botany_pot", "botanypots:light_blue_glazed_terracotta_hopper_botany_pot", "botanypots:light_blue_terracotta_hopper_botany_pot", "botanypots:light_gray_concrete_hopper_botany_pot", "botanypots:light_gray_glazed_terracotta_hopper_botany_pot", "botanypots:light_gray_terracotta_hopper_botany_pot", "botanypots:lime_concrete_hopper_botany_pot", "botanypots:lime_glazed_terracotta_hopper_botany_pot", "botanypots:lime_terracotta_hopper_botany_pot", "botanypots:magenta_concrete_hopper_botany_pot", "botanypots:magenta_glazed_terracotta_hopper_botany_pot", "botanypots:magenta_terracotta_hopper_botany_pot", "botanypots:mossy_stone_bricks_hopper_botany_pot", "botanypots:mud_bricks_hopper_botany_pot", "botanypots:nether_bricks_hopper_botany_pot", "botanypots:orange_concrete_hopper_botany_pot", "botanypots:orange_glazed_terracotta_hopper_botany_pot", "botanypots:orange_terracotta_hopper_botany_pot", "botanypots:pink_concrete_hopper_botany_pot", "botanypots:pink_glazed_terracotta_hopper_botany_pot", "botanypots:pink_terracotta_hopper_botany_pot", "botanypots:polished_blackstone_bricks_hopper_botany_pot", "botanypots:prismarine_bricks_hopper_botany_pot", "botanypots:purple_concrete_hopper_botany_pot", "botanypots:purple_glazed_terracotta_hopper_botany_pot", "botanypots:purple_terracotta_hopper_botany_pot", "botanypots:quartz_bricks_hopper_botany_pot", "botanypots:red_concrete_hopper_botany_pot", "botanypots:red_glazed_terracotta_hopper_botany_pot", "botanypots:red_nether_bricks_hopper_botany_pot", "botanypots:red_terracotta_hopper_botany_pot", "botanypots:stone_bricks_hopper_botany_pot", "botanypots:terracotta_hopper_botany_pot", "botanypots:tuff_bricks_hopper_botany_pot", "botanypots:white_concrete_hopper_botany_pot", "botanypots:white_glazed_terracotta_hopper_botany_pot", "botanypots:white_terracotta_hopper_botany_pot", "botanypots:yellow_concrete_hopper_botany_pot", "botanypots:yellow_glazed_terracotta_hopper_botany_pot", "botanypots:yellow_terracotta_hopper_botany_pot"]
+
 CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         ["Grow what you need, cook it well, feed it back to the soil."], SIDE, [
     # --- Farmer's Delight: kitchen (y=0, -1.5, -3) ---------------------------------------------
-    Q("f_knife", 0, 0, [item("farmersdelight:flint_knife"), item("farmersdelight:cutting_board")], "Knife and Board", deps=["gs_food"], xp=15,
+    Q("f_knife", 0, 0, [anytag("c:tools/knife"), item("farmersdelight:cutting_board")], "Knife and Board", deps=["gs_food"], xp=15,
       subtitle="Farmer's Delight starts with a cut", desc=[
         "&6You remember feasts that lasted a week. Start with something smaller.&r",
         "&eWhat:&r Farmer's Delight adds crops, meals and kitchen blocks. The knife harvests straw and cuts ingredients.",
-        "&eHow:&r craft a Flint Knife and a Cutting Board. Place items on the board and use the knife on them.",
+        "&eHow:&r craft a knife (flint is the cheapest; any knife counts) and a Cutting Board. Place items on the board and use the knife on them.",
         "&eTip:&r a knife on tall grass gives straw; wild crops (tomatoes, onions, cabbage, rice) grow in the wild."]),
     Q("f_cooking_pot", 2, 0, [item("farmersdelight:cooking_pot")], "Cooking Pot", deps=["f_knife"], xp=25,
       subtitle="Heat, ingredients, and a meal", desc=[
@@ -88,7 +91,7 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eTip:&r crop storage blocks (crates and bags) pack 9 crops each; you need the loose crops here."]),
 
     # --- Botany Pots (y=3) ---------------------------------------------------------------------
-    Q("f_pot", 0, 3, [item("botanypots:terracotta_hopper_botany_pot")], "Hopper Botany Pots", deps=["f_knife"], xp=25,
+    Q("f_pot", 0, 3, [anyof(HOPPER_POTS)], "Hopper Botany Pots", deps=["f_knife"], xp=25,
       subtitle="A farm in one block", desc=[
         "&eWhat:&r Hopper Botany Pots grow crops and push the harvest into the container below.",
         "&eHow:&r place one on a chest, add soil (dirt) and a seed.",

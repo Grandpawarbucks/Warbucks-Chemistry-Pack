@@ -140,7 +140,7 @@ def build():
     used = [g for g in GROUPS if g != TOP and any(c.group == g for c in CHAPTERS)]
     group_ids = {g: hexid("group:" + g) for g in used}
     group_ids[TOP] = ""  # FTB Quests' default (ungrouped) group: the "group" field is empty
-    (OUT / "data.snbt").write_text(snbt({"version": 13}) + "\n", encoding="utf-8", newline="\n")
+    (OUT / "data.snbt").write_text(snbt({"version": 13, "progression_mode": "flexible"}) + "\n", encoding="utf-8", newline="\n")
     (OUT / "chapter_groups.snbt").write_text(snbt({"chapter_groups": [{"id": group_ids[g]} for g in used]}) + "\n", encoding="utf-8", newline="\n")
     for g in used:
         lang[f"chapter_group.{group_ids[g]}.title"] = GROUPS[g]
@@ -237,6 +237,7 @@ def build():
                    "icon": {"id": c.icon, "count": 1},
                    "default_quest_shape": "rsquare" if c.group == "main" or c.key == "welcome" else "circle",
                    "default_hide_dependency_lines": False,
+                   **({"progression_mode": "linear"} if c.group == "shop" else {}),
                    "quests": quests, "images": images,
                    # size written out: FTB's QuestLink is 1.0 by default whatever quest it shows (the layout uses 1.0)
                    "quest_links": [{"id": hexid(f"link:{c.key}:{lk}"), "linked_quest": keys[lk], "x": float(lx), "y": float(ly),

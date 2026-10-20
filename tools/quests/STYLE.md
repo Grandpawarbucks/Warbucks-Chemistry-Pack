@@ -49,20 +49,44 @@ from the section's root quest (a loose group of unrelated quests is named "From 
   dependency here) without a section of their own follow it. Use it when an auto title or grouping reads badly.
 - A chapter with one section gets no header (the chapter banner is enough).
 
-**Styles** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"tree"`):
-- `"spine"` (start, t0 to t7, seed, creation): the spine runs left to right on y = 0; sections are left-to-right trees
-  in one lane above and one below it, each next to the spine quest it hangs from (or, for a block that only feeds
-  the spine, just before the spine quest that needs it).
-- `"tree"` (mod pages): sections are top-down trees (root on top, children fanning below), laid out in columns or
-  rows in reading order, whichever fits the 26 x 18 target page better.
-- `"grid"` (hunting, building, completionist, lab_notes, explore): like tree, with tighter, wider rows for collections.
+**Shape motifs** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"tree"`). Every page is a shape, not a
+long row. All of them keep progression readable: only straight lines, no line through a quest, no overlaps, and
+FTB's real geometry (a quest of size s is about s cells wide). A motif that doesn't fit a section falls back to a
+plain tree for that section. Pick them by looking at `testuild_quest_preview.py --gallery`; try one without editing
+the file: `$env:LAYOUT_STYLE="t6=radial,t4=winding+molecule"` before a build (`QUEST_OUT=<folder>` keeps it out of pack/).
+- `"winding"` (start, t0 to t7, seed, creation, occultism): the main path snakes like an S. Rows of 4 to 7 spine
+  quests alternate direction (left to right, then right to left) and are joined by a vertical step at each bend; when
+  two rows are far apart, up to 2 spine quests sit on the bend as a rounded corner. Sections hang off their spine quest
+  as small trees: below a row (pointing down, header beside the root, or sideways with the row's flow) or above it
+  (pointing up, header on top), in the lane between two rows; a section hanging from a bend quest sits outside the
+  bend. The row length and pitch are chosen per page so it comes out compact (close to square).
+- `"radial"` (qol, building, storage, harvest, undergarden, deeperdarker): hub pages. The hub (the quest most of the
+  page hangs from) sits in the middle with its own section as a radial tree around it: its children share the circle
+  (a crowded first ring alternates two radii), deeper quests fan out one ring further. The other sections are spokes
+  in compass slots (sideways first, then down, up and the diagonals), each a short tree pointing outward with its
+  header at the far end; the core leaves a gap in the ring where each spoke's line goes out. Sections hanging from a
+  spoke sit beyond it. Small leaf branches of a hub stay in the hub's own section here, so they ring the hub.
+- `"molecule"` (periodic, mekanism, mekanism_power, power, factory): a section whose quests form a tree is drawn as
+  rings of 5 or 6 quests (benzene-like hexagons) joined by bonds, with short side chains pointing outward. Ring order
+  follows the dependency order (depth first, biggest branch first, so a chain closes into a hexagon); the ring's
+  closing side is not a dependency, so FTB draws no line there. `BLOCKS` in quest_data.py asks for molecule sections
+  on another motif's page (t4 uses it on its winding page).
+- `"tree"` (other mod pages): sections are top-down trees (root on top, children fanning below), laid out in columns
+  or rows in reading order, whichever fits the 26 x 18 target page better.
+- `"grid"` (hunting, completionist, lab_notes, explore): like tree, with tighter, wider rows for collections.
+- `"spine"`: the v11 main-path style (one straight row with sections above and below), kept for comparison.
 - The shop chapters stay `Chapter(..., layout="manual")`: hand-written `x`/`y` and link positions are used as they are.
+- No "periodic" element grid: the periodic chapter is family by family (alkali metals, halogens, ...), not one quest
+  per element, so a period/group grid wouldn't fit it.
 
 **Hidden lines.** The layout sets FTB's `hide_dependency_lines` on a quest (and `hide_dependent_lines` on a
-dependency) where a line is clutter: a hub with 6 or more dependents here (4 on grid pages), or a line that runs
-through a quest or header, or a long line between two sections. It only hides a line when the dependency stays
-readable without it: same section, a neighbouring section (within 2 in reading order, or touching), the spine, or
-shown as a quest link. Spine steps on spine pages are never hidden. FTB still draws hidden lines on mouse-over.
+dependency) where a line is clutter: a hub with 6 or more dependents here (4 on grid pages; never on radial pages,
+whose spokes are short), a line that runs through a quest or header, a long line between two sections, or (every
+page but `"spine"`) a line that crosses two or more others. It only hides a line when the dependency stays readable
+without it: same section, a neighbouring section (within 2 in reading order, or touching), the spine, or shown as a
+quest link; on motif, tree and grid pages any line between two sections counts as readable, since sections sit by
+shape rather than in reading order. Spine steps on spine and winding pages are never hidden, and a radial page's hub
+keeps its own lines. FTB still draws hidden lines on mouse-over.
 
 **Links.** `links=[("t3_ebf", 0, 0)]` (x/y ignored) sit above or beside the quests that depend on them, inside their
 section; links nothing here depends on go in rows above the page. The chapter's entry quest automatically gets links
@@ -73,7 +97,7 @@ draw them at the link too).
 
 - Redundant lines are dropped on output: if A -> B -> C and C also lists A, the A -> C line isn't drawn (what the
   player must do doesn't change).
-- The chapter banner goes above the topmost quest, link or section header.
+- The chapter banner goes at the top left, above the topmost quest, link or section header.
 - `python tools/build_quests.py --layout-report` prints, per chapter, the v10 layout vs now: size (with headers),
   sections, crossings, lines through quests, edges longer than 6 cells, hidden lines, overlaps, line directions and
   the median line length. `tools/layout_lint.py` (on the built book) compares with ATM10.

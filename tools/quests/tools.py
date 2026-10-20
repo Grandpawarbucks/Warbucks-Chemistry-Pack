@@ -1,5 +1,5 @@
 """Quest chapter: tools. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
+from questlib import Q, Chapter, item, dim, tick, kill, anytag, anyof, MAIN, SIDE  # noqa: F401
 
 CHAPTER = Chapter("tools", "Gear and Comfort", "mekanismtools:osmium_paxel",
         ["Better tools from better materials, and a soft place to land."], SIDE, [
@@ -132,10 +132,10 @@ CHAPTER = Chapter("tools", "Gear and Comfort", "mekanismtools:osmium_paxel",
         "&eHow:&r Elytra, ghast tears, diamond blocks and Nether Stars plus the digital circuit. Craft the Diamond Ring first, then the Angel Ring."]),
 
     # --- Comfort (y=13.5) ----------------------------------------------------------------------
-    Q("tc_hammock", 0, 13.5, [item("comforts:hammock_white")], "Hammock", deps=["gs_sleep"], xp=15,
+    Q("tc_hammock", 0, 13.5, [anytag("comforts:hammocks")], "Hammock", deps=["gs_sleep"], xp=15,
       optional=True, tokens=1, subtitle="Optional: sleep through the day", desc=[
         "&eWhat:&r skips the day the way a sleeping bag skips the night, without moving your spawn.",
-        "&eHow:&r white wool, string and sticks. Hang it between two Rope and Nails placed on facing walls (check JEI).",
+        "&eHow:&r wool of any colour, string and sticks. Hang it between two Rope and Nails placed on facing walls (check JEI).",
         "&eTip:&r useful when you want night-only mobs, like the ones a Deep Learner needs."]),
     Q("tc_mining_gadget", 6, 13.5, [item("mininggadgets:mininggadget_simple")], "Mining Gadget", deps=["t3_hull"], xp=60,
       optional=True, tokens=1, subtitle="Optional: a mining laser powered by FE", desc=[

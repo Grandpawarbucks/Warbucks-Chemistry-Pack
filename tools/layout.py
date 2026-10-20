@@ -3,8 +3,9 @@
 build_quests.py calls apply(chapter) for every chapter before writing it. Writers don't place x/y any more.
 v11 (apply): the chapter is split into SECTIONS (_sections), each laid out as its own small drawing with the
 v10 engine below (_apply_once, per connected group), turned top-down for "tree"/"grid" pages, then arranged on
-the page by the chapter's style ("spine", "tree", "grid"; see the sections block further down), with header
-images (chapter.sections), hidden lines (q.hide_lines / q.hide_dependents) and a last nudge pass. The v10
+the page by the chapter's style ("spine", "tree", "grid"; see the sections block further down) or shape motif
+(v12: "winding", "radial", "molecule"; see the motifs block), with header images (chapter.sections), hidden
+lines (q.hide_lines / q.hide_dependents) and a last nudge pass. The v10
 whole-chapter drawing described next is still there as apply_legacy (the report's "before" column).
 FTB draws every dependency as one straight line (also from a quest link to its dependents here), so the goal
 is lines that don't run through other quests, cross little and stay short. It is a Sugiyama-style drawing:
@@ -737,7 +738,8 @@ import re
 
 DEFAULT_STYLE = "tree"
 SEC_MIN, SEC_IDEAL, SEC_MAX = 4, 9, 14   # section sizes (quests)
-HUB = {"spine": 6, "tree": 6, "grid": 4}  # dependents that make a quest a hub (its fan's lines are hidden)
+HUB = {"spine": 6, "tree": 6, "grid": 4, "winding": 6, "radial": 99, "molecule": 6}  # dependents that make a
+# quest a hub (its fan's lines are hidden; radial pages draw the hub's spokes, they are short)
 HEAD_H = 0.75      # section header image height (cells)
 HEAD_PAD = 0.25    # header bottom to the top edge of the section's quests
 CHAR_W = 0.3       # estimated header text width per character (cells), so a block is at least as wide as its title
@@ -850,8 +852,10 @@ def _sections(chapter, G, spine, style, home, titles):
             s = subs[c]
             if len(s) > SEC_MAX:
                 out += split(c, s)
-            elif len(core) + len(s) <= SEC_MAX or (len(s) <= 2 and len(core) + len(s) <= SEC_MAX + 10):
-                core |= s  # small leaves stay with their hub (a hub's fan reads best in one block)
+            elif len(core) + len(s) <= SEC_MAX or (len(s) <= 2 and len(core) + len(s) <= SEC_MAX + 10) or (
+                    style == "radial" and len(s) <= 3 and len(core) + len(s) <= SEC_MAX + 24):
+                core |= s  # small leaves stay with their hub (a hub's fan reads best in one block; on a radial page
+                #            they ring the hub)
             else:
                 b = next((b for b in bins if len(b) + len(s) <= SEC_MAX), None)
                 if b is None:
@@ -1171,6 +1175,809 @@ def _free_spot(x, y, taken, lo_x=None):
     return x, y
 
 
+# --- shape motifs (v12) -------------------------------------------------------------------------
+# Three page shapes on top of the v11 sections (STYLES in quest_data.py; each falls back to plain blocks where a
+# shape doesn't fit, so a page is never worse than readable):
+#   "winding":  spine pages. The spine snakes in rows of 4-7 quests, alternating direction (an S-curve), with a
+#               vertical step at each bend (bend quests sit on a rounded corner when the rows are far apart). Sections
+#               hang off their spine quest as top-down trees: above a row (pointing up) or below it (pointing down),
+#               in the lane between two rows; sections that hang from a bend sit outside the bend.
+#   "radial":   hub pages. The hub (the quest most of the page hangs from) sits in the middle with its own section
+#               as a radial tree around it (rings of children, staggered when crowded); the other sections are
+#               spokes around it, each a short tree pointing outward. Pages with no real hub put their first section
+#               in the middle instead.
+#   "molecule": chemistry pages. A section whose quests form a tree that fits is drawn as small rings of 5-6
+#               quests (benzene-like hexagons, ring order = dependency order) joined by bonds, with short chains
+#               (substituents) pointing outward. A ring's closing side isn't a dependency, so FTB draws no line there.
+# BLOCK_KIND (quest_data.BLOCKS) can also ask for molecule-shaped sections on a winding page (e.g. t4, t6).
+MOTIF_BASE = {"spine": "spine", "tree": "tree", "grid": "grid", "winding": "spine", "radial": "tree", "molecule": "tree"}
+WIND_ROWS = (4, 5, 6, 7)   # spine quests per row tried
+WIND_PITCH = (2.0, 2.5)    # spine pitch tried (cells)
+WIND_GAP = 3.0             # minimum distance between two spine rows
+WIND_STEP = 3.0            # bend quests are added so the vertical step has no line longer than this ...
+WIND_BEND = 2              # ... but at most this many per bend (the rest of the spine stays in rows)
+WIND_TALL = 7.0            # a block taller than this pushes two rows far apart: it prefers an outer lane
+BOND = 2.0                 # molecule: bond length (cells)
+SPREAD = math.radians(42)  # molecule / radial: angle between sibling branches
+RING_R = {6: 2.0, 5: 1.75} # ring radius (centre to quest) for size-1 quests
+
+
+def _rects_hit(a, b, pad=0.0):
+    return a[0] < b[2] + pad and b[0] < a[2] + pad and a[1] < b[3] + pad and b[1] < a[3] + pad
+
+
+def _flip(pos, axis):
+    """Mirror block positions (top-left at 0, 0) on x ("x") or y ("y")."""
+    x0, y0, x1, y1 = _extent(pos)
+    if axis == "x":
+        return {n: (x1 - (x - x0), y, s) for n, (x, y, s) in pos.items()}
+    return {n: (x, y1 - (y - y0), s) for n, (x, y, s) in pos.items()}
+
+
+def _edges_in(pos, byk):
+    """Dependency lines between quests of one block: [(a, b)]."""
+    return [(d, k) for k in pos if isinstance(k, str) and k in byk
+            for d in dict.fromkeys(byk[k].deps) if d in pos and d != k]
+
+
+def _clean(pos, byk, edges=None):
+    """True when no two quests are too close, no line runs through a quest and no two lines cross."""
+    items = list(pos.items())
+    for i, (a, (ax, ay, as_)) in enumerate(items):
+        for b, (bx, by, bs) in items[i + 1:]:
+            if math.hypot(ax - bx, ay - by) < max(MIN_SEP, (as_ + bs) / 2 + 0.5) - 1e-9:
+                return False
+    edges = _edges_in(pos, byk) if edges is None else edges
+    segs = [((pos[a][0], pos[a][1]), (pos[b][0], pos[b][1]), a, b) for a, b in edges]
+    for p1, p2, a, b in segs:
+        for k, (x, y, s) in items:
+            if k not in (a, b) and _seg_dist(p1, p2, (x, y)) < 0.5 + (s - 1) / 2:
+                return False
+    for i in range(len(segs)):
+        for j in range(i + 1, len(segs)):
+            if _cross(segs[i][:2], segs[j][:2]):
+                return False
+    return True
+
+
+def _with_header(sec, pos, byk, header, mode, orient):
+    """Normalise a block (top-left at 0, 0) and add its header strip. mode: "top" (above the block; for a
+    left-to-right block it starts at the root, so the line into the root passes left of it), "bottom" (below the
+    block: the far end of a block that hangs down), "corner" (top left, only as wide as the title: a radial core,
+    so the spoke going up passes beside it), "beside" (on the root's row, beside the root: for a block that
+    hangs down from a line coming in from above; falls back to "bottom")."""
+    x0, y0, x1, y1 = _extent(pos)
+    x0, y0 = math.floor(x0 * 2) / 2, math.floor(y0 * 2) / 2  # a grid-aligned shift keeps every gap as it was
+    pos = {n: (round((x - x0) * 2) / 2, round((y - y0) * 2) / 2, s) for n, (x, y, s) in pos.items()}
+    w, h = _extent(pos)[2:]
+    root = sec["root"]
+    hb = None
+    if header:
+        hw = _head_w(sec["title"])
+        rx, ry, rs = pos[root]
+        if mode == "beside":
+            edges = _edges_in(pos, byk)
+            for side in (1, -1) if rx <= w / 2 else (-1, 1):
+                if side == 1:
+                    bx0 = rx + rs / 2 + 0.25
+                else:
+                    bx0 = rx - rs / 2 - 0.25 - hw
+                box = (bx0, ry - 0.5, bx0 + hw, ry - 0.5 + HEAD_H)
+                if any(_rects_hit(box, (x - s / 2, y - s / 2, x + s / 2, y + s / 2), 0.15) for n, (x, y, s) in pos.items()):
+                    continue
+                if any(box[0] < pos[a][0] + (pos[b][0] - pos[a][0]) * t / 12 < box[2]
+                       and box[1] < pos[a][1] + (pos[b][1] - pos[a][1]) * t / 12 < box[3]
+                       for a, b in edges for t in range(1, 12)):
+                    continue
+                hb = box
+                break
+            if hb is None:
+                mode = "bottom"
+        if mode in ("top", "corner"):
+            top = HEAD_H + HEAD_PAD
+            pos = {n: (x, y + top, s) for n, (x, y, s) in pos.items()}
+            if orient == "right":
+                hx0 = max(0.0, rx - rs / 2)
+            elif orient == "left":
+                hx0 = max(0.0, min(rx + rs / 2, w) - hw)
+            else:
+                hx0 = 0.0
+            hb = (hx0, 0.0, max(w, hx0 + hw) if mode == "top" else hx0 + hw, HEAD_H)
+        elif mode == "bottom":
+            hb = (0.0, h + HEAD_PAD, max(w, hw), h + HEAD_PAD + HEAD_H)
+        # normalise again (a header beside the root may stick out left or above)
+        ex0 = min(0.0, hb[0])
+        ey0 = min(0.0, hb[1])
+        pos = {n: (x - ex0, y - ey0, s) for n, (x, y, s) in pos.items()}
+        hb = (hb[0] - ex0, hb[1] - ey0, hb[2] - ex0, hb[3] - ey0)
+    x0, y0, x1, y1 = _extent(pos)
+    w, h = (max(x1, hb[2]), max(y1, hb[3])) if hb else (x1, y1)
+    return {**sec, "pos": pos, "w": w, "h": h, "head": hb, "orient": orient}
+
+
+def _molecule(keys, byk, idx):
+    """Molecule positions for one section (centre-relative, not normalised), or None when it doesn't fit: no
+    subtree big enough for a ring, or the drawing isn't clean (quests too close, lines through quests or crossing).
+    Each tree of the section: from its root, a subtree of 5+ quests becomes a ring (its first 5-6 quests in
+    depth-first order, biggest branch first, so a chain closes into a hexagon; at most 2 of its lines may be
+    chords), and smaller ones become short chains pointing outward."""
+    kset = set(keys)
+    par = {k: [d for d in dict.fromkeys(byk[k].deps) if d in kset and d != k] for k in keys}
+    depth = {}
+
+    def dep(k, seen=()):
+        if k not in depth:
+            depth[k] = 0 if k in seen else max((dep(p, seen + (k,)) + 1 for p in par[k]), default=0)
+        return depth[k]
+
+    for k in keys:
+        dep(k)
+    tp = {k: (max(par[k], key=lambda p: (depth[p], idx[p])) if par[k] else None) for k in keys}
+    kids = {k: [] for k in keys}
+    for k in sorted(keys, key=idx.get):
+        if tp[k] is not None:
+            kids[tp[k]].append(k)
+    size = {}
+
+    def sz(k):
+        if k not in size:
+            size[k] = 1 + sum(sz(c) for c in kids[k])
+        return size[k]
+
+    for k in keys:
+        kids[k].sort(key=lambda c: (-sz(c), idx[c]))
+    roots = [k for k in sorted(keys, key=idx.get) if tp[k] is None]
+
+    def pre(r):
+        out = [r]
+        for c in kids[r]:
+            out += pre(c)
+        return out
+
+    def ring_of(r):
+        if sz(r) < 5:
+            return None
+        ring = pre(r)[: 6 if sz(r) >= 6 else 5]
+        rs = set(ring)
+        pos_ = {v: i for i, v in enumerate(ring)}
+        chords = sum(1 for v in ring if tp[v] in rs and abs(pos_[v] - pos_[tp[v]]) not in (1, len(ring) - 1))
+        return ring if chords <= 2 else None
+
+    if not any(ring_of(k) for k in keys):
+        return None
+    big = lambda ks: max([float(byk[k].size or 1) for k in ks] + [1.0])
+
+    def build(spread, spin0, bond):
+        P = {}
+
+        def grow(r, ang, spin):
+            ring = ring_of(r)
+            x, y = P[r]
+            if ring:
+                k = len(ring)
+                R = RING_R[k] + 0.5 * (big(ring) - 1)
+                cx, cy = x + R * math.cos(ang), y + R * math.sin(ang)
+                cx, cy = round(cx * 2) / 2, round(cy * 2) / 2
+                base = math.atan2(y - cy, x - cx)
+                for i, v in enumerate(ring):
+                    if i:
+                        a = base + spin * 2 * math.pi * i / k
+                        P[v] = (cx + R * math.cos(a), cy + R * math.sin(a))
+                rs = set(ring)
+                for v in ring:
+                    outs = [c for c in kids[v] if c not in rs]
+                    av = math.atan2(P[v][1] - cy, P[v][0] - cx)
+                    for j, c in enumerate(outs):
+                        a = av + (j - (len(outs) - 1) / 2) * spread
+                        b_ = bond + 0.5 * (max(big([v]), big([c])) - 1)
+                        P[c] = (P[v][0] + b_ * math.cos(a), P[v][1] + b_ * math.sin(a))
+                        grow(c, a, -spin)
+            else:
+                cs = kids[r]
+                for j, c in enumerate(cs):
+                    a = ang + (j - (len(cs) - 1) / 2) * spread
+                    b_ = bond + 0.5 * (max(big([r]), big([c])) - 1)
+                    P[c] = (x + b_ * math.cos(a), y + b_ * math.sin(a))
+                    grow(c, a, spin)
+
+        out, cx = {}, 0.0
+        for n, r in enumerate(roots):  # trees of the section side by side
+            P = {r: (0.0, 0.0)}
+            grow(r, math.pi / 2, spin0 if n % 2 == 0 else -spin0)
+            pts = {k: (round(x * 2) / 2, round(y * 2) / 2, float(byk[k].size or 1)) for k, (x, y) in P.items()}
+            x0, y0, x1, y1 = _extent(pts)
+            out.update({k: (x - x0 + cx, y - y0, s) for k, (x, y, s) in pts.items()})
+            cx += x1 - x0 + 1.5
+        return out
+
+    best = None
+    for bond in (BOND, BOND + 0.5):
+        for spread in (SPREAD, math.radians(55), math.radians(32)):
+            for spin in (1, -1):
+                pos = build(spread, spin, bond)
+                if len(pos) == len(keys) and _clean(pos, byk):
+                    x0, y0, x1, y1 = _extent(pos)
+                    sc = (x1 - x0) * (y1 - y0) + 4 * abs((x1 - x0) - (y1 - y0))
+                    if best is None or sc < best[0]:
+                        best = (sc, pos)
+        if best:
+            break
+    return best[1] if best else None
+
+
+def _shaped_block(sec, byk, idx, links, orient, header, head, kind, grid=False):
+    """One section as a block turned to orient ("down": root on top, "up": root at the bottom, "right": root on the
+    left, "left": root on the right), shaped as kind ("tree" or "molecule"; a molecule that doesn't fit is a tree).
+    Molecule blocks carry no quest links (the page places those beside their quests)."""
+    pos = None
+    if kind == "molecule":
+        pos = _molecule(sec["members"], byk, idx)
+        if pos is not None:
+            if orient == "up":
+                pos = _flip(pos, "y")
+            elif orient in ("right", "left"):  # turn it: the root (on top) faces the line coming in from the side
+                pos = {n: (y, x, s) for n, (x, y, s) in pos.items()}
+                if orient == "left":
+                    pos = _flip(pos, "x")
+    if pos is None:
+        st = "spine" if orient in ("right", "left") else ("grid" if grid else "tree")
+        b = _block(dict(sec), byk, links, st, False)
+        pos = b["pos"]
+        if orient == "up":
+            pos = _flip(pos, "y")
+        elif orient == "left":
+            pos = _flip(pos, "x")
+        kind = "tree"
+    out = _with_header(sec, pos, byk, header, head, orient)
+    out["kind"] = kind
+    return out
+
+
+def _pava_lane(items, gx, zones=()):
+    """1-D packing of one lane: items [(key, desired left, width)] -> {key: left}, as close to the desired spots as
+    possible (least squares), in order, gx apart. zones: [(x0, x1)] that no block may overlap (a bend's line);
+    blocks wanting the left of a zone stay left of it, the others right of it."""
+    if not items:
+        return {}
+    groups = [[]]
+    bounds = [(-math.inf, math.inf)]
+    zs = sorted(zones)
+    if zs:
+        edges = [-math.inf] + [v for z in zs for v in z] + [math.inf]
+        groups = [[] for _ in range(len(zs) + 1)]
+        bounds = [(edges[2 * i], edges[2 * i + 1]) for i in range(len(zs) + 1)]
+    for it in items:
+        c = it[1] + it[2] / 2
+        gi = sum(1 for z in zs if c > (z[0] + z[1]) / 2)
+        groups[gi].append(it)
+    out = {}
+    for (lo, hi), g in zip(bounds, groups):
+        if not g:
+            continue
+        g.sort(key=lambda t: (t[1] + t[2] / 2, str(t[0])))
+        seps = [g[i][2] + gx for i in range(len(g) - 1)]
+        xs = _pava([t[1] for t in g], [1.0] * len(g), seps)
+        shift = 0.0
+        if xs[-1] + g[-1][2] > hi - gx:
+            shift = hi - gx - (xs[-1] + g[-1][2])
+        if xs[0] + shift < lo + gx:
+            shift = lo + gx - xs[0]
+        for t, x in zip(g, xs):
+            out[t[0]] = round((x + shift) * 2) / 2
+    return out
+
+
+def _settle(boxes, fixed, gap):
+    """Push overlapping blocks apart: boxes {i: [x0, y0, x1, y1]} (moved in place, away from what they hit, the
+    shorter way), fixed: rects that never move (quests, headers). A few rounds; returns True when clean."""
+    for _ in range(60):
+        moved = False
+        ks = sorted(boxes)
+        for i in ks:
+            b = boxes[i]
+            others = [boxes[j] for j in ks if j != i] + fixed
+            for o in others:
+                if not _rects_hit(b, o, gap - 1e-9):
+                    continue
+                cx, cy = (b[0] + b[2]) / 2, (b[1] + b[3]) / 2
+                ox, oy = (o[0] + o[2]) / 2, (o[1] + o[3]) / 2
+                # the smaller push that separates them, moving away from the other box
+                dx = (o[2] + gap - b[0]) if cx >= ox else -(b[2] + gap - o[0])
+                dy = (o[3] + gap - b[1]) if cy >= oy else -(b[3] + gap - o[1])
+                if abs(dx) <= abs(dy):
+                    b[0] += dx
+                    b[2] += dx
+                else:
+                    b[1] += dy
+                    b[3] += dy
+                moved = True
+        if not moved:
+            return True
+    return False
+
+
+def _place_block(b, ox, oy, P, heads, i):
+    b["box"] = (ox, oy, ox + b["w"], oy + b["h"])
+    P.update({n: (x + ox, y + oy, s) for n, (x, y, s) in b["pos"].items()})
+    if b["head"]:
+        hx0, hy0, hx1, hy1 = b["head"]
+        heads.append((i, hx0 + ox, hy0 + oy, hx1 + ox, hy1 + oy))
+
+
+def _page_box(P, heads):
+    xs = [x - s / 2 for x, _, s in P.values()] + [x + s / 2 for x, _, s in P.values()] + [h[1] for h in heads] + [h[3] for h in heads]
+    ys = [y - s / 2 for _, y, s in P.values()] + [y + s / 2 for _, y, s in P.values()] + [h[2] for h in heads] + [h[4] for h in heads]
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def _wind_try(spine, secs, byk, mk, L, pitch, gx):
+    """One winding layout: rows of L spine quests at the given pitch. mk(i, orient, head) builds section i's block.
+    Returns (score, P, blocks {i: block}, heads)."""
+    n = len(spine)
+    bends = []
+    for it in range(5):
+        # partition: rows of L quests, joined by bend quests (bends[r] of them between row r and r + 1)
+        rows, bq, i = [], [], 0
+        while i < n:
+            rows.append(list(range(i, min(n, i + L))))
+            i += len(rows[-1])
+            b = bends[len(rows) - 1] if len(rows) - 1 < len(bends) else 0
+            b = min(b, max(0, n - i - 2))  # the next row keeps at least 2 quests
+            bq.append(list(range(i, i + b)))
+            i += b
+        R = len(rows)
+        where = {}
+        for r, row in enumerate(rows):
+            for j, si in enumerate(row):
+                where[si] = ("row", r, j)
+        for r, b in enumerate(bq):
+            for j, si in enumerate(b):
+                where[si] = ("bend", r, j)
+        X = {}
+        right_end = (L - 1) * pitch
+        for r, row in enumerate(rows):
+            for j, si in enumerate(row):
+                X[si] = j * pitch if r % 2 == 0 else right_end - j * pitch
+        # lanes: lane r is above row r (lane R: below the last row). A section hangs from its attach quest.
+        lane_of, outside, loose, blk, load = {}, {}, [], {}, {}
+        for i_, s in enumerate(secs):
+            a = s["attach"]
+            if a is None:
+                loose.append(i_)
+                continue
+            kind, r, j = where[a]
+            if kind == "bend":
+                outside.setdefault(r, []).append(i_)
+                continue
+            best = None
+            flat = "right" if r % 2 == 0 else "left"  # sideways, flowing with the row
+            for lane, orient in ((r + 1, "down"), (r + 1, flat), (r, "up")):
+                b = mk(i_, orient, "top" if orient == "up" else "beside")
+                if orient == flat and b["head"] and b["head"][3] > b["pos"][b["root"]][1] + 0.5:
+                    continue  # its header didn't fit beside the root: the line from the spine would cross it
+                rx = b["pos"][b["root"]][0]
+                left = X[a] - rx
+                iv = (left - gx, left + b["w"] + gx)
+                over = sum(max(0.0, min(iv[1], o[1]) - max(iv[0], o[0])) for o in load.get(lane, []))
+                bz = 0.0  # a bend's line runs through a middle lane: blocks must keep clear of it
+                if 0 < lane < R:
+                    xe = right_end if (lane - 1) % 2 == 0 else 0.0
+                    bz = max(0.0, min(iv[1], xe + 2) - max(iv[0], xe - 2))
+                cur = max([0.0] + [blk[k]["h"] for k, l in lane_of.items() if l == lane])
+                # a taller middle lane pushes two rows apart (a longer bend); the outer lanes cost little
+                grow = max(0.0, b["h"] - cur) * (0.6 if 0 < lane < R else 0.1)
+                if 0 < lane < R and b["h"] > WIND_TALL:
+                    grow += 2.0 * (b["h"] - WIND_TALL)
+                cost = over + 2 * bz + grow + (0.01 if orient == "up" else 0.0)
+                if best is None or cost < best[0]:
+                    best = (cost, lane, b, left)
+            _, lane, b, left = best
+            lane_of[i_], blk[i_] = lane, b
+            b["want"] = left
+            load.setdefault(lane, []).append((left - gx, left + b["w"] + gx))
+        lefts = {}
+        for lane in range(R + 1):  # pack every lane, clear of the bend that runs through it
+            its = [(k, blk[k]["want"], blk[k]["w"]) for k, l in lane_of.items() if l == lane]
+            zones = []
+            if 0 < lane < R:
+                r = lane - 1
+                xe = right_end if r % 2 == 0 else 0.0
+                out_ = (1.0 if bq[r] else 0.0) * (1 if r % 2 == 0 else -1)
+                zones = [(min(xe, xe + out_) - 0.75, max(xe, xe + out_) + 0.75)]
+            lefts.update(_pava_lane(its, gx, zones))
+        H = {lane: max([blk[k]["h"] for k, l in lane_of.items() if l == lane] + [0.0]) for lane in range(R + 1)}
+        Y = [0.0]
+        for r in range(1, R):
+            Y.append(Y[-1] + max(WIND_GAP, H[r] + 2 * SPINE_Y))
+        new = [min(WIND_BEND, max(0, math.ceil((Y[r + 1] - Y[r]) / WIND_STEP - 1e-9) - 1)) for r in range(R - 1)]
+        new = [max(a, bends[r] if r < len(bends) else 0) for r, a in enumerate(new)]  # only grows: no flip-flop
+        if new == bends[:R - 1] or it == 4:
+            break
+        bends = new
+    P, heads, blocks = {}, [], {}
+    for r, row in enumerate(rows):
+        for si in row:
+            P[spine[si]] = (X[si], Y[r], _size(byk[spine[si]]))
+    for r, b in enumerate(bq):
+        if not b or r + 1 >= R:
+            continue
+        xe = right_end if r % 2 == 0 else 0.0
+        xo = xe + (1.0 if r % 2 == 0 else -1.0)
+        for j, si in enumerate(b):
+            y = Y[r] + (Y[r + 1] - Y[r]) * (j + 1) / (len(b) + 1)
+            X[si] = xo
+            P[spine[si]] = (xo, round(y * 2) / 2, _size(byk[spine[si]]))
+    for i_, lane in lane_of.items():
+        b = blk[i_]
+        rx, ry, rs = b["pos"][b["root"]]
+        if b["orient"] != "up":  # hangs below row lane - 1
+            oy = Y[lane - 1] + SPINE_Y - (ry - rs / 2)
+        else:  # stands on row lane
+            oy = Y[lane] - SPINE_Y - b["h"]
+        blocks[i_] = b
+        b["at"] = [lefts[i_], oy]
+    for r, ks in outside.items():  # sections hanging from a bend quest: outside the bend, level with that quest
+        right = r % 2 == 0
+        for i_ in ks:
+            b = mk(i_, "right" if right else "left", "top")
+            a = secs[i_]["attach"]
+            rx, ry, rs = b["pos"][b["root"]]
+            ox = X[a] + 0.5 + gx - (rx - rs / 2) if right else X[a] - 0.5 - gx - (rx + rs / 2)
+            b["at"] = [ox, P[spine[a]][1] - ry]
+            blocks[i_] = b
+    fixed = [(x - s / 2, y - s / 2, x + s / 2, y + s / 2) for x, y, s in P.values()]
+    boxes = {i_: [b["at"][0], b["at"][1], b["at"][0] + b["w"], b["at"][1] + b["h"]] for i_, b in blocks.items()}
+    _settle(boxes, fixed, gx * 0.75)
+    for i_, bx in boxes.items():
+        _place_block(blocks[i_], bx[0], bx[1], P, heads, i_)
+    if loose:  # sections with no line to the spine: shelves below everything
+        x0, _, x1, y1 = _page_box(P, heads)
+        width = max(x1 - x0, 12.0)
+        y, cx, shelf = y1 + gx, 0.0, 0.0
+        for i_ in loose:
+            b = mk(i_, "down", "top")
+            if cx > 0 and cx + b["w"] > width:
+                cx, y, shelf = 0.0, y + shelf + gx, 0.0
+            blocks[i_] = b
+            _place_block(b, x0 + cx, y, P, heads, i_)
+            cx, shelf = cx + b["w"] + gx, max(shelf, b["h"])
+    x0, y0, x1, y1 = _page_box(P, heads)
+    w, h = x1 - x0, y1 - y0
+    pull = 0.0  # line length from each spine quest into its section
+    for i_, b in blocks.items():
+        a = secs[i_]["attach"]
+        if a is not None:
+            px, py, _ = P[b["root"]]
+            pull += math.hypot(px - P[spine[a]][0], py - P[spine[a]][1])
+    # long vertical steps at the bends, and a last row of one quest after a bend, read badly
+    steps = sum(max(0.0, (Y[r + 1] - Y[r]) / (len(bq[r]) + 1) - WIND_STEP) for r in range(R - 1))
+    sc = (max(w / PAGE_W, h / (PAGE_H + 2)) + 0.25 * abs(math.log(max(w, 1) / max(h, 1) / 1.35)) + 0.02 * pull
+          + 0.04 * steps + (0.15 if R > 1 and len(rows[-1]) == 1 else 0.0))
+    return sc, P, blocks, heads
+
+
+def _wind_page(spine, secs, byk, mk, gx):
+    """The winding motif: the best of WIND_ROWS x WIND_PITCH. Returns (P, blocks, heads)."""
+    # A section with no line to the spine but lines to other sections hangs where those sections hang.
+    sidx = {k: i for i, k in enumerate(spine)}
+    sec_of = {k: i for i, s in enumerate(secs) for k in s["members"]}
+    for _ in range(3):
+        for s in secs:
+            if s["attach"] is not None:
+                continue
+            mem = set(s["members"])
+            mates = {d for m in mem for d in byk[m].deps if d in byk and d not in mem}
+            mates |= {k for k in byk if k not in mem and any(d in mem for d in byk[k].deps)}
+            ext = {d for m in mem for d in byk[m].deps if d not in byk}  # shown as quest links: near their other users
+            if not mates and ext:
+                mates = {k for k in byk if k not in mem and ext & set(byk[k].deps)}
+            att = sorted(sidx[k] if k in sidx else secs[sec_of[k]]["attach"] for k in mates
+                         if k in sidx or (k in sec_of and secs[sec_of[k]]["attach"] is not None))
+            if att:
+                s["attach"] = att[len(att) // 2]
+    best = None
+    for L in WIND_ROWS:
+        if L > len(spine) + 1 and best is not None:
+            break
+        for pitch in WIND_PITCH:
+            t = _wind_try(spine, secs, byk, mk, L, pitch, gx)
+            if best is None or t[0] < best[0] - 1e-9:
+                best = t
+    return best[1], best[2], best[3]
+
+
+def _radial_core(sec, byk, idx, spokes, scale=1.0, hub_angles=()):
+    """The hub section as a radial tree around its hub (at 0, 0). spokes: {core quest: n} virtual leaves (other
+    sections hanging from that quest) that get their own angle, so the lines out to them pass between the core's
+    quests. hub_angles: fixed angles for the hub's own spokes (compass slots), else they are spread evenly.
+    The hub's children share the circle evenly (branches and spokes get a wider share); a crowded first
+    ring alternates two radii; deeper quests fan out around their parent's angle, one ring further out. Each quest
+    is placed in turn (by depth, then angle) and stepped outward until it is clear of everything placed before.
+    Returns (pos {key: (x, y, size)}, {(core quest, j): angle}) or None if the result isn't clean."""
+    keys = sec["members"]
+    kset = set(keys)
+    par = {k: [d for d in dict.fromkeys(byk[k].deps) if d in kset and d != k] for k in keys}
+    hub = sec["hub"]
+    depth, unreached = {hub: 0}, set()
+
+    def relax():
+        for _ in range(len(keys) + 1):
+            ch = False
+            for k in keys:
+                ds = [depth[p] + 1 for p in par[k] if p in depth]
+                if k != hub and k not in unreached and ds and depth.get(k, -1) < max(ds):
+                    depth[k], ch = max(ds), True
+            if not ch:
+                return
+
+    relax()
+    while len(depth) < len(keys):  # quests with no line from the hub: placed on the first ring beside it
+        un = [k for k in keys if k not in depth]
+        k0 = next((k for k in un if not any(p in un for p in par[k])), un[0])
+        depth[k0] = 1
+        unreached.add(k0)
+        relax()
+    tp = {}
+    for k in keys:
+        if k == hub:
+            continue
+        ps = [p for p in par[k] if p in depth and depth[p] < depth[k]]
+        tp[k] = max(ps, key=lambda p: (depth[p], idx[p])) if ps and k not in unreached else hub
+    kids = {k: [] for k in keys}
+    for k in sorted(tp, key=idx.get):
+        kids[tp[k]].append(k)
+    virt = {}
+    for v, m in spokes.items():
+        for j in range(m):
+            node = ("spoke", v, j)
+            kids.setdefault(v, []).append(node)
+            virt[node] = v
+    nsub = {}
+
+    def leaves(k):
+        if k not in nsub:
+            cs = kids.get(k, [])
+            nsub[k] = 1 if not cs else sum(leaves(c) for c in cs)
+        return nsub[k]
+
+    # the hub's children: spokes spread evenly among the core branches; a branch's share grows with its size
+    real = [c for c in kids[hub] if c not in virt]
+    sp = [c for c in kids[hub] if c in virt]
+    seq = list(real)
+    for j, s_ in enumerate(sp):
+        seq.insert(round((j + 0.5) * len(real) / max(1, len(sp))) + j, s_)
+    share = {c: (2.0 if c in virt else 1.0 + 0.5 * min(3, leaves(c) - 1)) for c in seq}
+    tot = sum(share.values()) or 1.0
+
+    def angles(rot):
+        out, a = {}, rot
+        for c in seq:
+            out[c] = a + math.pi * share[c] / tot
+            a += 2 * math.pi * share[c] / tot
+        return out
+
+    if hub_angles and len(hub_angles) == len(sp):
+        # fixed spoke slots; the core's branches fill the arcs between them (half a share of margin each side)
+        ang = {c: a for c, a in zip(sp, hub_angles)}
+        fa = sorted(a % (2 * math.pi) for a in hub_angles)
+        rs_ = [c for c in seq if c not in virt]
+        tot_r = sum(share[c] for c in rs_) or 1.0
+        unit = 2 * math.pi / (tot_r + 2.0 * len(fa))
+        arcs = [(fa[i] + unit, (fa[(i + 1) % len(fa)] + (2 * math.pi if i + 1 == len(fa) else 0.0)) - unit)
+                for i in range(len(fa))]
+        free = sum(max(0.0, b - a) for a, b in arcs) or 1.0
+        acc = 0.0
+        for c in rs_:
+            t = (acc + share[c] / 2) / tot_r * free  # distance along the free arcs
+            acc += share[c]
+            for a, b in arcs:
+                L_ = max(0.0, b - a)
+                if t <= L_ + 1e-9:
+                    ang[c] = a + t
+                    break
+                t -= L_
+            else:
+                ang[c] = arcs[-1][1]
+        seq = rs_ + sp
+    else:
+        rot = 0.0
+        if sp:  # spokes sideways (pages are wider than tall) and away from straight up (the core's header)
+            rot = min((sum(abs(math.sin(angles(2 * math.pi * r / 36)[s_])) for s_ in sp), r) for r in range(36))[1]
+            rot = 2 * math.pi * rot / 36
+        ang = angles(rot)
+    n1 = len(real)
+    ring1 = max(2.5, n1 * 2.1 / (2 * math.pi))
+    stagger = ring1 > 3.75
+    if stagger:
+        ring1 = max(2.75, n1 * 1.15 / (2 * math.pi))
+    ring1 *= scale
+    pos = {hub: (0.0, 0.0, _size(byk[hub]))}
+    segs = []
+    out_ang = {}
+
+    def ok(k, p, parent):
+        s = _size(byk[k])
+        for j, (x, y, js) in pos.items():
+            if math.hypot(x - p[0], y - p[1]) < max(MIN_SEP, (s + js) / 2 + 0.5) + 0.25:
+                return False
+        for d in [parent]:  # the tree line must be clean (other lines into k may be hidden later, if messy)
+            pp = pos[d][:2]
+            for j, (x, y, js) in pos.items():
+                if j != d and _seg_dist(pp, p, (x, y)) < 0.55 + (js - 1) / 2:
+                    return False
+            for a, b, ka, kb in segs:
+                if d not in (ka, kb) and _cross((a, b), (pp, p)):
+                    return False
+        for a, b, ka, kb in segs:
+            if _seg_dist(a, b, p) < 0.55 + (s - 1) / 2:
+                return False
+        return True
+
+    tries = sorted(((st, da) for st in range(24) for da in (0.0, 0.12, -0.12, 0.25, -0.25, 0.4, -0.4)),
+                   key=lambda t: (t[0] + 8 * abs(t[1]), abs(t[1])))
+
+    def put(k, a, r0, parent):
+        for st, da in tries:
+            r = r0 + 0.5 * st
+            p = (round(r * math.cos(a + da) * 2) / 2, round(r * math.sin(a + da) * 2) / 2)
+            if ok(k, p, parent):
+                pos[k] = (p[0], p[1], _size(byk[k]))
+                for d in dict.fromkeys([parent] + [d for d in par[k] if d in pos and d != k]):
+                    segs.append((pos[d][:2], p, d, k))
+                ang[k] = a + da
+                return r
+        return None
+
+    radius = {hub: 0.0}
+    alt = 0
+    for c in sorted(seq, key=lambda c: ang[c] % (2 * math.pi)):
+        if c in virt:
+            continue
+        r0 = ring1 + (1.75 if stagger and alt % 2 else 0.0)
+        alt += 1
+        r = put(c, ang[c], r0, hub)
+        if r is None:
+            return None
+        radius[c] = r
+    for c in seq:
+        if c in virt:
+            out_ang[(virt[c], c[2])] = ang[c]
+    # deeper levels: around the parent's angle, one ring further out
+    frontier = [c for c in seq if c not in virt]
+    while frontier:
+        nxt = []
+        for v in sorted(frontier, key=lambda v: ang[v] % (2 * math.pi)):
+            cs = kids.get(v, [])
+            if not cs:
+                continue
+            r0 = radius[v] + 2.25 * scale
+            step = 2.1 / r0
+            for j, c in enumerate(cs):
+                a = ang[v] + (j - (len(cs) - 1) / 2) * step
+                ang[c] = a
+                if c in virt:
+                    out_ang[(virt[c], c[2])] = a
+                    continue
+                r = put(c, a, r0, v)
+                if r is None:
+                    return None
+                radius[c] = r
+                nxt.append(c)
+        frontier = nxt
+    tree_edges = [(tp[k], k) for k in tp]
+    if len(pos) != len(keys) or not _clean(pos, byk, tree_edges):
+        return None
+    return pos, out_ang
+
+
+COMPASS = (0.0, math.pi, math.pi / 2, -math.pi / 2, math.pi / 4, 3 * math.pi / 4, -math.pi / 4, -3 * math.pi / 4,
+           math.pi / 8, 7 * math.pi / 8, 3 * math.pi / 8, 5 * math.pi / 8, -math.pi / 8, -7 * math.pi / 8,
+           -3 * math.pi / 8, -5 * math.pi / 8)  # spoke slots, best first: sideways, down, up, then the diagonals
+
+
+def _radial_page(secs, byk, idx, mk, header, gx, hub_min=4):
+    """The radial motif. Returns (P, blocks, heads)."""
+    sec_of = {k: i for i, s in enumerate(secs) for k in s["members"]}
+    nk = {}
+    for k in byk:
+        for d in dict.fromkeys(byk[k].deps):
+            if d in byk and d != k:
+                nk[d] = nk.get(d, 0) + 1
+    hub = max(byk, key=lambda k: (nk.get(k, 0), -idx[k]))
+    real_hub = nk.get(hub, 0) >= hub_min
+    ci = sec_of[hub] if real_hub else 0
+    # each other section follows the section its root hangs from (the core: a spoke from that core quest)
+    parent = {}
+    for i, s in enumerate(secs):
+        if i == ci:
+            continue
+        ds = [d for d in byk[s["root"]].deps if d in sec_of and sec_of[d] != i]
+        if not ds:
+            ds = [d for m in s["members"] for d in byk[m].deps if d in sec_of and sec_of[d] != i]
+        parent[i] = ds[0] if ds else None
+    core_hub = hub if real_hub else secs[ci]["root"]
+    hub_sp = [i for i in parent if parent[i] is None or (parent[i] == core_hub)]
+    side_sp = {}  # spokes from other core quests
+    for i, p in parent.items():
+        if i not in hub_sp and sec_of[p] == ci:
+            side_sp.setdefault(p, []).append(i)
+    # compass slots for the hub's spokes: the biggest sections sideways
+    rank = sorted(hub_sp, key=lambda i: (-len(secs[i]["members"]), i))
+    slot = {i: COMPASS[n % len(COMPASS)] for n, i in enumerate(rank)}
+    hub_list = sorted(hub_sp, key=lambda i: slot[i] % (2 * math.pi))
+    P, heads, blocks, angles = {}, [], {}, {}
+    core_pos = None
+    if real_hub:
+        core = dict(secs[ci], hub=hub)
+        sp_n = {hub: len(hub_list), **{p: len(l) for p, l in side_sp.items()}}
+        for scale in (1.0, 1.2, 1.4):
+            got = _radial_core(core, byk, idx, sp_n, scale, hub_angles=[slot[i] for i in hub_list])
+            if got:
+                core_pos, a = got
+                for j, i in enumerate(hub_list):
+                    angles[i] = a[(hub, j)]
+                for p, l in side_sp.items():
+                    for j, i in enumerate(l):
+                        angles[i] = a[(p, j)]
+                break
+    if core_pos is not None:
+        cb = _with_header(dict(secs[ci]), core_pos, byk, header, "corner", "down")
+        hx, hy, _ = cb["pos"][hub]
+        _place_block(cb, -hx, -hy, P, heads, ci)
+    else:
+        cb = mk(ci, "down", "top")
+        _place_block(cb, -cb["w"] / 2, -cb["h"] / 2, P, heads, ci)
+        for i in parent:
+            if i in hub_sp or i in sum(side_sp.values(), []):
+                angles[i] = slot.get(i, 0.0)
+    blocks[ci] = cb
+    fixed = [(x - s / 2, y - s / 2, x + s / 2, y + s / 2) for x, y, s in P.values()] + [h[1:] for h in heads]
+    todo = sorted(angles, key=lambda i: (len(secs[i]["members"]) < 4, angles[i]))
+    rest = [i for i in parent if i not in angles]
+    for _ in range(len(secs)):  # followers: a section hanging from a spoke section goes on out beyond it
+        for i in list(rest):
+            p = parent[i]
+            if p is not None and sec_of[p] in angles:
+                angles[i] = angles[sec_of[p]]
+                todo.append(i)
+                rest.remove(i)
+    for i in rest:
+        angles[i] = 0.0
+        todo.append(i)
+    for i in todo:
+        a = angles[i]
+        c, s_ = math.cos(a), math.sin(a)
+        orient = "right" if c >= 0.7 else "left" if c <= -0.7 else ("down" if s_ > 0 else "up")
+        b = mk(i, orient, "bottom" if orient == "down" else "top")
+        p = parent.get(i)
+        src = P[p][:2] if p is not None and p in P else (0.0, 0.0)
+        rects = fixed + [bb["box"] for j, bb in blocks.items() if j != ci and "box" in bb]
+        follower = p is not None and sec_of[p] != ci
+        best = None
+        for da in ((0.0, math.pi / 4, -math.pi / 4, math.pi / 2, -math.pi / 2) if follower else (0.0,)):
+            c, s_ = math.cos(a + da), math.sin(a + da)
+            orient = "right" if c >= 0.7 else "left" if c <= -0.7 else ("down" if s_ > 0 else "up")
+            b = mk(i, orient, "bottom" if orient == "down" else "top")
+            rx, ry, rs = b["pos"][b["root"]]
+            t = 1.5
+            while True:
+                px, py = src[0] + t * c, src[1] + t * s_
+                box = (px - rx, py - ry, px - rx + b["w"], py - ry + b["h"])
+                if not any(_rects_hit(box, r_, gx * 0.75) for r_ in rects) or t > 80:
+                    break
+                t += 0.5
+            # nearest spot; a follower also stays inside the page so far (no growing the page for it)
+            allb = rects + [box]
+            grow = (max(r_[2] for r_ in allb) - min(r_[0] for r_ in allb)) + (max(r_[3] for r_ in allb) - min(r_[1] for r_ in allb))
+            sc = t + 0.5 * grow + abs(da)
+            if best is None or sc < best[0]:
+                best = (sc, b, box)
+        _, b, box = best
+        _place_block(b, round(box[0] * 2) / 2, round(box[1] * 2) / 2, P, heads, i)
+        blocks[i] = b
+    return P, blocks, heads
+
+
 def apply(chapter, book_keys=None, style=None):
     """Place every quest of an auto-layout chapter, its quest links and its section headers, and set q.hide_lines.
     chapter.sections becomes [{"title", "slug", "x", "y", "w", "h", "members"}] (header centre and size, in cells).
@@ -1184,17 +1991,18 @@ def apply(chapter, book_keys=None, style=None):
     if getattr(chapter, "layout", "auto") == "manual" or not chapter.quests:
         return
     style = style or getattr(chapter, "style", None) or DEFAULT_STYLE
-    if style not in HUB:
-        raise ValueError(f"chapter {chapter.key}: unknown layout style {style!r} (spine, tree or grid)")
+    if style not in MOTIF_BASE:
+        raise ValueError(f"chapter {chapter.key}: unknown layout style {style!r} ({', '.join(MOTIF_BASE)})")
     chapter.style = style
+    base = MOTIF_BASE[style]  # how sections are found and lines hidden: spine (spine, winding) or tree
     quests = chapter.quests
     byk, idx, parents, children, order = _graph(quests)
     G = {"byk": byk, "idx": idx, "parents": parents, "children": children, "order": order,
          "opt": {k: bool(byk[k].optional) for k in byk}}
     spine = _spine(set(byk), G)
-    secs = _sections(chapter, G, spine, style, getattr(chapter, "home_of", None) or {},
-                     getattr(chapter, "chapter_titles", None) or {})
-    header = len(secs) + (1 if style == "spine" else 0) > 1
+    secs = _sections(chapter, G, spine, base if base == "spine" else style if style in ("grid", "radial") else "tree",
+                     getattr(chapter, "home_of", None) or {}, getattr(chapter, "chapter_titles", None) or {})
+    header = len(secs) + (1 if base == "spine" else 0) > 1
 
     # Quest links: the chapter's own plus the entry quest's deps in other chapters.
     links = [lk for lk, _, _ in chapter.links]
@@ -1203,7 +2011,7 @@ def apply(chapter, book_keys=None, style=None):
             if d not in byk and d in book_keys and d not in links:
                 links.append(d)
     sec_of = {k: i for i, s in enumerate(secs) for k in s["members"]}
-    spine_set = set(spine) if style == "spine" else set()
+    spine_set = set(spine) if base == "spine" else set()
     # A quest whose dependents here are all in ONE section that isn't its own or next to it in reading order gets
     # a quest link inside that section. FTB draws a dependency line from the LAST button of that quest on the page
     # (quest links are added after quests), so its lines then start at the link: short lines, no long fan.
@@ -1225,9 +2033,19 @@ def apply(chapter, book_keys=None, style=None):
         if votes:
             top = max(votes.values())
             lsec[lk] = next(v for v in ["spine"] + list(range(len(secs))) if votes.get(v) == top)
-    blocks = [_block(s, byk, {lk: [d for d in dependents[lk] if sec_of.get(d) == i]
-                               for lk in links if lsec.get(lk) == i}, style, header)
-              for i, s in enumerate(secs)]
+    blinks = [{lk: [d for d in dependents[lk] if sec_of.get(d) == i] for lk in links if lsec.get(lk) == i}
+              for i in range(len(secs))]
+    motif = style in ("winding", "radial", "molecule")
+    if motif:
+        kind = getattr(chapter, "block_kind", None) or ("molecule" if style == "molecule" else "tree")
+        cache = {}
+
+        def mk(i, orient, head):
+            if (i, orient, head) not in cache:
+                cache[(i, orient, head)] = _shaped_block(secs[i], byk, idx, blinks[i], orient, header, head, kind)
+            return dict(cache[(i, orient, head)])
+    else:
+        blocks = [_block(s, byk, blinks[i], style, header) for i, s in enumerate(secs)]
 
     P = {}       # node -> (x, y, size) on the page
     heads = []   # (section index, x0, y0, x1, y1)
@@ -1240,8 +2058,18 @@ def apply(chapter, book_keys=None, style=None):
             hx0, hy0, hx1, hy1 = b["head"]
             heads.append((i, hx0 + ox, hy0 + oy, hx1 + ox, hy1 + oy))
 
-    gx, gy = GAP[style]
-    if style == "spine":
+    gx, gy = GAP[base]
+    if style == "winding":
+        P, bl, heads = _wind_page(spine, secs, byk, mk, gx)
+        blocks = [bl[i] for i in range(len(secs))]
+    elif style == "radial":
+        P, bl, heads = _radial_page(secs, byk, idx, mk, header, gx)
+        blocks = [bl[i] for i in range(len(secs))]
+    elif style == "molecule":
+        blocks = [mk(i, "down", "top") for i in range(len(secs))]
+        for i, (ox, oy) in _pack_columns(blocks, "tree").items():
+            put(i, ox, oy)
+    elif style == "spine":
         # The spine runs left to right at the normal column pitch. Every block wants to sit where its lines to the
         # spine are short: right after the earliest spine quest it depends on, or (a block that only feeds the
         # spine) just left of the earliest spine quest that needs it. Blocks go into the lane above or below the
@@ -1314,6 +2142,16 @@ def apply(chapter, book_keys=None, style=None):
         d = min(dependents[lk], key=lambda d: (P[d][0], idx[d]))
         if style == "spine" and d in spine_set:
             px, py = _free_spot(P[d][0] - COL, P[d][1], taken, lo_x=P[d][0] - COL)
+        elif style == "winding" and d in spine_set:  # upstream of the spine quest (rows alternate direction)
+            i = spine.index(d)
+            nb = spine[i + 1] if i == 0 and len(spine) > 1 else (spine[i - 1] if i > 0 else None)
+            ux, uy = (-1.0, 0.0)
+            if nb is not None:
+                vx, vy = P[nb][0] - P[d][0], P[nb][1] - P[d][1]
+                L_ = math.hypot(vx, vy) or 1.0
+                ux, uy = ((-vx / L_, -vy / L_) if i == 0 else (vx / L_, vy / L_))
+                ux, uy = (ux, uy) if i == 0 else (-uy, ux)  # mid-spine: beside the line, not on it
+            px, py = _free_spot(P[d][0] + COL * ux, P[d][1] + COL * uy, taken)
         else:
             px, py = _free_spot(P[d][0] - 1.0, P[d][1] - 1.5, taken)
         P[node] = (px, py, 1.0)
@@ -1323,7 +2161,7 @@ def apply(chapter, book_keys=None, style=None):
         top = min([y - s / 2 for _, y, s in P.values()] + [b for _, _, b, _, _ in heads])
         left = min([x - s / 2 for x, _, s in P.values()] + [a for _, a, _, _, _ in heads])
         right = max([x + s / 2 for x, _, s in P.values()] + [c for _, _, _, c, _ in heads])
-        pts = _link_block(loose, getattr(chapter, "book_quests", None) or {}, style != "spine", max(right - left, 8.0))
+        pts = _link_block(loose, getattr(chapter, "book_quests", None) or {}, base != "spine", max(right - left, 8.0))
         h = max(y + 0.5 for x, y in pts.values())
         for lk, (x, y) in pts.items():
             P[("link", lk)] = (left + x, top - 1.0 - h + y, 1.0)
@@ -1337,9 +2175,11 @@ def apply(chapter, book_keys=None, style=None):
         chapter.sections.append({"title": s["title"], "slug": slug(s["title"]), "x": (a + c) / 2, "y": (b + d) / 2,
                                  "w": c - a, "h": d - b, "members": list(s["members"]), "box": blocks[i]["box"]})
     _hide_lines(chapter, style, spine, blocks, sec_of, spine_set)
-    for _ in range(2):  # lines still through quests: small moves, then decide the hidden lines again
-        if not _nudge(chapter, spine_set):
+    for reach in (3.0, 3.0, 8.0):  # lines still through quests: small moves (then wider), then hide lines again
+        if reach > 3.0 and not metrics(chapter)["thru"]:
             break
+        if not _nudge(chapter, spine_set, reach) and reach <= 3.0:
+            continue
         for q in quests:
             q.hide_lines = q.hide_dependents = False
         _hide_lines(chapter, style, spine, blocks, sec_of, spine_set)
@@ -1375,9 +2215,9 @@ def _drawn(chapter):
     return [(a, b) for a, b, h in _lines(chapter) if not h]
 
 
-def _nudge(chapter, fixed):
+def _nudge(chapter, fixed, reach=3.0):
     """Last pass: a drawn line that still runs through a quest moves the quest in the way (or the line's end) by
-    up to 3 cells, keeping MIN_SEP to everything and clear of section headers, when that lowers the number of
+    up to reach cells, keeping MIN_SEP to everything and clear of section headers, when that lowers the number of
     lines through quests. Returns the number of moves."""
     byk = {q.key: q for q in chapter.quests}
     P = {q.key: [float(q.x), float(q.y), _size(q)] for q in chapter.quests}
@@ -1410,7 +2250,8 @@ def _nudge(chapter, fixed):
         return all(not (x0 - s / 2 < x < x1 + s / 2 and y0 - s / 2 < y < y1 + s / 2) for x0, y0, x1, y1 in heads)
 
     moves = 0
-    steps = sorted({(dx * 0.5, dy * 0.5) for dx in range(-6, 7) for dy in range(-6, 7)} - {(0.0, 0.0)},
+    r2 = int(reach * 2)
+    steps = sorted({(dx * 0.5, dy * 0.5) for dx in range(-r2, r2 + 1) for dy in range(-r2, r2 + 1)} - {(0.0, 0.0)},
                    key=lambda d: (abs(d[0]) + abs(d[1]), d))
     for _ in range(3):
         bad = [(e, k) for e in edges for k in P if hits(e, k)]
@@ -1446,9 +2287,11 @@ def _nudge(chapter, fixed):
 def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
     """Set q.hide_lines (FTB hide_dependency_lines) where a line is clutter and the dependency stays readable.
     Clutter: a dependency is a hub (HUB[style] or more dependents here), or a line runs between two sections and
-    is long (> MAX_EDGE), runs through a quest or crosses a section header. Readable: every dependency here is in
-    the quest's own section, a neighbouring one (next or previous in order, or touching), the spine (spine style),
-    or shown as a quest link. A spine step (spine quest N -> N+1) is never hidden, except in tree/grid style
+    is long (> MAX_EDGE), runs through a quest or crosses a section header (on every page but "spine", a line
+    crossing two or more others too). Readable: every dependency here is in the quest's own section, a neighbouring
+    one (next or previous in order, or touching), the spine (spine style), or shown as a quest link; on every page
+    but "spine" any line between two sections is readable (sections sit by shape, not reading order). A radial
+    page's hub never gets hide_dependents (its spokes stay drawn). A spine step (spine quest N -> N+1) is never hidden, except in tree/grid style
     when it jumps from one section to the next. Lines into a quest that must keep one of its lines are hidden
     from the other end instead (hide_dependents, FTB hide_dependent_lines on the dependency)."""
     qs = chapter.quests
@@ -1492,6 +2335,7 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
         return False
 
     hub = HUB[style]
+    relaxed = style != "spine"
     # A quest with a quest link on its own page: FTB draws its dependency lines at the link too (every button of
     # the quest draws them), so those would run to the far link. Its own lines are hidden (they show on hover).
     shared = getattr(chapter, "shared_quests", None) or set()
@@ -1510,10 +2354,22 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
                 messy_ = messy(p1, pos[q.key], a_, q.key, long_counts=sec(d) != sec(q.key))
                 ok = d in lpos or near(sec(d), sec(q.key))
                 # a spine step stays drawn, except in tree/grid style where it jumps to the next section
-                step = sp_next.get(d) == q.key and (style == "spine" or sec(d) == sec(q.key))
+                step = sp_next.get(d) == q.key and (MOTIF_BASE[style] == "spine" or sec(d) == sec(q.key))
             else:  # a quest from another chapter, shown by its link
                 messy_, ok, step = messy(p1, pos[q.key], ("link", d), q.key), True, False
-            E[(d, q.key)] = {"clutter": messy_ or nkids.get(d, 0) >= hub, "ok": ok, "step": step}
+            if relaxed and d in pos and sec(d) != sec(q.key):
+                ok = True  # motif pages: sections sit by shape, not in reading order; any line between them may go
+            E[(d, q.key)] = {"clutter": messy_ or nkids.get(d, 0) >= hub, "ok": ok, "step": step, "seg": (p1, pos[q.key])}
+    if relaxed:  # a line crossing two or more others is clutter too
+        segs = list(E.items())
+        for i, (key_i, e) in enumerate(segs):
+            n = 0
+            for key_j, f in segs:
+                if key_j != key_i and not ({*key_i} & {*key_j}) and _cross(e["seg"], f["seg"]):
+                    n += 1
+                    if n >= 2:
+                        e["clutter"] = True
+                        break
     ins, outs = {}, {}
     for (d, k), e in E.items():
         ins.setdefault(k, []).append(e)
@@ -1529,6 +2385,8 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
     #    lines, e.g. a feeder into a spine quest): only if every line from it is readable and none is a spine step.
     shut = {q.key for q in qs if q.hide_lines}
     for q in qs:
+        if style == "radial" and nkids.get(q.key, 0) >= 6:
+            continue  # a radial page's hub keeps its spokes (their far ends hide their own lines instead)
         os_ = outs.get(q.key, [])
         left = [e for k, e in os_ if k not in shut]
         if q.key not in shared and any(e["clutter"] for e in left) and all(e["ok"] and not e["step"] for _, e in os_):
