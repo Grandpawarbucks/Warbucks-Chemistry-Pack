@@ -4,6 +4,16 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-20: Apotheosis loot tuning modelled on ATM10
+- tools/build_apoth_tuning.py rebuilds ATM10's Apotheosis changes from the mods' own default files (109 data files in
+  pack/kubejs/data; nothing copied from ATM10): affix and gem chest injection x2 / x1.5, Apotheosis chest and unstable
+  spawner rolls x2, monsters wear affix items 30% (was 12%), rarities and gem purity shifted up a tier, vanilla gear
+  weights doubled per tier, gold affix gear off, Twilight Forest gear only drops in the Twilight Forest, gold and
+  Twilight mob gear sets off, Silent Gear axe/mace and Allthemodium alloy paxel get affix categories.
+- Miner's Fervor retired without breaking tags (ATM10 deletes it, which makes #minecraft:non_treasure and the
+  enchanting-table, trade and loot tags fail to load): kept with an unreachable cost and removed from those tags in
+  server_scripts/phase5_apotheosis.js. Apotheosis config files already match ATM10 (only enchantment caps differed).
+
 ### 2026-10-20: Enchantment caps, retired tokens cleared
 - pack/config/apotheosis/enchantments.cfg: every enchantment's Max Level and Max Loot Level raised to 127 (Apotheosis'
   ceiling), as in ATM10. 105 enchantments, including our extra mods'.
