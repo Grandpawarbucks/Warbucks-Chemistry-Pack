@@ -1553,33 +1553,17 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "modern_industrialization:quantum_sword"
+				count: 1
+			}
 			dependencies: [
 				"5CF14C9A3DB9276D"
 			]
 			tasks: [
 				{
 					id: "7B1711AB69755435"
-					type: "item"
-					item: {
-						id: "modern_industrialization:quantum_sword"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "26A9DD0B8FAC74BF"
-					type: "xp"
-					xp: 500
-				}
-				{
-					id: "77C0F0F19F9DDF4C"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 5
-					}
+					type: "checkmark"
 				}
 			]
 		}

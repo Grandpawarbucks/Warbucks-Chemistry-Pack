@@ -1,0 +1,187 @@
+#0   57A7A5C79389A96A x=  -6.0 y=   0.0 sz=3.0  gear     opt=0 deps=[] | Create
+        item x1: minecraft:andesite [quested]
+#1   0F16498769DFB3B0 x=  -2.0 y=   0.0 sz=1.75          opt=0 deps=[#0] | Andesite Alloys
+        item x1: create:andesite_alloy [quested]
+#2   5B36DE3826F26963 x=  -1.0 y=  -2.0 sz=1.25          opt=0 deps=[#1] | Rotational Power
+        item x1: create:shaft [quested]
+#3   1E9B2D814F50A265 x=   1.5 y=   2.0 sz=1.0           opt=0 deps=[#44] | Encased Fan
+        item x1: create:encased_fan [quested]
+#4   4285510271B5223D x=  -1.0 y=  -4.0 sz=1.0           opt=0 deps=[#2] | Gearbox
+        item x1: create:gearbox [quested]
+#5   2BB3DB19D5EFC7E2 x=  -1.0 y=  -6.0 sz=1.0           opt=0 deps=[#2] | Clutch
+        item x1: create:clutch [quested]
+#6   67A46ED73E488CEE x=  -2.0 y=  -4.5 sz=1.0           opt=0 deps=[#2] | Gearshift
+        item x1: create:gearshift [quested]
+#7   7F8E50FA436DB4E6 x=   0.0 y=  -4.5 sz=1.0           opt=0 deps=[#2] | Encased Chain Drives
+        item x1: create:encased_chain_drive [quested]
+#8   54EC1C7FC1DA9107 x=   0.0 y=  -5.5 sz=1.0           opt=0 deps=[#7] | Adjustable Chain Drive
+        item x1: create:adjustable_chain_gearshift [quested]
+#9   2D41B04C75FA02BC x=   0.0 y=   0.5 sz=1.0           opt=0 deps=[#44] | Mechanical Press
+        item x1: create:mechanical_press [quested]
+#10  5DC892BA79EB52EC x=   1.0 y=   3.0 sz=1.0           opt=0 deps=[#44] | Mechanical Mixer
+        item x1: create:mechanical_mixer [quested]
+#11  75CBB5BD8C1DFEA1 x= -11.0 y=  -2.5 sz=1             opt=0 deps=[#50,#41] | Basin
+        item x1: create:basin [quested]
+#12  1B182A30604655E2 x=   0.0 y=   3.5 sz=1.0           opt=0 deps=[] | Blaze Burner
+        item x1: create:blaze_burner [quested]
+#13  45EC31812FB9934D x= -11.0 y=   6.0 sz=1             opt=0 deps=[#39,#58] | Mechanical Pistons
+        item x1: ftbfiltersystem:filter [MISSING], create:mechanical_piston [quested], create:sticky_mechanical_piston
+#14  29917E6196649F5D x=   2.5 y=   0.0 sz=1             opt=0 deps=[#43,#44] | Speed
+        item x1: create:speedometer [quested]
+#15  48BE7DAC5082044D x=   3.5 y=  -1.0 sz=1             opt=0 deps=[#43,#44] | Stress
+        item x1: create:stressometer [quested]
+#16  09936F8FCEA72C5C x= -12.0 y=   5.5 sz=1             opt=0 deps=[#58] | Cart Assembler
+        item x1: create:cart_assembler [quested]
+#17  51EA6B1452883AB2 x= -12.0 y=   4.5 sz=1             opt=0 deps=[#58] | Linear Chasis
+        item x1: create:linear_chassis [quested]
+#18  459BA85E48B343AE x= -11.0 y=   4.0 sz=1             opt=0 deps=[#58] | Radial Chasis
+        item x1: create:radial_chassis [quested]
+#19  76CBFA38D021AC95 x=  4.25 y= -4.75 sz=1.25          opt=0 deps=[#42] | Windmills
+        item x1: create:windmill_bearing [quested]
+        item x1: create:white_sail [quested]
+#20  3029E1E133B91ED8 x=-12.25 y=  7.25 sz=1.25          opt=0 deps=[#58] | Mechanical Drill
+        item x1: create:mechanical_drill [quested]
+#21  72DCE154E1714890 x=-12.25 y=   8.5 sz=1.25          opt=0 deps=[#58] | Mechanical Saw
+        item x1: create:mechanical_saw [quested]
+#22  3314FBC4FEAE1D08 x=  -1.0 y=   3.0 sz=1.0           opt=0 deps=[#44] | Deployer
+        item x1: create:deployer [quested]
+#23  4C31649D721F76B5 x= -13.5 y=   8.5 sz=1.25          opt=0 deps=[#58] | Mechanical Harvester
+        item x1: create:mechanical_harvester [quested]
+#24  0759CA52EECF3B49 x= -13.5 y=  7.25 sz=1.25          opt=0 deps=[#58] | Mechanical Plough
+        item x1: create:mechanical_plough [quested]
+#25  3F663416E824720C x= -12.0 y=   1.5 sz=1.25          opt=0 deps=[#51] | Copper Casings
+        item x1: create:copper_casing [quested]
+#26  3F2C1A81C17D2D67 x=  -1.0 y=   5.5 sz=1.0           opt=0 deps=[#62,#61] | Mechanical Arm
+        item x1: create:mechanical_arm [quested]
+#27  47A6769B6BF1A46D x=  -7.5 y=  -5.5 sz=1             opt=0 deps=[#41] | Andesite Funnel
+        item x1: create:andesite_funnel [quested]
+#28  495B0CC178B4CFA9 x=  -4.5 y=  -5.5 sz=1             opt=0 deps=[#41] | Brass Funnel
+        item x1: create:brass_funnel [quested]
+#29  7C8CDD259495A31A x=  -8.0 y=  -6.5 sz=1             opt=0 deps=[#41] | Andesite Tunnel
+        item x1: create:andesite_tunnel [quested]
+#30  78656C89EEE80DB5 x=  -4.0 y=  -6.5 sz=1             opt=0 deps=[#41] | Brass Tunnel
+        item x1: create:brass_tunnel [quested]
+#31  3D2A03EB2B91E9C1 x=  -5.0 y=  -6.5 sz=1             opt=0 deps=[#41] | Chute
+        item x1: create:chute [quested]
+#32  4C77ABCD41383F32 x= -14.5 y=   1.5 sz=0.8  circle   opt=0 deps=[#37] | Blaze Cakes
+        item x1: create:blaze_cake [quested]
+#33  4194397DFD0199C2 x=   1.0 y=   5.5 sz=1.0           opt=0 deps=[#61] | Mechanical Crafter
+        item x1: create:mechanical_crafter [quested]
+#34  75B14A09FE39EDDA x= -10.0 y=   6.0 sz=1             opt=0 deps=[#58] | Gantry Carriage
+        item x1: create:gantry_carriage [quested]
+        item x1: create:gantry_shaft [quested]
+#35  7EEEEDD5FF31ACD3 x=  -4.5 y=  -7.5 sz=1             opt=0 deps=[#31] | Smart Chute
+        item x1: create:smart_chute [quested]
+#36  24E658BA47367A44 x=  -9.5 y=   7.0 sz=1             opt=0 deps=[#58] | Rope Pulley
+        item x1: create:rope_pulley [quested]
+#37  1C2309DB4B890E71 x= -13.5 y=   1.5 sz=1             opt=0 deps=[#25] | Spout
+        item x1: create:spout [quested]
+#38  77382D4114E901CB x= -13.0 y=   2.5 sz=1             opt=0 deps=[#25] | Hose Pulley
+        item x1: create:hose_pulley [quested]
+#39  47897D827C50629D x=  -9.0 y=   6.0 sz=1             opt=0 deps=[#58] | Piston Extension
+        item x1: create:piston_extension_pole [quested]
+#40  71B1B53A03A16296 x= -11.0 y=   2.5 sz=1             opt=0 deps=[#25,#58] | Portable Fluid Interfaces
+        item x1: create:portable_fluid_interface [quested]
+#41  13AEBC331F29BC3D x=  -6.0 y=  -4.0 sz=1.75          opt=0 deps=[#0] | Item Logistics
+        item x1: create:belt_connector [quested]
+#42  6893D537716AA748 x=   1.5 y=  -2.0 sz=1             opt=0 deps=[#2] | Cogwheels!
+        item x1: ftbfiltersystem:filter [MISSING], create:cogwheel [quested], create:large_cogwheel [quested]
+#43  3C892B33758B7BA6 x=   2.5 y=  -1.0 sz=1.0           opt=0 deps=[#42] | Cog Teamwork!
+        item x1: create:large_cogwheel [quested]
+        item x1: create:cogwheel [quested]
+#44  3AF2BC9A0E298882 x=   0.0 y=   2.0 sz=1.25          opt=0 deps=[#1] | Machines
+        item x1: create:andesite_casing [quested]
+#45  5DD6631F5996BA71 x=   3.0 y= -4.75 sz=1.25          opt=0 deps=[#42] | Water Wheels
+        item x1: ftbfiltersystem:filter [MISSING], create:water_wheel [quested], create:large_water_wheel [quested]
+#46  3697AAF8F281B247 x=  4.25 y=  -3.5 sz=1.25          opt=0 deps=[#42] | Steam Engine
+        item x1: create:steam_engine [quested]
+        item x1: create:fluid_tank [quested]
+        item x1: create:shaft [quested]
+#47  72C7698072BF0F1D x=   3.0 y=  -3.5 sz=1.25          opt=0 deps=[#42] | Hand Crank
+        item x1: create:hand_crank [quested]
+#48  2AEA51044AD44BE8 x=  -7.0 y=  -6.5 sz=1             opt=0 deps=[#41] | Depot
+        item x1: create:depot [quested]
+#49  476C7317510198D9 x=  -7.5 y=  -7.5 sz=1             opt=0 deps=[#48] | Weighted Ejector
+        item x1: create:weighted_ejector [quested]
+#50  483892F0A0F75B97 x= -12.0 y=  -1.5 sz=1.25          opt=0 deps=[#51] | Fluid Pipe
+        item x1: create:fluid_pipe [quested]
+#51  7242F591DA474B37 x= -10.0 y=   0.0 sz=1.75          opt=0 deps=[#0] | Fluid Logistics
+        item x1: minecraft:copper_ingot [quested]
+#52  3F02EF19112D23BE x=   1.0 y=   1.0 sz=1.0           opt=0 deps=[#44] | Crushing Wheels
+        item x2: create:crushing_wheel [quested]
+#53  64FF7118E29931C0 x=  -1.5 y=   2.0 sz=1.0           opt=0 deps=[#44] | Millstone
+        item x1: create:millstone [quested]
+#54  133CA315A1443A49 x= -12.0 y=  -3.0 sz=1             opt=0 deps=[#50] | Mechanical Pump
+        item x1: create:mechanical_pump [quested]
+#55  127F9EAC7C305BF5 x= -5.25 y=   3.5 sz=1.25          opt=0 deps=[#0] | Wrench
+        item x1: create:wrench [quested]
+#56  38CB5044AB3F859B x= -6.75 y=   3.5 sz=1.25          opt=0 deps=[#0] | Super-Glue
+        item x1: create:super_glue [quested]
+#57  72537968598AB884 x=  -6.0 y=   4.5 sz=1.25          opt=0 deps=[#0] | Engineer's Goggles
+        item x1: create:goggles [quested]
+#58  69EE22CB4FF1E591 x=  -9.0 y=   4.0 sz=1.75          opt=0 deps=[#44,#56] | Contraptions
+        item x1: create:super_glue [quested]
+        item x1: create:andesite_casing [quested]
+#59  087F6C09CB5B2D1A x= -13.0 y=  -2.5 sz=1             opt=0 deps=[#50] | Smart Fluid Pipe
+        item x1: create:smart_fluid_pipe [quested]
+#60  50DBB87E53017E60 x= -13.5 y=  -1.5 sz=1             opt=0 deps=[#50] | Fluid Valve
+        item x1: create:fluid_valve [quested]
+#61  3C99017FD32B6DE2 x=   1.5 y=   4.5 sz=1.0           opt=0 deps=[#10,#12] | Brass Casing
+        item x1: create:brass_casing [quested]
+#62  1712C3B3CF158843 x=  -1.5 y=   4.5 sz=1.0           opt=0 deps=[#22] | Precision Mechanism
+        item x1: create:precision_mechanism [quested]
+#63  1BA11428DF7541AD x=  -2.0 y=  -5.5 sz=1.0           opt=0 deps=[#6] | Sequenced Gearshift
+        item x1: create:sequenced_gearshift [quested]
+#64  4EE10B8E194F5CA9 x=   0.0 y=   6.5 sz=1.25          opt=0 deps=[#61] | Trains
+        item x1: create:railway_casing [quested]
+#65  09E34E1F9C751458 x=  -1.0 y=  -5.0 sz=1.0           opt=0 deps=[#2] | Vertical Gearbox
+        item x1: create:vertical_gearbox [quested]
+#66  3A4C62865C7CC862 x= -13.0 y=   0.0 sz=1             opt=0 deps=[#51] | Fluid Tanks
+        item x1: create:fluid_tank [quested]
+#67  39A7619B4C5592BE x= -12.0 y=   3.0 sz=1             opt=0 deps=[#25] | Item Drain
+        item x1: create:item_drain [quested]
+#68  078C5B50CDC174CB x= -11.0 y=   5.0 sz=1             opt=0 deps=[#58] | Mechanical Bearing
+        item x1: create:mechanical_bearing [quested]
+#69  18914FDF9CF9EEA8 x= -10.5 y=   7.0 sz=1             opt=0 deps=[#58] | Clockwork Bearing
+        item x1: create:clockwork_bearing [quested]
+#70  5979DE0E2BA3DAE5 x=  -1.0 y=   7.0 sz=1             opt=0 deps=[#22] | Train Tracks
+        item x1: create:track [quested]
+#71  77BE3D9D274F72F1 x=   1.0 y=   7.0 sz=1             opt=0 deps=[#64,#70] | Train Stations
+        item x1: create:track_station [quested]
+#72  3FBCBBEBB78B83FC x=   0.0 y=   9.0 sz=1.5           opt=0 deps=[#70,#71] | Constructing Trains
+        item x1: create:controls [quested]
+        item x1: create:super_glue [quested]
+        item x1: create:railway_casing [quested]
+#73  30AC43222FF9B18A x=   1.0 y=  10.0 sz=1             opt=0 deps=[#72] | Train Signals
+        item x1: create:track_signal [quested]
+#74  5134C81D96C55375 x=  -1.0 y=  10.0 sz=1             opt=0 deps=[#72] | Train Observer
+        item x1: create:track_observer [quested]
+#75  2D96965317D3CFEC x=   0.0 y=  10.5 sz=1             opt=0 deps=[#72] | Conductors
+        item x1: create:schedule [quested]
+        item x1: ftbfiltersystem:filter [MISSING], #create:seats
+#76  7F0F7111552F95A9 x=   1.5 y=   9.0 sz=1             opt=0 deps=[#72] | Controlling your Train
+        item x1: create:controls [quested]
+#77  12274935C3D20C74 x=  -1.5 y=   9.0 sz=1             opt=0 deps=[#72] | Decorating your Train
+        item x1: create:super_glue [quested]
+#78  2C2958E38293717E x=  -6.0 y=  -9.0 sz=1.25          opt=0 deps=[#41] | Create 1.21
+        item x1: create:cardboard [quested]
+#79  737DC37E4310090C x=  -5.0 y= -11.5 sz=1             opt=0 deps=[#85] | Chain Conveyor
+        item x1: create:chain_conveyor [quested]
+#80  3B3B38B17CF5D81C x=  -4.0 y= -11.5 sz=1             opt=0 deps=[#79] | Package Frogport
+        item x1: create:package_frogport [quested]
+#81  57A18F2E51952EB8 x=  -4.0 y= -10.5 sz=1             opt=0 deps=[#85] | Postboxes
+        item x1: ftbfiltersystem:filter [MISSING], #create:postboxes
+#82  6353A39CBEE599A0 x=  -7.0 y= -11.5 sz=1             opt=0 deps=[#85] | Stock Link
+        item x1: create:stock_link [quested]
+#83  754B8F1FBCD983C5 x=  -8.0 y= -11.5 sz=1             opt=0 deps=[#82] | Stock Ticker
+        item x1: create:stock_ticker [quested]
+#84  672F9CF5B0E626F1 x=  -6.0 y= -11.0 sz=1             opt=0 deps=[#78] | Packagers
+        item x1: create:packager [quested]
+#85  16B0C1F7B951C19D x=  -6.0 y= -12.0 sz=1.25          opt=0 deps=[#84] | Cardboard Packages
+        item x1: ftbfiltersystem:filter [MISSING], #create:packages
+#86  0A4962728C98DAD9 x=  -6.0 y=  -6.5 sz=1             opt=0 deps=[#41] | Item Vaults
+        item x1: create:item_vault [quested]
+#87  64860340A5BEBAB9 x=  -8.0 y= -10.5 sz=1             opt=0 deps=[#82,#83] | Shops
+        item x1: ftbfiltersystem:filter [MISSING], #create:table_cloths
+#88  7BB3BF6162F05265 x=   3.5 y=   0.0 sz=1             opt=0 deps=[#14,#62,#61] | 
+        item x1: create:rotation_speed_controller [quested]

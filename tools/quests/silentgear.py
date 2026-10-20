@@ -1,0 +1,252 @@
+"""Quest chapter: silentgear. See tools/quests/STYLE.md. Build: python3 tools/build_quests.py
+
+Mirrors ATM10's "silent_gear" chapter (its list, clusters and requirements only; every word here is ours).
+ATM10 builds its parts in a Productive Metalworks foundry with Silent Gear Metalworks casts; neither mod is in this
+pack, so the foundry quests are skipped and each cast quest becomes "make that gear item" (Silent Gear's own route:
+blueprint or template, then parts in a crafting grid). Key prefix "slg_" ("sg_" belongs to the gear shop).
+The older Silent Gear quests in tools.py (tc_*) stay; same-step quests here depend on the required ones.
+"""
+from questlib import Q, Chapter, item, tick, anyof, SIDE  # noqa: F401
+
+SG = "silentgear:"
+FORGE, BLADE, RANGED, TOOLS = "The First Forge", "Blades and Maces", "Bows and Spears", "Tools from Parts"
+ARMOR, PARTS, MACH, ALLOY, KITS = "Armour and Jewellery", "Upgrade Parts", "Machines and Catalysts", "Alloys and Starlight", "Repair Kits"
+
+
+def gear(key, name, title, subtitle, what, how, tip, section, mirror, deps=("slg_hub",), xp=40, **kw):
+    """One Silent Gear item quest (tasks: the item itself)."""
+    return Q(key, 0, 0, [item(SG + name)], title, deps=list(deps), xp=xp, subtitle=subtitle, section=section,
+             mirror=mirror, desc=["&eWhat:&r " + what, "&eHow:&r " + how, "&eTip:&r " + tip], **kw)
+
+
+def blueprint(key, name, title, subtitle, what, how, tip, section, mirror, deps=("slg_hub",), xp=30):
+    """A blueprint quest: the reusable blueprint or the one-use template both count."""
+    return Q(key, 0, 0, [anyof([SG + name + "_blueprint", SG + name + "_template"])], title, deps=list(deps), xp=xp,
+             subtitle=subtitle, section=section, mirror=mirror,
+             desc=["&eWhat:&r " + what, "&eHow:&r " + how, "&eTip:&r " + tip])
+
+
+BP = "a blueprint (from blueprint paper) or a one-use template (from template boards) shapes the part; JEI shows both."
+
+CHAPTER = Chapter("silentgear", "Silent Gear", "silentgear:pickaxe",
+        ["Gear built part by part: the material decides the stats."], SIDE, [
+    # --- Start (ATM10: the checkmark, then the smelter hub) ---------------------------------------------------------
+    Q("slg_intro", 0, 0, [tick()], "Every Part a Choice", deps=["gs_silent"], xp=10, section=FORGE, mirror="769D5DE66D13B256",
+      icon="silentgear:blueprint_paper", subtitle="How Silent Gear works", desc=[
+        "&6You remember weapons shaped to the hand that held them. Here you get to shape your own again.&r",
+        "&eWhat:&r every Silent Gear item is assembled from parts (head, rod, binding, grip, tip, coating), and each part takes the stats and traits of its material.",
+        "&eHow:&r make a blueprint or template for a part, craft the part from a material, then put the parts together in a crafting grid. JEI and the Material Book show every material's stats.",
+        "&eTip:&r click the checkmark when you have read this. The quests below are one per gear type."]),
+    Q("slg_hub", 0, 0, [item("minecraft:iron_ingot"), item("minecraft:coal")], "Metal and Fuel", deps=["slg_intro"], xp=25,
+      size=2.0, shape="gear", section=FORGE, mirror="711826BBCA832EE2", subtitle="The two things every smith needs", desc=[
+        "&eWhat:&r iron is the first good head material for Silent Gear parts, and coal fuels the smelting (and later the Alloy Forge).",
+        "&eChemistry:&r in a furnace, coal burns to carbon monoxide, which strips the oxygen from iron oxide: Fe₂O₃ + 3CO → 2Fe + 3CO₂.",
+        "&eHow:&r smelt raw iron with coal. Hold one of each.",
+        "&eTip:&r every quest on this page hangs from here: pick the gear types you want and ignore the rest until you need them."]),
+
+    # --- Blades and maces -------------------------------------------------------------------------------------------
+    gear("slg_sword", "sword", "Sword", "The classic", "a sword: a blade and a rod, plus optional binding, grip and coating.",
+         "sword blueprint (blueprint paper and a stick), a sword blade from your material, then the blade and a rod in a crafting grid.",
+         "the blade's material sets damage and durability; the rod mostly adds traits.", BLADE, "0DF4B01CC5B49E4E"),
+    gear("slg_katana", "katana", "Katana", "Fast and sharp", "a katana: a long single-edged blade that swings faster than a sword.",
+         "katana blueprint and a katana blade, then assemble with a rod (check JEI).",
+         "light, fast weapons suit materials with high attack speed.", BLADE, "3722B43822F80470"),
+    gear("slg_machete", "machete", "Machete", "Cuts plants as well as mobs", "a machete: a heavy blade that also clears leaves and plants quickly.",
+         "machete blueprint and blade, then assemble with a rod (check JEI).",
+         "the right tool for clearing a jungle around a base.", BLADE, "39B85DB54B1037FE"),
+    gear("slg_knife", "knife", "Knife", "A small blade with uses", "a knife: a quick little blade, and Silent Gear's tool for cutting logs into template boards.",
+         "knife blueprint and blade, then assemble with a rod (check JEI).",
+         "a knife cuts one log into six template boards (a tool action; check JEI).", BLADE, "0D26E5EF6CFCFDBF"),
+    gear("slg_dagger", "dagger", "Dagger", "The fastest blade", "a dagger: very fast attacks with low damage per hit.",
+         "dagger blueprint and blade, then assemble with a rod (check JEI).",
+         "a dagger built from a material with an on-hit trait triggers that trait often.", BLADE, "3D2C6FF462B17205"),
+    gear("slg_trident", "trident", "Trident", "Throw it, call it back", "a Silent Gear trident built from prongs of your chosen material.",
+         "the trident blueprint needs a vanilla trident and a heart of the sea (check JEI); then make the prongs and assemble.",
+         "drowned holding a trident are the only source of the vanilla one; fight them in the rain-free shallows.", BLADE, "222D08F43B995FED"),
+    blueprint("slg_mace", "mace", "Mace Blueprint", "Heavy, and better from above",
+              "the blueprint for Silent Gear's mace, a heavy weapon with a mace core of your material.",
+              "blueprint paper and a breeze rod (from breezes in trial chambers); check JEI.",
+              "like the vanilla mace, it rewards hitting from a height.", BLADE, "474AF9F90C8E40A2"),
+
+    # --- Bows and spears ----------------------------------------------------------------------------------------------
+    gear("slg_spear", "spear", "Spear", "Long reach", "a spear: a tipped weapon that reaches further than a sword.",
+         "spear blueprint and a spear tip, then assemble with a rod (check JEI).",
+         "the extra reach keeps creepers a step further away.", RANGED, "405DCD3E36232EEA"),
+    gear("slg_bow", "bow", "Bow", "Limbs of any material", "a bow whose limbs set draw speed, damage and range.",
+         "bow blueprint, bow limbs and a bowstring (cord) of string or flax, then assemble (check JEI).",
+         "flax string from Silent Gear's flax plant makes a decent cord.", RANGED, "6D9CDB4D81DC164D"),
+    gear("slg_crossbow", "crossbow", "Crossbow", "Slow to load, hard to stop", "a crossbow built from crossbow limbs and a cord.",
+         "crossbow blueprint, limbs and a cord, then assemble (check JEI).",
+         "load it before a fight; the first shot is free.", RANGED, "1E8357755479E259"),
+    gear("slg_slingshot", "slingshot", "Slingshot", "Pebbles with purpose", "a slingshot that fires pebbles and other small shot.",
+         "slingshot blueprint, limbs and a cord, then assemble (check JEI). It shoots Silent Gear pebbles.",
+         "cheap ammunition makes it a good way to pull mobs out of a group.", RANGED, "1E2F1E036716C031"),
+    gear("slg_arrow", "arrow", "Arrows", "Ammunition from parts", "Silent Gear arrows: arrow heads, a shaft and fletching, built as one stack-like item.",
+         "arrow blueprint and arrow heads, then assemble with a rod and fletching (check JEI).",
+         "heads of a heavy material hit harder; fletching changes how straight they fly.", RANGED, "3844877F6C1AFE77"),
+    blueprint("slg_fletching", "fletching", "Fletching Blueprint", "Feathers for the arrows",
+              "the blueprint for fletching, the feather part of Silent Gear arrows.",
+              "two blueprint paper and a feather (check JEI).",
+              "Silent Gear's fluffy feathers work as a fletching material too.", RANGED, "3F56A5253D477B97"),
+
+    # --- Tools from parts --------------------------------------------------------------------------------------------
+    gear("slg_pickaxe", "pickaxe", "Pickaxe", "The one you already have", "a Silent Gear pickaxe, the first part-built tool you made.",
+         "pickaxe blueprint and head, then assemble with a rod (check JEI). You made one on the main path.",
+         "upgrade the head material first; it decides mining tier and speed.", TOOLS, "766C80E5D7B7A916"),
+    gear("slg_shovel", "shovel", "Shovel", "Dirt, sand and gravel", "a shovel built from a shovel head and a rod.",
+         "shovel blueprint and head, then assemble (check JEI).",
+         "a fast shovel makes clay and sand runs for glassmaking painless.", TOOLS, "52CDB46F6CBF007B"),
+    gear("slg_axe", "axe", "Axe", "Trees and heavy hits", "an axe built from an axe head and a rod: a woodcutter and a slow, heavy weapon.",
+         "axe blueprint and head, then assemble (check JEI).",
+         "it also strips logs for charcoal and building.", TOOLS, "69383DA579901E7E"),
+    gear("slg_paxel", "paxel", "Paxel", "Three tools in one", "a Silent Gear paxel: pickaxe, axe and shovel in one head.",
+         "paxel blueprint and a paxel head (it needs more material than a pickaxe), then assemble (check JEI).",
+         "one tool slot freed on long trips.", TOOLS, "63CAD77A4488F2CE"),
+    gear("slg_hammer", "hammer", "Hammer", "Mine 3x3", "a hammer that breaks a 3x3 area of stone and ore at once.",
+         "hammer blueprint and head, then assemble (check JEI).",
+         "it also crushes Silent Gear ingots into dust; the dust quests below need it.", TOOLS, "262036FE8E87F50A"),
+    gear("slg_excavator", "excavator", "Excavator", "Dig 3x3", "the shovel's version of the hammer: dirt, sand and gravel in 3x3.",
+         "excavator blueprint and head, then assemble (check JEI).",
+         "perfect for clearing space for a big build.", TOOLS, "3F39BEB788175CEF"),
+    gear("slg_mattock", "mattock", "Mattock", "Hoe, axe and shovel", "a mattock: a farming tool that tills, chops and digs.",
+         "mattock blueprint and head, then assemble (check JEI).",
+         "one tool for the whole farm.", TOOLS, "427516AA3E8C9442"),
+    gear("slg_sickle", "sickle", "Sickle", "Harvest in a sweep", "a sickle that cuts and harvests plants over an area.",
+         "sickle blueprint and blade, then assemble (check JEI).",
+         "a quick harvest for wide crop fields.", TOOLS, "083ABBA1C45FF960"),
+    gear("slg_shears", "shears", "Shears", "Wool, leaves and string", "Silent Gear shears with stats from their blades.",
+         "shears blueprint and shear blades, then assemble (check JEI).",
+         "durable shears are worth it for a wool farm.", TOOLS, "67216EC5274F08B9"),
+    gear("slg_fishing_rod", "fishing_rod", "Fishing Rod", "A rod with a real hook", "a fishing rod with a hook of your chosen material.",
+         "fishing rod blueprint, a fishing hook and a cord, then assemble (check JEI).",
+         "the hook's material sets the rod's durability and traits.", TOOLS, "462C1F75A2FB9F02"),
+    gear("slg_prospector", "prospector_hammer", "Prospector Hammer", "Listen for ore", "a hammer that scans for ores near the block you strike.",
+         "prospector hammer blueprint and head, then assemble (check JEI).",
+         "pair it with the Spectrometer from the main path to plan a dig before you start.", TOOLS, "047F3F99035CE623"),
+
+    # --- Armour and jewellery ----------------------------------------------------------------------------------------
+    gear("slg_shield", "shield", "Shield", "Block with your best metal", "a shield built from a shield plate of any material.",
+         "shield blueprint and plate, then assemble (check JEI).",
+         "a tough material means fewer repairs between fights.", ARMOR, "78C112170E17FBF4"),
+    gear("slg_helmet", "helmet", "Helmet", "Armour from plates", "a helmet built from helmet plates of your material.",
+         "helmet blueprint and plates, then assemble (check JEI).",
+         "armour from parts can carry traits that vanilla armour never has.", ARMOR, "6E2806D8DC61C46F"),
+    gear("slg_chestplate", "chestplate", "Chestplate", "The biggest piece", "a chestplate built from chestplate plates.",
+         "chestplate blueprint and plates, then assemble (check JEI).",
+         "it carries the most armour, so give it your best material.", ARMOR, "35E8C65CCA676E76"),
+    gear("slg_leggings", "leggings", "Leggings", "Plate for the legs", "leggings built from legging plates.",
+         "leggings blueprint and plates, then assemble (check JEI).",
+         "a lining (the blueprint below) adds a second material's traits.", ARMOR, "22C51025DC42CDE2"),
+    gear("slg_boots", "boots", "Boots", "Plate for the feet", "boots built from boot plates.",
+         "boots blueprint and plates, then assemble (check JEI).",
+         "linings work on boots too; check the Material Book for useful traits.", ARMOR, "6912C0E3D092DD27"),
+    blueprint("slg_elytra", "elytra", "Elytra Blueprint", "Wings with stats",
+              "the blueprint for Silent Gear's elytra, whose wings take stats from their material.",
+              "blueprint paper, gold, phantom membrane and a real elytra from an End ship (check JEI).",
+              "you need one vanilla elytra to make the blueprint, then can build wings from better materials.", ARMOR, "5AB8651FCB1E2F72",
+              deps=("slg_hub", "w_end")),
+    gear("slg_ring", "ring", "Ring", "A trait on your finger", "a ring: a shank and an optional gem setting, worn as a curio.",
+         "ring blueprint and shank, then assemble with a setting (check JEI).",
+         "jewellery gives you its material's traits while worn, so pick a material for its trait.", ARMOR, "74FA25B2E087BEC4"),
+    gear("slg_bracelet", "bracelet", "Bracelet", "A trait on your wrist", "a bracelet: a band and an optional setting, worn as a curio.",
+         "bracelet blueprint and band, then assemble (check JEI).",
+         "a second jewellery slot for a second trait.", ARMOR, "21234BB40DB05C78"),
+    gear("slg_necklace", "necklace", "Necklace", "A trait at your neck", "a necklace: a chain and an optional setting, worn as a curio.",
+         "necklace blueprint and chain, then assemble (check JEI).",
+         "the third jewellery piece; together they can carry three different traits.", ARMOR, "7098F24BC8FAC749"),
+    blueprint("slg_lining", "lining", "Lining Blueprint", "Soft layers inside armour",
+              "the blueprint for armour linings, an extra material layer inside a piece of armour.",
+              "three blueprint paper, two wool and two string (check JEI).",
+              "a lining adds its material's traits without changing the armour plates.", ARMOR, "2098D8BFADB55D2A"),
+
+    # --- Upgrade parts ---------------------------------------------------------------------------------------------
+    gear("slg_tip", "tip", "Tips", "A harder edge", "a tip: an upgrade part that caps a tool or weapon with another material.",
+         "tip blueprint (two blueprint paper, paper and stone), then a tip from your material; add it to a tool in a crafting grid.",
+         "a diamond or quartz tip is a cheap upgrade for an iron tool.", PARTS, "158B24939A269D83"),
+    blueprint("slg_coating", "coating", "Coating Blueprint", "Plate a part in a better material",
+              "the blueprint for coatings, a layer of a better material over a tool's main part.",
+              "four blueprint paper, a diamond and an emerald (check JEI).",
+              "the Coatings quest on the Gear and Comfort page covers the smithing template route.", PARTS, "0947B4ED95B0267E"),
+    blueprint("slg_grip", "grip", "Grip Blueprint", "Something to hold onto",
+              "the blueprint for grips, a handle wrap that adds its material's traits.",
+              "two blueprint paper and a grip material such as leather or wool (check JEI).",
+              "grips are cheap, so try different ones.", PARTS, "6BFD7854F078BF16"),
+    blueprint("slg_binding", "binding", "Binding Blueprint", "Tie the head on tight",
+              "the blueprint for bindings, which tie a head to its rod and add their own traits.",
+              "blueprint paper and two binding materials such as string or vines (check JEI).",
+              "the Material Book shows which bindings add which traits.", PARTS, "22A0A9C81A5C85A1"),
+    gear("slg_rod", "rod", "Rods", "The handle of every tool", "a rod: the handle part of nearly every Silent Gear tool and weapon.",
+         "rod blueprint (blueprint paper and sticks), then rods from wood, bone, blaze rods, metal and more.",
+         "the rod's material adds traits; a blaze rod handle is a classic.", PARTS, "657B3116A6419420"),
+
+    # --- Machines and catalysts (ATM10: the machine row) ----------------------------------------------------------------
+    gear("slg_salvager", "salvager", "Salvager", "Old gear back into parts",
+         "a machine that breaks old Silent Gear items back into their parts.",
+         "a piston, crimson iron ingots, an iron block and obsidian (check JEI). Crimson iron ore is in the Nether.",
+         "salvage before upgrading; some material is lost, most comes back.", MACH, "2EB96FF06627FD9A",
+         deps=("slg_hub", "tc_crimson"), xp=50, size=1.5, shape="hexagon"),
+    gear("slg_grader", "material_grader", "Material Grader", "Better grades, better stats",
+         "a machine that grades materials; a higher grade adds bonus stats to every part made from it.",
+         "quartz, iron, three blaze gold ingots and an Advanced Upgrade Base (check JEI).",
+         "grade the material you use for heads; that's where the stats live.", MACH, "6A393C7A24899E3E",
+         deps=("slg_salvager", "t2_nether"), xp=50, size=1.5, shape="hexagon"),
+    gear("slg_glowing", "glowing_dust", "Glowing Dust", "The first grading catalyst",
+         "the tier 1 catalyst for the Material Grader, spent on each try.",
+         "a stick, two glowstone dust and a quartz make four (check JEI).",
+         "keep a stack by the grader.", MACH, "6B78378BC8036227", deps=("slg_grader",)),
+    gear("slg_blazing", "blazing_dust", "Blazing Dust", "The second catalyst",
+         "the tier 2 Grader catalyst, for higher grades.",
+         "blaze gold dust and two glowstone dust make four. Crush blaze gold with a hammer first (check JEI).",
+         "a better catalyst raises the highest grade you can reach.", MACH, "002D65E4D7E8F62B", deps=("slg_grader",)),
+    gear("slg_glittery", "glittery_dust", "Glittery Dust", "The third catalyst",
+         "the tier 3 Grader catalyst, for the best grades.",
+         "popped chorus fruit, emerald nuggets, glowstone dust and a nether banana make eight (check JEI).",
+         "chorus grows in the End; nether bananas grow on netherwood trees.", MACH, "7D690A7D0FF6E328", deps=("slg_grader", "w_end")),
+    gear("slg_recrystallizer", "recrystallizer", "Recrystallizer", "Grow hybrid gems",
+         "a machine that fuses gems into hybrid gem materials with mixed stats.",
+         "azure electrum ingots, an emerald, a diamond, purpur blocks and a gold block (check JEI).",
+         "experiment with cheap gems before feeding it diamonds.", MACH, "3AC03D1FA5C341A7",
+         deps=("slg_salvager", "w_end"), xp=60, size=1.5, shape="hexagon"),
+
+    # --- Alloys and starlight --------------------------------------------------------------------------------------------
+    gear("slg_alloy_forge", "alloy_forge", "Alloy Forge", "Silent Gear's alloy furnace",
+         "the forge that makes Silent Gear's alloys: blaze gold, crimson steel, azure electrum and tyrian steel.",
+         "crimson steel ingots, blackstone and an iron block (check JEI). Fuel it like a furnace.",
+         "the forge gives more ingots per batch than the crafting routes.", ALLOY, "3930404D5C8B44EB",
+         deps=("slg_grader", "tc_crimson_steel"), xp=60, size=1.5, shape="hexagon"),
+    gear("slg_charger", "starlight_charger", "Starlight Charger", "Charge materials at night",
+         "a block that collects starlight at night and charges Silent Gear materials for a bonus.",
+         "quartz blocks, glass, polished blackstone and a blaze gold block (check JEI). Place it under open sky.",
+         "the catalyst's tier caps how strong the charge gets.", ALLOY, "7C3D763CF22D167A",
+         deps=("slg_alloy_forge",), xp=75, size=2.0, shape="gear"),
+    gear("slg_crimson_block", "crimson_steel_block", "Crimson Steel Block", "Nine ingots of heat-forged steel",
+         "a storage block of crimson steel.", "nine crimson steel ingots from the Alloy Forge.",
+         "it decorates as well as it stores.", ALLOY, "7E13007340A818C5", deps=("slg_charger",)),
+    gear("slg_azure_block", "azure_electrum_block", "Azure Electrum Block", "The End's metal, stacked",
+         "a storage block of azure electrum.", "nine azure electrum ingots; azure silver ore is in the End and needs a netherite-tier pick.",
+         "electrum is a real gold-silver alloy; the azure part is Silent Gear's.", ALLOY, "29131C3532610ADF", deps=("slg_charger", "w_end")),
+    gear("slg_tyrian_block", "tyrian_steel_block", "Tyrian Steel Block", "The finest alloy, by the block",
+         "a storage block of tyrian steel, Silent Gear's top alloy.", "nine tyrian steel ingots from the Alloy Forge (crimson steel, azure electrum, crushed shulker shell, netherite scrap; check JEI).",
+         "make sure you have enough ingots for your gear first.", ALLOY, "3B560B2ECE331CAF", deps=("slg_charger", "w_end"), xp=75),
+    gear("slg_blaze_dust", "blaze_gold_dust", "Blaze Gold Dust", "Crushed for the charger",
+         "blaze gold crushed into dust: the tier 1 Starlight Charger catalyst and the base of blazing dust.",
+         "crush a blaze gold ingot with a hammer (a tool action; check JEI).",
+         "crushing a metal hugely increases its surface area, which is why fine powders react so much faster than bars.", ALLOY, "48D358470A019E7A",
+         deps=("slg_charger",)),
+    gear("slg_azure_dust", "azure_silver_dust", "Azure Silver Dust", "A higher charger catalyst",
+         "azure silver crushed into dust, for the charger and for starmetal.",
+         "crush an azure silver ingot with a hammer (check JEI).", "keep two for the starmetal recipe.", ALLOY, "2BF119DD5D977409",
+         deps=("slg_charger", "w_end")),
+    gear("slg_starmetal", "starmetal_dust", "Starmetal Dust", "A piece of a star, as a material",
+         "starmetal dust, a late Silent Gear material and charger catalyst.",
+         "azure electrum dust, two azure silver dust, blaze gold dust and a nether star fragment make three (check JEI).",
+         "one Nether Star crafts into nine fragments.", ALLOY, "0FEAD3CA2CC4A8B1", deps=("slg_charger", "w_end", "hn_wither"), xp=75),
+
+    # --- Repair kits ------------------------------------------------------------------------------------------------
+    Q("slg_repair", 0, 0, [anyof([SG + "very_crude_repair_kit", SG + "crude_repair_kit", SG + "sturdy_repair_kit",
+                                  SG + "crimson_repair_kit", SG + "azure_repair_kit"])], "Any Repair Kit", deps=["tc_sg_repair"], xp=25,
+      size=1.5, shape="hexagon", section=KITS, mirror="11B0B93D725ABE43", subtitle="Very crude, crude, sturdy, crimson or azure", desc=[
+        "&eWhat:&r a repair kit holds repair materials and mends Silent Gear in a crafting grid. Five tiers, each holding more.",
+        "&eHow:&r very crude (template boards, a stick and stone), crude (iron), sturdy (iron and a diamond), crimson (crimson steel and blaze gold), azure (azure electrum and an emerald). Check JEI.",
+        "&eTip:&r better kits hold more material and repair more per use (check the tooltip)."]),
+], links=[("gs_silent", 0, 0)], mirror="silent_gear")

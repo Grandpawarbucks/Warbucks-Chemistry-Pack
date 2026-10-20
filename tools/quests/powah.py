@@ -1,238 +1,371 @@
-"""Quest chapter: powah (side page). See tools/quests/STYLE.md. Build: python3 tools/build_quests.py"""
-from questlib import Q, Chapter, item, dim, tick, kill, anyof, MAIN, SIDE  # noqa: F401
+"""Quest chapter: powah (side page). See tools/quests/STYLE.md. Build: python3 tools/build_quests.py
+
+Mirror of ATM10's "Powah" chapter (user decision 2026-10-20: quest for quest where we have the mod; same items,
+order, clusters and sizes; the text is ours). All 108 of its item quests are here: the start, the Energizing Orb, the
+seven tier quests (tiny and basic capacitors, energized steel and the four crystals) and the 14 x 7 grid of blocks,
+one quest per block per tier, wired the way ATM10 wires them. ATM10's credits checkmark is skipped. Its first quest
+asks for raw uraninite, which this pack doesn't generate (Powah ore is off), so ours is a checkmark.
+Pack gates (STYLE.md "Pack facts"): the Energizing Orb needs an MI electronic circuit (MV), uraninite is made in MI's
+Chemical Reactor (Powah's shortcut is removed). Starter reactor blocks therefore also depend on t4_uraninite, and the
+starter ender cell and gate (their Ender Core is made in the Orb) on pw_orb.
+The grid's quests live in GRID: (key, item, count, ATM10 quest id, deps, optional). Existing keys are kept for the
+blocks they already asked for; the Powah quests that used to sit in power.py moved here with their keys.
+Our own Powah quests ATM10 doesn't have (manual, wrench, rods, casing, pearl, panes, cards, snowball, hardened
+capacitors, ender core, dry ice, the nitro block) stay as optional side quests.
+"""
+from questlib import Q, Chapter, item, tick, anyof, MAIN, SIDE  # noqa: F401
 
 P = "powah:"
+OPT = dict(optional=True, tokens=1)
+TIERS = ["starter", "basic", "hardened", "blazing", "niotic", "spirited", "nitro"]
+SECTION = {t: f"{t.title()} Tier" for t in TIERS}
+S_START, S_SIDE = "Getting Started", "Side Projects"
 
-# Layout: y=0 spine (dielectric parts -> starter tier -> Energizing Orb -> rods and crystal gear),
-# y=-2 generators and the hardened tier, y=2 early utilities and (from x=20) links to the crystal
-# quests in the Power chapter, y=4 ender network, y=-6 reactor. Optional quests sit off those rows.
-# Starter and basic Powah blocks need no Orb, so they are available early (Furnator for FE at t1).
-# Everything from energized steel up goes through the Orb, which the pack gates on the MV circuit.
-CHAPTER = Chapter("powah", "Powah!", P + "energizing_orb",
-        ["Powah: dielectric parts, the Energizing Orb, crystal tiers, generators, cells and wireless power. "
-         "The starter tier is open early; the Orb needs an MI electronic circuit (MV)."], SIDE, [
+# Block family -> (item prefix, display name, what it does)
+COLS = {
+    "discharger": ("energy_discharger", "Energy Discharger", "pulls FE back out of items placed in it and sends it on to the grid."),
+    "hopper": ("energy_hopper", "Energy Hopper", "charges the FE items in the container it faces."),
+    "transmitter": ("player_transmitter", "Player Transmitter", "charges the FE items carried by the player bound to it, wirelessly."),
+    "battery": ("battery", "Battery", "is an item that holds FE you can carry and use to charge gear."),
+    "rod": ("energizing_rod", "Energizing Rod", "pours FE into the Energizing Orb; more and better rods charge it faster."),
+    "ender_cell": ("ender_cell", "Ender Cell", "shares one energy pool with every ender block on the same channel, wherever it is."),
+    "cell": ("energy_cell", "Energy Cell", "stores FE and passes it on to cells next to it."),
+    "cable": ("energy_cable", "Energy Cable", "carries FE; each tier carries more per tick."),
+    "gate": ("ender_gate", "Ender Gate", "taps the ender network wherever you place it, without storing much itself."),
+    "magmator": ("magmator", "Magmator", "burns lava and other hot fluids for FE."),
+    "furnator": ("furnator", "Furnator", "burns furnace fuel for FE."),
+    "thermo": ("thermo_generator", "Thermo Generator", "makes FE from a hot block underneath and a coolant fed in."),
+    "reactor": ("reactor", "Reactor", "blocks stack into one multiblock reactor that burns uraninite."),
+    "solar": ("solar_panel", "Solar Panel", "makes FE from daylight."),
+}
+PREFIX = {v[0]: k for k, v in COLS.items()}
+MAT = {"starter": "tiny capacitors and a dielectric casing", "basic": "basic capacitors",
+       "hardened": "energized steel and hardened capacitors", "blazing": "blazing crystals and blazing capacitors",
+       "niotic": "niotic crystals and niotic capacitors", "spirited": "spirited crystals and spirited capacitors",
+       "nitro": "nitro crystals and nitro capacitors"}
+TIP = {"starter": "starter blocks need no Energizing Orb, so they work from your first day of power.",
+       "basic": "basic blocks still need no Orb: basic capacitors are iron, paste and a redstone block.",
+       "hardened": "hardened parts start from energized steel, made in the Energizing Orb.",
+       "blazing": "blazing crystals are energized blaze rods; see the Blazing quest at the start of this row.",
+       "niotic": "niotic crystals are energized diamonds; see the Niotic quest at the start of this row.",
+       "spirited": "spirited crystals are energized emeralds; see the Spirited quest at the start of this row.",
+       "nitro": "nitro crystals take a Nether Star and twenty million FE; see the Nitro quest at the start of this row."}
+XP = {"starter": 30, "basic": 40, "hardened": 60, "blazing": 80, "niotic": 100, "spirited": 125, "nitro": 150}
+# Pack gates on top of ATM10's deps (see the module docstring).
+EXTRA_DEPS = {"pw_reactor_starter": ["t4_uraninite"], "pw_ender_cell_starter": ["pw_orb"], "pw_ender_gate": ["pw_orb"]}
 
-    # --- Dielectric parts and the starter tier (y = 0) -------------------------------------------
-    Q("pw_paste", 0, 0, [item(P + "dielectric_paste", 16)], "Dielectric Paste", subtitle="Coal, clay and heat", deps=["t1_power"], xp=40, desc=[
-        "&6Insulators and conductors. You remember that power is mostly about where it is not allowed to go.&r",
-        "&eWhat:&r the base of every Powah block: rods, casings, capacitors and cables.",
-        "&eChemistry:&r a dielectric is an insulator that polarises in an electric field. Fired clay (aluminosilicates such as kaolinite, Al₂Si₂O₅(OH)₄) is the porcelain on real power-line insulators.",
-        "&eHow:&r shapeless: 3 coal or charcoal + 2 clay balls + a lava bucket makes 24. Or 2 coal + 1 clay ball + 1 blaze powder for 16.",
-        "&eTip:&r the lava recipe gives more per craft and keeps the bucket. Make a stack."]),
-    Q("pw_rods", 2, 0, [item(P + "dielectric_rod", 8), item(P + "dielectric_rod_horizontal", 8)], "Dielectric Rods", subtitle="Paste set around iron bars", deps=["pw_paste"], xp=40, desc=[
-        "&eWhat:&r insulated rods, upright and horizontal. Both go into casings, the Orb, cables and cards.",
-        "&eHow:&r 6 paste around 3 iron bars: a vertical line of bars for the upright rod, a horizontal line for the horizontal one. 8 per craft.",
-        "&eTip:&r you'll need far more horizontal rods than upright ones; every cable craft eats six."]),
-    Q("pw_casing", 4, 0, [item(P + "dielectric_casing", 2)], "Dielectric Casing", subtitle="The shell of every Powah block", deps=["pw_rods"], xp=40, desc=[
-        "&eWhat:&r the frame inside almost every Powah machine, cell and generator.",
-        "&eHow:&r 4 iron ingots in the corners, horizontal rods top and bottom, upright rods in the middle row (check JEI)."]),
-    Q("pw_capacitor", 6, 0, [item(P + "capacitor_basic", 4), item(P + "capacitor_basic_tiny", 2)], "Capacitors", subtitle="Two plates and an insulator", deps=["pw_casing"], xp=50, desc=[
-        "&eWhat:&r capacitors set a block's tier. The tiny ones go into starter blocks, the basic ones into basic blocks.",
-        "&eChemistry:&r a capacitor is two conductors separated by a dielectric. It stores E = ½CV², and a better dielectric raises the capacitance C.",
-        "&eHow:&r iron ingots, paste and a redstone block make 4 basic capacitors. One basic capacitor splits into 2 tiny ones.",
-        "&eTip:&r two basic capacitors combine into a large one, which the hardened tier needs later."]),
-    Q("pw_cable", 8, 0, [item(P + "energy_cable_starter", 12)], "Energy Cables", subtitle="Wires that know their tier", deps=["pw_capacitor"], xp=40, desc=[
-        "&eWhat:&r Powah's cables. Each tier carries more FE per tick.",
-        "&eHow:&r 6 horizontal rods, 2 iron nuggets and a tiny capacitor make 12 starter cables.",
-        "&eTip:&r cables connect to any FE block, not just Powah ones. Use the Powah wrench to configure sides."]),
-    Q("pw_cell_starter", 10, 0, [item(P + "energy_cell_starter")], "Starter Energy Cell", subtitle="A first Powah battery block", deps=["pw_cable"], xp=50, desc=[
-        "&eWhat:&r the smallest Powah cell. Enough to smooth out a furnator's output.",
-        "&eHow:&r iron ingots in the corners, tiny capacitors on the sides, a dielectric casing in the middle.",
-        "&eTip:&r the basic cell is the same recipe with basic capacitors. The bigger tiers come with energized steel and crystals."]),
+GRID = [
+    ('pw_thermo', 'thermo_generator_starter', 1, '52E59FCB39D66BCF', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_furnator', 'furnator_starter', 1, '3D5F87F8E6B89C1B', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_solar_starter', 'solar_panel_starter', 1, '7678B5DD1339833E', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_magmator', 'magmator_starter', 1, '0FD62827710F0AC6', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_reactor_starter', 'reactor_starter', 36, '1B0087400B0B8B49', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_ender_gate', 'ender_gate_starter', 1, '3CB6DC5B09C62CFE', ['pw_cable', 'pw_cap_tiny'], 0),
+    ('pw_cable', 'energy_cable_starter', 1, '7D52DD751DDADA1B', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_transmitter', 'player_transmitter_starter', 1, '677365A816994C8B', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_hopper', 'energy_hopper_starter', 1, '5BCA3F716348ECCD', ['pw_paste', 'pw_cap_tiny'], 1),
+    ('pw_discharger_starter', 'energy_discharger_starter', 1, '33816AF0E699F19F', ['pw_paste', 'pw_cap_tiny'], 1),
+    ('pw_cell_starter', 'energy_cell_starter', 1, '78202A1CF5D86B94', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_ender_cell_starter', 'ender_cell_starter', 1, '700F3FF7C23D0C0F', ['pw_cell_starter', 'pw_battery', 'pw_cap_tiny'], 0),
+    ('pw_battery', 'battery_starter', 1, '61A8FAEC4FF18449', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_discharger_basic', 'energy_discharger_basic', 1, '5A07C7A54D40FBE2', ['pw_capacitor'], 1),
+    ('pw_hopper_up', 'energy_hopper_basic', 1, '35F885A046EAE246', ['pw_hopper', 'pw_capacitor'], 1),
+    ('pw_transmitter_basic', 'player_transmitter_basic', 1, '740F314EE6242C13', ['pw_transmitter', 'pw_capacitor'], 0),
+    ('pw_battery_up', 'battery_basic', 1, '04F11E192A334E3F', ['pw_battery', 'pw_capacitor'], 0),
+    ('pw_ender', 'ender_cell_basic', 1, '0C481BA4C1CC0237', ['pw_orb', 'pw_capacitor'], 0),
+    ('pw_powah_cell', 'energy_cell_basic', 1, '66FA15A92DC655DE', ['pw_cell_starter', 'pw_paste', 'pw_capacitor'], 0),
+    ('pw_cable_basic', 'energy_cable_basic', 1, '5A708BF4F5091959', ['pw_cable', 'pw_capacitor'], 0),
+    ('pw_gate_basic', 'ender_gate_basic', 1, '69D82C33347D360D', ['pw_cable_basic', 'pw_capacitor'], 0),
+    ('pw_magmator_basic', 'magmator_basic', 1, '0E3A9D5E1E8AAF89', ['pw_magmator', 'pw_capacitor'], 0),
+    ('pw_gen_basic', 'furnator_basic', 1, '67DE5F982629BB34', ['pw_furnator', 'pw_capacitor'], 0),
+    ('pw_thermo_basic', 'thermo_generator_basic', 1, '60F5DC851FCFF1B2', ['pw_thermo', 'pw_capacitor'], 0),
+    ('pw_powah', 'reactor_basic', 36, '5F6152CF085D75D6', ['pw_reactor_starter', 'pw_capacitor'], 0),
+    ('pw_solar_basic', 'solar_panel_basic', 1, '7890A1478121D2CD', ['pw_solar_starter', 'pw_capacitor'], 0),
+    ('pw_discharger_hardened', 'energy_discharger_hardened', 1, '534485E8185B71C3', ['pw_energized'], 1),
+    ('pw_hopper_hardened', 'energy_hopper_hardened', 1, '04930767C52C7CC2', ['pw_hopper_up', 'pw_energized'], 1),
+    ('pw_transmitter_up', 'player_transmitter_hardened', 1, '7444B85503DE2C53', ['pw_transmitter_basic', 'pw_energized'], 0),
+    ('pw_battery_hardened', 'battery_hardened', 1, '604AB95A7600B150', ['pw_battery_up', 'pw_energized'], 0),
+    ('pw_cell_hardened', 'energy_cell_hardened', 1, '7FEE780F37A1322E', ['pw_powah_cell', 'pw_energized'], 0),
+    ('pw_ender_up', 'ender_cell_hardened', 1, '331498A68D110F81', ['pw_energized'], 0),
+    ('pw_cable_hardened', 'energy_cable_hardened', 1, '029922AB09F8C76A', ['pw_cable_basic', 'pw_energized'], 0),
+    ('pw_gate_hardened', 'ender_gate_hardened', 1, '5D594154819DD145', ['pw_cable_hardened', 'pw_energized'], 0),
+    ('pw_magmator_hardened', 'magmator_hardened', 1, '6ED2F8A8DEED417D', ['pw_magmator_basic', 'pw_energized'], 0),
+    ('pw_gen_hardened', 'furnator_hardened', 1, '2AE17A935862BCBF', ['pw_gen_basic', 'pw_energized'], 0),
+    ('pw_thermo_hardened', 'thermo_generator_hardened', 1, '6230C6884B800689', ['pw_thermo_basic', 'pw_energized'], 0),
+    ('pw_reactor_hardened', 'reactor_hardened', 36, '05B0A7D0B991050F', ['pw_powah', 'pw_energized'], 0),
+    ('pw_solar_hardened', 'solar_panel_hardened', 1, '6C8148B3AE0A2222', ['pw_solar_basic', 'pw_energized'], 0),
+    ('pw_battery_blazing', 'battery_blazing', 1, '79421463F01ED2D7', ['pw_battery_hardened', 'pw_blazing'], 0),
+    ('pw_discharger_blazing', 'energy_discharger_blazing', 1, '13FDBA4BC4514F58', ['pw_blazing'], 1),
+    ('pw_hopper_blazing', 'energy_hopper_blazing', 1, '04811BA420B80046', ['pw_hopper_hardened', 'pw_blazing'], 1),
+    ('pw_transmitter_blazing', 'player_transmitter_blazing', 1, '1D80E6C3327AB376', ['pw_transmitter_up', 'pw_blazing'], 0),
+    ('pw_ender_cell_blazing', 'ender_cell_blazing', 1, '564F731F0F3E5AEC', ['pw_blazing'], 0),
+    ('pw_cell_blazing', 'energy_cell_blazing', 1, '25088F06228F8561', ['pw_cell_hardened', 'pw_blazing'], 0),
+    ('pw_cable_crystal', 'energy_cable_blazing', 1, '0C5936697C9B3716', ['pw_cable_hardened', 'pw_blazing'], 0),
+    ('pw_gate_blazing', 'ender_gate_blazing', 1, '1F55B2FA187F63DD', ['pw_cable_crystal', 'pw_blazing'], 0),
+    ('pw_magmator_blazing', 'magmator_blazing', 1, '0C7D0AB254DF8CF1', ['pw_magmator_hardened', 'pw_blazing'], 0),
+    ('pw_gen_blazing', 'furnator_blazing', 1, '323F7A0C4FAC28D0', ['pw_gen_hardened', 'pw_blazing'], 0),
+    ('pw_thermo_blazing', 'thermo_generator_blazing', 1, '44C1315098B9CF3F', ['pw_thermo_hardened', 'pw_blazing'], 0),
+    ('pw_reactor_crystal', 'reactor_blazing', 36, '6754612E9AD4B9C0', ['pw_reactor_hardened', 'pw_blazing'], 0),
+    ('pw_solar_blazing', 'solar_panel_blazing', 1, '7C34EED27A9737D4', ['pw_solar_hardened', 'pw_blazing'], 0),
+    ('pw_discharger_niotic', 'energy_discharger_niotic', 1, '555566F1148F5229', ['pw_niotic'], 1),
+    ('pw_hopper_niotic', 'energy_hopper_niotic', 1, '5A8DE0C7D4F28E05', ['pw_hopper_blazing'], 1),
+    ('pw_transmitter_niotic', 'player_transmitter_niotic', 1, '2DD9994665799747', ['pw_transmitter_blazing'], 0),
+    ('pw_battery_niotic', 'battery_niotic', 1, '03798EF7AB47BB3D', ['pw_battery_blazing'], 0),
+    ('pw_ender_cell_niotic', 'ender_cell_niotic', 1, '1CCCA214865526F3', ['pw_niotic'], 0),
+    ('pw_cell_niotic', 'energy_cell_niotic', 1, '6EFB4BF8110F2712', ['pw_cell_blazing'], 0),
+    ('pw_cable_niotic', 'energy_cable_niotic', 1, '68B604EF40198B8D', ['pw_cable_crystal', 'pw_niotic'], 0),
+    ('pw_gate_niotic', 'ender_gate_niotic', 1, '584BD9A6F7594867', ['pw_cable_niotic'], 0),
+    ('pw_magmator_niotic', 'magmator_niotic', 1, '03442045ED56068F', ['pw_magmator_blazing'], 0),
+    ('pw_gen_niotic', 'furnator_niotic', 1, '24EE138780C43447', ['pw_gen_blazing'], 0),
+    ('pw_thermo_niotic', 'thermo_generator_niotic', 1, '28EE8C172F9DF5C1', ['pw_thermo_blazing'], 0),
+    ('pw_reactor_niotic', 'reactor_niotic', 36, '0FFF2BEE5D8EBE12', ['pw_reactor_crystal'], 0),
+    ('pw_solar_niotic', 'solar_panel_niotic', 1, '39386F88CB38CF36', ['pw_solar_blazing'], 0),
+    ('pw_battery_spirited', 'battery_spirited', 1, '63E57D2745D24761', ['pw_battery_niotic'], 0),
+    ('pw_transmitter_spirited', 'player_transmitter_spirited', 1, '11F0D662FF4DC335', ['pw_transmitter_niotic'], 0),
+    ('pw_hopper_spirited', 'energy_hopper_spirited', 1, '18B20F4F27F37197', ['pw_hopper_niotic'], 1),
+    ('pw_discharger_spirited', 'energy_discharger_spirited', 1, '0536D7B41964FE38', ['pw_spirited'], 1),
+    ('pw_ender_cell_spirited', 'ender_cell_spirited', 1, '486356E189081ADC', ['pw_spirited'], 0),
+    ('pw_cell_spirited', 'energy_cell_spirited', 1, '4449AD53BCE797E1', ['pw_cell_niotic'], 0),
+    ('pw_cable_spirited', 'energy_cable_spirited', 1, '379EBE12E3F61679', ['pw_cable_niotic', 'pw_spirited'], 0),
+    ('pw_gate_spirited', 'ender_gate_spirited', 1, '335927C2D234451A', ['pw_cable_spirited'], 0),
+    ('pw_magmator_spirited', 'magmator_spirited', 1, '36B14701D95C3C21', ['pw_magmator_niotic'], 0),
+    ('pw_gen_top', 'furnator_spirited', 1, '5A7C92F05AF39FDB', ['pw_gen_niotic'], 0),
+    ('pw_thermo_spirited', 'thermo_generator_spirited', 1, '637A8E4BBF108417', ['pw_thermo_niotic'], 0),
+    ('pw_reactor_spirited', 'reactor_spirited', 36, '341486C9F277FEB7', ['pw_reactor_niotic'], 0),
+    ('pw_solar_spirited', 'solar_panel_spirited', 1, '760F80E1C273C0AD', ['pw_solar_niotic'], 0),
+    ('pw_transmitter_nitro', 'player_transmitter_nitro', 1, '348FEC9A50C2E62E', ['pw_transmitter_spirited', 'pw_nitro'], 0),
+    ('pw_discharger_nitro', 'energy_discharger_nitro', 1, '24510A5C98703C84', ['pw_nitro'], 1),
+    ('pw_hopper_nitro', 'energy_hopper_nitro', 1, '41DC771674A6C387', ['pw_hopper_spirited', 'pw_nitro'], 1),
+    ('pw_battery_nitro', 'battery_nitro', 1, '7EBA36EF1858F428', ['pw_battery_spirited', 'pw_nitro'], 0),
+    ('pw_ender_cell_nitro', 'ender_cell_nitro', 1, '3B28A8BA318D438F', ['pw_nitro'], 0),
+    ('pw_cell_nitro', 'energy_cell_nitro', 1, '503CD7E104C8BA5D', ['pw_cell_spirited', 'pw_nitro'], 0),
+    ('pw_cable_nitro', 'energy_cable_nitro', 1, '3CD1F9E00E33C6C9', ['pw_cable_spirited', 'pw_nitro'], 0),
+    ('pw_gate_nitro', 'ender_gate_nitro', 1, '44F016F465082C55', ['pw_cable_nitro', 'pw_nitro'], 0),
+    ('pw_magmator_nitro', 'magmator_nitro', 1, '4E67DE071FC9D80D', ['pw_magmator_spirited', 'pw_nitro'], 0),
+    ('pw_furnator_nitro', 'furnator_nitro', 1, '129F6987E144B048', ['pw_gen_top', 'pw_nitro'], 0),
+    ('pw_thermo_nitro', 'thermo_generator_nitro', 1, '71D08D1C8EA4C631', ['pw_thermo_spirited', 'pw_nitro'], 0),
+    ('pw_reactor_nitro', 'reactor_nitro', 36, '61DCECE1FC38E151', ['pw_reactor_spirited', 'pw_nitro'], 0),
+    ('pw_solar_nitro', 'solar_panel_nitro', 1, '393050BEA59F1570', ['pw_solar_spirited', 'pw_nitro'], 0),
+    ('pw_rod_starter', 'energizing_rod_starter', 1, '1C273D9E046FD18A', ['pw_paste', 'pw_cap_tiny'], 0),
+    ('pw_rod_up', 'energizing_rod_basic', 1, '4EA69350A20B0B5B', ['pw_rod_starter', 'pw_capacitor'], 0),
+    ('pw_rod_hardened', 'energizing_rod_hardened', 1, '09DECE4E7977D852', ['pw_rod_up', 'pw_energized'], 0),
+    ('pw_blazing_gear', 'energizing_rod_blazing', 1, '172B0296F87D6725', ['pw_rod_hardened', 'pw_blazing'], 0),
+    ('pw_niotic_gear', 'energizing_rod_niotic', 1, '270B5EA3E710A209', ['pw_blazing_gear', 'pw_niotic'], 0),
+    ('pw_spirited_gear', 'energizing_rod_spirited', 1, '69E572EA56B3B31D', ['pw_niotic_gear', 'pw_spirited'], 0),
+    ('pw_nitro_gear', 'energizing_rod_nitro', 1, '2C9EE7BE03767976', ['pw_spirited_gear', 'pw_nitro'], 0),
+]
 
-    # --- Starter generators (y = -2) ---------------------------------------------------------------
-    Q("pw_wrench", 2, -2, [item(P + "wrench")], "Powah Wrench", subtitle="Rotate, configure, link", deps=["pw_paste"], xp=30, optional=True, tokens=1, desc=[
-        "&eWhat:&r Powah's wrench. It has Rotate, Config and Link modes; the mode shows on the item.",
-        "&eHow:&r iron ingots and dielectric paste (check JEI).",
-        "&eTip:&r Config mode sets which sides of a cell or generator push or take power."]),
-    Q("pw_furnator", 8, -2, [item(P + "furnator_starter")], "Furnator", subtitle="Burn fuel, make FE", deps=["pw_capacitor"], xp=50, desc=[
+# Our own wording for some grid quests (title, subtitle, desc); the rest use the templates in grid_quest().
+CUSTOM = {
+    "pw_furnator": ("Furnator", "Burn fuel, make FE", [
         "&eWhat:&r a Powah generator that burns furnace fuel for FE. It's an early way to run the Dissolver.",
         "&eChemistry:&r burning oxidises carbon. Coke burns cleaner and longer than coal because its volatile tars were already driven off.",
         "&eHow:&r paste, 2 tiny capacitors, a dielectric casing and a furnace.",
         "&eTip:&r feed it coke from your coke ovens for long runs."]),
-    Q("pw_magmator", 10, -2, [item(P + "magmator_starter")], "Magmator", subtitle="Power from molten rock", deps=["pw_furnator"], xp=50, desc=[
+    "pw_magmator": ("Magmator", "Power from molten rock", [
         "&eWhat:&r a generator that burns lava (and other hot fluids) instead of solid fuel.",
         "&eChemistry:&r lava is molten silicate rock at roughly 700 to 1,200 °C. The Magmator draws that stored heat off as FE.",
         "&eHow:&r like the Furnator, but with a bucket in place of the furnace. JEI's Magmatic Fluids list shows what it accepts.",
         "&eTip:&r a Nether lava lake and a pump give endless fuel."]),
-    Q("pw_gen_basic", 12, -2, [anyof([P + "furnator_basic", P + "magmator_basic", P + "thermo_generator_basic", P + "solar_panel_basic"])], "Basic Generators", subtitle="Upgrade a starter generator", deps=["pw_furnator", "pw_magmator"], any_dep=True, xp=60, desc=[
-        "&eWhat:&r every Powah block upgrades by crafting the lower tier into the next one. Basic is the first step.",
-        "&eHow:&r a starter generator in the bottom middle, iron ingots, 2 basic capacitors and a dielectric casing (check JEI).",
-        "&eTip:&r upgrading keeps the old block's cost, so you never waste a starter."]),
+    "pw_thermo": ("Thermo Generator", "Power from a temperature difference", [
+        "&eWhat:&r a generator that needs a hot block underneath and a coolant fed in.",
+        "&eChemistry:&r thermoelectric plates make current from a temperature difference (the Seebeck effect). Hotter below and colder inside means more power.",
+        "&eHow:&r thermo plates, tiny capacitors and a casing (check JEI). Place it on lava or magma and pipe water in."]),
+    "pw_solar_starter": ("Starter Solar Panel", "Light straight into electricity", [
+        "&eWhat:&r Powah's solar panel. It makes FE from daylight with no fuel at all.",
+        "&eChemistry:&r light can knock electrons out of a material (the photoelectric effect, explained by Einstein in 1905). Solar cells collect them as current.",
+        "&eHow:&r photoelectric panes, tiny capacitors and a casing (check JEI). Place it under open sky.",
+        "&eTip:&r it stops at night; pair it with a cell."]),
+    "pw_cable": ("Energy Cables", "Wires that know their tier", [
+        "&eWhat:&r Powah's cables. Each tier carries more FE per tick.",
+        "&eHow:&r 6 horizontal rods, 2 iron nuggets and a tiny capacitor make 12 starter cables.",
+        "&eTip:&r cables connect to any FE block, not just Powah ones. Use the Powah wrench to configure sides."]),
+    "pw_cell_starter": ("Starter Energy Cell", "A first Powah battery block", [
+        "&eWhat:&r the smallest Powah cell. Enough to smooth out a Furnator's output.",
+        "&eHow:&r iron ingots in the corners, tiny capacitors on the sides, a dielectric casing in the middle.",
+        "&eTip:&r the basic cell is the same recipe with basic capacitors."]),
+    "pw_reactor_starter": ("Starter Reactor", "Where every reactor block begins", [
+        "&eWhat:&r 36 starter reactor blocks: enough for a full, if weak, reactor. Every better reactor block is crafted from these.",
+        "&eChemistry:&r uranium dioxide is a ceramic: it melts near 2,865 °C, which is why real fuel pellets are UO₂ and not uranium metal.",
+        "&eHow:&r 4 uraninite, 4 tiny capacitors and a dielectric casing make 4. Uraninite comes from MI's Chemical Reactor (uranium dust + oxygen).",
+        "&eTip:&r all blocks in one stack must be the same tier, or they won't form one reactor."]),
+    "pw_powah": ("Basic Reactor", "Uraninite-fuelled multiblock", [
+        "&eWhat:&r 36 basic reactor blocks: a real Powah reactor, fuelled by the uraninite you oxidised yourself.",
+        "&eChemistry:&r uraninite is UO₂. Its U-235 splits when it absorbs a neutron, releasing heat and more neutrons; the reactor turns that heat into FE.",
+        "&eHow:&r 4 starter reactor blocks, 4 large capacitors and a uraninite make 4 (check JEI). Stack them and they form one reactor.",
+        "&eTip:&r fuel, temperature and coolant all show in its GUI. Watch the temperature as you scale up."]),
+    "pw_reactor_hardened": ("Hardened Reactor", "Rebuild the reactor a tier up", [
+        "&eWhat:&r a hardened reactor, much stronger than the basic one.",
+        "&eHow:&r 4 basic reactor blocks, 4 hardened capacitors and 1 uraninite make 4 hardened blocks.",
+        "&eTip:&r blazing, niotic, spirited and nitro reactors follow the same recipe with that tier's capacitor."]),
+    "pw_transmitter": ("Player Transmitter", "Charge your gear wirelessly", [
+        "&eWhat:&r a block that charges the FE items carried by the player bound to it.",
+        "&eHow:&r Player Aerial Pearl on top, tiny capacitors and a casing in the middle, an upright rod below. The Binding Card is a blank card with redstone and rotten flesh; right-click to bind it to yourself.",
+        "&eTip:&r either Binding Card counts here: the plain one or the dimensional one."]),
+    "pw_rod_starter": ("Starter Energizing Rod", "The rod that feeds the Orb", [
+        "&eWhat:&r Energizing Rods aim FE at the Energizing Orb. Several rods stack.",
+        "&eHow:&r quartz, tiny capacitors, a casing and an upright dielectric rod (check JEI).",
+        "&eTip:&r rods need no Orb to make, so build a few before the Orb is ready."]),
+    "pw_rod_up": ("Basic Energizing Rod", "Quartz focuses the charge", [
+        "&eWhat:&r higher-tier rods pour FE into the Orb faster.",
+        "&eChemistry:&r quartz is crystalline SiO₂ and is piezoelectric: squeeze it and it makes a voltage. Every quartz watch keeps time with a vibrating crystal.",
+        "&eHow:&r a block of quartz on top, basic capacitors and a casing in the middle, a starter rod below.",
+        "&eTip:&r crystals cost hundreds of thousands of FE. More and better rods matter more than anything else here."]),
+}
 
-    # --- Early utilities (y = 2) -------------------------------------------------------------------
-    Q("pw_pearl", 2, 2, [item(P + "player_aerial_pearl")], "Player Aerial Pearl", subtitle="A pearl that remembers someone", deps=["pw_paste"], xp=40, desc=[
+
+def grid_quest(key, name, count, mid, deps, opt):
+    pre, tier = next((p, name[len(p) + 1:]) for p in PREFIX if name.startswith(p + "_") and name[len(p) + 1:] in TIERS)
+    col = PREFIX[pre]
+    _, label, what = COLS[col]
+    title = f"{tier.title()} {label}" + (" (36)" if col == "reactor" else "")
+    sub = f"{tier.title()} tier: {label.lower()}" + (", a full stack" if col == "reactor" else "")
+    prev = TIERS[TIERS.index(tier) - 1] if tier != "starter" else None
+    how = (f"{MAT[tier]}, plus the block's own parts (check JEI)." if not prev else
+           f"usually the {prev} {label.lower()} with {MAT[tier]}; JEI has the exact recipe.")
+    tip = TIP[tier]
+    if col == "reactor":
+        tip = "36 blocks of one tier make a full reactor. " + tip
+    if col in ("ender_cell", "gate") and tier == "starter":
+        tip = "its Ender Core is made in the Energizing Orb, so this one waits for the Orb."
+    desc = [f"&eWhat:&r the {label} {what}", f"&eHow:&r {how}", f"&eTip:&r {tip}"]
+    if key in CUSTOM:
+        title, sub, desc = CUSTOM[key]
+    tasks = [item(P + name, count)]
+    if key == "pw_transmitter":
+        tasks.append(anyof([P + "binding_card", P + "binding_card_dim"]))
+    return Q(key, 0, 0, tasks, title, section=SECTION[tier], deps=deps + EXTRA_DEPS.get(key, []), xp=XP[tier],
+             subtitle=sub, desc=desc, mirror=mid, **(OPT if opt else {}))
+
+
+CHAPTER = Chapter("powah", "Powah!", P + "energizing_orb",
+        ["Powah: dielectric parts, the Energizing Orb, crystal tiers, generators, cells and wireless power. "
+         "The starter and basic tiers are open early; the Orb needs an MI electronic circuit (MV)."], SIDE, mirror="powah", quests=[
+    # ===== Getting Started (ATM10 top) =======================================================
+    Q("pw_intro", 0, 0, [tick()], "Powah!", section=S_START, deps=["t1_power"], xp=30, size=2.0, shape="gear", icon=P + "uraninite",
+      mirror="6B2027DA7AA6FF34", subtitle="A whole power mod, tier by tier", desc=[
+        "&6Insulators and conductors. You remember that power is mostly about where it is not allowed to go.&r",
+        "&eWhat:&r Powah builds every block in seven tiers: starter, basic, hardened, blazing, niotic, spirited and nitro. Each row of this page is one tier; each column is one kind of block.",
+        "&eHow:&r the starter and basic rows need only dielectric parts and capacitors. Everything from hardened up goes through the Energizing Orb, which needs an MI electronic circuit (MV) in this pack.",
+        "&eTip:&r click the checkmark to start. You don't need every block: pick the columns you'll use."]),
+    Q("pw_paste", 0, 0, [item(P + "dielectric_paste", 16), item(P + "dielectric_casing")], "Dielectric Parts", section=S_START,
+      deps=["pw_intro"], xp=40, mirror="7E92ED270C67FDE5", subtitle="Paste and a casing: the base of every block", desc=[
+        "&eWhat:&r dielectric paste goes into rods, casings, capacitors and cables; the casing is the frame inside almost every Powah block.",
+        "&eChemistry:&r a dielectric is an insulator that polarises in an electric field. Fired clay (aluminosilicates such as kaolinite, Al₂Si₂O₅(OH)₄) is the porcelain on real power-line insulators.",
+        "&eHow:&r paste, shapeless: 3 coal or charcoal + 2 clay balls + a lava bucket makes 24. Casing: 4 iron ingots in the corners, horizontal rods top and bottom, upright rods in the middle row (check JEI).",
+        "&eTip:&r the lava recipe gives more per craft and keeps the bucket. Make a stack."]),
+    Q("pw_orb", 0, 0, [item(P + "energizing_orb"), anyof([P + "energy_cable_starter", P + "energy_cable_basic"]),
+                       anyof([P + "energizing_rod_starter", P + "energizing_rod_basic"])], "The Energizing Orb", section=S_START,
+      deps=["pw_paste", "t4_circuit"], xp=150, size=1.5, mirror="3DDF87A1E5F5D009", subtitle="Pack gate: needs an MV electronic circuit", desc=[
+        "&6A glass sphere that fills with light. You remember charging things just by holding them.&r",
+        "&eWhat:&r the Orb turns FE into new materials: energized steel, crystals, ender cores. Every Powah tier above basic needs it.",
+        "&eHow:&r in this pack: glass on top and sides, an MI &eelectronic circuit&r on each side of a dielectric casing in the middle, and 3 horizontal rods on the bottom. Bring a rod and a cable too.",
+        "&eHow:&r place the orb, aim Energizing Rods at it from nearby, feed the rods FE through cables and put the ingredients in the orb. JEI's Energizing tab shows each recipe and its FE cost.",
+        "&eTip:&r the first jobs are energized steel and the Ender Core."]),
+
+    # ===== Tier quests (ATM10's left column) ==================================================
+    Q("pw_cap_tiny", 0, 0, [item(P + "capacitor_basic_tiny")], "Tiny Capacitor", section=SECTION["starter"], deps=["pw_paste"], xp=30,
+      mirror="6D88C19F47D0D469", subtitle="The heart of every starter block", desc=[
+        "&eWhat:&r tiny capacitors set a block's tier to starter.",
+        "&eChemistry:&r a capacitor is two conductors separated by a dielectric. It stores E = ½CV², and a better dielectric raises the capacitance C.",
+        "&eHow:&r one basic capacitor splits into 2 tiny ones (check JEI)."]),
+    Q("pw_capacitor", 0, 0, [item(P + "capacitor_basic")], "Basic Capacitor", section=SECTION["basic"], deps=["pw_paste"], xp=40,
+      mirror="66ECC26BC81D0093", subtitle="Two plates and an insulator", desc=[
+        "&eWhat:&r basic capacitors set a block's tier to basic, and split into tiny ones.",
+        "&eHow:&r iron ingots, paste and a redstone block make 4 basic capacitors.",
+        "&eTip:&r two basic capacitors combine into a large one, which the hardened and crystal tiers need later."]),
+    Q("pw_energized", 0, 0, [item(P + "steel_energized")], "Energized Steel", section=SECTION["hardened"], deps=["pw_orb"], xp=100,
+      mirror="5E090C9BB4DAA5D4", subtitle="Iron and gold, charged together", desc=[
+        "&eWhat:&r Powah's basic alloy, made by the Energizing Orb. It opens the hardened tier.",
+        "&eHow:&r put 1 iron + 1 gold in the Orb for 2 Energized Steel (check JEI for the FE cost).",
+        "&eTip:&r hardened capacitors are a large capacitor in energized steel and paste."]),
+    Q("pw_blazing", 0, 0, [item(P + "crystal_blazing")], "Blazing Crystal", section=SECTION["blazing"], deps=["pw_orb", "t2_blaze"], xp=100,
+      mirror="562BD37539EE318E", subtitle="Energized blaze", desc=[
+        "&eWhat:&r every Powah tier past hardened is built from a crystal made in the Orb. Blazing crystals open the blazing tier.",
+        "&eHow:&r energize a blaze rod (or four blaze powder) with 120,000 FE (check JEI).",
+        "&eTip:&r a blaze farm (or a Hostile Neural Networks blaze model) keeps the crystals coming."]),
+    Q("pw_niotic", 0, 0, [item(P + "crystal_niotic")], "Niotic Crystal", section=SECTION["niotic"], deps=["pw_orb"], xp=125,
+      mirror="7D7983F39E6E818D", subtitle="Energized diamond", desc=[
+        "&eWhat:&r the niotic tier. Reactors and generators get much stronger.",
+        "&eChemistry:&r diamond is pure carbon in a rigid lattice where every atom bonds to four others. It insulates electricity but carries heat better than any metal.",
+        "&eHow:&r energize a diamond with 300,000 FE (check JEI)."]),
+    Q("pw_spirited", 0, 0, [item(P + "crystal_spirited")], "Spirited Crystal", section=SECTION["spirited"], deps=["pw_orb"], xp=150,
+      mirror="25EFC21A3C48E0B6", subtitle="Energized emerald", desc=[
+        "&eWhat:&r the spirited tier, one step below the top.",
+        "&eChemistry:&r emerald is the mineral beryl, Be₃Al₂Si₆O₁₈. A trace of chromium (Cr³⁺) replacing some aluminium gives it its green colour.",
+        "&eHow:&r energize an emerald with 1,000,000 FE (check JEI). A villager trading hall pays off here."]),
+    Q("pw_nitro", 0, 0, [item(P + "crystal_nitro")], "Nitro Crystal", section=SECTION["nitro"], deps=["pw_orb"], xp=250,
+      mirror="4F1FFC02F4EAA2E6", subtitle="Powah's top tier", desc=[
+        "&6Twenty million FE poured into a star. You remember power like this; it used to be yours.&r",
+        "&eWhat:&r nitro crystals build the strongest Powah blocks.",
+        "&eHow:&r energize a Nether Star, two redstone blocks and a blazing crystal block with 20,000,000 FE. One craft makes sixteen.",
+        "&eTip:&r save your Nether Stars for this; the Wither is the only reliable source."]),
+
+    # ===== The grid: one quest per block per tier ==============================================
+    *[grid_quest(*row) for row in GRID],
+
+    # ===== Side Projects (ours) ================================================================
+    Q("pw_book", 0, 0, [item(P + "book")], "Powah's Manual", section=S_SIDE, subtitle="Optional: the mod's own guidebook", deps=["pw_paste"],
+      xp=15, **OPT, desc=[
+        "&eWhat:&r Powah's in-game book, with a page and a picture for every block on this chapter.",
+        "&eHow:&r a book and a dielectric paste, shapeless.",
+        "&eTip:&r add it to your Akashic Tome (Quality of Life page) so it doesn't take a slot."]),
+    Q("pw_rods", 0, 0, [item(P + "dielectric_rod", 8), item(P + "dielectric_rod_horizontal", 8)], "Dielectric Rods", section=S_SIDE,
+      subtitle="Optional: paste set around iron bars", deps=["pw_paste"], xp=30, **OPT, desc=[
+        "&eWhat:&r insulated rods, upright and horizontal. Both go into casings, the Orb, cables and cards.",
+        "&eHow:&r 6 paste around 3 iron bars: a vertical line of bars for the upright rod, a horizontal line for the horizontal one. 8 per craft.",
+        "&eTip:&r you'll need far more horizontal rods than upright ones; every cable craft eats six."]),
+    Q("pw_casing", 0, 0, [item(P + "dielectric_casing", 2)], "Spare Casings", section=S_SIDE, subtitle="Optional: you will need dozens",
+      deps=["pw_rods"], xp=20, **OPT, desc=[
+        "&eWhat:&r the frame inside almost every Powah machine, cell and generator.",
+        "&eHow:&r 4 iron ingots in the corners, horizontal rods top and bottom, upright rods in the middle row (check JEI).",
+        "&eTip:&r craft a stack of casings before a big upgrade session."]),
+    Q("pw_wrench", 0, 0, [item(P + "wrench")], "Powah Wrench", section=S_SIDE, subtitle="Optional: rotate, configure, link", deps=["pw_paste"],
+      xp=30, **OPT, desc=[
+        "&eWhat:&r Powah's wrench. It has Rotate, Config and Link modes; the mode shows on the item.",
+        "&eHow:&r iron ingots and dielectric paste (check JEI).",
+        "&eTip:&r Config mode sets which sides of a cell or generator push or take power."]),
+    Q("pw_pearl", 0, 0, [item(P + "player_aerial_pearl")], "Player Aerial Pearl", section=S_SIDE, subtitle="Optional: a pearl that remembers someone",
+      deps=["pw_paste"], xp=40, **OPT, desc=[
         "&eWhat:&r the core of the Player Transmitter.",
         "&eHow:&r craft an Aerial Pearl (an ender pearl in iron bars and paste), then use it on a Zombie or a Husk.",
         "&eTip:&r trap a zombie near your base so you can make more later."]),
-    Q("pw_transmitter", 4, 2, [item(P + "player_transmitter_starter"), item(P + "binding_card")], "Player Transmitter", subtitle="Charge your gear wirelessly", deps=["pw_pearl", "pw_capacitor"], xp=60, desc=[
-        "&eWhat:&r a block that charges the FE items carried by the player bound to it.",
-        "&eHow:&r Player Aerial Pearl on top, tiny capacitors and a casing in the middle, an upright rod below. The Binding Card is a blank card (2 horizontal rods) with redstone and rotten flesh; right-click to bind it to yourself.",
-        "&eTip:&r power it from a cell and your jetpack never runs dry at home."]),
-    Q("pw_photo", 6, 2, [item(P + "photoelectric_pane", 3), item(P + "thermoelectric_plate", 3)], "Panes and Plates", optional=True, tokens=1, subtitle="Optional: the parts of solar and thermo generators", deps=["pw_capacitor"], xp=50, desc=[
-        "&eWhat:&r photoelectric panes go into Powah solar panels; thermo plates go into thermo generators (both in the Power chapter).",
-        "&eChemistry:&r light can knock electrons out of a material: the photoelectric effect Einstein explained in 1905. Lapis gets its blue from trisulfur radical ions (S₃⁻) trapped in the mineral lazurite.",
+    Q("pw_photo", 0, 0, [item(P + "photoelectric_pane", 3), item(P + "thermoelectric_plate", 3)], "Panes and Plates", section=S_SIDE,
+      subtitle="Optional: the parts of solar and thermo generators", deps=["pw_cap_tiny"], xp=50, **OPT, desc=[
+        "&eWhat:&r photoelectric panes go into solar panels; thermo plates go into thermo generators.",
+        "&eChemistry:&r lapis gets its blue from trisulfur radical ions (S₃⁻) trapped in the mineral lazurite.",
         "&eHow:&r pane: a glass pane in lapis and paste. Plate: a tiny capacitor in redstone and blaze powder.",
         "&eTip:&r blaze powder means a trip to the Nether first."]),
-    Q("pw_hopper", 8, 2, [item(P + "energy_hopper_starter"), item(P + "energy_discharger_starter")], "Hopper and Discharger", subtitle="Charge items, drain items", deps=["pw_cell_starter"], xp=40, optional=True, tokens=1, desc=[
-        "&eWhat:&r the Energy Hopper charges FE items in the container it faces; the Energy Discharger pulls FE back out of items put in it.",
-        "&eHow:&r both are a dielectric casing, tiny capacitors and paste; the hopper also takes a vanilla hopper (check JEI).",
-        "&eTip:&r a hopper on a chest of tools makes a charging station."]),
-    Q("pw_battery", 10, 2, [item(P + "battery_starter")], "Batteries", subtitle="FE you can carry", deps=["pw_cell_starter"], xp=40, optional=True, tokens=1, desc=[
-        "&eWhat:&r Powah batteries are items that hold FE. Higher tiers hold more.",
-        "&eHow:&r basic capacitors, a redstone block and paste. Check its tooltip for how it charges your gear.",
-        "&eTip:&r fill it from an Energy Hopper, empty it in a Discharger."]),
-    Q("pw_dim_card", 6, 4, [item(P + "binding_card_dim")], "Dimensional Binding Card", subtitle="A card touched by the End", deps=["pw_transmitter"], xp=60, optional=True, tokens=1, desc=[
+    Q("pw_dim_card", 0, 0, [item(P + "binding_card_dim")], "Dimensional Binding Card", section=S_SIDE, subtitle="Optional: a card touched by the End",
+      deps=["pw_transmitter"], xp=60, **OPT, desc=[
         "&eWhat:&r the dimensional version of the Binding Card, for transmitters and other Powah blocks that take a card.",
         "&eHow:&r use a Binding Card on an Enderman or an Endermite.",
         "&eTip:&r read its tooltip to see what it does differently from the plain card."]),
-
-    # --- The Energizing Orb and rods (y = 0) -------------------------------------------------------
-    Q("pw_orb", 14, 0, [item(P + "energizing_orb"), item(P + "energizing_rod_starter", 2)], "The Energizing Orb", subtitle="Pack gate: needs an MV electronic circuit", deps=["pw_cell_starter", "t4_circuit"], xp=150, size=1.5, shape="hexagon", desc=[
-        "&6A glass sphere that fills with light. You remember charging things just by holding them.&r",
-        "&eWhat:&r the Orb turns FE into new materials: energized steel, crystals, ender cores. Every Powah tier above basic needs it.",
-        "&eHow:&r in this pack: glass on top and sides, an MI &eelectronic circuit&r on each side of a dielectric casing in the middle, and 3 horizontal rods on the bottom. Rods: quartz, tiny capacitors, a casing and an upright rod.",
-        "&eHow:&r place the orb, aim Energizing Rods at it from nearby, feed the rods FE and put the ingredients in the orb. JEI's Energizing tab shows each recipe and its FE cost.",
-        "&eTip:&r the first job is uraninite and energized steel: see the Main Path and Power chapter links."]),
-    Q("pw_snowball", 12, 2, [item(P + "charged_snowball", 4)], "Charged Snowball", subtitle="A pocket thunderstorm", deps=["pw_orb"], xp=50, optional=True, tokens=1, desc=[
+    Q("pw_snowball", 0, 0, [item(P + "charged_snowball", 4)], "Charged Snowball", section=S_SIDE, subtitle="Optional: a pocket thunderstorm",
+      deps=["pw_orb"], xp=50, **OPT, desc=[
         "&eWhat:&r a snowball charged with 500,000 FE. Throw it and lightning strikes where it lands.",
         "&eChemistry:&r a lightning channel heats air to around 30,000 K, hotter than the Sun's surface. It splits N₂ and O₂, and the nitrogen oxides it makes fertilise the soil.",
         "&eHow:&r one snowball in the Energizing Orb.",
         "&eTip:&r lightning turns a pig into a zombified piglin and a villager into a witch. Aim carefully."]),
-    Q("pw_rod_up", 16, 0, [item(P + "energizing_rod_basic", 2)], "Better Rods", subtitle="Quartz focuses the charge", deps=["pw_orb"], xp=75, desc=[
-        "&eWhat:&r higher-tier rods pour FE into the orb faster. Several rods stack.",
-        "&eChemistry:&r quartz is crystalline SiO₂ and is piezoelectric: squeeze it and it makes a voltage. Every quartz watch keeps time with a vibrating crystal.",
-        "&eHow:&r a block of quartz on top, basic capacitors and a casing in the middle, a starter rod below.",
-        "&eTip:&r crystals cost hundreds of thousands of FE. More and better rods matter more than anything else here."]),
-    Q("pw_rod_hardened", 18, 0, [item(P + "energizing_rod_hardened", 2)], "Hardened Rods", subtitle="Energized steel capacitors in a rod", deps=["pw_rod_up", "pw_cap_hardened"], xp=75, desc=[
-        "&eWhat:&r the hardened rod, another step in charging speed.",
-        "&eHow:&r a block of quartz, hardened capacitors, a casing and a basic rod below.",
-        "&eTip:&r every rod tier is built from the one before, so keep upgrading the same rods."]),
-
-    # --- Hardened tier and generators (y = -2) -----------------------------------------------------
-    Q("pw_cap_hardened", 18, -2, [item(P + "capacitor_basic_large", 2), item(P + "capacitor_hardened", 2)], "Hardened Capacitors", subtitle="The first capacitor that needs the Orb", deps=["pw_energized"], xp=75, desc=[
+    Q("pw_cap_hardened", 0, 0, [item(P + "capacitor_basic_large", 2), item(P + "capacitor_hardened", 2)], "Large and Hardened Capacitors",
+      section=S_SIDE, subtitle="Optional: the first capacitor that needs the Orb", deps=["pw_energized"], xp=75, **OPT, desc=[
         "&eWhat:&r hardened capacitors unlock the hardened tier of everything.",
         "&eHow:&r 2 basic capacitors make a large one. A large capacitor in energized steel and paste makes 2 hardened capacitors.",
         "&eTip:&r large capacitors go into every crystal capacitor too. Craft spares."]),
-    Q("pw_cable_hardened", 20, -2, [item(P + "energy_cable_basic", 6), item(P + "energy_cable_hardened", 12)], "Hardened Cables", optional=True, tokens=1, subtitle="Optional: more FE per tick", deps=["pw_cap_hardened"], xp=60, desc=[
-        "&eWhat:&r faster cables for your growing grid.",
-        "&eHow:&r basic: 6 rods, 2 starter cables, a basic capacitor. Hardened: 6 rods, 2 energized steel, a hardened capacitor makes 12 (check JEI).",
-        "&eTip:&r a cable is only as fast as its slowest segment. Upgrade the trunk line first."]),
-    Q("pw_cell_hardened", 22, -2, [item(P + "energy_cell_hardened")], "Hardened Energy Cell", optional=True, tokens=1, subtitle="Optional: a real buffer", deps=["pw_cap_hardened", "pw_powah_cell"], xp=100, desc=[
-        "&eWhat:&r the next storage step after the basic cell.",
-        "&eHow:&r 2 basic cells, energized steel, hardened capacitors and a dielectric casing.",
-        "&eTip:&r the crystal cells in the Power chapter each start from the cell below them."]),
-    Q("pw_gen_hardened", 24, -2, [anyof([P + "furnator_hardened", P + "magmator_hardened", P + "thermo_generator_hardened", P + "solar_panel_hardened"])], "Hardened Generators", subtitle="Energized steel around a generator", deps=["pw_cap_hardened", "pw_gen_basic"], xp=100, desc=[
-        "&eWhat:&r a hardened Furnator, Magmator, Thermo Generator or Solar Panel. Any one counts.",
-        "&eHow:&r the basic generator plus energized steel, hardened capacitors and a casing (check JEI).",
-        "&eTip:&r a hardened thermo generator on lava with water fed in is quiet, fuel-free power."]),
-    Q("pw_gen_blazing", 26, -2, [anyof([P + "furnator_blazing", P + "magmator_blazing", P + "thermo_generator_blazing", P + "solar_panel_blazing"])], "Blazing Generators", subtitle="Crystal-tier power", deps=["pw_gen_hardened", "pw_blazing_gear"], xp=125, desc=[
-        "&eWhat:&r any blazing-tier generator. Output takes a big jump here.",
-        "&eHow:&r the hardened generator plus blazing crystals, blazing capacitors and a casing.",
-        "&eTip:&r feed the orb's rods from these and the next crystal tier comes quicker."]),
-    Q("pw_gen_niotic", 28, -2, [anyof([P + "furnator_niotic", P + "magmator_niotic", P + "thermo_generator_niotic", P + "solar_panel_niotic"])], "Niotic Generators", subtitle="Optional: diamond-tier power", deps=["pw_gen_blazing", "pw_niotic_gear"], xp=150, optional=True, tokens=1, desc=[
-        "&eWhat:&r any niotic-tier generator. Spirited and nitro follow the same pattern.",
-        "&eHow:&r the blazing generator plus niotic crystals, niotic capacitors and a casing (check JEI)."]),
-
-    # --- Crystal gear (y = 0); the crystals themselves are in the Power chapter (links at y = 2) -----
-    Q("pw_blazing_gear", 22, 0, [item(P + "capacitor_blazing", 2), item(P + "energizing_rod_blazing")], "Blazing Gear", subtitle="Capacitor and rod from blazing crystals", deps=["pw_blazing", "pw_rod_hardened"], xp=100, desc=[
-        "&eWhat:&r the blazing capacitor is the key part of every blazing block; the blazing rod charges the orb faster still.",
-        "&eHow:&r capacitor: a large capacitor in blazing crystals and paste (makes 2). Rod: quartz block, blazing capacitors, a casing and a hardened rod.",
-        "&eTip:&r a blaze farm (or a Hostile Neural Networks blaze model) keeps the crystals coming."]),
-    Q("pw_niotic_gear", 26, 0, [item(P + "capacitor_niotic", 2), item(P + "energizing_rod_niotic")], "Niotic Gear", subtitle="Diamond in the capacitor", deps=["pw_niotic", "pw_blazing_gear"], xp=125, desc=[
-        "&eWhat:&r niotic capacitors and the niotic rod.",
-        "&eChemistry:&r diamond is an excellent electrical insulator but conducts heat better than copper, because its stiff carbon lattice carries vibrations so well.",
-        "&eHow:&r capacitor: a large capacitor in niotic crystals and paste. Rod: quartz block, niotic capacitors, a casing and a blazing rod.",
-        "&eTip:&r niotic cables (6 rods, 2 niotic crystals, a niotic capacitor) carry far more FE."]),
-    Q("pw_spirited_gear", 30, 0, [item(P + "capacitor_spirited", 2), item(P + "energizing_rod_spirited")], "Spirited Gear", subtitle="Emerald in the capacitor", deps=["pw_spirited", "pw_niotic_gear"], xp=150, desc=[
-        "&eWhat:&r spirited capacitors and the spirited rod, one step below the top.",
-        "&eHow:&r capacitor: a large capacitor in spirited crystals and paste. Rod: quartz block, spirited capacitors, a casing and a niotic rod.",
-        "&eTip:&r each spirited crystal costs 1,000,000 FE. Run several spirited rods before you try for nitro."]),
-    Q("pw_nitro_gear", 34, 3.5, [item(P + "energizing_rod_nitro"), item(P + "energy_cell_nitro")], "Nitro", subtitle="Optional: the top of the Powah ladder", deps=["pw_nitro", "pw_spirited_gear"], xp=300, optional=True, tokens=2, size=1.5, shape="gear", desc=[
-        "&6Twenty million FE poured into a star. You remember power like this; it used to be yours.&r",
-        "&eWhat:&r the nitro rod and nitro energy cell, the strongest Powah blocks.",
-        "&eHow:&r nitro capacitor: a large capacitor in nitro crystals and paste. Rod: quartz block, nitro capacitors, a casing and a spirited rod. Cell: nitro crystals, nitro capacitors, 2 spirited cells and a casing.",
-        "&eTip:&r the nitro crystal recipe needs a block of 9 blazing crystals, so save some blazing crystals for it."]),
-
-    # --- Ender network (y = 4) ---------------------------------------------------------------------
-    Q("pw_ender_core", 14, 4, [item(P + "ender_core", 2)], "Ender Core", subtitle="An eye of ender, energized", deps=["pw_orb"], xp=75, desc=[
+    Q("pw_ender_core", 0, 0, [item(P + "ender_core", 2)], "Ender Core", section=S_SIDE, subtitle="Optional: an eye of ender, energized",
+      deps=["pw_orb"], xp=75, **OPT, desc=[
         "&eWhat:&r the heart of Ender Cells and Ender Gates.",
         "&eHow:&r Energizing Orb: an eye of ender, a dielectric casing and a tiny capacitor, 50,000 FE.",
         "&eTip:&r one core per ender block, at every tier."]),
-    Q("pw_ender_gate", 16, 4, [item(P + "ender_gate_starter", 4)], "Ender Gates", optional=True, tokens=1, subtitle="Optional: small taps on the ender network", deps=["pw_ender_core"], xp=75, desc=[
-        "&eWhat:&r ender gates connect to the same ender energy network as your Ender Cells, without storing much themselves.",
-        "&eHow:&r obsidian, 2 starter cables and an ender core make 4. Set the channel in the GUI to match your cells.",
-        "&eTip:&r put a gate next to each remote machine and one Ender Cell at your main bank."]),
-
-    # --- Reactor (y = -6) --------------------------------------------------------------------------
-    Q("pw_coolant", 20, -6, [item(P + "dry_ice", 4)], "Dry Ice", subtitle="A solid coolant for the reactor", deps=["pw_powah"], xp=75, desc=[
+    Q("pw_coolant", 0, 0, [item(P + "dry_ice", 4)], "Dry Ice", section=S_SIDE, subtitle="Optional: a solid coolant for the reactor",
+      deps=["pw_powah"], xp=75, **OPT, desc=[
         "&eWhat:&r a strong solid coolant for the Powah reactor. Cooler reactors waste less fuel.",
         "&eChemistry:&r real dry ice is solid CO₂, which sublimes straight to gas at -78.5 °C. Powah's is made from energized blue ice, which is H₂O, so take the name loosely.",
         "&eHow:&r Energizing Orb: 2 blue ice, 10,000 FE. JEI's Coolants and Solid Coolants tabs list every option and its strength.",
         "&eTip:&r the reactor also takes carbon and redstone to boost it. Check its GUI slots."]),
-    Q("pw_reactor_hardened", 22, -6, [item(P + "reactor_hardened", 36)], "Hardened Reactor", subtitle="Optional: rebuild the reactor a tier up", deps=["pw_coolant", "pw_cap_hardened"], xp=200, optional=True, tokens=2, desc=[
-        "&eWhat:&r a hardened reactor, much stronger than the basic one.",
-        "&eChemistry:&r uraninite (UO₂) holds U-235, which splits when it absorbs a neutron and releases more neutrons and heat.",
-        "&eHow:&r 4 basic reactor blocks, 4 hardened capacitors and 1 uraninite make 4 hardened blocks. Every block in the stack must be the same tier.",
-        "&eTip:&r blazing, niotic, spirited and nitro reactors follow the same recipe with that tier's capacitor."]),
-
-    # ===== ATM10-aligned round (2026-10-19): every tier of every Powah block, grouped =====
-    Q("pw_book", 0, 0, [item(P + "book")], "Powah's Manual", subtitle="Optional: the mod's own guidebook", deps=["pw_paste"], xp=15, optional=True, tokens=1, desc=[
-        "&eWhat:&r Powah's in-game book, with a page and a picture for every block on this chapter.",
-        "&eHow:&r a book and a dielectric paste, shapeless.",
-        "&eTip:&r add it to your Akashic Tome (Quality of Life page) so it doesn't take a slot."]),
-    Q("pw_reactor_starter", 0, 0, [item(P + "reactor_starter", 8)], "Starter Reactor Blocks", subtitle="Optional: where every reactor block begins", deps=["pw_cell_starter", "t4_uraninite"], xp=60, optional=True, tokens=1, desc=[
-        "&eWhat:&r starter reactor blocks. A stack of them forms a small reactor, and every basic reactor block is crafted from them.",
-        "&eChemistry:&r uranium dioxide is a ceramic: it melts near 2,865 °C, which is why real fuel pellets are UO₂ and not uranium metal.",
-        "&eHow:&r 4 uraninite, 4 tiny capacitors and a dielectric casing make 4. Basic blocks: 4 starter blocks, 4 large capacitors and a uraninite make 4.",
-        "&eTip:&r build the basic reactor (Power chapter) straight from these; starter reactors are weak."]),
-    Q("pw_battery_up", 0, 0, [anyof([P + "battery_basic", P + "battery_hardened", P + "battery_blazing", P + "battery_niotic", P + "battery_spirited", P + "battery_nitro"])],
-      "Bigger Batteries", subtitle="Optional: any battery above starter", deps=["pw_battery"], xp=40, optional=True, tokens=1, desc=[
-        "&eWhat:&r each battery tier holds and moves more FE. Any one above starter counts.",
-        "&eChemistry:&r real batteries climb tiers too: lead-acid, then nickel-metal hydride, then lithium-ion, each storing more energy per kilogram.",
-        "&eHow:&r the lower battery, that tier's capacitors, a redstone block and paste (hardened and up add energized steel or crystals; check JEI)."]),
-    Q("pw_hopper_up", 0, 0, [anyof([P + "energy_hopper_" + t for t in ("basic", "hardened", "blazing", "niotic", "spirited", "nitro")]
-                                    + [P + "energy_discharger_" + t for t in ("basic", "hardened", "blazing", "niotic", "spirited", "nitro")])],
-      "Faster Chargers", subtitle="Optional: upgrade a hopper or discharger", deps=["pw_hopper"], xp=40, optional=True, tokens=1, desc=[
-        "&eWhat:&r higher-tier Energy Hoppers and Dischargers move FE into and out of items faster. Any one counts.",
-        "&eHow:&r the lower block in a ring of paste, with that tier's capacitors and a casing (check JEI).",
-        "&eTip:&r a niotic hopper fills a MekaSuit in moments."]),
-    Q("pw_cable_crystal", 0, 0, [anyof([P + "energy_cable_" + t for t in ("blazing", "niotic", "spirited", "nitro")], 6)],
-      "Crystal Cables", subtitle="Optional: cables for a crystal-tier grid", deps=["pw_cable_hardened", "pw_blazing_gear"], xp=60, optional=True, tokens=1, desc=[
-        "&eWhat:&r blazing, niotic, spirited and nitro cables: each carries far more FE per tick. Any six.",
-        "&eHow:&r 6 horizontal rods, 2 cables of the tier below and that tier's capacitor make 6.",
-        "&eTip:&r only the trunk from your reactor needs top-tier cable; branches can stay hardened."]),
-    Q("pw_ender_cell_starter", 0, 0, [item(P + "ender_cell_starter")], "Starter Ender Cell", subtitle="Optional: the cheapest window into the ender network", deps=["pw_ender_core"], xp=40, optional=True, tokens=1, desc=[
-        "&eWhat:&r an Ender Cell shares one energy pool with every other ender block on the same channel, wherever it is.",
-        "&eHow:&r an ender core, 4 obsidian and 4 iron nuggets.",
-        "&eTip:&r the channel is set in its screen; all your cells on channel 1 are one big battery."]),
-    Q("pw_ender_up", 0, 0, [anyof([P + "ender_cell_" + t for t in ("hardened", "blazing", "niotic", "spirited", "nitro")]),
-                            anyof([P + "ender_gate_" + t for t in ("basic", "hardened", "blazing", "niotic", "spirited", "nitro")])],
-      "A Wider Ender Network", subtitle="Optional: better ender cells and gates", deps=["pw_ender_cell_starter", "pw_ender_gate", "pw_cap_hardened"], xp=75, optional=True, tokens=1, desc=[
-        "&eWhat:&r any ender cell above starter and any ender gate above starter. Higher tiers move more FE through the network.",
-        "&eHow:&r an ender core in obsidian with energized steel or crystals for cells, or that tier's cables for gates (check JEI).",
-        "&eTip:&r gates are cheap taps on the network; keep the big cells at home."]),
-    Q("pw_transmitter_up", 0, 0, [anyof([P + "player_transmitter_" + t for t in ("hardened", "blazing", "niotic", "spirited", "nitro")])],
-      "Stronger Transmitters", subtitle="Optional: charge your gear faster", deps=["pw_transmitter", "pw_cap_hardened"], xp=50, optional=True, tokens=1, desc=[
-        "&eWhat:&r higher-tier Player Transmitters push more FE into your inventory per tick. Any one above basic.",
-        "&eHow:&r the lower transmitter on top, that tier's capacitors and a casing in the middle, a rod below.",
-        "&eTip:&r one good transmitter beats three weak ones; it charges every item at once."]),
-    Q("pw_reactor_crystal", 0, 0, [anyof([P + "reactor_" + t for t in ("blazing", "niotic", "spirited", "nitro")], 36)],
-      "Crystal Reactor", subtitle="Optional: rebuild the reactor in crystal", deps=["pw_reactor_hardened", "pw_blazing_gear"], xp=250, optional=True, tokens=2, desc=[
-        "&eWhat:&r 36 reactor blocks of one crystal tier (blazing, niotic, spirited or nitro), enough for a full reactor.",
-        "&eChemistry:&r a real reactor's power is limited by how fast heat can be carried away, not by the fuel. Better coolant and better heat transfer mean more power from the same uranium.",
-        "&eHow:&r 4 blocks of the tier below, 4 of this tier's capacitors and a uraninite make 4.",
-        "&eTip:&r all 36 must be the same tier, or they won't form one reactor."]),
-    Q("pw_gen_top", 0, 0, [anyof([P + k + "_" + t for k in ("furnator", "magmator", "thermo_generator", "solar_panel") for t in ("spirited", "nitro")])],
-      "Spirited Generators", subtitle="Optional: the top two generator tiers", deps=["pw_gen_niotic", "pw_spirited_gear"], xp=150, optional=True, tokens=2, desc=[
-        "&eWhat:&r any spirited or nitro Furnator, Magmator, Thermo Generator or Solar Panel.",
-        "&eHow:&r the niotic generator with spirited crystals, spirited capacitors and a casing (nitro the same, one tier up).",
-        "&eTip:&r a row of nitro solar panels is silent, fuel-free and enough for most bases."]),
-    Q("pw_nitro_block", 0, 0, [item(P + "nitro_crystal_block")], "A Block of Nitro", subtitle="Secret: twenty million FE, nine times over", deps=["pw_nitro_gear"], xp=100,
-      secret=True, loot="secret", desc=[
+    Q("pw_nitro_block", 0, 0, [item(P + "nitro_crystal_block")], "A Block of Nitro", section=S_SIDE, subtitle="Secret: twenty million FE, nine times over",
+      deps=["pw_nitro"], xp=100, secret=True, loot="secret", desc=[
         "&6Nine crystals, each a star's worth of charge, pressed into one block. You remember holding that much. You used to call it Tuesday.&r",
         "&eWhat:&r a storage block of nitro crystals. It does nothing; it's just very, very expensive.",
         "&eTip:&r you can always break it back into crystals."]),
-], links=[("t1_power", -2, 0), ("t4_circuit", 14, -2), ("t4_uraninite", 16, -4), ("pw_energized", 16, -2),
-          ("pw_powah_cell", 22, -4), ("pw_powah", 18, -6), ("pw_blazing", 20, 2), ("pw_niotic", 24, 2),
-          ("pw_spirited", 28, 2), ("pw_nitro", 32, 2), ("pw_ender", 18, 4), ("pw_solar", 6, 6), ("pw_thermo", 8, 6)])
+], links=[("t1_power", 0, 0), ("t4_circuit", 0, 0), ("t4_uraninite", 0, 0), ("pw_more_powah", 0, 0)])

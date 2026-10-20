@@ -4009,33 +4009,17 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "mekanismgenerators:fission_reactor_logic_adapter"
+				count: 1
+			}
 			dependencies: [
 				"79D73BB7E003DB38"
 			]
 			tasks: [
 				{
 					id: "595A1799EBA41144"
-					type: "item"
-					item: {
-						id: "mekanismgenerators:fission_reactor_logic_adapter"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "1C8C0D9505C77732"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "4F312D04BD3C3737"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}
@@ -4163,6 +4147,10 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "modern_industrialization:large_diesel_generator"
+				count: 1
+			}
 			dependencies: [
 				"40DCC8ED98C178DE"
 				"7CB7FF40BB33AD8F"
@@ -4170,27 +4158,7 @@
 			tasks: [
 				{
 					id: "08E88406D214F936"
-					type: "item"
-					item: {
-						id: "modern_industrialization:large_diesel_generator"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "47D1F23ED6139465"
-					type: "xp"
-					xp: 80
-				}
-				{
-					id: "31325EF3EBA4E577"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}

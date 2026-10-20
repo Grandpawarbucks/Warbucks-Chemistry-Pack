@@ -1,6 +1,11 @@
 """Quest chapter: farming (Farmer's Delight, Botany Pots, animals, fertiliser). See tools/quests/STYLE.md."""
 from questlib import Q, Chapter, item, dim, tick, kill, anytag, anyof, MAIN, SIDE  # noqa: F401
 
+# ATM10 mirror (2026-10-20, user decision): ATM10's "food_and_farming" chapter, quest for quest where we have
+# the mod (its item list, order and shape only; all text is ours). Our Farmer's Delight, Botany Pots and fertiliser
+# quests stay as side quests.
+FIELD, PASTURE, SEA = "The Field", "The Pasture", "The Sea"
+
 # Any hopper botany pot (every material and colour) counts.
 HOPPER_POTS = ["botanypots:black_concrete_hopper_botany_pot", "botanypots:black_glazed_terracotta_hopper_botany_pot", "botanypots:black_terracotta_hopper_botany_pot", "botanypots:blue_concrete_hopper_botany_pot", "botanypots:blue_glazed_terracotta_hopper_botany_pot", "botanypots:blue_terracotta_hopper_botany_pot", "botanypots:bricks_hopper_botany_pot", "botanypots:brown_concrete_hopper_botany_pot", "botanypots:brown_glazed_terracotta_hopper_botany_pot", "botanypots:brown_terracotta_hopper_botany_pot", "botanypots:cyan_concrete_hopper_botany_pot", "botanypots:cyan_glazed_terracotta_hopper_botany_pot", "botanypots:cyan_terracotta_hopper_botany_pot", "botanypots:deepslate_bricks_hopper_botany_pot", "botanypots:end_stone_bricks_hopper_botany_pot", "botanypots:gray_concrete_hopper_botany_pot", "botanypots:gray_glazed_terracotta_hopper_botany_pot", "botanypots:gray_terracotta_hopper_botany_pot", "botanypots:green_concrete_hopper_botany_pot", "botanypots:green_glazed_terracotta_hopper_botany_pot", "botanypots:green_terracotta_hopper_botany_pot", "botanypots:light_blue_concrete_hopper_botany_pot", "botanypots:light_blue_glazed_terracotta_hopper_botany_pot", "botanypots:light_blue_terracotta_hopper_botany_pot", "botanypots:light_gray_concrete_hopper_botany_pot", "botanypots:light_gray_glazed_terracotta_hopper_botany_pot", "botanypots:light_gray_terracotta_hopper_botany_pot", "botanypots:lime_concrete_hopper_botany_pot", "botanypots:lime_glazed_terracotta_hopper_botany_pot", "botanypots:lime_terracotta_hopper_botany_pot", "botanypots:magenta_concrete_hopper_botany_pot", "botanypots:magenta_glazed_terracotta_hopper_botany_pot", "botanypots:magenta_terracotta_hopper_botany_pot", "botanypots:mossy_stone_bricks_hopper_botany_pot", "botanypots:mud_bricks_hopper_botany_pot", "botanypots:nether_bricks_hopper_botany_pot", "botanypots:orange_concrete_hopper_botany_pot", "botanypots:orange_glazed_terracotta_hopper_botany_pot", "botanypots:orange_terracotta_hopper_botany_pot", "botanypots:pink_concrete_hopper_botany_pot", "botanypots:pink_glazed_terracotta_hopper_botany_pot", "botanypots:pink_terracotta_hopper_botany_pot", "botanypots:polished_blackstone_bricks_hopper_botany_pot", "botanypots:prismarine_bricks_hopper_botany_pot", "botanypots:purple_concrete_hopper_botany_pot", "botanypots:purple_glazed_terracotta_hopper_botany_pot", "botanypots:purple_terracotta_hopper_botany_pot", "botanypots:quartz_bricks_hopper_botany_pot", "botanypots:red_concrete_hopper_botany_pot", "botanypots:red_glazed_terracotta_hopper_botany_pot", "botanypots:red_nether_bricks_hopper_botany_pot", "botanypots:red_terracotta_hopper_botany_pot", "botanypots:stone_bricks_hopper_botany_pot", "botanypots:terracotta_hopper_botany_pot", "botanypots:tuff_bricks_hopper_botany_pot", "botanypots:white_concrete_hopper_botany_pot", "botanypots:white_glazed_terracotta_hopper_botany_pot", "botanypots:white_terracotta_hopper_botany_pot", "botanypots:yellow_concrete_hopper_botany_pot", "botanypots:yellow_glazed_terracotta_hopper_botany_pot", "botanypots:yellow_terracotta_hopper_botany_pot"]
 
@@ -98,8 +103,8 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eTip:&r Rich Soil or farmland grows faster than dirt, and Mystical Agriculture seeds work in pots too."]),
 
     # --- Animals (y=4.5) -----------------------------------------------------------------------
-    Q("fd_breed", 2, 4.5, [item("minecraft:lead", 2), item("minecraft:wheat", 16)], "Animal Husbandry", deps=["f_knife"], xp=20,
-      optional=True, tokens=1, subtitle="Optional: breeding, explained by Just Enough Breeding", desc=[
+    Q("fd_breed", 2, 4.5, [item("minecraft:lead")], "Animal Husbandry", deps=[], xp=20, section=PASTURE, mirror="2E9C035EEE7E5C34",
+      subtitle="A lead, and the animals at the end of it", desc=[
         "&eWhat:&r cows, sheep, pigs and chickens give food, leather, wool and eggs. Two adults fed their favourite food make a baby.",
         "&eHow:&r lead two animals into a pen and feed them. Just Enough Breeding adds a JEI page per animal: look up any mob egg or food to see what it eats and what it drops.",
         "&eTip:&r babies take about 20 minutes to grow; feeding them their breeding food speeds that up."]),
@@ -154,23 +159,24 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eChemistry:&r an eggshell is about 95% calcium carbonate, CaCO₃: the same compound as chalk and limestone. Drop one in vinegar and it fizzes away as CO₂.",
         "&eHow:&r breed cows, pigs, sheep, chickens or rabbits and harvest the adults. Chickens lay eggs on their own.",
         "&eTip:&r cook meat before eating; raw chicken can give you Hunger."]),
-    Q("fd_milk", 0, 0, [item("minecraft:milk_bucket")], "Milk", deps=["fd_breed", "gs_bucket"], xp=15,
-      optional=True, tokens=1, subtitle="Optional: the cure for most status effects", desc=[
+    Q("fd_milk", 0, 0, [item("minecraft:milk_bucket")], "Milk", deps=["fd_leather"], xp=15, section=PASTURE, mirror="73B8A70240E6070E",
+      subtitle="The cure for most status effects", desc=[
         "&eWhat:&r drinking milk clears every potion effect, good and bad. It's also a baking ingredient.",
         "&eChemistry:&r milk is an emulsion: fat droplets held in water by proteins (casein). Add acid and the casein clumps into curds, which is the first step of every cheese.",
         "&eHow:&r use an empty bucket on a cow (or a goat).",
         "&eTip:&r carry one into the Deep Dark or the Wither fight to wipe Darkness or Wither in one gulp."]),
-    Q("fd_sugar", 0, 0, [item("minecraft:sugar", 16)], "Sugar", deps=["gs_opt_canes"], xp=15,
-      optional=True, tokens=1, subtitle="Optional: crystallised sucrose", desc=[
+    Q("fd_sugar", 0, 0, [item("minecraft:sugar", 3)], "Sugar", deps=["fd_cane"], xp=15, section=FIELD, mirror="1D48298525EEADC9",
+      subtitle="Crystallised sucrose", desc=[
         "&eWhat:&r sugar goes into cakes, pies, fermented spider eyes and speed potions.",
         "&eChemistry:&r table sugar is sucrose, C₁₂H₂₂O₁₁: a glucose and a fructose joined together. Heat it past about 160 °C and it breaks down into hundreds of brown, bitter-sweet compounds: caramel.",
         "&eHow:&r one sugar cane makes one sugar. A row of cane on Snad (Quality of Life page) grows fast.",
         "&eTip:&r the Alchemistry Dissolver splits sucrose into carbon, hydrogen and oxygen if you need the elements."]),
-    Q("fd_baking", 0, 0, [item("minecraft:cake"), item("minecraft:pumpkin_pie", 2)], "Bake Sale", deps=["fd_sugar", "fd_milk", "fd_barnyard"], xp=30,
-      optional=True, tokens=1, subtitle="Optional: a cake and two pies", desc=[
-        "&eWhat:&r a cake (placed and eaten a slice at a time) and pumpkin pie, the best vanilla snack per bite.",
+    Q("fd_baking", 0, 0, [item("minecraft:cake")], "Bake Sale", deps=["fd_sugar", "fd_wheat"], xp=40, size=1.5, section=FIELD, mirror="0893EFCAC7031FEA",
+      subtitle="A whole cake", desc=[
+        "&6Wheat, sugar, milk and eggs from your own field and pasture. You remember feasts; this is a good start.&r",
+        "&eWhat:&r a cake, placed and eaten a slice at a time. It needs something from every part of this page.",
         "&eChemistry:&r baking is chemistry you can eat: egg proteins set the structure, sugar caramelises, and the Maillard reaction between sugars and proteins browns the crust.",
-        "&eHow:&r cake: 3 milk buckets, 2 sugar, an egg and 3 wheat (you keep the buckets). Pie: a pumpkin, sugar and an egg.",
+        "&eHow:&r 3 milk buckets, 2 sugar, an egg and 3 wheat (you keep the buckets).",
         "&eTip:&r a cake on the table in your base means nobody ever starves between trips."]),
     Q("fd_bees", 0, 0, [item("minecraft:honeycomb", 6), item("minecraft:honey_bottle", 4)], "Honey and Wax", deps=["gs_opt_campfire"], xp=30,
       optional=True, tokens=1, subtitle="Optional: rob a hive without being stung", desc=[
@@ -226,15 +232,90 @@ CHAPTER = Chapter("farming", "Farming and Food", "farmersdelight:cooking_pot",
         "&eWhat:&r chorus fruit teleports you a short way when eaten. Smelted, it becomes popped chorus fruit for purpur blocks, end rods and Silent Gear's glittery dust.",
         "&eHow:&r break chorus plants on the outer End islands, or plant a chorus flower on end stone and grow your own.",
         "&eTip:&r in this pack the Potion of Flying uses hydrogen, not chorus, so this crop is for building and Silent Gear."]),
-    Q("fd_flax", 0, 0, [item("silentgear:flax_seeds", 4), item("silentgear:flax_string", 8)], "Flax", deps=["fd_crops"], xp=20,
-      optional=True, tokens=1, subtitle="Optional: string without spiders", desc=[
+    Q("fd_flax", 0, 0, [item("silentgear:flax_string", 3)], "Flax String", deps=["fd_flax_seeds"], xp=20, section=FIELD, mirror="04D0543FE2820F64",
+      subtitle="String without spiders", desc=[
         "&eWhat:&r Silent Gear's flax gives fibre for string, so bows and bindings don't depend on spider hunts.",
         "&eChemistry:&r flax fibre is nearly pure cellulose. Linen, made from it, is one of the oldest textiles, woven for over 30,000 years.",
-        "&eHow:&r find flax seeds (check JEI for where they drop), grow them, and craft 2 flax fibre into a flax string.",
+        "&eHow:&r grow flax and craft its fibre into flax string (check JEI for the recipe).",
         "&eTip:&r flax flowers make blue dye too."]),
     Q("fd_netherite_hoe", 0, 0, [item("minecraft:netherite_hoe")], "Overqualified", deps=["hv_netherite"], xp=50,
       secret=True, loot="secret", subtitle="Secret: the most expensive way to till dirt", desc=[
         "&6You remember making forests grow with a word. Now you're upgrading a hoe with netherite. Priorities.&r",
         "&eWhat:&r a netherite hoe. It tills, it harvests leaves and sculk fast, and it cost you a netherite ingot.",
         "&eTip:&r hoes are the fastest tool for leaves, hay, moss and sculk. So it isn't entirely a joke."]),
-], links=[("gs_food", -3, 0), ("t1_combiner", -3, 6), ("t4_reactor", -3, 7.5), ("t6_haber", -1.5, 7.5)])
+
+    # ===== ATM10 mirror: food_and_farming (2026-10-20) ======================================================
+    # Four roots as in ATM10 (crops, hoe, lead, fishing rod); the field, pasture and kitchen lines hang off them.
+    Q("fd_hub", 0, 0, [anytag("c:crops")], "Something That Grows", deps=["gs_farm"], xp=15, size=1.5, section=FIELD,
+      mirror="1827DEEA2DF1B144", icon="minecraft:wheat", subtitle="Any crop at all", desc=[
+        "&6You remember fields that ripened when you walked past them. Now you'll have to wait for the sun, like everyone else.&r",
+        "&eWhat:&r this page covers food: the vanilla field and pasture, Farmer's Delight's kitchen, fertiliser chemistry and the sea.",
+        "&eChemistry:&r every crop is stored sunlight: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂, powered by light and run by chlorophyll.",
+        "&eHow:&r pick up any crop (wheat, carrots, potatoes, beetroot, Farmer's Delight crops and more all count).",
+        "&eTip:&r village farms are a free first harvest."]),
+    Q("fd_hoe", 0, 0, [anytag("minecraft:hoes")], "A Hoe", deps=[], xp=10, size=1.25, section=FIELD, mirror="43021923E220CF68",
+      icon="minecraft:iron_hoe", subtitle="Turn dirt into farmland", desc=[
+        "&eWhat:&r a hoe tills dirt and grass into farmland, the only block most crops grow on.",
+        "&eHow:&r 2 of any tool material and 2 sticks. Any hoe counts.",
+        "&eTip:&r farmland within 4 blocks of water stays wet and grows crops faster."]),
+    Q("fd_seeds", 0, 0, [item("minecraft:wheat_seeds", 8)], "Seeds", deps=["fd_hoe"], xp=10, section=FIELD, mirror="72717D1135486D7F",
+      subtitle="Eight seeds to start a field", desc=[
+        "&eWhat:&r wheat seeds come from breaking grass, and every harvest gives more back.",
+        "&eHow:&r break tall grass, then plant on tilled farmland.",
+        "&eTip:&r seeds also feed chickens; keep a few spare."]),
+    Q("fd_wheat", 0, 0, [item("minecraft:wheat", 3)], "Wheat", deps=["fd_seeds"], xp=10, section=FIELD, mirror="0A1C2A7A8617D3E4",
+      subtitle="The first harvest", desc=[
+        "&eWhat:&r wheat is bread, cake and animal feed.",
+        "&eChemistry:&r a wheat grain is mostly starch plus gluten proteins, the proteins that make dough stretch.",
+        "&eHow:&r grow seeds until the stalks turn gold, then break them.",
+        "&eTip:&r a composter turns spare seeds into bone meal."]),
+    Q("fd_bread", 0, 0, [item("minecraft:bread", 3)], "Bread", deps=["fd_wheat"], xp=10, section=FIELD, mirror="659A903F97F93BE2",
+      subtitle="Three loaves", desc=[
+        "&eWhat:&r the simplest real meal: three wheat make a loaf.",
+        "&eChemistry:&r real bread rises because yeast ferments sugar into CO₂ and ethanol; the gas gets trapped in the gluten network.",
+        "&eHow:&r 3 wheat in a row on a crafting table.",
+        "&eTip:&r bread stacks to 64 and never spoils. Carry a stack."]),
+    Q("fd_cane", 0, 0, [item("minecraft:sugar_cane")], "Sugar Cane", deps=["fd_seeds"], xp=10, section=FIELD, mirror="361DFDB1E1352D6B",
+      subtitle="A reed that grows by water", desc=[
+        "&eWhat:&r sugar cane gives sugar and paper.",
+        "&eHow:&r find it on sand or dirt next to water and replant it by water.",
+        "&eTip:&r break the top blocks and leave the bottom one: it regrows."]),
+    Q("fd_flax_seeds", 0, 0, [item("silentgear:flax_seeds")], "Flax Seeds", deps=["fd_seeds"], xp=10, section=FIELD, mirror="56550CD12C681B0F",
+      subtitle="A crop for fibre, not food", desc=[
+        "&eWhat:&r Silent Gear's flax is grown for its fibre, which becomes string.",
+        "&eHow:&r check JEI for where flax seeds drop, then plant them on farmland.",
+        "&eTip:&r one seed is enough to start; replant the extras."]),
+    Q("fd_rod", 0, 0, [item("minecraft:fishing_rod")], "Fishing Rod", deps=[], xp=10, size=1.25, section=SEA, mirror="1DCAA0310AA55F1C",
+      subtitle="Food from any water", desc=[
+        "&eWhat:&r fishing gives fish, and sometimes treasure: saddles, name tags, enchanted books.",
+        "&eHow:&r 3 sticks and 2 string.",
+        "&eTip:&r Luck of the Sea and Lure enchantments make it far better."]),
+    Q("fd_shears", 0, 0, [anytag("c:tools/shear")], "Shears", deps=["fd_breed"], xp=10, section=PASTURE, mirror="18EADBAFC932F864",
+      icon="minecraft:shears", subtitle="Wool without killing the sheep", desc=[
+        "&eWhat:&r shears take wool from sheep (they regrow it by eating grass), and collect leaves, vines and cobwebs.",
+        "&eHow:&r 2 iron ingots diagonally. Any shears count.",
+        "&eTip:&r dye a sheep and it grows coloured wool forever."]),
+    Q("fd_wool", 0, 0, [anytag("minecraft:wool", 3)], "Wool", deps=["fd_shears"], xp=10, section=PASTURE, mirror="3EA883C0BB7BD38F",
+      icon="minecraft:white_wool", subtitle="Three blocks of any colour", desc=[
+        "&eWhat:&r wool makes beds, carpets and banners.",
+        "&eChemistry:&r wool is keratin, a protein held together by sulfur bridges between its chains.",
+        "&eHow:&r shear sheep; each one gives 1 to 3 wool.",
+        "&eTip:&r three wool and three planks make a bed: set your spawn early."]),
+    Q("fd_leather", 0, 0, [item("minecraft:leather", 3)], "Leather", deps=["fd_breed"], xp=10, section=PASTURE, mirror="635620A03E3505BF",
+      subtitle="From cows and horses", desc=[
+        "&eWhat:&r leather goes into books, item frames, armour and backpacks.",
+        "&eChemistry:&r tanning cross-links the collagen in hide so it stops rotting; plant tannins or chromium salts do the job.",
+        "&eHow:&r cows drop 0 to 2 leather each.",
+        "&eTip:&r rabbit hide also crafts into leather (4 hides make 1)."]),
+    Q("fd_eggs", 0, 0, [item("minecraft:egg", 3)], "Eggs", deps=["fd_breed"], xp=10, section=PASTURE, mirror="1D2EF12FD7FDD217",
+      subtitle="Three eggs", desc=[
+        "&eWhat:&r chickens lay eggs by themselves about every 5 to 10 minutes.",
+        "&eChemistry:&r the shell is about 95% calcium carbonate, CaCO₃, the same compound as limestone.",
+        "&eHow:&r keep a few chickens penned and pick up what they drop.",
+        "&eTip:&r throwing an egg sometimes hatches a chick."]),
+    Q("fd_chicken", 0, 0, [item("minecraft:feather", 10), item("minecraft:chicken", 5)], "Feathers and Chicken", deps=["fd_eggs"], xp=15,
+      section=PASTURE, mirror="1697CC05D08B388D", subtitle="A full coop's worth", desc=[
+        "&eWhat:&r feathers make arrows and quills; raw chicken cooks into a decent meal.",
+        "&eHow:&r breed chickens with seeds, then harvest the adults.",
+        "&eTip:&r cook the chicken; raw chicken can make you hungry."]),
+], links=[("gs_food", -3, 0), ("t1_combiner", -3, 6), ("t4_reactor", -3, 7.5), ("t6_haber", -1.5, 7.5)], mirror="food_and_farming")

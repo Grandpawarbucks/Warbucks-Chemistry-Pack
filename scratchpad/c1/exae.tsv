@@ -1,0 +1,57 @@
+3972EE0ECB215843	  -5.0	   2.0	s=2.0	        	OK 	Extended \\& Advanced AE                	ae2:fluix_crystal x1	deps=
+4818C8387C0DBBE7	  -3.0	   0.0	s=1.5	hexagon 	OK 	ExtendedAE                              	ae2:fluix_block x1	deps=3972EE0ECB215843
+1A815711703E4A24	  -3.0	   2.5	s=1	        	OK 	                                        	<checkmark> x0	deps=
+7725CB7D0AE55180	  -3.0	   5.0	s=1.5	hexagon 	OK 	Advanced AE                             	ae2:logic_processor x1	deps=3972EE0ECB215843
+0E06F323BF8C1D73	  -1.5	  -1.0	s=1	        	OK 	Automating Entro Crystals               	ftbfiltersystem:smart_filter x1	deps=34FBD04361657724
+34FBD04361657724	  -1.5	   0.0	s=1	        	OK 	The Crystals of Space and Time: Entro Cr	extendedae:entro_seed x1 | <observation> x0 | extendedae:entro_crystal x1	deps=4818C8387C0DBBE7
+1E535784A9D3DE89	  -1.5	   1.0	s=1	        	OK 	                                        	<checkmark> x0	deps=4818C8387C0DBBE7
+56DE217FEAE3F036	  -1.5	   6.0	s=1	        	OK 	Specific Sided Patterns: The Advanced Pa	ftbfiltersystem:smart_filter x1 | advanced_ae:adv_pattern_encoder x1	deps=7725CB7D0AE55180
+1B90B94D07BBDD09	   0.0	   0.0	s=1.25	gear    	OK 	Complex Crafter: The Crystal Assembler  	extendedae:crystal_assembler x1	deps=34FBD04361657724
+3621155A4138EBCA	   0.0	   1.5	s=1	        	OK 	Matter Condenser in a Cell: The Void Cel	extendedae:void_cell x1	deps=1E535784A9D3DE89
+36FB694262102CFD	   0.0	   2.5	s=1	        	OK 	More Resources than you ever need: Infin	ftbfiltersystem:smart_filter x1	deps=1E535784A9D3DE89
+14FC9E4A3C80C0AE	   0.0	   5.0	s=1	        	OK 	Reaction Efficency: The Reaction Chamber	advanced_ae:reaction_chamber x1	deps=7725CB7D0AE55180
+3FE739EA7E297DF3	   1.5	  -1.0	s=1	        	OK 	Faster and Bigger: Extended Devices     	ftbfiltersystem:smart_filter x1	deps=1B90B94D07BBDD09
+534D827A628907F4	   1.5	   0.0	s=1	        	OK 	Better Pattern Access: The Extended Patt	extendedae:ex_pattern_access_part x1	deps=1B90B94D07BBDD09
+411A463E98C3B102	   1.5	   5.0	s=1	        	OK 	Quantum Ingredients                     	advanced_ae:shattered_singularity x1 | advanced_ae:quantum_alloy x1 | advanced_ae:quantum_processor x1	deps=14FC9E4A3C80C0AE
+78215D704E6095B0	   1.5	   9.5	s=1	        	OK 	ME System As Armor: The Quantum Armor   	advanced_ae:quantum_helmet x1 | advanced_ae:quantum_chestplate x1 | advanced_ae:quantum_leggings x1 | advanced_ae:quantum_boots x1	deps=411A463E98C3B102
+034AB493E1EC2E63	   2.5	  -4.5	s=1	        	OK 	Assembler Matrix Cores                  	extendedae:assembler_matrix_pattern x35 | extendedae:assembler_matrix_crafter x35 | extendedae:assembler_matrix_speed x5	deps=7900A4836CC55428
+7900A4836CC55428	   2.5	  -3.0	s=1.5	rsquare 	OK 	Many Assemblers In One: The Assembler Ma	extendedae:assembler_matrix_frame x43 | ftbfiltersystem:smart_filter x125	deps=3FE739EA7E297DF3
+27FC0C092EE00532	   2.5	  -1.0	s=1	        	OK 	Can this Liquid: The ME Canner          	extendedae:caner x1	deps=1B90B94D07BBDD09
+48357A7486125C52	   2.5	   0.0	s=1	        	OK 	Blocks to Circuits: The Circuit Slicer  	extendedae:circuit_cutter x1	deps=1B90B94D07BBDD09
+0B4CE3969067FA31	   2.5	   9.5	s=1	square  	OK 	Upgrades for Quantum Armor              	advanced_ae:quantum_upgrade_base x1	deps=78215D704E6095B0
+03164C4C7813CE2B	   3.0	   5.0	s=1	        	OK 	Infinite Crafting Jobs: The Quantum Comp	advanced_ae:quantum_unit x1 | advanced_ae:quantum_structure x1	deps=411A463E98C3B102
+3CF32F2314839B1D	   3.5	  -1.0	s=1	        	OK 	Get-Yer-Crystals-Fixed: The Crystal Fixe	extendedae:crystal_fixer x1	deps=1B90B94D07BBDD09
+52CD31F48715B17C	   3.5	   0.0	s=1	        	OK 	Connections across long distances: The W	extendedae:wireless_connect x2 | extendedae:wireless_tool x1	deps=1B90B94D07BBDD09
+38D0BBD5F699EF41	   3.5	   9.5	s=1	square  	OK 	                                        	advanced_ae:recharging_card x1	deps=0B4CE3969067FA31
+18499D33BA12A8A9	   4.5	  -1.0	s=1	        	OK 	Actively Placing From The Network: The A	extendedae:active_formation_plane x1	deps=1B90B94D07BBDD09
+3916B48D7F294932	   4.5	   0.0	s=1	        	OK 	Branches of Connections: The Wireless Hu	extendedae:wireless_hub x1	deps=52CD31F48715B17C
+0D8B4DAB82ABEF9D	   4.5	   4.5	s=1	        	OK 	Co-Processing Oblivion: Quantum Computer	advanced_ae:quantum_accelerator x1	deps=03164C4C7813CE2B
+658DEAAD1E68E549	   4.5	   5.5	s=1	        	OK 	Massive Crafting Storage: The Quantum Co	advanced_ae:quantum_storage_128 x2 | advanced_ae:quantum_storage_256 x1	deps=03164C4C7813CE2B
+188952FC58EB40BC	   4.5	   7.5	s=1	square  	OK 	                                        	advanced_ae:night_vision_card x1	deps=0B4CE3969067FA31
+2303BB17339B240D	   4.5	   8.5	s=1	square  	OK 	                                        	advanced_ae:magnet_card x1	deps=0B4CE3969067FA31
+621A996C7802D057	   4.5	   9.5	s=1	square  	OK 	                                        	advanced_ae:auto_stock_card x1	deps=0B4CE3969067FA31
+580624D24AE2DB4B	   4.5	  10.5	s=1	square  	OK 	                                        	advanced_ae:water_breathing_card x1	deps=0B4CE3969067FA31
+3347CB6478F486C6	   4.5	  11.5	s=1	square  	OK 	                                        	advanced_ae:portable_workbench_card x1	deps=0B4CE3969067FA31
+451A6EEF33395A29	   4.5	  12.5	s=1	square  	OK 	                                        	advanced_ae:auto_feeding_card x1	deps=0B4CE3969067FA31
+763A19067AEEF6D5	   4.5	  13.5	s=1	square  	OK 	                                        	advanced_ae:luck_card x1	deps=0B4CE3969067FA31
+12749A25600C7FF3	   5.5	   3.5	s=1	        	OK 	Fully Automated Crafting: The Quantum Cr	advanced_ae:quantum_crafter x1	deps=0D8B4DAB82ABEF9D
+130A300418962332	   5.5	   7.5	s=1	square  	OK 	                                        	advanced_ae:lava_immunity_card x1	deps=0B4CE3969067FA31
+3B3F1DE1AF6EBC1E	   5.5	   8.5	s=1	square  	OK 	                                        	advanced_ae:strength_card x1	deps=0B4CE3969067FA31
+7610A0BB77AC8037	   5.5	   9.5	s=1	square  	OK 	                                        	advanced_ae:regeneration_card x1	deps=0B4CE3969067FA31
+468E8D7CF9B83FEE	   5.5	  10.5	s=1	square  	OK 	                                        	advanced_ae:pick_craft_card x1	deps=0B4CE3969067FA31
+6559C57A1A476489	   5.5	  11.5	s=1	square  	OK 	                                        	advanced_ae:attack_speed_card x1	deps=0B4CE3969067FA31
+4AC3EA41234BC5F0	   5.5	  12.5	s=1	square  	OK 	                                        	advanced_ae:hp_buffer_card x1	deps=0B4CE3969067FA31
+67C7EF299BEC37DE	   5.5	  13.5	s=1	square  	OK 	                                        	advanced_ae:flight_card x1	deps=0B4CE3969067FA31
+55DFC96B4CDBFA7D	   6.0	   5.0	s=1.5	heart   	OK 	Heart of the Crafts: Quantum Computer Co	advanced_ae:quantum_core x1	deps=0D8B4DAB82ABEF9D,658DEAAD1E68E549
+2E61219FC0BAB675	   6.5	   7.5	s=1	square  	OK 	                                        	advanced_ae:reach_card x1	deps=0B4CE3969067FA31
+70395883E97AE897	   6.5	   8.5	s=1	square  	OK 	                                        	advanced_ae:sprint_speed_card x1	deps=0B4CE3969067FA31
+0D3874835F1367EE	   6.5	  10.5	s=1	square  	OK 	                                        	advanced_ae:swim_speed_card x1	deps=0B4CE3969067FA31
+188C9E5D340C5A0A	   6.5	  12.5	s=1	square  	OK 	                                        	advanced_ae:walk_speed_card x1	deps=0B4CE3969067FA31
+1A20BBBAFBEDF911	   7.5	   4.5	s=1	        	OK 	Co-Processing To Infinity: Quantum Compu	advanced_ae:quantum_multi_threader x1	deps=55DFC96B4CDBFA7D,1B90B94D07BBDD09
+09F43EB79DDBD127	   7.5	   5.5	s=1	        	OK 	Unnecessarily Large Storage: Quantum Dat	advanced_ae:data_entangler x1	deps=55DFC96B4CDBFA7D,1B90B94D07BBDD09
+0A354B4707894A62	   7.5	   7.5	s=1	square  	OK 	                                        	advanced_ae:jump_height_card x1	deps=0B4CE3969067FA31
+5E610C059737628B	   7.5	   8.5	s=1	square  	OK 	                                        	advanced_ae:step_assist_card x1	deps=0B4CE3969067FA31
+07E5B0BF7D8E055A	   7.5	  10.5	s=1	square  	OK 	                                        	advanced_ae:evasion_card x1	deps=0D3874835F1367EE,188C9E5D340C5A0A,70395883E97AE897,6559C57A1A476489
+6033ABA2088BA70C	   7.5	  13.5	s=1	square  	OK 	                                        	advanced_ae:flight_drift_card x1	deps=67C7EF299BEC37DE
+7E35ED5B30697722	  10.0	   5.0	s=2.0	none    	OK 	The Ultimate Quantum Computer           	advanced_ae:quantum_structure x200 | advanced_ae:quantum_accelerator x100 | advanced_ae:quantum_core x1 | advanced_ae:quantum_multi_threader x1	deps=1A20BBBAFBEDF911
+56 quests

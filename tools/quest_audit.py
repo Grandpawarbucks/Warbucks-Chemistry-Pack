@@ -41,6 +41,10 @@ SHOP_GROUP = "shop"
 
 # Items the obtainability check can't prove but that a player CAN get. Keep the reason honest.
 ALLOW = {
+    # --- mod mechanics the dump can't see ---
+    "apotheosis:gem": "dropped by monsters (affix loot, coded drop), ATM10 asks for it too",
+    "deeperdarker:ice_lily": "generates on Otherside water (worldgen feature, not a loot table)",
+    "neovitae:base_spiritus_soul_raw": "dropped by mobs killed with the Neo Vitae sentient/dagger mechanic",
     # --- vanilla mechanics with no recipe or loot table ---
     "minecraft:water_bucket": "bucket on water",
     "minecraft:lava_bucket": "bucket on lava",

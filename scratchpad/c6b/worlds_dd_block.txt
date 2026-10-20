@@ -1,0 +1,43 @@
+
+    # --- The Deep Dark and the Otherside (y=3.5, extras y=5.5) -------------------------------------
+    Q("w_ancient", 0, 3.5, [tick()], "An Ancient City", deps=["t2_nether"], xp=100,
+      subtitle="Find the city beneath the deep dark", desc=[
+        "&eWhat:&r Ancient Cities sit deep below the Overworld in the deep dark. Each one's centre holds the frame of a portal to the Otherside.",
+        "&eHow:&r the Explorer's Compass can find one. Sneak everywhere: shriekers summon the Warden. Click the checkmark once you're inside.",
+        "&eTip:&r sneaking never triggers sculk sensors, and walking on wool doesn't either."]),
+    Q("wd_warden", 2, 3.5, [kill("minecraft:warden")], "The Warden", deps=["w_ancient"], xp=300,
+      loot="boss", subtitle="Kill the blind guardian of the deep", desc=[
+        "&eWhat:&r the Warden is the strongest regular mob in the game, and the key to the Otherside: with Deeper and Darker it drops the Heart of the Deep.",
+        "&eHow:&r trigger shriekers three times to summon one (or let it find you). Fight from range; it's blind and tracks you by sound and smell.",
+        "&eTip:&r its sonic boom goes through shields and armour. Break line of sight when it starts charging."]),
+    Q("w_otherside", 4, 3.5, [item("deeperdarker:heart_of_the_deep"), dim("deeperdarker:otherside")], "The Otherside", deps=["wd_warden"], xp=300,
+      subtitle="Take the Warden's heart and step through", desc=[
+        "&6You remember a silence older than the world. You can hear it again.&r",
+        "&eWhat:&r beyond the Ancient City lies the Otherside, a dark dimension of sculk and echo trees.",
+        "&eHow:&r defeat a Warden for its Heart of the Deep, then use it to light the portal frame in the city's centre.",
+        "&eTip:&r the Warden is blind but hears everything. Fight from range and keep moving."]),
+    Q("w_echo", 6, 3.5, [item("deeperdarker:reinforced_echo_shard", 4)], "Echoes of the Deep", deps=["w_otherside"], xp=200,
+      subtitle="The Otherside's strongest material", desc=[
+        "&eWhat:&r reinforced echo shards make Warden gear that rivals netherite.",
+        "&eHow:&r check JEI for the recipe; echo shards come from Ancient City chests and Otherside loot.",
+        "&eTip:&r Warden armour is a netherite smithing upgrade, so keep your netherite gear."]),
+    Q("wd_temple", 4, 5.5, [structure("deeperdarker:ancient_temple")], "The Ancient Temple", deps=["w_otherside"], xp=200,
+      subtitle="A temple deep in the Otherside", desc=[
+        "&eWhat:&r the Otherside's great structure: a sculk-choked temple with traps and the best loot in the dimension.",
+        "&eHow:&r the Explorer's Compass points the way. Step inside.",
+        "&eTip:&r the temple is full of sculk; sneak, as you did in the Ancient City."]),
+    Q("wd_otherside_biomes", 6, 5.5, [biome("deeperdarker:echoing_forest"), biome("deeperdarker:overcast_columns"), biome("deeperdarker:blooming_caverns")],
+      "Biomes of the Otherside", deps=["w_otherside"], xp=150, optional=True, tokens=1, subtitle="Optional: forests, columns and caverns", desc=[
+        "&eWhat:&r the Otherside has its own biomes: echo-tree forests, towering columns and caverns lit by blooming plants.",
+        "&eChemistry:&r there's no sunlight down here; real cave and deep-sea ecosystems run on chemosynthesis, where microbes get energy by oxidising H₂S or CH₄ instead of from light.",
+        "&eHow:&r Nature's Compass works in the Otherside. Visit all three."]),
+    Q("w_soul_elytra", 8, 1.5, [item("deeperdarker:soul_elytra")], "Soul Elytra", deps=["w_otherside", "w_elytra"], xp=150,
+      optional=True, tokens=1, subtitle="Optional: an elytra with its own boost", desc=[
+        "&eWhat:&r an upgraded elytra that boosts itself, no rockets needed.",
+        "&eHow:&r an elytra, sculk bones (from Shattered), a soul crystal (from Stalkers) and soul dust (check JEI).",
+        "&eTip:&r Stalkers and Shattered roam the Otherside; fight them at range."]),
+    Q("w_warden_armor", 8, 3.5, [item("deeperdarker:warden_chestplate")], "Warden Armour", deps=["w_echo"], xp=200,
+      optional=True, tokens=2, subtitle="Optional: beyond netherite", desc=[
+        "&eWhat:&r Warden armour is tougher than netherite.",
+        "&eHow:&r netherite chestplate + reinforced echo shard + Warden upgrade template in a smithing table.",
+        "&eTip:&r check JEI for where the Warden upgrade template comes from."]),

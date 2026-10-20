@@ -50,12 +50,13 @@ from the section's root quest (a loose group of unrelated quests is named "From 
 - A chapter with one section gets no header (the chapter banner is enough). Every other auto-layout page, main path
   and mod pages alike, shows its sections as headers (one chapter per mod; see "Where chapters go").
 
-**Shape motifs** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"comb"`). Every page keeps progression
+**Shape motifs** (`STYLES` in `tools/quest_data.py`, by chapter key; default `"mirror"` where the page has an ATM10
+mirror target, else `"comb"`). Every page keeps progression
 readable: only straight lines, no line through a quest, no overlaps, and FTB's real geometry (a quest of size s is
 about s cells wide). Pick a motif by looking at `test/build_quest_preview.py --gallery` (and ATM10's "The Beginning"
 on the `test/build_quest_map.py --compare` page); try one without editing the file:
 `$env:LAYOUT_STYLE="t6=winding,qol=radial"` before a build (`QUEST_OUT=<folder>` keeps it out of pack/).
-- `"comb"` (v13, 2026-10-19; every auto page but building): the grammar of ATM10's hand-made main questline, as an
+- `"comb"` (v13, 2026-10-19; every auto page without a mirror target): the grammar of ATM10's hand-made main questline, as an
   algorithm (never its coordinates).
   - **One straight spine** on y = 0: the longest chain of required quests, left to right, on the 2-cell grid. The
     chapter's way in (a link to the quest it follows on from) leads the row. A spine of more than 16 quests (18 when
@@ -78,9 +79,45 @@ on the `test/build_quest_map.py --compare` page); try one without editing the fi
   - **Hidden lines** on comb pages are settled by a small search over the flags (FTB can only hide ALL of a quest's
     lines, or all lines from a dependency): a line through a quest or a header is never drawn; after that it avoids,
     in order, a quest with no line at all, lines over 10 cells, crossings, lines over 6 cells and slanted lines.
-- `"radial"` (building): hub pages. The hub (the quest most of the page hangs from) sits in the middle with its own
+- **Current state (2026-10-20, later, user decision):** every auto page is a `"comb"` again ("lets make it comb
+  shaped as we have before"). The mirror motif below is kept but off (`USE_MIRROR = False` in tools/quest_data.py);
+  `Q(mirror=)` ids and the ATM10 quest-for-quest content stay. A page too cluttered for one comb is split into extra
+  chapters in the same group: `SPLIT_PAGES` in tools/quest_data.py (page key -> extra chapters' key suffix, title
+  and subtitle; the build cuts along sections, quest keys never change, siblings get quest links to what they
+  need). Pictures are NOT placed on any page ("we dont need to worry about pictures save them off and I can place
+  manually"): one picture per section is rendered into `pack/kubejs/assets/warbucks/textures/quests/pictures/`
+  and listed in `docs/QUEST_PICTURES.md` (generated) for placing by hand in FTB's editor.
+- `"mirror"` (v14, 2026-10-20, user decision; OFF since later that day): the page mirrors its
+  All the Mods 10 chapter quest for quest, with the same page shape and pictures in ATM10's image spots. ATM10's
+  book is All Rights Reserved: the engine reads only its geometry and requirements (quest ids, x/y, size, shape,
+  deps, first tasks, image rectangles, quest links), never its text or image files.
+  - **Target.** `MIRROR` in `tools/quest_data.py` maps our chapter key to an ATM10 chapter file stem (storage ->
+    storage, ae2 -> applied_energistics_2, mekanism_power -> mekanism_reactors, start -> mainquestline_part_1, ...).
+    `Chapter(..., mirror="<stem>")` in the chapter file overrides it. Without the ATM10 book on disk the page is
+    drawn as a comb (one warning). `--check` fails on a stem that isn't an ATM10 chapter file.
+  - **Matching.** `Q(..., mirror="<16 hex id>")` names the ATM10 quest this one stands for (copy the id from
+    ATM10's chapter .snbt; `--check` fails if it isn't in that chapter). Unnamed quests match by their first
+    task (item id; else entity, dimension, structure or biome), then by dependency structure (a free ATM10
+    neighbour of an already matched dep or dependent). Name the ones that matter (milestones, branch roots) when the
+    automatic match picks the wrong twin.
+  - **Placement.** A matched quest sits at its ATM10 quest's x/y. Its size follows ATM10's for ordinary quests
+    (0.75 to 1.4, shrunk towards 1.0 where two would touch); milestones keep 1.5/2.0 and shapes stay the
+    role's. Unmatched quests go near their deps in free cells (no overlaps, no lines through quests, off the
+    pictures). Links sit at ATM10's quest-link spot for the same quest when it is free, else beside the quest they
+    feed. Our deps decide the lines; the comb's flag search sets the hide flags, and a quest may be left without a
+    drawn line as often as ATM10's own page does (many ATM10 mod pages hide nearly every line).
+  - **Pictures.** Every ATM10 image rectangle becomes a picture slot {chapter, slug, x, y, width, height, rotation,
+    nearby_items (first item ids of the 6 nearest quests), title (nearest section)}. `tools/build_pictures.py`
+    draws it (`render(slot)`; our own art from item textures, never ATM10's files) into
+    `pack/kubejs/assets/warbucks/textures/quests/pictures/<chapter>_<slug>.png`; stale ones are deleted
+    (`clean`). A small picture with a quest on it (ATM10 frames quests this way) is a backdrop: element-tile
+    decor, no caption. No section headers on mirror pages (the pictures label them); the chapter banner stays.
+  - **Fallback.** Fewer than 4 matches (or under 20% of the page) and the comb draws the page instead
+    (`--layout-report` says so in its "mirror matched %" column, which shows matched/total and pictures per page).
+- `"radial"` (no page at the moment): hub pages. The hub (the quest most of the page hangs from) sits in the middle with its own
   section as a radial tree around it; the other sections are spokes in compass slots, each a short tree pointing
-  outward with its header at the far end. Kept where a page is a set of independent hubs (the comb tangles there).
+  outward with its header at the far end. Building used it until v14; checked 2026-10-20, the mirror beats it there
+  (22x20 cells instead of 50x32, more straight lines), so building is a mirror page now.
 - Older motifs, kept for comparison and `LAYOUT_STYLE`: `"winding"` (the spine snakes in rows of 4 to 7 with
   sections hanging above and below each row), `"molecule"` (sections as rings of 5 or 6 quests joined by bonds;
   `BLOCKS` in quest_data.py can ask for them on a winding/radial page), `"tree"` (sections as top-down trees in
@@ -137,12 +174,13 @@ per mod**, grouped by category. A mod's sections are section headers on its page
   ("Bounty Board"), lab_notes, completionist.
 - **The Demigod's Path (Main Questline):** start, t0 to t7, seed, creation (our story replaces ATM10's main questline).
 - **The Demigod's Market:** shop_materials, shop_gear, shop_world (manual grids).
-- **Tools and Gear:** tools, harvest, apotheosis, relics, qol. **Storage:** storage, ae2. **Logistics:** logic.
+- **Tools and Gear:** tools, harvest, apotheosis, relics, artifacts, silentgear, qol. **Storage:** storage, ae2, eae.
+  **Logistics:** logic, integrated (Integrated Dynamics), pylons.
 - **Resources:** farming, mystical, factory (mob data and big crafting; ATM10 files Hostile Neural Networks here).
 - **Tech:** create, mekanism, mekanism_power ("Mekanism: Power", like ATM10's Mekanism Reactors), justdirethings.
 - **Chemistry:** periodic (the pack's own group, where ATM10 has Modern Industrialization).
-- **Energy:** power, powah. **Magic:** ars, occultism, neovitae, projecte.
-- **Exploration:** worlds, explore, undergarden, twilight, deeperdarker, allthemodium, space.
+- **Energy:** power, generators (Iron Furnaces and Generator Galore), powah. **Magic:** ars, occultism, neovitae, apothic_enchanting, projecte.
+- **Exploration:** worlds ("The End"), explore, undergarden, twilight, deeperdarker, allthemodium, space.
 - `TITLES` in quest_data.py renames a chapter in the sidebar (and on its banner) without touching its file.
 - A new chapter file must be added to `LAYOUT`, or it isn't built (`--check` warns about unlisted files). A key in
   `LAYOUT` whose file doesn't exist yet is skipped quietly.
@@ -172,6 +210,8 @@ Import what you need: `from questlib import Q, Chapter, item, dim, tick, kill, s
 - `anytag("minecraft:logs", 16)`: any 16 items from an item tag. `anyof(["a:x", "b:y"], 4)`: any of several items.
   Use these instead of forcing one exact variant (e.g. any wool, any sapling, any Mekanism tier).
 - Quest options on `Q(...)`:
+  - `mirror="<16 hex id>"`: the ATM10 quest this one stands for on a mirror page (its position only; see
+    "Shape motifs"). `Chapter(..., mirror="<ATM10 chapter stem>")` sets the page's ATM10 chapter.
   - `hidden=True`: not shown until its dependencies are visible (spoiler-free next steps).
   - `secret=True`: invisible until completed. Secret quests are fun discoveries (a rare biome, a strange mob, a joke).
     Give them a dependency so they can't be done before the chapter opens; reward `loot="secret"`.

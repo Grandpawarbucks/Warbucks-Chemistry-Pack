@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "headless_cthulhu_head": {
+      "conditions": {
+        "type": "headless_cthulhu_head"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.headless_cthulhu_head.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 9
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.headless_cthulhu_head.title"
+    }
+  },
+  "requirements": [
+    [
+      "headless_cthulhu_head"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

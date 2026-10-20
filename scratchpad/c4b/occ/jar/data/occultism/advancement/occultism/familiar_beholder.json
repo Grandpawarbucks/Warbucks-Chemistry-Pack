@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/root",
+  "criteria": {
+    "familiar_beholder": {
+      "conditions": {
+        "ritual_id": "occultism:ritual/familiar_beholder"
+      },
+      "trigger": "occultism:ritual"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.occultism.familiar_beholder.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "occultism:jei_dummy/none"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.occultism.familiar_beholder.title"
+    }
+  },
+  "requirements": [
+    [
+      "familiar_beholder"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "shub_niggurath_summon": {
+      "conditions": {
+        "type": "shub_niggurath_summon"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.shub_niggurath_summon.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 11
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.shub_niggurath_summon.title"
+    }
+  },
+  "requirements": [
+    [
+      "shub_niggurath_summon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

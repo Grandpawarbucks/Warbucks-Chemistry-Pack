@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "rare_variant": {
+      "conditions": {
+        "type": "rare_variant"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.rare.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 5
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.rare.title"
+    }
+  },
+  "requirements": [
+    [
+      "rare_variant"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

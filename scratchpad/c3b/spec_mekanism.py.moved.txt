@@ -1,0 +1,33 @@
+    Q("mk2_robit", 8, -1, [item(MEK + "robit")], "Robit", subtitle="A small robot friend", deps=["mk2_refined_obsidian"], xp=100, desc=[
+        "&eWhat:&r the Robit follows you, picks up items, smelts and crafts. It is also a crafting part for the Digital Miner and several More Machine blocks.",
+        "&eHow:&r Atomic Alloy, refined obsidian, steel, an Energy Tablet and a personal chest (check JEI). Place it on a Chargepad to recharge.",
+        "&eTip:&r rename it with a name tag. It won't mind."]),
+    Q("mk2_miner", 10, -1, [item(MEK + "digital_miner")], "Digital Miner", subtitle="Mine a whole area by filter", deps=["mk2_robit", "mk2_teleport_core"], xp=200, desc=[
+        "&eWhat:&r a machine that mines out a large radius below it, taking only the blocks you filter for.",
+        "&eHow:&r Atomic Alloy, a Logistical Sorter, a Robit, a Teleportation Core and a steel casing (check JEI). Set filters (tags like c:ores work), radius and height, then start it.",
+        "&eTip:&r it uses a lot of power. Speed upgrades help, but bring Energy upgrades too. Rich deposits sit at metal-specific depths: set its height range to match."]),
+    Q("mk2_qio", 8, 1, [item(MEK + "qio_drive_array"), item(MEK + "qio_dashboard"), item(MEK + "qio_drive_base")], "QIO", subtitle="Mekanism's digital storage", deps=["mk2_ult_circuit"], xp=250, desc=[
+        "&eWhat:&r Quantum Item Orchestration: drives in a drive array hold items, and dashboards, importers and exporters reach them wirelessly through a frequency.",
+        "&eHow:&r the drive array needs a Teleportation Core and Ultimate Control Circuits (EV); the base drive needs an ultimate circuit too. Give every QIO block the same frequency.",
+        "&eTip:&r AE2 is the pack's main storage. QIO is a good wireless add-on for a remote outpost."]),
+    Q("mk2_qio_io", 10, 1, [item(MEK + "qio_importer"), item(MEK + "qio_exporter"), item(MEK + "portable_qio_dashboard")], "QIO In and Out", subtitle="Importers, exporters and a dashboard to carry", deps=["mk2_qio", "t6_polonium"], xp=200, desc=[
+        "&eWhat:&r importers pull items from the inventory they face into QIO; exporters push chosen items out. The Portable Dashboard opens your QIO from anywhere.",
+        "&eHow:&r importer and exporter: lead, ender pearls, a Teleportation Core, an ultimate circuit and a (sticky) piston. The portable dashboard wraps a dashboard and a core in seven polonium pellets (check JEI).",
+        "&eTip:&r an exporter with a filter on a machine's input is a tiny autocrafting line."]),
+    Q("mk2_qio_drives", 12, 2.5, [item(MEK + "qio_drive_hyper_dense")], "Challenge: Denser Drives", subtitle="More items per drive", deps=["mk2_qio_io"], xp=200, optional=True, tokens=1, desc=[
+        "&eWhat:&r the Hyper-Dense QIO Drive holds far more than a base drive. Time-Dilating and Supermassive drives go further still.",
+        "&eHow:&r each tier wraps the one below with a Teleportation Core and rarer materials (check JEI for each).",
+        "&eTip:&r drive count matters as much as size: an array holds 12 drives."]),
+    Q("mk2_module_base", 8, 9, [item(MEK + "module_base", 4), item(MEK + "modification_station")], "Modules", subtitle="The Modification Station", deps=["mk2_hdpe_parts", "t6_polonium"], xp=250, desc=[
+        "&eWhat:&r module bases are the blank every MekaSuit and Meka-Tool module is built on. The Modification Station installs modules into your gear.",
+        "&eHow:&r module base: an HDPE sheet in tin ingots and bronze nuggets (makes 2). Station: HDPE sheets, a chest, Ultimate Control Circuits (EV), a steel casing and a polonium pellet (check JEI).",
+        "&eTip:&r press U on a Module Base in JEI to see every module and what each one needs."]),
+    Q("mk2_mekatool", 10, 8.25, [item(MEK + "meka_tool")], "Meka-Tool", subtitle="Every tool, upgradable", deps=["mk2_module_base"], xp=300, desc=[
+        "&eWhat:&r the Atomic Disassembler grown up: one FE-powered tool that mines, digs, chops and fights, and takes modules for range, speed, silk touch, veinmining and more.",
+        "&eHow:&r an Atomic Disassembler, a Configurator, HDPE sheets, Ultimate Control Circuits, polonium pellets and a Basic Induction Cell (check JEI).",
+        "&eTip:&r it drinks power fast with big modules. Carry a charged energy cube or wear the MekaSuit."]),
+    Q("mk2_mekasuit_full", 10, 9.75, [item(MEK + "mekasuit_pants"), item(MEK + "mekasuit_boots")], "The Full MekaSuit", subtitle="Pants and boots finish the set", deps=["mk2_module_base", "tc_mekasuit"], xp=400, size=1.5, shape="hexagon", desc=[
+        "&6Four pieces, one will. You remember standing in fire and feeling only warmth.&r",
+        "&eWhat:&r the MekaSuit legs and boots, completing the armour started on the Tools page. Legs take movement and locomotion modules; boots take jump and fall protection.",
+        "&eHow:&r netherite leggings / boots in HDPE sheets, Ultimate Control Circuits, polonium pellets and a Basic Induction Cell (check JEI).",
+        "&eTip:&r the full suit shares one energy pool through its modules. Charge it on a Chargepad or with a charging module."]),

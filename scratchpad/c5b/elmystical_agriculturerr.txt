@@ -1,0 +1,192 @@
+elmystical_agriculturerr quests 191 default shape 
+  0 2DDA04088C8220D2 (3,0.125) s=1.5 pentagon deps=[1] :: mysticalagriculture:prosperity_shardx4+[mystical:f_prosperity]
+  1 54735C5FCD2077B3 (0,0.125) s=3 gear deps=[] :: ANY( tags:c:seeds)x1
+  2 1E0F92F07FDD162E (5,0.125) s=1.25 pentagon deps=[0] :: mysticalagriculture:prosperity_seed_basex1+[mystical:f_prosperity]
+  3 0B37355262121DD5 (7,0.125) s=2 gear deps=[2] :: mysticalagriculture:infusion_altarx1+[mystical:f_altar] | mysticalagriculture:infusion_pedestalx8+
+  4 37B297640F537383 (10,2.625) s=1  one_completed deps=[23, 22] :: mysticalagriculture:unattuned_augmentx1+
+  5 5C590DB2F3D935E5 (3,7.625) s=1  deps=[1] :: mysticalagriculture:seed_reprocessorx1+
+  6 219A5BDA5A01A420 (32.5,0.125) s=1.25 octagon deps=[123] :: mysticalagriculture:master_infusion_crystalx1+[mystical:ma_master]
+  7 41DBE44D7AA0B623 (10,4.125) s=1.5 gear deps=[4] :: mysticalagriculture:tinkering_tablex1+
+  8 16E3031D800B40D5 (5,7.625) s=1  deps=[1] :: mysticalagriculture:soulium_spawnerx1+
+  9 54D72C234EA76054 (10,-2.875) s=1 diamond deps=[10, 3] :: mysticalagriculture:ice_seedsx1+
+ 10 7DFF18CFEB0B8DBE (10,-1.375) s=1 circle deps=[19] :: mysticalagriculture:inferium_farmlandx1+[mystical:ma_farmland] | mysticalagriculture:inferium_seedsx1+
+ 11 1E7DC8E0493BE99E (9.5,-4.375) s=1 diamond deps=[10, 3] :: mysticalagriculture:earth_seedsx1+
+ 12 712EB19B26D405DD (10.5,-4.375) s=1 diamond deps=[10, 3] :: mysticalagriculture:water_seedsx1+
+ 13 409A92D40F539485 (9.5,-2.375) s=1 diamond deps=[10, 3] :: mysticalagriculture:dirt_seedsx1+
+ 14 1609BF52108238B0 (9.5,-3.375) s=1 diamond deps=[10, 3] :: mysticalagriculture:stone_seedsx1+
+ 15 4526E151BAE88310 (10.5,-3.375) s=1 diamond deps=[10, 3] :: mysticalagriculture:deepslate_seedsx1+
+ 16 13124A7E22999850 (10,-4.875) s=1 diamond deps=[10, 3] :: mysticalagriculture:fire_seedsx1+
+ 17 27A0BCE75F198A82 (10.5,-2.375) s=1 diamond deps=[10, 3] :: mysticalagriculture:wood_seedsx1+
+ 18 75560045ED084900 (15,1.625) s=1  deps=[45] :: mysticalagriculture:soulium_daggerx1+[mystical:ma_dagger] | mysticalagriculture:soul_jarx4+[mystical:ma_jar] | mysticalagriculture:soul_extractorx1+[mystical:ma_extractor]
+ 19 1CC4F8570A7A99EB (10,0.125) s=1.5 hexagon deps=[1] :: mysticalagriculture:inferium_essencex1+[mystical:f_altar,start:gs_taste_inferium]
+ 20 4821419D44F8083F (9,-0.875) s=1  deps=[19] :: mysticalagriculture:inferium_growth_acceleratorx1+[mystical:f_accelerator]
+ 21 1F88C697817A7680 (11,-0.875) s=1  deps=[19] :: mysticalagradditions:inferium_applex1-
+ 22 2A7E3F2CD335EAD0 (11,1.125) s=1  deps=[19] :: mysticalagriculture:inferium_helmetx1+ | mysticalagriculture:inferium_chestplatex1+ | mysticalagriculture:inferium_leggingsx1+ | mysticalagriculture:inferium_bootsx1+
+ 23 4EF5DE3FBA2A7AE3 (9,1.125) s=1  deps=[19] :: ANY(mysticalagriculture:inferium_sword+ mysticalagriculture:inferium_pickaxe+[harvest:hv_ma_pick] mysticalagriculture:inferium_axe+ mysticalagriculture:inferium_shovel+ mysticalagriculture:inferium_hoe+ mysticalagriculture:inferium_watering_can+[mystical:ma_can2] mysticalagriculture:inferium_bow+ mysticalagriculture:inferium_crossbow+ mysticalagriculture:inferium_shears+ mysticalagriculture:inferium_sickle+ mysticalagriculture:inferium_scythe+ mysticalagriculture:inferium_fishing_rod+ mysticalagradditions:inferium_paxel-)x1
+ 24 217DB12EA32E1724 (12.5,0.125) s=1.25 octagon deps=[19] :: mysticalagriculture:infusion_crystalx1+[mystical:f_crystal]
+ 25 62D572BAB055F56F (10,-3.875) s=1 diamond deps=[10, 3] :: mysticalagriculture:air_seedsx1+
+ 26 576ABF43FCF886B7 (15,-1.375) s=1 circle deps=[45] :: mysticalagriculture:prudentium_farmlandx1+
+ 27 31BAC57972148E1F (14.5,-3.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:coral_seedsx1+
+ 28 573885D6EF32B7BC (15,-3.875) s=1 diamond deps=[26, 3] :: mysticalagriculture:coal_seedsx1+
+ 29 2777FEB022346947 (15.5,-3.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:dye_seedsx1+
+ 30 2A049419C78E96F4 (15,-5.875) s=1 diamond deps=[26, 3] :: mysticalagriculture:aluminum_seedsx1+
+ 31 594F6ED00D1619EE (15,-2.875) s=1 diamond deps=[26, 3] :: mysticalagriculture:honey_seedsx1+
+ 32 40B13424FA523E11 (15.5,-2.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:nature_seedsx1+
+ 33 3DDB7C8E61BA048F (14.5,-2.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:nether_seedsx1+
+ 34 3384308C78D86059 (15.5,3.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:chicken_seedsx1+
+ 35 2AECDD9E2DEA708C (15.5,4.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:squid_seedsx1+
+ 36 7580037DB8ADEB3C (15.5,2.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:cow_seedsx1+
+ 37 75D09040185B0E40 (14.5,2.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:pig_seedsx1+
+ 38 2C73E3C5113BF2AC (14.5,3.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:sheep_seedsx1+
+ 39 29AE69722AB4C75C (15,6.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:fish_seedsx1+
+ 40 092A23FDA5D50812 (14.5,5.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:turtle_seedsx1+
+ 41 04B6E31120663EB2 (14.5,4.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:slime_seedsx1+
+ 42 7655E1C6C5E5469F (14,-0.875) s=1  deps=[45] :: mysticalagriculture:prudentium_growth_acceleratorx1+
+ 43 3BB3AA6C29285837 (16,-0.875) s=1  deps=[45] :: mysticalagradditions:prudentium_applex1-
+ 44 4F137DB561F45306 (16,1.125) s=1  deps=[45] :: mysticalagriculture:prudentium_helmetx1+ | mysticalagriculture:prudentium_chestplatex1+ | mysticalagriculture:prudentium_leggingsx1+ | mysticalagriculture:prudentium_bootsx1+
+ 45 73350AD668200E99 (15,0.125) s=1.5 hexagon deps=[24] :: mysticalagriculture:prudentium_essencex1+[mystical:f_prudentium]
+ 46 3339445194568D77 (14,1.125) s=1  deps=[45] :: ANY(mysticalagriculture:prudentium_sword+ mysticalagriculture:prudentium_pickaxe+[harvest:hv_ma_pick] mysticalagriculture:prudentium_axe+ mysticalagriculture:prudentium_shovel+ mysticalagriculture:prudentium_hoe+ mysticalagradditions:prudentium_paxel- mysticalagriculture:prudentium_scythe+ mysticalagriculture:prudentium_sickle+ mysticalagriculture:prudentium_shears+ mysticalagriculture:prudentium_watering_can+ mysticalagriculture:prudentium_fishing_rod+ mysticalagriculture:prudentium_bow+ mysticalagriculture:prudentium_crossbow+)x1
+ 47 0BE6CE2C264140AD (14.5,-4.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:kivi_seedsx1-
+ 48 7AD9DF3FFCB03495 (15,-4.875) s=1 diamond deps=[26, 3] :: mysticalagriculture:amethyst_seedsx1+
+ 49 07CC809B6482AB09 (15.5,-5.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:silicon_seedsx1+
+ 50 51592B271E56C6B2 (14.5,-5.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:sulfur_seedsx1+
+ 51 2D0BA4183DCA2751 (14.5,-6.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:menril_seedsx1+
+ 52 5A17C762CDB680B5 (19.5,-2.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:copper_seedsx1+
+ 53 76071C22A73A2026 (20,-1.375) s=1 circle deps=[73] :: mysticalagriculture:tertium_farmlandx1+
+ 54 38A77DBAD24C4B53 (20.5,4.625) s=1 rsquare deps=[73, 3] :: mysticalagriculture:rabbit_seedsx1+
+ 55 6A18B971C3DB83AE (19.5,3.625) s=1 rsquare deps=[73, 3] :: mysticalagriculture:spider_seedsx1+
+ 56 26A7746051A4A079 (20.5,3.625) s=1 rsquare deps=[73, 3] :: mysticalagriculture:skeleton_seedsx1+
+ 57 155A843A562DB7C4 (19.5,2.625) s=1 rsquare deps=[73, 3] :: mysticalagriculture:zombie_seedsx1+
+ 58 7ADE214373DE135F (20.5,2.625) s=1 rsquare deps=[73, 3] :: mysticalagriculture:creeper_seedsx1+
+ 59 7A89560F303A8BE6 (20.5,-2.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:iron_seedsx1+
+ 60 56B58CAFCB707565 (20.5,-7.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:tin_seedsx1+
+ 61 6950FC974624C6AA (19.5,-5.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:silver_seedsx1+
+ 62 7361BD20A6B95D14 (20.5,-5.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:lead_seedsx1+
+ 63 0A8F44B9B3C8FC0F (20,-7.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:zinc_seedsx1+
+ 64 5EE485880EA9FACF (19.5,-3.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:redstone_seedsx1+
+ 65 02D45E3FB37ED0AD (20.5,-3.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:glowstone_seedsx1+
+ 66 30DF8297FEEC9F22 (20,-2.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:nether_quartz_seedsx1+
+ 67 47045A0E8E3457C2 (20.5,-4.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:certus_quartz_seedsx1+
+ 68 2581B7D8E6C6E510 (20,-3.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:obsidian_seedsx1+
+ 69 67AA59BD340FEC62 (20,-4.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:prismarine_seedsx1+
+ 70 077B2D62FA7650FB (19,-0.875) s=1  deps=[73] :: mysticalagriculture:tertium_growth_acceleratorx1+
+ 71 5F6ACDE014A61F46 (21,-0.875) s=1  deps=[73] :: mysticalagradditions:tertium_applex1-
+ 72 15D764CAF047EA7A (21,1.125) s=1  deps=[73] :: mysticalagriculture:tertium_helmetx1+ | mysticalagriculture:tertium_chestplatex1+ | mysticalagriculture:tertium_leggingsx1+ | mysticalagriculture:tertium_bootsx1+
+ 73 2C9C9CB71941DC01 (20,0.125) s=1.5 hexagon deps=[45] :: mysticalagriculture:tertium_essencex1+[mystical:f_tertium]
+ 74 1E414D285E7A5FE2 (19,1.125) s=1  deps=[73] :: ANY(mysticalagriculture:tertium_sword+ mysticalagriculture:tertium_pickaxe+[harvest:hv_ma_pick] mysticalagriculture:tertium_axe+ mysticalagriculture:tertium_shovel+ mysticalagriculture:tertium_hoe+ mysticalagradditions:tertium_paxel- mysticalagriculture:tertium_scythe+ mysticalagriculture:tertium_sickle+ mysticalagriculture:tertium_shears+ mysticalagriculture:tertium_fishing_rod+ mysticalagriculture:tertium_watering_can+ mysticalagriculture:tertium_bow+ mysticalagriculture:tertium_crossbow+)x1
+ 75 2A2CC461B9620BDC (15.5,5.625) s=1 rsquare deps=[18, 3] :: mysticalagriculture:armadillo_seedsx1+
+ 76 7BC289DEF023FEAA (19.5,-7.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:bronze_seedsx1+
+ 77 09282E3864752CEE (20,-6.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:brass_seedsx1+
+ 78 19AAC139177442C1 (20,-5.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:graphite_seedsx1+
+ 79 7388D8168AF78B9A (19.5,-4.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:sky_stone_seedsx1+
+ 80 04A7AA70C23830FF (4,4.125) s=1  deps=[1] :: ANY( tags:cucumber:sickles)x1
+ 81 45549E52B3CE2D23 (6,4.125) s=1  deps=[1] :: ANY( tags:cucumber:scythes)x1
+ 82 21F654C968722841 (25,-4.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:fluorite_seedsx1+
+ 83 5BC4250E4C9F803C (25,-1.375) s=1 circle deps=[97] :: mysticalagriculture:imperium_farmlandx1+
+ 84 260F9C98DC2E485B (25.5,2.625) s=1 rsquare deps=[97, 3] :: mysticalagriculture:blaze_seedsx1+
+ 85 4F0DD86CF6E5F1B5 (24.5,3.625) s=1 rsquare deps=[97, 3] :: mysticalagriculture:ghast_seedsx1+
+ 86 27E8ED4B5F8127F9 (24.5,2.625) s=1 rsquare deps=[97, 3] :: mysticalagriculture:enderman_seedsx1+
+ 87 07564DBB023EE2A6 (25,4.625) s=1 rsquare deps=[97, 3] :: mysticalagriculture:experience_seedsx1+ | mysticalagriculture:experience_capsulex4+
+ 88 0AF5FB1B5AA5AA11 (25.5,-3.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:gold_seedsx1+
+ 89 25D84D82DBADA0DB (24.5,-2.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:nickel_seedsx1+
+ 90 64B04D1CBC923789 (24.5,-3.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:lapis_lazuli_seedsx1+
+ 91 222739E77C745519 (25.5,-5.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:osmium_seedsx1+
+ 92 248AEF5537E48B1A (25,-3.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:end_seedsx1+
+ 93 4E7990AEBCCC3C95 (25.5,-2.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:uranium_seedsx1+
+ 94 06EAA74E0A10CBB6 (24,-0.875) s=1  deps=[97] :: mysticalagriculture:imperium_growth_acceleratorx1+
+ 95 212EF8601746C500 (26,-0.875) s=1  deps=[97] :: mysticalagradditions:imperium_applex1-
+ 96 7D43016926E77150 (26,1.125) s=1  deps=[97] :: mysticalagriculture:imperium_helmetx1+ | mysticalagriculture:imperium_chestplatex1+ | mysticalagriculture:imperium_leggingsx1+ | mysticalagriculture:imperium_bootsx1+
+ 97 66C52B137A4FF869 (25,0.125) s=1.5 hexagon deps=[73] :: mysticalagriculture:imperium_essencex1+[mystical:f_imperium]
+ 98 67DDFA6FB1F9EECA (24,1.125) s=1  deps=[97] :: ANY(mysticalagriculture:imperium_sword+ mysticalagriculture:imperium_pickaxe+[harvest:hv_ma_pick] mysticalagriculture:imperium_axe+ mysticalagriculture:imperium_shovel+ mysticalagriculture:imperium_hoe+ mysticalagradditions:imperium_paxel- mysticalagriculture:imperium_sickle+ mysticalagriculture:imperium_scythe+ mysticalagriculture:imperium_shears+ mysticalagriculture:imperium_fishing_rod+ mysticalagriculture:imperium_watering_can+ mysticalagriculture:imperium_bow+ mysticalagriculture:imperium_crossbow+)x1
+ 99 4530C14828C3D153 (25.5,3.625) s=1 rsquare deps=[97, 3] :: mysticalagriculture:breeze_seedsx1+
+100 54E4F00AD20D7096 (24.5,-9.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:constantan_seedsx1+
+101 521C9B00B1D87DEB (25.5,-9.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:electrum_seedsx1+
+102 70E4EBA7C9901007 (24.5,-5.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:invar_seedsx1+
+103 22D0C3F454F5E8F1 (24.5,-7.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:ruby_seedsx1+
+104 0591CAFD665CE151 (25.5,-7.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:sapphire_seedsx1+
+105 4221D6CDDF90DACB (25,-5.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:peridot_seedsx1+
+106 21F4CFF171246537 (25,-2.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:soulium_seedsx1+
+107 780E0163033CCD9B (25.5,-6.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:refined_glowstone_seedsx1+
+108 5311404799117060 (24.5,-6.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:refined_obsidian_seedsx1+
+109 1B700DB77B970E35 (25,-6.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:compressed_iron_seedsx1+
+110 3AD4367855B3E595 (25,-7.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:fluix_seedsx1+
+111 31EC6244E4A3CBD6 (24.5,-4.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:energized_steel_seedsx1+
+112 4A4C14AF947D93EF (25.5,-4.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:blazing_crystal_seedsx1+
+113 48BF71269DEA1AB1 (30,-1.375) s=1 circle deps=[123] :: mysticalagriculture:supremium_farmlandx1+
+114 7CFA92CC48D1E7E3 (30,2.625) s=1 rsquare deps=[123, 3] :: mysticalagriculture:wither_skeleton_seedsx1+
+115 5B52389583A70E66 (30,-3.875) s=1 diamond deps=[113, 3] :: mysticalagriculture:uraninite_seedsx1+
+116 6A2AD67569F91F1F (29.5,-3.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:diamond_seedsx1+
+117 4E09BBC0BAED3440 (30.5,-2.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:emerald_seedsx1+
+118 2B0553F307A024F7 (30.5,-5.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:platinum_seedsx1+
+119 06A7A3FC8634D2DA (30.5,-3.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:netherite_seedsx1+
+120 3E555B364FD88B43 (29,-0.875) s=1  deps=[123] :: mysticalagriculture:supremium_growth_acceleratorx1+
+121 1C4ABF4518638A82 (31,-0.875) s=1  deps=[123] :: mysticalagradditions:supremium_applex1-
+122 5B1E0E3E876339E7 (31,1.125) s=1  deps=[123] :: mysticalagriculture:supremium_helmetx1+ | mysticalagriculture:supremium_chestplatex1+ | mysticalagriculture:supremium_leggingsx1+ | mysticalagriculture:supremium_bootsx1+
+123 67DBE6C59C0D9D1B (30,0.125) s=1.5 hexagon deps=[97] :: mysticalagriculture:supremium_essencex1+[mystical:f_supremium]
+124 685C4A646E092A82 (31,6.625) s=1  deps=[127] :: mysticalagriculture:awakened_supremium_helmetx1+ | mysticalagriculture:awakened_supremium_chestplatex1+ | mysticalagriculture:awakened_supremium_leggingsx1+ | mysticalagriculture:awakened_supremium_bootsx1+
+125 30E9255DEC69C061 (29,1.125) s=1  deps=[123] :: ANY(mysticalagriculture:supremium_sword+ mysticalagriculture:supremium_pickaxe+[harvest:hv_ma_pick] mysticalagriculture:supremium_axe+ mysticalagriculture:supremium_shovel+ mysticalagriculture:supremium_hoe+ mysticalagradditions:supremium_paxel- mysticalagriculture:supremium_scythe+ mysticalagriculture:supremium_sickle+ mysticalagriculture:supremium_shears+ mysticalagriculture:supremium_fishing_rod+ mysticalagriculture:supremium_watering_can+ mysticalagriculture:supremium_bow+ mysticalagriculture:supremium_crossbow+)x1
+126 5A58D4B25C9CB757 (29,6.625) s=1  deps=[127] :: ANY(mysticalagriculture:awakened_supremium_sword+ mysticalagriculture:awakened_supremium_pickaxe+ mysticalagriculture:awakened_supremium_axe+ mysticalagriculture:awakened_supremium_shovel+ mysticalagriculture:awakened_supremium_hoe+ mysticalagradditions:awakened_supremium_paxel- mysticalagriculture:awakened_supremium_scythe+ mysticalagriculture:awakened_supremium_sickle+ mysticalagriculture:awakened_supremium_shears+ mysticalagriculture:awakened_supremium_fishing_rod+ mysticalagriculture:awakened_supremium_watering_can+ mysticalagriculture:awakened_supremium_bow+ mysticalagriculture:awakened_supremium_crossbow+)x1
+127 7A103577EAE7B3F1 (30,5.125) s=2 hexagon deps=[128, 129] :: mysticalagriculture:awakened_supremium_essencex1+[mystical:f_awakening]
+128 33D23C65E7274A8F (31,2.625) s=1 hexagon deps=[123] :: mysticalagriculture:awakening_altarx1+[mystical:f_awakening] | mysticalagriculture:awakening_pedestalx4+ | mysticalagriculture:essence_vesselx4+
+129 1CF8263756EE8F2A (29,2.625) s=1 hexagon deps=[123] :: mysticalagriculture:cognizant_dustx4+
+130 52BB58D470560219 (28.5,5.125) s=1  deps=[127] :: mysticalagriculture:awakened_supremium_growth_acceleratorx1+
+131 32B01BD789F0B037 (31.5,5.125) s=1  opt deps=[127] :: productivebees:spawn_egg_configurable_beex1-
+132 593A32072E7FD91D (29.5,-5.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:iridium_seedsx1+
+133 1FF82E21F1C0C73B (30,-2.875) s=1 diamond deps=[113, 3] :: mysticalagriculture:cyanite_seedsx1+
+134 15279CAC2FFE6B35 (29.5,-4.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:niotic_crystal_seedsx1+
+135 5F72C0C82F3C0310 (30.5,-4.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:spirited_crystal_seedsx1+
+136 2FA6B8A1C8713DE0 (35,-1.375) s=1 circle deps=[138] :: mysticalagradditions:insanium_farmlandx1-
+137 1F7591DB6D8EC1E7 (34,1.625) s=1  deps=[138] :: mysticalagradditions:insanium_applex1-
+138 202B1F54D3F06DAB (35,0.125) s=1.5 hexagon deps=[123] :: mysticalagradditions:insanium_essencex1-
+139 1E2B363E3365A62F (34.5,-3.875) s=1 diamond deps=[136, 3] :: mysticalagriculture:allthemodium_seedsx1- | kubejs:magical_soilx1-
+140 2BC325DEBDD2F5CA (35.5,-3.875) s=1 diamond deps=[136, 3] :: mysticalagriculture:vibranium_seedsx1- | kubejs:magical_soilx1-
+141 404AA0F5557D7E35 (35,-4.375) s=1 diamond deps=[136, 3] :: mysticalagriculture:unobtainium_seedsx1- | kubejs:magical_soilx1-
+142 44B22160850ACAB2 (34.5,-2.875) s=1 diamond deps=[136, 3] :: mysticalagriculture:nether_star_seedsx1-
+143 140DADB32EF10D58 (35.5,-2.875) s=1 diamond deps=[136, 3] :: mysticalagriculture:dragon_egg_seedsx1-
+144 31A370550BD592B6 (35,-3.375) s=1 diamond deps=[136, 3] :: mysticalagriculture:nitro_crystal_seedsx1-
+145 21A90474590FCDB8 (4,7.625) s=1  deps=[0] :: mysticalagriculture:furnacex1+
+146 1636F3F12E92CAEA (5,4.125) s=1  deps=[1] :: mysticalagriculture:watering_canx1+[mystical:ma_can]
+147 77C6667B4C37589C (5,9.125) s=2 none deps=[0, 19] :: ANY(mysticalagriculture:inferium_upgrade+ mysticalagriculture:prudentium_upgrade+ mysticalagriculture:tertium_upgrade+ mysticalagriculture:imperium_upgrade+ mysticalagriculture:supremium_upgrade+ mysticalagriculture:awakened_supremium_upgrade+)x1
+148 408D8B1CFBA22BAF (22.5,-1.375) s=1 pentagon opt deps=[114] :: ANY(mysticalagriculture:witherproof_block+ mysticalagriculture:witherproof_bricks+ mysticalagriculture:witherproof_glass+)x1
+149 0EFEDB0DD90DFC81 (6,7.625) s=1  deps=[81] :: mysticalagriculture:harvesterx1+[mystical:ma_harvester]
+150 6501A410F1543C70 (12.5,-1.375) s=1 pentagon opt deps=[1] :: mysticalagriculture:mystical_fertilizerx1+[mystical:ma_fertilizer]
+151 6235B9923BE0AAEB (17.5,-1.375) s=1 pentagon opt deps=[1] :: mysticalagriculture:enchanterx1+
+152 224CE21E56703F6E (7,-1.375) s=0.75 pentagon opt deps=[19] :: mysticalagriculture:wandx1+
+153 3EA2578C3A56FAE8 (7,7.625) s=1  deps=[1] :: mysticalagriculture:soul_extractorx1+[mystical:ma_extractor]
+154 23C36E4B5DCEBFDD (3,-1.375) s=1 circle opt inv deps=[] :: CHECK | CHECK
+155 10098A4B38BBF0B1 (15.5,-4.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:unexplored_wood_seedsx1-
+156 6D0A876D4E4D35AB (37.75,0.125) s=1.5 hexagon deps=[138] :: mysticalagradditions:creative_essencex1-
+157 552335ED867D6EFA (36,1.625) s=1  deps=[138] :: mysticalagradditions:insanium_coal_blockx1-
+158 3C9F5EB59D72AC90 (30,7.125) s=1  deps=[127] :: mysticalagriculture:awakened_supremium_ingot_blockx1+
+159 4EB7245727EE1EF9 (19.5,-10.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:darkstone_seedsx1-
+160 41D246E896BD791F (20.5,-9.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:azure_silver_seedsx1-
+161 66B503EB65475B98 (19.5,-9.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:crimson_iron_seedsx1-
+162 2C2EF4EBB3C9EAE3 (15.5,-6.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:grains_of_infinity_seedsx1+
+163 01C169A7FA424F6E (15,-6.875) s=1 diamond deps=[26, 3] :: mysticalagriculture:saltpeter_seedsx1+
+164 5703EDAFCF9E7719 (20.5,-6.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:redstone_alloy_seedsx1+
+165 4D8B82FBA0FFD49E (20.5,-8.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:steeleaf_seedsx1+
+166 7EFEE009212A4FD4 (20,-9.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:xychorium_gem_seedsx1-
+167 787E714014EC2C02 (19.5,-6.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:copper_alloy_seedsx1+
+168 66AADD32A528A56D (20,-8.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:conductive_alloy_seedsx1+
+169 69F63F3B48E4344E (19.5,-8.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:ironwood_seedsx1+
+170 76516C997B63905A (25,-8.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:hop_graphite_seedsx1+
+171 19FFD64154AFC89D (24.5,-10.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:dark_steel_seedsx1+
+172 342D1FA0BCBB847A (25,-10.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:energetic_alloy_seedsx1+
+173 4DF23FC932F5EB7D (24.5,-8.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:fiery_ingot_seedsx1+
+174 5210DC0095996B62 (25,-9.875) s=1 diamond deps=[83, 3] :: mysticalagriculture:soularium_seedsx1+
+175 754500BB7FD8C413 (25.5,-10.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:pulsating_alloy_seedsx1+
+176 07751E1BE48C6024 (25.5,-8.375) s=1 diamond deps=[83, 3] :: mysticalagriculture:knightmetal_seedsx1+
+177 3B884E05AE2EEBFC (29.5,-2.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:enderium_seedsx1+
+178 2E37997A065A29F1 (29.5,-6.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:end_steel_seedsx1+
+179 0E1ABCAA87120367 (30.5,-6.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:vibrant_alloy_seedsx1+
+180 29D309F9740FAEEA (30,-4.875) s=1 diamond deps=[113, 3] :: mysticalagriculture:sky_steel_seedsx1-
+181 2AFBE48DA832FF02 (30,-5.875) s=1 diamond deps=[113, 3] :: mysticalagriculture:entro_seedsx1-
+182 53E5A8F2B05C2989 (20.5,-10.375) s=1 diamond deps=[53, 3] :: mysticalagriculture:black_quartz_seedsx1-
+183 47A91A89E9879863 (15.5,-7.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:rubber_seedsx1+
+184 600388EAB96609E4 (14.5,-7.375) s=1 diamond deps=[26, 3] :: mysticalagriculture:limestone_seedsx1+
+185 310236F1631C6F7D (20,-10.875) s=1 diamond deps=[53, 3] :: mysticalagriculture:quartz_enriched_iron_seedsx1+
+186 7B7F7626FB6813FA (19.5,4.625) s=1 rsquare deps=[73, 3] :: mysticalagriculture:phantom_seedsx1+
+187 19065F9DB95FE9C0 (25.5,-11.37) s=1 diamond deps=[83, 3] :: mysticalagriculture:steel_seedsx1+
+188 544BF7E113635C8F (30,-6.875) s=1 diamond deps=[113, 3] :: mysticalagriculture:draconium_seedsx1+
+189 49E3C40B3C24C36A (30.5,-7.375) s=1 diamond deps=[113, 3] :: mysticalagriculture:yellorium_seedsx1+
+190 3D2B4BF905CB606F (35,-2.375) s=1 diamond deps=[136, 3] :: mysticalagriculture:awakened_draconium_seedsx1-

@@ -3,7 +3,10 @@
 Python sources, so it measures exactly what players will see, whatever tools/layout.py does.
 
 Per chapter: quest count, page size (cells) and aspect, overlaps, line crossings, lines through quests, long
-lines, line direction mix, quests too close, images over quests, quests outside every section image's column,
+lines, line direction mix, quests too close, images over quests (iov: a quest box under art, a label or a caption;
+backdrops and rules are meant to sit under quests and don't count), image covers quest (icv: a quest or link CENTRE
+inside such a picture), caption covered (ccv: a quest box over a picture's caption, label text or backdrop title
+tab), pictures overlapping each other (pov), quests outside every section image's column,
 orthogonal line % (horizontal or vertical lines), lone quests (no visible line), shape/size variety, hidden lines, images, deps into other chapters with no quest link. Each chapter gets a
 0-100 tidiness score and its worst issues.
 
@@ -12,7 +15,8 @@ usage:
   python tools/layout_lint.py --chapters t1,t2 -v      a few chapters, every issue
   python tools/layout_lint.py --target 18x14           page-size target in cells (default 18x14, ATM10's median)
   python tools/layout_lint.py --compare "<ATM10>\\config\\ftbquests\\quests"   medians side by side
-  python tools/layout_lint.py --strict                 exit 1 if any chapter has overlaps or lines through quests
+  python tools/layout_lint.py --strict                 exit 1 if any chapter has overlaps, lines through quests or a
+                                                       covered caption (a quest on a header, banner or caption)
   python tools/layout_lint.py --book <quests folder>   lint another book (measure only; other books may be ARR)
 
 Geometry follows FTB Quests: x/y is a quest's centre, a quest of size s is about s cells wide, y grows down,
@@ -298,6 +302,67 @@ def image_box(im):
     return im["x"] - hw, im["y"] - hh, im["x"] + hw, im["y"] + hh
 
 
+# ---------------------------------------------------------------- pictures (mirror pages)
+# tools/layout.py names every picture after what it is (pack/kubejs/assets/warbucks/textures/quests/pictures/
+# <chapter>_<prefix>...png): bg_ backdrop (quests sit on it, no caption), bg<corner>_ backdrop with a title tab in
+# that corner, rule_ divider line, lab_ label (the whole picture is its text), cap_ caption along the bottom, capt_
+# caption along the top, art_ no caption. Banners and section headers are labels too. Other images (other books)
+# count as captioned art with the caption along the bottom.
+PIC_PX = 48          # tools/build_pictures.py: px per cell (CELL) and the longest side (MAX_SIDE)
+PIC_MAX = 1024
+
+
+def caption_band(w, h):
+    """Height (cells) of the caption strip tools/build_pictures.py draws on a w x h picture: the larger of the
+    showcase caption and the multiblock title + note, plus a small margin."""
+    k = min(PIC_PX, PIC_MAX / max(w, h, 1e-6))
+    hp = h * k
+    show = max(13, min(26, hp // 7)) * 1.5 + 8
+    cap = max(12, min(22, hp // 9))
+    multi = cap * 1.4 + max(9, int(cap * 0.6)) * 1.4 + 9
+    return min(h, max(show, multi) / k)
+
+
+def tab_box(box, corner):
+    """The title tab of a backdrop (tools/build_pictures.py draws it inside this box at that corner)."""
+    x0, y0, x1, y1 = box
+    tw, th = min(0.6 * (x1 - x0), 6.0), 0.6
+    xa = x0 + 0.15 if corner[1] == "l" else x1 - 0.15 - tw
+    ya = y0 + 0.15 if corner[0] == "t" else y1 - 0.15 - th
+    return xa, ya, xa + tw, ya + th
+
+
+def picture_kind(im, chapter_file):
+    """(kind, caption box or None) of an image: kind is backdrop, rule, label or art (see above)."""
+    name = im["image"].rsplit("/", 1)[-1]
+    box = image_box(im)
+    if "/quests/pictures/" in im["image"]:
+        stem = name[:-4]
+        stem = stem[len(chapter_file) + 1:] if stem.startswith(chapter_file + "_") else stem
+        pre = stem.split("_", 1)[0]
+        if pre == "bg":
+            return "backdrop", None
+        if pre.startswith("bg") and len(pre) == 4:
+            return "backdrop", tab_box(box, pre[2:])
+        if pre == "rule":
+            return "rule", None
+        if pre == "art":
+            return "art", None
+        if pre == "lab":
+            return "label", box
+        if pre in ("cap", "capt") and not im["rot"]:
+            band = caption_band(im["w"], im["h"])
+            x0, y0, x1, y1 = box
+            return "art", ((x0 + 0.1, y1 - band, x1 - 0.1, y1) if pre == "cap" else (x0 + 0.1, y0, x1 - 0.1, y0 + band))
+    if "/quests/sections/" in im["image"] or im["image"].endswith(f"/quests/{chapter_file}.png"):
+        return "label", box
+    if im["rot"]:
+        return "art", box
+    band = caption_band(im["w"], im["h"])
+    x0, y0, x1, y1 = box
+    return "art", (x0 + 0.1, y1 - band, x1 - 0.1, y1)
+
+
 _BOXY = {"square", "rsquare"}
 
 
@@ -402,16 +467,39 @@ def lint_chapter(c, book, target=(18, 14)):
                 issues.append((6, f"line through quest: '{l['a']['title']}'->'{l['b']['title']}' crosses '{n['title']}'"))
     m["through"] = through
 
-    # images
-    img_ov = 0
-    for im in c["images"]:
+    # images: backdrops and rules are meant to sit under quests; everything else (art, labels, captions) is not
+    img_ov = covers = cap_cov = pic_ov = 0
+    kinds = [picture_kind(im, c["file"]) for im in c["images"]]
+    for im, (kind, cap) in zip(c["images"], kinds):
+        if kind in ("backdrop", "rule"):
+            if cap is None:
+                continue
         ix0, iy0, ix1, iy1 = image_box(im)
+        iname = im["image"].split("/")[-1]
         for n in nodes:
             r = n["size"] / 2 - OVERLAP_SLACK
-            if n["x"] + r > ix0 and n["x"] - r < ix1 and n["y"] + r > iy0 and n["y"] - r < iy1:
+            nb = (n["x"] - r, n["y"] - r, n["x"] + r, n["y"] + r)
+            if kind not in ("backdrop", "rule") and nb[2] > ix0 and nb[0] < ix1 and nb[3] > iy0 and nb[1] < iy1:
                 img_ov += 1
-                issues.append((4, f"image {im['image'].split('/')[-1]} covers '{n['title']}'"))
-    m["image_overlaps"] = img_ov
+                issues.append((4, f"image {iname} covers '{n['title']}'"))
+                if ix0 <= n["x"] <= ix1 and iy0 <= n["y"] <= iy1:
+                    covers += 1
+            if cap and nb[2] > cap[0] and nb[0] < cap[2] and nb[3] > cap[1] and nb[1] < cap[3]:
+                cap_cov += 1
+                issues.append((5, f"caption covered: {iname} under '{n['title']}'"))
+    ours = [(im, k) for im, (k, _) in zip(c["images"], kinds) if "/quests/pictures/" in im["image"] and k != "rule"]
+    def within(x, y):  # x lies entirely on y (a label on a backdrop: drawn that way on purpose)
+        return x[0] >= y[0] - 0.01 and x[1] >= y[1] - 0.01 and x[2] <= y[2] + 0.01 and x[3] <= y[3] + 0.01
+    for i, (a, ka) in enumerate(ours):
+        A = image_box(a)
+        for b, kb in ours[i + 1:]:
+            B = image_box(b)
+            if (ka == "backdrop" and within(B, A)) or (kb == "backdrop" and within(A, B)):
+                continue
+            if min(A[2], B[2]) - max(A[0], B[0]) > 0.05 and min(A[3], B[3]) - max(A[1], B[1]) > 0.05:
+                pic_ov += 1
+                issues.append((3, f"pictures overlap: {a['image'].split('/')[-1]} and {b['image'].split('/')[-1]}"))
+    m["image_overlaps"], m["image_covers"], m["caption_covered"], m["picture_overlaps"] = img_ov, covers, cap_cov, pic_ov
     miss = 0  # images whose texture isn't in our KubeJS assets (only checked for namespaces we ship there)
     for im in c["images"]:
         ns, _, rest = im["image"].partition(":")
@@ -444,7 +532,7 @@ def lint_chapter(c, book, target=(18, 14)):
     nl = max(1, len(vis))
     nq = max(1, len(c["quests"]))
     pen = (min(40, 10 * ov) + min(30, 5 * through) + min(20, 60 * cross / nl) + min(10, 40 * long_n / nl)
-           + min(10, 20 * close / nq) + min(10, 3 * img_ov) + min(10, 4 * miss) + min(10, 10 * outside / nq) + min(5, len(unlinked))
+           + min(10, 20 * close / nq) + min(10, 3 * img_ov) + min(10, 4 * cap_cov) + min(6, 2 * pic_ov) + min(10, 4 * miss) + min(10, 10 * outside / nq) + min(5, len(unlinked))
            + min(15, 7.5 * max(0.0, excess - 0.25)) + (3 if m["aspect"] and (m["aspect"] > 3 or m["aspect"] < 1 / 3) else 0))
     m["score"] = max(0, round(100 - pen))
     issues.sort(key=lambda t: -t[0])
@@ -498,6 +586,9 @@ def summary(book, results):
         "hidden lines %": round(100 * sum(m["hidden"] for _, m in results)
                                 / max(1, sum(m["hidden"] + m["lines"] for _, m in results)), 1),
         "images/chapter": _med(m["images"] for _, m in results),
+        "image covers quest (total)": sum(m["image_covers"] for _, m in results),
+        "caption covered (total)": sum(m["caption_covered"] for _, m in results),
+        "pictures overlapping (total)": sum(m["picture_overlaps"] for _, m in results),
         "shapes/chapter": _med(m["shapes"] for _, m in results),
         "sizes/chapter": _med(m["sizes"] for _, m in results),
         "dirs R/D/L/U %": "/".join(str(round(100 * tot_dirs[k] / nd)) for k in "RDLU"),
@@ -511,7 +602,7 @@ def summary(book, results):
 def report(book, results, verbose=False, target=(18, 14)):
     lines = []
     hdr = (f"{'chapter':16} {'q':>4} {'W x H':>11} {'asp':>5} {'ovl':>4} {'thru':>4} {'cross':>5} {'long':>4} "
-           f"{'close':>5} {'R/D/L/U':>13} {'orth%':>5} {'lone':>4} {'img':>3} {'iov':>3} {'out':>3} {'shp':>3} {'siz':>3} {'hid':>4} "
+           f"{'close':>5} {'R/D/L/U':>13} {'orth%':>5} {'lone':>4} {'img':>3} {'iov':>3} {'icv':>3} {'ccv':>3} {'pov':>3} {'out':>3} {'shp':>3} {'siz':>3} {'hid':>4} "
            f"{'unl':>3} {'score':>5}")
     lines.append(f"Book: {book['folder']}   target page {target[0]}x{target[1]} cells")
     lines.append(hdr)
@@ -520,7 +611,7 @@ def report(book, results, verbose=False, target=(18, 14)):
         d = m["dirs"]
         lines.append(f"{c['file'][:16]:16} {m['quests']:4} {m['w']:5.0f} x {m['h']:<4.0f} {m['aspect']:5.2f} {m['overlaps']:4} "
                      f"{m['through']:4} {m['crossings']:5} {m['long']:4} {m['close']:5} "
-                     f"{d['R']:>3}/{d['D']}/{d['L']}/{d['U']:<3} {m['ortho']:5} {m['lone']:4} {m['images']:3} {m['image_overlaps']:3} {m['outside']:3} "
+                     f"{d['R']:>3}/{d['D']}/{d['L']}/{d['U']:<3} {m['ortho']:5} {m['lone']:4} {m['images']:3} {m['image_overlaps']:3} {m['image_covers']:3} {m['caption_covered']:3} {m['picture_overlaps']:3} {m['outside']:3} "
                      f"{m['shapes']:3} {m['sizes']:3} {m['hidden']:4} {m['unlinked']:3} {m['score']:5}")
     lines.append("")
     lines.append("Worst chapters:")
@@ -580,9 +671,10 @@ def main():
         pathlib.Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         pathlib.Path(args.out).write_text(text + "\n", encoding="utf-8", newline="\n")
     if args.strict:
-        bad = [c["file"] for c, m in results if m["overlaps"] or m["through"]]
+        bad = [c["file"] for c, m in results if m["overlaps"] or m["through"] or m["caption_covered"]]
         if bad:
-            print(f"\nSTRICT: overlaps or lines through quests in: {', '.join(bad)}", file=sys.stderr)
+            print(f"\nSTRICT: overlaps, lines through quests or covered captions (headers, banners) in: "
+                  f"{', '.join(bad)}", file=sys.stderr)
             sys.exit(1)
 
 

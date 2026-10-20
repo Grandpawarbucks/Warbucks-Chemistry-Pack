@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/root",
+  "criteria": {
+    "blacksmith_upgrade": {
+      "conditions": {
+        "type": "blacksmith_upgrade"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.blacksmith_upgrade.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 7
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.blacksmith_upgrade.title"
+    }
+  },
+  "requirements": [
+    [
+      "blacksmith_upgrade"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

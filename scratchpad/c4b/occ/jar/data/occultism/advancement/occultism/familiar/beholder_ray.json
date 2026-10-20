@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "beholder_ray": {
+      "conditions": {
+        "type": "beholder_ray"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.beholder_ray.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 13
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.beholder_ray.title"
+    }
+  },
+  "requirements": [
+    [
+      "beholder_ray"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

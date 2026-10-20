@@ -137,6 +137,14 @@ Open items / next steps, in order:
 - Tooling: Temurin 21 (system), packwiz at ~/go/bin/packwiz, Prism instance "Warbucks-Chemistry-Dev".
   Windows desktop (2026-10-18): Temurin 21 (JAVA_HOME; an old Java 8 shim is also on PATH), Go, packwiz in
   %USERPROFILE%\go\bin, Python 3.12 with repo .venv (Pillow), Prism instance "Warbucks-Chemistry-Prism".
+- Quest book v14 (2026-10-20, user: ATM10 "heavily used for inspiration"): 71 chapters, 4,116 quests. Mod pages mirror
+  ATM10 quest-for-quest where we have the mod (Q(mirror=<ATM10 quest id>), Chapter(mirror=<stem>), MIRROR map; ATM10 is
+  ARR: requirements/order only, own text). New pages: silentgear, artifacts, apothic_enchanting, eae, pylons,
+  integrated, generators. Layout: comb everywhere (USE_MIRROR=False keeps the ATM10-geometry motif off, user choice);
+  cluttered pages split into extra chapters (SPLIT_PAGES in quest_data.py). Pictures are NOT placed (user places them
+  by hand): 360 rendered per section by tools/build_pictures.py, listed in docs/QUEST_PICTURES.md. 72 big collections
+  made optional (less grind). Viewers: map artifact https://claude.ai/artifact/7SNpPd8oe43AbUTn2Cko4b, local compare
+  page (quest-compare). The user rejected a full re-layout once in another pack: show the map/compare page first.
 - Quest book v13 (2026-10-20, user: "I really like the breakdown of All the Mods 10"): 50 chapters, 2,832 quests in
   ATM10-style categories (top: welcome, market, tips, Building Tips, Bounty Board, lab_notes, completionist; then Main
   Questline = Demigod's Path, Market, Tools and Gear, Storage, Logistics, Resources, Tech, Chemistry, Energy, Magic,

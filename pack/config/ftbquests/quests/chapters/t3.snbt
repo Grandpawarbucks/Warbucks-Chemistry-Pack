@@ -1033,33 +1033,17 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "modern_industrialization:lv_storage_unit"
+				count: 1
+			}
 			dependencies: [
 				"2535BA17FB64FACE"
 			]
 			tasks: [
 				{
 					id: "1D7C0C21C358D4F0"
-					type: "item"
-					item: {
-						id: "modern_industrialization:lv_storage_unit"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "1F880D3481FDC99F"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "6D2145B3226A9BB0"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}

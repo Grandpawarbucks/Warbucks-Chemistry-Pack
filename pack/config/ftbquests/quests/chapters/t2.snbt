@@ -309,33 +309,17 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "minecraft:netherite_ingot"
+				count: 1
+			}
 			dependencies: [
 				"5162E347921E0863"
 			]
 			tasks: [
 				{
 					id: "3CE27FDB344F9AE3"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_ingot"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "070B7127D3F7991D"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "23FDD565F5D074D9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
+					type: "checkmark"
 				}
 			]
 		}
@@ -379,7 +363,7 @@
 		{
 			id: "75644D12ABEA0664"
 			x: 6.0d
-			y: 2.0d
+			y: 2.5d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -414,11 +398,11 @@
 		}
 		{
 			id: "069E15B497A964D9"
-			x: 4.0d
-			y: 2.0d
+			x: 2.0d
+			y: 3.5d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
+			hide_dependent_lines: true
 			dependencies: [
 				"04B2CA0DEFD9BEA6"
 			]
@@ -1298,10 +1282,9 @@
 		{
 			id: "70E81EEF06F1E07B"
 			x: 2.0d
-			y: 2.0d
+			y: 6.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependent_lines: true
 			dependencies: [
 				"069E15B497A964D9"
 			]
@@ -1522,33 +1505,17 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "ars_nouveau:volcanic_sourcelink"
+				count: 1
+			}
 			dependencies: [
 				"04AB64EC70146236"
 			]
 			tasks: [
 				{
 					id: "32E1345043A1654B"
-					type: "item"
-					item: {
-						id: "ars_nouveau:volcanic_sourcelink"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "3D2E887E3B053D2E"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "4C071DC4E38E3841"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}

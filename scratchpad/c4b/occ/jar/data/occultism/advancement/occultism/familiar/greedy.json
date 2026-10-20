@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "greedy_item": {
+      "conditions": {
+        "type": "greedy_item"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.greedy.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 4
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.greedy.title"
+    }
+  },
+  "requirements": [
+    [
+      "greedy_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

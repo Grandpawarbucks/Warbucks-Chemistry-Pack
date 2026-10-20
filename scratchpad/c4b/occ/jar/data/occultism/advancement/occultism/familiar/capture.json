@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "capture": {
+      "conditions": {
+        "type": "capture"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.capture.description"
+    },
+    "icon": {
+      "components": {
+        "occultism:spirit_name": "Gardelldor"
+      },
+      "count": 1,
+      "id": "occultism:familiar_ring"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.capture.title"
+    }
+  },
+  "requirements": [
+    [
+      "capture"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

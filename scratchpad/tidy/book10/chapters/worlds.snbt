@@ -1,0 +1,299 @@
+{
+	id: "477FA5F1CFD1E7A9"
+	group: "4045A6EE7751118B"
+	order_index: 0
+	filename: "worlds"
+	icon: {
+		id: "minecraft:ender_eye"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "0F5CD98214E3E454"
+			x: 2.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "7AEC183F97E37984"
+					type: "dimension"
+					dimension: "minecraft:the_end"
+				}
+			]
+			rewards: [
+				{
+					id: "60168FDDEF5FA8DD"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "6A39414CC1770FF0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "587A409CC5EF5395"
+			x: 4.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "5F7BB4D860B84CCB"
+					type: "kill"
+					entity: "minecraft:ender_dragon"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "66C189E473CBF757"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "654944EFC5F3F019"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6CDB969C605426AD"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "478C654ED802C25B"
+			x: 6.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"587A409CC5EF5395"
+			]
+			tasks: [
+				{
+					id: "3E71AA265F023808"
+					type: "item"
+					item: {
+						id: "minecraft:dragon_breath"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "37CCD93F1C36DADC"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "2AFE18298FBF04BD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "288DC19CA85DA3E9"
+			x: 4.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
+			dependencies: [
+				"587A409CC5EF5395"
+			]
+			tasks: [
+				{
+					id: "7FEA7176C245BF77"
+					type: "structure"
+					structure: "minecraft:end_city"
+				}
+			]
+			rewards: [
+				{
+					id: "0EF5FA83114EAE43"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "7290EEC067E7C6E2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "786DC9EAB0FB870A"
+			x: 8.0d
+			y: 0.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"478C654ED802C25B"
+				"288DC19CA85DA3E9"
+			]
+			tasks: [
+				{
+					id: "4820E4A75A056B5D"
+					type: "item"
+					item: {
+						id: "minecraft:elytra"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3B9FF60EACAB59C1"
+					type: "item"
+					item: {
+						id: "minecraft:shulker_shell"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "3DA5324A114CFC48"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "1CF99EB6702D3C0D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "272CE62B5A0B766A"
+			x: 8.0d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"786DC9EAB0FB870A"
+			]
+			tasks: [
+				{
+					id: "7D094D3E9A776188"
+					type: "item"
+					item: {
+						id: "minecraft:firework_rocket"
+						count: 1
+					}
+					count: 32L
+				}
+			]
+			rewards: [
+				{
+					id: "1FF2B660E06AB0AD"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "5C3D36BF77DE6996"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "62AB5E194AA2C276"
+			x: 4.0d
+			y: -2.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"587A409CC5EF5395"
+			]
+			tasks: [
+				{
+					id: "2CC54CEBD0825CBC"
+					type: "item"
+					item: {
+						id: "minecraft:dragon_egg"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4D04B0D8041C2BC2"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "68E485994D2BE72B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1F1089929C2953F3"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "7208713374E58AC5"
+			x: 2.5d
+			y: -3.875d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/worlds.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "5833462B6ACF821A"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 0.0d
+			y: 0.0d
+			size: 1.0d
+		}
+	]
+}

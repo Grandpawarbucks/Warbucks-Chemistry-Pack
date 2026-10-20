@@ -376,19 +376,7 @@ CHAPTER = Chapter("qol", "Quality of Life", "akashictome:tome",
         "&eTip:&r perfect for an underwater base, or for clearing an ocean monument."]),
 
     # --- the other pylons (y=22): flight is in Chapter II; these guard and farm a claim ---------
-    Q("ql_pylon_harvester", 0, 0, [item("pylons:harvester_pylon")], "Harvester Pylon", deps=["t2_pylon", "fd_breed"], xp=40,
-      optional=True, tokens=1, subtitle="Optional: a pylon that farms for you", desc=[
-        "&eWhat:&r harvests crops in a square around it (3x3 up to 9x9) and puts them in a chest above it. It wears a hoe down by 1 durability per harvest.",
-        "&eHow:&r quartz slabs, iron bars and polished blackstone around a hay bale. Put it in the farm's water block (or level with the crops), a hoe inside, a chest on top.",
-        "&eTip:&r an Unbreaking hoe lasts far longer; a Mending one never runs out."]),
-    Q("ql_pylon_interdiction", 0, 0, [item("pylons:interdiction_pylon"), anyof(["pylons:mob_filter", "pylons:lifeless_filter"])], "Interdiction Pylon", deps=["t2_pylon", "t2_debris"], xp=80,
-      optional=True, tokens=1, subtitle="Optional: no more of that mob, here", desc=[
-        "&eWhat:&r stops chosen mobs spawning in up to 5x5 chunks. A Mob Filter names the mob; the Lifeless Filter blocks all natural spawns over a much larger area.",
-        "&eHow:&r the pylon frame around a netherite block. Filters: cyan terracotta, green dye and glass around netherite (mob) or a Nether Star (lifeless). Use a mob filter on the mob to set it.",
-        "&eTip:&r a phantom filter over your base means sleepless nights are only a figure of speech."]),
-    Q("ql_pylon_guard", 0, 0, [item("pylons:protection_pylon"), item("pylons:expulsion_pylon"), anyof(["pylons:player_filter", "pylons:block_filter"])],
-      "Guard Pylons", deps=["t2_pylon", "ql_team"], xp=60, optional=True, tokens=1, subtitle="Optional: protect your claim, and keep strangers out", desc=[
-        "&eWhat:&r the Protection Pylon stops you breaking chosen blocks or hurting chosen mobs in its range (so a pet or a showpiece is safe from your own sword). The Expulsion Pylon sends other players out of your chunks; whitelist friends with a Player Filter.",
-        "&eHow:&r the pylon frame around a honeycomb block (protection) or a diamond block (expulsion). Filters: cyan terracotta, green dye and glass around honeycomb (block) or a diamond (player).",
-        "&eTip:&r with FTB Teams, your team is whitelisted automatically."]),
+    Q("ql_pylon_harvester", 0, 0, [tick()], "Harvester Pylon", deps=['t2_pylon', 'fd_breed'], optional=True, tokens=0, xp=0, icon="pylons:harvester_pylon", subtitle="Moved: see Harvester Pylon", desc=["&eMoved:&r this step is now \"Harvester Pylon\" on the Pylons page. Click to dismiss."]),
+    Q("ql_pylon_interdiction", 0, 0, [tick()], "Interdiction Pylon", deps=['t2_pylon', 't2_debris'], optional=True, tokens=0, xp=0, icon="pylons:interdiction_pylon", subtitle="Moved: see Interdiction Pylon", desc=["&eMoved:&r this step is now \"Interdiction Pylon\" on the Pylons page. Click to dismiss."]),
+    Q("ql_pylon_guard", 0, 0, [tick()], "Guard Pylons", deps=['t2_pylon', 'ql_team'], optional=True, tokens=0, xp=0, icon="pylons:protection_pylon", subtitle="Moved: see Protection Pylon", desc=["&eMoved:&r this step is now \"Protection Pylon\" on the Pylons page. Click to dismiss."]),
 ], links=[("gs_table", -3, 0), ("gs_bed", -3, -1.5), ("gs_iron", -3, 2), ("gs_backpack", -3, 3.5), ("gs_stone", 10, -1.5)])

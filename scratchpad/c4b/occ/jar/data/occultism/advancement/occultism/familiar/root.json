@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "summon_familiar": {
+      "conditions": {
+        "ritual_factory_id": "occultism:familiar"
+      },
+      "trigger": "occultism:ritual"
+    }
+  },
+  "display": {
+    "background": "occultism:textures/block/otherplanks.png",
+    "description": {
+      "translate": "advancements.occultism.familiars.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "occultism:pentacle_possess"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiars.title"
+    }
+  },
+  "requirements": [
+    [
+      "summon_familiar"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

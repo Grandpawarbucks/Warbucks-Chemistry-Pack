@@ -1,0 +1,180 @@
+===== basic_power: 34
+#0   4AB0DD227471FDBF (0.0,0.0) sz=2.0 gear opt=0 deps=[] | Basic Power
+        item x1: minecraft:redstone <hv_iron,gs_redstone,gs_opt_ores,t2_longflying>
+#1   6D6E07564D8FDD8D (3.0,2.0) sz=1 rsquare opt=0 deps=[#14] | Extreme Reactors: Reactors
+        item x1: alltheores:uranium_ingot [MISSING]
+#2   48DC9E8E9D21A2FA (-1.5,3.5) sz=1 rsquare opt=0 deps=[#5] | Mekanism: Renewable Energy
+        item x1: ftbfiltersystem:filter [MISSING], mekanismgenerators:solar_generator <mk2_gen_field,pw_solar>, mekanismgenerators:advanced_solar_generator <mk2_gen_field,pw_adv_solar>, mekanismgenerators:wind_generator <mk2_gen_field,pw_wind>
+#3   11D09E918015355C (-3.0,2.0) sz=1 rsquare opt=0 deps=[#5] | Heat Generator
+        item x1: mekanismgenerators:heat_generator <mk2_gen_field,pw_heat>
+#4   0BB367839D28607D (-2.5,3.0) sz=1 rsquare opt=0 deps=[#5] | Coal Generators
+        item x1: ftbfiltersystem:filter [MISSING], actuallyadditions:coal_generator [MISSING], justdirethings:generatort1 <jdt_generator>, rftoolspower:coalgenerator [MISSING]
+#5   42D173B9FF8D16E4 (-1.5,2.0) sz=1.5 hexagon opt=0 deps=[#0] | Early Game Power Options
+        item x1: minecraft:coal <gs_coal,gs_opt_ores,t1_coal>
+#6   4EEAB467C722ECE7 (-7.0,0.0) sz=1 rsquare opt=0 deps=[#8] | Pipez: Energy Pipes
+        item x1: pipez:energy_pipe <lg_pipez_types>
+        item x1: pipez:wrench <lg_pipez_tools>
+#7   5C47935A3B2877FF (-4.0,0.0) sz=1 rsquare opt=0 deps=[#8] | Mekanism: Universal Cables
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_universal_cable <mk2_cables>, mekanism:advanced_universal_cable <mk2_adv_transmitters>, mekanism:elite_universal_cable, mekanism:ultimate_universal_cable <mk2_ult_cable>
+#8   1F81EA5E45424308 (-5.5,0.0) sz=1.5 hexagon opt=0 deps=[#0] | Transferring Power
+        item x1: minecraft:iron_ingot <gs_iron>
+#9   7FE969CB4B419FC6 (-6.5,1.0) sz=1 rsquare opt=0 deps=[#8] | Mekanism: Quantum Entangloporter
+        item x1: mekanism:quantum_entangloporter <mk2_entangloporter>
+#10  76EA017B12E8F01B (5.5,0.0) sz=1.5 hexagon opt=0 deps=[#0] | Storing Power
+        item x1: minecraft:iron_ingot <gs_iron>
+#11  477B411F84342EEA (7.5,0.0) sz=1 rsquare opt=0 deps=[#10] | Mekanism: Energy Cubes
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_energy_cube <pw_cube>, mekanism:advanced_energy_cube <pw_adv_cube>, mekanism:elite_energy_cube, mekanism:ultimate_energy_cube <mkp_ult_cube>, mekanism:creative_energy_cube
+#12  05B6DB75AEC01187 (6.5,1.5) sz=1 rsquare opt=0 deps=[#10] | RFTools Power: Powercells
+        item x1: ftbfiltersystem:filter [MISSING], rftoolspower:cell1 [MISSING], rftoolspower:cell2 [MISSING], rftoolspower:cell3 [MISSING]
+#13  72EA25D05C46D39A (4.5,1.5) sz=1 rsquare opt=0 deps=[#10] | Integrated Dynamics: Energy Battery
+        item x1: integrateddynamics:energy_battery <lg_id_power>
+#14  5E41363F9AE243F3 (1.5,2.0) sz=1.5 hexagon opt=0 deps=[#0] | Mid Game Power Options
+        item x1: minecraft:diamond <cn_secret_diamond,hv_iron,hv_opt_mohs,gs_diamond,gs_opt_ores,t0_diamond,t1_combiner_parts>
+#15  0AEC181F5E21A299 (1.5,3.5) sz=1 rsquare opt=0 deps=[#14] | Mekanism: Gas-Burning Generator
+        item x1: mekanismgenerators:gas_burning_generator <mk2_gen_field,pw_gas>
+#16  35ABB0DEE70DF7FD (2.5,3.0) sz=1 rsquare opt=0 deps=[#14] | More Powah!
+        item x1: powah:uraninite <t4_uraninite>
+#17  3BDB94F17765EE77 (0.0,4.0) sz=1.5 hexagon opt=0 deps=[#0] | End Game Power Options
+        item x1: minecraft:netherite_ingot <t2_opt_netherite>
+#18  1409C17773B6A131 (-8.0,0.0) sz=1  opt=0 deps=[#6] | Pipez: Upgrades
+        item x1: ftbfiltersystem:filter [MISSING], pipez:basic_upgrade, pipez:improved_upgrade, pipez:advanced_upgrade <lg_pipez_tools>, pipez:ultimate_upgrade
+#19  682034C680FDEDC2 (9.0,0.0) sz=1.5 gear opt=0 deps=[#11] | More Power Storage
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_induction_provider <pw_induction>, mekanism:advanced_induction_provider <mkp_induction_adv>, mekanism:elite_induction_provider <mkp_induction_elite>, mekanism:ultimate_induction_provider <mkp_induction_ult>
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_induction_cell <pw_induction>, mekanism:advanced_induction_cell <mkp_induction_adv>, mekanism:elite_induction_cell <mkp_induction_elite>, mekanism:ultimate_induction_cell <mkp_induction_ult>
+#20  35CC898E0E49FE58 (-5.5,2.0) sz=1.25 pentagon opt=0 deps=[#8] | Flux Networks
+        item x4: fluxnetworks:flux_dust <pw_flux_dust>
+#21  1BE26A00A420DAE3 (-5.5,3.5) sz=1  opt=0 deps=[#20] | The \
+        item x4: fluxnetworks:flux_core <t6_flux>
+        item x1: fluxnetworks:flux_block <pw_flux_dust>
+#22  5F078A574A783B02 (-5.5,4.5) sz=1  opt=0 deps=[#21] | Starting Your Network
+        item x1: fluxnetworks:flux_plug <pw_flux_storage>
+#23  36DEA17CBB696CC7 (-5.5,5.5) sz=1  opt=0 deps=[#22] | 
+        checkmark x1: 
+#24  56B6ABF3D6EA0D84 (-6.0,6.5) sz=1 diamond opt=0 deps=[#23] | Accessing Network Power
+        item x1: fluxnetworks:flux_point <pw_flux_storage>
+#25  79AD74A863EA43CB (-5.0,6.5) sz=1 diamond opt=0 deps=[#23] | Flux Storage
+        item x1: fluxnetworks:basic_flux_storage <pw_flux_storage>
+#26  2EB7784D5296F410 (-6.5,5.5) sz=1 diamond opt=1 deps=[#23] | 
+        checkmark x1: 
+#27  27A4FA38992448A0 (-5.5,7.0) sz=1 diamond opt=0 deps=[#23] | Wireless Charging
+        item x1: fluxnetworks:flux_controller <pw_flux_controller>
+#28  7A979BEB20C9591E (-6.5,2.0) sz=1 diamond opt=1 deps=[#20] | Automated Flux Dust
+        item x1: productivebees:configurable_bee [MISSING]
+#29  0BB42C5861B22D32 (-1.0,5.5) sz=1 rsquare opt=0 deps=[#17] | Industrial Foregoing: Mycelial Reactor
+        item x1: industrialforegoing:mycelial_reactor [MISSING]
+#30  43D83CFA824B0A70 (1.0,5.5) sz=1 rsquare opt=0 deps=[#17] | Mekanism: Fusion Reactor
+        item x1: mekanismgenerators:fusion_reactor_controller <pw_fusion>
+#31  2D4749DF9642F334 (0.0,6.0) sz=1  opt=0 deps=[#17] | Dyson Cube
+        item x1: dysoncubeproject:em_railejector_controller [MISSING]
+        item x1: dysoncubeproject:ray_receiver_controller [MISSING]
+#32  677D0C23D53A77CA (5.5,1.5) sz=1 rsquare opt=0 deps=[#10] | Draconic Evolution: Energy Core
+        item x1: draconicevolution:energy_core [MISSING]
+#33  1EECA19DF9CF6A0C (-4.5,2.0) sz=1 diamond opt=1 deps=[#20] | Automated Flux Dust
+        item x1: xycraft_machines:extractor [MISSING]
+        item x1: appflux:charged_redstone_block
+===== generators: 47
+#0   2748ACEAB96A5F60 (-3.0,2.0) sz=1 square opt=0 deps=[#9] | Iron Furnace
+        item x1: ironfurnaces:iron_furnace <s_furnace>
+#1   420FE84DEE12CCE0 (-1.0,4.0) sz=1 square opt=0 deps=[#0,#7] | Golden Furnace
+        item x1: ironfurnaces:gold_furnace <sto_if_gold>
+#2   21EA29A8C7F950CE (-1.0,6.0) sz=1 square opt=0 deps=[#1] | Diamond Furnace
+        item x1: ironfurnaces:diamond_furnace <sto_if_diamond>
+#3   711DDD55CEC439E5 (-3.0,6.0) sz=1 square opt=0 deps=[#2] | Emerald Furnace
+        item x1: ironfurnaces:emerald_furnace <sto_if_emerald>
+#4   32C7D8AE859BF89E (-5.0,4.0) sz=1 square opt=0 deps=[#5,#3] | Obsidian Furnace
+        item x1: ironfurnaces:obsidian_furnace <sto_if_obsidian>
+#5   2354BC5330350DF6 (-5.0,6.0) sz=1 square opt=0 deps=[#2] | Crystal Furnace
+        item x1: ironfurnaces:crystal_furnace <sto_if_crystal>
+#6   661C072E48F8D41F (-5.0,2.0) sz=1 square opt=0 deps=[#9] | Copper Furnace
+        item x1: ironfurnaces:copper_furnace <sto_if_copper>
+#7   61847F47CCA225D9 (-1.0,2.0) sz=1 square opt=0 deps=[#6,#0] | Silver Furnace
+        item x1: ironfurnaces:silver_furnace <sto_if_silver>
+#8   2EE8FCB63A338BC4 (-3.0,5.0) sz=1 square opt=0 deps=[#37,#36] | &zRainbow Furnace
+        item x1: minecraft:custom_name [MISSING]
+#9   47750F3CB020104C (0.0,0.0) sz=2.0 gear opt=0 deps=[] | The Furnace
+        item x1: minecraft:furnace <gs_furnace>
+#10  618F1434757C8E69 (4.0,2.0) sz=1  opt=0 deps=[#9] | Copper Generator
+        item x1: generatorgalore:copper_generator <t1_copper_gen>
+#11  61F265D9A5713A4D (4.0,3.0) sz=1  opt=0 deps=[#10] | Iron Generator
+        item x1: generatorgalore:iron_generator <t1_power>
+#12  25A3E30F722B38B6 (4.0,4.0) sz=1  opt=0 deps=[#11] | Gold Generator
+        item x1: generatorgalore:gold_generator <pw_gold_gen>
+#13  1C73E60FC70408D4 (5.0,4.0) sz=1  opt=0 deps=[#12] | 
+        item x1: generatorgalore:culinary_generator <pw_gg_collection>
+#14  28FEB4C11AD1AE7C (4.0,5.0) sz=1  opt=0 deps=[#12] | Diamond Generator
+        item x1: generatorgalore:diamond_generator <pw_gg_collection>
+#15  07BEB974DF1E5AD3 (3.0,5.0) sz=1  opt=0 deps=[#14] | Netherite Generator
+        item x1: generatorgalore:netherite_generator <pw_gg_gems>
+#16  076A648E3E3245C9 (5.0,5.0) sz=1  opt=0 deps=[#14] | Emerald Generator
+        item x1: generatorgalore:emerald_generator <pw_gg_gems>
+#17  311F43D48B9C26FF (4.0,6.0) sz=1  opt=0 deps=[#14] | Obsidian Generator
+        item x1: generatorgalore:obsidian_generator <pw_gg_obsidian>
+#18  68972BA647FDCF8F (6.0,4.0) sz=1  opt=0 deps=[#13] | Honey Generator
+        item x1: generatorgalore:honey_generator <pw_gg_sweet>
+#19  7297391D026EE9A6 (6.0,5.0) sz=1  opt=0 deps=[#13] | Potion Generator
+        item x1: generatorgalore:potion_generator <pw_gg_sweet>
+#20  6A1145678E80FB8E (5.0,6.0) sz=1  opt=0 deps=[#17] | Enchantment Generator
+        item x1: generatorgalore:enchantment_generator <pw_gg_ender>
+#21  552CA2ABE659A507 (4.0,7.0) sz=1  opt=0 deps=[#17] | Magmatic Generator
+        item x1: generatorgalore:magmatic_generator <pw_gg_collection>
+#22  69201157ECFBB426 (3.0,6.0) sz=1  opt=0 deps=[#17] | Ender Generator
+        item x1: generatorgalore:ender_generator <pw_gg_ender>
+#23  1843C79133DFB024 (2.0,5.0) sz=1  opt=0 deps=[#15] | 
+        item x1: generatorgalore:netherstar_generator <pw_gg_star>
+#24  40DB6E3DE87F16EF (2.0,6.0) sz=1  opt=0 deps=[#22] | Halitosis Generator
+        item x1: generatorgalore:halitosis_generator <pw_gg_collection>
+#25  79C4CF8D7312FC28 (-6.0,4.0) sz=1 square opt=0 deps=[#4] | Netherite Furnace
+        item x1: ironfurnaces:netherite_furnace <sto_if_netherite>
+#26  78D1C97A542133D8 (-10.0,2.0) sz=1  opt=0 deps=[#6,#0] | Augments
+        item x1: minecraft:paper <t3_paper>
+#27  73FF01D830A669AA (-10.5,3.0) sz=1.0 rsquare opt=0 deps=[#26] | Augment: Blasting
+        item x1: ironfurnaces:augment_blasting <sto_if_factory>
+#28  33436ED0D9F128BD (-9.5,3.0) sz=1 rsquare opt=0 deps=[#26] | Augment: Smoking
+        item x1: ironfurnaces:augment_smoking <sto_if_smoking>
+#29  49F08DE190AAD0D8 (-10.5,4.0) sz=1 rsquare opt=0 deps=[#26] | Augment: Factory
+        item x1: ironfurnaces:augment_factory <sto_if_factory>
+#30  07753C5D94312A50 (-9.5,4.0) sz=1 rsquare opt=0 deps=[#26] | Augment: Generator
+        item x1: ironfurnaces:augment_generator <sto_if_generator>
+#31  7F67849DE9F700D8 (-10.5,5.0) sz=1 rsquare opt=0 deps=[#26] | Augment: Speed
+        item x1: ironfurnaces:augment_speed <sto_if_augment>
+#32  538821E23E39BE97 (-9.5,5.0) sz=1 rsquare opt=0 deps=[#26] | Augment: Fuel Efficiency
+        item x1: ironfurnaces:augment_fuel <sto_if_augment>
+#33  686B25F2E9D8CC97 (-4.0,7.0) sz=1  opt=0 deps=[#0,#6] | 
+        item x1: ironfurnaces:item_spooky
+#34  553220A2CD7CAFE4 (-2.0,7.0) sz=1  opt=0 deps=[#0,#6] | 
+        item x1: ironfurnaces:item_xmas
+#35  20EC8001A05CE2C8 (-10.0,6.0) sz=1  opt=0 deps=[#6,#0] | 
+        item x1: ironfurnaces:heater <sto_if_wireless>
+        item x1: ironfurnaces:item_heater <sto_if_wireless>
+#36  7A615E2A152917AD (-6.0,3.0) sz=1 square opt=0 deps=[#25] | &zRainbow Core
+        item x1: ironfurnaces:rainbow_core <sto_if_rainbow>
+#37  0AD2B11565B484E7 (-5.0,3.0) sz=1 square opt=0 deps=[#1,#5,#6,#2,#0,#7,#3,#4] | &zRainbow Plating
+        item x8: ironfurnaces:rainbow_plating <sto_if_rainbow>
+#38  062AA943A1629A86 (-3.0,3.0) sz=1  opt=0 deps=[#8] | &zRainbow Coal
+        item x1: ironfurnaces:rainbow_coal
+#39  757B14D08A9A03C4 (-8.5,4.0) sz=1  opt=0 deps=[#6,#0] | Configurations
+        item x1: ironfurnaces:item_copy <sto_if_copy>
+#40  0ADBE90B33ACC9FB (-3.0,4.0) sz=1  opt=0 deps=[#1,#5,#2,#6,#7,#0,#8,#3,#4,#25] | &zRainbow Generator
+        item x1: ironfurnaces:million_furnace <sto_if_rainbow>
+        item x1: ironfurnaces:copper_furnace <sto_if_copper>
+        item x1: ironfurnaces:iron_furnace <s_furnace>
+        item x1: ironfurnaces:silver_furnace <sto_if_silver>
+        item x1: ironfurnaces:gold_furnace <sto_if_gold>
+        item x1: ironfurnaces:diamond_furnace <sto_if_diamond>
+        item x1: ironfurnaces:emerald_furnace <sto_if_emerald>
+        item x1: ironfurnaces:crystal_furnace <sto_if_crystal>
+        item x1: ironfurnaces:obsidian_furnace <sto_if_obsidian>
+        item x1: ironfurnaces:netherite_furnace <sto_if_netherite>
+#41  7CE86300AF8E9BCA (5.0,2.0) sz=1  opt=0 deps=[#10] | 8x What a deal!
+        item x1: ftbfiltersystem:filter [MISSING], generatorgalore:copper_generator_8x <pw_gg_64x*>, generatorgalore:diamond_generator_8x <pw_gg_64x*>, generatorgalore:emerald_generator_8x <pw_gg_64x*>, generatorgalore:enchantment_generator_8x <pw_gg_64x*>, generatorgalore:ender_generator_8x <pw_gg_64x*>, generatorgalore:gold_generator_8x <pw_gg_64x*>, generatorgalore:halitosis_generator_8x <pw_gg_64x*>, generatorgalore:honey_generator_8x <pw_gg_64x*>, generatorgalore:iron_generator_8x <pw_gg_8x>, generatorgalore:magmatic_generator_8x <pw_gg_64x*>, generatorgalore:netherite_generator_8x <pw_gg_64x*>, generatorgalore:netherstar_generator_8x <pw_gg_64x*>, generatorgalore:obsidian_generator_8x <pw_gg_64x*>, generatorgalore:potion_generator_8x <pw_gg_64x*>, generatorgalore:culinary_generator_8x <pw_gg_64x*>
+#42  72A287DCAEEFE49F (5.0,3.0) sz=1  opt=0 deps=[#41] | 
+        item x1: ftbfiltersystem:filter [MISSING], generatorgalore:culinary_generator_64x <pw_gg_64x*>, generatorgalore:enchantment_generator_64x <pw_gg_64x*>, generatorgalore:ender_generator_64x <pw_gg_64x*>, generatorgalore:halitosis_generator_64x <pw_gg_64x*>, generatorgalore:honey_generator_64x <pw_gg_64x*>, generatorgalore:magmatic_generator_64x <pw_gg_64x*>, generatorgalore:netherite_generator_64x <pw_gg_64x*>, generatorgalore:netherstar_generator_64x <pw_gg_64x*>, generatorgalore:potion_generator_64x <pw_gg_64x*>
+#43  39605F1FEB1A5A1C (0.0,-1.5) sz=1 circle opt=1 deps=[] | AllRightsReserved
+        checkmark x1: 
+        checkmark x1: 
+#44  3A4C17878FC8315B (-6.0,5.0) sz=1  opt=1 deps=[#25] | Allthemodium Furnace
+        item x1: ironfurnaces:allthemodium_furnace
+#45  2E85D6E2CFCC356E (-6.0,6.0) sz=1  opt=1 deps=[#44] | Vibranium Furnace
+        item x1: ironfurnaces:vibranium_furnace
+#46  25080E3295B1DF01 (-7.0,6.0) sz=1  opt=1 deps=[#45] | Unobtainium Furnace
+        item x1: ironfurnaces:unobtainium_furnace

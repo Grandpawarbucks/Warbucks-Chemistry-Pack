@@ -1,0 +1,75 @@
+
+    # ===== ATM10 mirror: food_and_farming (2026-10-20) ======================================================
+    # Four roots as in ATM10 (crops, hoe, lead, fishing rod); the field, pasture and kitchen lines hang off them.
+    Q("fd_hub", 0, 0, [anytag("c:crops")], "Something That Grows", deps=["gs_farm"], xp=15, size=1.5, section=FIELD,
+      mirror="1827DEEA2DF1B144", icon="minecraft:wheat", subtitle="Any crop at all", desc=[
+        "&6You remember fields that ripened when you walked past them. Now you'll have to wait for the sun, like everyone else.&r",
+        "&eWhat:&r this page covers food: the vanilla field and pasture, Farmer's Delight's kitchen, fertiliser chemistry and the sea.",
+        "&eChemistry:&r every crop is stored sunlight: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂, powered by light and run by chlorophyll.",
+        "&eHow:&r pick up any crop (wheat, carrots, potatoes, beetroot, Farmer's Delight crops and more all count).",
+        "&eTip:&r village farms are a free first harvest."]),
+    Q("fd_hoe", 0, 0, [anytag("minecraft:hoes")], "A Hoe", deps=[], xp=10, size=1.25, section=FIELD, mirror="43021923E220CF68",
+      icon="minecraft:iron_hoe", subtitle="Turn dirt into farmland", desc=[
+        "&eWhat:&r a hoe tills dirt and grass into farmland, the only block most crops grow on.",
+        "&eHow:&r 2 of any tool material and 2 sticks. Any hoe counts.",
+        "&eTip:&r farmland within 4 blocks of water stays wet and grows crops faster."]),
+    Q("fd_seeds", 0, 0, [item("minecraft:wheat_seeds", 8)], "Seeds", deps=["fd_hoe"], xp=10, section=FIELD, mirror="72717D1135486D7F",
+      subtitle="Eight seeds to start a field", desc=[
+        "&eWhat:&r wheat seeds come from breaking grass, and every harvest gives more back.",
+        "&eHow:&r break tall grass, then plant on tilled farmland.",
+        "&eTip:&r seeds also feed chickens; keep a few spare."]),
+    Q("fd_wheat", 0, 0, [item("minecraft:wheat", 3)], "Wheat", deps=["fd_seeds"], xp=10, section=FIELD, mirror="0A1C2A7A8617D3E4",
+      subtitle="The first harvest", desc=[
+        "&eWhat:&r wheat is bread, cake and animal feed.",
+        "&eChemistry:&r a wheat grain is mostly starch plus gluten proteins, the proteins that make dough stretch.",
+        "&eHow:&r grow seeds until the stalks turn gold, then break them.",
+        "&eTip:&r a composter turns spare seeds into bone meal."]),
+    Q("fd_bread", 0, 0, [item("minecraft:bread", 3)], "Bread", deps=["fd_wheat"], xp=10, section=FIELD, mirror="659A903F97F93BE2",
+      subtitle="Three loaves", desc=[
+        "&eWhat:&r the simplest real meal: three wheat make a loaf.",
+        "&eChemistry:&r real bread rises because yeast ferments sugar into CO₂ and ethanol; the gas gets trapped in the gluten network.",
+        "&eHow:&r 3 wheat in a row on a crafting table.",
+        "&eTip:&r bread stacks to 64 and never spoils. Carry a stack."]),
+    Q("fd_cane", 0, 0, [item("minecraft:sugar_cane")], "Sugar Cane", deps=["fd_seeds"], xp=10, section=FIELD, mirror="361DFDB1E1352D6B",
+      subtitle="A reed that grows by water", desc=[
+        "&eWhat:&r sugar cane gives sugar and paper.",
+        "&eHow:&r find it on sand or dirt next to water and replant it by water.",
+        "&eTip:&r break the top blocks and leave the bottom one: it regrows."]),
+    Q("fd_flax_seeds", 0, 0, [item("silentgear:flax_seeds")], "Flax Seeds", deps=["fd_seeds"], xp=10, section=FIELD, mirror="56550CD12C681B0F",
+      subtitle="A crop for fibre, not food", desc=[
+        "&eWhat:&r Silent Gear's flax is grown for its fibre, which becomes string.",
+        "&eHow:&r check JEI for where flax seeds drop, then plant them on farmland.",
+        "&eTip:&r one seed is enough to start; replant the extras."]),
+    Q("fd_rod", 0, 0, [item("minecraft:fishing_rod")], "Fishing Rod", deps=[], xp=10, size=1.25, section=SEA, mirror="1DCAA0310AA55F1C",
+      subtitle="Food from any water", desc=[
+        "&eWhat:&r fishing gives fish, and sometimes treasure: saddles, name tags, enchanted books.",
+        "&eHow:&r 3 sticks and 2 string.",
+        "&eTip:&r Luck of the Sea and Lure enchantments make it far better."]),
+    Q("fd_shears", 0, 0, [anytag("c:tools/shear")], "Shears", deps=["fd_breed"], xp=10, section=PASTURE, mirror="18EADBAFC932F864",
+      icon="minecraft:shears", subtitle="Wool without killing the sheep", desc=[
+        "&eWhat:&r shears take wool from sheep (they regrow it by eating grass), and collect leaves, vines and cobwebs.",
+        "&eHow:&r 2 iron ingots diagonally. Any shears count.",
+        "&eTip:&r dye a sheep and it grows coloured wool forever."]),
+    Q("fd_wool", 0, 0, [anytag("minecraft:wool", 3)], "Wool", deps=["fd_shears"], xp=10, section=PASTURE, mirror="3EA883C0BB7BD38F",
+      icon="minecraft:white_wool", subtitle="Three blocks of any colour", desc=[
+        "&eWhat:&r wool makes beds, carpets and banners.",
+        "&eChemistry:&r wool is keratin, a protein held together by sulfur bridges between its chains.",
+        "&eHow:&r shear sheep; each one gives 1 to 3 wool.",
+        "&eTip:&r three wool and three planks make a bed: set your spawn early."]),
+    Q("fd_leather", 0, 0, [item("minecraft:leather", 3)], "Leather", deps=["fd_breed"], xp=10, section=PASTURE, mirror="635620A03E3505BF",
+      subtitle="From cows and horses", desc=[
+        "&eWhat:&r leather goes into books, item frames, armour and backpacks.",
+        "&eChemistry:&r tanning cross-links the collagen in hide so it stops rotting; plant tannins or chromium salts do the job.",
+        "&eHow:&r cows drop 0 to 2 leather each.",
+        "&eTip:&r rabbit hide also crafts into leather (4 hides make 1)."]),
+    Q("fd_eggs", 0, 0, [item("minecraft:egg", 3)], "Eggs", deps=["fd_breed"], xp=10, section=PASTURE, mirror="1D2EF12FD7FDD217",
+      subtitle="Three eggs", desc=[
+        "&eWhat:&r chickens lay eggs by themselves about every 5 to 10 minutes.",
+        "&eChemistry:&r the shell is about 95% calcium carbonate, CaCO₃, the same compound as limestone.",
+        "&eHow:&r keep a few chickens penned and pick up what they drop.",
+        "&eTip:&r throwing an egg sometimes hatches a chick."]),
+    Q("fd_chicken", 0, 0, [item("minecraft:feather", 10), item("minecraft:chicken", 5)], "Feathers and Chicken", deps=["fd_eggs"], xp=15,
+      section=PASTURE, mirror="1697CC05D08B388D", subtitle="A full coop's worth", desc=[
+        "&eWhat:&r feathers make arrows and quills; raw chicken cooks into a decent meal.",
+        "&eHow:&r breed chickens with seeds, then harvest the adults.",
+        "&eTip:&r cook the chicken; raw chicken can make you hungry."]),

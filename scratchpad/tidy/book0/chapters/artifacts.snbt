@@ -1,0 +1,1999 @@
+{
+	id: "4CA1BE98C88CC02D"
+	group: "71F0A542B0668E9D"
+	order_index: 4
+	filename: "artifacts"
+	icon: {
+		id: "artifacts:cloud_in_a_bottle"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "0825592CB940C7A2"
+			x: 0.0d
+			y: 3.5d
+			shape: "pentagon"
+			size: 1.0d
+			hide_dependency_lines: true
+			icon: {
+				id: "artifacts:cloud_in_a_bottle"
+				count: 1
+			}
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "73DF7494D6302DB0"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "4246F0DFF90B819D"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "36FE1C00E10A8DEF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7A32332D465D9626"
+			x: 0.0d
+			y: 0.25d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "4843F0C7B3AE54C1"
+					type: "kill"
+					entity: "artifacts:mimic"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "380B966AF18D1C72"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "66F7893D6DA6F210"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "40E4AE07A1CB371A"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5ED19D3EF6D45C87"
+			x: 2.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "6A71656133E46DED"
+					type: "item"
+					item: {
+						id: "artifacts:strider_shoes"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2BF53658500D0595"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4571E8E697A859A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3FC8239CBA03A6E9"
+			x: -1.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "3854CD04AC953A68"
+					type: "item"
+					item: {
+						id: "artifacts:rooted_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "53BBB4411FD8F9BE"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "177096A89816E3FD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "095234F6DB7A2C0A"
+			x: -1.0d
+			y: 10.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "7291288A4C8952D6"
+					type: "item"
+					item: {
+						id: "artifacts:flippers"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2739C3376E43A2A7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5B9C6BBF9165AF0C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "792A54947C2F8222"
+			x: -2.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "571F7462831A77B5"
+					type: "item"
+					item: {
+						id: "artifacts:steadfast_spikes"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1529710D38A21013"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6873B3E5A7697AB0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1C4DC8A0C7F2CA6D"
+			x: -3.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "1BB016CA3A9C1F20"
+					type: "item"
+					item: {
+						id: "artifacts:snowshoes"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "13D64C0A5A0ADB48"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "1F6C54A41BD2803C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7EC263F4D29B2AC4"
+			x: 1.0d
+			y: 10.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "33E2A2C6F1486DDC"
+					type: "item"
+					item: {
+						id: "artifacts:running_shoes"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "65364DF05A4238BC"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4FFFD9792EBDA71A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0EDA7275844F3367"
+			x: 2.0d
+			y: 10.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "14AE06D6D9D81766"
+					type: "item"
+					item: {
+						id: "artifacts:kitty_slippers"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "78FE1611AD4AFD40"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5EA78E8260580FBD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F08057A0BF42B8E"
+			x: 1.0d
+			y: 11.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "09A35DBE39765B1E"
+					type: "item"
+					item: {
+						id: "artifacts:bunny_hoppers"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "34C06DFD59A3DDE6"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "485F5C4A2D5FCCFC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "21414E84473C21A6"
+			x: -2.0d
+			y: 10.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "6793661903800A41"
+					type: "item"
+					item: {
+						id: "artifacts:aqua_dashers"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4E1D37353F4891F1"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6BF8580B14E7D923"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7876B884362669B5"
+			x: -6.5d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "43A629B009F147BA"
+					type: "item"
+					item: {
+						id: "artifacts:withered_bracelet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0B0FA8C82026594C"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7D02EA9375B2A0EF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0C03388ADD3AB224"
+			x: -6.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "69CD1B4BE1130899"
+					type: "item"
+					item: {
+						id: "artifacts:pickaxe_heater"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5DFCEE8FDE1E883D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "680D3200E9C92143"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32F8C0C9134D54ED"
+			x: -6.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "7078076CFC8F1E02"
+					type: "item"
+					item: {
+						id: "artifacts:pocket_piston"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "501E30DCD47C1A33"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7EB607F1A0E97AE7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "603258D41A4AE814"
+			x: -5.5d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "556E752263E3780A"
+					type: "item"
+					item: {
+						id: "artifacts:power_glove"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "716F2E42BB0D9CEC"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "16CAFFCAB78E968A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "78B0C00C2324BFEC"
+			x: -5.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "0EAFB70A01B6884E"
+					type: "item"
+					item: {
+						id: "artifacts:feral_claws"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7555AF989194E0B9"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "10A009D557FA2EB5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "450DDA316EAC648C"
+			x: 6.5d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "18FE352AAD74FD38"
+					type: "item"
+					item: {
+						id: "artifacts:onion_ring"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67367DFBDB6DE28D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7F68A8FA7A043E69"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7FF7AFBFFB3F0929"
+			x: 6.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "1DF0EB3A6E08FB09"
+					type: "item"
+					item: {
+						id: "artifacts:golden_hook"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7EE006BC6521B804"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "26E56C95AC1A4937"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "580FE592F7A6378E"
+			x: 5.5d
+			y: 5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "25D3C2E3EB43C3A3"
+					type: "item"
+					item: {
+						id: "artifacts:vampiric_glove"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "48A13561A3F8C09A"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "62888DEE9EDBE2FB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6C9A18BBA7301F99"
+			x: 6.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "6FDE3BD816B5AA94"
+					type: "item"
+					item: {
+						id: "artifacts:fire_gauntlet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "64D63625E7724017"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "40C3854792660071"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7F4CA6C060C4FC92"
+			x: 5.0d
+			y: 3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "50362E64B7820920"
+					type: "item"
+					item: {
+						id: "artifacts:digging_claws"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "53FE8DC2E2C5D1B7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "0B0177A9EC74E1FB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "736D6E4470EED3D2"
+			x: -1.0d
+			y: 6.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "3825828B68411AB4"
+					type: "item"
+					item: {
+						id: "artifacts:warp_drive"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "45487C748EC17690"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "527343DA5F440ACB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F8D8BB79A9AB308"
+			x: 0.0d
+			y: 6.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "17D5821C92AA2095"
+					type: "item"
+					item: {
+						id: "artifacts:chorus_totem"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "43DD467C686CD45E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7E4C1F38EC38DBB2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5EC8CC9B13F79399"
+			x: 1.0d
+			y: 6.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "54EA6C8347413B6A"
+					type: "item"
+					item: {
+						id: "artifacts:helium_flamingo"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7F7D8CF9C55DCB31"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "0EAAE6AD2BA1CC1E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2334D8CB5B8CAA7E"
+			x: -1.0d
+			y: 8.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "4E0933C5BED1AE72"
+					type: "item"
+					item: {
+						id: "artifacts:crystal_heart"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "781CF285791132AC"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4D02C1205E3EA74C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4DDD4FBCCAAE8CA6"
+			x: 0.0d
+			y: 8.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "2AFCC551C129D05D"
+					type: "item"
+					item: {
+						id: "artifacts:antidote_vessel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3FA4D8575318C948"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3E1E7F94FE14A1CC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "610C97008B56A838"
+			x: 1.0d
+			y: 8.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "09DE96C7A404689D"
+					type: "item"
+					item: {
+						id: "artifacts:universal_attractor"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67EA45575392EA91"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2BE0E5BF5A328AB1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "786586FBD2B8D453"
+			x: -2.0d
+			y: 7.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "5FF5B52E202E963B"
+					type: "item"
+					item: {
+						id: "artifacts:obsidian_skull"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2354E3639E288094"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2F5953ACD15A3ACC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2470920CC6F8F1AE"
+			x: 2.0d
+			y: 7.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "25DFCDB6709DC3A4"
+					type: "item"
+					item: {
+						id: "artifacts:cloud_in_a_bottle"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "20442722A0A53E34"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6EF7D87508EE1B38"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "180547B0C9ED1FEF"
+			x: 1.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "4C3B79FDF350C6ED"
+					type: "item"
+					item: {
+						id: "artifacts:charm_of_shrinking"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5B4FA3F9C9E88569"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "33D31E212E1B7118"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "03AD18955480DC78"
+			x: -1.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "7D78162803DB1118"
+					type: "item"
+					item: {
+						id: "artifacts:charm_of_sinking"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "218CB54504F56F73"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "15A706B1F7F69D4D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "47FD090E98E7B2EB"
+			x: 0.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "474C7C2EEC5627B7"
+					type: "item"
+					item: {
+						id: "artifacts:thorn_pendant"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "26A79F63B88E2328"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "485721056118B707"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7952A76D1115064D"
+			x: -1.5d
+			y: 3.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "5D679642EB1847DA"
+					type: "item"
+					item: {
+						id: "artifacts:flame_pendant"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A97D330CE082F6B"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5697B8669CE490B1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "575F275E95582A23"
+			x: -0.5d
+			y: 4.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "347EA6768B5F596F"
+					type: "item"
+					item: {
+						id: "artifacts:shock_pendant"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1650C88ACE7EBC79"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "101D357CCF144C83"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "256DBA9768E9850F"
+			x: 0.5d
+			y: 4.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "5EB54B625D897132"
+					type: "item"
+					item: {
+						id: "artifacts:panic_necklace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "23D1E3DFE93D098E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3AE45ECE35BB3614"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "69EDCD758F093395"
+			x: -2.0d
+			y: 2.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "488A28BCBDF34F81"
+					type: "item"
+					item: {
+						id: "artifacts:cross_necklace"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "659C7A1C15576CF8"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4CCB189593256AC3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0E53A65593A98BB7"
+			x: 1.5d
+			y: 3.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "4F9D567FCACD7994"
+					type: "item"
+					item: {
+						id: "artifacts:lucky_scarf"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A9834C714451DE4"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "77BC7589B1944560"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "67F4640E1F405AFE"
+			x: 2.0d
+			y: 2.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "74C68041EF810965"
+					type: "item"
+					item: {
+						id: "artifacts:scarf_of_invisibility"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "506F1BA1474A42A0"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3221F3CFA8A59ADD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3A9E24BEE1A48D76"
+			x: -1.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "19E66C74C60BB572"
+					type: "item"
+					item: {
+						id: "artifacts:anglers_hat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "23D7B2FDC912C03E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "64666B38FBE2ECC2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2CF0DDD1D47A7899"
+			x: 1.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "7D187F39CF05C5FA"
+					type: "item"
+					item: {
+						id: "artifacts:cowboy_hat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "264530262ED6A30A"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "312D6E76B05C3719"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "337CCFDB8E65D0FF"
+			x: -0.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "1DA207DAEC728155"
+					type: "item"
+					item: {
+						id: "artifacts:superstitious_hat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1DB62114902908CC"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "65D25D372433E801"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "53AE813B277289B9"
+			x: 0.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "3EC2AE5892551524"
+					type: "item"
+					item: {
+						id: "artifacts:villager_hat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "271FE7C1EAEDC616"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "403A7ACD160C48EB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2AEA1641BEB5D7BA"
+			x: -0.5d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "6418D178263A767F"
+					type: "item"
+					item: {
+						id: "artifacts:night_vision_goggles"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "735486455D297CAF"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "42C0EABF8FC08B96"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "413E120FD88D3DD5"
+			x: -0.5d
+			y: -3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "64034B9BA591D7EE"
+					type: "item"
+					item: {
+						id: "artifacts:snorkel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0D374FF83534967C"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "26326EF4C922B185"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "51964465B0FAEE79"
+			x: 0.5d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "32AD0AF60F45C754"
+					type: "item"
+					item: {
+						id: "artifacts:novelty_drinking_hat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1C197C5EFA5A3CDA"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "71C7F72011E05539"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "42454D1D3F212C58"
+			x: 0.5d
+			y: -3.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "04BC1F27C778BC72"
+					type: "item"
+					item: {
+						id: "artifacts:plastic_drinking_hat"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "41E7F1FE6A321A3E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "0D9251DE7E13B5C9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "46D48F3B764C6FD1"
+			x: 4.5d
+			y: 4.0d
+			shape: "diamond"
+			size: 1.0d
+			optional: true
+			invisible: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "2B75EBDEC59E293D"
+					type: "item"
+					item: {
+						id: "artifacts:whoopee_cushion"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2BB41603E4FD5426"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "62AE4DB930CE797C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "08C6D4198F30B099"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "473753002D1A3C2E"
+			x: -4.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "0D23BCFC0D83DE0F"
+					type: "item"
+					item: {
+						id: "artifacts:everlasting_beef"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "47C7AF55870D0FCD"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "115822FA3EA192B4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "597130DD51B23733"
+			x: -5.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"473753002D1A3C2E"
+			]
+			tasks: [
+				{
+					id: "6B8C3B42A331BABF"
+					type: "item"
+					item: {
+						id: "artifacts:eternal_steak"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4C0B9F56AE7BFEF4"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "266AEE0FD2B5C15D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6A437B019C98256F"
+			x: 5.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0825592CB940C7A2"
+			]
+			tasks: [
+				{
+					id: "20739817491DE18B"
+					type: "item"
+					item: {
+						id: "artifacts:umbrella"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "131B520EF0869A14"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "115303D29AB7B532"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "7612357B9DB68967"
+			x: -5.883495145631068d
+			y: -6.0d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/artifacts.png"
+		}
+		{
+			id: "1E2D6ED514901AC4"
+			x: 0.0d
+			y: -1.0d
+			width: 3.1125d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_hats_and_goggles_1.png"
+		}
+		{
+			id: "7CCA51ED8F507CB2"
+			x: 5.5d
+			y: 6.0d
+			width: 3.7375d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_claws_rings_and_hooks_1.png"
+		}
+		{
+			id: "4432DA933419B6B1"
+			x: -5.5d
+			y: 6.0d
+			width: 3.7375d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_gloves_and_bracelets_1.png"
+		}
+		{
+			id: "4B45659EB1DD54FC"
+			x: 0.0d
+			y: 5.5d
+			width: 5.15d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_belt_trinkets_1.png"
+		}
+		{
+			id: "7CD119C5A33FF96F"
+			x: 0.0d
+			y: 9.5d
+			width: 2.5625d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_belt_trinkets_2.png"
+		}
+		{
+			id: "05AD0498276FE8F9"
+			x: 7.0d
+			y: 0.0d
+			width: 10.585365853658537d
+			height: 2.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_claws_rings_and_hooks_2.png"
+		}
+		{
+			id: "3ED3B8DBBEF03549"
+			x: 5.5d
+			y: 9.0d
+			width: 2.67203513909224d
+			height: 5.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_shoes_and_boots_1.png"
+		}
+		{
+			id: "0225C77010548386"
+			x: -5.5d
+			y: 9.0d
+			width: 2.5428571428571427d
+			height: 5.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_shoes_and_boots_2.png"
+		}
+		{
+			id: "4C2B2BBF62298BAC"
+			x: -3.5d
+			y: 0.0d
+			width: 2.0474320241691846d
+			height: 5.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_hats_and_goggles_2.png"
+		}
+		{
+			id: "769F9E303502D8AF"
+			x: -5.5d
+			y: 0.0d
+			width: 2.0412517780938835d
+			height: 5.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_gloves_and_bracelets_2.png"
+		}
+		{
+			id: "322976C689E90398"
+			x: -7.5d
+			y: 0.0d
+			width: 2.766990291262136d
+			height: 5.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_gloves_and_bracelets_3.png"
+		}
+		{
+			id: "4885F37869A8C8C5"
+			x: -2.0d
+			y: 12.5d
+			width: 2.775d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_shoes_and_boots_3.png"
+		}
+		{
+			id: "33882323F55165BD"
+			x: 1.5d
+			y: 12.5d
+			width: 2.775d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/artifacts_shoes_and_boots_4.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "226A9F8291273364"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: -3.0d
+			y: 5.0d
+			size: 1.0d
+		}
+	]
+}

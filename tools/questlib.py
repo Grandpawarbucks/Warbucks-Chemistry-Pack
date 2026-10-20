@@ -61,14 +61,28 @@ def tick():
     return ("checkmark",)
 
 
+def _mirror_id(key, mirror):
+    """Validate a Q(mirror=) value: an ATM10 quest id (16 hex chars, as in its .snbt files), or None."""
+    if mirror is None:
+        return None
+    if not isinstance(mirror, str) or len(mirror) != 16 or any(c not in "0123456789abcdefABCDEF" for c in mirror):
+        ERRORS.append(f"{key}: mirror={mirror!r} is not a 16-hex-char ATM10 quest id")
+        return None
+    return mirror.upper()
+
+
 class Q:
     """One quest. x/y are grid positions in the chapter; deps are other quest keys (any chapter)."""
 
     def __init__(self, key, x, y, tasks, title=None, desc=(), deps=(), xp=0, items=(),
                  subtitle=None, size=None, shape=None, tokens=None, optional=False,
                  hidden=False, secret=False, any_dep=False, loot=None, choice=None, row=None,
-                 repeat=False, consume=False, locked_hidden=False, section=None, icon=None):
+                 repeat=False, consume=False, locked_hidden=False, section=None, icon=None, mirror=None):
         self.key, self.x, self.y, self.tasks = key, x, y, tasks
+        # mirror: the id (16 hex chars) of the ATM10 quest this one corresponds to. The "mirror" layout motif puts
+        # this quest where that quest sits on ATM10's page (its geometry only; never its text). None = match by
+        # first item task / dependency structure, or place it freely near its deps.
+        self.mirror = _mirror_id(key, mirror)
         self.section = section    # layout: put this quest (and its descendants without their own) in this titled section
         self.icon = check(icon) if icon else None  # item id shown instead of the first task's icon (tips, checkmarks)
         self.hide_lines = False   # set by tools/layout.py: FTB hide_dependency_lines (lines show on mouse-over)
@@ -92,8 +106,16 @@ class Q:
 
 
 class Chapter:
-    def __init__(self, key, title, icon, subtitle, group, quests, tokens=1, links=(), layout="auto"):
+    def __init__(self, key, title, icon, subtitle, group, quests, tokens=1, links=(), layout="auto", mirror=None):
         self.tokens = tokens  # Demigod Tokens per quest in this chapter (tier-scaled reward)
+        # mirror: the ATM10 chapter this page mirrors (its file stem, e.g. "mekanism"). None = MIRROR in
+        # tools/quest_data.py by chapter key (else no mirror: the page is laid out as a comb). The "mirror" motif
+        # places our quests on that chapter's geometry (positions and picture spots only; ATM10's text is ARR).
+        if mirror is not None and (not isinstance(mirror, str) or not mirror or "/" in mirror or "\\" in mirror
+                                   or mirror.endswith(".snbt")):
+            ERRORS.append(f"chapter {key}: mirror={mirror!r} must be an ATM10 chapter file stem (e.g. 'mekanism')")
+            mirror = None
+        self.mirror = mirror
         self.links = list(links)  # quest links: (quest_key_in_another_chapter, x, y)
         self.key, self.title, self.icon = key, title, check(icon)
         self.subtitle, self.group, self.quests = subtitle, group, quests

@@ -1,0 +1,36 @@
+food_and_farming quests 35 default shape 
+  0 1827DEEA2DF1B144 (0.5,0) s=1.5 square deps=[] :: ANY( tags:c:crops)x1
+  1 72717D1135486D7F (-3.5,0) s=1 circle deps=[10] :: minecraft:wheat_seedsx8+[farming:fd_garden]
+  2 3EA883C0BB7BD38F (5.5,0) s=1  deps=[3] :: ANY( tags:minecraft:wool)x3
+  3 18EADBAFC932F864 (4,0) s=1  deps=[6] :: ANY( tags:c:tools/shear)x1
+  4 635620A03E3505BF (4.5,-1) s=1  deps=[6] :: minecraft:leatherx3+[farming:fd_barnyard]
+  5 1F114EB0AAB86DB4 (7.5,0) s=1.5 rsquare deps=[2] :: farmingforblockheads:marketx1-
+  6 2E9C035EEE7E5C34 (2.5,0) s=1 diamond deps=[] :: minecraft:leadx1+[farming:fd_breed]
+  7 73B8A70240E6070E (6,-1) s=1  deps=[4] :: minecraft:milk_bucketx1+[farming:fd_milk]
+  8 1D2EF12FD7FDD217 (4.5,1) s=1  deps=[6] :: minecraft:eggx3+[farming:fd_barnyard]
+  9 1697CC05D08B388D (6,1) s=1  deps=[8] :: minecraft:featherx10+[farming:fd_barnyard] | minecraft:chickenx5+[farming:fd_barnyard]
+ 10 43021923E220CF68 (-1.575,0) s=1.25 diamond deps=[] :: ANY( tags:minecraft:hoes)x1
+ 11 0A1C2A7A8617D3E4 (-5,0) s=1  deps=[1] :: minecraft:wheatx3+[farming:fd_breed,start:gs_farm]
+ 12 659A903F97F93BE2 (-6.5,0) s=1  deps=[11] :: minecraft:breadx3+[start:gs_food]
+ 13 361DFDB1E1352D6B (-5.5,1) s=1  deps=[1] :: minecraft:sugar_canex1+[start:gs_opt_canes]
+ 14 45F83C2750F70F9B (0.5,4) s=1.5 diamond deps=[] :: cookingforblockheads:recipe_bookx1-
+ 15 58D5BD3106BFD94A (0.5,5.5) s=1  deps=[14] :: cookingforblockheads:crafting_bookx1-
+ 16 28C9EDBF6607E180 (0.5,7) s=1.5 rsquare deps=[15] :: cookingforblockheads:cooking_tablex1-
+ 17 58495CFBF4F20CE9 (1.5,8.5) s=1 diamond deps=[16] :: cookingforblockheads:cabinetx2-
+ 18 37CA6F9F0226F10E (2,8) s=1 diamond deps=[16] :: cookingforblockheads:counterx2-
+ 19 47764EFC822E462A (0.5,9.5) s=1 diamond deps=[16] :: cookingforblockheads:cow_jarx1-
+ 20 1515B32545F51266 (1,9) s=1 diamond deps=[16] :: cookingforblockheads:heating_unitx1-
+ 21 13AFCD3B6F62B986 (0,9) s=1 diamond opt deps=[16] :: cookingforblockheads:ice_unitx1-
+ 22 1DCAA0310AA55F1C (-1.57,4) s=1.25 diamond deps=[] :: minecraft:fishing_rodx1+[start:gs_fish]
+ 23 16D0F1E3CEB60ABF (-2.5,5) s=1  deps=[22] :: aquaculture:iron_fishing_rodx1-
+ 24 0A64D0937A5F7513 (-3.5,6) s=1  deps=[23] :: aquaculture:gold_fishing_rodx1-
+ 25 511562EA5811306B (-5,6) s=1  deps=[24] :: aquaculture:diamond_fishing_rodx1-
+ 26 5A1DCD6C7F712A78 (-6.5,6) s=1  deps=[25] :: aquaculture:neptunium_fishing_rodx1-
+ 27 0893EFCAC7031FEA (-8.25,0) s=1.5 rsquare deps=[28, 11] :: minecraft:cakex1+[farming:fd_baking]
+ 28 1D48298525EEADC9 (-7,1) s=1  deps=[13] :: minecraft:sugarx3+[farming:fd_sugar,t2:t2_spider_eye]
+ 29 0EFF1AA37772156B (-1,8) s=1 diamond deps=[16] :: cookingforblockheads:sinkx1-
+ 30 55C4824DAD905512 (0.5,2) s=1 circle opt inv deps=[] :: CHECK | CHECK
+ 31 791AE62ACACBD5BA (0.5,8.5) s=1 diamond deps=[16] :: ANY( tags:cookingforblockheads:fridges)x1
+ 32 2786D5AC19163524 (-0.5,8.5) s=1 diamond deps=[16] :: cookingforblockheads:white_ovenx1-
+ 33 56550CD12C681B0F (-5.5,-1) s=1  deps=[1] :: silentgear:flax_seedsx1+[farming:fd_flax]
+ 34 04D0543FE2820F64 (-7,-1) s=1  deps=[33] :: silentgear:flax_stringx3+[farming:fd_flax]

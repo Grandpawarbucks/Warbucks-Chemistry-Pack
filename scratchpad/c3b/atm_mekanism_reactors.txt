@@ -1,0 +1,270 @@
+﻿IMAGES:
+   (  11.5, -25.5) mek_sps7.png
+   (  11.5, -23.0) mek_title_antimatter.png
+   (   9.0, -21.5) mek_title_suit.png
+   (   2.5, -15.0) mek_title_module.png
+   (  18.5, -15.0) mek_title_fusion.png
+   (  11.5, -14.5) mek_title_sps.png
+   (  19.0, -13.0) mek_fusion5.png
+   (   3.0, -12.5) mek_turbine7.png
+   (   7.0, -10.5) mek_title_turbine.png
+   (  16.5, -10.5) mek_title_boiler.png
+   (   6.0,  -7.0) mek_fission4.png
+   (  17.0,  -7.0) mek_boiler4.png
+   (  11.5,  -5.0) mek_title_fission.png
+   (   5.0,  -1.5) mek_matrix4.png
+   (  17.5,  -1.5) mek_qio.png
+   (   7.5,   1.0) mek_title_matrix.png
+   (  15.5,   1.0) mek_title_qio.png
+   (  11.5,   4.5) mek_title_reactor.png
+
+94 quests; default shape hexagon
+7B0764DDE94E73D0 (  8.0, -6.5) opt shape=hexagon deps=3D2B4D9FD2086B9B
+       I:mekanismgenerators:fission_reactor_logic_adapter[power:pw_fission_safety,t6:t6_logic_adapter] x2
+       I:minecraft:redstone[harvest:hv_iron,start:gs_redstone,start:gs_opt_ores,t2:t2_longflying]
+       I:minecraft:redstone_torch[qol:ql_redstone]
+       I:minecraft:repeater[qol:ql_redstone] x2
+066F78936C8F943B ( 13.5,  2.0) opt shape=circle deps=-
+       <checkmark>
+       <checkmark>
+71766BD7321FCB13 ( 11.5, -2.0) size=1.25 shape=circle deps=302E9BC711779A4A,7D279FC39DA5C630
+       I:mekanism:chemical_infuser[mekanism:mk2_chem_plant,t4:t4_so3,t6:t6_uf6]
+       I:mekanism:isotopic_centrifuge[mekanism:mk2_chem_plant,t6:t6_centrifuge]
+302E9BC711779A4A ( 12.5, -0.5) shape=square deps=078B69E9362A5496
+       I:mekanism:enrichment_chamber[t3:t3_enrich]
+       I:mekanism:yellow_cake_uranium[t6:t6_yellowcake]
+       I:mekanism:chemical_oxidizer[mekanism:mk2_chem_plant,t4:t4_oxidizer,t6:t6_uf6]
+078B69E9362A5496 ( 11.5,  2.0) size=3.0 shape=gear deps=-
+       I:alltheores:sulfur!MISSING
+       I:mekanism:chemical_oxidizer[mekanism:mk2_chem_plant,t4:t4_oxidizer,t6:t6_uf6]
+       I:mekanism:electrolytic_separator[mekanism:mk2_chem_plant,t4:t4_separator]
+       I:mekanism:chemical_infuser[mekanism:mk2_chem_plant,t4:t4_so3,t6:t6_uf6]
+7D279FC39DA5C630 ( 10.5, -0.5) shape=square deps=078B69E9362A5496
+       I:mekanism:rotary_condensentrator[t4:t4_vapor]
+       I:mekanism:chemical_infuser[mekanism:mk2_chem_plant,t4:t4_so3,t6:t6_uf6]
+       I:mekanism:chemical_dissolution_chamber[mekanism:mk2_chem_plant,t4:t4_dissolution]
+       I:alltheores:fluorite!MISSING
+09D7D3CF61E156B1 ( 11.5, -3.5) size=1.25 shape=pentagon deps=71766BD7321FCB13
+       I:mekanismgenerators:fission_fuel_assembly[t6:t6_fission_parts]
+       I:mekanismgenerators:control_rod_assembly[t6:t6_fission_parts]
+3D2B4D9FD2086B9B (  9.5, -7.0) size=1.25 shape=pentagon deps=-
+       I:mekanismgenerators:fission_reactor_logic_adapter[power:pw_fission_safety,t6:t6_logic_adapter]
+5A088F8402230BA5 ( 13.5, -7.0) size=1.25 shape=pentagon deps=-
+       I:mekanismgenerators:fission_reactor_port[t6:t6_fission_parts] x2
+7E3C84D7FCEC9D52 ( 11.5, -7.0) size=2.25 shape=octagon deps=5A088F8402230BA5,3D2B4D9FD2086B9B,09D7D3CF61E156B1
+       I:mekanismgenerators:fission_reactor_casing[t6:t6_fission] x29
+       I:mekanismgenerators:fission_reactor_port[t6:t6_fission_parts] x4
+       I:mekanismgenerators:fission_reactor_logic_adapter[power:pw_fission_safety,t6:t6_logic_adapter]
+       I:mekanismgenerators:fission_fuel_assembly[t6:t6_fission_parts]
+       I:mekanismgenerators:control_rod_assembly[t6:t6_fission_parts]
+5AEA705D6A64A982 (  8.0, -7.5) opt deps=3D2B4D9FD2086B9B
+       I:minecraft:daylight_detector[qol:ql_daylight]
+       I:minecraft:redstone[harvest:hv_iron,start:gs_redstone,start:gs_opt_ores,t2:t2_longflying]
+03840E4C74731E0C ( 15.0, -6.5)  deps=5A088F8402230BA5
+       I:cookingforblockheads:sink!MISSING
+17E2C05C48B03043 ( 15.0, -7.5) opt size=1.0 deps=5A088F8402230BA5
+       I:mekanism:thermal_evaporation_block[t4:t4_thermal] x33
+       I:mekanism:thermal_evaporation_controller[power:pw_brine,t4:t4_thermal]
+       I:mekanism:thermal_evaporation_valve[t4:t4_thermal]
+       I:mekanism:electrolytic_separator[mekanism:mk2_chem_plant,t4:t4_separator]
+593CB120B657126C ( 12.5, -9.0) size=1.25 shape=circle deps=7E3C84D7FCEC9D52
+       I:mekanism:radioactive_waste_barrel[mekanism_power:mk2_waste_barrel,t6:t6_waste_barrel]
+7B385FD1CBE02C85 ( 10.5, -9.0) size=1.25 shape=circle deps=7E3C84D7FCEC9D52
+       I:mekanism:basic_chemical_tank[t4:t4_tanks,t4:t4_chem_tank]
+67A9329C05F98633 (  9.0, -9.0) opt deps=7B385FD1CBE02C85
+       I:trashcans:ultimate_trash_can!MISSING
+5194A067BEA98E79 ( 10.5,-10.5)  deps=593CB120B657126C
+       I:mekanism:isotopic_centrifuge[mekanism:mk2_chem_plant,t6:t6_centrifuge]
+20054D077AFE3F56 ( 10.5,-12.5) size=1.75 shape=diamond deps=5194A067BEA98E79
+       I:mekanism:pellet_plutonium[seed:sd_plutonium,seed:t7_seed_nuclear,t6:t6_plutonium,t6:t6_waste]
+438F734D16DA9638 ( 12.5,-12.5) size=1.75 shape=diamond deps=4BAF44FCA0894DE8
+       I:mekanism:pellet_polonium[seed:sd_polonium,seed:t7_seed_nuclear,t6:t6_polonium,t6:t6_waste]
+4E18E28BDF6B7983 ( 18.5,-16.0) size=1.1 shape=pentagon deps=438F734D16DA9638
+       I:mekanismgenerators:fusion_reactor_port[mekanism_power:mk2_fusion_build]
+5B18676A77CD6069 ( 15.5, -0.5) opt size=1.5 shape=octagon deps=-
+       I:mekanism:qio_drive_array[mekanism:mk2_qio]
+011D8CADA29C9C70 ( 14.5, -2.0) opt deps=5B18676A77CD6069
+       F:mekanism:qio_drive_base[mekanism:mk2_qio] | F:mekanism:qio_drive_hyper_dense[mekanism:mk2_qio_drives] | F:mekanism:qio_drive_time_dilating | F:mekanism:qio_drive_supermassive
+53E929BF89209CFC ( 16.5, -2.0) opt deps=5B18676A77CD6069
+       I:mekanism:qio_exporter[mekanism:mk2_qio_io]
+       I:mekanism:qio_importer[mekanism:mk2_qio_io]
+7310BBC4A90EDA9D ( 15.5, -3.0) opt deps=13A5748DF69D832E
+       I:mekanism:portable_qio_dashboard[mekanism:mk2_qio_io]
+6A1174845810C7A1 (  7.5,-19.0)  deps=-
+       I:mekanism:modification_station[mekanism:mk2_module_base]
+7864C8F2CBC910CB (  9.0,-20.5) shape=rsquare deps=50F23B2688D7E699
+       I:mekanism:mekasuit_helmet[tools:tc_mekasuit]
+6C1F7A0B330B3F42 (  9.0,-19.5) shape=rsquare deps=50F23B2688D7E699
+       I:mekanism:mekasuit_bodyarmor[tools:tc_mekasuit]
+56DB53F255100136 (  9.0,-18.5) shape=rsquare deps=50F23B2688D7E699
+       I:mekanism:mekasuit_pants[mekanism:mk2_mekasuit_full]
+6D7D0A5313284B53 (  9.0,-17.5) shape=rsquare deps=50F23B2688D7E699
+       I:mekanism:mekasuit_boots[mekanism:mk2_mekasuit_full]
+50F23B2688D7E699 ( 11.5,-20.0) size=1.75 shape=diamond deps=008E65AF545A706E
+       I:mekanism:pellet_antimatter[seed:sd_pellets,seed:sd_first_antimatter,t7:t7_antimatter]
+4B2835706B593E9A ( 11.5,-21.5) hidden deps=50F23B2688D7E699
+       I:mekanism:antiprotonic_nucleosynthesizer[creation:cn_nucleo,t7:t7_opt_nucleo]
+3B936CA3F0F7B26B ( 13.0, -3.0) opt deps=05DA7F48E2A1B77F
+       I:mekanism:digital_miner[mekanism:mk2_miner]
+16DDAE318535D0F9 ( 10.0, -2.0) shape=rsquare deps=-
+       I:mekanism:atomic_disassembler[harvest:hv_all,tools:tc_disassembler]
+14385D3D359224BC ( 10.0, -3.0) shape=rsquare deps=16DDAE318535D0F9
+       I:mekanism:meka_tool[harvest:hv_all,mekanism:mk2_mekatool]
+05DA7F48E2A1B77F ( 13.0, -2.0) opt shape=circle deps=-
+       I:mekanism:robit[mekanism:mk2_robit]
+55702BE0151D33FE (  7.5,  0.0) shape=pentagon deps=-
+       I:mekanism:induction_port[power:pw_induction]
+298A7BED5C2C7582 (  6.5, -1.0) shape=pentagon deps=-
+       F:mekanism:basic_induction_cell[power:pw_induction] | F:mekanism:advanced_induction_cell[mekanism_power:mkp_induction_adv] | F:mekanism:elite_induction_cell[mekanism_power:mkp_induction_elite] | F:mekanism:ultimate_induction_cell[mekanism_power:mkp_induction_ult]
+6B3BD54A34EB02C2 (  8.5, -1.0) shape=pentagon deps=-
+       F:mekanism:basic_induction_provider[power:pw_induction] | F:mekanism:advanced_induction_provider[mekanism_power:mkp_induction_adv] | F:mekanism:elite_induction_provider[mekanism_power:mkp_induction_elite] | F:mekanism:ultimate_induction_provider[mekanism_power:mkp_induction_ult]
+54E0B946BAC13654 (  7.5, -3.0) size=1.5 shape=octagon deps=55702BE0151D33FE,6B3BD54A34EB02C2,298A7BED5C2C7582
+       I:mekanism:induction_casing[power:pw_induction] x32
+       I:mekanism:induction_port[power:pw_induction] x2
+7846B7FFC3DD85C5 ( 10.5,-16.5) size=1.25 shape=pentagon deps=438F734D16DA9638,20054D077AFE3F56
+       I:mekanism:sps_port[mekanism:mk2_chem_plant,t7:t7_sps]
+3CCBE9BBCA8ADA38 ( 12.5,-16.5) size=1.25 shape=pentagon deps=438F734D16DA9638
+       I:mekanism:supercharged_coil[t7:t7_sps]
+008E65AF545A706E ( 11.5,-18.0) size=2.25 shape=octagon deps=7846B7FFC3DD85C5,3CCBE9BBCA8ADA38
+       I:mekanism:sps_casing[t7:t7_antimatter,t7:t7_sps_casing] x60
+       I:mekanism:structural_glass[mekanism:mk2_dynamic_tank] x64
+       I:mekanism:structural_glass[mekanism:mk2_dynamic_tank] x58
+       I:mekanism:sps_port[mekanism:mk2_chem_plant,t7:t7_sps] x4
+       I:mekanism:supercharged_coil[t7:t7_sps] x2
+4BAF44FCA0894DE8 ( 12.5,-10.5)  deps=593CB120B657126C
+       I:mekanism:solar_neutron_activator[mekanism:mk2_chem_plant,power:pw_dt_fuel,t6:t6_sna]
+2DC4446A644A4079 ( 14.0, -9.0) opt shape=rsquare deps=593CB120B657126C
+       I:mekanism:hazmat_mask[t6:t6_opt_hazmat,tools:tc_hazmat]
+       I:mekanism:hazmat_gown[t6:t6_opt_hazmat]
+       I:mekanism:hazmat_pants[t6:t6_opt_hazmat]
+       I:mekanism:hazmat_boots[t6:t6_opt_hazmat]
+13A5748DF69D832E ( 15.5, -2.0) opt shape=pentagon deps=5B18676A77CD6069
+       I:mekanism:qio_dashboard[mekanism:mk2_qio]
+0306D25C7407FE88 ( 20.0,-17.5) size=1.1 shape=pentagon deps=1C87535D3CDCDA5F
+       I:mekanismgenerators:laser_focus_matrix[mekanism_power:mk2_fusion_build]
+1C87535D3CDCDA5F ( 21.5,-17.0)  deps=4926C95DD02F1410
+       I:mekanism:laser_amplifier[mekanism_power:mk2_ignition]
+4926C95DD02F1410 ( 21.5,-18.0)  deps=-
+       I:mekanism:laser[mekanism_power:mk2_ignition,t7:t7_laser]
+40E8940C92668D4F ( 15.5,-18.0)  deps=-
+       I:mekanism:electric_pump[periodic:pt_isotopes]
+       I:mekanism:upgrade_filter[mekanism:mk2_upgrade_set,periodic:pt_isotopes]
+       I:mekanism:electrolytic_separator[mekanism:mk2_chem_plant,t4:t4_separator]
+369DADE3B3D8416F ( 15.5,-17.0) size=1.0 deps=-
+       I:mekanism:thermal_evaporation_block[t4:t4_thermal] x33
+       I:mekanism:thermal_evaporation_controller[power:pw_brine,t4:t4_thermal]
+       I:mekanism:thermal_evaporation_valve[t4:t4_thermal]
+       I:mekanism:rotary_condensentrator[t4:t4_vapor]
+       I:mekanism:solar_neutron_activator[mekanism:mk2_chem_plant,power:pw_dt_fuel,t6:t6_sna]
+7177653B736AB10E ( 17.0,-17.5) size=1.1 shape=pentagon deps=369DADE3B3D8416F,40E8940C92668D4F
+       I:mekanism:chemical_infuser[mekanism:mk2_chem_plant,t4:t4_so3,t6:t6_uf6]
+       I:mekanismgenerators:hohlraum[power:pw_dt_fuel]
+3561A33758A1E8C3 ( 18.5,-17.5) size=1.75 shape=octagon deps=0306D25C7407FE88,7177653B736AB10E,4E18E28BDF6B7983
+       I:mekanismgenerators:fusion_reactor_controller[power:pw_fusion]
+       I:mekanismgenerators:laser_focus_matrix[mekanism_power:mk2_fusion_build]
+       I:mekanismgenerators:fusion_reactor_frame[mekanism_power:mk2_fusion_build] x36
+       I:mekanismgenerators:reactor_glass[mekanism_power:mk2_fusion_build] x25
+       I:mekanismgenerators:fusion_reactor_port[mekanism_power:mk2_fusion_build] x3
+3E5BE6D6422F682C (  7.0,-11.5) shape=pentagon deps=7B385FD1CBE02C85
+       I:mekanismgenerators:turbine_valve[mekanism_power:mk2_turbine_shell] x2
+       I:mekanismgenerators:turbine_vent[mekanism_power:mk2_turbine_shell]
+4211F29561F21643 (  8.0,-12.5) shape=pentagon deps=7B385FD1CBE02C85
+       I:mekanismgenerators:turbine_rotor[mekanism_power:mk2_turbine_parts] x2
+       I:mekanismgenerators:turbine_blade[mekanism_power:mk2_turbine_parts] x4
+       I:mekanismgenerators:rotational_complex[mekanism_power:mk2_turbine_parts]
+02C6132919DEAF2A (  7.0,-13.5) shape=pentagon deps=7B385FD1CBE02C85
+       I:mekanism:pressure_disperser[mekanism_power:mk2_boiler]
+       I:mekanismgenerators:electromagnetic_coil[mekanism_power:mk2_turbine_parts]
+       I:mekanismgenerators:saturating_condenser[mekanism_power:mk2_turbine_parts]
+6CCE920735187234 (  5.5,-12.5) size=1.5 shape=octagon deps=4211F29561F21643,02C6132919DEAF2A,3E5BE6D6422F682C
+       I:mekanismgenerators:turbine_casing[power:pw_turbine] x52
+       I:mekanism:structural_glass[mekanism:mk2_dynamic_tank] x64
+       I:mekanismgenerators:turbine_valve[mekanism_power:mk2_turbine_shell] x2
+       I:mekanismgenerators:turbine_rotor[mekanism_power:mk2_turbine_parts] x2
+       I:mekanismgenerators:turbine_blade[mekanism_power:mk2_turbine_parts] x4
+       I:mekanismgenerators:rotational_complex[mekanism_power:mk2_turbine_parts]
+       I:mekanism:pressure_disperser[mekanism_power:mk2_boiler] x8
+       I:mekanismgenerators:electromagnetic_coil[mekanism_power:mk2_turbine_parts] x9
+       I:mekanismgenerators:saturating_condenser[mekanism_power:mk2_turbine_parts] x9
+       I:mekanismgenerators:turbine_vent[mekanism_power:mk2_turbine_shell] x12
+6B7E13AB3BF2C5C8 ( 16.5,-12.5) opt size=1.5 shape=octagon deps=141D68BAD039784B,5B9F3F32AB28A83A
+       I:mekanism:boiler_casing[mekanism_power:mk2_boiler] x24
+       I:mekanism:structural_glass[mekanism:mk2_dynamic_tank] x6
+       I:mekanism:boiler_valve[mekanism_power:mk2_boiler] x4
+       I:mekanism:pressure_disperser[mekanism_power:mk2_boiler]
+       I:mekanism:superheating_element[mekanism_power:mk2_boiler]
+141D68BAD039784B ( 15.0,-13.0) opt shape=pentagon deps=17E2C05C48B03043
+       I:mekanism:boiler_valve[mekanism_power:mk2_boiler] x4
+5B9F3F32AB28A83A ( 15.0,-12.0) opt shape=pentagon deps=-
+       I:mekanism:superheating_element[mekanism_power:mk2_boiler]
+       I:mekanism:pressure_disperser[mekanism_power:mk2_boiler]
+5AC68C8A4024F4C9 (  6.0,-22.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_energy_unit
+4869D9DBDD1A15CD (  6.0,-21.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_color_modulation_unit
+4447EEEB8D762721 (  5.0,-21.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_laser_dissipation_unit
+35D9CD19EAADED6C (  4.0,-21.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_radiation_shielding_unit
+0F97EFAFD6E68F8D (  6.0,-16.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_excavation_escalation_unit
+3526D444F81AD6D9 (  5.0,-16.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_attack_amplification_unit
+6518480251F0565A (  4.0,-16.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_farming_unit
+00E19377BAE5DD6A (  3.0,-16.0) opt shape=none deps=6A1174845810C7A1
+       I:mekanism:module_shearing_unit
+7ECE00D12CFC50A4 (  2.0,-16.0) opt shape=none deps=6A1174845810C7A1
+       I:mekanism:module_silk_touch_unit
+40B24676E11D9410 (  1.0,-16.0) opt shape=none deps=6A1174845810C7A1
+       I:mekanism:module_fortune_unit
+52B3955A80DB0B4A (  0.0,-16.0) opt shape=none deps=6A1174845810C7A1
+       I:mekanism:module_blasting_unit
+77B6A7151B3E5980 ( -1.0,-16.0) opt shape=none deps=6A1174845810C7A1
+       I:mekanism:module_vein_mining_unit
+18EB2170CAC48E99 ( -2.0,-16.0) opt shape=none deps=6A1174845810C7A1
+       I:mekanism:module_teleportation_unit
+0133DA323E24A455 (  6.0,-20.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_electrolytic_breathing_unit
+27195E9A3482C158 (  5.0,-20.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_inhalation_purification_unit
+459AEC4C2A611824 (  4.0,-20.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_vision_enhancement_unit
+63B0E39CA4B25A7E (  3.0,-20.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_nutritional_injection_unit
+43DB0CFC5F5B0967 (  6.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_dosimeter_unit
+24E800EEC2CAD626 (  5.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_geiger_unit
+58B5EF8EB72934C2 (  2.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_jetpack_unit
+22171982D22CE15F (  4.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_charge_distribution_unit
+7C7BD54624ED9AC2 (  1.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_gravitational_modulating_unit
+32ABE5D734703B9C (  3.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_elytra_unit
+2747AEE1F7F97848 (  6.0,-18.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_locomotive_boosting_unit
+23B68F19A04AF5D7 (  5.0,-18.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_gyroscopic_stabilization_unit
+4F9C8D90ACF563F5 (  4.0,-18.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_hydrostatic_repulsor_unit
+1FC88A3BFCE6C9D7 (  3.0,-18.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_motorized_servo_unit
+0EBE20E44A7AEC7E (  6.0,-17.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_hydraulic_propulsion_unit
+48F496BD0FFE5A34 (  5.0,-17.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_magnetic_attraction_unit
+795B80BF12D23897 (  4.0,-17.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_frost_walker_unit
+5CE7756D80E051CC (  3.0,-17.0) shape=none deps=6A1174845810C7A1
+       I:mekanism:module_soul_surfer_unit
+5A4C9F7F81D6B9DB (  0.0,-19.0) shape=none deps=6A1174845810C7A1
+       I:gmut:module_gravitational_modulating_additional_unit!MISSING
+62B29AEF8468750E (  2.0,-18.0) shape=none deps=6A1174845810C7A1
+       I:mekanismgenerators:module_geothermal_generator_unit
+123C0417D85B9DB2 (  2.0,-20.0) shape=none deps=6A1174845810C7A1
+       I:mekanismgenerators:module_solar_recharging_unit
+505799C894C771B2 ( 16.5,-21.5) opt deps=-
+       <checkmark>

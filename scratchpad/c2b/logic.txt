@@ -1,0 +1,171 @@
+===== basic_logistics: 40
+#0   2329AA0AFBEF1E13 (1.0,1.0) sz=1.5 pentagon opt=0 deps=[] | Pipez
+        item x1: pipez:wrench <lg_pipez_tools>
+#1   36836AD948F96B9F (0.0,-0.5) sz=1.1  opt=0 deps=[#0] | Item Pipez
+        item x1: pipez:item_pipe <s_pipes>
+#2   33433A443B65D252 (1.0,-0.5) sz=1.1  opt=0 deps=[#0] | Fluid Pipez
+        item x1: pipez:fluid_pipe <lg_pipez_types>
+#3   53EC96FA0E7C4ED4 (2.0,-0.5) sz=1.1  opt=0 deps=[#0] | Energy Pipez
+        item x1: pipez:energy_pipe <lg_pipez_types>
+#4   4FBAB3A0FBF8CE2F (1.0,-1.5) sz=1.1  opt=0 deps=[#2,#1,#3] | Universal Pipez
+        item x1: pipez:universal_pipe <lg_pipez_universal>
+#5   2F4458E9921DEB86 (-0.5,1.0) sz=1.1  opt=0 deps=[#0] | Gas Pipez
+        item x1: pipez:gas_pipe <lg_pipez_types>
+#6   2A976D41F79C34B1 (2.5,1.5) sz=0.9 rsquare opt=0 deps=[#0] | 
+        item x1: pipez:filter_destination_tool <lg_pipez_tools>
+#7   6A962535CD68713E (2.5,0.5) sz=0.9 rsquare opt=0 deps=[#0] | 
+        item x1: ftbfiltersystem:filter [MISSING], pipez:basic_upgrade, pipez:improved_upgrade, pipez:advanced_upgrade <lg_pipez_tools>, pipez:ultimate_upgrade
+#8   34CFE1439262AA72 (8.0,1.0) sz=1.5 pentagon opt=0 deps=[] | Mekanism
+        item x1: mekanism:configurator <mk2_configurator>
+#9   6E05B62A40D5A891 (4.5,1.0) sz=1.5 pentagon opt=0 deps=[] | Integrated Dynamics
+        item x1: integrateddynamics:wrench <lg_id_book>
+#10  1834B5C1F8435D7A (8.0,-0.5) sz=1.1  opt=0 deps=[#8] | 
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_mechanical_pipe <mk2_cables>, mekanism:advanced_mechanical_pipe <mk2_adv_transmitters>, mekanism:elite_mechanical_pipe, mekanism:ultimate_mechanical_pipe
+#11  493D04D954E4FBA0 (9.0,-0.5) sz=1.1  opt=0 deps=[#8] | 
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_universal_cable <mk2_cables>, mekanism:advanced_universal_cable <mk2_adv_transmitters>, mekanism:elite_universal_cable, mekanism:ultimate_universal_cable <mk2_ult_cable>
+#12  30DE4F5BC3EDB555 (7.0,-0.5) sz=1.1  opt=0 deps=[#8] | 
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_logistical_transporter <mk2_transporter>, mekanism:advanced_logistical_transporter <mk2_adv_transmitters>, mekanism:elite_logistical_transporter <mk2_transporter_tiers>, mekanism:ultimate_logistical_transporter <mk2_transporter_tiers>
+#13  316B513FE568EF57 (8.5,-1.5) sz=1.1  opt=0 deps=[#8] | 
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_thermodynamic_conductor <mk2_heaters>, mekanism:advanced_thermodynamic_conductor <mk2_adv_transmitters>, mekanism:elite_thermodynamic_conductor, mekanism:ultimate_thermodynamic_conductor
+#14  4BC2D7FCDD792DBA (7.5,-1.5) sz=1.1  opt=0 deps=[#8] | 
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_pressurized_tube <t4_tubes>, mekanism:advanced_pressurized_tube <mk2_adv_transmitters>, mekanism:elite_pressurized_tube, mekanism:ultimate_pressurized_tube
+#15  6112956E19017D2D (3.5,0.0) sz=1 circle opt=0 deps=[#9] | 
+        item x1: integrateddynamics:cable <lg_id>
+#16  6CD7D99AA102A5C3 (4.5,3.0) sz=2.0 gear opt=0 deps=[] | Logistics
+        item x1: ftbfiltersystem:filter [MISSING], #c:tools/wrench
+#17  03C40D6A5D722543 (5.5,0.0) sz=0.9 rsquare opt=0 deps=[#9] | 
+        item x1: integrateddynamics:variable <lg_id>
+#18  6F152402756DA35E (3.5,-1.0) sz=1.1  opt=0 deps=[#15,#17] | Item Importing
+        item x1: integratedtunnels:part_importer_item
+        item x1: integratedtunnels:part_interface_item
+#19  034F2CDF0830254B (4.5,-1.0) sz=1.1  opt=0 deps=[#15,#17] | Fluid Importing
+        item x1: integratedtunnels:part_importer_fluid
+        item x1: integratedtunnels:part_interface_fluid
+#20  76CECFB244F39F18 (5.5,-1.0) sz=1.1  opt=0 deps=[#15,#17] | Energy Importing
+        item x1: integratedtunnels:part_importer_energy
+        item x1: integratedtunnels:part_interface_energy
+#21  5F1218CF8EFC607B (4.5,6.5) sz=1.5 octagon opt=0 deps=[] | Laser IO
+        item x1: laserio:logic_chip <lg_laser_kit>
+#22  7BC8F50A89A3BE1A (4.5,5.0) sz=1.5 pentagon opt=0 deps=[#21] | 
+        item x1: laserio:laser_wrench <lg_laser_kit>
+#23  5C0F6B1C93A52113 (3.0,6.5) sz=1  opt=0 deps=[#21] | 
+        item x1: laserio:laser_node <s_laser>
+#24  47A2BEFB11F4D581 (6.0,6.5) sz=1 square opt=0 deps=[#21] | 
+        item x1: laserio:filter_basic <lg_laser_filter>
+#25  4C41FD926F31180B (4.5,8.0) sz=1 rsquare opt=0 deps=[#21] | Item Card
+        item x1: laserio:card_item <lg_laser>
+#26  1C70D739CE464E25 (3.5,8.0) sz=1 rsquare opt=0 deps=[#21] | Fluid Card
+        item x1: laserio:card_fluid <lg_laser_chem>
+#27  52F85CED20C8B1E9 (5.5,8.0) sz=1 rsquare opt=0 deps=[#21] | Energy Card
+        item x1: laserio:card_energy <lg_laser_energy>
+#28  47768B1FFD57D56E (6.5,8.0) sz=1 rsquare opt=0 deps=[#21] | Redstone Card
+        item x1: laserio:card_redstone <lg_laser_energy>
+#29  6718043D0F2D1830 (2.5,8.0) sz=1 rsquare opt=0 deps=[#21] | Chemical Card
+        item x1: laserio:card_chemical <lg_laser_chem>
+#30  617695A9CA45D88F (5.0,9.0) sz=1  opt=1 deps=[#21] | 
+        item x1: laserio:card_holder <lg_laser_org>
+#31  308935C85364B04D (6.0,9.0) sz=1 hexagon opt=1 deps=[#21] | 
+        item x1: laserio:card_cloner <lg_laser_org>
+#32  7EE27C3908008E20 (2.0,6.5) sz=1  opt=1 deps=[#23] | 
+        item x1: laserio:laser_connector <lg_laser_kit>
+#33  06767BA0AFE8C1EE (7.5,6.5) sz=1 square opt=0 deps=[#24] | 
+        item x1: laserio:filter_count <lg_laser_filter>
+#34  3065EA195D0A36BA (7.5,7.5) sz=1 square opt=0 deps=[#24] | 
+        item x1: laserio:filter_tag <lg_laser_filter>
+#35  2A6900E87DE8BAE0 (7.5,5.5) sz=1 square opt=0 deps=[#24] | 
+        item x1: laserio:filter_mod <lg_laser_org>
+#36  046C417B2ADF3AA7 (4.0,9.0) sz=1  opt=1 deps=[#21] | 
+        item x1: laserio:overclocker_card <lg_overclock>
+#37  0BB562FB44B0AAA7 (3.0,9.0) sz=1  opt=1 deps=[#21] | 
+        item x1: laserio:overclocker_node <lg_overclock>
+#38  230582AAFC0A1632 (3.0,5.0) sz=1 circle opt=1 deps=[] | 
+        checkmark x1: 
+        checkmark x1: 
+#39  6CD60A9D88227005 (10.0,5.5) sz=1.5  opt=0 deps=[] | Transfer Labels
+        item x1: ftbfiltersystem:filter [MISSING]
+===== integrated_dynamics: 28
+#0   499CF9F39CED8899 (0.0,0.0) sz=1.5 gear opt=0 deps=[] | Integrated Dynamics
+        item x1: ftbfiltersystem:filter [MISSING], #integrateddynamics:menril_logs
+#1   72F57D77C3FB366D (5.0,0.0) sz=1  opt=0 deps=[#25] | Crystallized Menril Chunks
+        item x10: integrateddynamics:crystalized_menril_chunk <lg_menril>
+#2   4A05C037C0EE40BD (5.0,-1.5) sz=1  opt=0 deps=[#1] | Logic Cables
+        item x10: integrateddynamics:cable <lg_id>
+#3   79C1105A84B8BF8F (6.0,-2.5) sz=1  opt=0 deps=[#2] | Variable Cards
+        item x1: integrateddynamics:variable <lg_id>
+#4   450EDE68EC992A5A (6.5,0.0) sz=1  opt=0 deps=[#1] | 
+        item x1: ftbfiltersystem:filter [MISSING], integratedtunnels:part_interface_energy, integratedtunnels:part_interface_item, integratedtunnels:part_interface_fluid
+#5   3BC94B0B922C0708 (9.0,-2.5) sz=1  opt=0 deps=[#3] | 
+        item x1: integrateddynamics:variable_transformer_input <lg_id_transformers>
+#6   6D9FA4DF842C1010 (8.0,-2.5) sz=1  opt=0 deps=[#3] | 
+        item x1: integrateddynamics:variable_transformer_output <lg_id_transformers>
+#7   73EA326304C01C3B (9.0,-1.5) sz=1  opt=0 deps=[#5] | 
+        item x1: ftbfiltersystem:filter [MISSING], integratedtunnels:part_importer_energy, integratedtunnels:part_importer_world_energy, integratedtunnels:part_importer_item, integratedtunnels:part_importer_world_item, integratedtunnels:part_importer_fluid, integratedtunnels:part_importer_world_fluid, integratedtunnels:part_importer_world_block
+#8   33F4A7613764A016 (8.0,-1.5) sz=1  opt=0 deps=[#6] | 
+        item x1: ftbfiltersystem:filter [MISSING], integratedtunnels:part_exporter_energy, integratedtunnels:part_exporter_world_energy, integratedtunnels:part_exporter_item, integratedtunnels:part_exporter_world_item, integratedtunnels:part_exporter_fluid, integratedtunnels:part_exporter_world_fluid, integratedtunnels:part_exporter_world_block
+#9   65FA86357BC60573 (8.5,0.0) sz=1.25 rsquare opt=0 deps=[#7,#8,#4] | 
+        checkmark x1: 
+#10  4D4152032F0410D2 (10.5,0.0) sz=1  opt=0 deps=[#9] | 
+        item x1: integrateddynamics:logic_programmer <lg_id>
+#11  1568CBFA09827137 (12.0,0.0) sz=1 gear opt=0 deps=[#10] | 
+        item x1: integrateddynamics:portable_logic_programmer <lg_id_transformers>
+#12  1B5C86AE05678420 (8.0,1.5) sz=1 diamond opt=0 deps=[#9] | 
+        checkmark x1: 
+#13  437F4945AFBE0825 (9.0,1.5) sz=1 diamond opt=0 deps=[#9] | 
+        checkmark x1: 
+#14  65D89991A45BC042 (10.5,1.5) sz=1 rsquare opt=0 deps=[#10] | 
+        item x1: integratedcrafting:part_interface_crafting
+#15  60D9F04E91171D16 (10.5,-1.875) sz=1.25 pentagon opt=0 deps=[#10] | 
+        item x1: integrateddynamics:variablestore <lg_id_store>
+#16  56BF647EA84FFF7E (12.0,1.5) sz=1  opt=0 deps=[#14] | 
+        item x1: integratedterminals:part_terminal_crafting_job
+#17  6D75CF34957ECCD9 (5.0,1.5) sz=1  opt=0 deps=[#1] | 
+        item x1: integrateddynamics:energy_battery <lg_id_power>
+#18  4D62C62B523C69EC (5.0,3.0) sz=1  opt=1 deps=[#17] | 
+        item x1: integrateddynamics:coal_generator <lg_id_power>
+#19  6ABDBE41880CFDA9 (-1.5,0.0) sz=1 circle opt=1 deps=[] | 
+        checkmark x1: 
+        checkmark x1: 
+#20  232A06C9FF0EE7B2 (0.0,3.0) sz=1  opt=1 deps=[#21] | 
+        item x1: mysticalagriculture:menril_seeds
+#21  6C9191DA4B1039D6 (0.0,1.5) sz=1  opt=0 deps=[#0] | 
+        item x1: integrateddynamics:menril_berries <lg_menril_wood>
+#22  3C9539083BCC145C (6.5,1.25) sz=1  opt=1 deps=[#1] | 
+        item x1: productivebees:bee_type [MISSING]
+#23  2F37E284BB83BFF6 (6.5,-1.25) sz=1  opt=0 deps=[#1] | 
+        item x1: integrateddynamics:wrench <lg_id_book>
+#24  68498ADEF9765F81 (2.0,0.0) sz=1  opt=0 deps=[#0] | 
+        item x1: integrateddynamics:squeezer <lg_squeezer>
+#25  62B4A37CFDECA679 (3.5,0.0) sz=1  opt=0 deps=[#24] | 
+        item x1: integrateddynamics:drying_basin <lg_squeezer>
+#26  44DA091B53473723 (2.0,1.5) sz=1  opt=1 deps=[#17,#24] | 
+        item x1: integrateddynamics:mechanical_squeezer <lg_id_mech>
+#27  7413BB136EF9D6C5 (3.5,1.5) sz=1  opt=1 deps=[#17,#25] | 
+        item x1: integrateddynamics:mechanical_drying_basin <lg_id_mech>
+===== pylons: 13
+#0   30B0240543253EFB (0.0,0.0) sz=2.0 gear opt=0 deps=[] | Pylons
+        item x1: minecraft:polished_blackstone <bd_nether_masonry,t2_polished>
+#1   32E52AD6EF194A60 (1.7999999999999998,-1.7999999999999998) sz=1.2 hexagon opt=0 deps=[#0,#5] | 
+        item x1: pylons:expulsion_pylon <ql_pylon_guard>
+#2   5B5FC539BD1F4A73 (1.7999999999999998,1.7999999999999998) sz=1.2 hexagon opt=0 deps=[#0,#6,#10] | 
+        item x1: pylons:interdiction_pylon <ql_pylon_interdiction>
+#3   12ED1EE85E146A4B (-1.7999999999999998,1.7999999999999998) sz=1.2 hexagon opt=0 deps=[#0,#8] | 
+        item x1: pylons:harvester_pylon <ql_pylon_harvester>
+#4   18246A48C20B29D8 (-1.7999999999999998,-1.7999999999999998) sz=1.2 hexagon opt=0 deps=[#0,#7] | 
+        item x1: pylons:infusion_pylon <t2_pylon>
+#5   403F76908A8A5661 (3.15,-3.15) sz=0.9 rsquare opt=0 deps=[] | 
+        item x1: pylons:player_filter <ql_pylon_guard*>
+#6   011F787E620DE9E8 (1.3499999999999999,3.15) sz=0.9 rsquare opt=0 deps=[] | 
+        item x1: pylons:mob_filter <ql_pylon_interdiction*>
+#7   09D18512037386C1 (-3.15,-3.15) sz=0.9 rsquare opt=0 deps=[] | 
+        item x1: pylons:potion_filter <t2_filter>
+#8   034A9FBCA6D79BB6 (-3.15,3.15) sz=0.9 rsquare opt=0 deps=[] | 
+        item x1: ftbfiltersystem:filter [MISSING], #minecraft:hoes
+#9   5E02AE661945306C (0.0,-2.0) sz=1 circle opt=1 deps=[] | 
+        checkmark x1: 
+        checkmark x1: 
+#10  5C2C29ECA67F9B49 (3.15,2.35) sz=0.9 rsquare opt=0 deps=[] | 
+        item x1: pylons:lifeless_filter <ql_pylon_interdiction*>
+#11  77B185799366ACD2 (0.0,3.15) sz=0.9 rsquare opt=0 deps=[] | 
+        item x1: pylons:block_filter <ql_pylon_guard*>
+#12  2F5263A4166BFCD6 (0.0,2.0) sz=1.2 hexagon opt=0 deps=[#0,#6,#11] | 
+        item x1: pylons:protection_pylon <ql_pylon_guard>

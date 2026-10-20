@@ -155,11 +155,7 @@ CHAPTER = Chapter("t3", "IV. The Electric Age", "modern_industrialization:basic_
         "&eChemistry:&r lead-antimony grids, sulfuric acid electrolyte: the same chemistry as the battery under a car's bonnet.",
         "&eHow:&r 1 battery alloy plate, 4 curved plates, 2 tin cable, 1 redstone and 1 &esulfuric acid&r from the Combiner.",
         "&eTip:&r the LV Storage Unit is built from six of these, so make spares."]),
-    Q("t3_storage", 14, -5, [item(MI + "lv_storage_unit")], "LV Storage Unit", section=S_BATTERY, deps=["t3_turbine", "t3_battery"], xp=40, optional=True, tokens=1,
-      subtitle="A buffer for your power grid", desc=[
-        "&eWhat:&r stores EU, so machines keep running when the turbine can't keep up for a moment.",
-        "&eHow:&r six redstone batteries, 2 battery alloy plates and an LV hull.",
-        "&eTip:&r put it between turbine and machines so short dips don't stop anything."]),
+    Q("t3_storage", 14, -5, [tick()], "LV Storage Unit", section=S_BATTERY, deps=['t3_turbine'], optional=True, tokens=0, xp=0, icon="modern_industrialization:lv_storage_unit", subtitle="Moved: see EU Storage", desc=["&eMoved:&r this step is now \"EU Storage\" on the Power page. Click to dismiss."]),
 
     # --- the LV hull ----------------------------------------------------------------------
     Q("t3_hull", 6, 1, [item(MI + "basic_machine_hull")], "LV Machine Hull", section=S_HULL, deps=["t3_analog", "t3_battery", "t3_casing"], xp=150, size=1.5,

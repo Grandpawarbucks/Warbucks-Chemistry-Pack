@@ -1,0 +1,88 @@
+{
+  "type": "modonomicon:dense",
+  "mapping": {
+    "*": {
+      "type": "modonomicon:display",
+      "display": "occultism:otherstone"
+    },
+    "+": {
+      "type": "modonomicon:display",
+      "display": "occultism:otherrock"
+    },
+    "0": {
+      "type": "modonomicon:tag",
+      "display": "occultism:golden_sacrificial_bowl",
+      "tag": "#occultism:center_sacrificial_bowl"
+    },
+    "1": {
+      "type": "modonomicon:tag",
+      "tag": "#minecraft:candles"
+    },
+    "2": {
+      "type": "modonomicon:block",
+      "block": "minecraft:skeleton_skull"
+    },
+    "X": {
+      "type": "modonomicon:tag",
+      "display": "occultism:chalk_glyph_purple",
+      "tag": "#occultism:glyphs_purple"
+    },
+    "Y": {
+      "type": "modonomicon:tag",
+      "display": "occultism:chalk_glyph_gold",
+      "tag": "#occultism:glyphs_yellow"
+    },
+    "e": {
+      "type": "modonomicon:block",
+      "block": "minecraft:lodestone"
+    },
+    "f": {
+      "type": "modonomicon:block",
+      "block": "minecraft:end_rod"
+    },
+    "g": {
+      "type": "modonomicon:block",
+      "block": "minecraft:amethyst_cluster"
+    },
+    "h": {
+      "type": "modonomicon:tag",
+      "tag": "#c:glass_panes"
+    },
+    "i": {
+      "type": "modonomicon:block",
+      "block": "minecraft:beacon"
+    },
+    "j": {
+      "type": "modonomicon:tag",
+      "tag": "#c:lightning_rods"
+    },
+    "k": {
+      "type": "modonomicon:tag",
+      "tag": "#c:enchanting_tables"
+    },
+    "l": {
+      "type": "modonomicon:tag",
+      "tag": "#c:iron_bars"
+    }
+  },
+  "pattern": [
+    [
+      "__Y1Y__",
+      "_Y_X_Y_",
+      "Y__X__Y",
+      "1XX0XX1",
+      "Y__X__Y",
+      "_Y_X_Y_",
+      "__Y1Y__"
+    ],
+    [
+      "*+*+*+*",
+      "+*+*+*+",
+      "*+*+*+*",
+      "+*+*+*+",
+      "*+*+*+*",
+      "+*+*+*+",
+      "*+*+*+*"
+    ]
+  ]
+}

@@ -243,11 +243,7 @@ CHAPTER = Chapter("creation", "Creation", "extendedcrafting:ultimate_singularity
         "&eWhat:&r the core that 64 nukes crush into a singularity.",
         "&eChemistry:&r tungsten, lead and iridium are among the densest metals there are. Iridium and osmium tie for the record at about 22.6 g/cm³, twice as dense as lead.",
         "&eHow:&r Assembler: 4 tungsten large plates, 4 lead plates and 1 iridium plate."]),
-    Q("cn_opt_qsword", 9, -4, [item(MI + "quantum_sword")], "Quantum Sword", deps=["cn_quantum_upgrade"], xp=500,
-      optional=True, tokens=5, subtitle="Optional: one upgrade, one blade", desc=[
-        "&eWhat:&r MI's quantum sword: the MI guidebook claims it vaporises anything it hits.",
-        "&eHow:&r MI Packer: netherite sword + 1 quantum upgrade, at the same huge draw as the armour (check JEI).",
-        "&eTip:&r a quantum upgrade is a lot to spend on a sword. Finish the armour first."]),
+    Q("cn_opt_qsword", 9, -4, [tick()], "Quantum Sword", deps=['cn_quantum_upgrade'], optional=True, tokens=0, xp=0, icon="modern_industrialization:quantum_sword", subtitle="Moved: see Quantum Sword", desc=["&eMoved:&r this step is now \"Quantum Sword\" on the Gear and Comfort page. Click to dismiss."]),
 
     # ===== ATM10-style detail pass (2026-10-19) =====
     Q("cn_charged_cores", 0, 0, [item("kubejs:energy_core", 2)], "Two Charged Cores", deps=["t7_creation"], xp=300,

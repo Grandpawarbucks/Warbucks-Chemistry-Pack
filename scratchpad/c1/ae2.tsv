@@ -1,0 +1,75 @@
+2893F483C10293E6	  -0.5	   0.5	s=1.5	hexagon 	OK 	Applied Energistics 2                   	ftbfiltersystem:smart_filter x1	deps=
+7C40F1963FC5BF65	   0.5	  -0.5	s=1	circle  	OK 	                                        	<checkmark> x0	deps=2893F483C10293E6
+1B686954D34A0F23	   0.5	   1.5	s=1	circle  	OK 	Quartz Wrench                           	ftbfiltersystem:smart_filter x1	deps=2893F483C10293E6
+68B0B3DAF1145191	   1.5	   0.5	s=1	        	OK 	First Things First                      	ae2:charger x1 | ae2:inscriber x1	deps=2893F483C10293E6
+5034A9137E0F3D3D	   2.5	  -0.5	s=1	circle  	OK 	                                        	<checkmark> x0 | <checkmark> x0	deps=
+332A3C7BA261DBFC	   2.5	   1.5	s=1	        	OK 	                                        	ars_nouveau:dowsing_rod x1	deps=68B0B3DAF1145191
+51236544BFEF487B	   3.0	   0.5	s=1	        	OK 	Meteorite hunting                       	ae2:meteorite_compass x1 | <advancement> x0	deps=68B0B3DAF1145191,332A3C7BA261DBFC
+00611844AFD5C31E	   4.0	  -0.5	s=1	        	OK 	                                        	ae2:energy_acceptor x1	deps=79D2617E01481281
+4BF0BB763BFFACF0	   4.0	   1.5	s=1	        	OK 	Fluix                                   	ae2:fluix_dust x1 | ae2:fluix_crystal x1	deps=79D2617E01481281
+5BB887411B8B38FA	   4.0	   3.5	s=1	rsquare 	OK 	Condensed Matter                        	ae2:condenser x1 | ae2:matter_ball x1	deps=2FB231069D2E4E77
+79D2617E01481281	   5.0	   0.5	s=1	        	OK 	Certus Quartz                           	ae2:certus_quartz_crystal x1 | ae2:certus_quartz_dust x1	deps=51236544BFEF487B
+6144202A97C6CD1C	   5.5	   2.5	s=1	diamond 	OK 	Cable Anchor                            	ftbfiltersystem:smart_filter x1 | ae2:cable_anchor x1 | ae2:name_press x1	deps=5C22E3103544B120
+037488EF1F3581CE	   6.0	  -0.5	s=1	        	OK 	                                        	ae2:energy_cell x1 | ae2:dense_energy_cell x1	deps=00611844AFD5C31E
+5C22E3103544B120	   6.0	   1.5	s=1	        	OK 	Basic Cabling                           	ftbfiltersystem:smart_filter x1 | ftbfiltersystem:smart_filter x1 | ftbfiltersystem:smart_filter x1	deps=4BF0BB763BFFACF0
+5233A447BAA4593C	   6.0	   3.0	s=1	diamond 	OK 	Advanced Cabling                        	ftbfiltersystem:smart_filter x1 | ftbfiltersystem:smart_filter x1	deps=5C22E3103544B120
+3E3DF8E967D95DB0	   6.0	   4.5	s=1	rsquare 	OK 	Hyper-Condensed Matter                  	ae2:singularity x1 | ae2:ender_dust x1 | ae2:tiny_tnt x1	deps=5BB887411B8B38FA
+03E6FA4DCB71162E	   6.5	   2.5	s=1	diamond 	OK 	Color Applicator                        	ae2:color_applicator x1	deps=066F1BBF3D0863C5,5C22E3103544B120
+15564C11744D6AA0	   7.0	   0.5	s=1	        	OK 	Processors                              	ae2:logic_processor x1 | ae2:calculation_processor x1 | ae2:engineering_processor x1	deps=51236544BFEF487B
+6D54B45CDA70FEAB	   8.0	  -0.5	s=1	circle  	OK 	                                        	ae2:energy_card x1	deps=037488EF1F3581CE
+78311531069807DE	   8.0	   1.5	s=1	rsquare 	OK 	                                        	<checkmark> x0	deps=5C22E3103544B120
+0B218DD73FE8D985	   8.0	   4.5	s=1	rsquare 	OK 	Quantum Network Bridge                  	ae2:quantum_ring x16 | ae2:quantum_link x2 | ae2:quantum_entangled_singularity x2	deps=3E3DF8E967D95DB0
+22C4318523A43B49	   9.0	   0.5	s=1	        	OK 	Terminals                               	ae2:terminal x1 | ae2:crafting_terminal x1	deps=15564C11744D6AA0
+4B76FE0348DB0E45	   9.5	   6.0	s=1	        	OK 	                                        	ae2wtlib:quantum_bridge_card x1	deps=0B218DD73FE8D985,16299B9AE87257DC
+6431A384DDFBF439	  10.0	  -0.5	s=1	        	OK 	Network Tools                           	ae2:network_tool x1	deps=22C4318523A43B49,1076BC82EECB73F5
+2F16B6A173525277	  10.0	   1.5	s=1	        	OK 	                                        	ae2:controller x1	deps=22C4318523A43B49,5C22E3103544B120
+2B31E6C1707D8195	  10.0	   4.5	s=1	rsquare 	OK 	                                        	ae2:wireless_access_point x1 | ae2:wireless_booster x1	deps=2F16B6A173525277
+4E8A05C3BFA80540	  12.0	   1.5	s=1.5	gear    	OK 	The Storage                             	ae2:chest x1 | ae2:drive x1	deps=40A7CC56DACC2623,2F16B6A173525277
+16299B9AE87257DC	  12.0	   6.0	s=1	rsquare 	OK 	Wireless Terminals                      	ae2:wireless_terminal x1 | ae2:wireless_crafting_terminal x1	deps=2B31E6C1707D8195
+5AA3E5DFECB4AC4D	  13.0	  -3.5	s=1	        	OK 	                                        	ae2:growth_accelerator x1	deps=51DE3157DE3E57B8
+7B7D1F0CB326B28F	  13.0	   0.5	s=1	rsquare 	OK 	                                        	ae2:io_port x1	deps=4E8A05C3BFA80540
+2F556E7919582D2D	  13.0	   2.5	s=1	rsquare 	OK 	                                        	ae2:cell_workbench x1	deps=4E8A05C3BFA80540
+3195A7AA874163CD	  13.0	   3.5	s=1	circle  	OK 	                                        	ae2:equal_distribution_card x1	deps=2F556E7919582D2D
+51DE3157DE3E57B8	  14.0	  -2.5	s=1.5	gear    	OK 	Auto-Crafting                           	ftbfiltersystem:smart_filter x1 | ae2:pattern_access_terminal x1	deps=5C22E3103544B120
+33ADE41526C39AFD	  14.0	   2.5	s=1	circle  	OK 	                                        	ae2:void_card x1	deps=2F556E7919582D2D
+2C04B3BA507D5673	  15.0	  -3.5	s=1	rsquare 	OK 	Patterns                                	ae2:pattern_encoding_terminal x1 | ae2:blank_pattern x1	deps=51DE3157DE3E57B8
+30E853CE699E669B	  15.0	  -1.5	s=1	rsquare 	OK 	                                        	ftbfiltersystem:smart_filter x1	deps=51DE3157DE3E57B8
+2FB231069D2E4E77	  15.0	   1.5	s=1	diamond 	OK 	Creating your first Storage Cell        	ae2:cell_component_1k x1	deps=4E8A05C3BFA80540
+234DC1702333EB18	  15.0	   6.0	s=1	        	OK 	Infinity Booster                        	aeinfinitybooster:infinity_card x1 | aeinfinitybooster:dimension_card x1	deps=16299B9AE87257DC
+219932CB19258C16	  15.5	   3.0	s=1	diamond 	OK 	16k Storage Component                   	ae2:cell_component_16k x1	deps=066F1BBF3D0863C5,3B42CCC19D23EC6D
+3DDB0DDA7571B2C1	  16.0	  -2.5	s=1	rsquare 	OK 	ME Level Emitter                        	ae2:level_emitter x1	deps=51DE3157DE3E57B8
+5CD8D169181C7339	  16.0	   0.5	s=1	square  	OK 	The... Weapons?                         	ae2:charged_staff x1 | ae2:entropy_manipulator x1 | ae2:matter_cannon x1	deps=2FB231069D2E4E77
+3B42CCC19D23EC6D	  16.0	   2.5	s=1	diamond 	OK 	4k Storage Component                    	ae2:cell_component_4k x1	deps=64CCF1FB42AA41CE,2FB231069D2E4E77
+523853C1C4E688BA	  16.0	   3.5	s=1	diamond 	OK 	64k Storage Component                   	ae2:cell_component_64k x1	deps=076237ECA6D5DE58,219932CB19258C16
+5F56892CD904C40F	  16.5	   3.0	s=1	diamond 	OK 	256k Storage Component                  	ae2:cell_component_256k x1	deps=32FFC36DEEA7792D,523853C1C4E688BA
+4597D3B3BDC2BED5	  17.0	  -3.5	s=1	rsquare 	OK 	                                        	ae2:molecular_assembler x1	deps=2C04B3BA507D5673
+69B7DE2283B4EE6C	  17.0	  -1.5	s=1	rsquare 	OK 	                                        	ae2:crafting_accelerator x1	deps=30E853CE699E669B
+361CCBD353D6FF34	  17.5	   1.5	s=1	rsquare 	OK 	Item Storage                            	ae2:item_storage_cell_1k x1	deps=2FB231069D2E4E77
+460A8F17F3ED6CAF	  17.5	   4.0	s=1.5	diamond 	OK 	1M Storage Component                    	megacells:cell_component_1m x1	deps=2C4616CD2EBB58C6,5F56892CD904C40F
+01F3F0C25BA72BDA	  17.5	   6.5	s=1.5	gear    	OK 	Spatial IO                              	ae2:spatial_io_port x1	deps=40A7CC56DACC2623
+1AAF0B31B47AF23D	  18.0	  -2.5	s=1	circle  	OK 	Redstone-Controlled ME                  	ae2:redstone_card x1 | ae2:toggle_bus x1	deps=3DDB0DDA7571B2C1
+0F03E75CF79BADD7	  18.5	   0.5	s=1	        	OK 	Bulk Item Storage                       	megacells:bulk_item_cell x1	deps=361CCBD353D6FF34
+77C9EE701F72586D	  18.5	   2.5	s=1	        	OK 	                                        	ftbfiltersystem:smart_filter x1	deps=361CCBD353D6FF34
+1F7DFA5AA65F2812	  19.0	  -3.5	s=1	circle  	OK 	                                        	ae2:speed_card x1	deps=4597D3B3BDC2BED5
+1348995F64A94396	  19.0	  -1.5	s=1	rsquare 	OK 	                                        	ae2:crafting_monitor x1	deps=69B7DE2283B4EE6C
+5E24012A3D9B72A1	  19.5	   1.5	s=1	rsquare 	OK 	                                        	ftbfiltersystem:smart_filter x1	deps=361CCBD353D6FF34
+6F3D0A248B5A9CA2	  19.5	   5.5	s=1	        	OK 	Spatial Storage Cell                    	ftbfiltersystem:smart_filter x1	deps=18DFB25DC48D8BF7
+5E6585F7627247E3	  20.0	  -2.5	s=1	circle  	OK 	                                        	ae2:crafting_card x1	deps=1AAF0B31B47AF23D
+25DBA00422301EDC	  20.0	   4.0	s=1	diamond 	OK 	4M Storage Component                    	megacells:cell_component_4m x1	deps=460A8F17F3ED6CAF
+51A57E142C686C8F	  20.5	   3.5	s=1	diamond 	OK 	256M Storage Component                  	megacells:cell_component_256m x1	deps=3CE3D9245F8EC005
+0E809747193ED3A9	  20.5	   4.5	s=1	diamond 	OK 	16M Storage Component                   	megacells:cell_component_16m x1	deps=25DBA00422301EDC
+18DFB25DC48D8BF7	  20.5	   6.5	s=1	        	OK 	                                        	ae2:spatial_pylon x1	deps=01F3F0C25BA72BDA
+3CE3D9245F8EC005	  21.0	   4.0	s=1	diamond 	OK 	64M Storage Component                   	megacells:cell_component_64m x1	deps=0E809747193ED3A9
+2897FA291E5A38D8	  21.5	   5.5	s=1	        	OK 	                                        	ae2:spatial_anchor x1	deps=18DFB25DC48D8BF7
+140DE53DC0FCD9F4	  22.5	  -1.5	s=1	rsquare 	OK 	                                        	ae2:annihilation_plane x1	deps=5E7E35CCAF1C88EE
+5E7E35CCAF1C88EE	  22.5	   0.5	s=1	rsquare 	OK 	                                        	ae2:import_bus x1	deps=74FC0DDDB91DB172
+371A382CF1DDF2B2	  23.5	  -2.5	s=1	circle  	OK 	                                        	ae2:capacity_card x1	deps=7EFBAF3E281D2EBE
+7EFBAF3E281D2EBE	  23.5	  -0.5	s=1	rsquare 	OK 	                                        	ae2:storage_bus x1	deps=74FC0DDDB91DB172
+74FC0DDDB91DB172	  23.5	   1.5	s=1.5	gear    	OK 	The IO                                  	ftbfiltersystem:smart_filter x1	deps=5C22E3103544B120
+525F25F4ADE45B50	  24.5	  -1.5	s=1	rsquare 	OK 	                                        	ae2:formation_plane x1	deps=083D458032F0325C
+083D458032F0325C	  24.5	   0.5	s=1	rsquare 	OK 	                                        	ae2:export_bus x1	deps=74FC0DDDB91DB172
+2077D64428E9C067	  24.5	   2.5	s=1	rsquare 	OK 	Forgot to Mention                       	ae2:quartz_fiber x1	deps=74FC0DDDB91DB172
+6E15447FC3D678E0	  25.5	  -2.5	s=1	circle  	OK 	Loosely Speaking                        	ae2:fuzzy_card x1 | ae2:inverter_card x1	deps=371A382CF1DDF2B2
+55186B8602689B66	  25.5	   0.0	s=1	circle  	OK 	                                        	ae2:memory_card x1	deps=1710B3D05215A71E
+1710B3D05215A71E	  25.5	   1.5	s=1	rsquare 	OK 	P2P Tunnels                             	ae2:me_p2p_tunnel x1	deps=74FC0DDDB91DB172
+74 quests

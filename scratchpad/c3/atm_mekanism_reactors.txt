@@ -1,0 +1,249 @@
+#0   7B0764DDE94E73D0 x=   8.0 y=  -6.5 sz=1    hexagon  opt=1 deps=[#7] | Advanced Fail Safe
+        item x2: mekanismgenerators:fission_reactor_logic_adapter [quested]
+        item x1: minecraft:redstone [quested]
+        item x1: minecraft:redstone_torch [quested]
+        item x2: minecraft:repeater [quested]
+#1   066F78936C8F943B x=  13.5 y=   2.0 sz=1    circle   opt=1 deps=[] | 
+        checkmark x1: 
+        checkmark x1: 
+#2   71766BD7321FCB13 x=  11.5 y=  -2.0 sz=1.25 circle   opt=0 deps=[#3,#5] | Fissile Fuel
+        item x1: mekanism:chemical_infuser [quested]
+        item x1: mekanism:isotopic_centrifuge [quested]
+#3   302E9BC711779A4A x=  12.5 y=  -0.5 sz=1    square   opt=0 deps=[#4] | Preparing Uranium
+        item x1: mekanism:enrichment_chamber [quested]
+        item x1: mekanism:yellow_cake_uranium [quested]
+        item x1: mekanism:chemical_oxidizer [quested]
+#4   078B69E9362A5496 x=  11.5 y=   2.0 sz=3.0  gear     opt=0 deps=[] | Mekanism: Reactors
+        item x1: alltheores:sulfur [MISSING]
+        item x1: mekanism:chemical_oxidizer [quested]
+        item x1: mekanism:electrolytic_separator [quested]
+        item x1: mekanism:chemical_infuser [quested]
+#5   7D279FC39DA5C630 x=  10.5 y=  -0.5 sz=1    square   opt=0 deps=[#4] | Sulfur Trioxide into Hydrofluoric Acid
+        item x1: mekanism:rotary_condensentrator [quested]
+        item x1: mekanism:chemical_infuser [quested]
+        item x1: mekanism:chemical_dissolution_chamber [quested]
+        item x1: alltheores:fluorite [MISSING]
+#6   09D7D3CF61E156B1 x=  11.5 y=  -3.5 sz=1.25 pentagon opt=0 deps=[#2] | Fissile Fuel storage and usage
+        item x1: mekanismgenerators:fission_fuel_assembly [quested]
+        item x1: mekanismgenerators:control_rod_assembly [quested]
+#7   3D2B4D9FD2086B9B x=   9.5 y=  -7.0 sz=1.25 pentagon opt=0 deps=[] | Fission Reactor Logic Adapter
+        item x1: mekanismgenerators:fission_reactor_logic_adapter [quested]
+#8   5A088F8402230BA5 x=  13.5 y=  -7.0 sz=1.25 pentagon opt=0 deps=[] | Fission Reactor Port
+        item x2: mekanismgenerators:fission_reactor_port [quested]
+#9   7E3C84D7FCEC9D52 x=  11.5 y=  -7.0 sz=2.25 octagon  opt=0 deps=[#8,#7,#6] | Fission Reactor
+        item x29: mekanismgenerators:fission_reactor_casing [quested]
+        item x4: mekanismgenerators:fission_reactor_port [quested]
+        item x1: mekanismgenerators:fission_reactor_logic_adapter [quested]
+        item x1: mekanismgenerators:fission_fuel_assembly [quested]
+        item x1: mekanismgenerators:control_rod_assembly [quested]
+#10  5AEA705D6A64A982 x=   8.0 y=  -7.5 sz=1             opt=1 deps=[#7] | Clock Switch
+        item x1: minecraft:daylight_detector [quested]
+        item x1: minecraft:redstone [quested]
+#11  03840E4C74731E0C x=  15.0 y=  -6.5 sz=1             opt=0 deps=[#8] | Water Coolant
+        item x1: cookingforblockheads:sink [MISSING]
+#12  17E2C05C48B03043 x=  15.0 y=  -7.5 sz=1.0           opt=1 deps=[#8] | Sodium Coolant
+        item x33: mekanism:thermal_evaporation_block [quested]
+        item x1: mekanism:thermal_evaporation_controller [quested]
+        item x1: mekanism:thermal_evaporation_valve [quested]
+        item x1: mekanism:electrolytic_separator [quested]
+#13  593CB120B657126C x=  12.5 y=  -9.0 sz=1.25 circle   opt=0 deps=[#9] | Radioactivity
+        item x1: mekanism:radioactive_waste_barrel [quested]
+#14  7B385FD1CBE02C85 x=  10.5 y=  -9.0 sz=1.25 circle   opt=0 deps=[#9] | Steam
+        item x1: mekanism:basic_chemical_tank [quested]
+#15  67A9329C05F98633 x=   9.0 y=  -9.0 sz=1             opt=1 deps=[#14] | Toss it!
+        item x1: trashcans:ultimate_trash_can [MISSING]
+#16  5194A067BEA98E79 x=  10.5 y= -10.5 sz=1             opt=0 deps=[#13] | Spinning for Plutonium
+        item x1: mekanism:isotopic_centrifuge [quested]
+#17  20054D077AFE3F56 x=  10.5 y= -12.5 sz=1.75 diamond  opt=0 deps=[#16] | Plutonium Pellets
+        item x1: mekanism:pellet_plutonium [quested]
+#18  438F734D16DA9638 x=  12.5 y= -12.5 sz=1.75 diamond  opt=0 deps=[#42] | Polonium Pellets
+        item x1: mekanism:pellet_polonium [quested]
+#19  4E18E28BDF6B7983 x=  18.5 y= -16.0 sz=1.1  pentagon opt=0 deps=[#18] | Fusion Reactor Ports
+        item x1: mekanismgenerators:fusion_reactor_port [quested]
+#20  5B18676A77CD6069 x=  15.5 y=  -0.5 sz=1.5  octagon  opt=1 deps=[] | Quantum Item Orchestration
+        item x1: mekanism:qio_drive_array [quested]
+#21  011D8CADA29C9C70 x=  14.5 y=  -2.0 sz=1             opt=1 deps=[#20] | QIO Drives
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:qio_drive_base [quested], mekanism:qio_drive_hyper_dense [quested], mekanism:qio_drive_time_dilating, mekanism:qio_drive_supermassive
+#22  53E929BF89209CFC x=  16.5 y=  -2.0 sz=1             opt=1 deps=[#20] | Import and Export
+        item x1: mekanism:qio_exporter [quested]
+        item x1: mekanism:qio_importer [quested]
+#23  7310BBC4A90EDA9D x=  15.5 y=  -3.0 sz=1             opt=1 deps=[#44] | Portable QIO Dashboard
+        item x1: mekanism:portable_qio_dashboard [quested]
+#24  6A1174845810C7A1 x=   7.5 y= -19.0 sz=1             opt=0 deps=[] | Modification Station
+        item x1: mekanism:modification_station [quested]
+#25  7864C8F2CBC910CB x=   9.0 y= -20.5 sz=1    rsquare  opt=0 deps=[#29] | MekaSuit Helmet
+        item x1: mekanism:mekasuit_helmet [quested]
+#26  6C1F7A0B330B3F42 x=   9.0 y= -19.5 sz=1    rsquare  opt=0 deps=[#29] | MekaSuit Bodyarmor
+        item x1: mekanism:mekasuit_bodyarmor [quested]
+#27  56DB53F255100136 x=   9.0 y= -18.5 sz=1    rsquare  opt=0 deps=[#29] | MekaSuit Pants
+        item x1: mekanism:mekasuit_pants [quested]
+#28  6D7D0A5313284B53 x=   9.0 y= -17.5 sz=1    rsquare  opt=0 deps=[#29] | MekaSuit Boots
+        item x1: mekanism:mekasuit_boots [quested]
+#29  50F23B2688D7E699 x=  11.5 y= -20.0 sz=1.75 diamond  opt=0 deps=[#41] | 
+        item x1: mekanism:pellet_antimatter [quested]
+#30  4B2835706B593E9A x=  11.5 y= -21.5 sz=1             opt=0 deps=[#29] | Antiprotonic Nucleosynethesizer
+        item x1: mekanism:antiprotonic_nucleosynthesizer [quested]
+#31  3B936CA3F0F7B26B x=  13.0 y=  -3.0 sz=1             opt=1 deps=[#34] | Digital Miner
+        item x1: mekanism:digital_miner [quested]
+#32  16DDAE318535D0F9 x=  10.0 y=  -2.0 sz=1    rsquare  opt=0 deps=[] | Atomic Dissambler
+        item x1: mekanism:atomic_disassembler [quested]
+#33  14385D3D359224BC x=  10.0 y=  -3.0 sz=1    rsquare  opt=0 deps=[#32] | Meka-Tool
+        item x1: mekanism:meka_tool [quested]
+#34  05DA7F48E2A1B77F x=  13.0 y=  -2.0 sz=1    circle   opt=1 deps=[] | Robit
+        item x1: mekanism:robit [quested]
+#35  55702BE0151D33FE x=   7.5 y=   0.0 sz=1    pentagon opt=0 deps=[] | Induction Ports
+        item x1: mekanism:induction_port [quested]
+#36  298A7BED5C2C7582 x=   6.5 y=  -1.0 sz=1    pentagon opt=0 deps=[] | Induction Cells
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_induction_cell [quested], mekanism:advanced_induction_cell [quested], mekanism:elite_induction_cell [quested], mekanism:ultimate_induction_cell [quested]
+#37  6B3BD54A34EB02C2 x=   8.5 y=  -1.0 sz=1    pentagon opt=0 deps=[] | Induction Providers
+        item x1: ftbfiltersystem:filter [MISSING], mekanism:basic_induction_provider [quested], mekanism:advanced_induction_provider [quested], mekanism:elite_induction_provider [quested], mekanism:ultimate_induction_provider [quested]
+#38  54E0B946BAC13654 x=   7.5 y=  -3.0 sz=1.5  octagon  opt=0 deps=[#35,#37,#36] | Energized Induction Matrix
+        item x32: mekanism:induction_casing [quested]
+        item x2: mekanism:induction_port [quested]
+#39  7846B7FFC3DD85C5 x=  10.5 y= -16.5 sz=1.25 pentagon opt=0 deps=[#18,#17] | SPS Ports
+        item x1: mekanism:sps_port [quested]
+#40  3CCBE9BBCA8ADA38 x=  12.5 y= -16.5 sz=1.25 pentagon opt=0 deps=[#18] | Supercharged Coils
+        item x1: mekanism:supercharged_coil [quested]
+#41  008E65AF545A706E x=  11.5 y= -18.0 sz=2.25 octagon  opt=0 deps=[#39,#40] | Super-Critical Phase Shifter
+        item x60: mekanism:sps_casing [quested]
+        item x64: mekanism:structural_glass [quested]
+        item x58: mekanism:structural_glass [quested]
+        item x4: mekanism:sps_port [quested]
+        item x2: mekanism:supercharged_coil [quested]
+#42  4BAF44FCA0894DE8 x=  12.5 y= -10.5 sz=1             opt=0 deps=[#13] | Using the Sun to make Polonium
+        item x1: mekanism:solar_neutron_activator [quested]
+#43  2DC4446A644A4079 x=  14.0 y=  -9.0 sz=1    rsquare  opt=1 deps=[#13] | Hazmat Suit
+        item x1: mekanism:hazmat_mask [quested]
+        item x1: mekanism:hazmat_gown [quested]
+        item x1: mekanism:hazmat_pants [quested]
+        item x1: mekanism:hazmat_boots [quested]
+#44  13A5748DF69D832E x=  15.5 y=  -2.0 sz=1    pentagon opt=1 deps=[#20] | QIO Dashboard
+        item x1: mekanism:qio_dashboard [quested]
+#45  0306D25C7407FE88 x=  20.0 y= -17.5 sz=1.1  pentagon opt=0 deps=[#46] | Laser Focus Matrix
+        item x1: mekanismgenerators:laser_focus_matrix [quested]
+#46  1C87535D3CDCDA5F x=  21.5 y= -17.0 sz=1             opt=0 deps=[#47] | Laser Amplifying
+        item x1: mekanism:laser_amplifier [quested]
+#47  4926C95DD02F1410 x=  21.5 y= -18.0 sz=1             opt=0 deps=[] | Lasers
+        item x1: mekanism:laser [quested]
+#48  40E8940C92668D4F x=  15.5 y= -18.0 sz=1             opt=0 deps=[] | Deuterium
+        item x1: mekanism:electric_pump [quested]
+        item x1: mekanism:upgrade_filter [quested]
+        item x1: mekanism:electrolytic_separator [quested]
+#49  369DADE3B3D8416F x=  15.5 y= -17.0 sz=1.0           opt=0 deps=[] | Tritium
+        item x33: mekanism:thermal_evaporation_block [quested]
+        item x1: mekanism:thermal_evaporation_controller [quested]
+        item x1: mekanism:thermal_evaporation_valve [quested]
+        item x1: mekanism:rotary_condensentrator [quested]
+        item x1: mekanism:solar_neutron_activator [quested]
+#50  7177653B736AB10E x=  17.0 y= -17.5 sz=1.1  pentagon opt=0 deps=[#49,#48] | D-T Fuel
+        item x1: mekanism:chemical_infuser [quested]
+        item x1: mekanismgenerators:fusion_fuel
+#51  3561A33758A1E8C3 x=  18.5 y= -17.5 sz=1.75 octagon  opt=0 deps=[#45,#50,#19] | Fusion Reactor
+        item x1: mekanismgenerators:fusion_reactor_controller [quested]
+        item x1: mekanismgenerators:laser_focus_matrix [quested]
+        item x36: mekanismgenerators:fusion_reactor_frame [quested]
+        item x25: mekanismgenerators:reactor_glass [quested]
+        item x3: mekanismgenerators:fusion_reactor_port [quested]
+#52  3E5BE6D6422F682C x=   7.0 y= -11.5 sz=1    pentagon opt=0 deps=[#14] | Turbine Inputs and Outputs
+        item x2: mekanismgenerators:turbine_valve [quested]
+        item x1: mekanismgenerators:turbine_vent [quested]
+#53  4211F29561F21643 x=   8.0 y= -12.5 sz=1    pentagon opt=0 deps=[#14] | Moving parts
+        item x2: mekanismgenerators:turbine_rotor [quested]
+        item x4: mekanismgenerators:turbine_blade [quested]
+        item x1: mekanismgenerators:rotational_complex [quested]
+#54  02C6132919DEAF2A x=   7.0 y= -13.5 sz=1    pentagon opt=0 deps=[#14] | Making Energy with a Turbine
+        item x1: mekanism:pressure_disperser [quested]
+        item x1: mekanismgenerators:electromagnetic_coil [quested]
+        item x1: mekanismgenerators:saturating_condenser [quested]
+#55  6CCE920735187234 x=   5.5 y= -12.5 sz=1.5  octagon  opt=0 deps=[#53,#54,#52] | Turbine
+        item x52: mekanismgenerators:turbine_casing [quested]
+        item x64: mekanism:structural_glass [quested]
+        item x2: mekanismgenerators:turbine_valve [quested]
+        item x2: mekanismgenerators:turbine_rotor [quested]
+        item x4: mekanismgenerators:turbine_blade [quested]
+        item x1: mekanismgenerators:rotational_complex [quested]
+        item x8: mekanism:pressure_disperser [quested]
+        item x9: mekanismgenerators:electromagnetic_coil [quested]
+        item x9: mekanismgenerators:saturating_condenser [quested]
+        item x12: mekanismgenerators:turbine_vent [quested]
+#56  6B7E13AB3BF2C5C8 x=  16.5 y= -12.5 sz=1.5  octagon  opt=1 deps=[#57,#58] | Thermoelectric Boiler
+        item x24: mekanism:boiler_casing [quested]
+        item x6: mekanism:structural_glass [quested]
+        item x4: mekanism:boiler_valve [quested]
+        item x1: mekanism:pressure_disperser [quested]
+        item x1: mekanism:superheating_element [quested]
+#57  141D68BAD039784B x=  15.0 y= -13.0 sz=1    pentagon opt=1 deps=[#12] | Boiler Ports
+        item x4: mekanism:boiler_valve [quested]
+#58  5B9F3F32AB28A83A x=  15.0 y= -12.0 sz=1    pentagon opt=1 deps=[] | The Thermo part of the Thermoelectric Boiler
+        item x1: mekanism:superheating_element [quested]
+        item x1: mekanism:pressure_disperser [quested]
+#59  5AC68C8A4024F4C9 x=   6.0 y= -22.0 sz=1    none     opt=0 deps=[#24] | Energy Unit
+        item x1: mekanism:module_energy_unit
+#60  4869D9DBDD1A15CD x=   6.0 y= -21.0 sz=1    none     opt=0 deps=[#24] | Color Modulation Unit
+        item x1: mekanism:module_color_modulation_unit
+#61  4447EEEB8D762721 x=   5.0 y= -21.0 sz=1    none     opt=0 deps=[#24] | Laser Dissipation Unit
+        item x1: mekanism:module_laser_dissipation_unit
+#62  35D9CD19EAADED6C x=   4.0 y= -21.0 sz=1    none     opt=0 deps=[#24] | Radiation Shielding Unit
+        item x1: mekanism:module_radiation_shielding_unit
+#63  0F97EFAFD6E68F8D x=   6.0 y= -16.0 sz=1    none     opt=0 deps=[#24] | Excavation Escalation Unit
+        item x1: mekanism:module_excavation_escalation_unit
+#64  3526D444F81AD6D9 x=   5.0 y= -16.0 sz=1    none     opt=0 deps=[#24] | Attack Amplification Unit
+        item x1: mekanism:module_attack_amplification_unit
+#65  6518480251F0565A x=   4.0 y= -16.0 sz=1    none     opt=0 deps=[#24] | Farming Unit
+        item x1: mekanism:module_farming_unit
+#66  00E19377BAE5DD6A x=   3.0 y= -16.0 sz=1    none     opt=1 deps=[#24] | Shearing Unit
+        item x1: mekanism:module_shearing_unit
+#67  7ECE00D12CFC50A4 x=   2.0 y= -16.0 sz=1    none     opt=1 deps=[#24] | Silk Touch Unit
+        item x1: mekanism:module_silk_touch_unit
+#68  40B24676E11D9410 x=   1.0 y= -16.0 sz=1    none     opt=1 deps=[#24] | Ore Refinement Unit
+        item x1: mekanism:module_fortune_unit
+#69  52B3955A80DB0B4A x=   0.0 y= -16.0 sz=1    none     opt=1 deps=[#24] | Blasting Unit
+        item x1: mekanism:module_blasting_unit
+#70  77B6A7151B3E5980 x=  -1.0 y= -16.0 sz=1    none     opt=1 deps=[#24] | Vein Mining Unit
+        item x1: mekanism:module_vein_mining_unit
+#71  18EB2170CAC48E99 x=  -2.0 y= -16.0 sz=1    none     opt=1 deps=[#24] | Teleportation Unit
+        item x1: mekanism:module_teleportation_unit
+#72  0133DA323E24A455 x=   6.0 y= -20.0 sz=1    none     opt=0 deps=[#24] | Electrolytic Breathing Unit
+        item x1: mekanism:module_electrolytic_breathing_unit
+#73  27195E9A3482C158 x=   5.0 y= -20.0 sz=1    none     opt=0 deps=[#24] | Inhalation Purification Unit
+        item x1: mekanism:module_inhalation_purification_unit
+#74  459AEC4C2A611824 x=   4.0 y= -20.0 sz=1    none     opt=0 deps=[#24] | Vision Enhancement Unit
+        item x1: mekanism:module_vision_enhancement_unit
+#75  63B0E39CA4B25A7E x=   3.0 y= -20.0 sz=1    none     opt=0 deps=[#24] | Nutritional Injection Unit
+        item x1: mekanism:module_nutritional_injection_unit
+#76  43DB0CFC5F5B0967 x=   6.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Dosimeter Unit
+        item x1: mekanism:module_dosimeter_unit
+#77  24E800EEC2CAD626 x=   5.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Geiger Unit
+        item x1: mekanism:module_geiger_unit
+#78  58B5EF8EB72934C2 x=   2.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Jetpack Unit
+        item x1: mekanism:module_jetpack_unit
+#79  22171982D22CE15F x=   4.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Charge Distribution Units
+        item x1: mekanism:module_charge_distribution_unit
+#80  7C7BD54624ED9AC2 x=   1.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Gravitational Modulating Unit
+        item x1: mekanism:module_gravitational_modulating_unit
+#81  32ABE5D734703B9C x=   3.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Elytra Unit
+        item x1: mekanism:module_elytra_unit
+#82  2747AEE1F7F97848 x=   6.0 y= -18.0 sz=1    none     opt=0 deps=[#24] | Locomotive Boosting Unit
+        item x1: mekanism:module_locomotive_boosting_unit
+#83  23B68F19A04AF5D7 x=   5.0 y= -18.0 sz=1    none     opt=0 deps=[#24] | Gyroscopic Stabilization Unit
+        item x1: mekanism:module_gyroscopic_stabilization_unit
+#84  4F9C8D90ACF563F5 x=   4.0 y= -18.0 sz=1    none     opt=0 deps=[#24] | Hydrostatic Repulsor Unit
+        item x1: mekanism:module_hydrostatic_repulsor_unit
+#85  1FC88A3BFCE6C9D7 x=   3.0 y= -18.0 sz=1    none     opt=0 deps=[#24] | Motorized Servo Unit
+        item x1: mekanism:module_motorized_servo_unit
+#86  0EBE20E44A7AEC7E x=   6.0 y= -17.0 sz=1    none     opt=0 deps=[#24] | Hydraulic Propulsion Unit
+        item x1: mekanism:module_hydraulic_propulsion_unit
+#87  48F496BD0FFE5A34 x=   5.0 y= -17.0 sz=1    none     opt=0 deps=[#24] | Magnetic Attraction Unit
+        item x1: mekanism:module_magnetic_attraction_unit
+#88  795B80BF12D23897 x=   4.0 y= -17.0 sz=1    none     opt=0 deps=[#24] | Frost Walker Unit
+        item x1: mekanism:module_frost_walker_unit
+#89  5CE7756D80E051CC x=   3.0 y= -17.0 sz=1    none     opt=0 deps=[#24] | Soul Surfer Unit
+        item x1: mekanism:module_soul_surfer_unit
+#90  5A4C9F7F81D6B9DB x=   0.0 y= -19.0 sz=1    none     opt=0 deps=[#24] | Gravitational Modulating Additional Unit
+        item x1: gmut:module_gravitational_modulating_additional_unit [MISSING]
+#91  62B29AEF8468750E x=   2.0 y= -18.0 sz=1    none     opt=0 deps=[#24] | Geothermal Generator Unit
+        item x1: mekanismgenerators:module_geothermal_generator_unit
+#92  123C0417D85B9DB2 x=   2.0 y= -20.0 sz=1    none     opt=0 deps=[#24] | Solar Recharging Unit
+        item x1: mekanismgenerators:module_solar_recharging_unit
+#93  505799C894C771B2 x=  16.5 y= -21.5 sz=1             opt=1 deps=[] | Upgraded, Un-Upgradable Machines
+        checkmark x1: 

@@ -1,7 +1,7 @@
 {
 	id: "58F2F526022035F5"
 	group: "71F0A542B0668E9D"
-	order_index: 4
+	order_index: 7
 	filename: "qol"
 	icon: {
 		id: "akashictome:tome"
@@ -2486,6 +2486,10 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "pylons:harvester_pylon"
+				count: 1
+			}
 			dependencies: [
 				"2EE32733B83E0FCA"
 				"1449CF00D49726FD"
@@ -2493,27 +2497,7 @@
 			tasks: [
 				{
 					id: "67862F0768F8FCE0"
-					type: "item"
-					item: {
-						id: "pylons:harvester_pylon"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7AB46B2923257537"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "0DD4688785851582"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}
@@ -2524,6 +2508,10 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "pylons:interdiction_pylon"
+				count: 1
+			}
 			dependencies: [
 				"2EE32733B83E0FCA"
 				"5162E347921E0863"
@@ -2531,39 +2519,7 @@
 			tasks: [
 				{
 					id: "74C787479E781877"
-					type: "item"
-					item: {
-						id: "pylons:interdiction_pylon"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2156040FA42C40AE"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(pylons:mob_filter)item(pylons:lifeless_filter))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4938345EDC88E1BF"
-					type: "xp"
-					xp: 80
-				}
-				{
-					id: "76F5174BAD398551"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}
@@ -2574,6 +2530,10 @@
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "pylons:protection_pylon"
+				count: 1
+			}
 			dependencies: [
 				"2EE32733B83E0FCA"
 				"24582FFEF0C9CA48"
@@ -2581,48 +2541,7 @@
 			tasks: [
 				{
 					id: "2966AAD06478F705"
-					type: "item"
-					item: {
-						id: "pylons:protection_pylon"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "04B9929B7BAC8C01"
-					type: "item"
-					item: {
-						id: "pylons:expulsion_pylon"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "7DFA24F4EC8BE2A9"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(pylons:player_filter)item(pylons:block_filter))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "389F2AE263F7CB37"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "006B535DCD3793C7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}

@@ -1,0 +1,48 @@
+from questlib import Q, Chapter, item, dim, tick, structure, anyof, MAIN, SIDE  # noqa: F401
+
+MC = "minecraft:"
+MT = "mekanismtools:"
+MI = "modern_industrialization:"
+MA = "mysticalagriculture:"
+TF = "twilightforest:"
+UG = "undergarden:"
+ATM = "allthemodium:"
+# ATM10 mirror (2026-10-20, user decision): this page follows ATM10's "basic_armor" chapter quest for quest where we
+# have the mod: a row of armour sets, the smithing table as the hub, armour trims and the trim materials. Its item
+# list, order and shape only; every word is ours. The harvest-tier line (hv_intro ... hv_all) stays as side content.
+SETS, TRIMS, MATS = "Armour Sets", "Armour Trims", "Trim Materials"
+
+
+def vset(metal, ns=MC):
+    return [item(f"{ns}{metal}_{p}") for p in ("helmet", "chestplate", "leggings", "boots")]
+
+
+def aset(key, ids, title, subtitle, what, how, mirror, xp=30, optional=True, size=None, tip=None):
+    """A full armour set (four pieces)."""
+    desc = ["&eWhat:&r " + what, "&eHow:&r " + how]
+    if tip:
+        desc.append("&eTip:&r " + tip)
+    else:
+        desc.append("&eTip:&r a full set beats mixed pieces only when the set has a bonus; check the tooltips.")
+    return Q(key, 0, 0, [item(i) for i in ids], title, deps=[], xp=xp, optional=optional, size=size,
+             subtitle=("Optional: " if optional else "") + subtitle, section=SETS, mirror=mirror, desc=desc)
+
+
+def trim(key, name, where, mirror):
+    """One armour trim smithing template (found, then copied)."""
+    return Q(key, 0, 0, [item(f"{MC}{name}_armor_trim_smithing_template")], name.capitalize() + " Trim", deps=[], xp=25,
+             optional=True, subtitle="Optional: found in " + where, section=TRIMS, mirror=mirror, desc=[
+                 f"&eWhat:&r a template that paints the {name} pattern onto any armour piece at a smithing table.",
+                 f"&eHow:&r loot it from {where}. Once you have one, 7 diamonds and the template's base block copy it (check JEI).",
+                 "&eTip:&r the pattern's colour comes from the material you add: any of the Trim Materials on this page."])
+
+
+def mat(key, id_, title, chem, mirror, optional=False, xp=10):
+    """A trim material: an ingot, gem or crystal that colours a trim."""
+    return Q(key, 0, 0, [item(id_)], title, deps=[], xp=xp, optional=optional,
+             subtitle=("Optional: " if optional else "") + "a trim colour", section=MATS, mirror=mirror, desc=[
+                 "&eWhat:&r a material for the collection. Vanilla ingots and gems colour armour trims; some modded ones do too (try it at a smithing table).",
+                 "&eChemistry:&r " + chem,
+                 "&eHow:&r keep one in your inventory. At a smithing table: trim template + armour piece + material."])
+
+

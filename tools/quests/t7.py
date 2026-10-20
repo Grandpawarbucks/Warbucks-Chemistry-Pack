@@ -49,11 +49,7 @@ CHAPTER = Chapter("t7", "VIII. Beyond the Sky", "ad_astra:tier_1_rocket",
         "&eWhat:&r desh is Ad Astra's lunar metal, needed for the Tier 2 rocket and oxygen equipment.",
         "&eHow:&r mine desh ore on the Moon, smelt it, and press the ingots into plates in Ad Astra's Compressor.",
         "&eTip:&r the Moon also has cheese ore. Really."]),
-    Q("t7_distributor", 10, -2, [item(AA + "oxygen_distributor")], "A Breathable Room", deps=["t7_desh"], xp=200,
-      optional=True, tokens=1, subtitle="Optional: bring an atmosphere with you", desc=[
-        "&eWhat:&r the Oxygen Distributor fills a sealed room with air, so you can take off your helmet.",
-        "&eHow:&r built from an Oxygen Loader, a large gas tank, fans, an oxygen gear and desh plates. Feed it oxygen and power.",
-        "&eTip:&r any gap in the walls lets the air out. Seal the room completely, doors included."]),
+    Q("t7_distributor", 10, -2, [tick()], "A Breathable Room", deps=['t7_desh'], optional=True, tokens=0, xp=0, icon="ad_astra:oxygen_distributor", subtitle="Moved: see Breathable Bases", desc=["&eMoved:&r this step is now \"Breathable Bases\" on the Space page. Click to dismiss."]),
     # ---------------------------------------------------------------- antimatter
     Q("t7_sps", 8, 2, [item(MEK + "sps_port", 2), item(MEK + "supercharged_coil")], "Supercritical Phase Shifter", deps=["t7_sps_casing", "t7_laser", "t6_ult_circuit"], section="Antimatter", xp=300,
       subtitle="A multiblock that turns polonium into antimatter", desc=[
@@ -91,11 +87,7 @@ CHAPTER = Chapter("t7", "VIII. Beyond the Sky", "ad_astra:tier_1_rocket",
         "&eTip:&r the Seed needs eight. Start a production line, not a one-off."]),
     # The Seed's checklist, the Seed itself and t7_creation moved to tools/quests/seed.py and creation.py.
     # ---------------------------------------------------------------- optional side quests
-    Q("t7_opt_cheese", 6, -4, [item(AA + "cheese")], "Made of Cheese", deps=["t7_rocket"], xp=50,
-      optional=True, tokens=1, subtitle="Optional: test an old rumour", desc=[
-        "&eWhat:&r the old rumour is partly true: the Moon has cheese ore.",
-        "&eHow:&r mine moon cheese ore and smelt it (or macerate it in MI).",
-        "&eTip:&r it's food. Lunar picnic, anyone?"]),
+    Q("t7_opt_cheese", 6, -4, [tick()], "Made of Cheese", deps=['t7_rocket'], optional=True, tokens=0, xp=0, icon="ad_astra:cheese", subtitle="Moved: see The Moon Is Cheese", desc=["&eMoved:&r this step is now \"The Moon Is Cheese\" on the Space page. Click to dismiss."]),
     Q("t7_opt_orbit", 8, -4, [dim(AA + "earth_orbit")], "Low Earth Orbit", deps=["t7_rocket"], xp=150,
       optional=True, tokens=1, subtitle="Optional: look down on home", desc=[
         "&eWhat:&r every planet has an orbit dimension above it, a good place for a space station.",
@@ -115,11 +107,7 @@ CHAPTER = Chapter("t7", "VIII. Beyond the Sky", "ad_astra:tier_1_rocket",
         "&eWhat:&r Glacio orbits another star and needs a Tier 4 rocket built from calorite.",
         "&eHow:&r calorite comes from Venus. The tanks, engine and blocks are all calorite (check JEI).",
         "&eTip:&r it's the only planet outside our solar system. Take a look at the sky."]),
-    Q("t7_opt_nucleo", 12, 3, [item(MEK + "antiprotonic_nucleosynthesizer")], "Antiprotonic Nucleosynthesizer", deps=["t7_antimatter"], xp=300,
-      optional=True, tokens=2, subtitle="Optional: transmute items with antimatter", desc=[
-        "&eWhat:&r Mekanism's late-game machine uses antimatter to rebuild one item into another.",
-        "&eHow:&r check JEI for the recipe and for what it can transmute.",
-        "&eTip:&r it uses antimatter as fuel, so it needs your SPS running."]),
+    Q("t7_opt_nucleo", 12, 3, [tick()], "Antiprotonic Nucleosynthesizer", deps=['t7_antimatter'], optional=True, tokens=0, xp=0, icon="mekanism:antiprotonic_nucleosynthesizer", subtitle="Moved: see Antiprotonic Nucleosynthesizer", desc=["&eMoved:&r this step is now \"Antiprotonic Nucleosynthesizer\" on the Mekanism: Power page. Click to dismiss."]),
 
     # ---------------------------------------------------------------- the quantum circuit (ATM10-aligned, 2026-10-19)
     # Every Antimatter Core needs a quantum circuit, so this line is on the main path to the Seed.

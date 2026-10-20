@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "fairy_save": {
+      "conditions": {
+        "type": "fairy_save"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.fairy_save.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 14
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.fairy_save.title"
+    }
+  },
+  "requirements": [
+    [
+      "fairy_save"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

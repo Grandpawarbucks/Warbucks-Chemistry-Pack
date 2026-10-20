@@ -1,0 +1,4422 @@
+{
+	id: "67F72EF37ED32542"
+	group: "4045A6EE7751118B"
+	order_index: 2
+	filename: "undergarden"
+	icon: {
+		id: "undergarden:catalyst"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "4B8654A14E73CA89"
+			x: 2.0d
+			y: -9.0d
+			shape: "rsquare"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"6CD23CD722EC696F"
+			]
+			tasks: [
+				{
+					id: "5E204D1D2EE8716E"
+					type: "item"
+					item: {
+						id: "undergarden:catalyst"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "62F75AD965F3AD6C"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "60C560798ABA2EE5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "466973DC1AE6EE80"
+			x: 0.5d
+			y: -9.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			icon: {
+				id: "undergarden:depthrock"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "382CA0964F13A30A"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "410B1DDB5DF404BD"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "0DCB61271CC2913A"
+			x: 2.0d
+			y: -6.5d
+			shape: "gear"
+			size: 2.0d
+			hide_dependent_lines: true
+			dependencies: [
+				"4B8654A14E73CA89"
+			]
+			tasks: [
+				{
+					id: "4A507699BE967B4F"
+					type: "dimension"
+					dimension: "undergarden:undergarden"
+				}
+			]
+			rewards: [
+				{
+					id: "57880D5909E11B07"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "3CBBCFD5DB5245F3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "54EE1E70147EBAAF"
+			x: 14.0d
+			y: -0.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "36A9E22626D50CF2"
+					type: "structure"
+					structure: "undergarden:catacombs"
+				}
+			]
+			rewards: [
+				{
+					id: "1D5A13FCBDD15509"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "2F60F5D672878002"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6EE91742C889327C"
+			x: 12.0d
+			y: -0.5d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"54EE1E70147EBAAF"
+			]
+			tasks: [
+				{
+					id: "3751AB805EA5BF0D"
+					type: "kill"
+					entity: "undergarden:forgotten_guardian"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "55A0277F26C7443E"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "2FE6FA6BD6F1CDE8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+				{
+					id: "75B0A00110C7044D"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "47243C7EB987EF94"
+			x: -8.0d
+			y: -0.5d
+			shape: "hexagon"
+			size: 1.5d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "323C9F96A1249E53"
+					type: "structure"
+					structure: "undergarden:forgotten_vestige"
+				}
+			]
+			rewards: [
+				{
+					id: "0BF2F522E154C670"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "12A642E796BD1071"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "187A2B440E772903"
+			x: 10.0d
+			y: -0.5d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "1899EA165481534F"
+					type: "kill"
+					entity: "undergarden:forgotten"
+					value: 3L
+				}
+			]
+			rewards: [
+				{
+					id: "50064D086430C4CE"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "546647CD8C13CD75"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "798D3F52E58911BE"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "12FEECD2BF471C9F"
+			x: -2.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "411D4C379FB3CBFB"
+					type: "kill"
+					entity: "undergarden:forgotten_guardian"
+					value: 1L
+				}
+				{
+					id: "4AE628B7583E63B3"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "360FB94910D079D0"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "770C3322DD363816"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6CFE58493658BF8A"
+			x: 6.0d
+			y: -0.5d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "63800700DC15A9F5"
+					type: "kill"
+					entity: "undergarden:rotbelcher"
+					value: 1L
+				}
+				{
+					id: "0750E41E70F08DC9"
+					type: "item"
+					item: {
+						id: "undergarden:utheric_shard"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "7A93DFE3BC639A0E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "152F69360B008552"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "328840FFF2CE9824"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4803EAF3D5701D4D"
+			x: 3.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "2A6E24AFCA74855A"
+					type: "kill"
+					entity: "undergarden:brute"
+					value: 1L
+				}
+				{
+					id: "02BD0F41EED0CF73"
+					type: "item"
+					item: {
+						id: "undergarden:brute_tusk"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "190DE4E6CFBAF362"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "732F9AE2CEB30137"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "16670EFA5BCA9F78"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "16698236D54811EB"
+			x: 3.5d
+			y: 1.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "2FA53B2C293CC0B4"
+					type: "kill"
+					entity: "undergarden:denizen"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "76758F47241DF1A6"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "188B393CE84C47C1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "2F22ECE8333C2171"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "4B11A4B67E7AA6C4"
+			x: -2.5d
+			y: 1.0d
+			shape: "diamond"
+			size: 1.4d
+			optional: true
+			invisible: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "22D579222C32490C"
+					type: "kill"
+					entity: "undergarden:scintling"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4936BB3C575DB237"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "1AB4AC9EA6DAFD2F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "0BBDC30A87035FD0"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "6754BD7E202E93CC"
+			x: 7.0d
+			y: 1.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "6CB346F659801D6E"
+					type: "kill"
+					entity: "undergarden:rotling"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2257F77A55A2BE55"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "6BA5850144C9D210"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7A37CA47D851E32C"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "41987E0B715B90A7"
+			x: 9.0d
+			y: 1.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "1685CDFDBB422AC2"
+					type: "kill"
+					entity: "undergarden:rotwalker"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "731F7319AA0FBFAC"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "539953833C6FB615"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7AD59E9A65B4D779"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "0FF58F41E581D028"
+			x: 11.0d
+			y: 1.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4C297154624B8771"
+					type: "kill"
+					entity: "undergarden:rotbeast"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "488D90ED23AB6C1D"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "0595D565C64243CD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "36A456499DD8BBAB"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "18957F976A1CA6F9"
+			x: 11.0d
+			y: -2.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "124DA7BB6F3F4E74"
+					type: "kill"
+					entity: "undergarden:muncher"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "34A62FEF8CA37834"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "6E5F18ACF65DABF5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "5728BC7871A04152"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "3599BAE4901D9015"
+			x: 0.5d
+			y: 1.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "72AACB67F657EAF2"
+					type: "kill"
+					entity: "undergarden:stoneborn"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "08A35BBF8BC6C28C"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "46D16A2900EC3731"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "53EB3B66BBB9BAA2"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "53D4334E2E9F6FC2"
+			x: 0.5d
+			y: -2.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "3658DAC075943DF4"
+					type: "kill"
+					entity: "undergarden:gloomper"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "49580F47C22E472D"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "41716F9424FB5B44"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "632980878FEAFA40"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "139D0D60FD3E2CD4"
+			x: 9.0d
+			y: -2.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "53ACB58367E01D58"
+					type: "kill"
+					entity: "undergarden:nargoyle"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0E30739EEF8C03BF"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "284E94867C989F01"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "7A1D51416109DC46"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "1A21BC2B18194609"
+			x: 7.0d
+			y: -2.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "677DE3FA32231A93"
+					type: "kill"
+					entity: "undergarden:sploogie"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5FFD5E19882DF79D"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "3A4DB4799AC51C63"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6BF495146F3F311D"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "3FF281BDE570BB44"
+			x: -6.5d
+			y: -2.0d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "168F770539FDC25A"
+					type: "kill"
+					entity: "undergarden:gwibling"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "753210B75225316C"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4E60F0753C03AD07"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "73FD250AA131A224"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "09D2588D0AB19C1E"
+			x: 8.0d
+			y: -0.5d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "3D65EE63947CA7B9"
+					type: "kill"
+					entity: "undergarden:gwib"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0AB3C9CBB162F475"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "7E646AEA91A58FD8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "555C18FA203CE418"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "7DC57E79F3783BE3"
+			x: -4.5d
+			y: 1.0d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "65AB917108831494"
+					type: "kill"
+					entity: "undergarden:mog"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6B18EA9EA6570C91"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "4335DD1DDD5FD388"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "18F2C0F6AB5038E1"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "5619833F8C233623"
+			x: -6.5d
+			y: 1.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "6C141FEECFA6C52A"
+					type: "kill"
+					entity: "undergarden:smog_mog"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C27760AD40910AD"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "5792A17FF8F3DBD0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1B049E4A9CB755C7"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "209C4E5A82AF08C8"
+			x: -4.5d
+			y: -2.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "003EBA84D26B67B3"
+					type: "kill"
+					entity: "undergarden:dweller"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "46E152308B6FD97E"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "467C86E259C0893F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1F8764D453FBC799"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "0E3DD7EB4DF44B51"
+			x: 2.0d
+			y: -0.5d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "7E6866FA40D4BB93"
+					type: "kill"
+					entity: "undergarden:greater_dweller"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4C000D5A4D302C4F"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "7FC31CB693BC8E27"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "781394BB9322247F"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "19F5BD5BA989B58C"
+			x: -5.5d
+			y: -0.5d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			dependencies: [
+				"47243C7EB987EF94"
+			]
+			tasks: [
+				{
+					id: "1A6FFF1D462C3E5D"
+					type: "kill"
+					entity: "undergarden:mysterious_pot"
+					value: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "20A140AB7FA056F8"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "5F12B62749040983"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "24B06A4B3849408C"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "2F458255EBD570FD"
+			x: -3.5d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "5446236F2536DAF8"
+					type: "biome"
+					biome: "undergarden:blood_mushroom_bog"
+				}
+			]
+			rewards: [
+				{
+					id: "6097FB0E0DBE6365"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "01235D4AADC4AC1A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "60F7318695B23F85"
+			x: -4.0d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "30E340BF08824172"
+					type: "biome"
+					biome: "undergarden:forgotten_field"
+				}
+			]
+			rewards: [
+				{
+					id: "4A5FEB70FDF0EDC0"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "652B5B0259675E79"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "46300C88FE52E77A"
+			x: -1.5d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"765D740D175B0667"
+			]
+			tasks: [
+				{
+					id: "22B808FF090E628D"
+					type: "biome"
+					biome: "undergarden:depths"
+				}
+			]
+			rewards: [
+				{
+					id: "155675DA83AFA4C7"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "35D9A6B1237C0612"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "08266B87FE9CAA72"
+			x: -5.5d
+			y: -6.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4C6906795D0A26CC"
+					type: "biome"
+					biome: "undergarden:gronglegrowth"
+				}
+			]
+			rewards: [
+				{
+					id: "1C2E84B83C88E26F"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6D5449A06D80577C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "20DAA9D3EE230F07"
+			x: -5.5d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "0858FBEAECB6B4DD"
+					type: "biome"
+					biome: "undergarden:ancient_sea"
+				}
+			]
+			rewards: [
+				{
+					id: "1A386A35270A13C3"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "208052986DF12C41"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "78C842B606B77A6A"
+			x: -2.0d
+			y: -5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "1AD4B345A7B23186"
+					type: "biome"
+					biome: "undergarden:wigglewood_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "15185D0D6E4C4F9D"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6FD0B09693616723"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2B66A78C9E569DD8"
+			x: -2.5d
+			y: -6.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "5A5A7F8071DC6F43"
+					type: "biome"
+					biome: "undergarden:ink_mushroom_bog"
+				}
+			]
+			rewards: [
+				{
+					id: "6DFCA1EF9DEC3D22"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4B21F2325FD43D37"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "79DC449985089775"
+			x: -3.0d
+			y: -5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "774C16CF1EAA8508"
+					type: "biome"
+					biome: "undergarden:veil_mushroom_bog"
+				}
+			]
+			rewards: [
+				{
+					id: "7B48063C05B82A23"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "19C6D0B7D9A6E123"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "175F4590A67DF5EA"
+			x: -3.5d
+			y: -6.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4C9010191B52FD2D"
+					type: "biome"
+					biome: "undergarden:indigo_mushroom_bog"
+				}
+			]
+			rewards: [
+				{
+					id: "09CD4F02DC7E7605"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "4FA74EFE19398DA8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "46161C71AE6467F4"
+			x: -4.5d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "558140B11B50A595"
+					type: "biome"
+					biome: "undergarden:barren_abyss"
+				}
+			]
+			rewards: [
+				{
+					id: "464CAD6D641F17D8"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "35B514D9BFB4E14F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FD8F34E08D5BA7B"
+			x: -2.5d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "0379AF95298E6D97"
+					type: "biome"
+					biome: "undergarden:dead_sea"
+				}
+			]
+			rewards: [
+				{
+					id: "636DBCDAED8C51B7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "695A805BA3F53D8E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5858C19F2CDAF30C"
+			x: -5.0d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "0EDD016E16EF47D5"
+					type: "biome"
+					biome: "undergarden:dense_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "710DD726E51AD22E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "7C2C3BC402B832B6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "01F7C5376E9D1C16"
+			x: -3.0d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "540F9155E0218E5A"
+					type: "biome"
+					biome: "undergarden:frostfields"
+				}
+			]
+			rewards: [
+				{
+					id: "5F71FA37D3B289E7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "24A8F84BA9737F18"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "61EB18416D1284CD"
+			x: -2.0d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "12B165B29095EC1D"
+					type: "biome"
+					biome: "undergarden:frosty_smogstem_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "478B2B015CBB131E"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "2A3B9133B57C3979"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "698D141F357837C4"
+			x: -4.5d
+			y: -6.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "341B854781841ABB"
+					type: "biome"
+					biome: "undergarden:icy_sea"
+				}
+			]
+			rewards: [
+				{
+					id: "1C9773DE15BFCBC8"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "6F2C95546D8CE2C2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4684501D9FB36064"
+			x: -5.0d
+			y: -5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "7B20EB2599CAD2F0"
+					type: "biome"
+					biome: "undergarden:smog_spires"
+				}
+			]
+			rewards: [
+				{
+					id: "351BA177D8A8FE22"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "52F038E7ED7834CD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "43EE8E4B02D308B3"
+			x: -4.0d
+			y: -5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "0BC522324C78B549"
+					type: "biome"
+					biome: "undergarden:smogstem_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "3D16BB55B934DEB5"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3032AFD5ED76CB01"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1FBDE07C9CAA3EDF"
+			x: -1.5d
+			y: -6.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			dependencies: [
+				"46300C88FE52E77A"
+			]
+			tasks: [
+				{
+					id: "4F533C42247971DF"
+					type: "biome"
+					biome: "undergarden:rogdorium_grove"
+				}
+			]
+			rewards: [
+				{
+					id: "58C3D1EB966F983C"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "67B4A33DDB4270B6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4832FB99F0BF6921"
+			x: -3.0d
+			y: 5.5d
+			shape: "hexagon"
+			size: 1.5d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "100A867DC9C30498"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "72B95DDF24B9136B"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "07ED2E2F918C5F11"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "486778256DB43A64"
+			x: -3.5d
+			y: 4.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			dependencies: [
+				"4832FB99F0BF6921"
+			]
+			tasks: [
+				{
+					id: "7D113834A265651B"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3E851A70BADFA59B"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "45FA5281AB872C37"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "038A5450C7BABB38"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71796F0C95B34279"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7CE4A78262B501F2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "75D2B1DE145FFA9C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "701BAFF30660B586"
+			x: -2.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"4832FB99F0BF6921"
+			]
+			tasks: [
+				{
+					id: "4AD3BC5771A4CCAA"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_battleaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3A74CD38767B6A4E"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_shield"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "14B948F5514412FF"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "570C2F5824B2631F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4A627B3563B300B3"
+			x: -3.0d
+			y: 7.0d
+			shape: "circle"
+			size: 1.15d
+			optional: true
+			dependencies: [
+				"4832FB99F0BF6921"
+			]
+			tasks: [
+				{
+					id: "570B4B00A9FD1AEF"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3183AAD22809D1F2"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "442894B1E0524CBB"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "29B67643D7FC8946"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4B6C38C1E231234E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "5212951658978DDF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F7594687DE1EAEA"
+			x: -1.0d
+			y: 5.5d
+			shape: "hexagon"
+			size: 1.5d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4C5B6114E754480F"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0BBCF26CD44DCE78"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0B16125CEB8F31EF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0828CA49B524F49E"
+			x: -1.0d
+			y: 4.0d
+			shape: "circle"
+			size: 1.15d
+			optional: true
+			dependencies: [
+				"0F7594687DE1EAEA"
+			]
+			tasks: [
+				{
+					id: "14BB4C31EBFFC2F7"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7FDAE2DF0F0F55E4"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1FF071E037265820"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1DAE0EEB02A9BCB0"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "00B039E01AD59D21"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3A40C7577D42ACB4"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "456B4BE6FD61A3B2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "487D13B22151070D"
+			x: -1.0d
+			y: 7.0d
+			shape: "circle"
+			size: 1.15d
+			optional: true
+			dependencies: [
+				"0F7594687DE1EAEA"
+			]
+			tasks: [
+				{
+					id: "760ACB01AE11C240"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "623D7F5A27A44AD9"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "494D8E554E448AC5"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "458FF6755BBCFD13"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4AFC2D389BE0FC3C"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6D67CE616ED05E28"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3618066084A5EC94"
+			x: 1.0d
+			y: 5.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "2B330AA8881C48C4"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6D4AE24CF8F11899"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "6D952712410B7326"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "765D740D175B0667"
+			x: 1.5d
+			y: 4.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"3618066084A5EC94"
+			]
+			tasks: [
+				{
+					id: "2A7C26F51C70D135"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2F996E5B74B82C42"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7741813D989AD256"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6895F9862C5E46AE"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "753B1DC8EDFFB37A"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_sword"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4D24C75644FBA90D"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "432FA8F4A31CB2B1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "41E649928119EA01"
+			x: 0.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"3618066084A5EC94"
+			]
+			tasks: [
+				{
+					id: "0ABD121EF366A86B"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_battleaxe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "25B8C9BF6CAFFB98"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "0DECD2183D3F1A23"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "08C29C8F19C80492"
+			x: 1.0d
+			y: 7.0d
+			shape: "square"
+			size: 1.15d
+			dependencies: [
+				"3618066084A5EC94"
+			]
+			tasks: [
+				{
+					id: "37BE0512C06A0888"
+					type: "item"
+					item: {
+						id: "undergarden:crumbling_catalyst"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "164F8313D05433A9"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0CD90EF4B392B289"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2B2D7DD2918988F5"
+			x: 3.0d
+			y: 5.5d
+			shape: "hexagon"
+			size: 1.5d
+			hide_dependency_lines: true
+			dependencies: [
+				"765D740D175B0667"
+			]
+			tasks: [
+				{
+					id: "6BA701F251CB40CF"
+					type: "item"
+					item: {
+						id: "undergarden:rogdorium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "244BB41BDEECF3B6"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "5F5B79DA37F7F38C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "4AAC289EC65DBD8E"
+			x: 3.5d
+			y: 7.0d
+			shape: "rsquare"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"2B2D7DD2918988F5"
+			]
+			tasks: [
+				{
+					id: "45CF484B0C99C1E6"
+					type: "item"
+					item: {
+						id: "undergarden:infuser"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5CA8B2C407F4A11D"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "3B53392AA59F4BCB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0681BE0B1FFC768C"
+			x: 3.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.15d
+			dependencies: [
+				"2B2D7DD2918988F5"
+			]
+			tasks: [
+				{
+					id: "594BFE00EA09BA06"
+					type: "item"
+					item: {
+						id: "undergarden:spear"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2F53CB094E1F9122"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "26CC0BC5510E2BDC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6F82ED3914FBD824"
+			x: 2.5d
+			y: 7.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"2B2D7DD2918988F5"
+			]
+			tasks: [
+				{
+					id: "19BE0D4A85995782"
+					type: "item"
+					item: {
+						id: "undergarden:denizen_totem"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5EBAA3A860F498EB"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6AA274CB7CFFAA62"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "39560B90630543DF"
+			x: 5.0d
+			y: 5.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"4AAC289EC65DBD8E"
+			]
+			tasks: [
+				{
+					id: "7A1514E9B71C6290"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_crystal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "162E9CA7BE11314B"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "33AF9ACBB327D1A1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "2DFE7BBF830A2DDB"
+			x: 5.0d
+			y: 4.0d
+			shape: "circle"
+			size: 1.15d
+			optional: true
+			dependencies: [
+				"39560B90630543DF"
+			]
+			tasks: [
+				{
+					id: "4C6D1B19413CC4F1"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "280AE4B5B3EC75F7"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_pickaxe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "57E31F043A1ADE29"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7D07A216DC5C3010"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "529DD68094C51BD0"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2B271E47952FBD0B"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "5C1753E9343B0472"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "466ADBA0915E562D"
+			x: 5.0d
+			y: 7.0d
+			shape: "circle"
+			size: 1.15d
+			optional: true
+			dependencies: [
+				"39560B90630543DF"
+			]
+			tasks: [
+				{
+					id: "634B1AE926C8F27D"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "162FF79141AC62D9"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "749C72CFB0D6A054"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1FD425BD46BDCD69"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_boots"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "41A2E4FD9B1AA943"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "7643A6FCD4BA0985"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "233CEF5C6F7B9E72"
+			x: 7.0d
+			y: 5.5d
+			shape: "hexagon"
+			size: 1.5d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "475D80D5A2D10087"
+					type: "item"
+					item: {
+						id: "undergarden:regalium_crystal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "30194E7F708C7ABF"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "21C4AB8F3DB7032B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0231BCFF66ED4C89"
+			x: 6.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "763BD30D012F772A"
+					type: "item"
+					item: {
+						id: "undergarden:slingshot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "688B46921788EEAD"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "44B6DFBA1BBE340E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "41804BCF1DFBC8F5"
+			x: 7.5d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "7D352215F909D6AD"
+					type: "item"
+					item: {
+						id: "undergarden:blisterbomb"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5E8596FB6A09757C"
+					type: "item"
+					item: {
+						id: "undergarden:boomgourd"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DD417BDF4F0C0DB"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "758072CD3BAE588E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "73152516B1255FF6"
+			x: 7.5d
+			y: 7.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"187A2B440E772903"
+			]
+			tasks: [
+				{
+					id: "1A08E1969D36C1B5"
+					type: "item"
+					item: {
+						id: "undergarden:ancient_helmet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "76EC48431F445160"
+					type: "item"
+					item: {
+						id: "undergarden:ancient_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "33387BB1F2A039AB"
+					type: "item"
+					item: {
+						id: "undergarden:ancient_leggings"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6A760B5B0CA67E7C"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "356CCD52FA267BAA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "40F8910C752303A1"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "74E99F63586D2723"
+			x: 6.5d
+			y: 7.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "300B196D90008513"
+					type: "item"
+					item: {
+						id: "undergarden:denizen_mask"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3EB60E0A9C9C7911"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "23E62A6441E02D82"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "01EC8B2403704D6F"
+			x: 7.0d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "5E7AE47453321F47"
+					type: "item"
+					item: {
+						id: "undergarden:smogstem_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7ACD227972BCD625"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "52CADCB4A0A11883"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5C2E01E20EAF6231"
+			x: 5.5d
+			y: -7.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4063F1567D446655"
+					type: "item"
+					item: {
+						id: "undergarden:blood_mushroom"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "07B99BC5B750D51A"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1446F5F124454BE8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7337CAB0B300E8DB"
+			x: 6.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "7C536E9C6B353793"
+					type: "item"
+					item: {
+						id: "undergarden:blisterberry"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "488EF14041E524A8"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "100F90B640BE1EAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "68D239C447F22CEC"
+			x: 7.5d
+			y: -5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "6C8C291256A5FFC7"
+					type: "item"
+					item: {
+						id: "undergarden:gloomgourd"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71044434155D9963"
+					type: "item"
+					item: {
+						id: "undergarden:gloomgourd_seeds"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7C13330EBDF9E5DC"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "443DE1D68BBF1FF5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "323AAE72767E5C67"
+			x: 8.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "769C01E9AB37AF48"
+					type: "item"
+					item: {
+						id: "undergarden:underbeans"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "086636DE50A5DB96"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "7088410B4277F83B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "564E8DB3682690EC"
+			x: 6.5d
+			y: -5.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "763CA5AA365AB9C5"
+					type: "item"
+					item: {
+						id: "undergarden:glitterkelp"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1F2D06889C14E7BD"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "50245E069D2CB17A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "27065FA074FA47AB"
+			x: -3.5d
+			y: -0.5d
+			shape: "square"
+			size: 1.4d
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "180653602624D1FE"
+					type: "item"
+					item: {
+						id: "undergarden:gronglet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4338B93B682D3677"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "13F9A8D417CBD9BE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6F00F60AD2647605"
+			x: 8.0d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "5288C90CCCC43404"
+					type: "item"
+					item: {
+						id: "undergarden:wigglewood_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "04CAFD41368B5D35"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "71991DF04C24A93C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7248546344592433"
+			x: 6.0d
+			y: -8.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "488DFF6E676775AA"
+					type: "item"
+					item: {
+						id: "undergarden:grongle_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "757A80DBA050FE40"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "7B623B9591611C29"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7BB0454D7D200B62"
+			x: 8.5d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "1CBE665790B48DB6"
+					type: "item"
+					item: {
+						id: "undergarden:veil_mushroom"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "58720E048677AADE"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "149698BB9D383090"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "48BC5DBDCC5A0E5B"
+			x: 7.5d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "280F42CC6899BE33"
+					type: "item"
+					item: {
+						id: "undergarden:ink_mushroom"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7159902C5E775DAD"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "75AB966A746121F9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1FADDFB48CEFB23B"
+			x: 6.5d
+			y: -7.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "66BE2A91B22FB825"
+					type: "item"
+					item: {
+						id: "undergarden:indigo_mushroom"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "57D0D8B82486D197"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "075C21165BD80C67"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5E25F12EBDA28EBD"
+			x: 7.0d
+			y: -6.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "7E4E75C9B13EBB5F"
+					type: "item"
+					item: {
+						id: "undergarden:droopvine_item"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2917D0AD2158C41E"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "663BBCC992549B12"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0EB52209EC2A14E4"
+			x: 2.0d
+			y: -4.5d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "33F4B5C3CB74A383"
+					type: "item"
+					item: {
+						id: "undergarden:depthrock"
+						count: 1
+					}
+					count: 32L
+				}
+			]
+			rewards: [
+				{
+					id: "0C494499DB98BC5B"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "000EE9DFEDF0AF20"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "01955F27A3D813AE"
+			x: 3.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"39560B90630543DF"
+			]
+			tasks: [
+				{
+					id: "24D67F750FC06A11"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_sword"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "746D082092F19B68"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_chestplate"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0735C954D6BFDB9B"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "77694C1DF88ECFBF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "448C26B7E160AC35"
+			x: -1.5d
+			y: -9.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"46300C88FE52E77A"
+			]
+			tasks: [
+				{
+					id: "2A3A26ED54F38E80"
+					type: "item"
+					item: {
+						id: "undergarden:utheric_cluster"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "4ED230D980E73114"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "2500C67B16F27F9E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5E353CE5F8D3373C"
+			x: 4.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"46300C88FE52E77A"
+			]
+			tasks: [
+				{
+					id: "1A044632FFD8C6EF"
+					type: "biome"
+					biome: "undergarden:infected_depths"
+				}
+				{
+					id: "3CA83B4B46B76DDF"
+					type: "biome"
+					biome: "undergarden:puff_mushroom_forest"
+				}
+			]
+			rewards: [
+				{
+					id: "7510A391890DAF4F"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "097D22E00FDD9F43"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "79B495E1D4C44BAA"
+			x: -1.5d
+			y: -0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"4AAC289EC65DBD8E"
+				"27065FA074FA47AB"
+			]
+			tasks: [
+				{
+					id: "31A41C7DCC06BB6F"
+					type: "item"
+					item: {
+						id: "undergarden:rogdoric_gronglet"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "145349473786DB96"
+					type: "item"
+					item: {
+						id: "undergarden:utheric_gronglet"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "18EA95F1BC282ED5"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3E138FE08C037727"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "31CC851D9D5D4C5E"
+			x: 6.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"39560B90630543DF"
+			]
+			tasks: [
+				{
+					id: "3A625474DCD1633F"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "18652CCFF08A8DB4"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "73073C9D65A0FB38"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "546B7C48E61B8DA0"
+					type: "item"
+					item: {
+						id: "undergarden:regalium_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "28778A8E18100944"
+					type: "item"
+					item: {
+						id: "undergarden:rogdorium_block"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6BF15B011F79F99A"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_block"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0533D6946E226677"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "2EFA6830ABAC8746"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+				{
+					id: "23D9222C6AAB558E"
+					type: "random"
+					table_id: 9189603052265653930L
+				}
+			]
+		}
+		{
+			id: "5C8858520F0C9F34"
+			x: -1.0d
+			y: 1.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"765D740D175B0667"
+			]
+			tasks: [
+				{
+					id: "140C0401DAA57B9E"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_axe"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2F49D7EFE484792E"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_shovel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6006D52182F80D3C"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_hoe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "082D892FA03790A8"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6755A500A8A25F95"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2186E2018E61FC25"
+			x: -0.5d
+			y: 8.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3618066084A5EC94"
+			]
+			tasks: [
+				{
+					id: "50211E1A898B37F2"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_nugget"
+						count: 1
+					}
+					count: 9L
+				}
+				{
+					id: "1DA9BF7F2E2FC36E"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_nugget"
+						count: 1
+					}
+					count: 9L
+				}
+				{
+					id: "3AF50CB69F04B831"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_nugget"
+						count: 1
+					}
+					count: 9L
+				}
+			]
+			rewards: [
+				{
+					id: "0E4869A07C43C3BE"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1C33E3C58BCB8CCA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "00C8D06724A3EA0F"
+			x: 0.0d
+			y: -5.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4C922CAF50E01876"
+					type: "item"
+					item: {
+						id: "undergarden:smogstem_log"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "45A68F38E7E268C1"
+					type: "item"
+					item: {
+						id: "undergarden:wigglewood_log"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "07D26B185137D884"
+					type: "item"
+					item: {
+						id: "undergarden:grongle_log"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "09AB2B0ED424A303"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "40F7D7FA96470B02"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "71424F14C6F041A0"
+			x: 4.0d
+			y: -5.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "4A6F1F9592E03948"
+					type: "item"
+					item: {
+						id: "undergarden:shard_torch"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "72F830C1697E9BDA"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "5276FDC6EBB6BCBC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2EE8A0D50F4EB7A1"
+			x: 3.5d
+			y: -9.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "20A2736376605F84"
+					type: "structure"
+					structure: "undergarden:depleted_mine"
+				}
+			]
+			rewards: [
+				{
+					id: "3C2B68E3D5846718"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3B6515EC774B5D1B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FBB36C42CBD1489"
+			x: -7.5d
+			y: 2.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7DC57E79F3783BE3"
+			]
+			tasks: [
+				{
+					id: "4E8AB29A7DCDC983"
+					type: "item"
+					item: {
+						id: "undergarden:mogmoss"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "25CF265FE4D8B502"
+					type: "item"
+					item: {
+						id: "undergarden:blue_mogmoss"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "40728AC3DE6E13A6"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "32D0383B3D72420A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "26F4F461250D42A3"
+			x: 22.828d
+			y: -11.925d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "78C2893C435D0DD1"
+					type: "item"
+					item: {
+						id: "undergarden:goo_ball"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "3B21411F38599A02"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "426A65407FB0EBA6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5D0D993B4956B38D"
+			x: 22.828d
+			y: -10.425d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "48B9B1F1B39FA4AD"
+					type: "item"
+					item: {
+						id: "undergarden:music_disc_gloomper_secret"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DF027348BE5573A"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "47082B91161D78EF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "20F54B3DB3C534E0"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "5CE46C9E4BE6ADD9"
+			x: 2.0d
+			y: -12.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0DCB61271CC2913A"
+			]
+			tasks: [
+				{
+					id: "5F2401FFEF253039"
+					type: "item"
+					item: {
+						id: "undergarden:raw_dweller_meat"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "006199C1916D4669"
+					type: "item"
+					item: {
+						id: "undergarden:raw_gloomper_leg"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "2FC71AD755A8E4A9"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "3AA305C573B80AC5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "22A611C7FB2B9007"
+			x: 2.0d
+			y: -14.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5CE46C9E4BE6ADD9"
+			]
+			tasks: [
+				{
+					id: "625C48E6BE841A4F"
+					type: "item"
+					item: {
+						id: "undergarden:dweller_steak"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "06092EC07B03AE02"
+					type: "item"
+					item: {
+						id: "undergarden:gloomper_leg"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "5D31554D5AC55E37"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "52E61392CA5C7F46"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "271D393332A6196C"
+			x: -8.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3FF281BDE570BB44"
+			]
+			tasks: [
+				{
+					id: "7A040C6171C1706F"
+					type: "item"
+					item: {
+						id: "undergarden:gwibling_bucket"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "465CCC6151FD3E8B"
+					type: "item"
+					item: {
+						id: "undergarden:cooked_gwibling"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "7074C63C57D3BA17"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "3683641093F7575C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "42C72B875161B03C"
+			x: 8.0d
+			y: -12.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"323AAE72767E5C67"
+			]
+			tasks: [
+				{
+					id: "1911D1BCBAEC144A"
+					type: "item"
+					item: {
+						id: "undergarden:roasted_underbeans"
+						count: 1
+					}
+					count: 8L
+				}
+			]
+			rewards: [
+				{
+					id: "5169C96F148F8DAC"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "251C9EC1B61BB280"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "25C875F981CFAFF0"
+			x: 8.0d
+			y: -14.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"42C72B875161B03C"
+			]
+			tasks: [
+				{
+					id: "7000B8E1D809E059"
+					type: "item"
+					item: {
+						id: "undergarden:underbean_on_a_stick"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0D69A8CC27C80CF4"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "0FD60CD0962DC955"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3B9249F0535DD3F1"
+			x: 5.5d
+			y: -12.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5C2E01E20EAF6231"
+			]
+			tasks: [
+				{
+					id: "65E6A55313AA6D25"
+					type: "item"
+					item: {
+						id: "undergarden:bloody_stew"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5C5A7559981DF374"
+					type: "item"
+					item: {
+						id: "undergarden:indigo_stew"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "162A57F4E468F38A"
+					type: "item"
+					item: {
+						id: "undergarden:inky_stew"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1D5D063BA1C1A81E"
+					type: "item"
+					item: {
+						id: "undergarden:veiled_stew"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4EDA0CE2AF590792"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "6CEB976D707BD0C7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3B228DD04D1C5596"
+			x: 22.828d
+			y: -8.925d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"68D239C447F22CEC"
+			]
+			tasks: [
+				{
+					id: "57ED2787A9DBA93F"
+					type: "item"
+					item: {
+						id: "undergarden:gloomgourd_pie"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "70325F2CBB7FF0C4"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "7D7555D3BE9E7F72"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1D0C0BB393755A99"
+			x: 8.5d
+			y: 5.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"41804BCF1DFBC8F5"
+			]
+			tasks: [
+				{
+					id: "3CFB7F246BE3622A"
+					type: "item"
+					item: {
+						id: "undergarden:boomgourd"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "7433ABA4BC7797A1"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3BA53609B719E9DC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "222B416BE78F00E3"
+			x: -12.328d
+			y: -15.925d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/undergarden.png"
+		}
+		{
+			id: "542200426234C1E0"
+			x: 24.578d
+			y: -13.05d
+			width: 4.5d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/undergarden_our_additions.png"
+		}
+		{
+			id: "103C88E7819C6EC2"
+			x: -9.713999999999999d
+			y: 6.0d
+			width: 11.228d
+			height: 6.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_cap_creatures_of_the_dark_1.png"
+		}
+		{
+			id: "023464ECE09CE271"
+			x: 14.4265d
+			y: 6.0d
+			width: 10.802999999999999d
+			height: 6.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_cap_into_the_dark_1.png"
+		}
+		{
+			id: "5EF53137CECE8650"
+			x: 2.0d
+			y: -11.0d
+			width: 17.434343434343436d
+			height: 2.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_lab_biomes_below_1.png"
+		}
+		{
+			id: "19E75A478CF5E4E2"
+			x: 12.5d
+			y: -5.5d
+			width: 6.542696629213483d
+			height: 4.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_cap_gathering_in_the_dark_1.png"
+		}
+		{
+			id: "72AFB499939BF697"
+			x: -9.185674157303371d
+			y: -5.5d
+			width: 6.1713483146067425d
+			height: 4.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_cap_ruins_of_the_builders_1.png"
+		}
+		{
+			id: "4D31CFC1F4F6E090"
+			x: 12.5d
+			y: -8.75d
+			width: 6.542696629213484d
+			height: 2.5d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_capt_before_you_go_down_1.png"
+		}
+		{
+			id: "61C94864E728B63A"
+			x: -9.185674157303371d
+			y: -8.75d
+			width: 6.1713483146067425d
+			height: 2.5d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_capt_rogdorium_and_utherium_1.png"
+		}
+		{
+			id: "05095119EB9FCC4A"
+			x: -3.7673109173234947d
+			y: -3.5d
+			width: 3.9226815361395264d
+			height: 1.5d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_lab_forgotten_metal_1.png"
+		}
+		{
+			id: "09655D539AA41D3D"
+			x: 13.0d
+			y: 1.8d
+			width: 2.080924855491329d
+			height: 2.4d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_art_1.png"
+		}
+		{
+			id: "6749A8D810E8761E"
+			x: 7.629128474275577d
+			y: -3.5d
+			width: 3.199046422235363d
+			height: 1.5d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_lab_regalium_and_finds_1.png"
+		}
+		{
+			id: "575AB71BFDB7E7EA"
+			x: 4.0d
+			y: -0.49999999999999994d
+			width: 2.0d
+			height: 1.4d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/undergarden_lab_froststeel_1.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "5629E90570AEB7A9"
+			linked_quest: "6CD23CD722EC696F"
+			x: 0.5d
+			y: -12.5d
+			size: 1.0d
+		}
+	]
+}

@@ -1,0 +1,224 @@
+===== powah: 109
+#0   6B2027DA7AA6FF34 (0.0,0.0) sz=2.0 gear opt=0 deps=[] | Welcome to Powah!!!
+        item x1: powah:uraninite_raw
+#1   7E92ED270C67FDE5 (0.0,2.0) sz=1 rsquare opt=0 deps=[#0] | Starting with Dielectric Mats
+        item x16: powah:dielectric_paste <pw_paste>
+        item x1: powah:dielectric_casing <pw_casing>
+#2   3DDF87A1E5F5D009 (0.0,3.5) sz=1.5 square opt=0 deps=[#1] | The Energizing Orb
+        item x1: powah:energizing_orb <pw_orb,t4_uraninite>
+        item x1: ftbfiltersystem:filter [MISSING], powah:energy_cable_basic <pw_cable_hardened>, powah:energy_cable_starter <pw_cable>
+        item x1: ftbfiltersystem:filter [MISSING], powah:energizing_rod_starter <pw_orb>, powah:energizing_rod_basic <pw_rod_up>
+#3   52E59FCB39D66BCF (6.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:thermo_generator_starter <pw_thermo>
+#4   3D5F87F8E6B89C1B (5.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:furnator_starter <pw_furnator>
+#5   7678B5DD1339833E (8.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:solar_panel_starter <pw_solar>
+#6   0FD62827710F0AC6 (4.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:magmator_starter <pw_magmator>
+#7   1B0087400B0B8B49 (7.0,7.0) sz=1  opt=0 deps=[#1,#73] | Reactor (Starter)
+        item x36: powah:reactor_starter <pw_reactor_starter>
+#8   3CB6DC5B09C62CFE (2.5,7.0) sz=1  opt=0 deps=[#9,#73] | 
+        item x1: powah:ender_gate_starter <pw_ender_gate>
+#9   7D52DD751DDADA1B (1.5,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:energy_cable_starter <pw_cable>
+#10  677365A816994C8B (-6.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:player_transmitter_starter <pw_transmitter>
+        item x1: ftbfiltersystem:filter [MISSING], powah:binding_card <pw_transmitter>, powah:binding_card_dim <pw_dim_card>
+#11  5BCA3F716348ECCD (-7.0,7.0) sz=1  opt=1 deps=[#1,#73] | 
+        item x1: powah:energy_hopper_starter <pw_hopper>
+#12  33816AF0E699F19F (-8.0,7.0) sz=1  opt=1 deps=[#1,#73] | 
+        item x1: powah:energy_discharger_starter <pw_hopper>
+#13  78202A1CF5D86B94 (-1.5,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:energy_cell_starter <pw_cell_starter>
+#14  700F3FF7C23D0C0F (-2.5,7.0) sz=1  opt=0 deps=[#13,#20,#73] | 
+        item x1: powah:ender_cell_starter <pw_ender_cell_starter>
+#15  5E090C9BB4DAA5D4 (0.0,9.0) sz=1 diamond opt=0 deps=[#2] | Tier: Energized
+        item x1: powah:steel_energized <pw_energized>
+#16  562BD37539EE318E (0.0,10.0) sz=1 square opt=0 deps=[#2] | Tier: Blazing
+        item x1: powah:crystal_blazing <pw_blazing>
+#17  7D7983F39E6E818D (0.0,11.0) sz=1 pentagon opt=0 deps=[#2] | Tier: Niotic
+        item x1: powah:crystal_niotic <pw_niotic>
+#18  25EFC21A3C48E0B6 (0.0,12.0) sz=1 hexagon opt=0 deps=[#2] | Tier: Spirited
+        item x1: powah:crystal_spirited <pw_spirited>
+#19  4F1FFC02F4EAA2E6 (0.0,13.0) sz=1 octagon opt=0 deps=[#2] | Tier: Nitro
+        item x1: powah:crystal_nitro <pw_nitro>
+#20  61A8FAEC4FF18449 (-5.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:battery_starter <pw_battery>
+#21  5A07C7A54D40FBE2 (-8.0,8.0) sz=1  opt=1 deps=[#74] | 
+        item x1: powah:energy_discharger_basic <pw_hopper_up*>
+#22  35F885A046EAE246 (-7.0,8.0) sz=1  opt=1 deps=[#11,#74] | 
+        item x1: powah:energy_hopper_basic <pw_hopper_up*>
+#23  740F314EE6242C13 (-6.0,8.0) sz=1  opt=0 deps=[#10,#74] | 
+        item x1: powah:player_transmitter_basic <pw_ender>
+#24  04F11E192A334E3F (-5.0,8.0) sz=1  opt=0 deps=[#20,#74] | 
+        item x1: powah:battery_basic <pw_battery_up*>
+#25  0C481BA4C1CC0237 (-2.5,8.0) sz=1  opt=0 deps=[#2,#74] | 
+        item x1: powah:ender_cell_basic <pw_ender>
+#26  66FA15A92DC655DE (-1.5,8.0) sz=1  opt=0 deps=[#13,#1,#74] | 
+        item x1: powah:energy_cell_basic <pw_powah_cell>
+#27  5A708BF4F5091959 (1.5,8.0) sz=1  opt=0 deps=[#9,#74] | 
+        item x1: powah:energy_cable_basic <pw_cable_hardened>
+#28  69D82C33347D360D (2.5,8.0) sz=1  opt=0 deps=[#27,#74] | 
+        item x1: powah:ender_gate_basic <pw_ender_up*>
+#29  0E3A9D5E1E8AAF89 (4.0,8.0) sz=1  opt=0 deps=[#6,#74] | 
+        item x1: powah:magmator_basic <pw_gen_basic*>
+#30  67DE5F982629BB34 (5.0,8.0) sz=1  opt=0 deps=[#4,#74] | 
+        item x1: powah:furnator_basic <pw_gen_basic*>
+#31  60F5DC851FCFF1B2 (6.0,8.0) sz=1  opt=0 deps=[#3,#74] | 
+        item x1: powah:thermo_generator_basic <pw_gen_basic*>
+#32  5F6152CF085D75D6 (7.0,8.0) sz=1  opt=0 deps=[#7,#74] | Reactor (Basic)
+        item x36: powah:reactor_basic <pw_powah>
+#33  7890A1478121D2CD (8.0,8.0) sz=1  opt=0 deps=[#5,#74] | 
+        item x1: powah:solar_panel_basic <pw_gen_basic*>
+#34  534485E8185B71C3 (-8.0,9.0) sz=1  opt=1 deps=[#15] | 
+        item x1: powah:energy_discharger_hardened <pw_hopper_up*>
+#35  04930767C52C7CC2 (-7.0,9.0) sz=1  opt=1 deps=[#22,#15] | 
+        item x1: powah:energy_hopper_hardened <pw_hopper_up*>
+#36  7444B85503DE2C53 (-6.0,9.0) sz=1  opt=0 deps=[#23,#15] | 
+        item x1: powah:player_transmitter_hardened <pw_transmitter_up*>
+#37  604AB95A7600B150 (-5.0,9.0) sz=1  opt=0 deps=[#24,#15] | 
+        item x1: powah:battery_hardened <pw_battery_up*>
+#38  7FEE780F37A1322E (-1.5,9.0) sz=1  opt=0 deps=[#26,#15] | 
+        item x1: powah:energy_cell_hardened <pw_cell_hardened>
+#39  331498A68D110F81 (-2.5,9.0) sz=1  opt=0 deps=[#15] | 
+        item x1: powah:ender_cell_hardened <pw_ender_up*>
+#40  029922AB09F8C76A (1.5,9.0) sz=1  opt=0 deps=[#27,#15] | 
+        item x1: powah:energy_cable_hardened <pw_cable_hardened>
+#41  5D594154819DD145 (2.5,9.0) sz=1  opt=0 deps=[#40,#15] | 
+        item x1: powah:ender_gate_hardened <pw_ender_up*>
+#42  6ED2F8A8DEED417D (4.0,9.0) sz=1  opt=0 deps=[#29,#15] | 
+        item x1: powah:magmator_hardened <pw_gen_hardened*>
+#43  2AE17A935862BCBF (5.0,9.0) sz=1  opt=0 deps=[#30,#15] | 
+        item x1: powah:furnator_hardened <pw_gen_hardened*>
+#44  6230C6884B800689 (6.0,9.0) sz=1  opt=0 deps=[#31,#15] | 
+        item x1: powah:thermo_generator_hardened <pw_gen_hardened*>
+#45  05B0A7D0B991050F (7.0,9.0) sz=1  opt=0 deps=[#32,#15] | Reactor (Hardened)
+        item x36: powah:reactor_hardened <pw_reactor_hardened>
+#46  6C8148B3AE0A2222 (8.0,9.0) sz=1  opt=0 deps=[#33,#15] | 
+        item x1: powah:solar_panel_hardened <pw_gen_hardened*>
+#47  79421463F01ED2D7 (-5.0,10.0) sz=1  opt=0 deps=[#37,#16] | 
+        item x1: powah:battery_blazing <pw_battery_up*>
+#48  13FDBA4BC4514F58 (-8.0,10.0) sz=1  opt=1 deps=[#16] | 
+        item x1: powah:energy_discharger_blazing <pw_hopper_up*>
+#49  04811BA420B80046 (-7.0,10.0) sz=1  opt=1 deps=[#35,#16] | 
+        item x1: powah:energy_hopper_blazing <pw_hopper_up*>
+#50  1D80E6C3327AB376 (-6.0,10.0) sz=1  opt=0 deps=[#36,#16] | 
+        item x1: powah:player_transmitter_blazing <pw_transmitter_up*>
+#51  564F731F0F3E5AEC (-2.5,10.0) sz=1  opt=0 deps=[#16] | 
+        item x1: powah:ender_cell_blazing <pw_ender_up*>
+#52  25088F06228F8561 (-1.5,10.0) sz=1  opt=0 deps=[#38,#16] | 
+        item x1: powah:energy_cell_blazing <pw_blazing>
+#53  0C5936697C9B3716 (1.5,10.0) sz=1  opt=0 deps=[#40,#16] | 
+        item x1: powah:energy_cable_blazing <pw_cable_crystal*>
+#54  1F55B2FA187F63DD (2.5,10.0) sz=1  opt=0 deps=[#53,#16] | 
+        item x1: powah:ender_gate_blazing <pw_ender_up*>
+#55  0C7D0AB254DF8CF1 (4.0,10.0) sz=1  opt=0 deps=[#42,#16] | 
+        item x1: powah:magmator_blazing <pw_gen_blazing*>
+#56  323F7A0C4FAC28D0 (5.0,10.0) sz=1  opt=0 deps=[#43,#16] | 
+        item x1: powah:furnator_blazing <pw_gen_blazing*>
+#57  44C1315098B9CF3F (6.0,10.0) sz=1  opt=0 deps=[#44,#16] | 
+        item x1: powah:thermo_generator_blazing <pw_gen_blazing*>
+#58  6754612E9AD4B9C0 (7.0,10.0) sz=1  opt=0 deps=[#45,#16] | Reactor (Blazing)
+        item x36: powah:reactor_blazing <pw_reactor_crystal*>
+#59  7C34EED27A9737D4 (8.0,10.0) sz=1  opt=0 deps=[#46,#16] | 
+        item x1: powah:solar_panel_blazing <pw_gen_blazing*>
+#60  555566F1148F5229 (-8.0,11.0) sz=1  opt=1 deps=[#17] | 
+        item x1: powah:energy_discharger_niotic <pw_hopper_up*>
+#61  5A8DE0C7D4F28E05 (-7.0,11.0) sz=1  opt=1 deps=[#49] | 
+        item x1: powah:energy_hopper_niotic <pw_hopper_up*>
+#62  2DD9994665799747 (-6.0,11.0) sz=1  opt=0 deps=[#50] | 
+        item x1: powah:player_transmitter_niotic <pw_transmitter_up*>
+#63  03798EF7AB47BB3D (-5.0,11.0) sz=1  opt=0 deps=[#47] | 
+        item x1: powah:battery_niotic <pw_battery_up*>
+#64  1CCCA214865526F3 (-2.5,11.0) sz=1  opt=0 deps=[#17] | 
+        item x1: powah:ender_cell_niotic <pw_ender_up*>
+#65  6EFB4BF8110F2712 (-1.5,11.0) sz=1  opt=0 deps=[#52] | 
+        item x1: powah:energy_cell_niotic <pw_niotic>
+#66  68B604EF40198B8D (1.5,11.0) sz=1  opt=0 deps=[#53,#17] | 
+        item x1: powah:energy_cable_niotic <pw_cable_crystal*>
+#67  584BD9A6F7594867 (2.5,11.0) sz=1  opt=0 deps=[#66] | 
+        item x1: powah:ender_gate_niotic <pw_ender_up*>
+#68  03442045ED56068F (4.0,11.0) sz=1  opt=0 deps=[#55] | 
+        item x1: powah:magmator_niotic <pw_gen_niotic*>
+#69  24EE138780C43447 (5.0,11.0) sz=1  opt=0 deps=[#56] | 
+        item x1: powah:furnator_niotic <pw_gen_niotic*>
+#70  28EE8C172F9DF5C1 (6.0,11.0) sz=1  opt=0 deps=[#57] | 
+        item x1: powah:thermo_generator_niotic <pw_gen_niotic*>
+#71  0FFF2BEE5D8EBE12 (7.0,11.0) sz=1  opt=0 deps=[#58] | Reactor (Niotic)
+        item x36: powah:reactor_niotic <pw_reactor_crystal*>
+#72  39386F88CB38CF36 (8.0,11.0) sz=1  opt=0 deps=[#59] | 
+        item x1: powah:solar_panel_niotic <pw_gen_niotic*>
+#73  6D88C19F47D0D469 (0.0,7.0) sz=1 circle opt=0 deps=[#1] | Tier: Tiny
+        item x1: powah:capacitor_basic_tiny <pw_capacitor>
+#74  66ECC26BC81D0093 (0.0,8.0) sz=1 rsquare opt=0 deps=[#1] | Tier: Basic
+        item x1: powah:capacitor_basic <pw_capacitor>
+#75  63E57D2745D24761 (-5.0,12.0) sz=1  opt=0 deps=[#63] | 
+        item x1: powah:battery_spirited <pw_battery_up*>
+#76  11F0D662FF4DC335 (-6.0,12.0) sz=1  opt=0 deps=[#62] | 
+        item x1: powah:player_transmitter_spirited <pw_transmitter_up*>
+#77  18B20F4F27F37197 (-7.0,12.0) sz=1  opt=1 deps=[#61] | 
+        item x1: powah:energy_hopper_spirited <pw_hopper_up*>
+#78  0536D7B41964FE38 (-8.0,12.0) sz=1  opt=1 deps=[#18] | 
+        item x1: powah:energy_discharger_spirited <pw_hopper_up*>
+#79  486356E189081ADC (-2.5,12.0) sz=1  opt=0 deps=[#18] | 
+        item x1: powah:ender_cell_spirited <pw_ender_up*>
+#80  4449AD53BCE797E1 (-1.5,12.0) sz=1  opt=0 deps=[#65] | 
+        item x1: powah:energy_cell_spirited <pw_spirited>
+#81  379EBE12E3F61679 (1.5,12.0) sz=1  opt=0 deps=[#66,#18] | 
+        item x1: powah:energy_cable_spirited <pw_cable_crystal*>
+#82  335927C2D234451A (2.5,12.0) sz=1  opt=0 deps=[#81] | 
+        item x1: powah:ender_gate_spirited <pw_ender_up*>
+#83  36B14701D95C3C21 (4.0,12.0) sz=1  opt=0 deps=[#68] | 
+        item x1: powah:magmator_spirited <pw_gen_top*>
+#84  5A7C92F05AF39FDB (5.0,12.0) sz=1  opt=0 deps=[#69] | 
+        item x1: powah:furnator_spirited <pw_gen_top*>
+#85  637A8E4BBF108417 (6.0,12.0) sz=1  opt=0 deps=[#70] | 
+        item x1: powah:thermo_generator_spirited <pw_gen_top*>
+#86  341486C9F277FEB7 (7.0,12.0) sz=1  opt=0 deps=[#71] | Reactor (Spirited)
+        item x36: powah:reactor_spirited <pw_reactor_crystal*>
+#87  760F80E1C273C0AD (8.0,12.0) sz=1  opt=0 deps=[#72] | 
+        item x1: powah:solar_panel_spirited <pw_gen_top*>
+#88  348FEC9A50C2E62E (-6.0,13.0) sz=1  opt=0 deps=[#76,#19] | 
+        item x1: powah:player_transmitter_nitro <pw_transmitter_up*>
+#89  24510A5C98703C84 (-8.0,13.0) sz=1  opt=1 deps=[#19] | 
+        item x1: powah:energy_discharger_nitro <pw_hopper_up*>
+#90  41DC771674A6C387 (-7.0,13.0) sz=1  opt=1 deps=[#77,#19] | 
+        item x1: powah:energy_hopper_nitro <pw_hopper_up*>
+#91  7EBA36EF1858F428 (-5.0,13.0) sz=1  opt=0 deps=[#75,#19] | 
+        item x1: powah:battery_nitro <pw_battery_up*>
+#92  3B28A8BA318D438F (-2.5,13.0) sz=1  opt=0 deps=[#19] | 
+        item x1: powah:ender_cell_nitro <pw_ender_up*>
+#93  503CD7E104C8BA5D (-1.5,13.0) sz=1  opt=0 deps=[#80,#19] | 
+        item x1: powah:energy_cell_nitro <pw_nitro_gear>
+#94  3CD1F9E00E33C6C9 (1.5,13.0) sz=1  opt=0 deps=[#81,#19] | 
+        item x1: powah:energy_cable_nitro <pw_cable_crystal*>
+#95  44F016F465082C55 (2.5,13.0) sz=1  opt=0 deps=[#94,#19] | 
+        item x1: powah:ender_gate_nitro <pw_ender_up*>
+#96  4E67DE071FC9D80D (4.0,13.0) sz=1  opt=0 deps=[#83,#19] | 
+        item x1: powah:magmator_nitro <pw_gen_top*>
+#97  129F6987E144B048 (5.0,13.0) sz=1  opt=0 deps=[#84,#19] | 
+        item x1: powah:furnator_nitro <pw_gen_top*>
+#98  71D08D1C8EA4C631 (6.0,13.0) sz=1  opt=0 deps=[#85,#19] | 
+        item x1: powah:thermo_generator_nitro <pw_gen_top*>
+#99  61DCECE1FC38E151 (7.0,13.0) sz=1  opt=0 deps=[#86,#19] | Reactor (Nitro)
+        item x36: powah:reactor_nitro <pw_reactor_crystal*>
+#100 393050BEA59F1570 (8.0,13.0) sz=1  opt=0 deps=[#87,#19] | 
+        item x1: powah:solar_panel_nitro <pw_gen_top*>
+#101 1C273D9E046FD18A (-4.0,7.0) sz=1  opt=0 deps=[#1,#73] | 
+        item x1: powah:energizing_rod_starter <pw_orb>
+#102 4EA69350A20B0B5B (-4.0,8.0) sz=1  opt=0 deps=[#101,#74] | 
+        item x1: powah:energizing_rod_basic <pw_rod_up>
+#103 09DECE4E7977D852 (-4.0,9.0) sz=1  opt=0 deps=[#102,#15] | 
+        item x1: powah:energizing_rod_hardened <pw_rod_hardened>
+#104 172B0296F87D6725 (-4.0,10.0) sz=1  opt=0 deps=[#103,#16] | 
+        item x1: powah:energizing_rod_blazing <pw_blazing_gear>
+#105 270B5EA3E710A209 (-4.0,11.0) sz=1  opt=0 deps=[#104,#17] | 
+        item x1: powah:energizing_rod_niotic <pw_niotic_gear>
+#106 69E572EA56B3B31D (-4.0,12.0) sz=1  opt=0 deps=[#105,#18] | 
+        item x1: powah:energizing_rod_spirited <pw_spirited_gear>
+#107 2C9EE7BE03767976 (-4.0,13.0) sz=1  opt=0 deps=[#106,#19] | 
+        item x1: powah:energizing_rod_nitro <pw_nitro_gear>
+#108 08245411AFDB63DB (0.0,-2.0) sz=1 circle opt=1 deps=[] | 
+        checkmark x1: 
+        checkmark x1: 

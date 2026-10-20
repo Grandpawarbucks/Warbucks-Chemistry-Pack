@@ -4,6 +4,18 @@ All changes to the Warbucks Chemistry Pack are logged here, newest first.
 
 ## [Unreleased]
 
+### 2026-10-20: ATM10 quest-for-quest mod pages (71 chapters, 4,116 quests)
+- Every mod page we share with ATM10 now asks for the same items in the same order and sections (own text; ATM10 is
+  ARR). Biggest: Ars 76 -> 166, JDT 65 -> 159, Mystical 42 -> 142, Powah 47 -> 120, Mekanism Reactors 30 -> 113.
+- New pages: Silent Gear, Artifacts, Apothic Enchanting, Extended & Advanced AE, Pylons, Integrated Dynamics,
+  Generators. Cluttered pages split into extra chapters (Mekanism x3, Create, JDT, Storage, AE2, Ars x3, Powah,
+  Mystical, Harvest, Undergarden, Twilight, Mekanism Power).
+- 80 duplicate quests across pages retired to pointers; kit shop entries unlock only once every piece is made;
+  Mekanism ore machines back at MV; 72 large collection quests made optional.
+- Comb layout everywhere; no pictures placed. 360 section pictures (showcases, multiblock diagrams) ship for manual
+  placement; see docs/QUEST_PICTURES.md.
+- Live world wiped again.
+
 ### 2026-10-20: ATM10-style quest book (50 chapters, 2,832 quests)
 - Categories and top pages follow ATM10's breakdown; one chapter per mod again (the category split is off).
 - New Tips and Tricks page; Welcome reshaped as a small showcase; Building Tips (96 quests, radial clusters);

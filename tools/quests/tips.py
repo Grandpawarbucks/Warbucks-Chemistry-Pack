@@ -71,8 +71,7 @@ CHAPTER = Chapter("tips", "Tips and Tricks", "minecraft:spyglass",
     tip("tp_backpack", -1, R2, "Carry More", "A backpack, and what it can learn", "sophisticatedbackpacks:backpack", [
         "&eWhat:&r Sophisticated Backpacks hold far more than your inventory and take upgrades: pickup, magnet, feeding, crafting and more.",
         "&eHow:&r get a backpack (leather, string and a chest, check JEI).",
-        "&eTip:&r the Market sells upgrade bases, so tokens turn into upgrades early."],
-        tasks=[item("sophisticatedbackpacks:backpack")], tokens=1),
+        "&eTip:&r the Market sells upgrade bases, so tokens turn into upgrades early. The backpack quest itself is on the Storage page."]),
     tip("tp_shortcuts", 1, R2, "Fewer Clicks", "Bulk recipes and a crafting table on a stick", "crafting_on_a_stick:crafting_table", [
         "&eWhat:&r Utilitarian adds bulk wood recipes (two logs in a column make 16 sticks; chests and ladders straight from logs). Crafting on a Stick puts a crafting table, stonecutter or anvil in your hand.",
         "&eHow:&r press &eU&r on any log in JEI to see the shortcuts.",

@@ -137,12 +137,7 @@ CHAPTER = Chapter("lab_notes", "Lab Notebook", "minecraft:writable_book",
         "&eStep 3, calcine:&r heat drives everything else off as gas: 3(NH₄)₂PtCl₆ → 3Pt + 2NH₄Cl + 16HCl + 2N₂.",
         "&eThe residue:&r iridium, osmium, rhodium and ruthenium don't dissolve in aqua regia, so they stay behind and are separated later (the Centrifuge in this pack)."]),
     # secret: Coffee Break
-    Q("ln_caffeine", 10, 4, [item("chemlib:caffeine")], "Coffee Break", deps=["t1_combiner"], xp=50, secret=True, loot="secret",
-      subtitle="Every lab runs on it", desc=[
-        "&6Even a demigod needs a coffee before the long reactions.&r",
-        "&eWhat:&r you synthesised caffeine, C₈H₁₀N₄O₂, from its elements.",
-        "&eChemistry:&r caffeine fits the brain's adenosine receptors without switching them on, so the 'you're tired' signal can't get through.",
-        "&eTip:&r it's a purine, a close relative of two of the four bases in DNA (adenine and guanine)."]),
+    Q("ln_caffeine", 10, 4, [tick()], "Coffee Break", secret=True, deps=['t1_combiner'], optional=True, tokens=0, xp=0, icon="chemlib:caffeine", subtitle="Moved: see Morning Coffee", desc=["&eMoved:&r this step is now \"Morning Coffee\" on the The Periodic Table page. Click to dismiss."]),
     # --- y=6: electrochemistry, acids and catalysts --------------------------------------------
     Q("ln_electrolysis", 0, 6, [tick()], "Note: Splitting Water", deps=["t4_separator"], xp=30, **N,
       subtitle="Electrolysis: electricity drives a reaction backwards", desc=[

@@ -1,0 +1,314 @@
+#0   7F0B2D58361FB00E x=   0.0 y=   0.0 sz=1    square   opt=0 deps=[] | Just Dire Things
+        checkmark x1: 
+#1   05D8C6EF8FCD6250 x=   2.0 y=   0.0 sz=1.5  diamond  opt=0 deps=[#0] | 
+        item x1: justdirethings:gooblock_tier1 [quested]
+#2   4C54BD57CAB8A54B x=   0.0 y=   2.0 sz=1.5  diamond  opt=0 deps=[#1] | 
+        item x1: justdirethings:gooblock_tier2 [quested]
+#3   5C6709350BEF4050 x=  -2.0 y=   0.0 sz=1.5  diamond  opt=0 deps=[#2] | 
+        item x1: justdirethings:gooblock_tier3 [quested]
+#4   25213DBA6E6CEDD2 x=   0.0 y=  -2.0 sz=1.5  diamond  opt=0 deps=[#3] | 
+        item x1: justdirethings:gooblock_tier4 [quested]
+#5   5BD5737703F3F077 x=   3.0 y=   1.0 sz=1             opt=0 deps=[#1] | Ferricore
+        item x1: justdirethings:raw_ferricore [quested]
+        item x1: justdirethings:ferricore_ingot [quested]
+#6   2D86D4403E0F4EB9 x=  -1.0 y=   3.0 sz=1             opt=0 deps=[#2] | Blazegold
+        item x1: justdirethings:raw_blazegold [quested]
+        item x1: justdirethings:blazegold_ingot [quested]
+#7   60A4994078500F63 x=  -3.0 y=  -1.0 sz=1             opt=0 deps=[#3] | 
+        item x1: justdirethings:celestigem [quested]
+#8   4B3F20E5C7E3BCFB x=   3.0 y=  -1.0 sz=1             opt=0 deps=[#1] | 
+        item x1: justdirethings:coal_t1 [quested]
+#9   079A415488A32076 x=   1.0 y=   3.0 sz=1             opt=0 deps=[#2,#8] | 
+        item x1: justdirethings:coal_t2 [quested]
+#10  446A37C7FCDACF84 x=  -3.0 y=   1.0 sz=1             opt=0 deps=[#3,#9] | 
+        item x1: justdirethings:coal_t3 [quested]
+#11  1705175C20CE91DD x=   1.0 y=  -3.0 sz=1             opt=0 deps=[#4] | Eclipse Alloy
+        item x1: justdirethings:raw_eclipsealloy [quested]
+        item x1: justdirethings:eclipsealloy_ingot [quested]
+#12  09D2137B4F42006E x=  -1.0 y=  -3.0 sz=1             opt=0 deps=[#4,#10] | 
+        item x1: justdirethings:coal_t4 [quested]
+#13  517F0135926B15EE x=   5.0 y=   0.0 sz=1             opt=0 deps=[] | 
+        checkmark x1: 
+#14  7D1D2A4E07E98709 x=   6.5 y=  -0.5 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:blockbreakert1 [quested]
+#15  70C404E5685E4E91 x=   6.5 y=   0.5 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:blockplacert1 [quested]
+#16  6737CB17D562B134 x=   7.0 y=   0.0 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:clickert1 [quested]
+#17  19E678E6EF9539DC x=   7.0 y=  -1.0 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:sensort1 [quested]
+#18  1ECFA72CF2BA4B45 x=   7.0 y=   1.0 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:droppert1 [quested]
+#19  433117EEA55B6A54 x=   7.5 y=  -0.5 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:fluidplacert1 [quested]
+#20  1B173E7533E1171F x=   7.5 y=   0.5 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:fluidcollectort1 [quested]
+#21  4A5937F6E5D06BE1 x=   8.0 y=   1.0 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:generatorfluidt1 [quested]
+#22  70AD088336748892 x=   8.0 y=  -1.0 sz=1    diamond  opt=0 deps=[#13,#5] | 
+        item x1: justdirethings:generatort1 [quested]
+#23  3C8C80345D3F5FE8 x=  -8.5 y=   0.5 sz=1    diamond  opt=0 deps=[#5,#27] | 
+        item x1: justdirethings:itemcollector [quested]
+#24  02B0CCD5607FF3B5 x=  -8.5 y=  -0.5 sz=1    diamond  opt=0 deps=[#6,#27] | 
+        item x1: justdirethings:playeraccessor [quested]
+#25  0B9BBE2A764631BF x=   8.0 y=   0.0 sz=1    diamond  opt=0 deps=[#13,#6] | 
+        item x1: justdirethings:blockswappert1 [quested]
+#26  6F709652A2B88C78 x=  -9.0 y=   0.0 sz=1    diamond  opt=0 deps=[#6,#27] | 
+        item x1: justdirethings:energytransmitter [quested]
+#27  5F5120451BA5B2FE x=  -5.0 y=   0.0 sz=1    circle   opt=0 deps=[] | 
+        checkmark x1: 
+#28  16772C399861783D x=  -6.5 y=  -0.5 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:blockbreakert2 [quested]
+#29  5D182815CB167405 x=  -6.5 y=   0.5 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:blockplacert2 [quested]
+#30  0D32774710EC9900 x=  -7.0 y=   0.0 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:clickert2 [quested]
+#31  55E882E7FA36AFC6 x=  -7.0 y=  -1.0 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:sensort2 [quested]
+#32  15AD6698663D4A42 x=  -7.0 y=   1.0 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:droppert2 [quested]
+#33  6D60602560F35F87 x=  -7.5 y=  -0.5 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:fluidplacert2 [quested]
+#34  4D45C0CFF11191ED x=  -7.5 y=   0.5 sz=1    diamond  opt=0 deps=[#27,#7] | 
+        item x1: justdirethings:fluidcollectort2 [quested]
+#35  4C40699E0A9A5BE6 x=  -8.0 y=   0.0 sz=1    diamond  opt=0 deps=[#27,#11] | 
+        item x1: justdirethings:blockswappert2 [quested]
+#36  7AEFF81E7C8CF300 x=  -5.0 y=   3.5 sz=1             opt=0 deps=[] | 
+        checkmark x1: 
+#37  6AB45CC4CE4570E6 x=   5.0 y=  -3.5 sz=1             opt=0 deps=[] | 
+        checkmark x1: 
+#38  3971FF7D044D1FE5 x=   5.0 y=   3.5 sz=1             opt=0 deps=[] | 
+        checkmark x1: 
+#39  46E6B1600AA8A61E x=  -6.0 y=   5.0 sz=1    diamond  opt=0 deps=[#36,#6] | 
+        item x1: justdirethings:blazegold_sword [quested]
+#40  4E03AE15BEF86178 x=  -4.0 y=   5.0 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:celestigem_sword [quested]
+#41  37B903620493A354 x=  -2.0 y=   5.0 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:eclipsealloy_sword [quested]
+#42  2F86FB9E4D49E4B0 x=  -8.0 y=   5.0 sz=1    diamond  opt=0 deps=[#36,#5] | 
+        item x1: justdirethings:ferricore_sword [quested]
+#43  5BBE8B30ED7518B8 x=  -8.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#5] | 
+        item x1: justdirethings:ferricore_pickaxe [quested]
+#44  5054977BD5354561 x=  -7.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#5] | 
+        item x1: justdirethings:ferricore_axe [quested]
+#45  19E6757F04098A0C x=  -8.0 y=   6.0 sz=1    diamond  opt=0 deps=[#36,#5] | 
+        item x1: justdirethings:ferricore_shovel [quested]
+#46  4773421DC70009AB x=  -8.5 y=   6.5 sz=1    diamond  opt=0 deps=[#36,#5] | 
+        item x1: justdirethings:ferricore_hoe [quested]
+#47  199388A311FAC14C x=  -6.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#6] | 
+        item x1: justdirethings:blazegold_pickaxe [quested]
+#48  21147C8CBF98AEB4 x=  -5.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#6] | 
+        item x1: justdirethings:blazegold_axe [quested]
+#49  1DAA5DD81EF96469 x=  -6.0 y=   6.0 sz=1    diamond  opt=0 deps=[#36,#6] | 
+        item x1: justdirethings:blazegold_shovel [quested]
+#50  52EC86E03EB50525 x=  -6.5 y=   6.5 sz=1    diamond  opt=0 deps=[#36,#6] | 
+        item x1: justdirethings:blazegold_hoe [quested]
+#51  6FD4C60B547F4131 x=  -4.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:celestigem_pickaxe [quested]
+#52  2B1BAEC5DAAF9DAC x=  -3.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:celestigem_axe [quested]
+#53  0C1D55AA9CC902BD x=  -4.0 y=   6.0 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:celestigem_shovel [quested]
+#54  237D11FF5B09BA88 x=  -4.5 y=   6.5 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:celestigem_hoe [quested]
+#55  0272E58516A0C284 x=  -3.5 y=   6.5 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:celestigem_paxel [quested]
+#56  0C9DD8E53A1B92C0 x=  -2.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:eclipsealloy_pickaxe [quested]
+#57  78840993C7832E89 x=  -1.5 y=   5.5 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:eclipsealloy_axe [quested]
+#58  703BDCDC88DD813C x=  -2.0 y=   6.0 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:eclipsealloy_shovel [quested]
+#59  3138B83ABC2930F9 x=  -2.5 y=   6.5 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:eclipsealloy_hoe [quested]
+#60  6A4D31194C4CE156 x=  -1.5 y=   6.5 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:eclipsealloy_paxel [quested]
+#61  24BA4B4EED0A9DBD x=   2.0 y=   5.0 sz=1    diamond  opt=0 deps=[#38,#5] | 
+        item x1: justdirethings:ferricore_helmet [quested]
+#62  7464CA1290B3474B x=   1.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#5] | 
+        item x1: justdirethings:ferricore_chestplate [quested]
+#63  04A1D582003A0D9A x=   2.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#5] | 
+        item x1: justdirethings:ferricore_leggings [quested]
+#64  454CA1F8CC198D9D x=   2.0 y=   6.0 sz=1    diamond  opt=0 deps=[#38,#5] | 
+        item x1: justdirethings:ferricore_boots [quested]
+#65  03ED9B0DFE8B4574 x=   4.0 y=   5.0 sz=1    diamond  opt=0 deps=[#38,#6] | 
+        item x1: justdirethings:blazegold_helmet [quested]
+#66  1CBA0D7DA0558EBC x=   3.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#6] | 
+        item x1: justdirethings:blazegold_chestplate [quested]
+#67  5A38E9F68570F7F3 x=   4.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#6] | 
+        item x1: justdirethings:blazegold_leggings [quested]
+#68  176A1CC43467EF23 x=   4.0 y=   6.0 sz=1    diamond  opt=0 deps=[#38,#6] | 
+        item x1: justdirethings:blazegold_boots [quested]
+#69  71441DFA05FD73E5 x=   6.0 y=   5.0 sz=1    diamond  opt=0 deps=[#38,#7] | 
+        item x1: justdirethings:celestigem_helmet [quested]
+#70  4B1E4FC4599DB916 x=   5.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#7] | 
+        item x1: justdirethings:celestigem_chestplate [quested]
+#71  3BF32843DE3CF3C2 x=   6.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#7] | 
+        item x1: justdirethings:celestigem_leggings [quested]
+#72  1FE7C52491E7499B x=   6.0 y=   6.0 sz=1    diamond  opt=0 deps=[#38,#7] | 
+        item x1: justdirethings:celestigem_boots [quested]
+#73  242F74010488F261 x=   5.0 y=  -7.5 sz=1    diamond  opt=0 deps=[#37,#5] | 
+        item x1: justdirethings:fuel_canister [quested]
+#74  40C5C355B6DA1893 x=   4.0 y=  -7.5 sz=1    diamond  opt=0 deps=[#37,#5] | 
+        item x1: justdirethings:pocket_generator [quested]
+#75  200ECDC70E97D254 x=   5.0 y=  -6.5 sz=1    diamond  opt=0 deps=[#37,#5] | 
+        item x1: justdirethings:fluid_canister [quested]
+#76  5D4E51471F3939E0 x=  -6.0 y=   7.0 sz=1    diamond  opt=0 deps=[#6,#36] | 
+        item x1: justdirethings:blazejet_wand [quested]
+#77  5B910F1389C0B915 x=  -4.0 y=   7.0 sz=1    diamond  opt=0 deps=[#7,#36] | 
+        item x1: justdirethings:voidshift_wand [quested]
+#78  5B02719C13B1FFE2 x=  -2.0 y=   7.0 sz=1    diamond  opt=0 deps=[#11,#36] | 
+        item x1: justdirethings:eclipsegate_wand [quested]
+#79  16E02F671FBE9148 x=   4.5 y=  -7.0 sz=1    diamond  opt=0 deps=[#37,#6] | 
+        item x1: justdirethings:portalgun [quested]
+#80  4F9932477EDDCB8E x=   5.5 y=  -7.0 sz=1    diamond  opt=0 deps=[#37,#7] | 
+        item x1: justdirethings:portalgun_v2 [quested]
+#81  53F9E5CE7EE6F852 x=   6.0 y=  -7.5 sz=1    diamond  opt=0 deps=[#37,#6] | 
+        item x1: justdirethings:creaturecatcher [quested]
+#82  0B485DB737A036E9 x=   4.5 y=  -6.0 sz=1    diamond  opt=0 deps=[#37,#5] | 
+        item x1: justdirethings:machinesettingscopier [quested]
+#83  45A25221F54A1DEC x=   5.5 y=  -6.0 sz=1    diamond  opt=0 deps=[#37,#5] | 
+        item x1: justdirethings:ferricore_wrench [quested]
+#84  27FD46A8C958D259 x=   5.0 y=  -5.5 sz=1    diamond  opt=0 deps=[#37,#6] | 
+        item x1: justdirethings:totem_of_death_recall [quested]
+#85  66F79F0F1E05D163 x=  -5.0 y=  -3.5 sz=1             opt=0 deps=[] | 
+        checkmark x1: 
+#86  4458F8829800A950 x=  -5.0 y=  -5.5 sz=1    diamond  opt=0 deps=[#85] | 
+        item x1: justdirethings:polymorphic_fluid_bucket [quested]
+#87  3D9964CB0440DD5A x=  -4.0 y=  -6.5 sz=1    diamond  opt=0 deps=[#86,#9] | 
+        item x1: justdirethings:refined_t2_fluid_bucket [quested]
+#88  70BF85E2D235BAD5 x=  -5.0 y=  -6.5 sz=1    diamond  opt=0 deps=[#87,#10] | 
+        item x1: justdirethings:refined_t3_fluid_bucket [quested]
+#89  49EF8A4346AEF582 x=  -5.0 y=  -7.5 sz=1    diamond  opt=0 deps=[#88,#12] | 
+        item x1: justdirethings:refined_t4_fluid_bucket [quested]
+#90  0FAF274ADA65B26A x=  -6.0 y=  -6.5 sz=1    diamond  opt=0 deps=[#86] | 
+        item x1: justdirethings:portal_fluid_bucket [quested]
+#91  4E9B35DCA018FD42 x=  -1.5 y=   9.5 sz=1    diamond  opt=0 deps=[#97] | Tool Upgrades
+        item x1: ftbfiltersystem:filter [MISSING], #c:tools
+#92  67B87570C340C243 x=   1.5 y=   9.5 sz=1    diamond  opt=0 deps=[#97] | Armor Upgrades
+        item x1: ftbfiltersystem:filter [MISSING], #c:armors
+#93  5A1AB1AD7DEFDD9A x=   7.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#11] | 
+        item x1: justdirethings:eclipsealloy_chestplate [quested]
+#94  0A02DBE226C3F44E x=   8.0 y=   5.0 sz=1    diamond  opt=0 deps=[#38,#11] | 
+        item x1: justdirethings:eclipsealloy_helmet [quested]
+#95  2A919F73CB09CF8B x=   8.5 y=   5.5 sz=1    diamond  opt=0 deps=[#38,#11] | 
+        item x1: justdirethings:eclipsealloy_leggings [quested]
+#96  1FFA1DA6A5EA4E70 x=   8.0 y=   6.0 sz=1    diamond  opt=0 deps=[#38,#11] | 
+        item x1: justdirethings:eclipsealloy_boots [quested]
+#97  7305EE0F7D73C231 x=   0.0 y=   8.0 sz=1.5  diamond  opt=0 deps=[#36,#38,#5] | 
+        item x1: justdirethings:upgrade_blank [quested]
+#98  17C4F6EC1AFBC3AA x=  -2.0 y=  10.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_mobscanner [quested]
+#99  2A01CE9206DD4F8A x=  -2.0 y=   9.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_oreminer [quested]
+#100 07655CA904354E9E x=  -2.5 y=   9.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_lawnmower [quested]
+#101 46EE2F9818F8D1D9 x=  -3.0 y=   9.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_skysweeper [quested]
+#102 4D98D2123BD5BFB3 x=  -3.0 y=  10.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_treefeller [quested]
+#103 0E3FDD8BB6D17A30 x=  -2.5 y=  10.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_leafbreaker [quested]
+#104 171DB70D0D19A942 x=  -2.5 y=   8.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_smelter [quested]
+#105 61213012615619C5 x=  -4.5 y=   8.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_smoker [quested]
+#106 6690AEE064DC2A7C x=  -3.5 y=   9.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_hammer [quested]
+#107 2875FACD3BFB0A8E x=  -4.5 y=  10.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_cauterizewounds [quested]
+#108 636854555AD75DC3 x=  -4.0 y=  10.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_dropteleport [quested]
+#109 18032636A60D0B2C x=  -4.5 y=   9.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_orexray [quested]
+#110 283D7E65F2AD45F2 x=  -5.0 y=  10.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_glowing [quested]
+#111 45D683D7F1A32B04 x=  -5.0 y=   9.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_instabreak [quested]
+#112 3B3E3D81843BB358 x=   2.0 y=   9.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_runspeed [quested]
+#113 132F4671E121C7B8 x=   2.0 y=  10.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_walkspeed [quested]
+#114 17A9D2CA160561D9 x=   2.5 y=   9.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_stepheight [quested]
+#115 0CBFE2CE53DCACD5 x=   2.5 y=   8.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_jumpboost [quested]
+#116 3CBB78C9B8D3665E x=   2.5 y=  10.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_mindfog [quested]
+#117 0C2EC56133D3CC6C x=   3.0 y=  10.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_invulnerability [quested]
+#118 4ACB72F3A23A5A19 x=   3.0 y=   9.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_swimspeed [quested]
+#119 6889EFC6CC291463 x=   3.5 y=  10.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_groundstomp [quested]
+#120 3AE1811C32B94A66 x=   3.5 y=   8.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_extinguish [quested]
+#121 09485B63483B7A15 x=   3.5 y=   9.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_stupefy [quested]
+#122 3A471716A29F5172 x=   4.0 y=  10.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_elytra [quested]
+#123 02B8F50721F12CFF x=   4.0 y=   9.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_negatefalldamage [quested]
+#124 120DCA89A919C7AF x=   4.5 y=  10.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_nightvision [quested]
+#125 5961C1ED32522BEF x=   4.5 y=   9.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_decoy [quested]
+#126 1E0C6409B2573CCA x=   4.5 y=   8.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_earthquake [quested]
+#127 7B9486981786AC47 x=   5.0 y=  10.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_noai [quested]
+#128 515C0527226BA50C x=   5.0 y=   9.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_flight [quested]
+#129 6D9CFCD81A23BB3B x=   5.5 y=  10.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_lavaimmunity [quested]
+#130 454662617304E299 x=   0.0 y=  11.5 sz=1    diamond  opt=0 deps=[#153] | 
+        item x1: justdirethings:upgrade_phase [quested]
+#131 79BBCC1BEE90DBBB x=   5.5 y=   9.5 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_deathprotection [quested]
+#132 026C63594F813BCC x=   6.0 y=   9.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_debuffremover [quested]
+#133 49636B3C6E6D0C2A x=   6.0 y=  10.0 sz=1    diamond  opt=1 deps=[#92,#5] | 
+        item x1: justdirethings:template_ferricore [quested]
+#134 2409EAD96CE3BDF7 x=   6.5 y=   9.5 sz=1    diamond  opt=0 deps=[#92,#6] | 
+        item x1: justdirethings:template_blazegold [quested]
+#135 25E915AE1FC53254 x=   6.5 y=   8.5 sz=1    diamond  opt=0 deps=[#92,#7] | 
+        item x1: justdirethings:template_celestigem [quested]
+#136 1EA02BA24AF02256 x=   6.5 y=  10.5 sz=1    diamond  opt=0 deps=[#92,#11] | 
+        item x1: justdirethings:template_eclipsealloy [quested]
+#137 5EE7D5DE07A83C7D x=  -4.0 y=   9.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_orescanner [quested]
+        checkmark x1: 
+#138 441F37A95AB66E6B x=   0.0 y=   4.0 sz=1    circle   opt=1 deps=[] | 
+        checkmark x1: 
+        checkmark x1: 
+#139 6ADE6F9E004055F7 x=   0.0 y=  -4.0 sz=1             opt=0 deps=[#4] | Time Crystal
+        block x1: 
+        item x1: justdirethings:time_crystal [quested]
+#140 76B1C5AFC5D6B7CF x=   4.0 y=  -6.5 sz=1    diamond  opt=0 deps=[#37,#139,#6,#5,#142] | 
+        item x1: justdirethings:time_wand [quested]
+#141 41E8C93A44559E48 x=  -8.0 y=  -1.0 sz=1    diamond  opt=0 deps=[#139,#11,#142,#27] | 
+        item x1: justdirethings:paradoxmachine [quested]
+#142 48E4D75FD3145AD6 x=  -6.5 y=  -5.5 sz=1    diamond  opt=0 deps=[#139,#86] | 
+        item x1: justdirethings:time_fluid_bucket [quested]
+#143 4987759CF379C1EB x=   3.0 y=  11.0 sz=1    diamond  opt=0 deps=[#92] | 
+        item x1: justdirethings:upgrade_time_protection [quested]
+#144 5A9436B100FC1E67 x=  -8.5 y=   4.5 sz=1    diamond  opt=0 deps=[#36,#5] | 
+        item x1: justdirethings:bow_ferricore [quested]
+#145 567005978482235F x=  -6.5 y=   4.5 sz=1    diamond  opt=0 deps=[#36,#6] | 
+        item x1: justdirethings:bow_blazegold [quested]
+#146 35A78E04092767AD x=  -4.5 y=   4.5 sz=1    diamond  opt=0 deps=[#36,#7] | 
+        item x1: justdirethings:bow_celestigem [quested]
+#147 71128E508D810DDF x=  -2.5 y=   4.5 sz=1    diamond  opt=0 deps=[#36,#11] | 
+        item x1: justdirethings:bow_eclipsealloy [quested]
+#148 05056CAA64E3971B x=  -5.5 y=  10.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_potionarrow [quested]
+#149 3CFD798362605880 x=  -6.0 y=  10.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_splash [quested]
+#150 6720F863B907A5F1 x=  -5.0 y=  11.0 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_lingering [quested]
+#151 3F3559EF5D08B706 x=  -5.5 y=   9.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_homing [quested]
+#152 1256F280F3669DDA x=  -6.5 y=   9.5 sz=1    diamond  opt=0 deps=[#91] | 
+        item x1: justdirethings:upgrade_epicarrow [quested]
+#153 73552A4BA0687962 x=   0.0 y=  10.5 sz=1    diamond  opt=0 deps=[#92,#91] | 
+        checkmark x1: 

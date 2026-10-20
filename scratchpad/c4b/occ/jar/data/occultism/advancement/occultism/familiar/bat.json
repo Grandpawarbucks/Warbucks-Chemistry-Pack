@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "bat_eat": {
+      "conditions": {
+        "type": "bat_eat"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.bat.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 1
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.bat.title"
+    }
+  },
+  "requirements": [
+    [
+      "bat_eat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

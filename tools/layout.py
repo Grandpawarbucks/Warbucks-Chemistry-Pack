@@ -739,7 +739,7 @@ import re
 
 DEFAULT_STYLE = "tree"
 SEC_MIN, SEC_IDEAL, SEC_MAX = 4, 9, 14   # section sizes (quests)
-HUB = {"spine": 6, "tree": 6, "grid": 4, "winding": 6, "radial": 99, "molecule": 6, "comb": 10}  # dependents that make a
+HUB = {"spine": 6, "tree": 6, "grid": 4, "winding": 6, "radial": 99, "molecule": 6, "comb": 10, "mirror": 10}  # dependents that make a
 # quest a hub (its fan's lines are hidden; radial pages draw the hub's spokes, they are short)
 HEAD_H = 0.75      # section header image height (cells)
 HEAD_PAD = 0.25    # header bottom to the top edge of the section's quests
@@ -1193,7 +1193,7 @@ def _free_spot(x, y, taken, lo_x=None):
 # BLOCK_KIND (quest_data.BLOCKS) can also ask for molecule-shaped sections on a winding page (e.g. t4, t6).
 # v13 adds "comb" (the default since 2026-10-19), ATM10's main-questline grammar: see the comb block below.
 MOTIF_BASE = {"spine": "spine", "tree": "tree", "grid": "grid", "winding": "spine", "radial": "tree", "molecule": "tree",
-              "comb": "spine"}
+              "comb": "spine", "mirror": "tree"}
 WIND_ROWS = (4, 5, 6, 7)   # spine quests per row tried
 WIND_PITCH = (2.0, 2.5)    # spine pitch tried (cells)
 WIND_GAP = 3.0             # minimum distance between two spine rows
@@ -2768,7 +2768,9 @@ def _ext_targets(chapter):
             h = home.get(k)
             if q.deps and h in COMB_PAGES and all(home.get(d) != h for d in q.deps):
                 d = next((d for d in q.deps if d in book), None)
-                if d:
+                # a link from a sibling chapter of the same split page doesn't pin the hub's flags (see
+                # tools/quest_data.py _linked_elsewhere)
+                if d and not (SPLIT_OF.get(h) and SPLIT_OF.get(h) == SPLIT_OF.get(home.get(d))):
                     out.add(d)
         _EXT_CACHE.clear()
         _EXT_CACHE[key] = out
@@ -2777,6 +2779,7 @@ def _ext_targets(chapter):
 
 _EXT_CACHE = {}
 COMB_PAGES = set()  # chapter keys drawn as combs (set by tools/quest_data.py from STYLES)
+SPLIT_OF = {}       # chapter key -> the page it was split from (tools/quest_data.py SPLIT_PAGES)
 
 
 def _comb_apply(chapter, book_keys, byk, idx, parents, order, spine, secs, header):
@@ -2805,6 +2808,936 @@ def _comb_apply(chapter, book_keys, byk, idx, parents, order, spine, secs, heade
     return P, links, heads
 
 
+# --- mirror motif (v14, 2026-10-20) -----------------------------------------------------------------------------
+# User decision: our book mirrors All the Mods 10's quest-for-quest where we have the mod, with the same page shapes
+# and pictures in ATM10's image spots. ATM10's book is All Rights Reserved: this reads its GEOMETRY and REQUIREMENTS
+# only (quest positions, sizes, dependencies, first task item ids, image rectangles), never its text or image files.
+# A chapter with a mirror target (Chapter(mirror=) or MIRROR in tools/quest_data.py) is drawn so:
+# - Our quests are matched to ATM10's: by Q(mirror="<id>") first, then by the first item task's id (unique among
+#   the ATM10 quests still free; ties go to the candidate whose ATM10 lines agree with ours), then by dependency
+#   structure (an unmatched quest whose matched deps/dependents point at one free ATM10 neighbour), repeated until
+#   nothing changes.
+# - A matched quest sits exactly at its ATM10 quest's x/y (same grid, the same page shape). Its size follows ATM10's
+#   where the quest_style role allows it (milestones keep 1.5/2.0; other roles take ATM10's size, 0.75 to 1.4, so no
+#   quest crosses the milestone token threshold); shapes stay the role's (ATM10's square/rsquare only confirm main/
+#   side). Two matched quests that would overlap (our milestone is bigger than ATM10's quest): the smaller moves to
+#   the nearest free spot.
+# - Unmatched quests go near their deps (then their dependents) in free cells: the nearest 0.5-grid spot whose new
+#   lines are short and straight, run through no quest and along no other line, and that sits on no line or picture.
+# - Lines and deps are ours; hide flags come from the comb's flag search (_comb_flags). No section headers: the
+#   page's labels are its pictures.
+# - Pictures: every ATM10 image rectangle becomes a slot {chapter, slug, x, y, width, height, rotation,
+#   nearby_items (first item ids of the 6 nearest quests), title (the nearest quest's section)} in chapter.pictures.
+#   tools/build_quests.py renders them with tools/build_pictures.py (the art module; skipped when it is missing)
+#   and writes the textures into the chapter's images list, after the banner.
+import pathlib as _pathlib
+
+ATM10_BOOK = _pathlib.Path.home() / "curseforge/minecraft/Instances/All the Mods 10 - ATM10/config/ftbquests/quests"
+MIRROR_SIZE_MAX = 1.4   # a non-milestone never reaches 1.5 (milestones pay double tokens)
+MIRROR_SIZE_MIN = 0.75
+MIRROR_R = 8            # search radius (cells) around an unmatched quest's anchor
+MIRROR_GAP = 0.25       # clearance (cells, edge to edge) an unmatched quest or link keeps from every other node
+MIRROR_MIN, MIRROR_MIN_PCT = 4, 0.2   # fewer matches than this (count, share of the page): the comb draws the page
+MIRROR_LONE_MIN = 0.5    # lowest cost of a lineless quest on a mirror page (see _mirror_apply)
+MIRROR_DIAG, MIRROR_DIAG_FAR = 3.0, 12.0  # extra cost of a drawn slanted line over 4 / 5.5 cells on a mirror page
+COMB_LONE = 12          # cost of a quest left with no drawn line on comb pages (_comb_flags)
+MIRROR_NEAR = 6         # quests listed as nearby_items of a picture
+MIRROR_BACKDROP = 2.5   # a picture this small (cells) with a quest centre on it is a backdrop (decor, no caption)
+_MIRROR_CACHE = {}
+
+
+def load_mirror(stem):
+    """The geometry of ATM10 chapter <stem> (chapters/<stem>.snbt in ATM10_BOOK), or None when the file is missing:
+    {"stem", "quests": {id: {x, y, size, shape, deps, item (first task's item id or None), kind, optional,
+    invisible}}, "order": [ids], "images": [{x, y, width, height, rotation}], "links": [{quest, x, y}]}."""
+    if stem in _MIRROR_CACHE:
+        return _MIRROR_CACHE[stem]
+    f = ATM10_BOOK / "chapters" / f"{stem}.snbt"
+    out = None
+    if f.is_file():
+        import layout_lint  # tools/layout_lint.py: SNBT parser and task_icon (first task's item)
+        c = layout_lint.read_snbt(f)
+        dshape = c.get("default_quest_shape") or ""
+        quests, order = {}, []
+        for q in c.get("quests", []):
+            tasks = q.get("tasks") or []
+            t0 = tasks[0] if tasks else {}
+            iid, _ = layout_lint.task_icon(t0) if tasks else (None, "")
+            kind = str(t0.get("type", "")) if tasks else ""
+            # the requirement a quest is matched by: its first task's item, entity, dimension, structure or biome
+            key = None
+            if kind == "item" and iid:
+                key = "item:" + iid
+            elif kind in ("kill", "dimension", "structure", "biome"):
+                v = t0.get({"kill": "entity", "dimension": "dimension", "structure": "structure", "biome": "biome"}[kind])
+                key = f"{kind}:{v}" if isinstance(v, str) and v else None
+            qid = str(q.get("id", ""))
+            if not qid:
+                continue
+            quests[qid] = {"x": float(q.get("x", 0) or 0), "y": float(q.get("y", 0) or 0),
+                           "size": float(q.get("size", 1.0) or 1.0), "shape": q.get("shape") or dshape,
+                           "deps": [str(d) for d in q.get("dependencies", []) if isinstance(d, str)],
+                           "item": iid, "key": key, "kind": kind,
+                           "optional": bool(q.get("optional", False)), "invisible": bool(q.get("invisible", False))}
+            order.append(qid)
+        for qid in order:
+            quests[qid]["deps"] = [d for d in quests[qid]["deps"] if d in quests and d != qid]
+        # How much of ATM10's page is drawn without lines (many of its mod pages are grids with every line hidden):
+        # the share of its quests with no visible in-chapter line. The flag search copies that habit (_comb_flags).
+        hdl = {str(q.get("id", "")): bool(q.get("hide_dependency_lines", False)) for q in c.get("quests", [])}
+        hdt = {str(q.get("id", "")): bool(q.get("hide_dependent_lines", False)) for q in c.get("quests", [])}
+        tied = set()
+        for qid in order:
+            for d in quests[qid]["deps"]:
+                if not (hdl.get(qid) or hdt.get(d)):
+                    tied.update((qid, d))
+        lone = 1 - len(tied) / len(order) if order else 0.0
+        images = [{"x": float(im.get("x", 0) or 0), "y": float(im.get("y", 0) or 0),
+                   "width": float(im.get("width", 1) or 1), "height": float(im.get("height", 1) or 1),
+                   "rotation": float(im.get("rotation", 0) or 0)} for im in c.get("images", [])]
+        links = [{"quest": str(l.get("linked_quest", "")), "x": float(l.get("x", 0) or 0), "y": float(l.get("y", 0) or 0)}
+                 for l in c.get("quest_links", [])]
+        out = {"stem": stem, "quests": quests, "order": order, "images": images, "links": links, "lone": lone}
+    _MIRROR_CACHE[stem] = out
+    return out
+
+
+_ATM10_KEYS = {}
+
+
+def _atm10_keys():
+    """{ATM10 quest id: its first task's requirement key ("item:<id>", ...)} over the whole ATM10 book (quest links
+    point at quests in other chapters too)."""
+    if not _ATM10_KEYS and (ATM10_BOOK / "chapters").is_dir():
+        for f in sorted((ATM10_BOOK / "chapters").glob("*.snbt")):
+            atm = load_mirror(f.stem)
+            for qid, a in (atm or {}).get("quests", {}).items():
+                if a["key"]:
+                    _ATM10_KEYS[qid] = a["key"]
+        _ATM10_KEYS.setdefault("", None)
+    return _ATM10_KEYS
+
+
+def _first_item(q):
+    """The item id of a quest's first item task (an anyof filter counts by its first item), or None."""
+    for t in q.tasks:
+        if t[0] == "item":
+            return t[1]
+        if t[0] == "filter":
+            m = re.search(r"item\(([^()]+)\)", t[1])
+            if m:
+                return m.group(1)
+    return None
+
+
+def _task_key(q):
+    """The requirement a quest is matched to an ATM10 quest by: "item:<id>" of its first item task (an anyof
+    filter counts by its first item), else "kill:<entity>", "dimension:<id>", "structure:<id>" or "biome:<id>" of
+    its first task; None for checkmarks."""
+    it = _first_item(q)
+    if it:
+        return "item:" + it
+    for t in q.tasks:
+        if t[0] in ("kill", "dimension", "structure", "biome"):
+            return f"{t[0]}:{t[1]}"
+    return None
+
+
+def _mirror_match(chapter, byk, idx, parents, children, order, atm):
+    """{our key: ATM10 quest id}: explicit Q(mirror=), then first item id, then dependency structure.
+    Also returns {our key: how} ("mirror", "item", "deps") and a list of warnings."""
+    A, aorder = atm["quests"], atm["order"]
+    akids = {a: [] for a in aorder}
+    for a in aorder:
+        for d in A[a]["deps"]:
+            akids[d].append(a)
+    m, how, warns = {}, {}, []
+    used = set()
+    for k in order:  # 1. explicit
+        mid = getattr(byk[k], "mirror", None)
+        if not mid:
+            continue
+        if mid not in A:
+            warns.append(f"{k}: mirror={mid} is not a quest of ATM10 chapter {atm['stem']}")
+        elif mid in used:
+            warns.append(f"{k}: mirror={mid} is already the mirror of another quest here")
+        else:
+            m[k], how[k] = mid, "mirror"
+            used.add(mid)
+
+    def agreement(k, a):
+        """How many of k's in-chapter lines the ATM10 quest a shares (through the matches so far)."""
+        n = sum(1 for p in parents[k] if m.get(p) in A[a]["deps"])
+        n += sum(1 for c in children[k] if m.get(c) in akids[a])
+        return n
+
+    by_item = {}
+    for a in aorder:
+        if A[a]["key"]:
+            by_item.setdefault(A[a]["key"], []).append(a)
+    for k in order:  # 2. first task's requirement (item id; else entity, dimension, structure or biome)
+        if k in m:
+            continue
+        it = _task_key(byk[k])
+        cands = [a for a in by_item.get(it, []) if a not in used] if it else []
+        if not cands:
+            continue
+        a = max(cands, key=lambda a: (agreement(k, a), -aorder.index(a)))
+        m[k], how[k] = a, "item"
+        used.add(a)
+    for _ in range(len(order)):  # 3. dependency structure, until nothing changes
+        changed = False
+        for k in order:
+            if k in m:
+                continue
+            q = byk[k]
+            near = []
+            for p in parents[k]:
+                if p in m:
+                    near += [a for a in akids[m[p]] if a not in used]
+            for c in children[k]:
+                if c in m:
+                    near += [a for a in A[m[c]]["deps"] if a not in used]
+            if not near:
+                continue
+            kind = (_task_key(q) or next((t[0] for t in q.tasks), "")).split(":")[0]
+            ms = (q.size or 1) >= 1.5
+
+            def score(a):
+                return (agreement(k, a), A[a]["kind"] == kind, (A[a]["size"] >= 1.5) == ms,
+                        bool(A[a]["optional"]) == bool(q.optional), -aorder.index(a))
+            cands = sorted(set(near), key=score, reverse=True)
+            best = cands[0]
+            if len(cands) > 1 and score(best)[:4] == score(cands[1])[:4]:
+                # two free ATM10 neighbours look the same: wait for more matches, unless nothing else will come
+                continue
+            m[k], how[k] = best, "deps"
+            used.add(best)
+            changed = True
+        if not changed:
+            break
+    for k in order:  # 3b. leftovers with exactly one kind of neighbourhood: take the first free neighbour in order
+        if k in m:
+            continue
+        near = []
+        for p in parents[k]:
+            if p in m:
+                near += [a for a in akids[m[p]] if a not in used]
+        for c in children[k]:
+            if c in m:
+                near += [a for a in A[m[c]]["deps"] if a not in used]
+        if near:
+            a = min(set(near), key=lambda a: (-agreement(k, a), aorder.index(a)))
+            m[k], how[k] = a, "deps"
+            used.add(a)
+    return m, how, warns
+
+
+def _mirror_box(im):
+    """Axis-aligned (x0, y0, x1, y1) of a picture rectangle, rotation included."""
+    a = math.radians(im["rotation"])
+    hw = (abs(math.cos(a)) * im["width"] + abs(math.sin(a)) * im["height"]) / 2
+    hh = (abs(math.sin(a)) * im["width"] + abs(math.cos(a)) * im["height"]) / 2
+    return im["x"] - hw, im["y"] - hh, im["x"] + hw, im["y"] + hh
+
+
+def _overlap_nodes(a, b, sa, sb, slack=0.1):
+    """Do two nodes (x, y, size) with shapes sa/sb overlap? Same rule as tools/layout_lint.py (diamonds tile at
+    half-cell offsets, two square shapes use their boxes, everything else is round)."""
+    dx, dy = abs(a[0] - b[0]), abs(a[1] - b[1])
+    lim = (a[2] + b[2]) / 2 - slack
+    if sa == "diamond" and sb == "diamond":
+        return dx + dy < lim
+    if sa in ("square", "rsquare") and sb in ("square", "rsquare"):
+        return dx < lim and dy < lim
+    return math.hypot(dx, dy) < lim
+
+
+def _mirror_page(chapter, book_keys, byk, idx, parents, children, order, spine, secs, atm):
+    """Place a mirror page. Returns (P {node: (x, y, size)}, links, pictures, stats)."""
+    A = atm["quests"]
+    m, how, warns = _mirror_match(chapter, byk, idx, parents, children, order, atm)
+    chapter.mirror_warnings = warns
+    # Sizes from ATM10 where the role allows: milestones keep theirs, every other role takes ATM10's size (clamped).
+    for k, a in m.items():
+        q = byk[k]
+        if (q.size or 1) < 1.5 and not getattr(q, "keep_style", False):
+            q.size = max(MIRROR_SIZE_MIN, min(MIRROR_SIZE_MAX, A[a]["size"]))
+    shape = {k: (byk[k].shape or "") for k in byk}
+    # Links: the chapter's own, the entry quest's deps in other chapters, one per quest whose deps are all elsewhere.
+    links = [lk for lk, _, _ in chapter.links]
+    if book_keys is not None:
+        for d in byk[spine[0]].deps:
+            if d not in byk and d in book_keys and d not in links:
+                links.append(d)
+        for q in chapter.quests:
+            if q.deps and all(d not in byk for d in q.deps) and not any(d in links for d in q.deps):
+                d = next((d for d in q.deps if d in book_keys), None)
+                if d is not None:
+                    links.append(d)
+    pics = [dict(im) for im in atm["images"]]
+    # Unmatched quests keep off the pictures ATM10 keeps clear of quests (art beside the quests); a picture that
+    # ATM10 itself puts quests on is a backdrop (see _mirror_pictures), which our quests may sit on too.
+    for im in pics:
+        x0, y0, x1, y1 = _mirror_box(im)
+        im["atm_inside"] = sum(1 for a in A.values() if x0 <= a["x"] <= x1 and y0 <= a["y"] <= y1)
+    boxes = [_mirror_box(im) for im in pics if not im["atm_inside"]]
+    P = {}
+    for k in order:  # matched quests: ATM10's position
+        if k in m:
+            P[k] = (A[m[k]]["x"], A[m[k]]["y"], _size(byk[k]))
+    edges = []  # (a, b) lines between placed nodes (both ends placed): kept for "along a line" checks
+
+    def node_shape(n):
+        return shape.get(n, "circle") if isinstance(n, str) else "circle"
+
+    def clear_of_nodes(n, p):
+        """A new node keeps a quarter cell between its box and every placed node's (tighter than ATM10 packs its
+        hexagons, which matched quests may keep: see the overlap pass below)."""
+        for o in P:
+            if o == n:
+                continue
+            q = P[o]
+            lim = (p[2] + q[2]) / 2 + MIRROR_GAP
+            if abs(p[0] - q[0]) < lim and abs(p[1] - q[1]) < lim:
+                return False
+        return True
+
+    def on_picture(p):
+        s = p[2] / 2 - 0.1
+        return any(p[0] + s > x0 and p[0] - s < x1 and p[1] + s > y0 and p[1] - s < y1 for x0, y0, x1, y1 in boxes)
+
+    def short(e):  # a line longer than MAX_EDGE is hidden by the flag search: it doesn't block free cells
+        return math.dist(P[e[0]][:2], P[e[1]][:2]) <= MAX_EDGE
+
+    def on_line(n, p):
+        r = 0.45 + (p[2] - 1) / 2
+        return any(n not in e and short(e) and _seg_dist(P[e[0]][:2], P[e[1]][:2], p[:2]) < r for e in edges)
+
+    def through(a, b, skip):
+        p1, p2 = P[a][:2] if a in P else a, P[b][:2] if b in P else b
+        return any(o not in skip and _seg_dist(p1, p2, P[o][:2]) < 0.45 + (P[o][2] - 1) / 2 for o in P)
+
+    def spot(n, size, anchors, mates, avoid_pics=True):
+        """The best free spot for node n near the anchors, with lines to the mates (placed nodes)."""
+        ax = sum(p[0] for p in anchors) / len(anchors)
+        ay = sum(p[1] for p in anchors) / len(anchors)
+        ax, ay = round(ax * 2) / 2, round(ay * 2) / 2
+        best = None
+        r2 = MIRROR_R * 2
+        for ring in range(0, r2 + 1):
+            if best is not None and 0.5 * ring * 0.5 > best[0]:
+                break
+            cells = sorted({(dx * 0.5, dy * 0.5) for dx in range(-ring, ring + 1) for dy in range(-ring, ring + 1)
+                            if max(abs(dx), abs(dy)) == ring}, key=lambda d: (abs(d[0]) + abs(d[1]), d[1], d[0]))
+            for dx, dy in cells:
+                p = (ax + dx, ay + dy, size)
+                if not clear_of_nodes(n, p) or (avoid_pics and on_picture(p)) or on_line(n, p):
+                    continue
+                cost = 0.5 * (abs(dx) + abs(dy))
+                for o in mates:
+                    po = P[o]
+                    L = math.dist(p[:2], po[:2])
+                    slant = not _ortho(p[:2], po[:2])
+                    cost += L + (2.0 if slant else 0.0) + (8.0 if through(p[:2], o, {o}) else 0.0)
+                    if slant:  # as the flag search will see it: a long slanted line gets hidden (or stays as clutter)
+                        cost += MIRROR_DIAG_FAR if L > 5.5 else MIRROR_DIAG if L > 4.0 else 0.0
+                    seg = (p[:2], po[:2])
+                    cost += sum(1.0 for e in edges if o not in e and short(e) and _cross(seg, (P[e[0]][:2], P[e[1]][:2])))
+                if best is None or cost < best[0]:
+                    best = (cost, p)
+        return best[1] if best else None
+
+    # Overlaps among matched quests: ATM10 packs hexagons of 1.2 one cell apart, which our square shapes can't do,
+    # so a non-milestone shrinks to 1.0 first; when that isn't enough (our milestone is bigger than ATM10's quest,
+    # or ATM10 tiled diamonds at half cells), the smaller one moves to the nearest free spot.
+    # First shrink: two matched quests whose boxes touch (ATM10's 1.15-1.3 sizes one cell apart) shrink their
+    # non-milestone sizes towards 1.0 until the boxes clear, so neighbours never sit edge to edge.
+    mk = [k for k in order if k in P]
+    for i, k in enumerate(mk):
+        for o in mk[i + 1:]:
+            d = max(abs(P[k][0] - P[o][0]), abs(P[k][1] - P[o][1]))
+            excess = (P[k][2] + P[o][2]) / 2 - d
+            for n in sorted((k, o), key=lambda n: -P[n][2]):
+                if excess <= 1e-9:
+                    break
+                if 1.0 < P[n][2] < 1.5:
+                    s = max(1.0, P[n][2] - 2 * excess)
+                    excess -= (P[n][2] - s) / 2
+                    byk[n].size = s
+                    P[n] = (P[n][0], P[n][1], s)
+    moved = 0
+    for _ in range(2 * len(P)):
+        pair = next(((k, o) for i, k in enumerate(order) if k in P for o in order[i + 1:]
+                     if o in P and _overlap_nodes(P[k], P[o], shape[k], shape[o])), None)
+        if pair is None:
+            break
+        k, o = pair
+        big = max((n for n in pair if 1.0 < P[n][2] < 1.5), key=lambda n: P[n][2], default=None)
+        if big is not None:
+            byk[big].size = 1.0
+            P[big] = (P[big][0], P[big][1], 1.0)
+            continue
+        mover = o if P[o][2] <= P[k][2] else k
+        mates = [n for n in parents[mover] + children[mover] if n in P]
+        p = spot(mover, P[mover][2], [P[mover]], mates, avoid_pics=False)
+        if p is None:
+            p = _free_spot(P[mover][0], P[mover][1], [v for n, v in P.items() if n != mover]) + (P[mover][2],)
+        P[mover] = p
+        moved += 1
+    for a, b in [(p, k) for k in order for p in parents[k]]:
+        if a in P and b in P:
+            edges.append((a, b))
+    stats = {"target": atm["stem"], "matched": len(m), "total": len(order), "moved": moved,
+             "by": {w: sum(1 for v in how.values() if v == w) for w in ("mirror", "item", "deps")}}
+    # Unmatched quests: near placed deps (topological order), then near placed dependents, then by the entry.
+    todo = [k for k in order if k not in P]
+    for passes in range(3):
+        rest = []
+        for k in (todo if passes != 1 else reversed(todo)):
+            mates = [n for n in parents[k] + children[k] if n in P]
+            if passes == 0:
+                anchors = [P[p] for p in parents[k] if p in P]
+            elif passes == 1:
+                anchors = [P[c] for c in children[k] if c in P]
+            else:
+                anchors = [P[n] for n in mates] or ([P[spine[0]]] if spine[0] in P else [])
+                if not anchors:
+                    pts = list(P.values())
+                    anchors = [(sum(p[0] for p in pts) / len(pts), max(p[1] for p in pts) + 2.0, 1.0)] if pts else [(0.0, 0.0, 1.0)]
+            if not anchors:
+                rest.append(k)
+                continue
+            p = spot(k, _size(byk[k]), anchors, mates)
+            if p is None:
+                p = _free_spot(anchors[0][0], anchors[0][1] + 2.0, list(P.values())) + (_size(byk[k]),)
+            P[k] = p
+            edges += [(n, k) if n in parents[k] else (k, n) for n in mates]
+        todo = rest
+        if not todo:
+            break
+    # Links: at the spot of the matching ATM10 quest link (same quest as our match, or the same first task) when
+    # that spot is free; else beside their first dependent here.
+    dependents = {lk: [q.key for q in chapter.quests if lk in q.deps] for lk in links}
+    book = getattr(chapter, "book_quests", None) or {}
+    akey = _atm10_keys()
+    alinks = list(atm["links"])
+    stats["links_mirrored"] = 0
+    lset = set(links)
+    ldeps = {lk: [d for d in getattr(byk.get(lk) or book.get(lk), "deps", ()) if d in lset and d != lk] for lk in links}
+    for lk in sorted(links, key=lambda lk: (not dependents[lk], links.index(lk))):  # links that feed quests first
+        node = ("link", lk)
+        ds = [d for d in dependents[lk] if d in P]
+        # links joined to this one by a line (a link's quest that depends on another linked quest: FTB draws that
+        # line between the two link buttons, and no flag here can hide it), so keep them close and uncrossed
+        lmates = [("link", o) for o in links if ("link", o) in P and (o in ldeps[lk] or lk in ldeps[o])]
+        lq = byk.get(lk) or book.get(lk)
+        # quests here that the link's quest depends on: FTB draws those lines to the link button too
+        ups = [d for d in getattr(lq, "deps", ()) if d in P and d != lk]
+        lmates += ups
+        tk = _task_key(lq) if lq is not None else None
+        hit = next((al for al in alinks if (m.get(lk) and al["quest"] == m[lk])
+                    or (tk and akey.get(al["quest"]) == tk)), None)
+        if hit is not None:
+            p = (hit["x"], hit["y"], 1.0)
+            if (clear_of_nodes(node, p) and not on_line(node, p) and not any(through(p[:2], d, {d}) for d in ds)
+                    and all(math.dist(p[:2], P[o][:2]) <= 4.0 for o in lmates)):
+                alinks.remove(hit)
+                P[node] = p
+                edges += [(node, d) for d in ds + lmates]
+                stats["links_mirrored"] += 1
+                continue
+        if ds or ups:  # between its dependents (and deps) here, so no line to them runs far
+            anchors = [P[d] for d in ds + ups]
+        elif lmates:
+            anchors = [P[lmates[0]]]
+        else:
+            pts = list(P.values())
+            anchors = [(min(p[0] for p in pts) - 1.0, min(p[1] for p in pts), 1.0)] if pts else [(0.0, 0.0, 1.0)]
+        p = spot(node, 1.0, anchors, ds + lmates)
+        if p is None:
+            p = _free_spot(anchors[0][0] - 1.0, anchors[0][1], list(P.values())) + (1.0,)
+        P[node] = p
+        edges += [(node, d) for d in ds + lmates]
+    # Links joined to each other (a linked quest that depends on another linked quest: FTB draws that line between
+    # the two link buttons, and no flag here can hide it) go down together as one small tree (depth to the right,
+    # one row per leaf), at the free spot nearest the quests they feed.
+    shared_ = (getattr(chapter, "shared_quests", None) or set()) | _ext_targets(chapter)
+    ups_of = {}
+    for lk in links:
+        lq = byk.get(lk) or book.get(lk)
+        ups_of[lk] = [d for d in getattr(lq, "deps", ()) if d in P and d != lk and d in shared_]
+    groups, seen_ = [], set()
+    for lk in links:
+        if lk in seen_ or ("link", lk) not in P:
+            continue
+        comp, todo_ = [], [lk]
+        while todo_:
+            o = todo_.pop()
+            if o in seen_:
+                continue
+            seen_.add(o)
+            comp.append(o)
+            todo_ += [x for x in links if x not in seen_ and (x in ldeps[o] or o in ldeps[x])]
+        if len(comp) >= 2:
+            groups.append(sorted(comp, key=links.index))
+    for comp in groups:
+        cset = set(comp)
+        par = {o: [d for d in ldeps[o] if d in cset] for o in comp}
+        kids_ = {o: [x for x in comp if o in par[x]] for o in comp}
+        rel, row = {}, [0.0]
+
+        def lay(o, depth):
+            if o in rel:
+                return
+            rel[o] = (1.5 * depth, row[0])
+            first = True
+            for k_ in kids_[o]:
+                if k_ in rel:
+                    continue
+                if not first:
+                    row[0] += 1.5
+                lay(k_, depth + 1)
+                first = False
+        for o in comp:
+            if not par[o]:
+                lay(o, 0)
+                row[0] += 1.5
+        for o in comp:  # a cycle of links (shouldn't happen): whatever is left in its own row
+            if o not in rel:
+                lay(o, 0)
+                row[0] += 1.5
+        nodes_ = [("link", o) for o in comp]
+        olds = {n: P.pop(n) for n in nodes_}
+        edges = [e for e in edges if not (set(e) & set(nodes_))]
+        feeds = [d for o in comp for d in dependents[o] if d in P]
+        cx = sum(P[d][0] for d in feeds) / len(feeds) if feeds else sum(v[0] for v in olds.values()) / len(olds)
+        cy = sum(P[d][1] for d in feeds) / len(feeds) if feeds else sum(v[1] for v in olds.values()) / len(olds)
+        bw_ = max(v[0] for v in rel.values())
+        bh_ = max(v[1] for v in rel.values())
+        best_ = None
+        for dy in range(-24, 25):
+            for dx in range(-24, 25):
+                ox, oy = round((cx - bw_ / 2) * 2) / 2 + dx * 0.5, round((cy - bh_ / 2) * 2) / 2 + dy * 0.5
+                spots_ = {("link", o): (ox + rel[o][0], oy + rel[o][1], 1.0) for o in comp}
+                if not all(clear_of_nodes(n, p_) and not on_picture(p_) and not on_line(n, p_) for n, p_ in spots_.items()):
+                    continue
+                if any(through(spots_[("link", d)][:2], spots_[("link", o)][:2], set()) for o in comp for d in par[o]):
+                    continue
+                c_ = 0.3 * math.dist((ox + bw_ / 2, oy + bh_ / 2), (cx, cy))
+                c_ += sum(min(math.dist(spots_[("link", o)][:2], P[d][:2]), MAX_EDGE) for o in comp for d in dependents[o] if d in P)
+                c_ += 5 * sum(math.dist(spots_[("link", o)][:2], P[u][:2]) for o in comp for u in ups_of[o])
+                if best_ is None or c_ < best_[0]:
+                    best_ = (c_, spots_)
+        if best_ is None:
+            P.update(olds)
+        else:
+            P.update(best_[1])
+        for o in comp:
+            edges += [(("link", d), ("link", o)) for d in par[o]] + [(("link", o), d) for d in dependents[o] if d in P]
+    # Links joined by a line that no flag here can hide (to another link: both quests live in other chapters; or
+    # from a quest here that is shown as a link elsewhere, which keeps no flags): a few rounds of moving each link
+    # to the spot nearest those lines (weighted x3) and its dependents here (lines to them can be hidden).
+
+    def hard_of(lk):
+        return [("link", o) for o in links if o != lk and ("link", o) in P and (o in ldeps[lk] or lk in ldeps[o])] + ups_of[lk]
+
+    def lcost(lk, p):
+        return (3 * sum(math.dist(p[:2], P[n][:2]) for n in hard_of(lk))
+                + sum(min(math.dist(p[:2], P[d][:2]), MAX_EDGE) for d in dependents[lk] if d in P))
+
+    for _ in range(3):
+        moved_ = False
+        for lk in links:
+            node = ("link", lk)
+            hard = hard_of(lk)
+            if not hard or any(lk in g for g in groups):  # a link tree stays as it was laid out
+                continue
+            old = P.pop(node)
+            soft = [d for d in dependents[lk] if d in P]
+            near_ = [d for d in soft if math.dist(P[d][:2], old[:2]) <= MIRROR_R]
+            edges = [e for e in edges if node not in e]
+            p = spot(node, 1.0, [P[n] for n in hard], hard * 3 + near_)
+            if p is not None and lcost(lk, p) < lcost(lk, old) - 1e-6:
+                P[node] = p
+                moved_ = True
+            else:
+                P[node] = old
+            edges += [(node, d) for d in hard + soft]
+        if not moved_:
+            break
+    # Unmatched quests again, now that the links are down: each moves to the best spot for ALL its lines (to links
+    # too), so a quest fed by a link from another chapter sits by it instead of across the page.
+    unmatched = [k for k in order if k not in m and k in P]
+    for k in unmatched:
+        lm = [("link", d) for d in byk[k].deps if ("link", d) in P]
+        mates = [n for n in parents[k] + children[k] if n in P] + lm
+        if not mates:
+            continue
+        old = P.pop(k)
+        edges = [e for e in edges if k not in e]
+        p = spot(k, old[2], [P[n] for n in mates], mates)
+        P[k] = p if p is not None else old
+        edges += [(n, k) if (n in parents[k] or n in lm) else (k, n) for n in mates]
+    # Pictures: ATM10's image rectangles, kept raw here; _mirror_pictures turns them into slots once every quest
+    # and link has its final spot (after the nudge passes in _finish).
+    pictures = pics
+    stats["pictures"] = len(pictures)
+    chapter.mirror_matched = m
+    return P, links, pictures, stats
+
+
+def clear_pic(p, im):
+    """Is node p (x, y, size) clear of picture im?"""
+    x0, y0, x1, y1 = _mirror_box(im)
+    s = p[2] / 2 - 0.1
+    return not (p[0] + s > x0 and p[0] - s < x1 and p[1] + s > y0 and p[1] - s < y1)
+
+
+# Picture rules (2026-10-20, user: "tidy the pages where pictures sit behind quests"). ATM10 uses its images two
+# ways: art beside the quests, and big frames that quests sit ON (with nothing in the covered area). Ours too:
+# - a picture with quests on it (a quest box covered more than MIRROR_COVER, or 2+ quest centres inside) is a
+#   BACKDROP: a quiet framed panel, no item renders, no caption under the quests; a small title tab in a corner
+#   only where no quest is within MIRROR_CAP_CLEAR of it;
+# - a picture clear of quests is art (showcase, machine, multiblock) with a caption, or a LABEL (a low strip: its
+#   title only, the way ATM10 labels its rows); a quest just over its edge trims it;
+# - a caption never sits within MIRROR_CAP_CLEAR of a quest or link centre (bottom, else top, else none), and no
+#   title repeats on a page (the next nearest section's name, else no caption; a label without a title goes);
+# - pictures never overlap: two that do become one (when their union is compact), else the smaller is trimmed off
+#   the bigger or dropped. Thin rules (ATM10's table lines) may run across a backdrop only; slanted bars (ATM10's
+#   shafts between quests) are dropped, our dependency lines draw those links.
+# Slugs say what a picture is (tools/layout_lint.py reads them back from the file name): bg_<n> backdrop,
+# bg<corner>_<n> backdrop with a title tab (tl/tr/bl/br), rule_<n>, lab_<title>_<n> label, cap_<title>_<n> caption
+# at the bottom, capt_<title>_<n> caption at the top, art_<n> no caption.
+MIRROR_RULE = 0.35       # thinner than this (cells): a rule
+MIRROR_COVER = 0.25      # share of a quest's box under a picture that makes the picture a backdrop
+MIRROR_CAP_CLEAR = 1.0   # no quest or link centre this close (cells) to a caption, label or tab
+MIRROR_LABEL_H = 1.6     # a clear picture this low, or 3.5x wider than high, is a label
+MIRROR_MERGE = 0.5       # two overlapping pictures merge when this much of the smaller one is under the bigger ...
+MIRROR_GROW = 1.5        # ... and their union is at most this much bigger than the bigger one was at first
+
+
+def _box_area(b):
+    return max(0.0, b[2] - b[0]) * max(0.0, b[3] - b[1])
+
+
+def _box_inter(a, b):
+    return max(0.0, min(a[2], b[2]) - max(a[0], b[0])) * max(0.0, min(a[3], b[3]) - max(a[1], b[1]))
+
+
+def _box_dist(p, b):
+    """Distance from point p to box b (0 inside)."""
+    return math.hypot(max(b[0] - p[0], 0.0, p[0] - b[2]), max(b[1] - p[1], 0.0, p[1] - b[3]))
+
+
+def _trim_off(box, obstacles, margin=0.0):
+    """The biggest part of `box` left after cutting away every obstacle box (one side per obstacle)."""
+    for o in obstacles:
+        o = (o[0] - margin, o[1] - margin, o[2] + margin, o[3] + margin)
+        if _box_inter(box, o) <= 1e-9:
+            continue
+        cands = [(box[0], box[1], min(box[2], o[0]), box[3]), (max(box[0], o[2]), box[1], box[2], box[3]),
+                 (box[0], box[1], box[2], min(box[3], o[1])), (box[0], max(box[1], o[3]), box[2], box[3])]
+        box = max(cands, key=_box_area)
+        if _box_area(box) <= 1e-9:
+            return None
+    return box
+
+
+MIRROR_FLOAT = 3.5        # an unmatched quest with no drawn line, this far from all its in-page deps/dependents ...
+ADDITIONS = "Our additions"  # ... goes to a side panel with this header, off ATM10's footprint
+
+
+def _mirror_additions(chapter, raw):
+    """Unmatched quests (ours, with no ATM10 twin) that ended up with no drawn line and far from every quest they
+    connect to would float among ATM10's quests: they go to a tidy panel instead: the free spot (clear of quests,
+    pictures and drawn lines) that grows the page least, nearest their deps, under a section header. Their lines stay hidden (they show on mouse-over, as on ATM10's own line-less pages)."""
+    m = getattr(chapter, "mirror_matched", None) or {}
+    byk = {q.key: q for q in chapter.quests}
+    pos = {q.key: (float(q.x), float(q.y)) for q in chapter.quests}
+    pos.update({("link", lk): (float(x), float(y)) for lk, x, y in chapter.links})
+    tied = {n for e in _drawn(chapter) for n in e}
+    kids = {}
+    for q in chapter.quests:
+        for d in q.deps:
+            kids.setdefault(d, []).append(q.key)
+    out = []
+    for q in chapter.quests:
+        if q.key in m or q.key in tied:
+            continue
+        mates = [d for d in q.deps if d in pos] + [("link", d) for d in q.deps if ("link", d) in pos] + kids.get(q.key, [])
+        if all(math.dist(pos[q.key], pos[n]) > MIRROR_FLOAT for n in mates):
+            out.append(q)
+    if not out:
+        return
+    moving = {q.key for q in out}
+    pts = [(float(q.x), float(q.y), _size(q)) for q in chapter.quests if q.key not in moving]
+    pts += [(x, y, 1.0) for _, x, y in chapter.links]
+    boxes = [(x - s / 2, y - s / 2, x + s / 2, y + s / 2) for x, y, s in pts] + [_mirror_box(im) for im in raw]
+    segs = [(pos[a], pos[b]) for a, b in _drawn(chapter) if a not in moving and b not in moving]
+    cols = 1 if len(out) <= 4 else 2 if len(out) <= 10 else 3
+    rows = math.ceil(len(out) / cols)
+    pw = max(_head_w(ADDITIONS), 1.5 * cols)
+    ph = HEAD_H + HEAD_PAD + 1.5 * rows
+    X0, Y0 = min(b[0] for b in boxes), min(b[1] for b in boxes)
+    X1, Y1 = max(b[2] for b in boxes), max(b[3] for b in boxes)
+    home = [pos[n] for q in out for n in q.deps if n in pos and n not in moving] or [((X0 + X1) / 2, (Y0 + Y1) / 2)]
+    hx, hy = sum(p[0] for p in home) / len(home), sum(p[1] for p in home) / len(home)
+
+    def free(r):
+        g = 0.5
+        if any(b[0] < r[2] + g and b[2] > r[0] - g and b[1] < r[3] + g and b[3] > r[1] - g for b in boxes):
+            return False
+        for p1, p2 in segs:  # no drawn line may cross the panel (it would run through its quests)
+            for t in range(21):
+                x, y = p1[0] + (p2[0] - p1[0]) * t / 20, p1[1] + (p2[1] - p1[1]) * t / 20
+                if r[0] - 0.5 < x < r[2] + 0.5 and r[1] - 0.5 < y < r[3] + 0.5:
+                    return False
+        return True
+
+    best = None
+    for iy in range(int((Y1 - Y0 + ph + 4) * 2) + 1):
+        for ix in range(int((X1 - X0 + pw + 4) * 2) + 1):
+            x, y = X0 - pw - 2 + ix * 0.5, Y0 - ph - 2 + iy * 0.5
+            r = (x, y, x + pw, y + ph)
+            grow = max(0.0, X0 - r[0]) + max(0.0, r[2] - X1) + max(0.0, Y0 - r[1]) + max(0.0, r[3] - Y1)
+            if best is not None and grow > best[0][0]:
+                continue
+            if not free(r):
+                continue
+            key = (round(grow, 2), math.dist(((r[0] + r[2]) / 2, (r[1] + r[3]) / 2), (hx, hy)))
+            if best is None or key < best[0]:
+                best = (key, r)
+    x0, top = best[1][0], best[1][1]
+    for i, q in enumerate(out):
+        r, c_ = divmod(i, cols)
+        q.x, q.y = x0 + (pw - 1.5 * cols) / 2 + 0.75 + 1.5 * c_, top + HEAD_H + HEAD_PAD + 0.75 + 1.5 * r
+    chapter.sections.append({"title": ADDITIONS, "slug": slug(ADDITIONS), "x": x0 + pw / 2, "y": top + HEAD_H / 2,
+                             "w": pw, "h": HEAD_H, "members": [q.key for q in out], "box": None})
+    chapter.mirror_stats["additions"] = len(out)
+
+
+def _mirror_pictures(chapter, raw, secs):
+    """Turn ATM10's image rectangles (raw, from _mirror_page) into picture slots for tools/build_pictures.py, from
+    the final quest and link spots (rules in the comment above). Returns the slots, backdrops first."""
+    import layout_lint  # caption_band / tab_box: the caption geometry the lint checks
+    nodes = [(float(q.x), float(q.y), _size(q), q.key) for q in chapter.quests]
+    nodes += [(float(x), float(y), 1.0, ("link", lk)) for lk, x, y in chapter.links]
+    byk = {q.key: q for q in chapter.quests}
+    sec_of = {k: s["title"] for s in secs for k in s["members"]}
+
+    def nbox(n):
+        s = n[2] / 2
+        return n[0] - s, n[1] - s, n[0] + s, n[1] + s
+
+    def cover(box):
+        return max((_box_inter(nbox(n), box) / (n[2] * n[2]) for n in nodes), default=0.0)
+
+    def inside(box):
+        return [n for n in nodes if box[0] <= n[0] <= box[2] and box[1] <= n[1] <= box[3]]
+
+    def blocked(box):
+        return any(_box_dist(n[:2], box) < MIRROR_CAP_CLEAR for n in nodes)
+
+    pics = []
+    for im in raw:
+        w, h, rot = float(im["width"]), float(im["height"]), float(im.get("rotation", 0) or 0)
+        if w <= 0.05 or h <= 0.05:
+            continue  # zero-height rule: nothing to draw
+        thin = min(w, h) < MIRROR_RULE
+        if thin and max(w, h) < 1.0:
+            continue  # a dot: nothing worth drawing
+        slanted = abs(rot) % 90 > 1e-6 and abs(rot) % 90 < 90 - 1e-6
+        if not thin and slanted and min(w, h) <= 1.0 and max(w, h) >= 2.5 * min(w, h):
+            continue  # a slanted bar between quests (ATM10's shafts): our lines draw that link
+        if thin and slanted:
+            continue
+        box = _mirror_box(im)
+        pics.append({"box": box, "x": float(im["x"]), "y": float(im["y"]), "w": w, "h": h, "rot": rot,
+                     "rule": thin, "a0": _box_area(box)})
+
+    def reshape(p, box):
+        p["box"], p["rot"] = box, 0.0
+        p["x"], p["y"] = (box[0] + box[2]) / 2, (box[1] + box[3]) / 2
+        p["w"], p["h"] = box[2] - box[0], box[3] - box[1]
+
+    # 1. No two pictures overlap (rules aside): merge one mostly under another, else trim the smaller off the bigger or drop it.
+    for _ in range(10 * len(pics) + 10):
+        live = sorted((p for p in pics if not p.get("gone") and not p["rule"]), key=lambda p: -_box_area(p["box"]))
+        hit = next(((a, b) for i, a in enumerate(live) for b in live[i + 1:]
+                    if _box_inter(a["box"], b["box"]) > 1e-6 and not (b.get("on") and _box_inter(a["box"], b["box"]) >= 0.98 * _box_area(b["box"]))), None)
+        if hit is None:
+            break
+        a, b = hit
+        A, B = a["box"], b["box"]
+        if (_box_inter(A, B) >= 0.98 * _box_area(B) and cover(B) <= MIRROR_COVER and not b["rule"]
+                and (cover(A) > MIRROR_COVER or len(inside(A)) >= 2)):
+            # art or a label lying on a backdrop (ATM10 labels its frames so): both stay, trimmed off any quest
+            nb = _trim_off(B, [nbox(n) for n in nodes if _box_inter(nbox(n), B) > 0], margin=0.05)
+            if nb and min(nb[2] - nb[0], nb[3] - nb[1]) >= 0.5 and _box_area(nb) >= 0.5 * _box_area(B):
+                if nb != B:
+                    reshape(b, nb)
+                b["on"] = True
+                continue
+        U = (min(A[0], B[0]), min(A[1], B[1]), max(A[2], B[2]), max(A[3], B[3]))
+        if _box_inter(A, B) >= MIRROR_MERGE * _box_area(B) and _box_area(U) <= MIRROR_GROW * a["a0"]:
+            if U != A:
+                reshape(a, U)
+            b["gone"] = True
+            continue
+        nb = _trim_off(B, [A])
+        if nb and min(nb[2] - nb[0], nb[3] - nb[1]) >= 1.2 and _box_area(nb) >= 0.4 * _box_area(B):
+            reshape(b, nb)
+        else:
+            b["gone"] = True
+    pics = [p for p in pics if not p.get("gone")]
+    # 2. Backdrop or clear art. A picture with only a quest or two on it (or over its edge) is trimmed off them
+    #    when most of it is left; else it is a backdrop if it frames its quests (2+ centres on it, or one on a
+    #    small frame), and dropped if it doesn't (one quest on a big strip reads as an empty box).
+    for p in pics:
+        if p["rule"]:
+            p["kind"] = "rule"
+            continue
+        cov = cover(p["box"])
+        ins = inside(p["box"])
+        if cov <= 0:
+            p["kind"] = "art"
+            continue
+        touching = [n for n in nodes if _box_inter(nbox(n), p["box"]) > 0]
+        nb = _trim_off(p["box"], [nbox(n) for n in touching], margin=0.1)
+        lo = min(1.2, 0.75 * min(p["w"], p["h"]))  # a low label may lose a quarter of its height
+        if nb and min(nb[2] - nb[0], nb[3] - nb[1]) >= lo and _box_area(nb) >= (0.4 if len(ins) <= 2 else 0.5) * _box_area(p["box"]):
+            reshape(p, nb)  # quests only along an edge: the rest is clear art
+            p["kind"] = "art"
+            continue
+        if len(ins) >= 2 or (len(ins) == 1 and max(p["w"], p["h"]) <= 2.6):
+            p["kind"] = "backdrop"
+        else:
+            p["gone"] = True
+            p["kind"] = "none"
+    pics = [p for p in pics if not p.get("gone")]
+    # Art left lying on a picture that turned out not to be a backdrop (it was trimmed into art itself): the
+    # smaller of two overlapping pictures goes.
+    def contains(a, b):
+        return a[0] <= b[0] + 0.01 and a[1] <= b[1] + 0.01 and a[2] >= b[2] - 0.01 and a[3] >= b[3] - 0.01
+    for a in sorted(pics, key=lambda p: -_box_area(p["box"])):
+        if a.get("gone") or a["kind"] == "rule":
+            continue
+        for b in pics:
+            if b is a or b.get("gone") or b["kind"] == "rule" or _box_area(b["box"]) > _box_area(a["box"]):
+                continue
+            if _box_inter(a["box"], b["box"]) > 1e-6 and not (a["kind"] == "backdrop" and contains(a["box"], b["box"])):
+                b["gone"] = True
+    pics = [p for p in pics if not p.get("gone")]
+    # 3. Titles (no repeats on a page), captions clear of quests, slugs.
+    used = set()
+    page = chapter.title.split(". ", 1)[-1]
+
+    def titles(p):
+        cx, cy = p["x"], p["y"]
+        near = sorted((n for n in nodes if isinstance(n[3], str)),
+                      key=lambda n: (round(_box_dist(n[:2], p["box"]), 2), math.dist(n[:2], (cx, cy))))
+        out = []
+        for n in near:
+            t = sec_of.get(n[3])
+            if t and t not in out:
+                out.append(t)
+        if page not in out:
+            out.append(page)
+        return [t for t in out if t not in used]
+
+    count = {}
+    slots = []
+    # art and labels pick their titles first (they are read), then backdrop tabs; written backdrops first
+    for p in sorted(pics, key=lambda p: ({"art": 0, "backdrop": 1}.get(p["kind"], 2), -_box_area(p["box"]))):
+        x0, y0, x1, y1 = p["box"]
+        bw, bh = x1 - x0, y1 - y0
+        near = sorted((n for n in nodes if isinstance(n[3], str)), key=lambda n: math.dist(n[:2], (p["x"], p["y"])))
+        items = []
+        for n in near[:MIRROR_NEAR]:
+            it = _first_item(byk[n[3]])
+            if it and it not in items:
+                items.append(it)
+        slot = {"chapter": chapter.key, "x": p["x"], "y": p["y"], "width": p["w"], "height": p["h"],
+                "rotation": p["rot"], "nearby_items": items, "title": None, "caption": None, "tab": None}
+        kind = p["kind"]
+        if kind == "backdrop":
+            slot["kind"], prefix = "backdrop", "bg"
+            if bw >= 3.5 and bh >= 2.0 and abs(p["rot"]) < 1e-6:
+                for corner in ("tl", "tr", "bl", "br"):
+                    if not blocked(layout_lint.tab_box(p["box"], corner)):
+                        cand = titles(p)
+                        if cand:
+                            slot["tab"], slot["title"], prefix = corner, cand[0], "bg" + corner
+                            used.add(cand[0])
+                        break
+            base = None
+        elif kind == "rule":
+            slot["kind"], prefix, base = "rule", "rule", None
+        else:
+            label = (bh <= MIRROR_LABEL_H or bw >= 3.5 * bh) and bw >= 2.0
+            cand = titles(p)
+            if label:
+                if not cand:
+                    continue  # a label with nothing new to say is left out
+                th = min(bh * 0.62, 0.7)  # the label's text (centred), as build_pictures draws it
+                tw = min(bw - 0.3, 0.5 * th * len(cand[0]) + 0.3)
+                if blocked((p["x"] - tw / 2, p["y"] - th / 2, p["x"] + tw / 2, p["y"] + th / 2)):
+                    continue  # crowded by quests: no label
+                slot["kind"], slot["title"], slot["caption"], prefix = "label", cand[0], "label", "lab"
+            elif bw < 2.5 or bh < 2.0:
+                prefix = "art"  # too small for a readable caption: the render alone
+            else:
+                band = layout_lint.caption_band(bw, bh)
+                spots = {"bottom": (x0 + 0.1, y1 - band, x1 - 0.1, y1), "top": (x0 + 0.1, y0, x1 - 0.1, y0 + band)}
+                where = next((k for k, b in spots.items() if not blocked(b)), None) if cand else None
+                if where:
+                    slot["title"], slot["caption"] = cand[0], where
+                    prefix = "cap" if where == "bottom" else "capt"
+                else:
+                    prefix = "art"
+            if prefix == "art":  # no caption: one big render (a row of small ones would read as fake quests)
+                if min(bw, bh) < 2.0 or max(bw, bh) > 2.0 * min(bw, bh):
+                    continue  # too small to read as art (it would look like a quest), or a strip with a lone cube
+                slot["kind"] = "machine"
+            if slot["title"]:
+                used.add(slot["title"])
+            base = slug(slot["title"]) if slot["title"] else None
+        stem = f"{prefix}_{base}" if base else prefix
+        count[stem] = count.get(stem, 0) + 1
+        slot["slug"] = f"{stem}_{count[stem]}"
+        slots.append(slot)
+    # A rule may run across a backdrop (a table row on it) or open page, never across art or a label.
+    def sbox(s):
+        return s["x"] - s["width"] / 2, s["y"] - s["height"] / 2, s["x"] + s["width"] / 2, s["y"] + s["height"] / 2
+    shown = [sbox(s) for s in slots if s.get("kind") not in ("backdrop", "rule")]
+    slots = [s for s in slots if s.get("kind") != "rule" or not any(_box_inter(sbox(s), b) > 0 for b in shown)]
+    slots.sort(key=lambda s: {"backdrop": 0, "rule": 1}.get(s.get("kind"), 2))
+    return slots
+
+
+def _mirror_apply(chapter, book_keys, byk, idx, parents, children, order, spine, secs):
+    """The mirror motif for a chapter with a mirror target. Returns (P, links, pictures) or None (no target)."""
+    stem = getattr(chapter, "mirror", None)
+    atm = load_mirror(stem) if stem else None
+    if not atm or not atm["quests"]:
+        return None
+    P, links, pictures, stats = _mirror_page(chapter, book_keys, byk, idx, parents, children, order, spine, secs, atm)
+    chapter.mirror_stats = stats
+    # ATM10 leaves most quests of many mod pages without a drawn line; where it does, a quest of ours may lose its
+    # lines too (they show on mouse-over) rather than keep a line that crosses others.
+    chapter.lone_penalty = max(MIRROR_LONE_MIN, COMB_LONE * (1 - atm["lone"]))
+    if stats["matched"] < max(MIRROR_MIN, MIRROR_MIN_PCT * stats["total"]):
+        stats["fallback"] = "comb"  # too little of ATM10's shape would show: the comb draws the page instead
+        chapter.lone_penalty = None
+        for k in chapter.mirror_matched:  # undo the ATM10 sizes
+            q = byk[k]
+            if (q.size or 1) < 1.5:
+                q.size = 1.0 if (q.shape or "") in ("square", "rsquare") else q.size
+        return None
+    return P, links, pictures
+
+
 def page_sections(chapter, style=None):
     """The sections apply() would draw on this chapter, as [{"title", "members" (keys, declaration order), "root",
     "explicit" (title from Q(section=...))}] in reading order. tools/quest_data.py uses it to split a mod page into
@@ -2823,7 +3756,51 @@ def page_sections(chapter, style=None):
     return secs
 
 
+SECTION_ART = True   # one loose picture per section, rendered but not placed (user, 2026-10-20: "we dont need to
+                     # worry about pictures save them off and I can place manually")
+
+
 def apply(chapter, book_keys=None, style=None):
+    """Lay out the chapter (_apply, below), then on every auto page that isn't a mirror page list one picture per
+    section in chapter.pictures with place=False: tools/build_pictures.py renders them into the pack (so they exist
+    in-game for the FTB editor) and lists them in docs/QUEST_PICTURES.md; tools/build_quests.py writes no image for
+    them (render() returns None for a picture that isn't placed)."""
+    _apply(chapter, book_keys, style)
+    if SECTION_ART and chapter.style != "mirror" and getattr(chapter, "layout", "auto") != "manual" and chapter.quests:
+        chapter.pictures = section_art(chapter)
+
+
+def section_art(chapter):
+    """Picture slots, one per section header of the page (one for the whole page when it has no headers): a
+    showcase of the section's first items (or a multiblock diagram where the section builds one), 6 x 3 cells
+    (6 x 4 for a multiblock), captioned with the section's title. place=False: not put on the page."""
+    try:
+        import build_pictures
+        multi = set(build_pictures.SHAPES)
+    except Exception:  # noqa: BLE001  (no Pillow: the multiblock check just finds nothing)
+        multi = set()
+    byk = {q.key: q for q in chapter.quests}
+    secs = [(h["title"], h["members"]) for h in chapter.sections]
+    secs = secs or [(chapter.title.split(". ", 1)[-1], [q.key for q in chapter.quests])]
+    out, seen = [], {}
+    for title, members in secs:
+        items = []
+        for k in members:
+            it = _first_item(byk[k]) if k in byk else None
+            if it and it not in items:
+                items.append(it)
+        mb = next((i for i in items if i.split(":", 1)[-1] in multi), None)
+        base = slug(title) or "section"
+        seen[base] = seen.get(base, 0) + 1
+        out.append({"chapter": chapter.key, "slug": base if seen[base] == 1 else f"{base}_{seen[base]}",
+                    "x": 0.0, "y": 0.0, "width": 6.0, "height": 4.0 if mb else 3.0, "rotation": 0.0,
+                    "nearby_items": ([mb] if mb else []) + items[:6], "title": title, "caption": "bottom",
+                    "kind": "multiblock" if mb else "showcase", "place": False,
+                    "chapter_title": chapter.title.split(". ", 1)[-1], "section": title})
+    return out
+
+
+def _apply(chapter, book_keys=None, style=None):
     """Place every quest of an auto-layout chapter, its quest links and its section headers, and set q.hide_lines.
     chapter.sections becomes [{"title", "slug", "x", "y", "w", "h", "members"}] (header centre and size, in cells).
     book_keys = all quest keys in the book (to add entry links). Optional chapter attributes: style ("spine", "tree"
@@ -2831,6 +3808,9 @@ def apply(chapter, book_keys=None, style=None):
     -> title), used to name loose groups. Quests in other chapters are never moved."""
     chapter.pruned_deps = getattr(chapter, "pruned_deps", 0) + prune_transitive(chapter.quests)
     chapter.sections = []
+    chapter.pictures = []   # mirror pages: picture slots for tools/build_pictures.py (see the mirror block)
+    chapter.mirror_stats = None
+    chapter.lone_penalty = None
     for q in chapter.quests:
         q.hide_lines = q.hide_dependents = False
     if getattr(chapter, "layout", "auto") == "manual" or not chapter.quests:
@@ -2850,6 +3830,27 @@ def apply(chapter, book_keys=None, style=None):
     # Section headers: only where a page has 2+ sections, and never on a chapter split from a mod page (its title
     # in the sidebar names it; chapter.headers = False, set by tools/quest_data.py).
     header = len(secs) + (1 if base == "spine" else 0) > 1 and getattr(chapter, "headers", True)
+    if style == "mirror":
+        got = _mirror_apply(chapter, book_keys, byk, idx, parents, children, order, spine, secs)
+        if got is not None:
+            P, links, pictures = got
+            chapter.pictures = pictures
+            sec_of = {k: i for i, s in enumerate(secs) for k in s["members"]}
+            blocks = []
+            for s in secs:
+                pts = {k: P[k] for k in s["members"] if k in P}
+                blocks.append({"box": _extent(pts) if pts else None})
+            # Matched quests keep ATM10's spots through the nudge pass; the flag search hides what still clashes.
+            _finish(chapter, P, links, [], secs, blocks, style, spine, sec_of, set(chapter.mirror_matched))
+            _mirror_additions(chapter, pictures)
+            chapter.pictures = _mirror_pictures(chapter, pictures, secs)  # from the final spots
+            st = chapter.mirror_stats
+            st["pictures"] = len(chapter.pictures)
+            st["backdrops"] = sum(1 for p in chapter.pictures if p.get("kind") == "backdrop")
+            return
+        style = chapter.style = "comb"  # no ATM10 chapter to mirror (or an empty one): the comb instead
+        base = MOTIF_BASE[style]
+        header = len(secs) + 1 > 1 and getattr(chapter, "headers", True)
     if style == "comb":
         got = _comb_apply(chapter, book_keys, byk, idx, parents, order, spine, secs, header)
         if got is not None:
@@ -3048,6 +4049,9 @@ def _finish(chapter, P, links, heads, secs, blocks, style, spine, sec_of, spine_
     quests = chapter.quests
     snap = lambda v: round(v * 2) / 2 + 0.0
     for q in quests:
+        if style == "mirror" and q.key in spine_set:  # a matched quest keeps ATM10's exact spot (quarter cells too)
+            q.x, q.y = float(P[q.key][0]), float(P[q.key][1])
+            continue
         q.x, q.y = snap(P[q.key][0]), snap(P[q.key][1])
     chapter.links = [(lk, snap(P[("link", lk)][0]), snap(P[("link", lk)][1])) for lk in links]
     for i, a, b, c, d in heads:
@@ -3063,6 +4067,15 @@ def _finish(chapter, P, links, heads, secs, blocks, style, spine, sec_of, spine_
         for q in quests:
             q.hide_lines = q.hide_dependents = False
         _hide_lines(chapter, style, spine, blocks, sec_of, spine_set)
+    # Mirror pages: a line that still runs through a quest after all that runs between quests pinned to ATM10's
+    # spots (whose flags can't be set: shown as a link elsewhere). Then the pinned quests may move too.
+    for reach in (3.0, 6.0) if style == "mirror" else ():
+        if not metrics(chapter)["thru"]:
+            break
+        if _nudge(chapter, set(), reach):
+            for q in quests:
+                q.hide_lines = q.hide_dependents = False
+            _hide_lines(chapter, style, spine, blocks, sec_of, spine_set)
 
 
 def _lines(chapter):
@@ -3130,7 +4143,7 @@ def _nudge(chapter, fixed, reach=3.0):
         return all(not (x0 - s / 2 < x < x1 + s / 2 and y0 - s / 2 < y < y1 + s / 2) for x0, y0, x1, y1 in heads)
 
     moves = 0
-    comb = getattr(chapter, "style", None) == "comb"
+    comb = getattr(chapter, "style", None) in ("comb", "mirror")
     r2 = int(reach * 2)
     steps = sorted({(dx * 0.5, dy * 0.5) for dx in range(-r2, r2 + 1) for dy in range(-r2, r2 + 1)} - {(0.0, 0.0)},
                    key=lambda d: (abs(d[0]) + abs(d[1]), d))
@@ -3238,8 +4251,7 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
     hub = 99 if small else HUB[style]
     # Comb pages: no quest is left without a drawn line (step 3 below), unless every line it has runs through a
     # quest or a header; a short hub fan isn't clutter there.
-    comb = style == "comb"
-    tree = getattr(chapter, "comb_tree", None) or {}
+    comb = style in ("comb", "mirror")
     relaxed = style != "spine"
     # A quest with a quest link on its own page: FTB draws its dependency lines at the link too (every button of
     # the quest draws them), so those would run to the far link. Its own lines are hidden (they show on hover).
@@ -3300,7 +4312,8 @@ def _hide_lines(chapter, style, spine, blocks, sec_of, spine_set):
         if q.key not in shared and any(e["clutter"] for e in left) and all(e["ok"] and not e["step"] for _, e in os_):
             q.hide_dependents = True
     if comb:
-        _comb_flags(chapter, shared, set(zip(spine, spine[1:])), heads)
+        # mirror pages have no drawn spine row: no line there is a protected spine step
+        _comb_flags(chapter, shared, set() if style == "mirror" else set(zip(spine, spine[1:])), heads)
 
 
 def _comb_flags(chapter, shared, steps, heads):
@@ -3355,6 +4368,10 @@ def _comb_flags(chapter, shared, steps, heads):
         touch.setdefault(b, []).append(i)
     HL = {k: bool(byk[k].hide_lines) for k in byk}
     HD = {k: bool(byk[k].hide_dependents) for k in byk}
+    lone_pen = getattr(chapter, "lone_penalty", None) or COMB_LONE  # a quest left with no drawn line
+    # mirror pages: a long slanted line across ATM10's shape is the clutter the user saw ("long diagonal lines")
+    diag = [(MIRROR_DIAG_FAR if ln_ > 5.5 else MIRROR_DIAG if ln_ > 4.0 else 0.0) if sl_ else 0.0
+            for ln_, sl_ in zip(ln, slant)] if getattr(chapter, "style", None) == "mirror" else [0.0] * n
 
     def shown(i):
         a, b, qk, dk = L[i]
@@ -3366,17 +4383,18 @@ def _comb_flags(chapter, shared, steps, heads):
         for i in range(n):
             if vis[i]:
                 c += (100 if sev[i] else 0) + (4 if ln[i] > COMB_FLOAT_MAX else 1.5 if ln[i] > MAX_EDGE else 0) + 0.5 * slant[i]
+                c += diag[i]
                 c += 0.75 * sum(1 for j in xs[i] if vis[j] and j > i) * 2
             else:
                 c += 100 if step[i] else 0.2
         for node, ii in touch.items():
             if isinstance(node, str) and not any(vis[i] for i in ii):
-                c += 12
+                c += lone_pen
         return c
 
     flip = [("HL", k) for k in byk if k not in shared] + [("HD", k) for k in byk if k not in shared]
     cur = cost()
-    for _ in range(60):
+    for _ in range(60 if lone_pen >= COMB_LONE else 4 * len(byk)):
         best = None
         for kind, k in flip:
             D = HL if kind == "HL" else HD
@@ -3403,6 +4421,9 @@ def banner(chapter, with_links=True):
     top = min(y - s / 2 for _, y, s in pts)
     for h in getattr(chapter, "sections", None) or []:
         left, top = min(left, h["x"] - h["w"] / 2), min(top, h["y"] - h["h"] / 2)
+    for im in [p for p in (getattr(chapter, "pictures", None) or []) if p.get("place", True)]:  # placed pictures count too
+        x0, y0, _, _ = _mirror_box(im)
+        left, top = min(left, x0), min(top, y0)
     return left + 3.0, top - 1.5
 
 
@@ -3459,12 +4480,16 @@ def metrics(chapter, old_banner=False):
     ortho = sum(1 for p1, p2, _, _ in segs if abs(p1[0] - p2[0]) < 0.1 or abs(p1[1] - p2[1]) < 0.1)
     heads = getattr(chapter, "sections", None) or []
     boxes = [(x, y, size[k]) for k, (x, y) in qpos.items()] + [(float(x), float(y), 1.0) for _, x, y in chapter.links]
+    # Overlaps by FTB's drawn shapes, the same rule as tools/layout_lint.py (a hexagon milestone one diagonal cell
+    # from a quest doesn't touch it, though their boxes do). Unset shapes are the chapter default (build_quests.py).
+    dshape = "rsquare" if getattr(chapter, "group", None) == "main" or chapter.key == "welcome" else "circle"
+    byk_ = {q.key: q for q in qs}
+    shp = [(byk_[k].shape or dshape) for k in qpos] + [dshape for _ in chapter.links]
     overlaps = close = 0
     for i in range(len(boxes)):
         for j in range(i + 1, len(boxes)):
             (x1, y1, s1), (x2, y2, s2) = boxes[i], boxes[j]
-            h = (s1 + s2) / 2
-            if abs(x1 - x2) < h and abs(y1 - y2) < h:
+            if _overlap_nodes(boxes[i], boxes[j], shp[i], shp[j]):
                 overlaps += 1
             elif math.hypot(x1 - x2, y1 - y2) < MIN_SEP:
                 close += 1
@@ -3496,8 +4521,17 @@ def report(chapters, apply_fn, before_fn=None):
         rows.append((c, before, after))
     rows.sort(key=lambda r: (getattr(r[0], "layout", "auto") == "manual", -r[2]["w"] * r[2]["h"], r[0].key))
     head = ("| chapter | style | n | sections | size WxH | crossings | lines thru quests | edges > 6 | "
-            "hidden lines | overlaps | lines right/down/up/left % | orthogonal % | median line |")
-    out = [head, "|" + "---|" * 13]
+            "hidden lines | overlaps | lines right/down/up/left % | orthogonal % | median line | mirror matched % |")
+    out = [head, "|" + "---|" * 14]
+
+    def mirror_col(c):
+        s = getattr(c, "mirror_stats", None)
+        if not s:
+            return "-"
+        pct = round(100 * s["matched"] / s["total"]) if s["total"] else 0
+        if s.get("fallback"):
+            return f"{s['target']} {s['matched']}/{s['total']} ({pct}%): too few, drawn as {s['fallback']}"
+        return f"{s['target']} {s['matched']}/{s['total']} ({pct}%), {s['pictures']} pics"
     keys = ("cross", "thru", "long", "hidden_edges", "overlap", "sections", "lines", "right", "down", "up", "left", "ortho")
     opct = lambda m: round(100 * m["ortho"] / m["lines"]) if m["lines"] else 100
     tot_b = {k: 0 for k in keys}
@@ -3511,15 +4545,20 @@ def report(chapters, apply_fn, before_fn=None):
         out.append(f"| {c.key} | {style} | {a['n']} | {a['sections']} | {b['w']:g}x{b['h']:g} -> {a['w']:g}x{a['h']:g} | "
                    f"{b['cross']}->{a['cross']} | {b['thru']}->{a['thru']} | {b['long']}->{a['long']} | "
                    f"{b['hidden_edges']}->{a['hidden_edges']} | {b['overlap']}->{a['overlap']} | {pct(b)} -> {pct(a)} | "
-                   f"{opct(b)}->{opct(a)} | {b['median']:.1f}->{a['median']:.1f} |")
+                   f"{opct(b)}->{opct(a)} | {b['median']:.1f}->{a['median']:.1f} | {mirror_col(c)} |")
     auto = [r for r in rows if getattr(r[0], "layout", "auto") != "manual"]
+    mir = [getattr(r[0], "mirror_stats", None) for r in rows]
+    mir = [s for s in mir if s]
+    mcol = (f"{sum(s['matched'] for s in mir)}/{sum(s['total'] for s in mir)} "
+            f"({round(100 * sum(s['matched'] for s in mir) / max(1, sum(s['total'] for s in mir)))}%), "
+            f"{sum(s['pictures'] for s in mir)} pics on {len(mir)} pages") if mir else "-"
     med = lambda v: sorted(v)[len(v) // 2] if v else 0
     out.append(f"| **total** | | {sum(r[2]['n'] for r in rows)} | {tot_a['sections']} | median "
                f"{med([r[1]['w'] for r in auto]):g}x{med([r[1]['h'] for r in auto]):g} -> "
                f"{med([r[2]['w'] for r in auto]):g}x{med([r[2]['h'] for r in auto]):g} | {tot_b['cross']}->{tot_a['cross']} | "
                f"{tot_b['thru']}->{tot_a['thru']} | {tot_b['long']}->{tot_a['long']} | {tot_b['hidden_edges']}->{tot_a['hidden_edges']} | "
                f"{tot_b['overlap']}->{tot_a['overlap']} | {pct(tot_b)} -> {pct(tot_a)} | {opct(tot_b)}->{opct(tot_a)} | "
-               f"{med([r[1]['median'] for r in auto]):.1f}->{med([r[2]['median'] for r in auto]):.1f} |")
+               f"{med([r[1]['median'] for r in auto]):.1f}->{med([r[2]['median'] for r in auto]):.1f} | {mcol} |")
     big = [r[0].key for r in auto if r[2]["w"] > PAGE_W + 4 or r[2]["h"] > PAGE_H + 4]
     out += ["", "Size includes section headers and links. Orthogonal % = drawn lines that are horizontal or vertical "
             "(|dx| or |dy| < 0.1). Crossings, lines through quests, edges and directions count "

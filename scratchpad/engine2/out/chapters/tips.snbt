@@ -1,0 +1,602 @@
+{
+	id: "25103ED6860F9AFB"
+	group: ""
+	order_index: 2
+	filename: "tips"
+	icon: {
+		id: "minecraft:spyglass"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "03AC2421DB7EB00C"
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+			optional: true
+			icon: {
+				id: "minecraft:spyglass"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "1B255D93026E26E8"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7EC97892425733AA"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "14A3CED751BDE80A"
+			x: -4.0d
+			y: 2.25d
+			optional: true
+			icon: {
+				id: "minecraft:knowledge_book"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "29AA12ED21A34F7A"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "02BBB76AE49F865B"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "37AF9544E96AAA47"
+			x: -2.0d
+			y: 2.25d
+			optional: true
+			icon: {
+				id: "minecraft:spyglass"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "6F39800E29565A69"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "05468F9EAEA1A69D"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "26EB3D7DD4E4F390"
+			x: 0.0d
+			y: 2.25d
+			optional: true
+			icon: {
+				id: "minecraft:compass"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "123BC704858EE6EF"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "747117CF9157C144"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "17701EB88280A179"
+			x: 2.0d
+			y: 2.25d
+			optional: true
+			icon: {
+				id: "minecraft:filled_map"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "5BE9BE994794CE67"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "412887CBFA62B5D6"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "706FAFD8B520897F"
+			x: 4.0d
+			y: 2.25d
+			optional: true
+			icon: {
+				id: "minecraft:iron_pickaxe"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "6FFF05EDB9E70B20"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "0EC3B119EC7C72C6"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "47735B9C5507ABFC"
+			x: -5.0d
+			y: 3.75d
+			optional: true
+			icon: {
+				id: "waystones:waystone"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "1EEBD69C6547D59E"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(waystones:waystone)item(waystones:mossy_waystone)item(waystones:sandy_waystone)item(waystones:deepslate_waystone)item(waystones:blackstone_waystone)item(waystones:end_stone_waystone))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7328F4543143F266"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "2FB7853AF93786FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1E3B8450579196C9"
+			x: -3.0d
+			y: 3.75d
+			optional: true
+			icon: {
+				id: "comforts:sleeping_bag_white"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "348416872B0C6031"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(comforts:sleeping_bag_white)item(comforts:sleeping_bag_orange)item(comforts:sleeping_bag_magenta)item(comforts:sleeping_bag_light_blue)item(comforts:sleeping_bag_yellow)item(comforts:sleeping_bag_lime)item(comforts:sleeping_bag_pink)item(comforts:sleeping_bag_gray)item(comforts:sleeping_bag_light_gray)item(comforts:sleeping_bag_cyan)item(comforts:sleeping_bag_purple)item(comforts:sleeping_bag_blue)item(comforts:sleeping_bag_brown)item(comforts:sleeping_bag_green)item(comforts:sleeping_bag_red)item(comforts:sleeping_bag_black)item(comforts:hammock_white)item(comforts:hammock_orange)item(comforts:hammock_magenta)item(comforts:hammock_light_blue)item(comforts:hammock_yellow)item(comforts:hammock_lime)item(comforts:hammock_pink)item(comforts:hammock_gray)item(comforts:hammock_light_gray)item(comforts:hammock_cyan)item(comforts:hammock_purple)item(comforts:hammock_blue)item(comforts:hammock_brown)item(comforts:hammock_green)item(comforts:hammock_red)item(comforts:hammock_black))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2943CE5BC945AA6C"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "0C122E463E2CF7FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "39C7C23622237A6E"
+			x: -1.0d
+			y: 3.75d
+			optional: true
+			icon: {
+				id: "sophisticatedbackpacks:backpack"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "1EC6FEEBFB9A8A4C"
+					type: "item"
+					item: {
+						id: "sophisticatedbackpacks:backpack"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2D7908AE85D638E4"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "3D22F14C12C7C660"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "76EF853E17A85E47"
+			x: 1.0d
+			y: 3.75d
+			optional: true
+			icon: {
+				id: "crafting_on_a_stick:crafting_table"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "3468F245A8072069"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "363212B17182B0A4"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "3392F726D3D11ECE"
+			x: 3.0d
+			y: 3.75d
+			optional: true
+			icon: {
+				id: "tombstone:grave_key"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "17D0C8937BF6208F"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "2E27F0CBCDDB9975"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "561B57755E420B66"
+			x: 5.0d
+			y: 3.75d
+			optional: true
+			icon: {
+				id: "minecraft:player_head"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "3D609D851035A435"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "3EBB6ECADEFB0E07"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "21A3809C9F28F186"
+			x: -4.0d
+			y: 5.25d
+			optional: true
+			icon: {
+				id: "kubejs:demigod_token"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "0ED9434BB024D5DF"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "4E9FE223D0F808F8"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "58C324A48D29F67C"
+			x: -2.0d
+			y: 5.25d
+			optional: true
+			icon: {
+				id: "chemlib:aluminum"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "26DBD936A381A7CA"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "46FA4EEB04A79561"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "4A7214A70718F893"
+			x: 0.0d
+			y: 5.25d
+			optional: true
+			icon: {
+				id: "ftbquests:book"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "2ED932D666AC0EE5"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7C820A389EC85381"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "6946DA3347FFD696"
+			x: 2.0d
+			y: 5.25d
+			optional: true
+			icon: {
+				id: "minecraft:furnace"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "572324C137CA0182"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "4FA0E63E47B148CA"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "0C2E5B5B8ADC89A2"
+			x: 4.0d
+			y: 5.25d
+			optional: true
+			icon: {
+				id: "minecraft:clock"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "6C5C10F38527E249"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "4036DD61D4A5CFFE"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "7EFB17FDB8203933"
+			x: -5.0d
+			y: 6.75d
+			optional: true
+			icon: {
+				id: "warbuckscore:spectrometer"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "38F208B2CE99601D"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "69BD66DA4CBF2B74"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "2D0068CC685F50E1"
+			x: -3.0d
+			y: 6.75d
+			optional: true
+			icon: {
+				id: "allthemodium:teleport_pad"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "1E4190E0756014F4"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "60F35E20C249F937"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "22EDDC3581120EE8"
+			x: -1.0d
+			y: 6.75d
+			optional: true
+			icon: {
+				id: "mekanism:dirty_dust_iron"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "27244B5D046D54C2"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7ACA9FB73648F4CE"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "3F12CA25FC3264EF"
+			x: 1.0d
+			y: 6.75d
+			optional: true
+			icon: {
+				id: "alchemistry:dissolver"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "2F48EDC18D426319"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "789FB6FF9719D8F0"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "000BFE2E99302984"
+			x: 3.0d
+			y: 6.75d
+			optional: true
+			icon: {
+				id: "chemlib:sodium_chloride"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "621A72311AB1106E"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "7216DCC6F3E202E9"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "2DDF4D0EE541F4AA"
+			x: 5.0d
+			y: 6.75d
+			optional: true
+			icon: {
+				id: "modern_industrialization:guidebook"
+				count: 1
+			}
+			tasks: [
+				{
+					id: "32E3F9B6DE0804D8"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "3D96FC0FA3BE30E8"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "208A92500449789A"
+			x: -2.5d
+			y: -2.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/tips.png"
+		}
+	]
+	quest_links: [ ]
+}

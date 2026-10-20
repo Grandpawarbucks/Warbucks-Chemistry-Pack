@@ -1,0 +1,59 @@
+==================== apothic_enchanting
+  1 1FAFDB20F504688E ( -6.0,  0.0) sz=3.0d sh=gear deps=[] | item minecraft:enchanting_table[OK/asked] apothic_enchanting:apothic_enchanting_table[OK] x1 (FILTER<or(item(minecraft:enchanting_table)item(apothic_enchanting:apothic_enchanting_table))>) | ~
+  2 79AF63E77AD70A93 ( -3.5,  0.0) sz=1.2d sh=hexagon deps=[1] | item #c:bookshelves x15 (FILTER<ftbfiltersystem:item_tag(c:bookshelves)>) | ~
+  3 6C2C135B9B7B9402 ( -1.5,  0.0) sz=2.25d sh=octagon deps=[2] | advancement x1 (ADV minecraft:story/enchant_item) | ~
+  4 31E7F7464D79F881 ( -1.5,  2.0) sz=1 sh=rsquare deps=[3] | item minecraft:lapis_lazuli[OK/asked] x3 | ~
+  5 24C757B8AA6841F6 ( -1.0,  4.0) sz=1 sh=diamond deps=[4,48] | item apothic_enchanting:inert_trident[OK/asked] x1 | ~
+  6 6884E25641A1020C (  0.0,  6.0) sz=1 sh=hexagon deps=[] | item apothic_enchanting:library[OK/asked] x1 | ~
+  7 42746659C66CF17F (  0.0,  4.0) sz=1 sh=hexagon deps=[6,4,53] | item apothic_enchanting:ender_library[OK/asked] x1 | ~
+  8 78FEDE6FA4845585 (  0.5, -3.5) sz=1 sh=rsquare deps=[29,31,30] | item apothic_enchanting:beeshelf[OK/asked] x1 ; item apothic_enchanting:stoneshelf[OK/asked] x1 ; item apothic_enchanting:melonshelf[OK/asked] x1 | ~
+  9 0A3C464EF7CDD5F6 (  1.5, -1.0) sz=1.2d sh=hexagon deps=[3] | item apothic_enchanting:hellshelf[OK/asked] x11 | ~
+ 10 45161821C221EF0B (  3.5, -2.0) sz=1.5d sh=pentagon deps=[9,48] | item apothic_enchanting:infused_hellshelf[OK/asked] x8 | ~
+ 11 60850E717C747A78 (  2.5, -3.0) sz=1 sh=hexagon deps=[10] | item apothic_enchanting:sightshelf[OK/asked] x1 ; item apothic_enchanting:sightshelf_t2[OK/asked] x1 | ~
+ 12 51E554305FFEBA1D (  4.5, -3.0) sz=1 sh=hexagon deps=[10] | item apothic_enchanting:blazing_hellshelf[OK/asked] x1 | ~
+ 13 7C758209D06ED0E3 (  5.5, -1.0) sz=1.2d sh=hexagon deps=[10] | item apothic_enchanting:glowing_hellshelf[OK/asked] x13 | ~
+ 14 235E3C386E8D36A3 (  9.5,  0.0) sz=1.5d sh=pentagon deps=[49] | item apothic_enchanting:deepshelf[OK/asked] x1 | ~
+ 15 6852BEFDD4DE4E4B ( 11.0, -1.0) sz=1 sh=hexagon deps=[14] | item apothic_enchanting:soul_touched_deepshelf[OK/asked] x1 | ~
+ 16 24FCFF18296ED907 ( 13.0, -1.5) sz=1.25d sh=hexagon deps=[15] | item apothic_enchanting:soul_touched_sculkshelf[OK/asked] x1 | ~
+ 17 0518551637F76C50 ( 11.0,  1.0) sz=1 sh=hexagon deps=[14] | item apothic_enchanting:echoing_deepshelf[OK/asked] x1 | ~
+ 18 2EC2FA680076C07D ( 13.0,  1.5) sz=1.25d sh=hexagon deps=[17] | item apothic_enchanting:echoing_sculkshelf[OK/asked] x1 | ~
+ 19 1873205CF5247E3E ( 18.0,  0.0) sz=1.2d sh=hexagon deps=[32] | item apothic_enchanting:endshelf[OK/asked] x1 | ~
+ 20 523DC411241B470A (  4.2,  0.0) sz=1.4d sh=hexagon deps=[3] | item apothic_enchanting:geode_shelf[OK/asked] x1 | ~
+ 21 5DE45BC0258D1B0B ( 20.0, -1.0) sz=1 sh=hexagon deps=[19] | item apothic_enchanting:pearl_endshelf[OK/asked] x1 | ~
+ 22 148A33CC36B2563A ( 20.0,  1.0) sz=1 sh=hexagon deps=[19] | item apothic_enchanting:draconic_endshelf[OK/asked] x1 | ~
+ 23 7C9D9D1C054874A7 ( 22.0,  2.0) sz=2.0d sh=rsquare deps=[22] | item apothic_enchanting:soul_touched_sculkshelf[OK/asked] x5 ; item apothic_enchanting:echoing_sculkshelf[OK/asked] x5 ; item apothic_enchanting:draconic_endshelf[OK/asked] x1 ; item apothic_enchanting:geode_shelf[OK/asked] x1 ; item apothic_enchanting:treasure_shelf[OK/asked] x1 | ~
+ 24 6A07D09831428CB9 (  1.5,  1.0) sz=1.2d sh=hexagon deps=[3] | item apothic_enchanting:seashelf[OK/asked] x11 | ~
+ 25 24391162F4FF0587 (  3.5,  2.0) sz=1.5d sh=pentagon deps=[24,48] | item apothic_enchanting:infused_seashelf[OK/asked] x8 | ~
+ 26 5C73247A48E72FB3 (  2.5,  3.0) sz=1 sh=hexagon deps=[25] | item apothic_enchanting:filtering_shelf[OK/asked] x1 | ~
+ 27 70D2C5FAC661E01A (  4.5,  3.0) sz=1 sh=hexagon deps=[25] | item apothic_enchanting:heart_seashelf[OK/asked] x1 | ~
+ 28 191A7F3C9FBA4C13 (  5.5,  1.0) sz=1.2d sh=hexagon deps=[25] | item apothic_enchanting:crystal_seashelf[OK/asked] x12 | ~
+ 29 62D39F68DE6E44A4 ( -1.5, -2.0) sz=1.3d sh=- deps=[3] | item apothic_enchanting:seashelf[OK/asked] x1 | ~
+ 30 0F3A0A4DC18E5E55 ( -1.5, -5.0) sz=1.3d sh=- deps=[3] | item #c:bookshelves x1 (FILTER<or(item_tag(c:bookshelves))>) | ~
+ 31 586D5DE28EEC8014 ( -1.5, -3.5) sz=1.3d sh=- deps=[3] | item apothic_enchanting:hellshelf[OK/asked] x1 | ~
+ 32 158F872A3A2C3650 ( 16.0,  0.0) sz=1.5d sh=circle deps=[20,53] | item apothic_enchanting:infused_breath[OK/asked] x1 | ~
+ 33 001A348054127235 ( -2.0,  4.0) sz=1 sh=- deps=[4,49] | item minecraft:budding_amethyst[OK] x1 | ~
+ 34 78E66F1DE42C747A ( -1.5,  5.0) sz=1 sh=circle deps=[4,52] | item minecraft:echo_shard[OK/asked] x1 | ~
+ 35 6220EDE42C813C1B ( -2.0,  6.0) sz=1 sh=diamond deps=[4,53] | item #curios:charm x1 (FILTER<or(and(item_tag(curios:charm)mod(apotheosis)))>) | ~
+ 36 105442DA79829777 ( -4.5,  4.0) sz=1 sh=rsquare deps=[37] | item apothic_enchanting:scrap_tome[OK/asked] x1 | ~
+ 37 4E895C54651A3CB3 ( -6.0,  4.0) sz=1.2d sh=pentagon deps=[3] | item minecraft:book[OK/asked] x1 | ~
+ 38 377D6CF86BC1C64F ( -3.0,  4.0) sz=1 sh=rsquare deps=[4,36,48] | item apothic_enchanting:improved_scrap_tome[OK/asked] x1 | ~
+ 39 3D31B94CC42BCE43 ( -3.0,  6.0) sz=1 sh=rsquare deps=[4,38,49] | item apothic_enchanting:extraction_tome[OK/asked] x1 | ~
+ 40 224716A537F2FFA0 ( -7.0,  5.0) sz=1 sh=rsquare deps=[37] | item apothic_enchanting:helmet_tome[OK] apothic_enchanting:chestplate_tome[OK] apothic_enchanting:leggings_tome[OK] apothic_enchanting:boots_tome[OK] x1 (FILTER<or(item(apothic_enchanting:helmet_tome)item(apothic_enchanting:chestplate_tome)item(apothic_enchanting:leggings_tome)item(apothic_enchanting:boots_tome))>) | ~
+ 41 516E66BE01EE5B31 ( -6.0,  5.5) sz=1 sh=rsquare deps=[37] | item apothic_enchanting:weapon_tome[OK] apothic_enchanting:bow_tome[OK] x1 (FILTER<or(item(apothic_enchanting:weapon_tome)item(apothic_enchanting:bow_tome))>) | ~
+ 42 43167C59036E79A7 ( -7.5,  4.0) sz=1 sh=rsquare deps=[37] | item apothic_enchanting:pickaxe_tome[OK] apothic_enchanting:fishing_tome[OK] x1 (FILTER<or(item(apothic_enchanting:pickaxe_tome)item(apothic_enchanting:fishing_tome))>) | ~
+ 43 6C57D64518FF22C0 ( -5.0,  5.0) sz=1 sh=rsquare deps=[37] | item apothic_enchanting:other_tome[OK/asked] x1 | ~
+ 44 695889817162EFC7 ( -1.0,  6.0) sz=1 sh=circle deps=[4] | item minecraft:honey_bottle[OK/asked] x1 | ~
+ 45 784466C3813AA506 (  3.0,  4.0) sz=1 sh=- deps=[] | item apothic_enchanting:flimsy_ender_lead[OK/asked] x1 | ~
+ 46 78BFDD3A9B996655 (  4.0,  4.0) sz=1 sh=- deps=[4,45,48] | item apothic_enchanting:ender_lead[OK/asked] x1 | ~
+ 47 61217D80BFF8A858 (  4.0,  5.0) sz=1 sh=- deps=[4,46,52] | item apothic_enchanting:occult_ender_lead[OK/asked] x1 | ~
+ 48 37E556B4A730E5AA (  2.8,  0.0) sz=1.4d sh=circle deps=[?,50] | advancement x1 (ADV apotheosis:progression/frontier) | ~
+ 49 091957223C32B094 (  7.5,  0.0) sz=1.4d sh=circle deps=[?,51] | advancement x1 (ADV apotheosis:progression/ascent) | ~
+ 50 1F748ACA3976A92F (  1.5,  0.0) sz=0.25d sh=- deps=[24,9] | dimension x1 (minecraft:overworld) | ~
+ 51 18AA64DF63F68762 (  5.5,  0.0) sz=0.25d sh=- deps=[13,28] | dimension x1 (minecraft:overworld) | ~
+ 52 1113BF457DB7F1DE ( -1.5,  3.0) sz=1 sh=circle deps=[?] | advancement x1 (ADV apotheosis:progression/summit) | ~
+ 53 73E09ED46A94B812 ( 14.0,  0.0) sz=1.4d sh=circle deps=[18,16,?] | advancement x1 (ADV apotheosis:progression/pinnacle) | ~
+ 54 4EE6824A970EEB35 ( -1.5,  7.0) sz=1 sh=rsquare deps=[4,52] | item apotheosis:infused_spawner_rune[OK/asked] x1 | ~
+ 55 7F007C888C23EC42 (  1.5,  6.0) sz=1 sh=- deps=[] | item apotheosis:gem_case[OK/asked] x1 | ~
+ 56 06F70F6CA37168CC (  1.5,  4.0) sz=1 sh=- deps=[55,53] | item apotheosis:ender_gem_case[OK/asked] x1 | ~
+ 57 1617C1935F22FBD1 ( 22.5,  0.0) sz=1.25d sh=circle deps=[22] | item apotheosis:god_fused_pearl[OK/asked] x1 | ~
+ 58 3311B79A8F6C6ADD ( 25.0,  0.0) sz=1.5d sh=rsquare deps=[57] | item apothic_enchanting:raven_enchanting_table[OK/asked] x1 | ~

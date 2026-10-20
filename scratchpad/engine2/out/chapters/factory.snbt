@@ -1,0 +1,1317 @@
+{
+	id: "64C69CCA641352A4"
+	group: "22D02A9EFAC9B3FB"
+	order_index: 2
+	filename: "factory"
+	icon: {
+		id: "hostilenetworks:sim_chamber"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "0C506EBC53C1DABE"
+			x: -1.5d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"1C5E43BCEDA7593F"
+			]
+			tasks: [
+				{
+					id: "15216109C9B5A0B4"
+					type: "item"
+					item: {
+						id: "hostilenetworks:deep_learner"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "007ED5D1ABF8D42D"
+					type: "item"
+					item: {
+						id: "hostilenetworks:blank_data_model"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2D7737DB5B14FDFE"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6B30AEED1A24210D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0B5ACE02A3EC167D"
+			x: 0.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0C506EBC53C1DABE"
+			]
+			tasks: [
+				{
+					id: "3697F255683505A4"
+					type: "item"
+					item: {
+						id: "hostilenetworks:data_model"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "15613BB85BF47FB0"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6D40272B0AFCA196"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "288F7BE90AC49D6E"
+			x: 0.0d
+			y: 3.5d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0B5ACE02A3EC167D"
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "2594AFD9E83F8F05"
+					type: "item"
+					item: {
+						id: "hostilenetworks:sim_chamber"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4D7AD1B7DDEC84D3"
+					type: "item"
+					item: {
+						id: "hostilenetworks:prediction_matrix"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6A1C7DD549F28EAE"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "21807F821FDF9D30"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "22C8C82E50C1150C"
+			x: 0.0d
+			y: 6.5d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"288F7BE90AC49D6E"
+			]
+			tasks: [
+				{
+					id: "4B0892E03B87D194"
+					type: "item"
+					item: {
+						id: "hostilenetworks:loot_fabricator"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "00A07FC2B74E7266"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "5558C1395C60B8B1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1A724AEF16C690EB"
+			x: -1.0d
+			y: 5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			dependencies: [
+				"288F7BE90AC49D6E"
+			]
+			tasks: [
+				{
+					id: "2AC7DB4D17976A91"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "187A9DFF2811A908"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6E579CB9805C04F2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5A0AEB733FEC4D65"
+			x: 1.0d
+			y: 5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			dependencies: [
+				"288F7BE90AC49D6E"
+				"4B6B18DEE9511230"
+			]
+			tasks: [
+				{
+					id: "06E7B7ABCC6C6867"
+					type: "item"
+					item: {
+						id: "hostilenetworks:twilight_prediction"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "205DF77A502BE497"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4B4CA163F74E9BAE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "661102C7F987E7BD"
+			x: 1.0d
+			y: 24.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"506EB945C083CC2E"
+			]
+			tasks: [
+				{
+					id: "13AD08F1FF4AAC2B"
+					type: "item"
+					item: {
+						id: "extendedcrafting:black_iron_slate"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "369CED329A35E124"
+					type: "item"
+					item: {
+						id: "extendedcrafting:basic_component"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0A19AA320A45FFFA"
+					type: "item"
+					item: {
+						id: "extendedcrafting:basic_catalyst"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "04B521454F825017"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "5823859E73F00CFB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3D513F09267F082E"
+			x: -1.5d
+			y: 22.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"661102C7F987E7BD"
+			]
+			tasks: [
+				{
+					id: "04ED9AAF8E024920"
+					type: "item"
+					item: {
+						id: "extendedcrafting:black_iron_ingot"
+						count: 1
+					}
+					count: 8L
+				}
+				{
+					id: "03B8015F5FBACEC8"
+					type: "item"
+					item: {
+						id: "extendedcrafting:basic_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "51B854C0DE32979B"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "180E6BFCD76DF828"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3E2B8FDB3778E49B"
+			x: -2.5d
+			y: 26.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"3D513F09267F082E"
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "265DA75438091AFC"
+					type: "item"
+					item: {
+						id: "extendedcrafting:advanced_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5D659FCACB087A50"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "60180592D1732A34"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "00ED2FDA05907C7A"
+			x: -2.5d
+			y: 24.0d
+			shape: "rsquare"
+			size: 1.0d
+			dependencies: [
+				"3E2B8FDB3778E49B"
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "0625142FF4F70F3A"
+					type: "item"
+					item: {
+						id: "extendedcrafting:elite_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5E5BA34993308838"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "533DB53DE70472F1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2C2ECADD0D0886BB"
+			x: -0.5d
+			y: 30.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"00ED2FDA05907C7A"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "106E0A09330F0A68"
+					type: "item"
+					item: {
+						id: "extendedcrafting:ultimate_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "427B1A17E66FC217"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "3720A866008C4248"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "71D7CC7520B500C0"
+			x: -0.5d
+			y: 28.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"45849083414E98A3"
+				"3E2B8FDB3778E49B"
+			]
+			tasks: [
+				{
+					id: "615E3427A2A232E0"
+					type: "item"
+					item: {
+						id: "packagedauto:packager"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3D7549A32A3E6DD9"
+					type: "item"
+					item: {
+						id: "packagedauto:unpackager"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4F8D5916F4659A1A"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "335305DAD28884AE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2F7699EA87878993"
+			x: -0.5d
+			y: 26.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"661102C7F987E7BD"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "7F0F2691FF8D9F3B"
+					type: "item"
+					item: {
+						id: "extendedcrafting:ender_crafter"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2FB4BB57F12BFFED"
+					type: "item"
+					item: {
+						id: "extendedcrafting:ender_alternator"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "58F0F42866AACF23"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "7F6671375E98B800"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "02B9BEBA903C3462"
+			x: -0.5d
+			y: 24.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"00ED2FDA05907C7A"
+			]
+			tasks: [
+				{
+					id: "33D78E08BB15A546"
+					type: "item"
+					item: {
+						id: "extendedcrafting:crafting_core"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "15481E46D24D1431"
+					type: "item"
+					item: {
+						id: "extendedcrafting:pedestal"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "1465A5804BA2DF51"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "25ABBD041B171EA5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "495A4A8AF596B3DD"
+			x: -1.5d
+			y: 16.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"00ED2FDA05907C7A"
+			]
+			tasks: [
+				{
+					id: "09834D2740440635"
+					type: "item"
+					item: {
+						id: "extendedcrafting:crystaltine_ingot"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "317C607D46DB43C8"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "305374FA1805F052"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "37FE5B7240F8C222"
+			x: -2.0d
+			y: 9.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "2444381B56FA5C70"
+					type: "item"
+					item: {
+						id: "compactmachines:personal_shrinking_device"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "676ECEC04BFE920D"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "22ACB4B4457E35D2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "72183CBF18D24594"
+			x: -2.0d
+			y: 11.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"37FE5B7240F8C222"
+			]
+			tasks: [
+				{
+					id: "015BFF08A60FE9B6"
+					type: "item"
+					item: {
+						id: "compactmachines:wall"
+						count: 1
+					}
+					count: 16L
+				}
+			]
+			rewards: [
+				{
+					id: "352D17A5D97757AA"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "44F6282EC99AE1F2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5D5BD30841DCCD95"
+			x: -2.0d
+			y: 12.5d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"72183CBF18D24594"
+			]
+			tasks: [
+				{
+					id: "127F24A17B6BDA38"
+					type: "item"
+					item: {
+						id: "compactmachines:shrinking_module"
+						count: 1
+					}
+					count: 2L
+				}
+				{
+					id: "1E0F832CF49367BD"
+					type: "item"
+					item: {
+						id: "compactmachines:enlarging_module"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "448E9679CDF567B6"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1D1A6098B0824855"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3BEE4D083DB28729"
+			x: -2.0d
+			y: 14.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"5D5BD30841DCCD95"
+			]
+			tasks: [
+				{
+					id: "6DD488E2E061127A"
+					type: "dimension"
+					dimension: "compactmachines:compact_world"
+				}
+			]
+			rewards: [
+				{
+					id: "56585DE1EDDC37FF"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "587FDCB26E8EF37A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "194624A9FFBFAE06"
+			x: 0.0d
+			y: 22.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "48E4B031835C83C6"
+					type: "item"
+					item: {
+						id: "cable_facades:facade_wrench"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5C3F69B88B8C124F"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "4F9ADE93E1CACD8C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "37B1429C3FDEB817"
+			x: -1.5d
+			y: 20.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "721C627AA478F486"
+					type: "item"
+					item: {
+						id: "telepastries:overworld_cake"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4A711443EF3B8D3E"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "548C6A53F555FC43"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "38748839E062F987"
+			x: 0.0d
+			y: 20.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"37B1429C3FDEB817"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "3CCCCF99264235FD"
+					type: "item"
+					item: {
+						id: "telepastries:end_cake"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6C71F96CC7B6E147"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "092C7E58BEDE49AF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0E4DA225CB5833A9"
+			x: 0.0d
+			y: 0.5d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"0B5ACE02A3EC167D"
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "3CDEBA295314D766"
+					type: "kill"
+					entity: "minecraft:blaze"
+					value: 30L
+				}
+			]
+			rewards: [
+				{
+					id: "17C95D67413631FF"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "5C002055EC46B102"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "20ACCD70163B9CD1"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "0D49817F333BA253"
+			x: 1.5d
+			y: 2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0B5ACE02A3EC167D"
+			]
+			tasks: [
+				{
+					id: "11B20600EA2C120A"
+					type: "kill"
+					entity: "minecraft:enderman"
+					value: 30L
+				}
+			]
+			rewards: [
+				{
+					id: "1741CBB8C013EF82"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "4FFEF5A39DDEEDA9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "3FF73A38202257B8"
+					type: "random"
+					table_id: 7840789827906242800L
+				}
+			]
+		}
+		{
+			id: "3A9ADF5D85159EB7"
+			x: -2.0d
+			y: 5.0d
+			shape: "circle"
+			size: 1.0d
+			optional: true
+			dependencies: [
+				"288F7BE90AC49D6E"
+				"0F5CD98214E3E454"
+			]
+			tasks: [
+				{
+					id: "56E15FB3225CF8C0"
+					type: "item"
+					item: {
+						id: "hostilenetworks:overworld_prediction"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "57F6DD279F1FB0BC"
+					type: "item"
+					item: {
+						id: "hostilenetworks:nether_prediction"
+						count: 1
+					}
+					count: 4L
+				}
+				{
+					id: "35D920C610305582"
+					type: "item"
+					item: {
+						id: "hostilenetworks:end_prediction"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "6A33826BAFCCCED4"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4FCCCCDAE7FF04F7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1A6BD466759A0E1E"
+			x: 0.0d
+			y: 9.0d
+			shape: "circle"
+			size: 1.4d
+			optional: true
+			dependencies: [
+				"22C8C82E50C1150C"
+			]
+			tasks: [
+				{
+					id: "724DE5888D019B6A"
+					type: "item"
+					item: {
+						id: "hostilenetworks:data_center"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "351AFD19AB6CB09D"
+					type: "item"
+					item: {
+						id: "hostilenetworks:data_center_io_port"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "62AA02512E395094"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "450468521ACD419D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "23CCCA1395225BEC"
+			x: 0.0d
+			y: 18.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3D513F09267F082E"
+			]
+			tasks: [
+				{
+					id: "3D77F0AEC0412CFB"
+					type: "item"
+					item: {
+						id: "extendedcrafting:flux_crafter"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "07FBE8B191F9100A"
+					type: "item"
+					item: {
+						id: "extendedcrafting:flux_alternator"
+						count: 1
+					}
+					count: 2L
+				}
+			]
+			rewards: [
+				{
+					id: "647B0E8FFA281267"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "0D089677A9A410DE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "383A333C4DD0B8D7"
+			x: 0.0d
+			y: 16.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"495A4A8AF596B3DD"
+			]
+			tasks: [
+				{
+					id: "760C9E69AC0718C1"
+					type: "item"
+					item: {
+						id: "extendedcrafting:basic_auto_table"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5D619C5795D89423"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0EA72E4A3715D860"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6A7C8CD52FF53CDB"
+			x: 0.0d
+			y: 14.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3BEE4D083DB28729"
+			]
+			tasks: [
+				{
+					id: "5F40F7D361D8C810"
+					type: "item"
+					item: {
+						id: "compactmachines:machine"
+						count: 1
+					}
+					count: 4L
+				}
+			]
+			rewards: [
+				{
+					id: "639B660C110525C8"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "2E36B1ABB8972A05"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "222D824B6476C5A9"
+			x: 0.0d
+			y: 11.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"17832D4C895DEFF7"
+				"0213687BA73A9908"
+			]
+			tasks: [
+				{
+					id: "3B146AA99F62083B"
+					type: "item"
+					item: {
+						id: "industrialization_overdrive:terminal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3FD9BD1E8E8929D0"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "1338DB859B88FBF4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "0F49D31C0F825ADF"
+			x: -2.0d
+			y: -1.5d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/factory.png"
+		}
+		{
+			id: "5CF2800C9B6EA8E0"
+			x: 0.0d
+			y: 12.5d
+			width: 1.5d
+			height: 1.5d
+			rotation: 45.0d
+			image: "warbucks:textures/quests/pictures/factory_compact_machines_1.png"
+		}
+		{
+			id: "53150394EC0332E6"
+			x: 0.0d
+			y: 12.5d
+			width: 1.5d
+			height: 1.5d
+			rotation: 90.0d
+			image: "warbucks:textures/quests/pictures/factory_compact_machines_2.png"
+		}
+		{
+			id: "11EA09BEDEA19ECA"
+			x: 0.0d
+			y: 2.8d
+			width: 0.6d
+			height: 0.6d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/factory_deep_learning_1.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "1501498B50DB79C9"
+			linked_quest: "17832D4C895DEFF7"
+			x: 3.5d
+			y: 18.0d
+			size: 1.0d
+		}
+		{
+			id: "5584F9C788351307"
+			linked_quest: "506EB945C083CC2E"
+			x: 2.5d
+			y: 24.0d
+			size: 1.0d
+		}
+		{
+			id: "65CA747B5CDB8096"
+			linked_quest: "392A7909301184E2"
+			x: -4.5d
+			y: 9.5d
+			size: 1.0d
+		}
+		{
+			id: "364BD5EB350A597D"
+			linked_quest: "45849083414E98A3"
+			x: 1.0d
+			y: 28.0d
+			size: 1.0d
+		}
+		{
+			id: "41036A0D5EE4C420"
+			linked_quest: "1C5E43BCEDA7593F"
+			x: -1.5d
+			y: 0.5d
+			size: 1.0d
+		}
+		{
+			id: "32A46DBDFB86F48E"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: -3.0d
+			y: 20.0d
+			size: 1.0d
+		}
+	]
+}

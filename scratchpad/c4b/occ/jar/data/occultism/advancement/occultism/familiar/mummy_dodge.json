@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "mummy_dodge": {
+      "conditions": {
+        "type": "mummy_dodge"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.mummy_dodge.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 15
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.mummy_dodge.title"
+    }
+  },
+  "requirements": [
+    [
+      "mummy_dodge"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

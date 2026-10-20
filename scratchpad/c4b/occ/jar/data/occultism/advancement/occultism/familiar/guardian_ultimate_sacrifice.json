@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "guardian_ultimate_sacrifice": {
+      "conditions": {
+        "type": "guardian_ultimate_sacrifice"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.guardian_ultimate_sacrifice.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 8
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.guardian_ultimate_sacrifice.title"
+    }
+  },
+  "requirements": [
+    [
+      "guardian_ultimate_sacrifice"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

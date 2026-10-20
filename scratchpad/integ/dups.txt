@@ -1,0 +1,652 @@
+ad_astra:cheese
+   t7               t7_opt_cheese            opt=1 mir=-                n=1 deps=['t7_rocket'] <- []
+   space            w_cheese                 opt=1 mir=-                n=4 deps=['w_desh'] <- [('sw_buy_cheese', 'shop_world', 1)]
+ad_astra:gas_tank
+   t7               t7_gas_tank              opt=0 mir=-                n=6 deps=['t7_nasa'] <- [('t7_suit', 't7', 0), ('t7_steel_tank', 't7', 0)]
+   space            sp_gas_tank              opt=0 mir=-                n=1 deps=['t7_suit'] <- [('sp_oxygen_can', 'space', 0), ('sp_water_pump', 'space', 1)]
+ad_astra:oxygen_distributor
+   t7               t7_distributor           opt=1 mir=-                n=1 deps=['t7_desh'] <- []
+   space            w_oxygen                 opt=1 mir=-                n=1 deps=['w_mars'] <- [('sp_sensor', 'space', 1)]
+ae2:controller
+   t5               t5_ae2                   opt=0 mir=-                n=1 deps=['t5_processors', 't5_sky_stone', 't5_me_cable'] <- [('t5_cells', 't5', 1), ('lg_peripherals', 'logic', 1), ('lg_ae_io', 'logic', 0), ('mf_packaged', 'factory', 0)]
+   ae2              ae_controller            opt=0 mir=2F16B6A173525277 n=1 deps=['s_ae_craft', 'ae_channels'] <- [('s_ae_drive', 'ae2', 0), ('ae_wap', 'ae2', 0)]
+ae2:fluix_sword
+   tools            tc_sw_fluix              opt=1 mir=077A214422FEFF02 n=1 deps=['tc_hub'] <- []
+   ae2              ae_fluix_sword           opt=1 mir=-                n=1 deps=['ae_fluix'] <- [('sg_buy_fluix_sword', 'shop_gear', 1)]
+ae2:level_emitter
+   ae2              ae_level_emitter         opt=0 mir=3DDB0DDA7571B2C1 n=1 deps=['ae_pattern_access'] <- [('ae_cable_tricks', 'ae2', 0)]
+   logic            lg_level                 opt=1 mir=-                n=1 deps=['lg_ae_io'] <- [('lg_acid_line', 'logic', 1)]
+allthemodium:allthemodium_ingot
+   harvest          hv_mat_atm               opt=0 mir=5E7CCDE9229A646A n=1 deps=[] <- []
+   allthemodium     atm_ingot                opt=0 mir=201EE3566D4D3123 n=1 deps=['atm_raw', 't3_ebf'] <- [('atm_pad', 'allthemodium', 0), ('atm_pick', 'allthemodium', 0), ('atm_sword', 'allthemodium', 1), ('atm_mace', 'allthemodium', 0), ('atm_armor', 'allthemodium', 0)]
+allthemodium:allthemodium_sword
+   tools            tc_sw_atm                opt=1 mir=47AED7219704EB3E n=1 deps=['tc_hub'] <- []
+   allthemodium     atm_sword                opt=1 mir=1F6C8117F3CED939 n=1 deps=['atm_template', 'atm_ingot'] <- []
+allthemodium:piglich_heart
+   factory          mf_sim_piglich           opt=0 mir=5905241071D1960A n=1 deps=['mf_fab'] <- []
+   allthemodium     atm_piglich              opt=0 mir=5BA986D7928BF09F n=1 deps=['atm_pyramid'] <- [('atm_va_alloy', 'allthemodium', 0)]
+allthemodium:raw_allthemodium
+   tools            tc_raw_atm               opt=0 mir=03E05018D64DDEE1 n=1 deps=['tc_debris'] <- [('tc_raw_unob', 'tools', 0)]
+   allthemodium     atm_raw                  opt=0 mir=-                n=4 deps=['t4_separator', 'atm_city'] <- [('atm_ingot', 'allthemodium', 0), ('atm_mek', 'allthemodium', 1)]
+allthemodium:raw_unobtainium
+   tools            tc_raw_unob              opt=0 mir=09733948CBCB3FB9 n=1 deps=['tc_raw_atm'] <- []
+   allthemodium     atm_unob_raw             opt=0 mir=-                n=4 deps=['atm_vib_pick', 'atm_pad_end'] <- [('atm_unob_ingot', 'allthemodium', 0)]
+allthemodium:unobtainium_ingot
+   harvest          hv_mat_unob              opt=0 mir=7279700A93E8630B n=1 deps=[] <- []
+   allthemodium     atm_unob_ingot           opt=0 mir=4A079D40C0AF6BC3 n=1 deps=['atm_unob_raw', 't6_hf', 't4_sodium'] <- [('atm_unob_gear', 'allthemodium', 0), ('atm_unob_armor', 'allthemodium', 0), ('atm_unob_sword', 'allthemodium', 1), ('atm_unob_mace', 'allthemodium', 0), ('atm_alloys', 'allthemodium', 0), ('atm_ua_alloy', 'allthemodium', 0)]
+allthemodium:unobtainium_sword
+   tools            tc_sw_unob               opt=1 mir=4C8C56F960D92E9D n=1 deps=['tc_hub'] <- []
+   allthemodium     atm_unob_sword           opt=1 mir=47F734CDD5793F26 n=1 deps=['atm_unob_ingot', 'atm_unob_template'] <- []
+allthemodium:vibranium_ingot
+   harvest          hv_mat_vib               opt=0 mir=5A9C646718EE92C2 n=1 deps=[] <- []
+   allthemodium     atm_vib_ingot            opt=0 mir=144BB025516E0994 n=1 deps=['atm_vib_raw', 't6_kanthal_coil', 't6_argon'] <- [('atm_vib_pick', 'allthemodium', 0), ('atm_vib_sword', 'allthemodium', 1), ('atm_vib_mace', 'allthemodium', 0), ('atm_vib_armor', 'allthemodium', 0), ('atm_va_alloy', 'allthemodium', 0)]
+allthemodium:vibranium_sword
+   tools            tc_sw_vib                opt=1 mir=744AC6BD82FC2DEE n=1 deps=['tc_hub'] <- []
+   allthemodium     atm_vib_sword            opt=1 mir=151D836C7B0E6FAF n=1 deps=['atm_vib_ingot', 'atm_vib_template'] <- []
+apotheosis:ender_gem_case
+   apotheosis       ap_faberge               opt=1 mir=-                n=1 deps=['ap_gem_case', 'ap_infused'] <- []
+   apothic_enchanting aen_faberge              opt=1 mir=06F70F6CA37168CC n=1 deps=['aen_gem_case', 'aen_pinnacle'] <- []
+apotheosis:gem_case
+   apotheosis       ap_gem_case              opt=1 mir=-                n=1 deps=['m_gem_cut'] <- [('ap_faberge', 'apotheosis', 1)]
+   apothic_enchanting aen_gem_case             opt=0 mir=7F007C888C23EC42 n=1 deps=['m_gem_cut'] <- [('aen_faberge', 'apothic_enchanting', 1)]
+apotheosis:god_fused_pearl
+   apotheosis       ap_god_pearl             opt=1 mir=-                n=1 deps=['ap_rarity_all', 'ap_infused'] <- [('ap_raven', 'apotheosis', 1)]
+   apothic_enchanting aen_god_pearl            opt=1 mir=1617C1935F22FBD1 n=1 deps=['aen_draconic'] <- [('aen_raven', 'apothic_enchanting', 1)]
+apotheosis:infused_spawner_rune
+   apotheosis       ap_rune_more             opt=1 mir=-                n=1 deps=['ap_rune'] <- [('ap_rune_summit', 'apotheosis', 1), ('ap_rune_pinnacle', 'apotheosis', 1), ('ap_rune_noai', 'apotheosis', 1), ('ap_rune_players', 'apotheosis', 1), ('ap_rune_conditions', 'apotheosis', 1), ('ap_rune_echo', 'apotheosis', 1)]
+   apothic_enchanting aen_spawner_rune         opt=1 mir=4EE6824A970EEB35 n=1 deps=['aen_lapis', 'aen_summit'] <- []
+apotheosis:potion_charm
+   apotheosis       ap_charm                 opt=1 mir=-                n=1 deps=['m_gems', 't2_brewing'] <- []
+   apothic_enchanting aen_charm                opt=1 mir=6220EDE42C813C1B n=1 deps=['aen_lapis', 'aen_pinnacle'] <- []
+apothic_enchanting:ender_library
+   apotheosis       ap_alexandria            opt=1 mir=-                n=1 deps=['ap_library'] <- []
+   apothic_enchanting aen_alexandria           opt=1 mir=42746659C66CF17F n=1 deps=['aen_library', 'aen_lapis', 'aen_pinnacle'] <- []
+apothic_enchanting:endshelf
+   apotheosis       ap_endshelf              opt=1 mir=-                n=4 deps=['ap_infused', 'w_end'] <- [('ap_endshelf_up', 'apotheosis', 1)]
+   apothic_enchanting aen_endshelf             opt=1 mir=1873205CF5247E3E n=1 deps=['aen_breath'] <- [('aen_pearl_end', 'apothic_enchanting', 1), ('aen_draconic', 'apothic_enchanting', 1)]
+apothic_enchanting:hellshelf
+   apotheosis       m_shelves                opt=1 mir=-                n=4 deps=['m_gems', 't2_nether'] <- [('ap_infused', 'apotheosis', 1), ('ap_tome', 'apotheosis', 1), ('ap_odd_shelves', 'apotheosis', 1), ('ap_seashelf', 'apotheosis', 1), ('ap_leads', 'apotheosis', 1)]
+   apothic_enchanting aen_quanta               opt=0 mir=586D5DE28EEC8014 n=1 deps=['aen_infusing'] <- [('aen_odd', 'apothic_enchanting', 0)]
+   apothic_enchanting aen_hellshelf            opt=0 mir=0A3C464EF7CDD5F6 n=11 deps=['aen_infusing'] <- [('aen_frontier', 'apothic_enchanting', 0)]
+apothic_enchanting:inert_trident
+   apotheosis       ap_trident               opt=1 mir=-                n=1 deps=['ap_infused'] <- []
+   apothic_enchanting aen_trident              opt=0 mir=24C757B8AA6841F6 n=1 deps=['aen_lapis', 'aen_frontier'] <- []
+apothic_enchanting:infused_hellshelf
+   apotheosis       ap_infused               opt=1 mir=-                n=1 deps=['m_shelves'] <- [('ap_library', 'apotheosis', 1), ('ap_endshelf', 'apotheosis', 1), ('ap_faberge', 'apotheosis', 1), ('ap_god_pearl', 'apotheosis', 1), ('ap_hellshelf_up', 'apotheosis', 1), ('ap_seashelf_up', 'apotheosis', 1), ('ap_deepshelf', 'apotheosis', 1), ('ap_tomes', 'apotheosis', 1), ('ap_trident', 'apotheosis', 1)]
+   apothic_enchanting aen_inf_hell             opt=0 mir=45161821C221EF0B n=8 deps=['aen_frontier'] <- [('aen_sight', 'apothic_enchanting', 1), ('aen_blazing', 'apothic_enchanting', 0), ('aen_glowing', 'apothic_enchanting', 0), ('aen_library', 'apothic_enchanting', 0)]
+apothic_enchanting:library
+   apotheosis       ap_library               opt=1 mir=-                n=1 deps=['ap_infused'] <- [('ap_alexandria', 'apotheosis', 1)]
+   apothic_enchanting aen_library              opt=0 mir=6884E25641A1020C n=1 deps=['aen_inf_hell'] <- [('aen_alexandria', 'apothic_enchanting', 1)]
+apothic_enchanting:occult_ender_lead
+   apotheosis       ap_occult_lead           opt=1 mir=-                n=1 deps=['ap_capture'] <- []
+   apothic_enchanting aen_occult_lead          opt=1 mir=61217D80BFF8A858 n=1 deps=['aen_ender_lead', 'aen_summit'] <- []
+apothic_enchanting:raven_enchanting_table
+   apotheosis       ap_raven                 opt=1 mir=-                n=1 deps=['ap_god_pearl'] <- []
+   apothic_enchanting aen_raven                opt=1 mir=3311B79A8F6C6ADD n=1 deps=['aen_god_pearl'] <- []
+apothic_enchanting:scrap_tome
+   apotheosis       ap_tome                  opt=1 mir=-                n=1 deps=['m_shelves'] <- [('ap_tomes', 'apotheosis', 1)]
+   apothic_enchanting aen_scrap                opt=0 mir=105442DA79829777 n=1 deps=['aen_tomes'] <- [('aen_improved', 'apothic_enchanting', 0)]
+apothic_enchanting:seashelf
+   apotheosis       ap_seashelf              opt=1 mir=-                n=4 deps=['m_shelves'] <- [('ap_seashelf_up', 'apotheosis', 1)]
+   apothic_enchanting aen_arcana               opt=0 mir=62D39F68DE6E44A4 n=1 deps=['aen_infusing'] <- [('aen_odd', 'apothic_enchanting', 0)]
+   apothic_enchanting aen_seashelf             opt=0 mir=6A07D09831428CB9 n=11 deps=['aen_infusing'] <- [('aen_frontier', 'apothic_enchanting', 0)]
+ars_additions:source_spawner
+   apotheosis       ap_source_spawner        opt=1 mir=-                n=1 deps=['ap_other_spawners'] <- []
+   ars              ars_source_spawner       opt=1 mir=-                n=1 deps=['ars_containment', 'ars_drygmy'] <- []
+ars_nouveau:dowsing_rod
+   ae2              ae_dowsing               opt=1 mir=332A3C7BA261DBFC n=1 deps=['ae_charged'] <- [('ae_compass', 'ae2', 0)]
+   ars              ars_dowsing              opt=1 mir=3142A40E1EAEBAA3 n=1 deps=['ars_archwood'] <- []
+ars_nouveau:volcanic_sourcelink
+   t2               t2_sourcelink            opt=1 mir=-                n=1 deps=['t2_ars'] <- []
+   ars              m_sourcelink             opt=0 mir=19D02325579F2AA8 n=1 deps=['m_jar'] <- []
+artifacts:whoopee_cushion
+   relics           rl_whoopee               opt=1 mir=-                n=1 deps=['rl_artifacts'] <- []
+   artifacts        af_whoopee               opt=1 mir=789AF6D0A6321945 n=1 deps=['af_intro'] <- []
+chemlib:caffeine
+   lab_notes        ln_caffeine              opt=1 mir=-                n=1 deps=['t1_combiner'] <- []
+   periodic         pt_caffeine              opt=1 mir=-                n=1 deps=['pt_ammonia'] <- []
+chemlib:carbon_dioxide
+   t1               t1_co2                   opt=1 mir=-                n=4 deps=['t1_compound'] <- []
+   periodic         pt_co2                   opt=0 mir=-                n=4 deps=['pt_nonmetals'] <- [('pt_methane', 'periodic', 0), ('pt_sugar', 'periodic', 1), ('pt_limestone', 'periodic', 1)]
+chemlib:graphite
+   t1               t1_graphite              opt=0 mir=-                n=4 deps=['t1_dissolver'] <- [('t1_elements', 't1', 0), ('sm_buy_graphite', 'shop_materials', 1)]
+   t1               t1_opt_diamond           opt=1 mir=-                n=128 deps=['t1_elements'] <- []
+chemlib:hydrogen
+   t2               t2_chorus                opt=0 mir=-                n=2 deps=['t2_levitation', 't2_hydrogen'] <- [('t2_longflying', 't2', 0)]
+   t2               t2_hydrogen              opt=0 mir=-                n=8 deps=['t1_dissolver'] <- [('t2_chorus', 't2', 0), ('py_infusion', 'pylons', 0), ('nv_tenebrae', 'neovitae', 0)]
+   seed             sd_hydrogen              opt=0 mir=-                n=12 deps=['sd_intro'] <- [('sd_water', 'seed', 0)]
+chemlib:oganesson
+   seed             sd_oganesson             opt=0 mir=-                n=8 deps=['sd_intro', 't6_table'] <- [('t7_seed_nuclear', 'seed', 0)]
+   periodic         pt_complete              opt=0 mir=-                n=1 deps=['pt_superheavy', 't6_table'] <- []
+chemlib:sulfuric_acid
+   t3               t3_acid                  opt=0 mir=-                n=2 deps=['t1_combiner', 't3_sulfur'] <- [('t3_battery', 't3', 0), ('sm_buy_acid_chemlib', 'shop_materials', 1)]
+   periodic         pt_sulfuric              opt=0 mir=-                n=8 deps=['pt_acids'] <- []
+chemlib:water
+   t1               t1_compound              opt=0 mir=-                n=4 deps=['t1_elements'] <- [('t1_co2', 't1', 1), ('t1_methane', 't1', 1)]
+   seed             sd_water                 opt=0 mir=-                n=8 deps=['sd_hydrogen', 'sd_oxygen'] <- [('t7_seed_basics', 'seed', 0)]
+create:andesite_alloy
+   start            gs_taste_create          opt=1 mir=-                n=2 deps=['gs_taste'] <- []
+   create           cr_alloy                 opt=0 mir=0F16498769DFB3B0 n=1 deps=['cr_andesite'] <- [('cr_casing', 'create', 0), ('cr_power', 'create', 0)]
+create:super_glue
+   create           cr_glue                  opt=0 mir=38CB5044AB3F859B n=1 deps=['cr_andesite'] <- [('cr_contraptions', 'create', 0)]
+   create           cr_train_glue            opt=0 mir=12274935C3D20C74 n=1 deps=['cr_train_build'] <- []
+generatorgalore:copper_generator
+   t1               t1_copper_gen            opt=0 mir=-                n=1 deps=['t1_redstone'] <- [('t1_power', 't1', 0)]
+   generators       pw_gg_copper             opt=0 mir=618F1434757C8E69 n=1 deps=['pw_furnace'] <- [('pw_gg_iron', 'generators', 0), ('pw_gg_8x', 'generators', 0)]
+generatorgalore:iron_generator
+   t1               t1_power                 opt=0 mir=-                n=1 deps=['t1_copper_gen'] <- [('t1_dissolver', 't1', 0), ('t1_combiner', 't1', 0), ('sto_bp_battery', 'storage', 1), ('pw_iron_gen', 'power', 0), ('pw_intro', 'powah', 0)]
+   generators       pw_gg_iron               opt=0 mir=61F265D9A5713A4D n=1 deps=['pw_gg_copper'] <- [('pw_gold_gen', 'generators', 0)]
+integrateddynamics:energy_battery
+   integrated       lg_id_power              opt=0 mir=6D75CF34957ECCD9 n=1 deps=['lg_menril'] <- [('lg_id_coalgen', 'integrated', 1), ('lg_id_mech', 'integrated', 1), ('lg_id_mech_basin', 'integrated', 1)]
+   power            pw_id_battery            opt=0 mir=72EA25D05C46D39A n=1 deps=['pw_storing'] <- []
+ironfurnaces:augment_generator
+   storage          sto_if_generator         opt=1 mir=-                n=1 deps=['sto_if_augment'] <- [('sto_if_factory', 'storage', 1)]
+   generators       pw_if_aug_generator      opt=0 mir=07753C5D94312A50 n=1 deps=['pw_if_augments'] <- []
+ironfurnaces:augment_smoking
+   storage          sto_if_smoking           opt=1 mir=-                n=1 deps=['sto_if_factory'] <- []
+   generators       pw_if_aug_smoking        opt=0 mir=33436ED0D9F128BD n=1 deps=['pw_if_augments'] <- []
+ironfurnaces:copper_furnace
+   storage          sto_if_copper            opt=1 mir=-                n=1 deps=['s_furnace'] <- [('sto_if_rainbow', 'storage', 1)]
+   generators       pw_if_copper             opt=0 mir=661C072E48F8D41F n=1 deps=['pw_furnace'] <- [('pw_if_silver', 'generators', 0), ('pw_if_augments', 'generators', 0), ('pw_if_heater', 'generators', 0), ('pw_if_copy', 'generators', 0), ('pw_if_spooky', 'generators', 0), ('pw_if_xmas', 'generators', 0)]
+ironfurnaces:crystal_furnace
+   storage          sto_if_crystal           opt=1 mir=-                n=1 deps=['sto_if_diamond'] <- [('sto_if_rainbow', 'storage', 1)]
+   generators       pw_if_crystal            opt=0 mir=2354BC5330350DF6 n=1 deps=['pw_if_diamond'] <- [('pw_if_obsidian', 'generators', 0)]
+ironfurnaces:diamond_furnace
+   storage          sto_if_diamond           opt=1 mir=-                n=1 deps=['sto_if_gold'] <- [('sto_if_crystal', 'storage', 1), ('sto_if_emerald', 'storage', 1)]
+   generators       pw_if_diamond            opt=0 mir=21EA29A8C7F950CE n=1 deps=['pw_if_gold'] <- [('pw_if_emerald', 'generators', 0), ('pw_if_crystal', 'generators', 0)]
+ironfurnaces:emerald_furnace
+   storage          sto_if_emerald           opt=1 mir=-                n=1 deps=['sto_if_diamond'] <- [('sto_if_obsidian', 'storage', 1)]
+   generators       pw_if_emerald            opt=0 mir=711DDD55CEC439E5 n=1 deps=['pw_if_diamond'] <- [('pw_if_obsidian', 'generators', 0)]
+ironfurnaces:gold_furnace
+   storage          sto_if_gold              opt=1 mir=-                n=1 deps=['s_furnace'] <- [('sto_if_kits', 'storage', 1), ('sto_if_diamond', 'storage', 1)]
+   generators       pw_if_gold               opt=0 mir=420FE84DEE12CCE0 n=1 deps=['pw_if_silver'] <- [('pw_if_diamond', 'generators', 0)]
+ironfurnaces:iron_furnace
+   storage          s_furnace                opt=1 mir=-                n=1 deps=['sto_hub', 'gs_iron'] <- [('sto_if_copper', 'storage', 1), ('sto_if_augment', 'storage', 1), ('sto_if_copy', 'storage', 1), ('sto_if_gold', 'storage', 1), ('sto_if_silver', 'storage', 1)]
+   generators       pw_if_iron               opt=0 mir=2748ACEAB96A5F60 n=1 deps=['pw_furnace'] <- [('pw_if_silver', 'generators', 0), ('pw_if_augments', 'generators', 0), ('pw_if_heater', 'generators', 0), ('pw_if_copy', 'generators', 0), ('pw_if_spooky', 'generators', 0), ('pw_if_xmas', 'generators', 0)]
+ironfurnaces:item_copy
+   storage          sto_if_copy              opt=1 mir=-                n=1 deps=['s_furnace'] <- []
+   generators       pw_if_copy               opt=0 mir=757B14D08A9A03C4 n=1 deps=['pw_if_copper', 'pw_if_iron'] <- []
+ironfurnaces:netherite_furnace
+   storage          sto_if_netherite         opt=1 mir=-                n=1 deps=['sto_if_obsidian', 't2_debris'] <- [('sto_if_rainbow', 'storage', 1)]
+   generators       pw_if_netherite          opt=0 mir=79C4CF8D7312FC28 n=1 deps=['pw_if_obsidian', 't2_nether'] <- [('pw_if_atm', 'generators', 1), ('pw_if_core', 'generators', 0)]
+ironfurnaces:obsidian_furnace
+   storage          sto_if_obsidian          opt=1 mir=-                n=1 deps=['sto_if_emerald', 't2_blaze'] <- [('sto_if_netherite', 'storage', 1)]
+   generators       pw_if_obsidian           opt=0 mir=32C7D8AE859BF89E n=1 deps=['pw_if_crystal', 'pw_if_emerald'] <- [('pw_if_netherite', 'generators', 0), ('pw_if_plating', 'generators', 0)]
+ironfurnaces:silver_furnace
+   storage          sto_if_silver            opt=1 mir=-                n=1 deps=['s_furnace', 't4_byproduct'] <- [('sto_if_rainbow', 'storage', 1)]
+   generators       pw_if_silver             opt=0 mir=61847F47CCA225D9 n=1 deps=['pw_if_copper', 'pw_if_iron'] <- [('pw_if_gold', 'generators', 0)]
+justdirethings:blazegold_sword
+   tools            tc_sw_blazegold          opt=1 mir=6EFA73A4D01F0052 n=1 deps=['tc_hub'] <- []
+   justdirethings   jdt_blazegold_kit        opt=0 mir=46E6B1600AA8A61E n=1 deps=['jdt_tools_tip', 'jdt_blazegold_raw'] <- [('sg_buy_blazegold_tools', 'shop_gear', 1)]
+justdirethings:celestigem_sword
+   tools            tc_sw_celestigem         opt=1 mir=36B9D5A99E1AA85C n=1 deps=['tc_hub'] <- []
+   justdirethings   jdt_celestigem_kit       opt=0 mir=4E03AE15BEF86178 n=1 deps=['jdt_tools_tip', 'jdt_celestigem_gem'] <- []
+justdirethings:eclipsealloy_pickaxe
+   tools            tc_pk_eclipse            opt=1 mir=1756F81ACFC56C58 n=1 deps=['tc_hub'] <- []
+   justdirethings   jdt_ec_pickaxe           opt=0 mir=0C9DD8E53A1B92C0 n=1 deps=['jdt_tools_tip', 'jdt_eclipse_ingot'] <- []
+justdirethings:eclipsealloy_sword
+   tools            tc_sw_eclipse            opt=1 mir=252169A6EB4DD75B n=1 deps=['tc_hub'] <- []
+   justdirethings   jdt_eclipse_kit          opt=0 mir=37B903620493A354 n=1 deps=['jdt_tools_tip', 'jdt_eclipse_ingot'] <- [('sg_buy_eclipse_tools', 'shop_gear', 1)]
+justdirethings:ferricore_sword
+   tools            tc_sw_ferricore          opt=1 mir=161878AB4236C58B n=1 deps=['tc_hub'] <- []
+   justdirethings   jdt_ferricore_kit        opt=0 mir=2F86FB9E4D49E4B0 n=1 deps=['jdt_tools_tip'] <- []
+justdirethings:pocket_generator
+   tools            tc_jdt_pocket            opt=1 mir=-                n=1 deps=['jdt_ferricore'] <- []
+   justdirethings   jdt_pocket_gen           opt=0 mir=40C5C355B6DA1893 n=1 deps=['jdt_util_tip'] <- []
+justdirethings:portalgun
+   tools            tc_jdt_portal            opt=1 mir=-                n=1 deps=['jdt_celestigem'] <- []
+   justdirethings   jdt_portalgun            opt=0 mir=16E02F671FBE9148 n=1 deps=['jdt_util_tip', 'jdt_blazegold_raw'] <- []
+kubejs:antimatter_core
+   t7               t7_cores                 opt=0 mir=-                n=1 deps=['t7_core_charge', 't7_antimatter', 't7_quantum'] <- [('sd_cores2', 'seed', 0)]
+   seed             sd_cores2                opt=0 mir=-                n=2 deps=['t7_cores', 'sd_charged', 'sd_pellets', 'sd_quantum'] <- [('sd_cores4', 'seed', 0)]
+   seed             sd_cores4                opt=0 mir=-                n=4 deps=['sd_cores2'] <- [('t7_seed_cores', 'seed', 0)]
+   seed             t7_seed_cores            opt=0 mir=-                n=8 deps=['sd_cores4'] <- [('t7_seed', 'seed', 0)]
+kubejs:energy_core
+   t7               t7_core_charge           opt=0 mir=-                n=1 deps=['t7_core_empty'] <- [('t7_cores', 't7', 0)]
+   seed             sd_charged               opt=0 mir=-                n=2 deps=['sd_shells'] <- [('sd_cores2', 'seed', 0)]
+   creation         cn_charged_cores         opt=0 mir=-                n=2 deps=['t7_creation'] <- [('cn_terraformer', 'creation', 0)]
+kubejs:energy_core_empty
+   t7               t7_core_empty            opt=0 mir=-                n=1 deps=['t6_waste'] <- [('t7_core_charge', 't7', 0)]
+   seed             sd_shells                opt=0 mir=-                n=2 deps=['sd_stainless', 'sd_polonium', 'sd_unit'] <- [('sd_charged', 'seed', 0)]
+laserio:laser_node
+   storage          s_laser                  opt=1 mir=-                n=2 deps=['s_pipes', 't3_hull'] <- []
+   logic            lg_laser_node            opt=0 mir=5C0F6B1C93A52113 n=1 deps=['lg_laser_kit'] <- [('lg_laser_connector', 'logic', 1)]
+mekanism:advanced_control_circuit
+   t4               t4_adv_circuit           opt=0 mir=-                n=2 deps=['t4_circuit', 't3_infused'] <- [('t4_ore3', 't4', 0)]
+   mekanism         mk2_adv_circuit          opt=0 mir=6263A27182B2CE3D n=1 deps=['mk2_steel_casing', 't4_mv'] <- [('mk2_elite_circuit', 'mekanism', 0), ('mk2_compressor', 'mekanism', 0), ('mk2_purifier', 'mekanism', 0), ('mkp_induction_adv', 'mekanism_power', 1)]
+mekanism:alloy_atomic
+   creation         cn_atomic                opt=0 mir=-                n=64 deps=['t7_creation'] <- [('cn_radiance', 'creation', 0)]
+   mekanism         mk2_atomic               opt=0 mir=-                n=4 deps=['mk2_reinforced'] <- [('mk2_teleport_core', 'mekanism', 0), ('mkp_ult_cube', 'mekanism_power', 1)]
+mekanism:alloy_infused
+   t3               t3_infused               opt=0 mir=-                n=4 deps=['t3_infuser'] <- [('t3_enrich', 't3', 0), ('t4_electrolytic_core', 't4', 0), ('t4_energy_tablet', 't4', 0), ('t4_adv_circuit', 't4', 0), ('sm_buy_infused', 'shop_materials', 1), ('mk2_reinforced', 'mekanism', 0), ('mk2_adv_transmitters', 'mekanism', 1)]
+   mekanism         mk2_infused_alloy        opt=0 mir=166971866A9234C7 n=1 deps=['mk2_infuser'] <- [('mk2_tablet', 'mekanism', 0), ('mk2_tier_basic', 'mekanism', 0)]
+mekanism:antiprotonic_nucleosynthesizer
+   t7               t7_opt_nucleo            opt=1 mir=-                n=1 deps=['t7_antimatter'] <- []
+   creation         cn_nucleo                opt=0 mir=-                n=1 deps=['t7_creation'] <- [('cn_heart', 'creation', 0), ('cn_shining', 'creation', 0), ('cn_secret_diamond', 'creation', 1)]
+   mekanism_power   mkp_nucleo               opt=0 mir=4B2835706B593E9A n=1 deps=['mkp_antimatter'] <- []
+mekanism:atomic_disassembler
+   tools            tc_disassembler          opt=1 mir=-                n=1 deps=['tc_obsidian_paxel'] <- [('sg_buy_disassembler', 'shop_gear', 1)]
+   mekanism_power   mkp_disassembler         opt=0 mir=16DDAE318535D0F9 n=1 deps=['mkp_intro'] <- [('mk2_mekatool', 'mekanism_power', 0)]
+mekanism:basic_chemical_tank
+   t4               t4_tanks                 opt=1 mir=-                n=3 deps=['t4_chem_tank'] <- [('mk_buy_chemical_tank', 'market', 1)]
+   t4               t4_chem_tank             opt=0 mir=-                n=2 deps=['t4_separator'] <- [('t4_tanks', 't4', 1), ('t4_dynamic_tank', 't4', 0), ('t5_prc', 't5', 0)]
+   mekanism_power   mkp_waste_tank           opt=0 mir=7B385FD1CBE02C85 n=1 deps=['mkp_fission'] <- [('mk2_turbine_shell', 'mekanism_power', 0), ('mk2_turbine_parts', 'mekanism_power', 0), ('mkp_turbine_top', 'mekanism_power', 0)]
+mekanism:chemical_crystallizer
+   t4               t4_ore5                  opt=0 mir=-                n=1 deps=['t4_washer', 't4_fluorite'] <- [('mk_buy_chemical_crystallizer', 'market', 1), ('ln_ore_mek', 'lab_notes', 1), ('t4_byproduct', 't4', 1), ('t4_all5x', 't4', 1), ('t4_crystals', 't4', 0), ('mk2_ore_states', 'mekanism', 1), ('mk2_ore5', 'mekanism', 0), ('atm_mek', 'allthemodium', 1)]
+   t7               t7_crystallizer          opt=0 mir=-                n=1 deps=['t7_sps'] <- [('t7_antimatter', 't7', 0)]
+   mekanism         mk2_crystallizer         opt=0 mir=602A6CF9D5B66AD3 n=1 deps=['mk2_ult_circuit'] <- []
+mekanism:chemical_dissolution_chamber
+   t4               t4_dissolution           opt=0 mir=-                n=1 deps=['t4_ore4', 't4_mek_acid', 't4_refined_obsidian'] <- [('mk_buy_dissolution_chamber', 'market', 1), ('t4_washer', 't4', 0), ('t4_fluorite', 't4', 0)]
+   mekanism         mk2_dissolution          opt=0 mir=6B8040401B512E50 n=1 deps=['mk2_ult_circuit'] <- [('mk2_coal_gas', 'mekanism', 0)]
+mekanism:chemical_infuser
+   t4               t4_so3                   opt=0 mir=-                n=1 deps=['t4_oxidizer'] <- [('mk_buy_chemical_infuser', 'market', 1), ('ln_catalysts', 'lab_notes', 1), ('t4_vapor', 't4', 0), ('t4_hcl', 't4', 0)]
+   mekanism         mk2_chem_infuser         opt=0 mir=376532CD98D39781 n=1 deps=['mk2_steel_casing'] <- [('mk2_coal_gas', 'mekanism', 0)]
+mekanism:chemical_injection_chamber
+   t4               t4_ore4                  opt=0 mir=-                n=1 deps=['t4_hcl', 't4_reinforced'] <- [('mk_buy_injection_chamber', 'market', 1), ('t4_dissolution', 't4', 0), ('t4_shards', 't4', 0), ('mk2_ore_factory', 'mekanism', 0), ('mk2_ore4', 'mekanism', 0)]
+   mekanism         mk2_injector             opt=0 mir=27512B0434531195 n=1 deps=['mk2_elite_circuit', 'mk2_purifier'] <- []
+mekanism:chemical_oxidizer
+   t4               t4_oxidizer              opt=0 mir=-                n=1 deps=['t4_tubes', 't4_sulfur', 't4_dynamic_tank'] <- [('mk_buy_chemical_oxidizer', 'market', 1), ('t4_so3', 't4', 0), ('t4_brine', 't4', 0)]
+   mekanism         mk2_oxidizer             opt=0 mir=2A793B35FE25003C n=1 deps=['mk2_steel_casing'] <- [('mk2_coal_gas', 'mekanism', 0)]
+mekanism:chemical_washer
+   t4               t4_washer                opt=0 mir=-                n=1 deps=['t4_dissolution'] <- [('mk_buy_chemical_washer', 'market', 1), ('t4_ore5', 't4', 0)]
+   mekanism         mk2_washer               opt=0 mir=60B52705049D1BA5 n=1 deps=['mk2_ult_circuit'] <- []
+mekanism:configurator
+   logic            lg_mek                   opt=0 mir=34CFE1439262AA72 n=1 deps=['t3_infuser', 't3_mekcircuit'] <- [('lg_mek_pipe', 'logic', 0), ('lg_mek_cable', 'logic', 0), ('lg_mek_transporter', 'logic', 0), ('lg_mek_conductor', 'logic', 0), ('lg_mek_tube', 'logic', 0)]
+   mekanism         mk2_configurator         opt=0 mir=5E116409DC7D30BB n=1 deps=['mk2_steel'] <- [('sg_buy_configurator', 'shop_gear', 1), ('mk2_transporter', 'mekanism', 0), ('mk2_pipes', 'mekanism', 0), ('mk2_tubes', 'mekanism', 0), ('mk2_conductors', 'mekanism', 0)]
+mekanism:crusher
+   t3               t3_crusher               opt=0 mir=-                n=1 deps=['t3_mekcircuit'] <- [('mk_buy_crusher', 'market', 1), ('t4_dirty', 't4', 0)]
+   mekanism         mk2_crusher              opt=0 mir=7AE502EDB73BD57A n=1 deps=['mk2_steel_casing'] <- [('mk2_obsidian_dust', 'mekanism', 0), ('mk2_bio_fuel', 'mekanism', 0), ('mk2_dusts', 'mekanism', 0)]
+mekanism:dust_fluorite
+   t6               t6_fluorite_dust         opt=0 mir=-                n=8 deps=['t4_fluorite'] <- [('t6_plutonium', 't6', 0), ('t6_polonium', 't6', 0)]
+   seed             sd_fluorite_dust         opt=0 mir=-                n=40 deps=['sd_intro'] <- [('sd_plutonium', 'seed', 0), ('sd_polonium', 'seed', 0)]
+mekanism:electrolytic_separator
+   t4               t4_separator             opt=0 mir=-                n=1 deps=['t4_electrolytic_core'] <- [('mk_buy_electrolytic_separator', 'market', 1), ('ln_electrolysis', 'lab_notes', 1), ('t4_tubes', 't4', 0), ('t4_ore3', 't4', 0), ('t4_thermal', 't4', 1), ('t4_lv_machines', 't4', 1), ('t4_chem_tank', 't4', 0), ('mk2_salt', 'mekanism', 0), ('mk2_prc', 'mekanism', 0), ('mk2_flamethrower', 'mekanism', 0), ('pw_gas', 'power', 0), ('atm_raw', 'allthemodium', 0), ('sp_water_pump', 'space', 1)]
+   mekanism         mk2_separator            opt=0 mir=18783C62009934DB n=1 deps=['mk2_steel_casing'] <- []
+mekanism:elite_control_circuit
+   t6               t6_elite                 opt=0 mir=-                n=4 deps=['t5_hv', 't4_reinforced'] <- [('t6_ult_circuit', 't6', 0), ('t6_sna', 't6', 0)]
+   mekanism         mk2_elite_circuit        opt=0 mir=71CF9E59F8F0B4A6 n=1 deps=['mk2_adv_circuit', 't5_hv'] <- [('mk2_ult_circuit', 'mekanism', 0), ('mk2_combiner', 'mekanism', 0), ('mk2_injector', 'mekanism', 0), ('mk2_security_desk', 'mekanism', 1), ('mkp_induction_elite', 'mekanism_power', 1)]
+mekanism:energy_tablet
+   t4               t4_energy_tablet         opt=0 mir=-                n=1 deps=['t3_infused'] <- [('t4_vapor', 't4', 0), ('t7_laser', 't7', 0)]
+   mekanism         mk2_tablet               opt=0 mir=4935209D870E25F2 n=1 deps=['mk2_infused_alloy'] <- [('sg_buy_energy_tablet', 'shop_gear', 1), ('mk2_cables', 'mekanism', 0), ('mk2_chargepad', 'mekanism', 0), ('mk2_solar', 'mekanism', 0), ('mk2_heat_gen', 'mekanism', 0), ('mk2_bio_gen', 'mekanism', 0), ('mk2_wind', 'mekanism', 0), ('mk2_cubes', 'mekanism', 0)]
+mekanism:enrichment_chamber
+   t3               t3_enrich                opt=0 mir=-                n=1 deps=['t3_mekcircuit', 't3_infused'] <- [('mk_buy_enrichment_chamber', 'market', 1), ('t4_ore3', 't4', 0)]
+   mekanism         mk2_enrich               opt=0 mir=08DDE018A804BFE7 n=1 deps=['mk2_steel_casing'] <- [('mk2_coal_gas', 'mekanism', 0), ('mk2_enriched', 'mekanism', 0), ('mk2_purifier', 'mekanism', 0), ('mk2_dusts', 'mekanism', 0)]
+mekanism:fluorite_gem
+   t4               t4_fluorite              opt=0 mir=-                n=4 deps=['t4_dissolution'] <- [('t4_ore5', 't4', 0), ('t6_hf', 't6', 0), ('t6_fluorite_dust', 't6', 0)]
+   t6               t6_hf                    opt=0 mir=-                n=16 deps=['t6_pu', 't4_fluorite'] <- [('t6_uf6', 't6', 0), ('t6_hf_bucket', 't6', 0), ('t7_seed_hf', 'seed', 0), ('atm_unob_ingot', 'allthemodium', 0)]
+   seed             sd_fluorite              opt=0 mir=-                n=4 deps=['sd_intro'] <- [('sd_hf', 'seed', 0)]
+mekanism:free_runners
+   tools            tc_free_runners          opt=0 mir=-                n=1 deps=['tc_scuba'] <- [('sg_buy_free_runners', 'shop_gear', 1), ('tc_mekasuit', 'tools', 0)]
+   mekanism         mk2_free_runners         opt=0 mir=227E9783382527CA n=1 deps=['mk2_chargepad'] <- []
+mekanism:hdpe_pellet
+   t5               t5_hdpe                  opt=0 mir=-                n=8 deps=['t5_pe', 't5_prc'] <- [('t6_sna', 't6', 0), ('t7_hdpe_sheets', 't7', 0), ('sm_buy_hdpe', 'shop_materials', 1), ('mk2_hdpe_parts', 'mekanism', 0), ('mk2_hdpe_pellet', 'mekanism', 0)]
+   mekanism         mk2_hdpe_pellet          opt=0 mir=78DD2A3DFF6D1613 n=1 deps=['mk2_bio_fuel', 'mk2_prc', 'mk2_condensentrator', 't5_hdpe'] <- []
+mekanism:hydrofluoric_acid_bucket
+   t6               t6_hf_bucket             opt=0 mir=-                n=1 deps=['t6_hf'] <- []
+   seed             t7_seed_hf               opt=0 mir=-                n=4 deps=['sd_hf', 't6_hf'] <- [('t7_seed', 'seed', 0)]
+   seed             sd_hf                    opt=0 mir=-                n=1 deps=['sd_fluorite', 'sd_acid'] <- [('t7_seed_hf', 'seed', 0)]
+mekanism:ingot_osmium
+   t3               t3_osmium_ingot          opt=0 mir=-                n=8 deps=['t3_osmium'] <- [('t3_osmium_hoard', 't3', 1), ('t3_infuser', 't3', 0)]
+   t3               t3_osmium_hoard          opt=1 mir=-                n=32 deps=['t3_osmium_ingot'] <- []
+   mekanism         mk2_osmium               opt=0 mir=6F62B5510FA881CD n=1 deps=['mk2_intro'] <- [('mk2_infuser', 'mekanism', 0)]
+mekanism:ingot_refined_obsidian
+   t4               t4_refined_obsidian      opt=0 mir=-                n=12 deps=['t4_reinforced'] <- [('t4_dissolution', 't4', 0)]
+   harvest          hv_refined               opt=0 mir=-                n=2 deps=['hv_steel', 't3_infuser'] <- [('hv_all', 'harvest', 0)]
+   mekanism         mk2_refined_obsidian     opt=0 mir=31B73D16C0199785 n=1 deps=['mk2_compressor', 'mk2_obsidian_dust'] <- [('mk_buy_osmium_compressor', 'market', 1), ('mk2_teleport_core', 'mekanism', 0), ('mk2_stabilizer', 'mekanism', 1), ('mk2_robit', 'mekanism_power', 0)]
+mekanism:isotopic_centrifuge
+   t6               t6_centrifuge            opt=0 mir=-                n=1 deps=['t6_uf6', 't6_ult_circuit'] <- [('mk_buy_isotopic_centrifuge', 'market', 1), ('ln_isotopes', 'lab_notes', 1), ('t6_fission_parts', 't6', 0), ('t6_opt_hazmat', 't6', 1), ('mkp_centrifuge', 'mekanism_power', 0), ('mkp_waste_centrifuge', 'mekanism_power', 0)]
+   mekanism_power   mkp_waste_centrifuge     opt=0 mir=5194A067BEA98E79 n=1 deps=['mk2_waste_barrel', 't6_centrifuge'] <- [('mkp_plutonium', 'mekanism_power', 0)]
+mekanism:jetpack
+   tools            tc_mek_jetpack           opt=1 mir=-                n=1 deps=['tc_scuba'] <- []
+   mekanism         mk2_jetpack              opt=0 mir=37D4E5ACB35D8BF1 n=1 deps=['mk2_chargepad'] <- []
+mekanism:laser
+   t7               t7_laser                 opt=0 mir=-                n=1 deps=['t4_reinforced', 't4_energy_tablet'] <- [('t7_sps', 't7', 0), ('mk2_ignition', 'mekanism_power', 0)]
+   mekanism_power   mk2_ignition             opt=0 mir=4926C95DD02F1410 n=1 deps=['mkp_intro', 't7_laser'] <- [('mkp_amplifier', 'mekanism_power', 0)]
+mekanism:metallurgic_infuser
+   t3               t3_infuser               opt=0 mir=-                n=1 deps=['t3_osmium_ingot'] <- [('mk_buy_metallurgic_infuser', 'market', 1), ('t3_infused', 't3', 0), ('t3_mekcircuit', 't3', 0), ('tc_osmium_paxel', 'tools', 0), ('tc_scuba', 'tools', 0), ('hv_refined', 'harvest', 0), ('lg_mek', 'logic', 0), ('sto_ln_chem', 'logic', 1), ('mk2_intro', 'mekanism', 0), ('pt_isotopes', 'periodic', 1), ('pw_heat', 'power', 0), ('pw_cables', 'power', 0), ('pw_cube', 'power', 0)]
+   mekanism         mk2_infuser              opt=0 mir=162CE44400A63575 n=1 deps=['mk2_osmium'] <- [('mk2_infused_alloy', 'mekanism', 0), ('mk2_basic_circuit', 'mekanism', 0), ('mk2_steel', 'mekanism', 0)]
+mekanism:pellet_antimatter
+   seed             sd_pellets               opt=0 mir=-                n=32 deps=['sd_first_antimatter'] <- [('sd_cores2', 'seed', 0)]
+   seed             sd_first_antimatter      opt=0 mir=-                n=8 deps=['sd_intro', 't7_antimatter'] <- [('sd_pellets', 'seed', 0)]
+   mekanism_power   mkp_antimatter           opt=0 mir=50F23B2688D7E699 n=1 deps=['mkp_sps', 't7_antimatter'] <- [('mk2_mekasuit_full', 'mekanism_power', 0), ('mkp_nucleo', 'mekanism_power', 0), ('mkp_meka_helmet', 'mekanism_power', 0), ('mkp_meka_body', 'mekanism_power', 0), ('mkp_meka_boots', 'mekanism_power', 0)]
+mekanism:pellet_plutonium
+   t6               t6_plutonium             opt=0 mir=-                n=1 deps=['t6_fission', 't6_fluorite_dust'] <- [('cp_quantum', 'completionist', 1), ('t6_waste', 't6', 0), ('t6_opt_reprocess', 't6', 1)]
+   seed             sd_plutonium             opt=0 mir=-                n=4 deps=['sd_fluorite_dust'] <- [('t7_seed_nuclear', 'seed', 0)]
+   mekanism_power   mkp_plutonium            opt=0 mir=20054D077AFE3F56 n=1 deps=['mkp_waste_centrifuge'] <- [('mkp_sps_port', 'mekanism_power', 0)]
+mekanism:pellet_polonium
+   t6               t6_polonium              opt=0 mir=-                n=1 deps=['t6_fission', 't6_sna', 't6_fluorite_dust'] <- [('mk_buy_neutron_activator', 'market', 1), ('t6_waste', 't6', 0), ('mk2_module_base', 'mekanism_power', 0), ('mkp_qio_portable', 'mekanism_power', 0)]
+   seed             sd_polonium              opt=0 mir=-                n=36 deps=['sd_fluorite_dust'] <- [('t7_seed_nuclear', 'seed', 0), ('sd_shells', 'seed', 0)]
+   mekanism_power   mkp_polonium             opt=0 mir=438F734D16DA9638 n=1 deps=['mkp_sna'] <- [('mkp_fusion_port', 'mekanism_power', 0), ('mkp_sps_port', 'mekanism_power', 0), ('mkp_coil', 'mekanism_power', 0)]
+mekanism:pressurized_reaction_chamber
+   t5               t5_prc                   opt=0 mir=-                n=1 deps=['t4_dynamic_tank', 't4_chem_tank'] <- [('t5_hdpe', 't5', 0)]
+   mekanism         mk2_prc                  opt=0 mir=71869B1D81D6A7EF n=1 deps=['mk2_steel_casing', 't4_separator'] <- [('mk_buy_prc', 'market', 1), ('mk2_substrate', 'mekanism', 0), ('mk2_coal_gas', 'mekanism', 0), ('mk2_chem_plant', 'mekanism', 1), ('mk2_hdpe_pellet', 'mekanism', 0)]
+mekanism:purification_chamber
+   t4               t4_ore3                  opt=0 mir=-                n=1 deps=['t4_separator', 't3_enrich', 't4_adv_circuit'] <- [('mk_buy_purification_chamber', 'market', 1), ('t4_clumps', 't4', 0), ('t4_reinforced', 't4', 0), ('mk2_ore3', 'mekanism', 0)]
+   mekanism         mk2_purifier             opt=0 mir=33415CB421F7620A n=1 deps=['mk2_adv_circuit', 'mk2_enrich'] <- [('mk2_injector', 'mekanism', 0)]
+mekanism:quantum_entangloporter
+   mekanism         mk2_entangloporter       opt=0 mir=7CC49360D07086B8 n=2 deps=['mk2_teleport_core', 't6_pu'] <- []
+   power            pw_entangle              opt=0 mir=7FE969CB4B419FC6 n=1 deps=['pw_transfer', 't6_pu'] <- []
+mekanism:radioactive_waste_barrel
+   t6               t6_waste_barrel          opt=0 mir=-                n=2 deps=['t6_fission'] <- []
+   mekanism_power   mk2_waste_barrel         opt=0 mir=593CB120B657126C n=1 deps=['mkp_fission'] <- [('mkp_waste_centrifuge', 'mekanism_power', 0), ('mkp_sna', 'mekanism_power', 0), ('mkp_hazmat', 'mekanism_power', 1)]
+mekanism:rotary_condensentrator
+   t4               t4_vapor                 opt=0 mir=-                n=1 deps=['t4_so3', 't4_energy_tablet'] <- [('mk_buy_rotary_condensentrator', 'market', 1), ('t4_mek_acid', 't4', 0), ('mk2_liquid_gases', 'mekanism', 1)]
+   mekanism         mk2_condensentrator      opt=0 mir=603BEDD49070ECAD n=1 deps=['mk2_steel_casing'] <- [('mk2_coal_gas', 'mekanism', 0), ('mk2_hdpe_pellet', 'mekanism', 0)]
+mekanism:solar_neutron_activator
+   t6               t6_sna                   opt=0 mir=-                n=1 deps=['t6_elite', 't5_hdpe'] <- [('t6_polonium', 't6', 0), ('mkp_sna', 'mekanism_power', 0)]
+   mekanism_power   mkp_sna                  opt=0 mir=4BAF44FCA0894DE8 n=1 deps=['mk2_waste_barrel', 't6_sna'] <- [('mkp_polonium', 'mekanism_power', 0), ('mkp_tritium', 'mekanism_power', 0)]
+mekanismgenerators:advanced_solar_generator
+   mekanism         mk2_adv_solar            opt=0 mir=4EDD96EB60EF5814 n=1 deps=['mk2_solar'] <- []
+   power            pw_adv_solar             opt=1 mir=-                n=1 deps=['pw_solar'] <- []
+mekanismgenerators:bio_generator
+   mekanism         mk2_bio_gen              opt=0 mir=6CD1720B76F47806 n=1 deps=['mk2_tablet'] <- []
+   power            pw_bio                   opt=1 mir=-                n=1 deps=['pw_heat'] <- []
+mekanismgenerators:fission_reactor_logic_adapter
+   t6               t6_logic_adapter         opt=1 mir=-                n=1 deps=['t6_fission'] <- []
+   mekanism_power   mkp_fission_logic        opt=0 mir=3D2B4D9FD2086B9B n=1 deps=['mkp_intro', 't6_fission'] <- [('mkp_fission', 'mekanism_power', 0), ('mkp_scram', 'mekanism_power', 1), ('mkp_daylight', 'mekanism_power', 1)]
+   power            pw_fission_safety        opt=0 mir=-                n=2 deps=['pw_mid', 't6_fission'] <- [('pw_turbine', 'power', 0)]
+mekanismgenerators:heat_generator
+   mekanism         mk2_heat_gen             opt=0 mir=0650996C7818ADB5 n=1 deps=['mk2_tablet'] <- []
+   power            pw_heat                  opt=0 mir=11D09E918015355C n=1 deps=['pw_early', 't3_infuser'] <- [('pw_bio', 'power', 1)]
+mekanismgenerators:wind_generator
+   mekanism         mk2_wind                 opt=0 mir=7778937DF377C1B4 n=1 deps=['mk2_tablet'] <- []
+   power            pw_wind                  opt=1 mir=-                n=1 deps=['pw_solar'] <- []
+minecraft:ancient_debris
+   t2               t2_debris                opt=1 mir=-                n=2 deps=['t2_nether'] <- [('cp_ores_nether', 'completionist', 1), ('t2_opt_netherite', 't2', 1), ('ql_pylon_interdiction', 'qol', 1), ('sto_bp_stack4', 'storage', 1), ('sto_if_netherite', 'storage', 1)]
+   tools            tc_debris                opt=0 mir=17FE0C7748DD65CA n=1 deps=['tc_diamond'] <- [('tc_raw_atm', 'tools', 0)]
+   allthemodium     atm_debris               opt=1 mir=18FAD56CDE05646A n=16 deps=['atm_mining'] <- []
+minecraft:blaze_rod
+   t2               t2_blaze                 opt=0 mir=-                n=4 deps=['t2_nether'] <- [('t2_blaze_powder', 't2', 0), ('sw_buy_blaze_rod', 'shop_world', 1), ('sto_if_obsidian', 'storage', 1), ('cr_burner', 'create', 0), ('pw_blazing', 'powah', 0)]
+   factory          mf_sim_blaze             opt=1 mir=12172C1449296E06 n=1 deps=['mf_fab'] <- []
+minecraft:bone
+   hunting          hn_spoil_bone            opt=1 mir=-                n=32 deps=['hn_skeleton_1'] <- [('sw_buy_bone', 'shop_world', 1)]
+   factory          mf_sim_skeleton          opt=1 mir=6367CB97FA648E63 n=1 deps=['mf_fab'] <- []
+minecraft:book
+   ars              ars_welcome              opt=0 mir=6E0E13806F388D7E n=1 deps=['t2_ars'] <- [('m_book', 'ars', 0)]
+   apothic_enchanting aen_tomes                opt=0 mir=4E895C54651A3CB3 n=1 deps=['aen_infusing'] <- [('aen_scrap', 'apothic_enchanting', 0), ('aen_armor_tomes', 'apothic_enchanting', 0), ('aen_weapon_tomes', 'apothic_enchanting', 0), ('aen_tool_tomes', 'apothic_enchanting', 0), ('aen_other_tome', 'apothic_enchanting', 0)]
+minecraft:bread
+   start            gs_food                  opt=0 mir=-                n=2 deps=['gs_farm'] <- [('gs_meat', 'start', 0), ('sw_buy_bread', 'shop_world', 1), ('f_knife', 'farming', 0)]
+   farming          fd_bread                 opt=0 mir=659A903F97F93BE2 n=3 deps=['fd_wheat'] <- []
+minecraft:chest
+   start            gs_chest                 opt=0 mir=-                n=1 deps=['gs_table'] <- [('sg_row_steam_storage', 'shop_gear', 1), ('sg_buy_chests', 'shop_gear', 1), ('sto_hub', 'storage', 0), ('gs_backpack', 'storage', 0)]
+   storage          sto_fs_hub               opt=0 mir=0682DC1F2417DAEB n=1 deps=['sto_hub'] <- [('s_drawers', 'storage', 0)]
+minecraft:coal
+   start            gs_coal                  opt=0 mir=-                n=8 deps=['gs_stone'] <- [('ut_tiny_coal', 'qol', 0)]
+   t1               t1_coal                  opt=0 mir=-                n=32 deps=['t0_pump'] <- [('t1_coke', 't1', 0)]
+   power            pw_early                 opt=0 mir=42D173B9FF8D16E4 n=1 deps=['pw_iron_gen'] <- [('pw_heat', 'power', 0), ('pw_coal_gens', 'power', 0), ('pw_solar', 'power', 0)]
+minecraft:copper_ingot
+   t0               t0_copper                opt=0 mir=-                n=16 deps=['gs_ready'] <- [('t0_tin', 't0', 0), ('t0_copper_plate', 't0', 0), ('t0_copper_rod', 't0', 0), ('sm_buy_copper_ingot', 'shop_materials', 1)]
+   harvest          hv_mat_copper            opt=0 mir=211FD55DEB635A98 n=1 deps=[] <- []
+   factory          mf_sim_drowned           opt=1 mir=0DCF732A8B8E5704 n=1 deps=['mf_fab'] <- []
+   create           cr_copper                opt=0 mir=7242F591DA474B37 n=1 deps=['cr_andesite'] <- [('cr_copper_casing', 'create', 0), ('cr_pipes', 'create', 0), ('cr_fluid_tank', 'create', 0)]
+minecraft:diamond
+   start            gs_diamond               opt=0 mir=-                n=1 deps=['gs_ironpick'] <- [('aen_table', 'apothic_enchanting', 0)]
+   t0               t0_diamond               opt=0 mir=-                n=3 deps=['gs_ready'] <- [('t0_macerator', 't0', 0), ('t0_cutter', 't0', 0)]
+   creation         cn_secret_diamond        opt=1 mir=-                n=64 deps=['cn_nucleo'] <- []
+   tools            tc_diamond               opt=0 mir=6601450C63FEEE61 n=1 deps=['tc_raw_iron'] <- [('tc_debris', 'tools', 0)]
+   harvest          hv_mat_diamond           opt=0 mir=6B671CB07D046BEC n=1 deps=[] <- []
+   power            pw_mid                   opt=0 mir=5E41363F9AE243F3 n=1 deps=['pw_iron_gen'] <- [('pw_gas', 'power', 0), ('pw_more_powah', 'power', 0), ('pw_fission_safety', 'power', 0), ('pw_diesel', 'power', 1)]
+minecraft:diamond_pickaxe
+   tools            tc_pk_diamond            opt=1 mir=29A05589E96C0569 n=1 deps=['tc_hub'] <- []
+   harvest          hv_diamond_pick          opt=0 mir=-                n=1 deps=['hv_iron'] <- [('sg_buy_diamond_pick', 'shop_gear', 1), ('hv_netherite_pick', 'harvest', 0), ('hv_ma_pick', 'harvest', 1), ('hv_diamond_kit', 'harvest', 1)]
+minecraft:dragon_breath
+   factory          mf_sim_dragon            opt=0 mir=6B945A5B293C0153 n=1 deps=['mf_fab'] <- []
+   worlds           w_dragon                 opt=0 mir=-                n=4 deps=['wd_dragon'] <- [('cp_bi_end', 'completionist', 1), ('sw_buy_dragon_breath', 'shop_world', 1), ('jdt_celestigem', 'justdirethings', 0), ('w_elytra', 'worlds', 0)]
+minecraft:dragon_egg
+   completionist    cp_sec_egg               opt=1 mir=-                n=1 deps=['cp_bi_end'] <- []
+   seed             sd_secret_egg            opt=1 mir=-                n=2 deps=['sd_dragon'] <- []
+   worlds           wd_dragon_egg            opt=1 mir=-                n=1 deps=['wd_dragon'] <- []
+minecraft:echo_shard
+   creation         cn_echo                  opt=0 mir=-                n=32 deps=['cn_skulls'] <- [('cn_demigod', 'creation', 0)]
+   factory          mf_sim_warden            opt=0 mir=54E7ABFDFAA024E5 n=1 deps=['mf_fab'] <- []
+   apothic_enchanting aen_echo_shard           opt=1 mir=78E66F1DE42C747A n=1 deps=['aen_lapis', 'aen_summit'] <- []
+minecraft:emerald
+   harvest          hv_opt_emerald           opt=1 mir=-                n=4 deps=['hv_iron'] <- []
+   harvest          hv_mat_emerald           opt=0 mir=1D91E37BFD8CC911 n=1 deps=[] <- []
+   qol              ql_trade                 opt=1 mir=-                n=16 deps=['ql_start', 'gs_iron'] <- [('ql_baron', 'qol', 1)]
+   factory          mf_sim_vindicator        opt=1 mir=17280CDCFAAE4B87 n=1 deps=['mf_fab'] <- []
+minecraft:emerald_block
+   t2               t2_emerald               opt=0 mir=-                n=1 deps=['gs_ironpick'] <- [('t2_filter', 't2', 0)]
+   qol              ql_baron                 opt=1 mir=-                n=4 deps=['ql_trade'] <- []
+minecraft:furnace
+   start            gs_furnace               opt=0 mir=-                n=1 deps=['gs_stonetools'] <- [('bd_masonry', 'building', 1), ('bd_glass', 'building', 1), ('gs_opt_campfire', 'start', 1), ('gs_opt_glass', 'start', 1), ('gs_torch', 'start', 0), ('pw_furnace', 'generators', 0)]
+   generators       pw_furnace               opt=0 mir=47750F3CB020104C n=1 deps=['gs_furnace', 'pw_iron_gen'] <- [('pw_if_copper', 'generators', 0), ('pw_if_iron', 'generators', 0), ('pw_gg_copper', 'generators', 0)]
+minecraft:ghast_tear
+   t2               t2_ghast                 opt=1 mir=-                n=2 deps=['t2_nether'] <- [('sw_buy_ghast_tear', 'shop_world', 1), ('rl_void', 'relics', 1)]
+   factory          mf_sim_ghast             opt=1 mir=5FE40F753A69537E n=1 deps=['mf_fab'] <- []
+minecraft:glass
+   building         bd_glass                 opt=1 mir=-                n=32 deps=['bd_start', 'gs_furnace'] <- [('bd_mcw_windows', 'building', 1), ('bd_stained_glass', 'building', 1), ('bd_tinted_glass', 'building', 1), ('bd_create_glass', 'building', 1)]
+   start            gs_opt_glass             opt=1 mir=-                n=16 deps=['gs_furnace'] <- [('sw_buy_glass', 'shop_world', 1)]
+minecraft:glowstone_dust
+   t2               t2_glowstone             opt=1 mir=-                n=16 deps=['t2_nether'] <- [('t2_phosphorus', 't2', 1)]
+   factory          mf_sim_witch             opt=1 mir=0807EF853E6D72B2 n=1 deps=['mf_fab'] <- []
+minecraft:gold_ingot
+   harvest          hv_mat_gold              opt=0 mir=3685B52446DEC809 n=1 deps=[] <- []
+   factory          mf_sim_zombified_piglin  opt=1 mir=37BEAA6576CD0507 n=1 deps=['mf_fab'] <- []
+minecraft:golden_pickaxe
+   tools            tc_pk_gold               opt=1 mir=3BF1900346772703 n=1 deps=['tc_hub'] <- []
+   harvest          hv_gold_pick             opt=1 mir=-                n=1 deps=['hv_stone'] <- []
+minecraft:iron_ingot
+   start            gs_iron                  opt=0 mir=-                n=8 deps=['gs_leather'] <- [('mk_day_early', 'market', 0), ('bd_chisel', 'building', 1), ('bd_vanilla_decor', 'building', 1), ('bd_lanterns', 'building', 1), ('gs_shield', 'start', 0), ('gs_opt_shears', 'start', 1), ('gs_ironpick', 'start', 0), ('gs_opt_chain', 'start', 1), ('sg_row_steam_tools', 'shop_gear', 1), ('sg_row_steam_comfort', 'shop_gear', 1), ('tc_jdt_goo', 'tools', 1), ('gs_opt_smithing', 'harvest', 0), ('ap_gem', 'apotheosis', 0), ('ap_hunt', 'apotheosis', 1), ('ap_spawner', 'apotheosis', 1), ('rl_relics', 'relics', 0), ('m_reliquary', 'relics', 0), ('rl_artifacts', 'relics', 1), ('af_intro', 'artifacts', 0), ('q_compass', 'qol', 0), ('q_torch', 'qol', 0), ('q_grave', 'qol', 0), ('q_waystone', 'qol', 0), ('ql_lootr', 'qol', 1), ('ql_trade', 'qol', 1), ('ql_belt', 'qol', 1), ('ut_trowel', 'qol', 0), ('ut_angel', 'qol', 0), ('ql_anvil', 'qol', 1), ('ql_map_clock', 'qol', 1), ('sto_hopper', 'storage', 1), ('s_furnace', 'storage', 1), ('lg_hub', 'logic', 0), ('lg_pipez_tools', 'logic', 0), ('f_altar', 'mystical', 0), ('cr_andesite', 'create', 0), ('jdt_start', 'justdirethings', 0), ('oc_seeds', 'occultism', 0), ('nv_altar', 'neovitae', 0), ('ex_village', 'explore', 0), ('w_dungeon', 'explore', 1), ('ex_zombie_dungeon', 'explore', 0), ('w_mineshaft', 'explore', 1), ('ex_mineshaft', 'explore', 0), ('ex_trail_ruins', 'explore', 1), ('ex_temples', 'explore', 1), ('ex_huts', 'explore', 1), ('ex_ruined_portal', 'explore', 1), ('ex_shipwreck', 'explore', 0), ('ex_bio_chalk', 'explore', 0)]
+   harvest          hv_mat_iron              opt=0 mir=4DF683461225690F n=1 deps=[] <- []
+   factory          mf_sim_iron_golem        opt=1 mir=57577942A32FCB1F n=1 deps=['mf_fab'] <- []
+   power            pw_transfer              opt=0 mir=1F81EA5E45424308 n=1 deps=['pw_iron_gen'] <- [('pw_pipez', 'power', 0), ('pw_cables', 'power', 0), ('pw_entangle', 'power', 0), ('pw_flux_dust', 'power', 0)]
+   power            pw_storing               opt=0 mir=76EA017B12E8F01B n=1 deps=['pw_iron_gen'] <- [('pw_cube', 'power', 0), ('pw_id_battery', 'power', 0), ('pw_mi_storage', 'power', 1)]
+minecraft:iron_pickaxe
+   start            gs_ironpick              opt=0 mir=-                n=1 deps=['gs_iron'] <- [('bd_amethyst', 'building', 1), ('cp_trims_overworld', 'completionist', 1), ('cp_ores_overworld', 'completionist', 1), ('cp_bi_cold', 'completionist', 1), ('gs_redstone', 'start', 0), ('gs_opt_gold', 'start', 1), ('gs_diamond', 'start', 0), ('gs_irontools', 'start', 0), ('t2_obsidian', 't2', 0), ('t2_emerald', 't2', 0), ('t2_dyes', 't2', 0), ('hv_iron', 'harvest', 0), ('ql_enchanting', 'qol', 1), ('ql_redstone', 'qol', 1)]
+   tools            tc_pk_iron               opt=1 mir=70ED849A2EB44DEE n=1 deps=['tc_hub'] <- []
+minecraft:lapis_lazuli
+   harvest          hv_mat_lapis             opt=0 mir=3AA836E8EDB52097 n=1 deps=[] <- []
+   apothic_enchanting aen_lapis                opt=0 mir=31E7F7464D79F881 n=3 deps=['aen_infusing'] <- [('aen_trident', 'apothic_enchanting', 0), ('aen_budding', 'apothic_enchanting', 0), ('aen_echo_shard', 'apothic_enchanting', 1), ('aen_charm', 'apothic_enchanting', 1), ('aen_xp', 'apothic_enchanting', 0), ('aen_spawner_rune', 'apothic_enchanting', 1), ('aen_improved', 'apothic_enchanting', 0), ('aen_alexandria', 'apothic_enchanting', 1), ('aen_ender_lead', 'apothic_enchanting', 0)]
+minecraft:leather
+   farming          fd_leather               opt=0 mir=635620A03E3505BF n=3 deps=['fd_breed'] <- [('fd_milk', 'farming', 0)]
+   factory          mf_sim_cow               opt=1 mir=3364DD88B5450365 n=1 deps=['mf_fab'] <- []
+minecraft:magma_cream
+   t2               t2_fireres               opt=1 mir=-                n=4 deps=['t2_brewing'] <- [('sw_buy_magma_cream', 'shop_world', 1)]
+   factory          mf_sim_magma             opt=1 mir=280CA599D29791DF n=1 deps=['mf_fab'] <- []
+minecraft:nether_star
+   t6               t6_nether_star           opt=0 mir=-                n=1 deps=['t6_reactor_parts'] <- [('t6_chambers', 't6', 0)]
+   seed             sd_stars                 opt=0 mir=-                n=4 deps=['sd_wither'] <- [('t7_seed_stars', 'seed', 0)]
+   factory          mf_sim_wither            opt=0 mir=1D4D3CC361892A9E n=1 deps=['mf_fab'] <- []
+minecraft:netherite_ingot
+   t2               t2_opt_netherite         opt=1 mir=-                n=1 deps=['t2_debris'] <- []
+   harvest          hv_mat_netherite         opt=0 mir=1EABF2E7AE7B8F22 n=1 deps=[] <- []
+   power            pw_end                   opt=0 mir=3BDB94F17765EE77 n=1 deps=['pw_iron_gen', 't2_nether'] <- [('pw_fusion', 'power', 0)]
+   allthemodium     atm_start                opt=0 mir=4B2146C9527C54E7 n=1 deps=['hv_netherite_pick'] <- [('atm_city', 'allthemodium', 0)]
+minecraft:netherite_pickaxe
+   tools            tc_pk_netherite          opt=1 mir=299F56B753286D0C n=1 deps=['tc_hub'] <- []
+   harvest          hv_netherite_pick        opt=0 mir=-                n=1 deps=['hv_netherite', 'hv_diamond_pick'] <- [('sg_buy_netherite_pick', 'shop_gear', 1), ('atm_start', 'allthemodium', 0)]
+minecraft:netherite_sword
+   tools            tc_sw_netherite          opt=1 mir=36A3ECD4F6CA2732 n=1 deps=['tc_hub'] <- []
+   harvest          hv_netherite_sword       opt=1 mir=-                n=1 deps=['hv_netherite', 'hv_diamond_kit'] <- [('sg_buy_netherite_sword', 'shop_gear', 1)]
+minecraft:paper
+   t3               t3_paper                 opt=0 mir=-                n=16 deps=['t1_steel'] <- [('t3_rubber', 't3', 0)]
+   generators       pw_if_augments           opt=0 mir=78D1C97A542133D8 n=1 deps=['pw_if_copper', 'pw_if_iron'] <- [('pw_if_aug_blasting', 'generators', 0), ('pw_if_aug_smoking', 'generators', 0), ('pw_if_aug_factory', 'generators', 0), ('pw_if_aug_generator', 'generators', 0), ('pw_if_aug_speed', 'generators', 0), ('pw_if_aug_fuel', 'generators', 0)]
+minecraft:phantom_membrane
+   t2               t2_slowfall              opt=0 mir=-                n=2 deps=['t2_water_bottles'] <- [('t2_levitation', 't2', 0), ('sw_buy_phantom_membrane', 'shop_world', 1)]
+   factory          mf_sim_phantom           opt=1 mir=14437C59E04C7C5B n=1 deps=['mf_fab'] <- []
+minecraft:quartz
+   t2               t2_quartz                opt=0 mir=-                n=16 deps=['t2_nether'] <- [('bd_metal_blocks', 'building', 1), ('bd_lab', 'building', 1), ('t2_barium', 't2', 1), ('t2_quartz_slab', 't2', 0), ('t4_quartz_dust', 't4', 0), ('sw_buy_quartz', 'shop_world', 1), ('ql_daylight', 'qol', 1)]
+   harvest          hv_mat_quartz            opt=0 mir=3FCEF8FF45E51608 n=1 deps=[] <- []
+   apotheosis       ap_quartz                opt=1 mir=-                n=1 deps=['ap_rune'] <- []
+minecraft:redstone
+   start            gs_redstone              opt=0 mir=-                n=8 deps=['gs_ironpick'] <- [('mf_hnn_hub', 'factory', 0)]
+   t2               t2_longflying            opt=0 mir=-                n=8 deps=['t2_chorus'] <- [('t2_filter', 't2', 0)]
+   harvest          hv_mat_redstone          opt=0 mir=1FC7ABEAB5018E79 n=1 deps=[] <- []
+   factory          mf_hnn_hub               opt=0 mir=37EBB8E0D6E5F821 n=1 deps=['gs_redstone'] <- [('mf_learner', 'factory', 0), ('mf_blank_model', 'factory', 0)]
+   power            pw_iron_gen              opt=0 mir=4AB0DD227471FDBF n=1 deps=['t1_power'] <- [('pw_early', 'power', 0), ('pw_transfer', 'power', 0), ('pw_storing', 'power', 0), ('pw_mid', 'power', 0), ('pw_end', 'power', 0), ('pw_furnace', 'generators', 0)]
+minecraft:rotten_flesh
+   hunting          hn_spoil_flesh           opt=1 mir=-                n=32 deps=['hn_zombie_1'] <- [('sw_buy_rotten_flesh', 'shop_world', 1)]
+   factory          mf_sim_zombie            opt=1 mir=597D92D3ED5E3868 n=1 deps=['mf_fab'] <- []
+minecraft:smithing_table
+   harvest          gs_opt_smithing          opt=0 mir=7F11ABFB2E21B7E4 n=1 deps=['gs_iron'] <- []
+   apotheosis       ap_smithing              opt=0 mir=7C90008081DEBECA n=1 deps=['m_gems'] <- [('m_salvage', 'apotheosis', 0)]
+minecraft:sugar_cane
+   start            gs_opt_canes             opt=1 mir=-                n=16 deps=['gs_farm'] <- [('sw_buy_sugar_cane', 'shop_world', 1)]
+   farming          fd_cane                  opt=0 mir=361DFDB1E1352D6B n=1 deps=['fd_seeds'] <- [('fd_sugar', 'farming', 0)]
+minecraft:wither_skeleton_skull
+   t2               t2_wither_skull          opt=1 mir=-                n=1 deps=['t2_fortress'] <- []
+   creation         cn_skulls                opt=0 mir=-                n=6 deps=['cn_heart'] <- [('cn_echo', 'creation', 0)]
+   factory          mf_sim_wither_skeleton   opt=1 mir=44791B697386A4BA n=1 deps=['mf_fab'] <- []
+minecraft:wooden_pickaxe
+   start            gs_woodpick              opt=0 mir=-                n=1 deps=['gs_table'] <- [('gs_stone', 'start', 0), ('hv_intro', 'harvest', 0)]
+   tools            tc_pk_wood               opt=1 mir=2EE4E88FC814AFA4 n=1 deps=['tc_hub'] <- []
+modern_industrialization:bauxite_dust
+   t4               t4_bauxite               opt=0 mir=-                n=16 deps=['t3_ebf'] <- [('t4_bayer_digest', 't4', 0), ('t4_bauxite_deposit', 't4', 1)]
+   t4               t4_bauxite_deposit       opt=1 mir=-                n=128 deps=['t4_bauxite'] <- []
+modern_industrialization:bronze_dust
+   t0               t0_bronze_dust           opt=0 mir=-                n=3 deps=['t0_dust'] <- [('t0_bronze', 't0', 0)]
+   t0               t0_opt_mixer             opt=1 mir=-                n=32 deps=['t0_mixer'] <- []
+modern_industrialization:bronze_plate
+   t0               t0_plates                opt=0 mir=-                n=4 deps=['t0_bronze'] <- [('t0_parts', 't0', 0), ('t0_tank', 't0', 0), ('t0_opt_wrench', 't0', 1), ('t0_opt_barrel', 't0', 1), ('t0_curved', 't0', 0), ('sm_buy_bronze_plate', 'shop_materials', 1)]
+   t0               t0_opt_plates            opt=1 mir=-                n=64 deps=['t0_compressor'] <- []
+modern_industrialization:coke
+   t1               t1_coke                  opt=0 mir=-                n=16 deps=['t1_coke_build', 't1_coal'] <- [('ln_coke', 'lab_notes', 1), ('t1_opt_coke_block', 't1', 1), ('t1_coke_dust', 't1', 0), ('t1_sbf_parts', 't1', 0), ('sm_buy_coke', 'shop_materials', 1)]
+   seed             sd_coke                  opt=0 mir=-                n=4 deps=['sd_intro'] <- [('t7_seed_basics', 'seed', 0)]
+modern_industrialization:ethylene_bucket
+   t5               t5_ethylene              opt=0 mir=-                n=1 deps=['t5_crack'] <- [('t5_catalyst', 't5', 0), ('sm_buy_ethylene', 'shop_materials', 1)]
+   seed             sd_ethylene              opt=0 mir=-                n=1 deps=['sd_cracked'] <- [('sd_pe', 'seed', 0)]
+modern_industrialization:fire_clay_dust
+   t0               t0_fire_clay             opt=0 mir=-                n=6 deps=['t0_brick_dust'] <- [('t0_fire_brick', 't0', 0), ('t0_opt_fireclay_mixer', 't0', 1)]
+   t0               t0_opt_fireclay_mixer    opt=1 mir=-                n=32 deps=['t0_mixer', 't0_fire_clay'] <- []
+modern_industrialization:highly_advanced_upgrade
+   t6               t6_opt_up_ha             opt=1 mir=-                n=4 deps=['t6_opt_up_turbo', 't6_opt_large_adv'] <- []
+   creation         cn_ha_upgrades           opt=0 mir=-                n=32 deps=['t7_creation'] <- [('cn_quantum_upgrade', 'creation', 0)]
+modern_industrialization:industrial_tnt
+   t6               t6_itnt                  opt=0 mir=-                n=8 deps=['t6_nitrogen', 't5_aromatics'] <- [('t6_implosion', 't6', 0)]
+   creation         cn_tnt                   opt=0 mir=-                n=64 deps=['t7_creation'] <- [('cn_first_nukes', 'creation', 0)]
+modern_industrialization:large_diesel_generator
+   t6               t5_large_diesel          opt=1 mir=-                n=1 deps=['t6_advmotor', 't5_diesel'] <- []
+   power            pw_large_diesel          opt=1 mir=-                n=1 deps=['pw_diesel', 't5_hv'] <- []
+modern_industrialization:lv_storage_unit
+   t3               t3_storage               opt=1 mir=-                n=1 deps=['t3_turbine'] <- [('mk_buy_lv_storage', 'market', 1)]
+   power            pw_mi_storage            opt=1 mir=-                n=1 deps=['pw_storing', 't3_hull'] <- [('pw_mv_turbine', 'power', 1)]
+modern_industrialization:nuke
+   creation         cn_nuke                  opt=0 mir=-                n=64 deps=['cn_first_nukes'] <- [('cn_mi_singularity', 'creation', 0)]
+   creation         cn_first_nukes           opt=0 mir=-                n=2 deps=['cn_tnt', 'cn_pu_ingots', 'cn_dt'] <- [('cn_nuke', 'creation', 0)]
+modern_industrialization:platinum_plate
+   t6               t6_pt_plate              opt=0 mir=-                n=8 deps=['t6_pgm'] <- [('t6_board', 't6', 0), ('t6_pt_wire', 't6', 0)]
+   seed             sd_platinum              opt=0 mir=-                n=16 deps=['sd_intro'] <- [('sd_pu_board', 'seed', 0)]
+modern_industrialization:polyethylene_bucket
+   t5               t5_pe                    opt=0 mir=-                n=1 deps=['t5_catalyst'] <- [('ln_polymers', 'lab_notes', 1), ('t5_hdpe', 't5', 0), ('t5_dcb', 't5', 0), ('t5_opt_up_adv', 't5', 1), ('sm_buy_polyethylene', 'shop_materials', 1)]
+   seed             sd_pe                    opt=0 mir=-                n=1 deps=['sd_ethylene', 'sd_catalyst'] <- [('t7_seed_pe', 'seed', 0)]
+   seed             t7_seed_pe               opt=0 mir=-                n=12 deps=['sd_pe'] <- [('t7_seed', 'seed', 0)]
+modern_industrialization:polyvinyl_chloride_bucket
+   t6               t6_pvc                   opt=0 mir=-                n=1 deps=['t6_vinyl', 't5_catalyst'] <- [('ln_pvc', 'lab_notes', 1), ('t6_board', 't6', 0), ('t6_opt_up_turbo', 't6', 1), ('sm_buy_pvc', 'shop_materials', 1)]
+   seed             sd_pvc                   opt=0 mir=-                n=1 deps=['sd_intro'] <- [('sd_pu_board', 'seed', 0)]
+modern_industrialization:processing_unit_board
+   t6               t6_board                 opt=0 mir=-                n=1 deps=['t6_pvc', 't6_cadmium', 't6_pt_plate'] <- [('t6_pu', 't6', 0), ('sm_buy_pu_board', 'shop_materials', 1)]
+   seed             sd_pu_board              opt=0 mir=-                n=4 deps=['sd_pvc', 'sd_platinum'] <- [('sd_unit', 'seed', 0)]
+modern_industrialization:quantum_circuit
+   completionist    cp_quantum               opt=1 mir=-                n=1 deps=['cp_circuits', 't6_plutonium', 't6_rare_pgm'] <- []
+   t7               t7_quantum               opt=0 mir=-                n=1 deps=['t7_qboard', 't7_qubit'] <- [('t7_cores', 't7', 0), ('t7_opt_qhull', 't7', 1), ('sd_qparts', 'seed', 0)]
+   seed             sd_quantum               opt=0 mir=-                n=8 deps=['sd_qparts'] <- [('sd_cores2', 'seed', 0)]
+modern_industrialization:quantum_machine_hull
+   t7               t7_opt_qhull             opt=1 mir=-                n=1 deps=['t7_quantum', 't7_qcasing'] <- []
+   creation         cn_qhull                 opt=0 mir=-                n=2 deps=['t7_creation'] <- [('cn_fusion', 'creation', 0)]
+modern_industrialization:quantum_sword
+   creation         cn_opt_qsword            opt=1 mir=-                n=1 deps=['cn_quantum_upgrade'] <- []
+   tools            tc_sw_quantum            opt=1 mir=2A6753C806D2AF8D n=1 deps=['tc_hub'] <- []
+modern_industrialization:rubber_sheet
+   t3               t3_rubber                opt=0 mir=-                n=8 deps=['t3_synth_oil', 't3_paper'] <- [('t3_wire', 't3', 0), ('t3_board', 't3', 0), ('t3_cupronickel_cable', 't3', 0), ('t4_electrum_cable', 't4', 0), ('t5_al_cable', 't5', 0), ('sm_buy_rubber', 'shop_materials', 1)]
+   t5               t5_opt_rubber            opt=1 mir=-                n=256 deps=['t5_sbr'] <- []
+modern_industrialization:sodium_hydroxide_bucket
+   t4               t4_lye_bayer             opt=0 mir=-                n=1 deps=['t3_mixer', 't1_combiner'] <- [('t4_bayer_digest', 't4', 0), ('sm_buy_naoh_bucket', 'shop_materials', 1)]
+   t4               t4_naoh                  opt=1 mir=-                n=1 deps=['t4_reactor', 't4_sodium', 't4_mi_h2o'] <- []
+modern_industrialization:stainless_steel_dust
+   t5               t5_ss_dust               opt=0 mir=-                n=9 deps=['t5_chromium', 't5_nickel'] <- [('t5_freezer', 't5', 0)]
+   seed             sd_ss_dust               opt=0 mir=-                n=36 deps=['sd_intro'] <- [('sd_ss_ingot', 'seed', 0)]
+modern_industrialization:stainless_steel_ingot
+   t5               t5_ebf                   opt=0 mir=-                n=8 deps=['t5_freezer', 't3_ebf'] <- [('ln_stainless', 'lab_notes', 1), ('t5_opt_shale', 't5', 1), ('t5_ss_plate', 't5', 0), ('t6_mag_rod', 't6', 0), ('sm_buy_stainless', 'shop_materials', 1)]
+   seed             sd_ss_ingot              opt=0 mir=-                n=36 deps=['sd_ss_dust'] <- [('sd_stainless', 'seed', 0)]
+modern_industrialization:stainless_steel_plate
+   t5               t5_ss_plate              opt=0 mir=-                n=16 deps=['t5_ebf'] <- [('t5_dcb', 't5', 0), ('t5_turbo_casing', 't5', 0), ('t6_ss_rotor', 't6', 0)]
+   seed             sd_stainless             opt=0 mir=-                n=36 deps=['sd_ss_ingot'] <- [('t7_seed_tech', 'seed', 0), ('sd_shells', 'seed', 0)]
+modern_industrialization:steam_cracked_naphtha_bucket
+   t5               t5_crack                 opt=0 mir=-                n=1 deps=['t5_hydrotreat'] <- [('ln_cracking', 'lab_notes', 1), ('t5_ethylene', 't5', 0), ('t5_aromatics', 't5', 0), ('t5_opt_cracked_light', 't5', 1), ('t5_methane', 't5', 0), ('t5_propene', 't5', 1)]
+   seed             sd_cracked               opt=0 mir=-                n=1 deps=['sd_naphtha'] <- [('sd_ethylene', 'seed', 0)]
+modern_industrialization:steel_large_plate
+   t1               t1_opt_large_plate       opt=1 mir=-                n=4 deps=['t1_steel_plate'] <- [('t1_opt_steel_hammer', 't1', 1)]
+   t4               t4_steel_large           opt=0 mir=-                n=4 deps=['t1_steel_plate'] <- [('t4_hallheroult', 't4', 0), ('t5_oil', 't5', 0)]
+modern_industrialization:steel_machine_casing
+   t1               t1_steel_casing          opt=0 mir=-                n=1 deps=['t1_steel_gear'] <- [('t1_opt_steel_hatches', 't1', 1), ('t1_opt_packer', 't1', 1), ('t1_opt_alloy_smelter', 't1', 1), ('t1_opt_steel_machines', 't1', 1), ('t3_casing', 't3', 0)]
+   t3               t3_casing                opt=0 mir=-                n=4 deps=['t1_steel_casing'] <- [('t3_wiremill', 't3', 0), ('t5_pipe_casing', 't5', 0)]
+modern_industrialization:sulfur_dust
+   t4               t4_sulfur                opt=0 mir=-                n=8 deps=['t3_emacerator'] <- [('t4_oxidizer', 't4', 0), ('t4_acid', 't4', 0), ('sm_buy_sulfur', 'shop_materials', 1)]
+   seed             sd_sulfur                opt=0 mir=-                n=16 deps=['sd_intro'] <- [('sd_acid', 'seed', 0)]
+modern_industrialization:sulfuric_acid_bucket
+   t4               t4_acid                  opt=0 mir=-                n=1 deps=['t4_reactor', 't4_sulfur'] <- [('t4_undergarden', 't4', 0), ('t5_mn_solution', 't5', 0), ('sm_buy_acid_bucket', 'shop_materials', 1), ('fd_npk', 'farming', 0)]
+   seed             sd_acid                  opt=0 mir=-                n=1 deps=['sd_sulfur', 'sd_o2'] <- [('t7_seed_acid', 'seed', 0), ('sd_hf', 'seed', 0)]
+modern_industrialization:superconductor_ingot
+   t7               t7_sc_ingot              opt=0 mir=-                n=4 deps=['t7_sc_dust', 't6_kanthal_coil'] <- [('t7_sc_plate', 't7', 0)]
+   creation         cn_superconductor        opt=0 mir=-                n=64 deps=['t7_creation'] <- [('cn_sc_coil', 'creation', 0)]
+modern_industrialization:uncooked_steel_dust
+   t1               t1_uncooked              opt=0 mir=-                n=7 deps=['t1_iron_dust'] <- [('t1_opt_mixer_steel', 't1', 1), ('t1_steel', 't1', 0)]
+   t1               t1_opt_mixer_steel       opt=1 mir=-                n=27 deps=['t1_uncooked'] <- []
+mysticalagriculture:inferium_essence
+   start            gs_taste_inferium        opt=1 mir=-                n=4 deps=['gs_taste'] <- []
+   mystical         ma_inferium              opt=0 mir=1CC4F8570A7A99EB n=1 deps=['ma_hub'] <- [('f_crystal', 'mystical', 0), ('f_accelerator', 'mystical', 0), ('ma_farmland', 'mystical', 0), ('ma_gear', 'mystical', 0), ('ma_weapons', 'mystical', 0), ('ma_wand', 'mystical', 1), ('ma_upgrade', 'mystical', 0)]
+mysticalagriculture:menril_seeds
+   integrated       lg_menril_seeds          opt=1 mir=232A06C9FF0EE7B2 n=1 deps=['lg_menril_berries'] <- []
+   mystical         ma_s_menril              opt=0 mir=2D0BA4183DCA2751 n=1 deps=['ma_farmland_up', 'f_altar'] <- []
+mysticalagriculture:soulium_spawner
+   apotheosis       ap_soulium_spawner       opt=1 mir=-                n=1 deps=['ap_other_spawners'] <- []
+   mystical         ma_spawner               opt=0 mir=16E3031D800B40D5 n=1 deps=['ma_hub'] <- []
+neovitae:blood_orb_apprentice
+   neovitae         nv_altar_t2              opt=0 mir=759B0D6F8C0CC1EF n=1 deps=['nv_runes'] <- [('nv_apprentice', 'neovitae', 0)]
+   neovitae         nv_apprentice            opt=0 mir=7AFEB7A91DC8F413 n=1 deps=['nv_altar_t2'] <- [('nv_flask', 'neovitae', 1), ('nv_robur', 'neovitae', 0), ('nv_altar_t3', 'neovitae', 0)]
+neovitae:blood_orb_magician
+   neovitae         nv_altar_t3              opt=0 mir=383F7F715C60252B n=1 deps=['nv_apprentice'] <- [('nv_magician', 'neovitae', 0)]
+   neovitae         nv_magician              opt=0 mir=1B6642BBDAEB2BD5 n=1 deps=['nv_altar_t3', 'nv_robur'] <- [('nv_tome', 'neovitae', 1), ('nv_ritual', 'neovitae', 0)]
+neovitae:mine_key
+   neovitae         nv_mine_key              opt=0 mir=419DB4A2A5A5FC58 n=1 deps=['nv_mine_entrance'] <- [('nv_demonite', 'neovitae', 0)]
+   neovitae         nv_deeper_key            opt=1 mir=4AE0C2D2D8D145F6 n=1 deps=['nv_breach'] <- [('nv_parts', 'neovitae', 1)]
+occultism:datura_seeds
+   start            gs_taste_datura          opt=1 mir=-                n=1 deps=['gs_taste'] <- []
+   occultism        oc_seeds                 opt=0 mir=5316DF321B45D2CA n=1 deps=['gs_iron'] <- [('oc_dictionary', 'occultism', 0), ('m_datura', 'occultism', 0)]
+pipez:item_pipe
+   storage          s_pipes                  opt=1 mir=-                n=8 deps=['sto_hopper'] <- [('s_laser', 'storage', 1)]
+   logic            lg_pipez_item            opt=0 mir=36836AD948F96B9F n=1 deps=['lg_pipez_tools'] <- [('lg_pipez_universal', 'logic', 0)]
+pylons:harvester_pylon
+   qol              ql_pylon_harvester       opt=1 mir=-                n=1 deps=['t2_pylon', 'fd_breed'] <- []
+   pylons           py_harvester             opt=0 mir=12ED1EE85E146A4B n=1 deps=['py_hoe'] <- []
+pylons:infusion_pylon
+   t2               t2_pylon                 opt=0 mir=-                n=1 deps=['t2_filter', 't2_quartz_slab', 't2_polished'] <- [('t2_chunkload', 't2', 1), ('ql_pylon_harvester', 'qol', 1), ('ql_pylon_interdiction', 'qol', 1), ('ql_pylon_guard', 'qol', 1), ('m_ritual', 'ars', 0)]
+   pylons           py_infusion              opt=0 mir=18246A48C20B29D8 n=1 deps=['py_potion_filter', 't2_hydrogen'] <- []
+pylons:potion_filter
+   t2               t2_filter                opt=0 mir=-                n=1 deps=['t2_longflying', 't2_emerald', 't2_dyes'] <- [('t2_pylon', 't2', 0)]
+   pylons           py_potion_filter         opt=0 mir=09D18512037386C1 n=1 deps=['py_start'] <- [('py_infusion', 'pylons', 0)]
+reliquary:mob_charm_fragment
+   apotheosis       ap_charm_fragment        opt=1 mir=-                n=1 deps=['ap_capture'] <- []
+   relics           m_reliquary              opt=0 mir=-                n=1 deps=['gs_iron'] <- [('m_alkahest', 'relics', 0), ('m_relic_hunt', 'relics', 1), ('rl_heart', 'relics', 0)]
+silentgear:alloy_forge
+   tools            tc_alloy_forge           opt=0 mir=-                n=1 deps=['tc_crimson_steel'] <- [('tc_azure', 'tools', 1), ('slg_alloy_forge', 'silentgear', 0)]
+   silentgear       slg_alloy_forge          opt=0 mir=3930404D5C8B44EB n=1 deps=['slg_grader', 'tc_alloy_forge'] <- [('slg_charger', 'silentgear', 0)]
+sophisticatedbackpacks:backpack
+   tips             tp_backpack              opt=1 mir=-                n=1 deps=[] <- []
+   storage          gs_backpack              opt=0 mir=6A2B2C5E2ADCE366 n=1 deps=['gs_leather', 'gs_chest', 'sto_hub'] <- [('sg_buy_backpack', 'shop_gear', 1), ('q_bp_up', 'qol', 0), ('q_bp_iron', 'qol', 0), ('sto_bp_copper', 'storage', 1), ('sto_bp_base', 'storage', 0)]
+twilightforest:carminite
+   harvest          hv_mat_carminite         opt=1 mir=606775701551F3EE n=1 deps=[] <- []
+   twilight         tf_carminite             opt=1 mir=-                n=4 deps=['tf_dark_tower'] <- [('sw_buy_carminite', 'shop_world', 1)]
+twilightforest:fiery_ingot
+   harvest          hv_mat_fiery             opt=1 mir=7F8B6D5F360D985A n=1 deps=[] <- []
+   twilight         tf_fiery                 opt=1 mir=-                n=4 deps=['w_hydra'] <- [('w_tf_metals', 'twilight', 1)]
+twilightforest:steeleaf_ingot
+   harvest          hv_mat_steeleaf          opt=1 mir=140DF670162C68DA n=1 deps=[] <- []
+   twilight         tf_steeleaf              opt=1 mir=-                n=4 deps=['tf_oak'] <- []
+undergarden:cloggrum_ingot
+   harvest          hv_mat_cloggrum          opt=1 mir=788A7A2F1F438B64 n=1 deps=[] <- []
+   undergarden      w_undergarden            opt=0 mir=4141EF8B8C316118 n=1 deps=['ug_enter'] <- [('ug_cloggrum_tools', 'undergarden', 0), ('ug_cloggrum_kit', 'undergarden', 0), ('ug_cloggrum_armor', 'undergarden', 0)]
+undergarden:forgotten_ingot
+   harvest          hv_mat_forgotten         opt=1 mir=5E6D7C1D7957DD4D n=1 deps=[] <- []
+   undergarden      w_forgotten              opt=0 mir=4F5A2E2A5C7F4837 n=1 deps=['ug_enter'] <- [('ug_forgotten_tools', 'undergarden', 0), ('ug_forgotten_battleaxe', 'undergarden', 0), ('ug_crumbling', 'undergarden', 0), ('ug_nuggets', 'undergarden', 1)]
+undergarden:froststeel_ingot
+   harvest          hv_mat_froststeel        opt=1 mir=16359196D49A6223 n=1 deps=[] <- []
+   undergarden      ug_froststeel            opt=0 mir=51E2728C5E35A152 n=1 deps=['ug_enter'] <- [('ug_froststeel_tools', 'undergarden', 0), ('ug_froststeel_armor', 'undergarden', 0)]
+undergarden:regalium_crystal
+   harvest          hv_mat_regalium          opt=1 mir=498483750C18FCD6 n=1 deps=[] <- []
+   undergarden      w_regalium               opt=0 mir=3AF7446592D19FA6 n=1 deps=['ug_enter'] <- []
+undergarden:utherium_crystal
+   harvest          hv_mat_utherium          opt=1 mir=690DB8BEF80617E5 n=1 deps=[] <- []
+   undergarden      ug_utherium              opt=0 mir=30582B5FBED35FD1 n=1 deps=['ug_infuser'] <- [('ug_utherium_tools', 'undergarden', 0), ('ug_utherium_armor', 'undergarden', 0), ('ug_utherium_gear', 'undergarden', 1), ('ug_collector', 'undergarden', 1)]
+203

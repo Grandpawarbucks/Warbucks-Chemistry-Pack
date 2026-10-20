@@ -523,38 +523,17 @@
 			size: 0.75d
 			optional: true
 			invisible: true
+			icon: {
+				id: "chemlib:caffeine"
+				count: 1
+			}
 			dependencies: [
 				"29BEA270C571B58C"
 			]
 			tasks: [
 				{
 					id: "2977E61F5859ECE7"
-					type: "item"
-					item: {
-						id: "chemlib:caffeine"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "33494B60D08F74E9"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "635B470ECC7748B9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-				{
-					id: "0CE07A4B47DFD723"
-					type: "random"
-					table_id: 8682264593899658817L
+					type: "checkmark"
 				}
 			]
 		}

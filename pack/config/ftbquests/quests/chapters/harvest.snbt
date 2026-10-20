@@ -4,7 +4,7 @@
 	order_index: 1
 	filename: "harvest"
 	icon: {
-		id: "minecraft:diamond_pickaxe"
+		id: "minecraft:diamond_chestplate"
 		count: 1
 	}
 	default_quest_shape: "circle"
@@ -12,7 +12,7 @@
 	quests: [
 		{
 			id: "60FA1921CCF3AF97"
-			x: 10.0d
+			x: 12.0d
 			y: 0.0d
 			shape: "pentagon"
 			size: 0.9d
@@ -44,7 +44,7 @@
 		}
 		{
 			id: "6BDFD1326944CD7B"
-			x: 10.0d
+			x: 12.0d
 			y: 2.0d
 			shape: "circle"
 			size: 0.85d
@@ -81,7 +81,7 @@
 		}
 		{
 			id: "056CD721D29672F1"
-			x: 14.0d
+			x: 16.0d
 			y: 0.0d
 			shape: "hexagon"
 			size: 1.5d
@@ -127,8 +127,8 @@
 		}
 		{
 			id: "60920BB92C5975BC"
-			x: 14.0d
-			y: 2.0d
+			x: 16.0d
+			y: -2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -219,11 +219,10 @@
 		}
 		{
 			id: "08BC2133F72EA7FC"
-			x: 20.0d
-			y: 2.0d
-			shape: "square"
+			x: 28.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"354E836D0228BCD9"
 			]
@@ -255,285 +254,9 @@
 			]
 		}
 		{
-			id: "131B5FE96A4605BB"
-			x: 32.0d
-			y: 0.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"354E836D0228BCD9"
-				"5FC7A4838C153DB0"
-			]
-			tasks: [
-				{
-					id: "3EB3EF0DA06CE862"
-					type: "item"
-					item: {
-						id: "minecraft:obsidian"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "3B47C8E0F2245E45"
-					type: "item"
-					item: {
-						id: "minecraft:crying_obsidian"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "3F0AFC648D4B8932"
-					type: "xp"
-					xp: 80
-				}
-				{
-					id: "1047B0DF084D9AB2"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "694B6BC236B91267"
-			x: 40.0d
-			y: 0.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"131B5FE96A4605BB"
-				"04B2CA0DEFD9BEA6"
-			]
-			tasks: [
-				{
-					id: "1512DC2BDC6FDCED"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_scrap"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "164016D8FC94518B"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_upgrade_smithing_template"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "2ABCDFA1E469450D"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "212AFD8F38C643E7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "42D79AC9616538D3"
-			x: 40.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"694B6BC236B91267"
-				"0F5CD98214E3E454"
-			]
-			tasks: [
-				{
-					id: "4E8442E620639877"
-					type: "item"
-					item: {
-						id: "silentgear:raw_azure_silver"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "4ABDF550AEE015BA"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "181EC2C2392EB78A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "7540B7EBA3302C25"
-			x: 32.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"131B5FE96A4605BB"
-				"42B76D3BDE21F0DC"
-			]
-			tasks: [
-				{
-					id: "40376481BC9F0F01"
-					type: "item"
-					item: {
-						id: "mekanism:ingot_refined_obsidian"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "08CDBBC784A4F584"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "524F01249FF0C521"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "6D9600C7F52BED6B"
-			x: 42.0d
-			y: 0.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"694B6BC236B91267"
-				"6CD23CD722EC696F"
-				"765D740D175B0667"
-			]
-			tasks: [
-				{
-					id: "288F505F635CF10C"
-					type: "item"
-					item: {
-						id: "undergarden:dreadrock"
-						count: 1
-					}
-					count: 16L
-				}
-			]
-			rewards: [
-				{
-					id: "4A05F319CBF13BAE"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "3030DD4FE49A2D55"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "0F1A84D28960CA59"
-			x: 32.0d
-			y: 2.0d
-			shape: "pentagon"
-			size: 0.9d
-			dependencies: [
-				"131B5FE96A4605BB"
-				"0C1DD95BA033EAB3"
-			]
-			tasks: [
-				{
-					id: "56278AF7C617E7C0"
-					type: "checkmark"
-				}
-			]
-			rewards: [
-				{
-					id: "143A805874F7F289"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "4311505E47065F80"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "62D770D91B33A944"
-			x: 32.0d
-			y: -4.0d
-			shape: "gear"
-			size: 2.0d
-			dependencies: [
-				"7540B7EBA3302C25"
-			]
-			tasks: [
-				{
-					id: "33C9B954103E4771"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(mekanism:atomic_disassembler)item(mekanism:meka_tool)item(deeperdarker:warden_pickaxe))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7660C83B23AEC35C"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "4758868192C1000D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "70178598964EFF4E"
-			x: 14.0d
-			y: -2.0d
+			x: 16.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -573,7 +296,7 @@
 		{
 			id: "79F7E96504AC02E0"
 			x: 26.0d
-			y: 2.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -616,7 +339,6 @@
 			y: 2.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependent_lines: true
 			dependencies: [
 				"354E836D0228BCD9"
 			]
@@ -639,123 +361,6 @@
 				}
 				{
 					id: "4E14357F60A1C75A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0F0206FF419082A1"
-			x: 34.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"131B5FE96A4605BB"
-			]
-			tasks: [
-				{
-					id: "7E370E24EC9B36EA"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(mekanismtools:steel_pickaxe)item(mekanismtools:refined_glowstone_pickaxe)item(mekanismtools:refined_glowstone_paxel)item(justdirethings:blazegold_pickaxe)item(justdirethings:celestigem_pickaxe)item(twilightforest:steeleaf_pickaxe)item(twilightforest:knightmetal_pickaxe)item(undergarden:utherium_pickaxe)item(modern_industrialization:steam_mining_drill))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4EEDCF259BE834A7"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "169EDF191AD760F1"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1192D454BBE6D5C5"
-			x: 40.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"694B6BC236B91267"
-				"143395D7328062B5"
-			]
-			tasks: [
-				{
-					id: "34D0E8B214A43EA8"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_pickaxe"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "75609F3E56CC6E5D"
-					type: "xp"
-					xp: 80
-				}
-				{
-					id: "501C603E916EC3CE"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "643C93A070C57511"
-			x: 42.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"694B6BC236B91267"
-			]
-			tasks: [
-				{
-					id: "46F85DEBD36FC3FD"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(mekanismtools:refined_obsidian_pickaxe)item(mekanismtools:refined_obsidian_paxel)item(mekanismtools:netherite_paxel)item(justdirethings:eclipsealloy_pickaxe)item(justdirethings:eclipsealloy_paxel)item(twilightforest:fiery_pickaxe)item(modern_industrialization:diesel_mining_drill))"
-						}
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "20615049C3F05FB8"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "2D098646C2BED0F9"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -806,334 +411,29 @@
 		}
 		{
 			id: "4779C73262490E2D"
-			x: 16.0d
-			y: -2.0d
+			x: 18.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "minecraft:golden_pickaxe"
+				count: 1
+			}
 			dependencies: [
 				"056CD721D29672F1"
 			]
 			tasks: [
 				{
 					id: "0F03034EE70BE184"
-					type: "item"
-					item: {
-						id: "minecraft:golden_pickaxe"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "1E9525F2ED6901AC"
-					type: "xp"
-					xp: 15
-				}
-				{
-					id: "0972EA059334B094"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "23B44A46EAB73D68"
-			x: 14.0d
-			y: 4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"60920BB92C5975BC"
-			]
-			tasks: [
-				{
-					id: "77655B3B149689EA"
-					type: "item"
-					item: {
-						id: "mekanismtools:bronze_helmet"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "3F0A80AD56749893"
-					type: "item"
-					item: {
-						id: "mekanismtools:bronze_chestplate"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "329A7FAC6F8D4EA9"
-					type: "item"
-					item: {
-						id: "mekanismtools:bronze_leggings"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "689BDCF7B7D6AB19"
-					type: "item"
-					item: {
-						id: "mekanismtools:bronze_boots"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "29BA29938429440E"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "7A50FAC8A56B32C7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "410BB4BB232F3580"
-			x: 34.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"131B5FE96A4605BB"
-			]
-			tasks: [
-				{
-					id: "76D29D1FCD7DDF6C"
-					type: "item"
-					item: {
-						id: "mekanismtools:steel_helmet"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "6E853183EE649672"
-					type: "item"
-					item: {
-						id: "mekanismtools:steel_chestplate"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "0AFFB0E58B67B915"
-					type: "item"
-					item: {
-						id: "mekanismtools:steel_leggings"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "6AB1482D7505CEE1"
-					type: "item"
-					item: {
-						id: "mekanismtools:steel_boots"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "2E831C7EE6EEE1F8"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "1AE6B098D99FE66B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5C190CBD956F8F68"
-			x: 28.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"354E836D0228BCD9"
-			]
-			tasks: [
-				{
-					id: "498B71DCB25B75B1"
-					type: "item"
-					item: {
-						id: "minecraft:diamond_helmet"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "5B5B9B0C164121AB"
-					type: "item"
-					item: {
-						id: "minecraft:diamond_chestplate"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "334309B6392C4226"
-					type: "item"
-					item: {
-						id: "minecraft:diamond_leggings"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "7D35F38B95B627EE"
-					type: "item"
-					item: {
-						id: "minecraft:diamond_boots"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7469830CAE3D335E"
-					type: "xp"
-					xp: 80
-				}
-				{
-					id: "0180272A45A817D7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "37F636BFE7E37758"
-			x: 38.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			hide_dependency_lines: true
-			dependencies: [
-				"694B6BC236B91267"
-				"5C190CBD956F8F68"
-			]
-			tasks: [
-				{
-					id: "6D412BBE351A8F2B"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_helmet"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "746FF4E00475A281"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_chestplate"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "4B4B4068F51EADD5"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_leggings"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "62DA620A1DAEBBA9"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_boots"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "6DCF508B01B706A3"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "211A3925ABE62BF8"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "10136D8201F4A3F9"
-			x: 38.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"694B6BC236B91267"
-			]
-			tasks: [
-				{
-					id: "6ACBC954CE226F41"
-					type: "structure"
-					structure: "minecraft:bastion_remnant"
-				}
-			]
-			rewards: [
-				{
-					id: "5C038ABEADBCF5F9"
-					type: "xp"
-					xp: 80
-				}
-				{
-					id: "673774E7CD6DB9C7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}
 		{
 			id: "50A0E221B1B69D46"
-			x: 26.0d
-			y: -2.0d
+			x: 20.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1224,8 +524,8 @@
 		}
 		{
 			id: "161941956EC2518F"
-			x: 26.0d
-			y: -4.0d
+			x: 20.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1257,44 +557,28 @@
 		{
 			id: "4A7AE47C4EF7931F"
 			x: 18.0d
-			y: 2.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
+			icon: {
+				id: "minecraft:emerald"
+				count: 1
+			}
 			dependencies: [
 				"354E836D0228BCD9"
 			]
 			tasks: [
 				{
 					id: "2251238DF3112EE7"
-					type: "item"
-					item: {
-						id: "minecraft:emerald"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "7AC70138BE2CEE11"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "7D2757960E29C2EB"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
+					type: "checkmark"
 				}
 			]
 		}
 		{
 			id: "249BDBDED71AD605"
-			x: 20.0d
-			y: 4.0d
+			x: 28.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1330,7 +614,7 @@
 		}
 		{
 			id: "29AA69B51A6AFDD7"
-			x: 10.0d
+			x: 12.0d
 			y: -2.0d
 			shape: "circle"
 			size: 0.85d
@@ -1385,8 +669,8 @@
 		}
 		{
 			id: "78EF41DFE812460E"
-			x: 18.0d
-			y: -2.0d
+			x: 26.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1476,48 +760,9 @@
 			]
 		}
 		{
-			id: "3728FFD02FB4DBFA"
-			x: 36.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"694B6BC236B91267"
-				"5C98652AE96904AD"
-			]
-			tasks: [
-				{
-					id: "38C02682C10254FF"
-					type: "item"
-					item: {
-						id: "minecraft:netherite_sword"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "26D813611C364D1E"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "514AE9133EA04084"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "6750BD8E82E2D070"
 			x: 16.0d
-			y: 2.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1555,48 +800,18 @@
 			]
 		}
 		{
-			id: "144F85C7FE48A4C1"
-			x: 14.0d
-			y: -4.0d
+			id: "2445362B72FBAFEB"
+			x: -8.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			dependencies: [
-				"70178598964EFF4E"
-			]
 			tasks: [
 				{
-					id: "3437D92E442EF434"
+					id: "569A5BE9291E0F8B"
 					type: "item"
 					item: {
-						id: "mekanismtools:lapis_lazuli_helmet"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "4D426D1356BA3C36"
-					type: "item"
-					item: {
-						id: "mekanismtools:lapis_lazuli_chestplate"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "6BDA0345A044A2C0"
-					type: "item"
-					item: {
-						id: "mekanismtools:lapis_lazuli_leggings"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "1B64A13F24DB008B"
-					type: "item"
-					item: {
-						id: "mekanismtools:lapis_lazuli_boots"
+						id: "minecraft:sentry_armor_trim_smithing_template"
 						count: 1
 					}
 					count: 1L
@@ -1604,12 +819,12 @@
 			]
 			rewards: [
 				{
-					id: "53CB46FCC76CA185"
+					id: "378FB13567BA3746"
 					type: "xp"
-					xp: 30
+					xp: 25
 				}
 				{
-					id: "53F174BC41A7AF2D"
+					id: "0B64B11CC025302B"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1619,30 +834,1331 @@
 			]
 		}
 		{
-			id: "322E25AE504F1593"
+			id: "751B9B1D46983BFE"
+			x: -8.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "7618BFAD886FEEAE"
+					type: "item"
+					item: {
+						id: "minecraft:vex_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "03470D61724512F4"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "0BA44BD90E6B9CCF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7769D62BB725443E"
+			x: -8.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "3BDABF9D3B5C0A3D"
+					type: "item"
+					item: {
+						id: "minecraft:wild_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "11333827778883B1"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "747D09B491016075"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6627350FADC0E688"
+			x: -8.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "5A11C68D2FC1324A"
+					type: "item"
+					item: {
+						id: "minecraft:coast_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "08134525A6C5604E"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "0494C04BEA1C45FC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "341F85499EF5AFD5"
+			x: -6.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "7D86E70B9E39F62F"
+					type: "item"
+					item: {
+						id: "minecraft:dune_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5F3242D3931E51F8"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "16445AE40489AD0B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4846D2B6E57E60E2"
+			x: -6.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "14E8DBA49BC1BE86"
+					type: "item"
+					item: {
+						id: "minecraft:wayfinder_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "235604C8D85611BF"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "1DCC73A7A3CC0F3A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3DB6BF75F06DBA2B"
+			x: -6.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "2D8DB189DD850E34"
+					type: "item"
+					item: {
+						id: "minecraft:raiser_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4D5B187F15F88E6F"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "3241700F15FA64A4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "053AEBC6F80DD2F1"
+			x: -6.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "2B747C49642C48D7"
+					type: "item"
+					item: {
+						id: "minecraft:shaper_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4FE063B2C2599B54"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "0F6A77EAB045775E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6366BC1B041584BA"
+			x: -4.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "238DAB280F448CEB"
+					type: "item"
+					item: {
+						id: "minecraft:host_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "46703EBB20AA46D2"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "5A19ACF0A3FE748E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "29FA46A4EFE56D28"
+			x: -4.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "5E43C62E3A940BF1"
+					type: "item"
+					item: {
+						id: "minecraft:ward_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2510AB25C7486B25"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "368455483C3766FA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "68B57D727AFD8F0F"
+			x: -4.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "75B5E9E6B031AA23"
+					type: "item"
+					item: {
+						id: "minecraft:silence_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5409C7B8186C4623"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "68F30C9FD2175299"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7EBC34B03A8E77F7"
+			x: -4.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "190C0472974817AB"
+					type: "item"
+					item: {
+						id: "minecraft:tide_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7BC14758C38DD647"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "177636072A9C1363"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "334A1371F63B8B17"
+			x: -2.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "6E7FE17FA2D5B655"
+					type: "item"
+					item: {
+						id: "minecraft:snout_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "547DE00207346AEB"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "5B093929E0207312"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6D9780C343C03D09"
+			x: -2.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "01445A5195A4DDC7"
+					type: "item"
+					item: {
+						id: "minecraft:rib_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0E9A42F1B391B3CE"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "4CC0BBED43960178"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3C3C76E5ADD0D621"
+			x: -2.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "2FEFEE114748B900"
+					type: "item"
+					item: {
+						id: "minecraft:eye_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "47A6AAB813EEBFA2"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "622FBA871272A946"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1A188962BD65E2E1"
+			x: -2.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "1B23E05B62AC05B3"
+					type: "item"
+					item: {
+						id: "minecraft:spire_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "103F3408B24F3D80"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "104710B5D7A8D18C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5A4E6AA3354A2911"
+			x: 0.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "25295E6AF7E0AF8E"
+					type: "item"
+					item: {
+						id: "minecraft:flow_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3629413F3EF57B44"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "655574D68B380044"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "297A6091BC6F54C3"
+			x: 0.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "258E31C039F7E5B8"
+					type: "item"
+					item: {
+						id: "minecraft:bolt_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "070A6A1323F65422"
+					type: "xp"
+					xp: 25
+				}
+				{
+					id: "565EC790B83A5308"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2631C7C30A21F19B"
+			x: 0.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "216939D73EDD62E6"
+					type: "item"
+					item: {
+						id: "minecraft:redstone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "51C5A36F411D7661"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "3DA0CC959EDAC05C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "149FA8E6EB11F35E"
+			x: 0.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "15C8A026D262ACB0"
+					type: "item"
+					item: {
+						id: "minecraft:lapis_lazuli"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2CDA5180756EA8E1"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "083A7165657AC420"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0044AC0903650B96"
+			x: 2.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "6C59CC7C99C75E7A"
+					type: "item"
+					item: {
+						id: "minecraft:iron_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DD173CEA5EB938B"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "73F69068A0ADED14"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0EDE5F7B3804166E"
+			x: 2.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "2FD12A76B98B8D73"
+					type: "item"
+					item: {
+						id: "minecraft:gold_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "602A2C5EAE74077D"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "3AC287F3B9186268"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F6EA77E0E8F0585"
+			x: 2.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "40C1F35A1E1AA332"
+					type: "item"
+					item: {
+						id: "minecraft:copper_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1318363E6DBBD2EC"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "7B4922A008FE102B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "556CA51BBA85BCCA"
+			x: 2.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "6692E76CFD2441A7"
+					type: "item"
+					item: {
+						id: "minecraft:emerald"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7034E1A3081E6321"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "5E9A145653BF864B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "470A1D79EC426BDE"
+			x: 4.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "42174A0D0ECF75A7"
+					type: "item"
+					item: {
+						id: "minecraft:diamond"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "45E7A009DFB6F9C0"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "3E1408494844E5F1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3A8E2FED97BE553C"
+			x: 4.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "5F418EA192F0EFDC"
+					type: "item"
+					item: {
+						id: "minecraft:netherite_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "79AADACDF608F5CA"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "4F19BEF632227424"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "033A26647FE625CA"
+			x: 4.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "38E07A3724CEB18C"
+					type: "item"
+					item: {
+						id: "minecraft:quartz"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4DDC85968F4CE435"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "746B26E298F54D80"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5FFA7B24ACF7212D"
+			x: 4.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "4CC19A3613B25726"
+					type: "item"
+					item: {
+						id: "minecraft:amethyst_shard"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2ACF2C09DF6D531E"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "6CD921643C32FB03"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4CFA4F63089D99E3"
+			x: 6.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "36C602EDB625DA00"
+					type: "item"
+					item: {
+						id: "allthemodium:allthemodium_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4F45BC7CA30DEFF9"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "5230DA3074C4C3A6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "571F38E3FED6BE4B"
+			x: 6.0d
+			y: -4.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "0A9648B3809CC4F4"
+					type: "item"
+					item: {
+						id: "allthemodium:vibranium_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "329AEB975A8235B1"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "08FF7C39EC4316A5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0ACB7C3995FD9092"
+			x: 6.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			tasks: [
+				{
+					id: "778888393DB5A51A"
+					type: "item"
+					item: {
+						id: "allthemodium:unobtainium_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "03473751B3189377"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "25E9A039EDE8EE0F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "6C2652DAEEBD6610"
+			x: 6.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "22EEFC24A1FD459C"
+					type: "item"
+					item: {
+						id: "undergarden:cloggrum_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7412A4E5FCA8AD10"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "6C71270B40A5FC59"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0C2D1912C44E50E2"
+			x: 8.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "412DB41C0F7D6C96"
+					type: "item"
+					item: {
+						id: "undergarden:froststeel_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2B1C0F86EEE30045"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "46BFB5931188E51C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5D711EAAB2A8D679"
+			x: 8.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "77A80157CFD8BD7F"
+					type: "item"
+					item: {
+						id: "undergarden:utherium_crystal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "67AB9B9FF79A70B2"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "7075B7E5C149ADA9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1C3B390E4E9E36AD"
+			x: 8.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "4CD49C315B62663E"
+					type: "item"
+					item: {
+						id: "undergarden:regalium_crystal"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3E522E62C4C373C0"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "5735350D57A5CB97"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7B04AC979AF594F7"
+			x: 8.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "002407482C626D4A"
+					type: "item"
+					item: {
+						id: "undergarden:forgotten_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "594A78C1302C50F0"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "05D47D392A335EF8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "654D766647816205"
+			x: -8.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "6EE37DC38A36E6D6"
+					type: "item"
+					item: {
+						id: "twilightforest:ironwood_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0DD7DB6DBDF1E301"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "6B4C188A1920E8D7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "75A20DAC5105DC02"
+			x: -6.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "72F23FC0A6E2A435"
+					type: "item"
+					item: {
+						id: "twilightforest:steeleaf_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5C40F026CF887C98"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "1D4EFC1BF9E0A72A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "02948A493A95903C"
+			x: -4.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "3B2F1000576A41AF"
+					type: "item"
+					item: {
+						id: "twilightforest:knightmetal_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "78E385E8BC1F3853"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "1B44BAB11912664A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "32F11D71F995BEED"
+			x: -2.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			tasks: [
+				{
+					id: "62F4F80F2A4218AD"
+					type: "item"
+					item: {
+						id: "twilightforest:naga_scale"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "04322552A4BB8006"
+					type: "xp"
+					xp: 10
+				}
+				{
+					id: "0CF898A07AC81F5C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "4C6364700FF784EF"
 			x: 0.0d
 			y: -10.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			dependencies: [
-				"2575EE3D3B863D1D"
-			]
 			tasks: [
 				{
-					id: "69D8F8779A30700E"
+					id: "2BBDE7A0470168EA"
 					type: "item"
 					item: {
-						id: "minecraft:leather_helmet"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "5C776FF5BDC5C1E2"
-					type: "item"
-					item: {
-						id: "minecraft:leather_leggings"
+						id: "twilightforest:carminite"
 						count: 1
 					}
 					count: 1L
@@ -1650,12 +2166,12 @@
 			]
 			rewards: [
 				{
-					id: "60EA87FE37C4E9AD"
+					id: "6E3E91D409D81A2D"
 					type: "xp"
-					xp: 15
+					xp: 10
 				}
 				{
-					id: "49A37A3070AE7ADA"
+					id: "7CDFEC5CDE83F0AD"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1665,83 +2181,31 @@
 			]
 		}
 		{
-			id: "209C0E4096417699"
-			x: 0.0d
-			y: -12.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"322E25AE504F1593"
-			]
-			tasks: [
-				{
-					id: "2CFEB30C613295EB"
-					type: "item"
-					item: {
-						id: "minecraft:wolf_armor"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "255F75E605B2CC61"
-					type: "item"
-					item: {
-						id: "minecraft:armadillo_scute"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "0173ACB7D56677D9"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "056806E7B287AA69"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0BC7913B1AAE9567"
+			id: "75B0F877784D8549"
 			x: 2.0d
 			y: -10.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
-			dependencies: [
-				"322E25AE504F1593"
-			]
 			tasks: [
 				{
-					id: "17406CC53EC42DE2"
+					id: "21A836BADB055C4A"
 					type: "item"
 					item: {
-						id: "ftbfiltersystem:smart_filter"
+						id: "twilightforest:fiery_ingot"
 						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(minecraft:leather_horse_armor)item(minecraft:iron_horse_armor)item(minecraft:golden_horse_armor)item(minecraft:diamond_horse_armor))"
-						}
 					}
 					count: 1L
 				}
 			]
 			rewards: [
 				{
-					id: "72C1E21454854D7C"
+					id: "14BF1318142B12E9"
 					type: "xp"
-					xp: 20
+					xp: 10
 				}
 				{
-					id: "7379D938C1599040"
+					id: "22374C45C0B29047"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -1754,26 +2218,35 @@
 	images: [
 		{
 			id: "1580176A7DFBC164"
-			x: 0.5d
-			y: -14.925d
+			x: -9.5d
+			y: -16.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/harvest.png"
 		}
 		{
-			id: "48D9267769E46471"
-			x: 2.575d
+			id: "58B2F6B5AC34AFF1"
+			x: -6.175000000000001d
 			y: -13.05d
-			width: 6.0d
+			width: 4.5d
 			height: 0.75d
 			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/harvest_a_full_leather_set.png"
+			image: "warbucks:textures/quests/sections/harvest_armour_trims.png"
+		}
+		{
+			id: "04C9926246C99509"
+			x: 2.0d
+			y: -13.05d
+			width: 5.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/harvest_trim_materials.png"
 		}
 		{
 			id: "262EFF6FA8BA3FF3"
-			x: 17.575d
-			y: 5.05d
+			x: 13.575d
+			y: -5.05d
 			width: 4.0d
 			height: 0.75d
 			rotation: 0.0d
@@ -1781,21 +2254,12 @@
 		}
 		{
 			id: "71CDA084B8249FBE"
-			x: 27.325d
-			y: -5.05d
+			x: 22.325d
+			y: 5.05d
 			width: 5.5d
 			height: 0.75d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/sections/harvest_diamond_pickaxe.png"
-		}
-		{
-			id: "76138C0E6AF13996"
-			x: 35.825d
-			y: 3.05d
-			width: 4.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/harvest_azure_silver.png"
 		}
 	]
 	quest_links: [
@@ -1816,43 +2280,36 @@
 		{
 			id: "2C456797F2E6ECEF"
 			linked_quest: "4081488F0A14597A"
-			x: 0.0d
-			y: -2.0d
+			x: 4.0d
+			y: -10.0d
 			size: 1.0d
 		}
 		{
 			id: "0CA3B34F311C854E"
 			linked_quest: "384F1C4A2EF051A0"
-			x: 0.0d
-			y: -6.0d
+			x: 8.0d
+			y: -10.0d
 			size: 1.0d
 		}
 		{
 			id: "7F1904EEC2D6D093"
 			linked_quest: "34A2F932F17C9F0D"
-			x: 0.0d
-			y: -4.0d
-			size: 1.0d
-		}
-		{
-			id: "14659B060636B9C5"
-			linked_quest: "2575EE3D3B863D1D"
-			x: 0.0d
-			y: -8.0d
+			x: 6.0d
+			y: -10.0d
 			size: 1.0d
 		}
 		{
 			id: "00BA0B798F433134"
 			linked_quest: "78AB87381549A629"
-			x: 2.0d
-			y: -2.0d
+			x: -8.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "1C053F63DA4337EE"
 			linked_quest: "39214B137E06B1D9"
-			x: 2.0d
-			y: -4.0d
+			x: -6.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
@@ -1865,22 +2322,15 @@
 		{
 			id: "17BA25966D9C094F"
 			linked_quest: "4C3565E3456D5AE4"
-			x: 2.0d
-			y: -6.0d
+			x: -4.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "2EF736EABCF71314"
 			linked_quest: "3257C24FD424AE58"
-			x: 2.0d
-			y: -8.0d
-			size: 1.0d
-		}
-		{
-			id: "7161B554EF2243D7"
-			linked_quest: "5FC7A4838C153DB0"
-			x: 30.0d
-			y: 2.0d
+			x: -2.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
@@ -1893,49 +2343,49 @@
 		{
 			id: "30FFE4FB347BC7E5"
 			linked_quest: "5162E347921E0863"
-			x: 4.0d
-			y: -2.0d
+			x: 0.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "77C333C16EA927A9"
 			linked_quest: "7A05E39EE109E1CA"
-			x: 4.0d
-			y: -4.0d
+			x: 2.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "25713E6AFC4E8CFF"
 			linked_quest: "1B2FF1921BFAFACF"
 			x: 4.0d
-			y: -6.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "7807155BFF68F95A"
 			linked_quest: "37DD31C8DF09C737"
-			x: 4.0d
-			y: -8.0d
+			x: 6.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "732A3AA12E4662CF"
 			linked_quest: "1E48AB2B0066F565"
-			x: 4.0d
-			y: -10.0d
+			x: 8.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "23CF207A5A124C1E"
 			linked_quest: "4E4AD4A8D6C2C30C"
-			x: 4.0d
+			x: 10.0d
 			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "1D5E5EF1702464DA"
 			linked_quest: "6628750FED7710A3"
-			x: 6.0d
+			x: 10.0d
 			y: -2.0d
 			size: 1.0d
 		}
@@ -1943,98 +2393,91 @@
 			id: "03DF0E86FF4755F1"
 			linked_quest: "53B27674143FE723"
 			x: 6.0d
-			y: -12.0d
+			y: -14.0d
 			size: 1.0d
 		}
 		{
 			id: "10C90B4D2A919D0E"
 			linked_quest: "7D7B226DB54EB297"
-			x: 6.0d
-			y: -10.0d
+			x: 8.0d
+			y: -14.0d
 			size: 1.0d
 		}
 		{
 			id: "5EA13E8F15D9E722"
 			linked_quest: "0B26554D7E11DCF3"
-			x: 6.0d
+			x: 10.0d
 			y: -4.0d
 			size: 1.0d
 		}
 		{
 			id: "3CE2F02D6A043AEE"
 			linked_quest: "327B62CC52974966"
-			x: 6.0d
+			x: 10.0d
 			y: -6.0d
 			size: 1.0d
 		}
 		{
 			id: "0053554049197655"
 			linked_quest: "4408031B4D0E368F"
-			x: 6.0d
+			x: 10.0d
 			y: -8.0d
 			size: 1.0d
 		}
 		{
 			id: "758C9FB5F9F7048A"
 			linked_quest: "465DD74BC5CE144E"
-			x: 8.0d
-			y: -2.0d
+			x: 10.0d
+			y: -10.0d
 			size: 1.0d
 		}
 		{
 			id: "2FD39D3ED1ECD5D2"
 			linked_quest: "2A8520BC87E05E4F"
-			x: 8.0d
-			y: -4.0d
+			x: -10.0d
+			y: -2.0d
 			size: 1.0d
 		}
 		{
 			id: "7F2289654AFD0604"
 			linked_quest: "60C0DD7EE2931A65"
-			x: 8.0d
-			y: -6.0d
+			x: -10.0d
+			y: -4.0d
 			size: 1.0d
 		}
 		{
 			id: "2F5275DD2B70F5B9"
 			linked_quest: "7F3E65B654069BAA"
-			x: 8.0d
-			y: -8.0d
-			size: 1.0d
-		}
-		{
-			id: "6E97D1D0135CFDB6"
-			linked_quest: "765D740D175B0667"
-			x: 42.0d
-			y: -2.0d
+			x: -10.0d
+			y: -6.0d
 			size: 1.0d
 		}
 		{
 			id: "0DAE668688BCA1EC"
 			linked_quest: "01955F27A3D813AE"
-			x: -2.0d
-			y: -2.0d
+			x: -10.0d
+			y: -8.0d
 			size: 1.0d
 		}
 		{
 			id: "338F61C915D7F49C"
 			linked_quest: "71A31138E5B796F4"
-			x: -2.0d
-			y: -4.0d
+			x: -10.0d
+			y: -10.0d
 			size: 1.0d
 		}
 		{
 			id: "2B16EF8C20B82C99"
 			linked_quest: "1751F7DCDA2801ED"
-			x: -2.0d
-			y: -6.0d
+			x: -10.0d
+			y: -12.0d
 			size: 1.0d
 		}
 		{
 			id: "4CB5429736B2359D"
 			linked_quest: "31F2D0605D2E5028"
-			x: -2.0d
-			y: -8.0d
+			x: -12.0d
+			y: -2.0d
 			size: 1.0d
 		}
 		{

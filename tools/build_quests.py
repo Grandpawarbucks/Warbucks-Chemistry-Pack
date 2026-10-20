@@ -106,6 +106,7 @@ def build():
             sys.exit("QUEST_ONLY is for --check only")
     if UNLISTED and not ONLY:
         print("WARNING: chapter files not in LAYOUT (tools/quest_data.py), so not built: " + ", ".join(UNLISTED))
+    check_mirrors()
     if errors:
         sys.exit("Unknown ids/dependencies:\n  " + "\n  ".join(sorted(set(errors))))
     dup = [k for k in keys if sum(1 for c in CHAPTERS for q in c.quests if q.key == k) > 1]
@@ -120,13 +121,16 @@ def build():
     if "--check" in sys.argv:
         for c in CHAPTERS:  # the layout must run cleanly on every chapter too
             layout.apply(c, set(keys))
+        mirror_warnings()
         n_over = overrides()
         print(f"OK: {len(CHAPTERS)} chapters, {len(keys)} quests, all ids and dependencies valid (nothing written)"
               + (f"; {n_over} editor override(s)" if n_over else ""))
         return
     for c in CHAPTERS:
         layout.apply(c, set(keys))
+    mirror_warnings()
     overrides()
+    pictures = render_pictures()  # {(chapter key, slug): texture path}; {} when tools/build_pictures.py is missing
 
     # Delete the old files but keep the folders: on Windows, OneDrive or Explorer can hold a folder
     # open, and removing it then fails halfway through.
@@ -233,6 +237,12 @@ def build():
         if c.key == "welcome":  # the pack logo (1220x360) above the banner
             images.append({"id": hexid("image:welcome:logo"), "x": float(bx + 0.5), "y": float(by - 2.25),
                            "width": 7.0, "height": 2.07, "rotation": 0.0, "image": "warbucks:textures/quests/logo.png"})
+        for pic in getattr(c, "pictures", None) or []:  # mirror pages: pictures in ATM10's image spots (layout.py)
+            tex = pictures.get((c.key, pic["slug"]))
+            if tex:
+                images.append({"id": hexid(f"image:{c.key}:picture:{pic['slug']}"), "x": float(pic["x"]),
+                               "y": float(pic["y"]), "width": float(pic["width"]), "height": float(pic["height"]),
+                               "rotation": float(pic["rotation"]), "image": tex})
         chapter = {"id": cid, "group": group_ids[c.group], "order_index": order[c.group], "filename": c.key,
                    "icon": {"id": c.icon, "count": 1},
                    "default_quest_shape": "rsquare" if c.group == "main" or c.key == "welcome" else "circle",
@@ -372,6 +382,80 @@ def chapter_banners():
     for f in stale:
         f.unlink()
     print(f"Chapter banners: {len(todo)} chapters ({n} written)" + (f", {len(stale)} stale removed" if stale else ""))
+
+
+def check_mirrors():
+    """Mirror targets (Chapter(mirror=) / quest_data.MIRROR) must be ATM10 chapter files, and every Q(mirror=) an
+    id in that chapter. Without the ATM10 book on this machine (layout.ATM10_BOOK) the pages fall back to the comb,
+    with one warning."""
+    if not layout.ATM10_BOOK.is_dir():
+        if any(getattr(c, "mirror", None) for c in CHAPTERS):
+            print(f"WARNING: ATM10 book not found at {layout.ATM10_BOOK}: mirror pages are drawn as combs")
+        return
+    for c in CHAPTERS:
+        stem = getattr(c, "mirror", None)
+        atm = layout.load_mirror(stem) if stem else None
+        if stem and atm is None:
+            errors.append(f"chapter {c.key}: mirror={stem!r} is not a chapter file of the ATM10 book")
+        for q in c.quests:
+            mid = getattr(q, "mirror", None)
+            if not mid:
+                continue
+            if not stem:
+                errors.append(f"{q.key}: mirror={mid} but chapter {c.key} has no mirror target (Chapter(mirror=) or MIRROR)")
+            elif atm is not None and mid not in atm["quests"]:
+                errors.append(f"{q.key}: mirror={mid} is not a quest of ATM10 chapter {stem}")
+
+
+def mirror_warnings():
+    """Print the mirror layout's warnings (a Q(mirror=) that points at an ATM10 quest already taken, and so on)."""
+    for c in CHAPTERS:
+        for w in getattr(c, "mirror_warnings", None) or []:
+            print(f"WARNING: mirror {c.key}: {w}")
+
+
+PICTURE_DIR = ROOT / "pack/kubejs/assets/warbucks/textures/quests/pictures"
+
+
+def render_pictures():
+    """Render every mirror page's picture slots (layout.py chapter.pictures) with tools/build_pictures.py:
+    render(slot) -> "warbucks:textures/quests/pictures/<chapter>_<slug>.png". Stale PNGs go (the module's
+    clean(keep_paths), else by hand). Returns {(chapter key, slug): texture path}. Without the module (or Pillow)
+    no pictures are written and the pages stay bare."""
+    slots = [(c, pic) for c in CHAPTERS for pic in (getattr(c, "pictures", None) or [])]
+    try:
+        import build_pictures
+    except ImportError as e:
+        if slots:
+            print(f"WARNING: tools/build_pictures.py not usable ({e}): {len(slots)} picture slots skipped")
+        return {}
+    out, failed = {}, 0
+    for c, pic in slots:
+        try:
+            tex = build_pictures.render(dict(pic))
+        except Exception as e:  # noqa: BLE001  (one bad picture must not stop the book)
+            failed += 1
+            if failed <= 5:
+                print(f"WARNING: picture {c.key}/{pic['slug']} not rendered: {e}")
+            continue
+        if tex:
+            out[(c.key, pic["slug"])] = str(tex)
+    keep = set(out.values())
+    if ONLY:
+        return out
+    if hasattr(build_pictures, "clean"):
+        try:
+            build_pictures.clean(keep)
+        except Exception as e:  # noqa: BLE001
+            print(f"WARNING: build_pictures.clean failed: {e}")
+    elif PICTURE_DIR.is_dir():
+        names = {p.rsplit("/", 1)[-1] for p in keep}
+        for f in PICTURE_DIR.glob("*.png"):
+            if f.name not in names:
+                f.unlink()
+    print(f"Pictures: {len(out)} rendered on {len({c.key for c, _ in slots})} mirror pages"
+          + (f" ({failed} failed)" if failed else ""))
+    return out
 
 
 def audit():

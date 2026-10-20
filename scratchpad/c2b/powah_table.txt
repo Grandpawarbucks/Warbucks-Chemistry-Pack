@@ -1,0 +1,105 @@
+    ('pw_thermo', 'thermo_generator_starter', 1, '52E59FCB39D66BCF', ['pw_paste', 'pw_cap_tiny'], 0),  # thermo starter
+    ('pw_furnator', 'furnator_starter', 1, '3D5F87F8E6B89C1B', ['pw_paste', 'pw_cap_tiny'], 0),  # furnator starter
+    ('pw_solar_starter', 'solar_panel_starter', 1, '7678B5DD1339833E', ['pw_paste', 'pw_cap_tiny'], 0),  # solar starter
+    ('pw_magmator', 'magmator_starter', 1, '0FD62827710F0AC6', ['pw_paste', 'pw_cap_tiny'], 0),  # magmator starter
+    ('pw_reactor_starter', 'reactor_starter', 36, '1B0087400B0B8B49', ['pw_paste', 'pw_cap_tiny'], 0),  # reactor starter
+    ('pw_ender_gate', 'ender_gate_starter', 1, '3CB6DC5B09C62CFE', ['pw_cable', 'pw_cap_tiny'], 0),  # gate starter
+    ('pw_cable', 'energy_cable_starter', 1, '7D52DD751DDADA1B', ['pw_paste', 'pw_cap_tiny'], 0),  # cable starter
+    ('pw_transmitter', 'player_transmitter_starter', 1, '677365A816994C8B', ['pw_paste', 'pw_cap_tiny'], 0),  # transmitter starter
+    ('pw_hopper', 'energy_hopper_starter', 1, '5BCA3F716348ECCD', ['pw_paste', 'pw_cap_tiny'], 1),  # hopper starter
+    ('pw_discharger_starter', 'energy_discharger_starter', 1, '33816AF0E699F19F', ['pw_paste', 'pw_cap_tiny'], 1),  # discharger starter
+    ('pw_cell_starter', 'energy_cell_starter', 1, '78202A1CF5D86B94', ['pw_paste', 'pw_cap_tiny'], 0),  # cell starter
+    ('pw_ender_cell_starter', 'ender_cell_starter', 1, '700F3FF7C23D0C0F', ['pw_cell_starter', 'pw_battery', 'pw_cap_tiny'], 0),  # ender_cell starter
+    ('pw_energized', 'steel_energized', 1, '5E090C9BB4DAA5D4', ['pw_orb'], 0),  # None None
+    ('pw_blazing', 'crystal_blazing', 1, '562BD37539EE318E', ['pw_orb'], 0),  # None None
+    ('pw_niotic', 'crystal_niotic', 1, '7D7983F39E6E818D', ['pw_orb'], 0),  # None None
+    ('pw_spirited', 'crystal_spirited', 1, '25EFC21A3C48E0B6', ['pw_orb'], 0),  # None None
+    ('pw_nitro', 'crystal_nitro', 1, '4F1FFC02F4EAA2E6', ['pw_orb'], 0),  # None None
+    ('pw_battery', 'battery_starter', 1, '61A8FAEC4FF18449', ['pw_paste', 'pw_cap_tiny'], 0),  # battery starter
+    ('pw_discharger_basic', 'energy_discharger_basic', 1, '5A07C7A54D40FBE2', ['pw_capacitor'], 1),  # discharger basic
+    ('pw_hopper_up', 'energy_hopper_basic', 1, '35F885A046EAE246', ['pw_hopper', 'pw_capacitor'], 1),  # hopper basic
+    ('pw_transmitter_basic', 'player_transmitter_basic', 1, '740F314EE6242C13', ['pw_transmitter', 'pw_capacitor'], 0),  # transmitter basic
+    ('pw_battery_up', 'battery_basic', 1, '04F11E192A334E3F', ['pw_battery', 'pw_capacitor'], 0),  # battery basic
+    ('pw_ender', 'ender_cell_basic', 1, '0C481BA4C1CC0237', ['pw_orb', 'pw_capacitor'], 0),  # ender_cell basic
+    ('pw_powah_cell', 'energy_cell_basic', 1, '66FA15A92DC655DE', ['pw_cell_starter', 'pw_paste', 'pw_capacitor'], 0),  # cell basic
+    ('pw_cable_basic', 'energy_cable_basic', 1, '5A708BF4F5091959', ['pw_cable', 'pw_capacitor'], 0),  # cable basic
+    ('pw_gate_basic', 'ender_gate_basic', 1, '69D82C33347D360D', ['pw_cable_basic', 'pw_capacitor'], 0),  # gate basic
+    ('pw_magmator_basic', 'magmator_basic', 1, '0E3A9D5E1E8AAF89', ['pw_magmator', 'pw_capacitor'], 0),  # magmator basic
+    ('pw_gen_basic', 'furnator_basic', 1, '67DE5F982629BB34', ['pw_furnator', 'pw_capacitor'], 0),  # furnator basic
+    ('pw_thermo_basic', 'thermo_generator_basic', 1, '60F5DC851FCFF1B2', ['pw_thermo', 'pw_capacitor'], 0),  # thermo basic
+    ('pw_powah', 'reactor_basic', 36, '5F6152CF085D75D6', ['pw_reactor_starter', 'pw_capacitor'], 0),  # reactor basic
+    ('pw_solar_basic', 'solar_panel_basic', 1, '7890A1478121D2CD', ['pw_solar_starter', 'pw_capacitor'], 0),  # solar basic
+    ('pw_discharger_hardened', 'energy_discharger_hardened', 1, '534485E8185B71C3', ['pw_energized'], 1),  # discharger hardened
+    ('pw_hopper_hardened', 'energy_hopper_hardened', 1, '04930767C52C7CC2', ['pw_hopper_up', 'pw_energized'], 1),  # hopper hardened
+    ('pw_transmitter_up', 'player_transmitter_hardened', 1, '7444B85503DE2C53', ['pw_transmitter_basic', 'pw_energized'], 0),  # transmitter hardened
+    ('pw_battery_hardened', 'battery_hardened', 1, '604AB95A7600B150', ['pw_battery_up', 'pw_energized'], 0),  # battery hardened
+    ('pw_cell_hardened', 'energy_cell_hardened', 1, '7FEE780F37A1322E', ['pw_powah_cell', 'pw_energized'], 0),  # cell hardened
+    ('pw_ender_up', 'ender_cell_hardened', 1, '331498A68D110F81', ['pw_energized'], 0),  # ender_cell hardened
+    ('pw_cable_hardened', 'energy_cable_hardened', 1, '029922AB09F8C76A', ['pw_cable_basic', 'pw_energized'], 0),  # cable hardened
+    ('pw_gate_hardened', 'ender_gate_hardened', 1, '5D594154819DD145', ['pw_cable_hardened', 'pw_energized'], 0),  # gate hardened
+    ('pw_magmator_hardened', 'magmator_hardened', 1, '6ED2F8A8DEED417D', ['pw_magmator_basic', 'pw_energized'], 0),  # magmator hardened
+    ('pw_gen_hardened', 'furnator_hardened', 1, '2AE17A935862BCBF', ['pw_gen_basic', 'pw_energized'], 0),  # furnator hardened
+    ('pw_thermo_hardened', 'thermo_generator_hardened', 1, '6230C6884B800689', ['pw_thermo_basic', 'pw_energized'], 0),  # thermo hardened
+    ('pw_reactor_hardened', 'reactor_hardened', 36, '05B0A7D0B991050F', ['pw_powah', 'pw_energized'], 0),  # reactor hardened
+    ('pw_solar_hardened', 'solar_panel_hardened', 1, '6C8148B3AE0A2222', ['pw_solar_basic', 'pw_energized'], 0),  # solar hardened
+    ('pw_battery_blazing', 'battery_blazing', 1, '79421463F01ED2D7', ['pw_battery_hardened', 'pw_blazing'], 0),  # battery blazing
+    ('pw_discharger_blazing', 'energy_discharger_blazing', 1, '13FDBA4BC4514F58', ['pw_blazing'], 1),  # discharger blazing
+    ('pw_hopper_blazing', 'energy_hopper_blazing', 1, '04811BA420B80046', ['pw_hopper_hardened', 'pw_blazing'], 1),  # hopper blazing
+    ('pw_transmitter_blazing', 'player_transmitter_blazing', 1, '1D80E6C3327AB376', ['pw_transmitter_up', 'pw_blazing'], 0),  # transmitter blazing
+    ('pw_ender_cell_blazing', 'ender_cell_blazing', 1, '564F731F0F3E5AEC', ['pw_blazing'], 0),  # ender_cell blazing
+    ('pw_cell_blazing', 'energy_cell_blazing', 1, '25088F06228F8561', ['pw_cell_hardened', 'pw_blazing'], 0),  # cell blazing
+    ('pw_cable_crystal', 'energy_cable_blazing', 1, '0C5936697C9B3716', ['pw_cable_hardened', 'pw_blazing'], 0),  # cable blazing
+    ('pw_gate_blazing', 'ender_gate_blazing', 1, '1F55B2FA187F63DD', ['pw_cable_crystal', 'pw_blazing'], 0),  # gate blazing
+    ('pw_magmator_blazing', 'magmator_blazing', 1, '0C7D0AB254DF8CF1', ['pw_magmator_hardened', 'pw_blazing'], 0),  # magmator blazing
+    ('pw_gen_blazing', 'furnator_blazing', 1, '323F7A0C4FAC28D0', ['pw_gen_hardened', 'pw_blazing'], 0),  # furnator blazing
+    ('pw_thermo_blazing', 'thermo_generator_blazing', 1, '44C1315098B9CF3F', ['pw_thermo_hardened', 'pw_blazing'], 0),  # thermo blazing
+    ('pw_reactor_crystal', 'reactor_blazing', 36, '6754612E9AD4B9C0', ['pw_reactor_hardened', 'pw_blazing'], 0),  # reactor blazing
+    ('pw_solar_blazing', 'solar_panel_blazing', 1, '7C34EED27A9737D4', ['pw_solar_hardened', 'pw_blazing'], 0),  # solar blazing
+    ('pw_discharger_niotic', 'energy_discharger_niotic', 1, '555566F1148F5229', ['pw_niotic'], 1),  # discharger niotic
+    ('pw_hopper_niotic', 'energy_hopper_niotic', 1, '5A8DE0C7D4F28E05', ['pw_hopper_blazing'], 1),  # hopper niotic
+    ('pw_transmitter_niotic', 'player_transmitter_niotic', 1, '2DD9994665799747', ['pw_transmitter_blazing'], 0),  # transmitter niotic
+    ('pw_battery_niotic', 'battery_niotic', 1, '03798EF7AB47BB3D', ['pw_battery_blazing'], 0),  # battery niotic
+    ('pw_ender_cell_niotic', 'ender_cell_niotic', 1, '1CCCA214865526F3', ['pw_niotic'], 0),  # ender_cell niotic
+    ('pw_cell_niotic', 'energy_cell_niotic', 1, '6EFB4BF8110F2712', ['pw_cell_blazing'], 0),  # cell niotic
+    ('pw_cable_niotic', 'energy_cable_niotic', 1, '68B604EF40198B8D', ['pw_cable_crystal', 'pw_niotic'], 0),  # cable niotic
+    ('pw_gate_niotic', 'ender_gate_niotic', 1, '584BD9A6F7594867', ['pw_cable_niotic'], 0),  # gate niotic
+    ('pw_magmator_niotic', 'magmator_niotic', 1, '03442045ED56068F', ['pw_magmator_blazing'], 0),  # magmator niotic
+    ('pw_gen_niotic', 'furnator_niotic', 1, '24EE138780C43447', ['pw_gen_blazing'], 0),  # furnator niotic
+    ('pw_thermo_niotic', 'thermo_generator_niotic', 1, '28EE8C172F9DF5C1', ['pw_thermo_blazing'], 0),  # thermo niotic
+    ('pw_reactor_niotic', 'reactor_niotic', 36, '0FFF2BEE5D8EBE12', ['pw_reactor_crystal'], 0),  # reactor niotic
+    ('pw_solar_niotic', 'solar_panel_niotic', 1, '39386F88CB38CF36', ['pw_solar_blazing'], 0),  # solar niotic
+    ('pw_cap_tiny', 'capacitor_basic_tiny', 1, '6D88C19F47D0D469', ['pw_paste'], 0),  # None None
+    ('pw_capacitor', 'capacitor_basic', 1, '66ECC26BC81D0093', ['pw_paste'], 0),  # None None
+    ('pw_battery_spirited', 'battery_spirited', 1, '63E57D2745D24761', ['pw_battery_niotic'], 0),  # battery spirited
+    ('pw_transmitter_spirited', 'player_transmitter_spirited', 1, '11F0D662FF4DC335', ['pw_transmitter_niotic'], 0),  # transmitter spirited
+    ('pw_hopper_spirited', 'energy_hopper_spirited', 1, '18B20F4F27F37197', ['pw_hopper_niotic'], 1),  # hopper spirited
+    ('pw_discharger_spirited', 'energy_discharger_spirited', 1, '0536D7B41964FE38', ['pw_spirited'], 1),  # discharger spirited
+    ('pw_ender_cell_spirited', 'ender_cell_spirited', 1, '486356E189081ADC', ['pw_spirited'], 0),  # ender_cell spirited
+    ('pw_cell_spirited', 'energy_cell_spirited', 1, '4449AD53BCE797E1', ['pw_cell_niotic'], 0),  # cell spirited
+    ('pw_cable_spirited', 'energy_cable_spirited', 1, '379EBE12E3F61679', ['pw_cable_niotic', 'pw_spirited'], 0),  # cable spirited
+    ('pw_gate_spirited', 'ender_gate_spirited', 1, '335927C2D234451A', ['pw_cable_spirited'], 0),  # gate spirited
+    ('pw_magmator_spirited', 'magmator_spirited', 1, '36B14701D95C3C21', ['pw_magmator_niotic'], 0),  # magmator spirited
+    ('pw_gen_top', 'furnator_spirited', 1, '5A7C92F05AF39FDB', ['pw_gen_niotic'], 0),  # furnator spirited
+    ('pw_thermo_spirited', 'thermo_generator_spirited', 1, '637A8E4BBF108417', ['pw_thermo_niotic'], 0),  # thermo spirited
+    ('pw_reactor_spirited', 'reactor_spirited', 36, '341486C9F277FEB7', ['pw_reactor_niotic'], 0),  # reactor spirited
+    ('pw_solar_spirited', 'solar_panel_spirited', 1, '760F80E1C273C0AD', ['pw_solar_niotic'], 0),  # solar spirited
+    ('pw_transmitter_nitro', 'player_transmitter_nitro', 1, '348FEC9A50C2E62E', ['pw_transmitter_spirited', 'pw_nitro'], 0),  # transmitter nitro
+    ('pw_discharger_nitro', 'energy_discharger_nitro', 1, '24510A5C98703C84', ['pw_nitro'], 1),  # discharger nitro
+    ('pw_hopper_nitro', 'energy_hopper_nitro', 1, '41DC771674A6C387', ['pw_hopper_spirited', 'pw_nitro'], 1),  # hopper nitro
+    ('pw_battery_nitro', 'battery_nitro', 1, '7EBA36EF1858F428', ['pw_battery_spirited', 'pw_nitro'], 0),  # battery nitro
+    ('pw_ender_cell_nitro', 'ender_cell_nitro', 1, '3B28A8BA318D438F', ['pw_nitro'], 0),  # ender_cell nitro
+    ('pw_cell_nitro', 'energy_cell_nitro', 1, '503CD7E104C8BA5D', ['pw_cell_spirited', 'pw_nitro'], 0),  # cell nitro
+    ('pw_cable_nitro', 'energy_cable_nitro', 1, '3CD1F9E00E33C6C9', ['pw_cable_spirited', 'pw_nitro'], 0),  # cable nitro
+    ('pw_gate_nitro', 'ender_gate_nitro', 1, '44F016F465082C55', ['pw_cable_nitro', 'pw_nitro'], 0),  # gate nitro
+    ('pw_magmator_nitro', 'magmator_nitro', 1, '4E67DE071FC9D80D', ['pw_magmator_spirited', 'pw_nitro'], 0),  # magmator nitro
+    ('pw_furnator_nitro', 'furnator_nitro', 1, '129F6987E144B048', ['pw_gen_top', 'pw_nitro'], 0),  # furnator nitro
+    ('pw_thermo_nitro', 'thermo_generator_nitro', 1, '71D08D1C8EA4C631', ['pw_thermo_spirited', 'pw_nitro'], 0),  # thermo nitro
+    ('pw_reactor_nitro', 'reactor_nitro', 36, '61DCECE1FC38E151', ['pw_reactor_spirited', 'pw_nitro'], 0),  # reactor nitro
+    ('pw_solar_nitro', 'solar_panel_nitro', 1, '393050BEA59F1570', ['pw_solar_spirited', 'pw_nitro'], 0),  # solar nitro
+    ('pw_rod_starter', 'energizing_rod_starter', 1, '1C273D9E046FD18A', ['pw_paste', 'pw_cap_tiny'], 0),  # rod starter
+    ('pw_rod_up', 'energizing_rod_basic', 1, '4EA69350A20B0B5B', ['pw_rod_starter', 'pw_capacitor'], 0),  # rod basic
+    ('pw_rod_hardened', 'energizing_rod_hardened', 1, '09DECE4E7977D852', ['pw_rod_up', 'pw_energized'], 0),  # rod hardened
+    ('pw_blazing_gear', 'energizing_rod_blazing', 1, '172B0296F87D6725', ['pw_rod_hardened', 'pw_blazing'], 0),  # rod blazing
+    ('pw_niotic_gear', 'energizing_rod_niotic', 1, '270B5EA3E710A209', ['pw_blazing_gear', 'pw_niotic'], 0),  # rod niotic
+    ('pw_spirited_gear', 'energizing_rod_spirited', 1, '69E572EA56B3B31D', ['pw_niotic_gear', 'pw_spirited'], 0),  # rod spirited
+    ('pw_nitro_gear', 'energizing_rod_nitro', 1, '2C9EE7BE03767976', ['pw_spirited_gear', 'pw_nitro'], 0),  # rod nitro

@@ -43,19 +43,40 @@ LAYOUT = {
     # Token shop (docs/research/shop_brief.md): buy more of anything you've already made yourself. Its entry page
     # (market) sits in the top area; the shelves are this group.
     "shop": ["shop_materials", "shop_gear", "shop_world"],
-    "gear": ["tools", "harvest", "apotheosis", "relics", "qol"],
-    "storage": ["storage", "ae2"],
-    "logistics": ["logic"],
+    "gear": ["tools", "harvest", "apotheosis", "relics", "artifacts", "silentgear", "qol"],
+    "storage": ["storage", "ae2", "eae"],
+    "logistics": ["logic", "integrated", "pylons"],
     "resources": ["farming", "mystical", "factory"],   # factory = mob data (HNN) + big crafting, as ATM10 files HNN
     "tech": ["create", "mekanism", "mekanism_power", "justdirethings"],
     "chem": ["periodic"],
-    "energy": ["power", "powah"],
-    "magic": ["ars", "occultism", "neovitae", "projecte"],
+    "energy": ["power", "generators", "powah"],
+    "magic": ["ars", "occultism", "neovitae", "apothic_enchanting", "projecte"],
     "world": ["worlds", "explore", "undergarden", "twilight", "deeperdarker", "allthemodium", "space"],
 }
 # Sidebar titles that differ from the chapter file's own title (ATM10-style names for the top pages).
 TITLES = {"building": "Building Tips", "hunting": "Bounty Board", "tips": "Tips and Tricks",
-          "mekanism_power": "Mekanism: Power"}
+          "mekanism_power": "Mekanism: Power", "worlds": "The End"}  # worlds.py holds only the End now
+# Which ATM10 chapter each of our pages mirrors (user decision 2026-10-20: quest-for-quest where we have the mod,
+# the same page shapes, pictures in ATM10's image spots). Our chapter key -> ATM10 chapter file stem (its
+# config/ftbquests/quests/chapters/<stem>.snbt; the folder is ATM10_BOOK in tools/layout.py). Geometry and
+# requirements only: ATM10's text and image files are All Rights Reserved and never copied. A writer can set
+# Chapter(mirror="...") in the chapter file instead; that wins over this map. The "mirror" layout motif (tools/
+# layout.py) is the default wherever a target exists; Q(mirror="<16 hex id>") names the exact ATM10 quest.
+MIRROR = {
+    "storage": "storage", "ae2": "applied_energistics_2", "logic": "basic_logistics", "power": "basic_power",
+    "powah": "powah", "create": "create", "justdirethings": "justdirethings", "mekanism": "mekanism",
+    "mekanism_power": "mekanism_reactors", "ars": "ars_nouveau", "occultism": "occultism", "neovitae": "neo_vitae",
+    "apotheosis": "apotheosis_gear", "relics": "relics", "tools": "basic_tools", "harvest": "basic_armor",
+    "farming": "food_and_farming", "mystical": "elmystical_agriculturerr", "factory": "hostile_neural_networks",
+    "twilight": "twilight_forest", "undergarden": "undergarden", "deeperdarker": "deeper_and_darker",
+    "allthemodium": "allthemodium", "building": "building_tips", "hunting": "bounty_board",
+    "tips": "tips_and_tricks", "welcome": "welcome", "start": "mainquestline_part_1",
+    # chapters added in the v14 round (their files also set Chapter(mirror=...), which wins)
+    "eae": "extended__advanced_ae", "artifacts": "artifacts", "silentgear": "silent_gear", "pylons": "pylons",
+    "apothic_enchanting": "apothic_enchanting",
+    # split out of logic and power on 2026-10-20 (keys unchanged; the files also set Chapter(mirror=...))
+    "integrated": "integrated_dynamics", "generators": "generators",
+}
 # Chapter files that don't exist yet are skipped quietly, so new chapters can be added one at a time.
 _QDIR = pathlib.Path(__file__).resolve().parent / "quests"
 ORDER = [k for g in LAYOUT.values() for k in g if (_QDIR / f"{k}.py").exists()]
@@ -70,6 +91,8 @@ PAGES = [importlib.import_module(f"quests.{k}").CHAPTER for k in ORDER]  # one p
 for _c in PAGES:
     _c.group = next(g for g, ks in LAYOUT.items() if _c.key in ks)
     _c.title = TITLES.get(_c.key, _c.title)
+    if _c.mirror is None:  # Chapter(mirror=) in the file wins; else the MIRROR map; else no mirror target
+        _c.mirror = MIRROR.get(_c.key)
     normalize_milestones(_c)  # capstone = 2.0 gear, section milestone = 1.5 hexagon (tools/layout.py)
 
 # Automatic layout style per chapter (tools/layout.py; manual chapters ignore it). Picked by looking at
@@ -82,8 +105,28 @@ for _c in PAGES:
 #               (kept for building: a page of independent hubs, where the comb tangles);
 #   "winding", "molecule", "tree", "grid", "spine": older motifs (v11/v12), kept for comparison and LAYOUT_STYLE.
 # Per chapter on 2026-10-19 (comb vs the old motif): every auto page is comb except building (radial).
-STYLES = {"building": "radial", "tips": "grid"}
+#   "mirror":   v14 (2026-10-20, user decision): the page mirrors its ATM10 chapter (MIRROR above / Chapter(mirror=)):
+#               matched quests sit at the ATM10 quest's position, unmatched ones in free cells by their deps, and
+#               ATM10's image spots become our pictures (tools/build_pictures.py). The default wherever a mirror
+#               target exists and its ATM10 file is present; STYLES below still wins (building stays radial only if
+#               that beats the mirror: checked 2026-10-20, the mirror wins, so building is a mirror page too).
+#   2026-10-20 later (user: "lets make it comb shaped as we have before for the quests if it gets to cluttered just
+#   make it another chapter"): every auto page is a comb again. The mirror motif and the Q(mirror=)/MIRROR data stay
+#   (ATM10's quest-for-quest content is kept); set USE_MIRROR = True to draw mirror pages again.
+STYLES = {"tips": "grid"}
 DEFAULT_STYLE = "comb"
+USE_MIRROR = False
+
+
+def style_of(chapter):
+    """The layout motif of a chapter: STYLES by key, else (only with USE_MIRROR) "mirror" where its ATM10 chapter
+    is on disk, else comb."""
+    if chapter.key in STYLES:
+        return STYLES[chapter.key]
+    import layout
+    if USE_MIRROR and getattr(chapter, "mirror", None) and layout.load_mirror(chapter.mirror):
+        return "mirror"
+    return DEFAULT_STYLE
 # Section shapes on a page whose motif otherwise draws plain trees: "molecule" rings (where a section fits a ring).
 # Only the winding/radial/molecule motifs use it (none at the moment).
 BLOCKS = {}
@@ -93,9 +136,9 @@ for _kv in filter(None, os.environ.get("LAYOUT_STYLE", "").split(",")):
     STYLES[_k], _, _b = _v.partition("+")
     BLOCKS[_k] = _b or None
 import layout as _layout  # noqa: E402
-# Comb pages add a quest link for every quest whose deps are all in other chapters; those linked quests then never
-# get hide flags (tools/layout.py _ext_targets), like shared_quests.
-_layout.COMB_PAGES = {c.key for c in PAGES if c.layout != "manual" and STYLES.get(c.key, DEFAULT_STYLE) == "comb"}
+# Comb and mirror pages add a quest link for every quest whose deps are all in other chapters; those linked quests
+# then never get hide flags (tools/layout.py _ext_targets), like shared_quests.
+_layout.COMB_PAGES = {c.key for c in PAGES if c.layout != "manual" and style_of(c) in ("comb", "mirror")}
 
 
 # --- "Mod = category" split (v12, 2026-10-19; SWITCHED OFF by the ATM10-style regroup the same day) -------------
@@ -109,49 +152,30 @@ JOIN = {"mekanism_power": "mekanism"}   # page -> page whose category its chapte
 SPLIT_MIN, SPLIT_MAX = 5, 25            # a section under SPLIT_MIN quests joins a neighbour; merges stay <= SPLIT_MAX
 PAGE_TITLES = {}                        # category title when the page title doesn't read well as one
 # Chapter names and subtitles, by the chapter's root quest (the quest the layout names a section after); icon is
-# optional (default: the root quest's item). A chapter not listed here keeps the layout's auto title.
+# optional (default: the root quest's item). A chapter not listed here keeps the layout's auto title. Only used when
+# SPLIT_TABS splits a group; pruned 2026-10-20 to the roots a split of the current pages would still produce.
 CHAPTER_TITLES = {
     # Gear and Comfort (tools)
     "tc_sg_repair": ("Silent Gear", "Repair kits, parts, grading and jewellery"),
-    "tc_crimson": ("Nether Alloys", "Crimson iron, the Alloy Forge and armour from parts"),
     "tc_scuba": ("Mekanism Gear", "Paxels, the Disassembler, scuba gear and the MekaSuit"),
     "tc_jetpack": ("Flight and Gadgets", "Iron Jetpacks, the Angel Ring and handy gadgets"),
     # Tools, Armour and Harvest Tiers (harvest)
     "hv_intro": ("Stone and Bronze", "Why ores need a better pick: the early tiers"),
     "hv_iron": ("Iron and Diamond", "Hard ores, diamond tools and the scratch test"),
     "hv_steel": ("Steel and Obsidian", "The diamond tier without diamonds, and beyond"),
-    "hv_netherite": ("Netherite and Beyond", "Netherite gear, azure silver and armour for pets"),
     # Storage and Logistics (storage)
     "s_barrel": ("Sophisticated Storage", "Barrels, chests, tiers and upgrades"),
-    "s_drawers": ("Drawers and Terminals", "Functional Storage drawers and Tom's networks"),
-    "s_furnace": ("Iron Furnaces", "Faster furnaces, one metal at a time"),
-    "s_pipes": ("Pipes and Augments", "Pipez, LaserIO and furnace augments"),
-    "sto_bp_gold": ("Backpack Tiers", "Gold, diamond and netherite backpacks"),
-    "sto_bp_crafting": ("Backpack Upgrades", "Crafting, smelting, tanks and more on your back"),
-    "sto_vanilla": ("Vanilla Storage", "Barrels, hoppers, ender chests and rails"),
     # Power
-    "pw_iron_gen": ("Generators", "Your first power: fuel, sun, wind and diesel"),
-    "pw_heat": ("Mekanism Power", "Heat generators, energy cubes, induction and fusion"),
     "pw_mi_storage": ("Steam and Crystals", "EU storage, steam turbines and Powah crystals"),
-    # Powah!
-    "pw_paste": ("Dielectric Basics", "Paste, rods, casings and the first generators", "powah:dielectric_paste"),
-    "pw_cable": ("Cables and Cells", "Moving and storing FE"),
-    "pw_orb": ("The Energizing Orb", "Charging crystals and ender networks"),
-    "pw_cap_hardened": ("The Hardened Tier", "Hardened capacitors, cells and reactor"),
-    "pw_blazing_gear": ("Crystal Tiers", "Blazing, niotic, spirited and nitro"),
     # Farming and Food
     "f_knife": ("Farmer's Delight", "Knives, cutting boards and new crops"),
-    "f_compost": ("Cooking Pot and Soil", "The cooking pot, the stove and rich soil", "farmersdelight:cooking_pot"),
-    "f_meal": ("Meals and Fertilizer", "Proper meals, feasts and NPK fertilizer"),
     "fd_bees": ("Gardens and Bees", "Bees, kitchen gardens and odd orchards"),
     # Quality of Life
     "ql_start": ("Comfort First", "Graves, backpacks, teams and other comforts"),
     "q_waystone": ("Waystones and Shortcuts", "Travel, the all-in-one manual and crafting sticks"),
-    "ql_ultimine": ("Ultimine and Enchanting", "Mining in bulk, zoom, enchanting and anvils"),
     "ut_sticks": ("Utilitarian", "Shortcuts for building and moving things"),
     "ut_snad": ("Odds and Ends", "Snad, clocks, mufflers and pylons"),
     # Building and Decoration
-    "bd_start": ("Building Basics", "Macaw's blocks, lamps and laboratory decor"),
     "bd_rocks": ("Gadgets and Stone", "Building gadgets and every kind of rock"),
     "bd_jar": ("Furniture and Fun", "Framed blocks, seats, jars and soap"),
     # The Periodic Table
@@ -162,74 +186,27 @@ CHAPTER_TITLES = {
     # Mekanism (mekanism + mekanism_power)
     "mk2_intro": ("Factories and Upgrades", "The configurator, factories, upgrades and infusion"),
     "mk2_tablet": ("Alloys and Teleporters", "Reinforced and atomic alloys, teleporters and the miner"),
-    "mk2_adv_circuit": ("Circuits, QIO and Tanks", "Control circuits, QIO storage and portable tanks"),
-    "mk2_dynamic_tank": ("The Chemical Plant", "Reaction chamber, substrate, HDPE and the Meka-Tool"),
-    "mk2_cables": ("Logistics and Armour", "Cables, transporters, sorters and armour"),
     "mkp_intro": ("Power and Big Machines", "Boilers, turbines, fusion and More Machine"),
-    "mkp_induction_adv": ("Induction and Extras", "Induction cells, Mekanism Extras and naquadah"),
     # Mob Data and Big Crafting (factory)
-    "mf_learner": ("Mob Data", "Deep learners, data models and loot fabrication"),
     "mf_components": ("Extended Crafting", "Black iron, bigger tables and crafting cores"),
     "mf_compact": ("Compact Machines", "Rooms inside blocks, and cake that teleports"),
     # Automation and Logic
     "lg_computer": ("Computers and Autocrafting", "CC: Tweaked, peripherals and a first chemical line"),
-    "lg_menril": ("Integrated Dynamics", "Menril, SFM programs and logistics networks"),
-    "lg_id_store": ("Variables and Tunnels", "Variable stores, tunnels, terminals and crafting"),
-    "lg_laser": ("LaserIO", "Cards for items, fluids, gases and energy"),
-    "lg_pipez_types": ("Pipez and Menril", "Menril trees, the squeezer and Pipez for everything"),
     # The Mechanical Age (create)
-    "cr_alloy": ("The Andesite Age", "Andesite alloy, casings and a hand crank"),
     "cr_power": ("Contraptions", "Bearings, pistons, pulleys and drills"),
-    "cr_cogs": ("Gears and Windmills", "Ratios, gauges, shifting and chain drives"),
     "cr_belts": ("Belts and Logistics", "Millstones, saws, depots, funnels and vaults"),
-    "cr_press": ("Pressing and Fluids", "The press, pipes, spouts, steam and fans"),
-    "cr_mixer": ("Brass and Packages", "Heated mixing, brass, packagers and stock keeping"),
-    "cr_precision": ("Precision and Electricity", "Arms, alternators and Create: New Age"),
-    "cr_xp": ("Deployers and Experience", "Deployers, crushing wheels and liquid experience"),
-    "cr_sturdy": ("Trains", "Sturdy sheets, tracks, stations and signals"),
-    # Just Dire Things
-    "jdt_goo": ("Feeding the Goo", "Primordial goo, coal and a first generator"),
-    "jdt_ferricore": ("Ferricore", "Ferricore tools, bows and abilities"),
-    "jdt_blazegold": ("Blazegold", "Blazebloom, fuels, polymorphic fluid and portals"),
-    "jdt_celestigem": ("Celestigem", "VoidShimmer, the paxel and a built-in elytra"),
-    "jdt_eclipse": ("Eclipse Alloy", "Time crystals, the paradox machine and flight"),
-    "jdt_armor": ("Machines and Armour", "Ferricore armour, breakers, clickers and collectors"),
-    "jdt_player_stuff": ("Wands and Utilities", "Blazejet, voidshift and the player accessor"),
     # Applied Energistics
     "ae_certus": ("Certus Quartz", "Sky stone, charged certus and fluix"),
-    "ae_presses": ("Processors", "Inscriber presses, processors and upgrade cards"),
-    "s_ae_drive": ("The ME Network", "Drives, channels, P2P and wireless access"),
     "ae_condenser": ("Quantum Tech", "The condenser, quantum computer and armour cards"),
     "s_ae_cell": ("Storage Cells", "Cells, MEGA cells and flux storage"),
-    "ae_cell_tiers": ("Autocrafting", "Bigger components, autocrafting and gas storage"),
-    "ae_entro": ("Entro Crystals", "Entro, crystal assemblers and the circuit slicer"),
-    "s_exae": ("ExtendedAE", "Assembler matrix, extended interfaces and buses"),
-    "ae_packaged_ex": ("Bigger Crafting", "Packaged crafting, co-processors and interfaces"),
     # Ars Nouveau
-    "m_book": ("Novice Spell Book", "Archwood, essences and the first spells"),
-    "m_scribe": ("Source and Glyphs", "The scribe's table, source jars and sourcelinks"),
-    "m_apparatus": ("Enchanting Apparatus", "Mage armour, magebloom and helpful spirits"),
     "m_brazier": ("Rituals", "The ritual brazier, archmage book and familiars"),
     "ars_storage": ("Storage and Charms", "Storage lectern, turrets, charms and rings"),
     "ars_fire_essence": ("Elemental Essences", "Fire, earth, water and the caster's tools"),
-    "ars_anima": ("Mastery", "Anima, foci and elemental armour"),
-    # Occultism
-    "m_datura": ("Spirit Sight", "Datura, spiritfire and your first foliot"),
-    "oc_gold_chalk": ("Chalks and Possession", "Golden chalk, possessed mobs and research"),
-    "oc_djinni": ("Djinni and Storage", "Djinni, spirit miners and dimensional storage"),
-    "oc_afrit": ("Afrit and Marid", "The strongest spirits and the rainbow chalk"),
     # Neo Vitae
     "nv_altar": ("The Blood Altar", "Ara Vitae, the first orb, sigils and runes"),
-    "nv_magician": ("Rituals", "The Veneficus orb, ritual stones and sentient armour"),
-    "nv_shard": ("Blood Shards", "Shards, hellforged metal and the highest orbs"),
-    # Apotheosis
-    "m_gems": ("Gems and Spawners", "Gem dust, bottled spawners and runes"),
-    "m_shelves": ("Enchanting", "Better bookshelves, infusion and the library"),
-    "m_simple_reforge": ("Reforging", "Salvage, rarity materials and spawner upgrades"),
-    "m_gem_cut": ("Gem Cutting", "Gems, sockets, augments and gateways"),
     # Relics and Artifacts
     "m_reliquary": ("Reliquary", "Alkahestry, mob charms and odd relics"),
-    "rl_artifacts": ("Artifacts and Mimics", "Relics that grow with use, and mimic treasure"),
     # Equivalent Exchange
     "pe_stone": ("The Philosopher's Stone", "Transmutation, covalence dust and fuels"),
     "pe_dm": ("Dark Matter", "Dark and red matter tools and armour"),
@@ -243,25 +220,9 @@ CHAPTER_TITLES = {
     "ex_fortress": ("The Nether", "Fortresses, bastions and fossils", "minecraft:nether_bricks"),
     "ex_bio_chalk": ("Biomes", "Chalk cliffs, hot springs, wetlands and more", "minecraft:cherry_sapling"),
     # The Undergarden
-    "ug_arrival": ("Arrival", "Depthrock, dark woods, mushrooms and beasts"),
-    "ug_cloggrum_tools": ("Cloggrum and Froststeel", "The first metals of the dark"),
-    "ug_cloggrum_armor": ("The Forgotten", "Cloggrum armour, the depths and forgotten gear"),
     "ug_rogdorium": ("Utherium", "Rogdorium, the infuser and utherium gear"),
     # The Twilight Forest
     "tf_oak": ("Into the Twilight", "Magic trees, steeleaf, ironwood and the questing ram"),
-    "tf_courtyard": ("The Naga and the Lich Tower", "The grounds of the first two bosses"),
-    "tf_drying_rack": ("Maps and Charms", "Magic maps, hollow hills, tanning and charms"),
-    "w_lich": ("The Frozen North", "The Lich, the Alpha Yeti and the Snow Queen"),
-    "tf_labyrinth": ("The Labyrinth", "The mazebreaker, the minoshroom and uncrafting"),
-    "tf_hydra_lair": ("The Hydra", "Fiery metal, knightmetal and the hydra"),
-    "tf_stronghold": ("The Dark Tower", "Knight phantoms, carminite and the Ur-Ghast"),
-    "tf_troll_cave": ("The Highlands", "Troll caves, giants and the final castle"),
-    # Deeper and Darker
-    "dd_stones": ("The Otherside", "Sculk stone, echo trees and Otherside creatures"),
-    "dd_carapace": ("Resonarium and the Warden", "Resonarium, warden carapace and sculk gear"),
-    # Metals of Legend (allthemodium)
-    "atm_raw": ("Allthemodium", "Reducing the ore, and the Mining dimension"),
-    "atm_pick": ("Vibranium and Unobtainium", "The higher metals and their alloys"),
     # Space
     "w_desh": ("The Moon and Mars", "Desh, ostrum, oxygen and the rover"),
     "w_suit": ("Venus and Mercury", "Heat suits, calorite and the hot planets"),
@@ -275,11 +236,6 @@ CHAPTER_TITLES = {
     "hn_wither_skel_1": ("Skulls and Giants", "Wither skeletons, Twilight beasts and the Wither",
                          "minecraft:wither_skeleton_skull"),
     "hn_sculk": ("Strange Creatures", "Shulkers, Undergarden beasts, sculk and aliens", "minecraft:shulker_shell"),
-    # Mystical Agriculture
-    "f_altar": ("Infusion and Souls", "The altar, soulium and soul jars"),
-    "f_prosperity": ("Prosperity", "Prudentium, agglomeratio and essence gear"),
-    "f_tertium": ("Higher Seeds", "Tertium, imperium, supremium and awakening"),
-    "ma_seeds": ("Inferium Farming", "Seeds, farmland, fertilizer and watering cans"),
 }
 
 
@@ -364,7 +320,7 @@ def _split(pages):
     taken = {c.key for c in pages}
     for tab in SPLIT_TABS:
         for page in [c for c in pages if c.group == tab]:
-            page.style = STYLES.get(page.key, DEFAULT_STYLE)
+            page.style = style_of(page)
             parts = _split_page(page)
             if len(parts) < 2:
                 groups.setdefault(tab, GROUPS[tab])
@@ -405,7 +361,7 @@ def _split(pages):
                     lks += [l for l in page.links if not any(l[0] in q.deps for q in page.quests)]
                 ch = Chapter(key, title, icon, [sub or title], SIDE, quests, links=lks, layout=page.layout)
                 ch.group, ch.page, ch.page_title, ch.headers = gkey, page.key, groups[gkey], False
-                ch.style = STYLES.get(page.key, DEFAULT_STYLE)
+                ch.style = style_of(page)
                 if ch.style == "winding":
                     ch.style = "tree"   # a winding page's chapters are short: plain trees
                 elif ch.style == "radial" and n:
@@ -429,13 +385,142 @@ for _c in PAGES:  # the layout finds sections on pruned deps (as apply() does), 
     _c.pruned_deps = prune_transitive(_c.quests)
     _c.home_of = {q.key: c.key for c in PAGES for q in c.quests}
     _c.chapter_titles = {c.key: c.title.split(". ", 1)[-1] for c in PAGES}
+# --- Page splits (2026-10-20, user: "if it gets to cluttered just make it another chapter no big deal") ---------
+# A mod page too big or tangled for one comb (over about 35 x 22 cells, more than ~3 crossings, many lone quests,
+# a low tools/layout_lint.py score) becomes 2 or more chapters in the same group, right after it, cut along its
+# layout sections in progression order. Quest keys never change (only which chapter shows a quest); the first
+# chapter keeps the page's key, the others are "<page>_<slug of their title>". Each gets its own banner (the build
+# writes one per chapter), a distinct icon, the page's token rate, and quest links to whatever it needs from its
+# siblings (so its first quest links back to the parent). Only mod pages: the main path, shop and top pages stay.
+# Page key -> the chapters after the first: (key suffix, sidebar title, subtitle), named after the sections they
+# hold (checked against the build, 2026-10-20); their number sets the split. The cut is chosen by the build (see
+# _split_pages): if a page's sections change a lot, check the names still fit (the sections are listed in the
+# gallery: test/build_quest_preview.py --gallery).
+SPLIT_PAGES = {
+    "mekanism": [("machines", "Mekanism: Ore Lines and Big Builds", "Machines, the 2x to 5x ore lines and multiblocks"),
+                 ("logistics", "Mekanism: Logistics and Gadgets", "Pipes, storage, upgrades, chemical machines, gadgets")],
+    "mekanism_power": [("fusion", "Mekanism: Fusion and the MekaSuit", "Fusion, antimatter, modules and the MekaSuit")],
+    "create": [("contraptions", "Create: Contraptions and Trains", "Kinetics, contraptions and trains")],
+    "storage": [("backpacks", "Storage: Backpacks and Furnaces", "Sophisticated Backpacks and Iron Furnaces")],
+    "harvest": [("armour_sets", "Armour Sets and Refined Obsidian", "Every armour set, and refined obsidian")],
+    "mystical": [("crops", "Mystical Agriculture: Crops and Mob Seeds", "Tier 1 to 4 crops and the mob seeds")],
+    "justdirethings": [("gadgets", "Just Dire Things: Armour and Gadgets", "Armour, tool and armour upgrades, gadgets")],
+    "powah": [("higher_tiers", "Powah: Niotic to Nitro", "The niotic, spirited and nitro tiers")],
+    "ae2": [("autocrafting", "AE2: Autocrafting and Cells", "Autocrafting, storage cells, wireless and the condenser")],
+    "ars": [("rituals", "Ars Nouveau: Rituals and Glyphs", "Rituals and the tier 2 and 3 glyphs"),
+            ("elemental", "Ars Nouveau: Elemental and Helpers", "Ars Elemental, essences, the Wilden and helpers")],
+    "undergarden": [("biomes", "Undergarden: Biomes and Utherium", "The biomes below, gathering and utherium tools")],
+    "twilight": [("progression", "Twilight Forest: The Labyrinth and Beyond",
+                  "The labyrinth, hydra, dark tower, highlands and the final plateau")],
+}
+
+
+def _split_pages(chapters):
+    """Split the pages in SPLIT_PAGES (see above). Returns the new chapter list (sidebar order)."""
+    from questlib import Chapter
+    import layout
+    global SPLIT_MIN, SPLIT_MAX
+    out, taken = [], {c.key for c in chapters}
+    for page in chapters:
+        extra = SPLIT_PAGES.get(page.key) or []
+        n = len(extra) + 1
+        if n < 2 or page.layout == "manual":
+            out.append(page)
+            continue
+        page.style = style_of(page)
+        keep_min, keep_max = SPLIT_MIN, SPLIT_MAX
+        SPLIT_MIN, SPLIT_MAX = 6, 10 ** 6
+        try:
+            parts = _split_page(page)  # sections, small ones merged, in progression order
+        finally:
+            SPLIT_MIN, SPLIT_MAX = keep_min, keep_max
+        if len(parts) < n:
+            out.append(page)
+            continue
+        # n chunks of consecutive parts: the biggest chunk small, and few deps between chunks (each needs a quest
+        # link, and links bring lines that cross)
+        import itertools
+        sizes = [len(p_["members"]) for p_ in parts]
+        pbyk = {q.key: q for q in page.quests}
+        part_of = {k: i for i, p_ in enumerate(parts) for k in p_["members"]}
+        fan = {}
+        for q in page.quests:
+            for d in q.deps:
+                fan[d] = fan.get(d, 0) + 1
+        best = None
+        for cuts in itertools.combinations(range(1, len(parts)), n - 1):
+            bounds = (0,) + cuts + (len(parts),)
+            chunk = {i: j for j in range(n) for i in range(bounds[j], bounds[j + 1])}
+            worst = max(sum(sizes[bounds[j]:bounds[j + 1]]) for j in range(n))
+            # a hub that ends up linked from a sibling chapter keeps no hide flags (FTB applies them to every
+            # button of a quest), so its whole fan stays drawn: cutting below a hub costs by its fan-out
+            across = sum(1.0 + fan.get(d, 0) / 3 for _, d in {(chunk[part_of[k]], d) for k in part_of
+                         for d in pbyk[k].deps if d in part_of and chunk[part_of[d]] != chunk[part_of[k]]})
+            if min(sum(sizes[bounds[j]:bounds[j + 1]]) for j in range(n)) < 12:
+                continue  # no tiny chapters
+            cost = worst + 1.5 * across
+            if best is None or cost < best[0]:
+                best = (cost, bounds)
+        if best is None:
+            out.append(page)
+            continue
+        bounds = best[1]
+        chunks = [[k for p_ in parts[bounds[j]:bounds[j + 1]] for k in p_["members"]] for j in range(n)]
+        home = {k: j for j, ks in enumerate(chunks) for k in ks}
+        byk = {q.key: q for q in page.quests}
+        all_q, all_l = list(page.quests), list(page.links)
+        used_icons = {page.icon}
+        subs = []
+        for j in range(n):
+            quests = [q for q in all_q if home.get(q.key) == j]
+            lks = [l for l in all_l if any(l[0] in q.deps for q in quests)]
+            if j == 0:
+                ch = page
+                ch.quests = quests
+                ch.links = lks + [l for l in all_l if not any(l[0] in q.deps for q in all_q)]
+            else:
+                suffix, title, sub = extra[j - 1]
+                key = f"{page.key}_{suffix}"
+                while key in taken:
+                    key += "_2"
+                taken.add(key)
+                icon = None
+                for k in chunks[j]:
+                    icon = _icon_of(byk[k])
+                    if icon and icon not in used_icons:
+                        break
+                icon = icon or page.icon
+                used_icons.add(icon)
+                ch = Chapter(key, title, icon, [sub], page.group, quests, links=lks, layout=page.layout,
+                             mirror=page.mirror)
+                ch.group = page.group
+            ch.page, ch.split_of = page.key, page.key
+            ch.style = style_of(page)
+            subs.append(ch)
+        out += subs
+    # Every quest a split chapter needs from a sibling is shown there as a quest link.
+    home = {q.key: c for c in out for q in c.quests}
+    for c in out:
+        if not getattr(c, "split_of", None):
+            continue
+        for q in c.quests:
+            for d in q.deps:
+                h = home.get(d)
+                if h is not None and h is not c and getattr(h, "split_of", None) == c.split_of                         and all(d != l[0] for l in c.links):
+                    c.links.append((d, 0, 0))
+    return out
+
+
 CHAPTERS, GROUPS = _split(PAGES)
+CHAPTERS = _split_pages(CHAPTERS)
+_layout.COMB_PAGES |= {c.key for c in CHAPTERS if c.layout != "manual" and c.style in ("comb", "mirror")}
+_layout.SPLIT_OF = {c.key: c.split_of for c in CHAPTERS if getattr(c, "split_of", None)}
 _HOME = {q.key: c.key for c in CHAPTERS for q in c.quests}
 _TITLES = {c.key: c.title.split(". ", 1)[-1] for c in CHAPTERS}
 _QUESTS = {q.key: q for c in CHAPTERS for q in c.quests}
 for _c in CHAPTERS:
     if not getattr(_c, "page", None):  # split chapters got their style from their page in _split
-        _c.style = STYLES.get(_c.key, DEFAULT_STYLE)
+        _c.style = style_of(_c)
     _c.block_kind = BLOCKS.get(getattr(_c, "page", None) or _c.key)
     _c.home_of, _c.chapter_titles = _HOME, _TITLES  # names loose groups after the chapter they follow on from
     # Every chapter's redundant deps are dropped up front (layout.prune_transitive; what players must do doesn't
@@ -449,8 +534,12 @@ def _linked_elsewhere():
     (the deps in other chapters of its first spine quest, as tools/layout.py adds them)."""
     from layout import _graph, _spine
     out = set()
+    split_of = {c.key: getattr(c, "split_of", None) for c in CHAPTERS}
     for c in CHAPTERS:
-        out |= {lk for lk, _, _ in c.links if _HOME.get(lk) != c.key}
+        # a link to a sibling chapter of the same split page doesn't count: hiding a hub's fan there too (FTB
+        # applies a quest's flags to all its buttons) is better than leaving the whole fan drawn on its own page
+        out |= {lk for lk, _, _ in c.links if _HOME.get(lk) != c.key
+                and not (split_of[c.key] and split_of.get(_HOME.get(lk)) == split_of[c.key])}
         if c.layout != "manual" and c.quests:
             byk, idx, parents, children, order = _graph(c.quests)
             G = {"byk": byk, "idx": idx, "parents": parents, "children": children, "order": order,

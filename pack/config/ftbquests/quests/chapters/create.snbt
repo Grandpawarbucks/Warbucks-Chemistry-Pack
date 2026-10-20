@@ -12,12 +12,12 @@
 	quests: [
 		{
 			id: "026C969E02786C1B"
-			x: 2.0d
+			x: 6.0d
 			y: 0.0d
-			shape: "rsquare"
-			size: 1.0d
+			shape: "gear"
+			size: 2.0d
 			dependencies: [
-				"1C5E43BCEDA7593F"
+				"0A788BCBC546D33C"
 			]
 			tasks: [
 				{
@@ -27,7 +27,7 @@
 						id: "create:andesite_alloy"
 						count: 1
 					}
-					count: 8L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -41,14 +41,19 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 1
+						count: 2
 					}
+				}
+				{
+					id: "56D48B6821DCBF18"
+					type: "random"
+					table_id: 2521071289652623958L
 				}
 			]
 		}
 		{
 			id: "4075A74B2774D3BD"
-			x: 4.0d
+			x: 10.0d
 			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
@@ -63,7 +68,7 @@
 						id: "create:andesite_casing"
 						count: 1
 					}
-					count: 4L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -83,170 +88,23 @@
 			]
 		}
 		{
-			id: "3B8CA867BEED2744"
-			x: 8.0d
-			y: 0.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"4075A74B2774D3BD"
-			]
-			tasks: [
-				{
-					id: "03E62F27FCD49183"
-					type: "item"
-					item: {
-						id: "create:shaft"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "36030632A3DA10BE"
-					type: "item"
-					item: {
-						id: "create:cogwheel"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "244339BEDF0F65E6"
-					type: "item"
-					item: {
-						id: "create:water_wheel"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "450AF3C592DAAB11"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "5B6960153697B6F0"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "730C4B4582649D81"
-			x: 12.0d
-			y: 0.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"3B8CA867BEED2744"
-			]
-			tasks: [
-				{
-					id: "4A08E37336C6D948"
-					type: "item"
-					item: {
-						id: "create:large_cogwheel"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "00869E26B8A90D2C"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "16C6FD9AC82DFF99"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "744DE466E8633CF3"
-			x: 16.0d
-			y: 0.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"730C4B4582649D81"
-			]
-			tasks: [
-				{
-					id: "61CA71D891D18E67"
-					type: "item"
-					item: {
-						id: "create:windmill_bearing"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "5AF1852515CF4CC3"
-					type: "item"
-					item: {
-						id: "ftbfiltersystem:smart_filter"
-						count: 1
-						components: {
-							"ftbfiltersystem:filter": "or(item(create:white_sail)item(create:sail_frame))"
-						}
-					}
-					count: 8L
-				}
-			]
-			rewards: [
-				{
-					id: "3BFF979161E5E909"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "54AC13F8BFD8EABD"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "182C584F79A9026F"
-			x: 18.0d
-			y: 0.0d
-			shape: "rsquare"
-			size: 1.0d
+			x: 2.0d
+			y: -4.0d
+			shape: "gear"
+			size: 2.0d
 			dependencies: [
-				"744DE466E8633CF3"
+				"0A788BCBC546D33C"
 			]
 			tasks: [
 				{
 					id: "6A180E663667BF4D"
 					type: "item"
 					item: {
-						id: "create:gearbox"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "0D9B10F23D173FD0"
-					type: "item"
-					item: {
 						id: "create:belt_connector"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -260,19 +118,19 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 1
+						count: 2
 					}
 				}
 			]
 		}
 		{
 			id: "34342A28CCEA9E01"
-			x: 22.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 8.0d
+			y: -2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"182C584F79A9026F"
+				"4075A74B2774D3BD"
 			]
 			tasks: [
 				{
@@ -280,15 +138,6 @@
 					type: "item"
 					item: {
 						id: "create:mechanical_press"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "64794D380A9C21D7"
-					type: "item"
-					item: {
-						id: "create:basin"
 						count: 1
 					}
 					count: 1L
@@ -312,13 +161,12 @@
 		}
 		{
 			id: "6616482D84CB76CA"
-			x: 30.0d
+			x: 16.0d
 			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
-				"34342A28CCEA9E01"
-				"324D521459A0712A"
+				"4075A74B2774D3BD"
 			]
 			tasks: [
 				{
@@ -326,15 +174,6 @@
 					type: "item"
 					item: {
 						id: "create:mechanical_mixer"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "4E14A3B0EAD931B6"
-					type: "item"
-					item: {
-						id: "create:blaze_burner"
 						count: 1
 					}
 					count: 1L
@@ -358,12 +197,14 @@
 		}
 		{
 			id: "77E50022B90D19F9"
-			x: 32.0d
-			y: 0.0d
+			x: 16.0d
+			y: 2.0d
 			shape: "hexagon"
 			size: 1.5d
+			hide_dependent_lines: true
 			dependencies: [
 				"6616482D84CB76CA"
+				"7880BA863A1563B6"
 			]
 			tasks: [
 				{
@@ -403,9 +244,9 @@
 		}
 		{
 			id: "1E61B3A6087F88B3"
-			x: 34.0d
-			y: 0.0d
-			shape: "rsquare"
+			x: 18.0d
+			y: 2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"77E50022B90D19F9"
@@ -418,7 +259,7 @@
 						id: "create:brass_casing"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -439,10 +280,10 @@
 		}
 		{
 			id: "77FA7755F842A8D2"
-			x: 40.0d
+			x: 24.0d
 			y: 0.0d
-			shape: "hexagon"
-			size: 1.5d
+			shape: "rsquare"
+			size: 1.0d
 			dependencies: [
 				"28E8E77EF5C671EB"
 			]
@@ -456,15 +297,6 @@
 					}
 					count: 1L
 				}
-				{
-					id: "231EE7D78F38FE2C"
-					type: "item"
-					item: {
-						id: "create:mechanical_crafter"
-						count: 1
-					}
-					count: 4L
-				}
 			]
 			rewards: [
 				{
@@ -477,43 +309,6 @@
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "0036FBB03BA5041E"
-			x: 4.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"4075A74B2774D3BD"
-			]
-			tasks: [
-				{
-					id: "5C7C245DC74364B3"
-					type: "item"
-					item: {
-						id: "create:hand_crank"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "0FA380C0F0E31313"
-					type: "xp"
-					xp: 20
-				}
-				{
-					id: "3A88E1ACEF3D86DB"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
 						count: 1
 					}
 				}
@@ -521,13 +316,12 @@
 		}
 		{
 			id: "72C45775E3F11445"
-			x: 8.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 0.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
-				"3B8CA867BEED2744"
+				"0A788BCBC546D33C"
 			]
 			tasks: [
 				{
@@ -535,15 +329,6 @@
 					type: "item"
 					item: {
 						id: "create:goggles"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "5AB3932C7A7DE83F"
-					type: "item"
-					item: {
-						id: "create:wrench"
 						count: 1
 					}
 					count: 1L
@@ -566,137 +351,9 @@
 			]
 		}
 		{
-			id: "337C8FD68BAD4AE5"
-			x: 12.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"730C4B4582649D81"
-			]
-			tasks: [
-				{
-					id: "13DEA78A7A410CB2"
-					type: "item"
-					item: {
-						id: "create:speedometer"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "4C248E0886027F95"
-					type: "item"
-					item: {
-						id: "create:stressometer"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "47ABB134DD9B2955"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "685BDA1223EEE6E1"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "6B18E15CBED2C58D"
-			x: 12.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"730C4B4582649D81"
-			]
-			tasks: [
-				{
-					id: "50CFC6AE9FB70559"
-					type: "item"
-					item: {
-						id: "create:clutch"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2F2E1CDD6E40EA80"
-					type: "item"
-					item: {
-						id: "create:gearshift"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "344AC26D521B2683"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "22B68C74F8F42665"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "046177CACEBE5530"
-			x: 14.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"6B18E15CBED2C58D"
-			]
-			tasks: [
-				{
-					id: "2EA275EAB89A2664"
-					type: "item"
-					item: {
-						id: "create:encased_chain_drive"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "073DB0B269BA6338"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "1C42984EBAF407C4"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "7784CD3C06844B0C"
-			x: 4.0d
-			y: -2.0d
+			x: 8.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -740,425 +397,13 @@
 			]
 		}
 		{
-			id: "054CDC887B5F6350"
-			x: 16.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"744DE466E8633CF3"
-			]
-			tasks: [
-				{
-					id: "2DD9F277211D7FE7"
-					type: "item"
-					item: {
-						id: "create_connected:brass_gearbox"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "701FDCB14E0B4C8D"
-					type: "item"
-					item: {
-						id: "create_connected:kinetic_bridge"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "35BC5641CC38992B"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "1A521B969BF6D6F3"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "20EF956BB16A02B8"
-			x: 16.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"054CDC887B5F6350"
-			]
-			tasks: [
-				{
-					id: "3EFCA4FA4A73B37A"
-					type: "item"
-					item: {
-						id: "create_connected:kinetic_battery"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "23FA4B9FC8D8C65B"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "645F257A70DA5732"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "02C1134654884DCB"
-			x: 8.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"3B8CA867BEED2744"
-			]
-			tasks: [
-				{
-					id: "02CF704B60306586"
-					type: "item"
-					item: {
-						id: "create:mechanical_bearing"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "279A6D1E65EBEE16"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "6139EA3FBAB93BEF"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "3FE2DEA03C20D896"
-			x: 10.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"02C1134654884DCB"
-			]
-			tasks: [
-				{
-					id: "493AD1291ACBC32D"
-					type: "item"
-					item: {
-						id: "create:clockwork_bearing"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "4EF49A0C539132FD"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "2293B962D07CC50A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1BDD2ADB951FA49F"
-			x: 8.0d
-			y: -4.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"02C1134654884DCB"
-			]
-			tasks: [
-				{
-					id: "5B7B53A17B777886"
-					type: "item"
-					item: {
-						id: "create:super_glue"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "778E61668D27CA8E"
-					type: "item"
-					item: {
-						id: "create:linear_chassis"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "3F0F6A962557DB8F"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "21765288533B15B7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "4C3093032BC73EDC"
-			x: 10.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"1BDD2ADB951FA49F"
-			]
-			tasks: [
-				{
-					id: "2F35E4E2BBE90F65"
-					type: "item"
-					item: {
-						id: "create:rope_pulley"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "54343AF99FEF879A"
-					type: "xp"
-					xp: 30
-				}
-				{
-					id: "52A074F58B8C773E"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "7092808649B4419F"
-			x: 8.0d
-			y: -6.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"1BDD2ADB951FA49F"
-			]
-			tasks: [
-				{
-					id: "5715F70352628BE2"
-					type: "item"
-					item: {
-						id: "create:mechanical_piston"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "3DC999527E5FA946"
-					type: "item"
-					item: {
-						id: "create:piston_extension_pole"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "599E0F8E6FC82C4A"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "3A011B373E036D8A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "275774CB0C8D5DAA"
-			x: 8.0d
-			y: -8.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"7092808649B4419F"
-			]
-			tasks: [
-				{
-					id: "4339AADE02DD8D03"
-					type: "item"
-					item: {
-						id: "create:mechanical_drill"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "15054FB37FFFF286"
-					type: "item"
-					item: {
-						id: "create:mechanical_harvester"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "2C8FF3089F14A041"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "11560DF97C4B234B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "1C221C2CE7105C61"
-			x: 10.0d
-			y: -6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"7092808649B4419F"
-			]
-			tasks: [
-				{
-					id: "562DE1DAE1B22D7D"
-					type: "item"
-					item: {
-						id: "create:gantry_carriage"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "7D9C127FF14266D3"
-					type: "item"
-					item: {
-						id: "create:gantry_shaft"
-						count: 1
-					}
-					count: 8L
-				}
-			]
-			rewards: [
-				{
-					id: "41AFFD3FFBB84CC9"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "2A91D06609379EC5"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "5ACA2D213411E355"
-			x: 14.0d
-			y: -6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependent_lines: true
-			dependencies: [
-				"1BDD2ADB951FA49F"
-			]
-			tasks: [
-				{
-					id: "7609A3BE3E86625C"
-					type: "item"
-					item: {
-						id: "create:cart_assembler"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "7079E679BA3B5AFD"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "74973CF826D54614"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "7393547E525DA47A"
-			x: 18.0d
+			x: 12.0d
 			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"182C584F79A9026F"
+				"4075A74B2774D3BD"
 			]
 			tasks: [
 				{
@@ -1188,51 +433,13 @@
 			]
 		}
 		{
-			id: "4D6920783F3B9DEF"
-			x: 18.0d
-			y: 4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"7393547E525DA47A"
-			]
-			tasks: [
-				{
-					id: "184C3A49542A9DDA"
-					type: "item"
-					item: {
-						id: "create:mechanical_saw"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "697AC7724D8CEEE7"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "4E1FD7FB2683EC91"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "53010A1245136B9D"
-			x: 22.0d
-			y: -2.0d
+			x: 4.0d
+			y: 4.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependent_lines: true
 			dependencies: [
-				"34342A28CCEA9E01"
+				"58D27E5A2C9ACA7C"
 			]
 			tasks: [
 				{
@@ -1242,7 +449,7 @@
 						id: "create:copper_casing"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1263,12 +470,12 @@
 		}
 		{
 			id: "0436C53380018D12"
-			x: 24.0d
-			y: -2.0d
+			x: 2.0d
+			y: 6.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"53010A1245136B9D"
+				"58D27E5A2C9ACA7C"
 			]
 			tasks: [
 				{
@@ -1276,15 +483,6 @@
 					type: "item"
 					item: {
 						id: "create:fluid_pipe"
-						count: 1
-					}
-					count: 4L
-				}
-				{
-					id: "11D85F7BA67E6835"
-					type: "item"
-					item: {
-						id: "create:mechanical_pump"
 						count: 1
 					}
 					count: 1L
@@ -1308,13 +506,12 @@
 		}
 		{
 			id: "2D0EA05FF8E594C0"
-			x: 26.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 4.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
-				"0436C53380018D12"
+				"53010A1245136B9D"
 			]
 			tasks: [
 				{
@@ -1345,8 +542,8 @@
 		}
 		{
 			id: "7DD9261D9EB35A40"
-			x: 28.0d
-			y: -4.0d
+			x: 2.0d
+			y: 8.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -1391,12 +588,12 @@
 		}
 		{
 			id: "70CAEA0A4BE6690E"
-			x: 24.0d
-			y: -4.0d
+			x: 6.0d
+			y: 4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"0436C53380018D12"
+				"53010A1245136B9D"
 			]
 			tasks: [
 				{
@@ -1427,13 +624,12 @@
 		}
 		{
 			id: "630D92ADDEA25362"
-			x: 22.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 6.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
-				"70CAEA0A4BE6690E"
+				"53010A1245136B9D"
 			]
 			tasks: [
 				{
@@ -1463,58 +659,11 @@
 			]
 		}
 		{
-			id: "1E78E7EE6A500B30"
-			x: 24.0d
-			y: -6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"70CAEA0A4BE6690E"
-			]
-			tasks: [
-				{
-					id: "0941E6E2763D2B69"
-					type: "item"
-					item: {
-						id: "create:steam_engine"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "1A6D1800502F2709"
-					type: "item"
-					item: {
-						id: "create:fluid_tank"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "1B94419C36B12F4F"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "4836CD5DBFE93ACD"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "1651838BBC9A8F9A"
-			x: 26.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 6.0d
+			y: 6.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"70CAEA0A4BE6690E"
 			]
@@ -1526,7 +675,7 @@
 						id: "create:blaze_cake"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1547,12 +696,12 @@
 		}
 		{
 			id: "0A9697F091D66EBC"
-			x: 22.0d
+			x: 10.0d
 			y: 2.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"34342A28CCEA9E01"
+				"4075A74B2774D3BD"
 			]
 			tasks: [
 				{
@@ -1562,7 +711,7 @@
 						id: "create:encased_fan"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1583,7 +732,7 @@
 		}
 		{
 			id: "1E1DACF0E1734052"
-			x: 22.0d
+			x: 10.0d
 			y: 4.0d
 			shape: "square"
 			size: 1.0d
@@ -1628,7 +777,7 @@
 		}
 		{
 			id: "58731C2AF70FC309"
-			x: 24.0d
+			x: 12.0d
 			y: 4.0d
 			shape: "square"
 			size: 1.0d
@@ -1673,7 +822,7 @@
 		}
 		{
 			id: "61B0B8A85B5A74B3"
-			x: 24.0d
+			x: 12.0d
 			y: 6.0d
 			shape: "circle"
 			size: 0.85d
@@ -1710,8 +859,8 @@
 		}
 		{
 			id: "688CEE3263B8CCE8"
-			x: 18.0d
-			y: -2.0d
+			x: 2.0d
+			y: -6.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -1725,7 +874,7 @@
 						id: "create:depot"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1746,12 +895,12 @@
 		}
 		{
 			id: "30511CA78664A015"
-			x: 18.0d
+			x: 0.0d
 			y: -4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"688CEE3263B8CCE8"
+				"182C584F79A9026F"
 			]
 			tasks: [
 				{
@@ -1761,16 +910,7 @@
 						id: "create:andesite_funnel"
 						count: 1
 					}
-					count: 4L
-				}
-				{
-					id: "3B672D72673E94CC"
-					type: "item"
-					item: {
-						id: "create:andesite_tunnel"
-						count: 1
-					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1791,13 +931,12 @@
 		}
 		{
 			id: "43ACD4F3446AA37E"
-			x: 20.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 2.0d
+			y: -8.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
-				"30511CA78664A015"
+				"688CEE3263B8CCE8"
 			]
 			tasks: [
 				{
@@ -1828,12 +967,12 @@
 		}
 		{
 			id: "5AA6A69C848DC1AA"
-			x: 18.0d
-			y: -6.0d
+			x: 4.0d
+			y: -4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"30511CA78664A015"
+				"182C584F79A9026F"
 			]
 			tasks: [
 				{
@@ -1843,7 +982,7 @@
 						id: "create:chute"
 						count: 1
 					}
-					count: 4L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1864,13 +1003,12 @@
 		}
 		{
 			id: "14B3C8ED4DC01638"
-			x: 18.0d
-			y: -8.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 0.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
-				"5AA6A69C848DC1AA"
+				"182C584F79A9026F"
 			]
 			tasks: [
 				{
@@ -1880,7 +1018,7 @@
 						id: "create:item_vault"
 						count: 1
 					}
-					count: 4L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -1901,13 +1039,14 @@
 		}
 		{
 			id: "6A9EF93F22D557DE"
-			x: 20.0d
-			y: -6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 14.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
 			dependencies: [
-				"5AA6A69C848DC1AA"
+				"182C584F79A9026F"
+				"77E50022B90D19F9"
 			]
 			tasks: [
 				{
@@ -1915,24 +1054,6 @@
 					type: "item"
 					item: {
 						id: "create:brass_funnel"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "5D5F99FC868BB414"
-					type: "item"
-					item: {
-						id: "create:brass_tunnel"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "7B17682F94D8BA61"
-					type: "item"
-					item: {
-						id: "create:smart_chute"
 						count: 1
 					}
 					count: 1L
@@ -1955,209 +1076,10 @@
 			]
 		}
 		{
-			id: "4C283EA530BC4A7F"
-			x: 30.0d
-			y: -2.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"6616482D84CB76CA"
-			]
-			tasks: [
-				{
-					id: "4BBF961FA6E93A6A"
-					type: "item"
-					item: {
-						id: "create:cardboard"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "1D4FE9C9E9FFA547"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "73E699F35CB3F6E7"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "77A3B29A589655FD"
-			x: 30.0d
-			y: -4.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"4C283EA530BC4A7F"
-			]
-			tasks: [
-				{
-					id: "32D4916F92892359"
-					type: "item"
-					item: {
-						id: "create:packager"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "36BDA27F3907C243"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "6F867331DE0AD57B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "2A2D28D70DFF0880"
-			x: 30.0d
-			y: -6.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"77A3B29A589655FD"
-			]
-			tasks: [
-				{
-					id: "0584BFC6957E13D0"
-					type: "item"
-					item: {
-						id: "create:package_frogport"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "0C4D3C3CCCECF6D9"
-					type: "item"
-					item: {
-						id: "create:chain_conveyor"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "7DBA5E3D7366EE46"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "0F4F676C06493C82"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "049C8A27289976E8"
-			x: 30.0d
-			y: -8.0d
-			shape: "square"
-			size: 1.0d
-			dependencies: [
-				"2A2D28D70DFF0880"
-			]
-			tasks: [
-				{
-					id: "4696FCEF595163A5"
-					type: "item"
-					item: {
-						id: "create:stock_link"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "2D400DC1CD707F08"
-					type: "item"
-					item: {
-						id: "create:stock_ticker"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "204C069745C14CE9"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "2328CB5BF06B12B5"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "05EBFEF4A4AA72FE"
-			x: 30.0d
-			y: -10.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"049C8A27289976E8"
-			]
-			tasks: [
-				{
-					id: "29454FF7BB8BBA64"
-					type: "item"
-					item: {
-						id: "create:factory_gauge"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "0BDCF843CB26E18B"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "2EC7107EA3254F92"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
 			id: "37C0C525864C5286"
-			x: 30.0d
-			y: 2.0d
-			shape: "square"
+			x: 18.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"6616482D84CB76CA"
@@ -2200,11 +1122,10 @@
 		}
 		{
 			id: "0182206067908BB0"
-			x: 30.0d
-			y: 4.0d
-			shape: "square"
+			x: 20.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
-			hide_dependent_lines: true
 			dependencies: [
 				"37C0C525864C5286"
 			]
@@ -2237,32 +1158,23 @@
 		}
 		{
 			id: "28E8E77EF5C671EB"
-			x: 36.0d
+			x: 22.0d
 			y: 0.0d
 			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
-				"1E61B3A6087F88B3"
 				"0182206067908BB0"
+				"77E50022B90D19F9"
 			]
 			tasks: [
 				{
 					id: "3C8B833FA265A7FC"
 					type: "item"
 					item: {
-						id: "create:brass_hand"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "374726B78FECA181"
-					type: "item"
-					item: {
 						id: "create:deployer"
 						count: 1
 					}
-					count: 2L
+					count: 1L
 				}
 			]
 			rewards: [
@@ -2283,13 +1195,13 @@
 		}
 		{
 			id: "5191CA10F7F0E39F"
-			x: 32.0d
-			y: -2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			x: 22.0d
+			y: 2.0d
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"77FA7755F842A8D2"
+				"1E61B3A6087F88B3"
 			]
 			tasks: [
 				{
@@ -2319,63 +1231,17 @@
 			]
 		}
 		{
-			id: "58DA1F2D41B82800"
-			x: 34.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"77FA7755F842A8D2"
-			]
-			tasks: [
-				{
-					id: "6F53E29F8CA4BAEA"
-					type: "item"
-					item: {
-						id: "create:rotation_speed_controller"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "5544D17BB2A8DBF0"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "78219A27846C257A"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "6629EEE3B93734E8"
-			x: 40.0d
-			y: 8.0d
-			shape: "rsquare"
+			x: 10.0d
+			y: -2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
-				"77FA7755F842A8D2"
+				"4075A74B2774D3BD"
 			]
 			tasks: [
 				{
 					id: "2CA90FD7FD166758"
-					type: "item"
-					item: {
-						id: "create:millstone"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "1D08159A1713A0B5"
 					type: "item"
 					item: {
 						id: "create:crushing_wheel"
@@ -2402,8 +1268,8 @@
 		}
 		{
 			id: "16A9DFC1FA028ABC"
-			x: 42.0d
-			y: 8.0d
+			x: 10.0d
+			y: -4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -2448,9 +1314,9 @@
 		}
 		{
 			id: "5AE74064D976F177"
-			x: 38.0d
-			y: 8.0d
-			shape: "rsquare"
+			x: 12.0d
+			y: -2.0d
+			shape: "square"
 			size: 1.0d
 			dependencies: [
 				"6629EEE3B93734E8"
@@ -2492,202 +1358,11 @@
 			]
 		}
 		{
-			id: "608E9C45084DDC0B"
-			x: 36.0d
-			y: 8.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"5AE74064D976F177"
-			]
-			tasks: [
-				{
-					id: "2B4FA0EB2EFBFFAD"
-					type: "item"
-					item: {
-						id: "create:railway_casing"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "61755297E77F51FD"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "148E3CFDBAF63F6D"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "2DD7DD7E4EBAC4C3"
-			x: 34.0d
-			y: 8.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"608E9C45084DDC0B"
-			]
-			tasks: [
-				{
-					id: "7DD9774B10B1DACA"
-					type: "item"
-					item: {
-						id: "create:track"
-						count: 1
-					}
-					count: 16L
-				}
-			]
-			rewards: [
-				{
-					id: "5BA6EDDD6B7C23B2"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "6492C20907BD48D5"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "14F0FB6C383BA061"
-			x: 32.0d
-			y: 8.0d
-			shape: "rsquare"
-			size: 1.0d
-			dependencies: [
-				"2DD7DD7E4EBAC4C3"
-			]
-			tasks: [
-				{
-					id: "3622749EE83D987C"
-					type: "item"
-					item: {
-						id: "create:track_station"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "1956145597BCB4FA"
-					type: "item"
-					item: {
-						id: "create:controls"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "72F9977773F5D0FE"
-					type: "xp"
-					xp: 75
-				}
-				{
-					id: "1E33B39AFA17C940"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "6C250F7008A406FF"
-			x: 30.0d
-			y: 8.0d
-			shape: "hexagon"
-			size: 1.5d
-			dependencies: [
-				"14F0FB6C383BA061"
-			]
-			tasks: [
-				{
-					id: "2423147E7653CC8E"
-					type: "item"
-					item: {
-						id: "create:schedule"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "308072B719EF6E22"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "5CC30F82F429CAA1"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 2
-					}
-				}
-			]
-		}
-		{
-			id: "64021CBAE89E85B8"
-			x: 32.0d
-			y: 10.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"14F0FB6C383BA061"
-			]
-			tasks: [
-				{
-					id: "3D982BD22BD2B5C0"
-					type: "item"
-					item: {
-						id: "create:track_signal"
-						count: 1
-					}
-					count: 4L
-				}
-			]
-			rewards: [
-				{
-					id: "48E7E9085DCE6ADA"
-					type: "xp"
-					xp: 50
-				}
-				{
-					id: "3527AEFDA381D8D5"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "79D324D3D42641AD"
-			x: 40.0d
-			y: -2.0d
-			shape: "square"
+			x: 28.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"77FA7755F842A8D2"
 				"55AF98DD41956199"
@@ -2721,8 +1396,8 @@
 		}
 		{
 			id: "2B4C4B280D8E7AC8"
-			x: 38.0d
-			y: -2.0d
+			x: 28.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -2758,7 +1433,7 @@
 		}
 		{
 			id: "53AD12F81CBB1F0A"
-			x: 42.0d
+			x: 28.0d
 			y: -2.0d
 			shape: "square"
 			size: 1.0d
@@ -2812,8 +1487,8 @@
 		}
 		{
 			id: "07D97B34A6E5B266"
-			x: 44.0d
-			y: -2.0d
+			x: 28.0d
+			y: -4.0d
 			shape: "square"
 			size: 1.0d
 			dependencies: [
@@ -2857,8 +1532,8 @@
 		}
 		{
 			id: "24FF50E20F1EA5BC"
-			x: 44.0d
-			y: -4.0d
+			x: 28.0d
+			y: -6.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -2894,9 +1569,9 @@
 		}
 		{
 			id: "4B937C395BAB0201"
-			x: 40.0d
-			y: -4.0d
-			shape: "square"
+			x: 32.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"79D324D3D42641AD"
@@ -2939,8 +1614,8 @@
 		}
 		{
 			id: "52C094F29194B559"
-			x: 42.0d
-			y: -4.0d
+			x: 32.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -2985,8 +1660,8 @@
 		}
 		{
 			id: "4751D19651EF6413"
-			x: 38.0d
-			y: -4.0d
+			x: 32.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3031,9 +1706,9 @@
 		}
 		{
 			id: "55B52C24164AD4E0"
-			x: 40.0d
-			y: -6.0d
-			shape: "square"
+			x: 34.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"4B937C395BAB0201"
@@ -3067,8 +1742,8 @@
 		}
 		{
 			id: "7FEB4F6BF2712680"
-			x: 42.0d
-			y: -6.0d
+			x: 34.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3113,8 +1788,8 @@
 		}
 		{
 			id: "24AA4CAED5C9CBF5"
-			x: 38.0d
-			y: -6.0d
+			x: 34.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3150,9 +1825,9 @@
 		}
 		{
 			id: "4A4E6C320C2A7399"
-			x: 40.0d
-			y: -8.0d
-			shape: "square"
+			x: 36.0d
+			y: 0.0d
+			shape: "rsquare"
 			size: 1.0d
 			dependencies: [
 				"55B52C24164AD4E0"
@@ -3196,11 +1871,10 @@
 		}
 		{
 			id: "07E1E573A3B65309"
-			x: 36.0d
-			y: -2.0d
+			x: 24.0d
+			y: 2.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"77FA7755F842A8D2"
 			]
@@ -3242,11 +1916,10 @@
 		}
 		{
 			id: "22860F179A18DF0F"
-			x: 36.0d
-			y: -4.0d
+			x: 24.0d
+			y: 4.0d
 			shape: "square"
 			size: 1.0d
-			hide_dependency_lines: true
 			dependencies: [
 				"07E1E573A3B65309"
 			]
@@ -3279,8 +1952,8 @@
 		}
 		{
 			id: "57619AFCA4F05DA0"
-			x: 36.0d
-			y: -6.0d
+			x: 26.0d
+			y: 4.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3316,8 +1989,8 @@
 		}
 		{
 			id: "14BCCEEAD81D18E7"
-			x: 34.0d
-			y: -2.0d
+			x: 26.0d
+			y: 2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3352,103 +2025,9 @@
 			]
 		}
 		{
-			id: "55AB70C3F4CCB36F"
-			x: 10.0d
-			y: 2.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"3B8CA867BEED2744"
-			]
-			tasks: [
-				{
-					id: "01284AB4A63CB9B8"
-					type: "item"
-					item: {
-						id: "create:large_water_wheel"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "7924F084FF81679A"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "309040052CF9B501"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "2A991699F562C061"
-			x: 28.0d
-			y: 4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			hide_dependency_lines: true
-			dependencies: [
-				"046177CACEBE5530"
-				"0182206067908BB0"
-			]
-			tasks: [
-				{
-					id: "0B6A9AC4C3F71025"
-					type: "item"
-					item: {
-						id: "create:vertical_gearbox"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "45D68A826682B933"
-					type: "item"
-					item: {
-						id: "create:adjustable_chain_gearshift"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "7F3974C01E10FE17"
-					type: "item"
-					item: {
-						id: "create:sequenced_gearshift"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "0AD2213BE3EB53B9"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "58D2C9CDB6CD9DAD"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "5AE7EF121BD612F0"
-			x: 32.0d
-			y: 2.0d
+			x: 16.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3493,14 +2072,12 @@
 		}
 		{
 			id: "0CA5A69F3DDE9CA2"
-			x: 30.0d
+			x: 4.0d
 			y: 6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			shape: "square"
+			size: 1.0d
 			dependencies: [
 				"0436C53380018D12"
-				"0182206067908BB0"
 			]
 			tasks: [
 				{
@@ -3508,24 +2085,6 @@
 					type: "item"
 					item: {
 						id: "create:fluid_valve"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "256AE7601FE96444"
-					type: "item"
-					item: {
-						id: "create:copper_valve_handle"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "56D222935C1D5F9A"
-					type: "item"
-					item: {
-						id: "create:smart_fluid_pipe"
 						count: 1
 					}
 					count: 1L
@@ -3549,7 +2108,7 @@
 		}
 		{
 			id: "37A5960612C5F1E9"
-			x: 24.0d
+			x: 8.0d
 			y: 2.0d
 			shape: "circle"
 			size: 0.85d
@@ -3585,103 +2144,9 @@
 			]
 		}
 		{
-			id: "5979E1A0A4E0A3FF"
-			x: 6.0d
-			y: -6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"1BDD2ADB951FA49F"
-			]
-			tasks: [
-				{
-					id: "3F09B17E3D1CD211"
-					type: "item"
-					item: {
-						id: "create:mechanical_plough"
-						count: 1
-					}
-					count: 1L
-				}
-				{
-					id: "3752725E7523B30F"
-					type: "item"
-					item: {
-						id: "create:radial_chassis"
-						count: 1
-					}
-					count: 3L
-				}
-			]
-			rewards: [
-				{
-					id: "77A604327A35D026"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "2AC34E4F9755EEA9"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "0C4EDC1CF83CA395"
-			x: 20.0d
-			y: -8.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"5ACA2D213411E355"
-				"53010A1245136B9D"
-				"5AA6A69C848DC1AA"
-			]
-			tasks: [
-				{
-					id: "5BB81F02E1FEA67F"
-					type: "item"
-					item: {
-						id: "create:portable_storage_interface"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "43C6C7FF328D7312"
-					type: "item"
-					item: {
-						id: "create:portable_fluid_interface"
-						count: 1
-					}
-					count: 2L
-				}
-			]
-			rewards: [
-				{
-					id: "4808E683F87FC1C7"
-					type: "xp"
-					xp: 60
-				}
-				{
-					id: "0905C42C4187573B"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
 			id: "5ABFE1AA0F7D2878"
-			x: 6.0d
-			y: 2.0d
+			x: 14.0d
+			y: -2.0d
 			shape: "circle"
 			size: 0.85d
 			optional: true
@@ -3719,68 +2184,57 @@
 			]
 		}
 		{
-			id: "27B65A1388E16EA7"
-			x: 32.0d
-			y: -8.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			id: "0A788BCBC546D33C"
+			x: 2.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
 			dependencies: [
-				"049C8A27289976E8"
-				"0182206067908BB0"
+				"1C5E43BCEDA7593F"
 			]
 			tasks: [
 				{
-					id: "148457D9969788D6"
+					id: "52EB50B8EF09AD34"
 					type: "item"
 					item: {
-						id: "create:display_link"
+						id: "minecraft:andesite"
 						count: 1
 					}
 					count: 1L
 				}
-				{
-					id: "448DB480C13BA609"
-					type: "item"
-					item: {
-						id: "create:nixie_tube"
-						count: 1
-					}
-					count: 4L
-				}
 			]
 			rewards: [
 				{
-					id: "17BE43FA6037A653"
+					id: "795091B6B344C5EF"
 					type: "xp"
-					xp: 60
+					xp: 20
 				}
 				{
-					id: "7F1358378D59A9FC"
+					id: "1F1C6E7872F5D57F"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
-						count: 1
+						count: 2
 					}
 				}
 			]
 		}
 		{
-			id: "4DEB762041D07FF5"
-			x: 32.0d
-			y: -4.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
+			id: "7880BA863A1563B6"
+			x: 14.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependent_lines: true
 			dependencies: [
-				"77A3B29A589655FD"
+				"324D521459A0712A"
 			]
 			tasks: [
 				{
-					id: "66D19ACC36BB482A"
+					id: "756F275CFE435949"
 					type: "item"
 					item: {
-						id: "create:repackager"
+						id: "create:blaze_burner"
 						count: 1
 					}
 					count: 1L
@@ -3788,67 +2242,376 @@
 			]
 			rewards: [
 				{
-					id: "736F583CA16BC0F8"
-					type: "xp"
-					xp: 40
-				}
-				{
-					id: "1D72561175362196"
-					type: "item"
-					item: {
-						id: "kubejs:demigod_token"
-						count: 1
-					}
-				}
-			]
-		}
-		{
-			id: "4CF901DAE3949FBB"
-			x: 32.0d
-			y: 6.0d
-			shape: "circle"
-			size: 0.85d
-			optional: true
-			dependencies: [
-				"14F0FB6C383BA061"
-			]
-			tasks: [
-				{
-					id: "043FD52C9443CB2D"
-					type: "item"
-					item: {
-						id: "create:train_door"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "5F3D4A7DA3B0A8BD"
-					type: "item"
-					item: {
-						id: "create:train_trapdoor"
-						count: 1
-					}
-					count: 2L
-				}
-				{
-					id: "3033D1547A848E86"
-					type: "item"
-					item: {
-						id: "create:track_observer"
-						count: 1
-					}
-					count: 1L
-				}
-			]
-			rewards: [
-				{
-					id: "2ED8CCBCF6074754"
+					id: "1A7188132B68B2CD"
 					type: "xp"
 					xp: 50
 				}
 				{
-					id: "01621201A0760E7B"
+					id: "0F64F5B737737477"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5C115DF0FDFEE6E3"
+			x: 0.0d
+			y: 6.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"0436C53380018D12"
+				"182C584F79A9026F"
+			]
+			tasks: [
+				{
+					id: "6BB4F318274949EE"
+					type: "item"
+					item: {
+						id: "create:basin"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "74F7150EEE02B35E"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "46FF428EC1E1ECDA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "77BB4485A31B4A6D"
+			x: 18.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"1E61B3A6087F88B3"
+			]
+			tasks: [
+				{
+					id: "7C07C2734C183792"
+					type: "item"
+					item: {
+						id: "create:mechanical_crafter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2243086B82638F81"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "1B56B81EB958457F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "156D118E128B57F9"
+			x: 4.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"182C584F79A9026F"
+			]
+			tasks: [
+				{
+					id: "7DE6973FC80A3070"
+					type: "item"
+					item: {
+						id: "create:andesite_tunnel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0E7A593924565AC6"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "17CDE7954E78728B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "47A8AEDA50803F6C"
+			x: 16.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			hide_dependency_lines: true
+			dependencies: [
+				"182C584F79A9026F"
+				"77E50022B90D19F9"
+			]
+			tasks: [
+				{
+					id: "62AA25A40876693B"
+					type: "item"
+					item: {
+						id: "create:brass_tunnel"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "70D54ECD6C7FC733"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "08F15381CBC4E70B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "17825D1713B76729"
+			x: 4.0d
+			y: -6.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"5AA6A69C848DC1AA"
+			]
+			tasks: [
+				{
+					id: "71AF17DF93C154A9"
+					type: "item"
+					item: {
+						id: "create:smart_chute"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1AFCDEC096C7B248"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "419E2F75EBCB5A78"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "58D27E5A2C9ACA7C"
+			x: 2.0d
+			y: 4.0d
+			shape: "gear"
+			size: 2.0d
+			dependencies: [
+				"0A788BCBC546D33C"
+			]
+			tasks: [
+				{
+					id: "414A52AB715E221B"
+					type: "item"
+					item: {
+						id: "minecraft:copper_ingot"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "082E5F2F63341777"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "77A222229F16F3AA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6511E26ADA939555"
+			x: 4.0d
+			y: 8.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0436C53380018D12"
+			]
+			tasks: [
+				{
+					id: "74C09B7C99FDF7E8"
+					type: "item"
+					item: {
+						id: "create:mechanical_pump"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "269FB859B254F74D"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "3F3634855FAAAABB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "77374EFFEFB58428"
+			x: 0.0d
+			y: 8.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0436C53380018D12"
+			]
+			tasks: [
+				{
+					id: "7778279050B3CE5A"
+					type: "item"
+					item: {
+						id: "create:smart_fluid_pipe"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "01158B984A6D2202"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "2E687A86C39183F9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "075FD4F571E9331E"
+			x: 0.0d
+			y: 4.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"58D27E5A2C9ACA7C"
+			]
+			tasks: [
+				{
+					id: "1753D7F881051846"
+					type: "item"
+					item: {
+						id: "create:fluid_tank"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7792E72EFCED3838"
+					type: "xp"
+					xp: 40
+				}
+				{
+					id: "6DC9524FE1FE49CF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0F0EC005485D6CDC"
+			x: 6.0d
+			y: -2.0d
+			shape: "square"
+			size: 1.0d
+			dependencies: [
+				"0A788BCBC546D33C"
+			]
+			tasks: [
+				{
+					id: "5E4A4535666A0662"
+					type: "item"
+					item: {
+						id: "create:wrench"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5508AC40544034CC"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "0D538D826020385B"
 					type: "item"
 					item: {
 						id: "kubejs:demigod_token"
@@ -3862,74 +2625,56 @@
 		{
 			id: "4E7902145179E4BA"
 			x: 2.5d
-			y: -12.925d
+			y: -11.0d
 			width: 6.0d
 			height: 1.0d
 			rotation: 0.0d
 			image: "warbucks:textures/quests/create.png"
 		}
 		{
-			id: "614B0AA18AE3B2CB"
-			x: 6.574999999999999d
+			id: "67135C7E0BD80F33"
+			x: 2.75d
 			y: -9.125d
-			width: 5.999999999999999d
+			width: 6.5d
 			height: 0.75d
 			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_mechanical_bearing.png"
+			image: "warbucks:textures/quests/sections/create_belts_and_logistics.png"
 		}
 		{
-			id: "67D4B1C25943218B"
-			x: 15.075d
-			y: 5.05d
-			width: 7.0d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_clutch_and_gearshift.png"
-		}
-		{
-			id: "545B712C5AA9525E"
-			x: 17.075d
-			y: -9.05d
+			id: "73A54A8371A795C5"
+			x: 2.5d
+			y: 9.125d
 			width: 3.0d
 			height: 0.75d
 			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_depots.png"
+			image: "warbucks:textures/quests/sections/create_fluids.png"
 		}
 		{
-			id: "3CA549029942980F"
-			x: 23.5d
+			id: "6AA98C7C9C8728EE"
+			x: 7.0d
+			y: -5.125d
+			width: 3.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/create_tools.png"
+		}
+		{
+			id: "71AD8E4B51C1F6CC"
+			x: 13.0d
+			y: 7.05d
+			width: 3.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/create_machines.png"
+		}
+		{
+			id: "3765F69D387B0336"
+			x: 31.0d
 			y: -7.05d
-			width: 4.0d
+			width: 7.0d
 			height: 0.75d
 			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_encased_fan.png"
-		}
-		{
-			id: "49B7DB8D0A0192E8"
-			x: 31.25d
-			y: -11.05d
-			width: 3.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_cardboard.png"
-		}
-		{
-			id: "2D289CA514C1C1C8"
-			x: 35.575d
-			y: -7.05d
-			width: 6.0d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_liquid_experience.png"
-		}
-		{
-			id: "14D126B4B0E164B9"
-			x: 37.325d
-			y: -9.125d
-			width: 7.5d
-			height: 0.75d
-			rotation: 0.0d
-			image: "warbucks:textures/quests/sections/create_rotation_to_electricity.png"
+			image: "warbucks:textures/quests/sections/create_wires_and_connectors.png"
 		}
 	]
 	quest_links: [
@@ -3943,22 +2688,22 @@
 		{
 			id: "52670AF49CF07B72"
 			linked_quest: "324D521459A0712A"
-			x: 28.0d
-			y: 2.0d
+			x: 14.0d
+			y: 6.0d
 			size: 1.0d
 		}
 		{
 			id: "3B4B434B3780DD4B"
 			linked_quest: "55AF98DD41956199"
-			x: 42.0d
-			y: 0.0d
+			x: 30.0d
+			y: 2.0d
 			size: 1.0d
 		}
 		{
 			id: "2BCA52A1A95A2CE2"
 			linked_quest: "009FBA775299B910"
-			x: 42.0d
-			y: -8.0d
+			x: 36.0d
+			y: 2.0d
 			size: 1.0d
 		}
 	]

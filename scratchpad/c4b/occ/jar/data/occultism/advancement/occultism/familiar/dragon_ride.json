@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "dragon_ride": {
+      "conditions": {
+        "type": "dragon_ride"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.dragon_ride.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 6
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.dragon_ride.title"
+    }
+  },
+  "requirements": [
+    [
+      "dragon_ride"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,320 @@
+﻿IMAGES:
+   (  -5.0,  -8.1) atm_star
+   (   0.0,  -5.0) youtube
+   (  -8.0,  -1.7) atm_star
+
+154 quests; default shape 
+7F0B2D58361FB00E (  0.0,  0.0) shape=square deps=-
+       <checkmark>
+05D8C6EF8FCD6250 (  2.0,  0.0) size=1.5 shape=diamond deps=7F0B2D58361FB00E
+       I:justdirethings:gooblock_tier1[justdirethings:jdt_goo,tools:tc_jdt_goo]
+4C54BD57CAB8A54B (  0.0,  2.0) size=1.5 shape=diamond deps=05D8C6EF8FCD6250
+       I:justdirethings:gooblock_tier2[justdirethings:jdt_blazegold]
+5C6709350BEF4050 ( -2.0,  0.0) size=1.5 shape=diamond deps=4C54BD57CAB8A54B
+       I:justdirethings:gooblock_tier3[justdirethings:jdt_celestigem]
+25213DBA6E6CEDD2 (  0.0, -2.0) size=1.5 shape=diamond deps=5C6709350BEF4050
+       I:justdirethings:gooblock_tier4[justdirethings:jdt_eclipse]
+5BD5737703F3F077 (  3.0,  1.0)  deps=05D8C6EF8FCD6250
+       I:justdirethings:raw_ferricore[justdirethings:jdt_ferricore]
+       I:justdirethings:ferricore_ingot[justdirethings:jdt_ferricore_ingot]
+2D86D4403E0F4EB9 ( -1.0,  3.0)  deps=4C54BD57CAB8A54B
+       I:justdirethings:raw_blazegold[justdirethings:jdt_blazegold]
+       I:justdirethings:blazegold_ingot[justdirethings:jdt_blazegold_kit]
+60A4994078500F63 ( -3.0, -1.0)  deps=5C6709350BEF4050
+       I:justdirethings:celestigem[justdirethings:jdt_celestigem]
+4B3F20E5C7E3BCFB (  3.0, -1.0)  deps=05D8C6EF8FCD6250
+       I:justdirethings:coal_t1[justdirethings:jdt_coal_t1]
+079A415488A32076 (  1.0,  3.0)  deps=4C54BD57CAB8A54B,4B3F20E5C7E3BCFB
+       I:justdirethings:coal_t2[justdirethings:jdt_coal_t2]
+446A37C7FCDACF84 ( -3.0,  1.0)  deps=5C6709350BEF4050,079A415488A32076
+       I:justdirethings:coal_t3[justdirethings:jdt_coal_t3]
+1705175C20CE91DD (  1.0, -3.0)  deps=25213DBA6E6CEDD2
+       I:justdirethings:raw_eclipsealloy[justdirethings:jdt_eclipse]
+       I:justdirethings:eclipsealloy_ingot[justdirethings:jdt_eclipse_kit]
+09D2137B4F42006E ( -1.0, -3.0)  deps=25213DBA6E6CEDD2,446A37C7FCDACF84
+       I:justdirethings:coal_t4[justdirethings:jdt_coal_t4]
+517F0135926B15EE (  5.0,  0.0)  deps=-
+       <checkmark>
+7D1D2A4E07E98709 (  6.5, -0.5) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:blockbreakert1[justdirethings:jdt_breaker]
+70C404E5685E4E91 (  6.5,  0.5) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:blockplacert1[justdirethings:jdt_breaker]
+6737CB17D562B134 (  7.0,  0.0) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:clickert1[justdirethings:jdt_clicker]
+19E678E6EF9539DC (  7.0, -1.0) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:sensort1[justdirethings:jdt_clicker]
+1ECFA72CF2BA4B45 (  7.0,  1.0) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:droppert1[justdirethings:jdt_item_collector]
+433117EEA55B6A54 (  7.5, -0.5) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:fluidplacert1[justdirethings:jdt_fluid_machines]
+1B173E7533E1171F (  7.5,  0.5) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:fluidcollectort1[justdirethings:jdt_fluid_machines]
+4A5937F6E5D06BE1 (  8.0,  1.0) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:generatorfluidt1[justdirethings:jdt_fluid_gen]
+70AD088336748892 (  8.0, -1.0) shape=diamond deps=517F0135926B15EE,5BD5737703F3F077
+       I:justdirethings:generatort1[justdirethings:jdt_generator]
+3C8C80345D3F5FE8 ( -8.5,  0.5) shape=diamond deps=5BD5737703F3F077,5F5120451BA5B2FE
+       I:justdirethings:itemcollector[justdirethings:jdt_item_collector]
+02B0CCD5607FF3B5 ( -8.5, -0.5) shape=diamond deps=2D86D4403E0F4EB9,5F5120451BA5B2FE
+       I:justdirethings:playeraccessor[justdirethings:jdt_player_stuff,justdirethings:jdt_player_accessor]
+0B9BBE2A764631BF (  8.0,  0.0) shape=diamond deps=517F0135926B15EE,2D86D4403E0F4EB9
+       I:justdirethings:blockswappert1[justdirethings:jdt_swapper]
+6F709652A2B88C78 ( -9.0,  0.0) shape=diamond deps=2D86D4403E0F4EB9,5F5120451BA5B2FE
+       I:justdirethings:energytransmitter[justdirethings:jdt_transmitter]
+5F5120451BA5B2FE ( -5.0,  0.0) shape=circle deps=-
+       <checkmark>
+16772C399861783D ( -6.5, -0.5) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:blockbreakert2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+5D182815CB167405 ( -6.5,  0.5) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:blockplacert2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+0D32774710EC9900 ( -7.0,  0.0) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:clickert2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+55E882E7FA36AFC6 ( -7.0, -1.0) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:sensort2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+15AD6698663D4A42 ( -7.0,  1.0) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:droppert2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+6D60602560F35F87 ( -7.5, -0.5) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:fluidplacert2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+4D45C0CFF11191ED ( -7.5,  0.5) shape=diamond deps=5F5120451BA5B2FE,60A4994078500F63
+       I:justdirethings:fluidcollectort2[justdirethings:jdt_machines_t2,justdirethings:jdt_workshop]
+4C40699E0A9A5BE6 ( -8.0,  0.0) shape=diamond deps=5F5120451BA5B2FE,1705175C20CE91DD
+       I:justdirethings:blockswappert2[justdirethings:jdt_workshop]
+7AEFF81E7C8CF300 ( -5.0,  3.5)  deps=-
+       <checkmark>
+6AB45CC4CE4570E6 (  5.0, -3.5)  deps=-
+       <checkmark>
+3971FF7D044D1FE5 (  5.0,  3.5)  deps=-
+       <checkmark>
+46E6B1600AA8A61E ( -6.0,  5.0) shape=diamond deps=7AEFF81E7C8CF300,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_sword[justdirethings:jdt_blazegold_kit]
+4E03AE15BEF86178 ( -4.0,  5.0) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:celestigem_sword[justdirethings:jdt_celestigem_kit]
+37B903620493A354 ( -2.0,  5.0) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_sword[justdirethings:jdt_eclipse_kit]
+2F86FB9E4D49E4B0 ( -8.0,  5.0) shape=diamond deps=7AEFF81E7C8CF300,5BD5737703F3F077
+       I:justdirethings:ferricore_sword[justdirethings:jdt_ferricore_kit]
+5BBE8B30ED7518B8 ( -8.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,5BD5737703F3F077
+       I:justdirethings:ferricore_pickaxe[harvest:hv_iron_cousins,justdirethings:jdt_tools_t1]
+5054977BD5354561 ( -7.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,5BD5737703F3F077
+       I:justdirethings:ferricore_axe[justdirethings:jdt_tools_t1]
+19E6757F04098A0C ( -8.0,  6.0) shape=diamond deps=7AEFF81E7C8CF300,5BD5737703F3F077
+       I:justdirethings:ferricore_shovel[justdirethings:jdt_tools_t1]
+4773421DC70009AB ( -8.5,  6.5) shape=diamond deps=7AEFF81E7C8CF300,5BD5737703F3F077
+       I:justdirethings:ferricore_hoe[justdirethings:jdt_ferricore_kit]
+199388A311FAC14C ( -6.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_pickaxe[harvest:hv_diamond_cousins,justdirethings:jdt_tools_t2]
+21147C8CBF98AEB4 ( -5.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_axe[justdirethings:jdt_blazegold_kit]
+1DAA5DD81EF96469 ( -6.0,  6.0) shape=diamond deps=7AEFF81E7C8CF300,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_shovel[justdirethings:jdt_blazegold_kit]
+52EC86E03EB50525 ( -6.5,  6.5) shape=diamond deps=7AEFF81E7C8CF300,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_hoe[justdirethings:jdt_blazegold_kit]
+6FD4C60B547F4131 ( -4.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:celestigem_pickaxe[harvest:hv_diamond_cousins,justdirethings:jdt_tools_t3]
+2B1BAEC5DAAF9DAC ( -3.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:celestigem_axe[justdirethings:jdt_celestigem_kit]
+0C1D55AA9CC902BD ( -4.0,  6.0) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:celestigem_shovel[justdirethings:jdt_celestigem_kit]
+237D11FF5B09BA88 ( -4.5,  6.5) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:celestigem_hoe[justdirethings:jdt_celestigem_kit]
+0272E58516A0C284 ( -3.5,  6.5) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:celestigem_paxel[justdirethings:jdt_tools_t3]
+0C9DD8E53A1B92C0 ( -2.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_pickaxe[harvest:hv_netherite_cousins,justdirethings:jdt_eclipse_kit]
+78840993C7832E89 ( -1.5,  5.5) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_axe[justdirethings:jdt_eclipse_kit]
+703BDCDC88DD813C ( -2.0,  6.0) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_shovel[justdirethings:jdt_eclipse_kit]
+3138B83ABC2930F9 ( -2.5,  6.5) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_hoe[justdirethings:jdt_eclipse_kit]
+6A4D31194C4CE156 ( -1.5,  6.5) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_paxel[harvest:hv_netherite_cousins,justdirethings:jdt_tools_t4]
+24BA4B4EED0A9DBD (  2.0,  5.0) shape=diamond deps=3971FF7D044D1FE5,5BD5737703F3F077
+       I:justdirethings:ferricore_helmet[justdirethings:jdt_armor]
+7464CA1290B3474B (  1.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,5BD5737703F3F077
+       I:justdirethings:ferricore_chestplate[justdirethings:jdt_armor]
+04A1D582003A0D9A (  2.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,5BD5737703F3F077
+       I:justdirethings:ferricore_leggings[justdirethings:jdt_armor]
+454CA1F8CC198D9D (  2.0,  6.0) shape=diamond deps=3971FF7D044D1FE5,5BD5737703F3F077
+       I:justdirethings:ferricore_boots[justdirethings:jdt_armor]
+03ED9B0DFE8B4574 (  4.0,  5.0) shape=diamond deps=3971FF7D044D1FE5,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_helmet[justdirethings:jdt_blazegold_armor]
+1CBA0D7DA0558EBC (  3.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_chestplate[justdirethings:jdt_blazegold_armor]
+5A38E9F68570F7F3 (  4.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_leggings[justdirethings:jdt_blazegold_armor]
+176A1CC43467EF23 (  4.0,  6.0) shape=diamond deps=3971FF7D044D1FE5,2D86D4403E0F4EB9
+       I:justdirethings:blazegold_boots[justdirethings:jdt_blazegold_armor]
+71441DFA05FD73E5 (  6.0,  5.0) shape=diamond deps=3971FF7D044D1FE5,60A4994078500F63
+       I:justdirethings:celestigem_helmet[justdirethings:jdt_celestigem_armor]
+4B1E4FC4599DB916 (  5.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,60A4994078500F63
+       I:justdirethings:celestigem_chestplate[justdirethings:jdt_elytra]
+3BF32843DE3CF3C2 (  6.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,60A4994078500F63
+       I:justdirethings:celestigem_leggings[justdirethings:jdt_celestigem_armor]
+1FE7C52491E7499B (  6.0,  6.0) shape=diamond deps=3971FF7D044D1FE5,60A4994078500F63
+       I:justdirethings:celestigem_boots[justdirethings:jdt_celestigem_armor]
+242F74010488F261 (  5.0, -7.5) shape=diamond deps=6AB45CC4CE4570E6,5BD5737703F3F077
+       I:justdirethings:fuel_canister[justdirethings:jdt_fuel_canister]
+40C5C355B6DA1893 (  4.0, -7.5) shape=diamond deps=6AB45CC4CE4570E6,5BD5737703F3F077
+       I:justdirethings:pocket_generator[tools:tc_jdt_pocket]
+200ECDC70E97D254 (  5.0, -6.5) shape=diamond deps=6AB45CC4CE4570E6,5BD5737703F3F077
+       I:justdirethings:fluid_canister[justdirethings:jdt_canisters]
+5D4E51471F3939E0 ( -6.0,  7.0) shape=diamond deps=2D86D4403E0F4EB9,7AEFF81E7C8CF300
+       I:justdirethings:blazejet_wand[justdirethings:jdt_blazejet]
+5B910F1389C0B915 ( -4.0,  7.0) shape=diamond deps=60A4994078500F63,7AEFF81E7C8CF300
+       I:justdirethings:voidshift_wand[justdirethings:jdt_voidshift]
+5B02719C13B1FFE2 ( -2.0,  7.0) shape=diamond deps=1705175C20CE91DD,7AEFF81E7C8CF300
+       I:justdirethings:eclipsegate_wand[justdirethings:jdt_eclipsegate]
+16E02F671FBE9148 (  4.5, -7.0) shape=diamond deps=6AB45CC4CE4570E6,2D86D4403E0F4EB9
+       I:justdirethings:portalgun[tools:tc_jdt_portal]
+4F9932477EDDCB8E (  5.5, -7.0) shape=diamond deps=6AB45CC4CE4570E6,60A4994078500F63
+       I:justdirethings:portalgun_v2[justdirethings:jdt_portal_v2]
+53F9E5CE7EE6F852 (  6.0, -7.5) shape=diamond deps=6AB45CC4CE4570E6,2D86D4403E0F4EB9
+       I:justdirethings:creaturecatcher[justdirethings:jdt_catcher]
+0B485DB737A036E9 (  4.5, -6.0) shape=diamond deps=6AB45CC4CE4570E6,5BD5737703F3F077
+       I:justdirethings:machinesettingscopier[justdirethings:jdt_canisters]
+45A25221F54A1DEC (  5.5, -6.0) shape=diamond deps=6AB45CC4CE4570E6,5BD5737703F3F077
+       I:justdirethings:ferricore_wrench[justdirethings:jdt_ferricore_kit]
+27FD46A8C958D259 (  5.0, -5.5) shape=diamond deps=6AB45CC4CE4570E6,2D86D4403E0F4EB9
+       I:justdirethings:totem_of_death_recall[justdirethings:jdt_catcher]
+66F79F0F1E05D163 ( -5.0, -3.5)  deps=-
+       <checkmark>
+4458F8829800A950 ( -5.0, -5.5) shape=diamond deps=66F79F0F1E05D163
+       I:justdirethings:polymorphic_fluid_bucket[justdirethings:jdt_polymorphic]
+3D9964CB0440DD5A ( -4.0, -6.5) shape=diamond deps=4458F8829800A950,079A415488A32076
+       I:justdirethings:refined_t2_fluid_bucket[justdirethings:jdt_fuel_t2]
+70BF85E2D235BAD5 ( -5.0, -6.5) shape=diamond deps=3D9964CB0440DD5A,446A37C7FCDACF84
+       I:justdirethings:refined_t3_fluid_bucket[justdirethings:jdt_fuel_high]
+49EF8A4346AEF582 ( -5.0, -7.5) shape=diamond deps=70BF85E2D235BAD5,09D2137B4F42006E
+       I:justdirethings:refined_t4_fluid_bucket[justdirethings:jdt_fuel_high]
+0FAF274ADA65B26A ( -6.0, -6.5) shape=diamond deps=4458F8829800A950
+       I:justdirethings:portal_fluid_bucket[justdirethings:jdt_portal_v2]
+4E9B35DCA018FD42 ( -1.5,  9.5) shape=diamond deps=7305EE0F7D73C231
+       TAG:c:tools
+67B87570C340C243 (  1.5,  9.5) shape=diamond deps=7305EE0F7D73C231
+       TAG:c:armors
+5A1AB1AD7DEFDD9A (  7.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_chestplate[justdirethings:jdt_flight]
+0A02DBE226C3F44E (  8.0,  5.0) shape=diamond deps=3971FF7D044D1FE5,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_helmet[justdirethings:jdt_eclipse_armor]
+2A919F73CB09CF8B (  8.5,  5.5) shape=diamond deps=3971FF7D044D1FE5,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_leggings[justdirethings:jdt_eclipse_armor]
+1FFA1DA6A5EA4E70 (  8.0,  6.0) shape=diamond deps=3971FF7D044D1FE5,1705175C20CE91DD
+       I:justdirethings:eclipsealloy_boots[justdirethings:jdt_eclipse_armor]
+7305EE0F7D73C231 (  0.0,  8.0) size=1.5 shape=diamond deps=7AEFF81E7C8CF300,3971FF7D044D1FE5,5BD5737703F3F077
+       I:justdirethings:upgrade_blank[justdirethings:jdt_blank]
+17C4F6EC1AFBC3AA ( -2.0, 10.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_mobscanner[justdirethings:jdt_sense_abilities]
+2A01CE9206DD4F8A ( -2.0,  9.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_oreminer[justdirethings:jdt_oreminer]
+07655CA904354E9E ( -2.5,  9.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_lawnmower[justdirethings:jdt_upgrades]
+46EE2F9818F8D1D9 ( -3.0,  9.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_skysweeper[justdirethings:jdt_upgrades]
+4D98D2123BD5BFB3 ( -3.0, 10.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_treefeller[justdirethings:jdt_upgrades]
+0E3FDD8BB6D17A30 ( -2.5, 10.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_leafbreaker[justdirethings:jdt_upgrades]
+171DB70D0D19A942 ( -2.5,  8.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_smelter[justdirethings:jdt_upgrades]
+61213012615619C5 ( -4.5,  8.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_smoker[justdirethings:jdt_smoker]
+6690AEE064DC2A7C ( -3.5,  9.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_hammer[justdirethings:jdt_upgrades]
+2875FACD3BFB0A8E ( -4.5, 10.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_cauterizewounds[justdirethings:jdt_combat_abilities]
+636854555AD75DC3 ( -4.0, 10.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_dropteleport[justdirethings:jdt_upgrades]
+18032636A60D0B2C ( -4.5,  9.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_orexray[justdirethings:jdt_sense_abilities]
+283D7E65F2AD45F2 ( -5.0, 10.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_glowing[justdirethings:jdt_sense_abilities]
+45D683D7F1A32B04 ( -5.0,  9.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_instabreak[justdirethings:jdt_instabreak]
+3B3E3D81843BB358 (  2.0,  9.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_runspeed[justdirethings:jdt_move_abilities]
+132F4671E121C7B8 (  2.0, 10.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_walkspeed[justdirethings:jdt_move_abilities]
+17A9D2CA160561D9 (  2.5,  9.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_stepheight[justdirethings:jdt_move_abilities]
+0CBFE2CE53DCACD5 (  2.5,  8.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_jumpboost[justdirethings:jdt_move_abilities]
+3CBB78C9B8D3665E (  2.5, 10.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_mindfog[justdirethings:jdt_sense_abilities]
+0C2EC56133D3CC6C (  3.0, 10.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_invulnerability[justdirethings:jdt_chest_more]
+4ACB72F3A23A5A19 (  3.0,  9.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_swimspeed[justdirethings:jdt_move_abilities]
+6889EFC6CC291463 (  3.5, 10.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_groundstomp[justdirethings:jdt_move_abilities]
+3AE1811C32B94A66 (  3.5,  8.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_extinguish[justdirethings:jdt_chest_more]
+09485B63483B7A15 (  3.5,  9.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_stupefy[justdirethings:jdt_combat_abilities]
+3A471716A29F5172 (  4.0, 10.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_elytra[justdirethings:jdt_elytra]
+02B8F50721F12CFF (  4.0,  9.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_negatefalldamage[justdirethings:jdt_move_abilities]
+120DCA89A919C7AF (  4.5, 10.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_nightvision[justdirethings:jdt_sense_abilities]
+5961C1ED32522BEF (  4.5,  9.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_decoy[justdirethings:jdt_combat_abilities]
+1E0C6409B2573CCA (  4.5,  8.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_earthquake[justdirethings:jdt_combat_abilities]
+7B9486981786AC47 (  5.0, 10.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_noai[justdirethings:jdt_combat_abilities]
+515C0527226BA50C (  5.0,  9.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_flight[justdirethings:jdt_flight]
+6D9CFCD81A23BB3B (  5.5, 10.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_lavaimmunity[justdirethings:jdt_chest_more]
+454662617304E299 (  0.0, 11.5) shape=diamond deps=73552A4BA0687962
+       I:justdirethings:upgrade_phase[justdirethings:jdt_chest_more]
+79BBCC1BEE90DBBB (  5.5,  9.5) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_deathprotection[justdirethings:jdt_chest_more]
+026C63594F813BCC (  6.0,  9.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_debuffremover[justdirethings:jdt_combat_abilities]
+49636B3C6E6D0C2A (  6.0, 10.0) opt shape=diamond deps=67B87570C340C243,5BD5737703F3F077
+       I:justdirethings:template_ferricore[justdirethings:jdt_ferricore_ingot]
+2409EAD96CE3BDF7 (  6.5,  9.5) shape=diamond deps=67B87570C340C243,2D86D4403E0F4EB9
+       I:justdirethings:template_blazegold[justdirethings:jdt_tools_t2]
+25E915AE1FC53254 (  6.5,  8.5) shape=diamond deps=67B87570C340C243,60A4994078500F63
+       I:justdirethings:template_celestigem[justdirethings:jdt_celestigem_kit]
+1EA02BA24AF02256 (  6.5, 10.5) shape=diamond deps=67B87570C340C243,1705175C20CE91DD
+       I:justdirethings:template_eclipsealloy[justdirethings:jdt_eclipse_kit]
+5EE7D5DE07A83C7D ( -4.0,  9.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_orescanner[justdirethings:jdt_upgrades]
+       <checkmark>
+441F37A95AB66E6B (  0.0,  4.0) opt shape=circle deps=-
+       <checkmark>
+       <checkmark>
+6ADE6F9E004055F7 (  0.0, -4.0)  deps=25213DBA6E6CEDD2
+       <observation:>
+       I:justdirethings:time_crystal[justdirethings:jdt_time_crystal]
+76B1C5AFC5D6B7CF (  4.0, -6.5) shape=diamond deps=6AB45CC4CE4570E6,6ADE6F9E004055F7,2D86D4403E0F4EB9,5BD5737703F3F077,48E4D75FD3145AD6
+       I:justdirethings:time_wand[justdirethings:jdt_time_wand]
+41E8C93A44559E48 ( -8.0, -1.0) shape=diamond deps=6ADE6F9E004055F7,1705175C20CE91DD,48E4D75FD3145AD6,5F5120451BA5B2FE
+       I:justdirethings:paradoxmachine[justdirethings:jdt_paradox]
+48E4D75FD3145AD6 ( -6.5, -5.5) shape=diamond deps=6ADE6F9E004055F7,4458F8829800A950
+       I:justdirethings:time_fluid_bucket[justdirethings:jdt_time_wand]
+4987759CF379C1EB (  3.0, 11.0) shape=diamond deps=67B87570C340C243
+       I:justdirethings:upgrade_time_protection[justdirethings:jdt_chest_more]
+5A9436B100FC1E67 ( -8.5,  4.5) shape=diamond deps=7AEFF81E7C8CF300,5BD5737703F3F077
+       I:justdirethings:bow_ferricore[justdirethings:jdt_bows,justdirethings:jdt_bow_set]
+567005978482235F ( -6.5,  4.5) shape=diamond deps=7AEFF81E7C8CF300,2D86D4403E0F4EB9
+       I:justdirethings:bow_blazegold[justdirethings:jdt_bows,justdirethings:jdt_bow_set]
+35A78E04092767AD ( -4.5,  4.5) shape=diamond deps=7AEFF81E7C8CF300,60A4994078500F63
+       I:justdirethings:bow_celestigem[justdirethings:jdt_bows,justdirethings:jdt_bow_set]
+71128E508D810DDF ( -2.5,  4.5) shape=diamond deps=7AEFF81E7C8CF300,1705175C20CE91DD
+       I:justdirethings:bow_eclipsealloy[justdirethings:jdt_bows,justdirethings:jdt_bow_set]
+05056CAA64E3971B ( -5.5, 10.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_potionarrow[justdirethings:jdt_arrow_abilities]
+3CFD798362605880 ( -6.0, 10.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_splash[justdirethings:jdt_arrow_abilities]
+6720F863B907A5F1 ( -5.0, 11.0) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_lingering[justdirethings:jdt_arrow_abilities]
+3F3559EF5D08B706 ( -5.5,  9.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_homing[justdirethings:jdt_arrow_abilities]
+1256F280F3669DDA ( -6.5,  9.5) shape=diamond deps=4E9B35DCA018FD42
+       I:justdirethings:upgrade_epicarrow[justdirethings:jdt_arrow_abilities]
+73552A4BA0687962 (  0.0, 10.5) shape=diamond deps=67B87570C340C243,4E9B35DCA018FD42
+       <checkmark>

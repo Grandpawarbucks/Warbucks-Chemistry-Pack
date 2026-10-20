@@ -1,0 +1,71 @@
+
+# ATM10 mirror (2026-10-20, user decision): this page follows ATM10's Mystical Agriculture chapter
+# ("elmystical_agriculturerr") quest for quest where the crop exists here: hub, prosperity, the altar, one essence
+# milestone per tier with its farmland, accelerator, armour and tools, then one quest per resource seed in ATM10's
+# tier clusters. Its item list, order and shape only; all text is ours. Seeds this pack blocks (uranium, osmium,
+# fluorite, aluminum, silicon, steel, graphite, platinum, iridium, refined obsidian/glowstone and the rest) and seeds
+# for mods we don't have are left out. Tier 3/4/5 seeds need MI LV/MV/HV circuits (phase4_mysticalagriculture.js),
+# so each seed hangs off its essence tier, which hangs off the circuit quest.
+from questlib import IDS  # noqa: E402
+
+SPINE, MACH = "Essence Tiers", "Machines and Tools"
+ESS = {1: "inferium", 2: "prudentium", 3: "tertium", 4: "imperium", 5: "supremium"}
+CIRCUIT = {3: "an MI analog circuit (LV)", 4: "an MI electronic circuit (MV)", 5: "an MI digital circuit (HV)"}
+FARMLAND = {1: "ma_farmland", 2: "ma_farmland_up", 3: "ma_farmland_t3", 4: "ma_farmland_t4", 5: "ma_farmland_t5"}
+ESSENCE_Q = {1: "ma_inferium", 2: "f_prudentium", 3: "f_tertium", 4: "f_imperium", 5: "f_supremium"}
+TOOLS = ["sword", "pickaxe", "axe", "shovel", "hoe", "watering_can", "bow", "crossbow", "shears", "sickle", "scythe", "fishing_rod"]
+
+
+def tier_tools(t):
+    """Every essence tool of a tier that exists in this pack."""
+    return [MA + f"{t}_{n}" for n in TOOLS if MA + f"{t}_{n}" in IDS]
+
+
+def seed(crop, tier, label, mirror, mob=False, extra=(), fact=None):
+    """One resource seed: craft it on the altar, plant it, and it grows essence of `label`."""
+    key = "ma_s_" + crop
+    deps = [ESSENCE_Q[tier] if mob else FARMLAND[tier], "f_altar"]
+    if mob and tier == 2:
+        deps = ["ma_dagger", "f_altar"]
+    section = f"Tier {tier} {'Mobs' if mob else 'Crops'}"
+    name = crop.replace("_", " ")
+    how = f"&eHow:&r a prosperity seed base on the Infusion Altar, with {ESS[tier]} essence and "
+    how += "a full Soul Jar of that mob on the pedestals" if mob else f"{label} on the pedestals"
+    how += f" (check JEI). {'It also needs ' + CIRCUIT[tier] + '.' if tier >= 3 else ''}"
+    desc = [f"&eWhat:&r {name} seeds grow {name} essence, which crafts back into {label}.", how.rstrip()]
+    if fact:
+        desc.append("&eChemistry:&r " + fact)
+    desc.append("&eTip:&r one seed is enough: plant it and every harvest has a chance to drop another.")
+    return Q(key, 0, 0, [item(MA + crop + "_seeds"), *extra], name.title() + " Seeds", deps=deps, xp=10 + 10 * tier,
+             subtitle=f"Tier {tier} {'mob ' if mob else ''}crop", section=section, mirror=mirror, desc=desc)
+
+
+def tier_kit(tier, t, farmland, accel, armor, tools, xp):
+    """Farmland, accelerator, armour set and any tool of an essence tier (ATM10's ring around each milestone)."""
+    eq = ESSENCE_Q.get(tier, "f_awakening")
+    out = []
+    nm = t.replace("_", " ").title()
+    if farmland:
+        out.append(Q(farmland[0], 0, 0, [item(MA + f"{t}_farmland")], nm + " Farmland", deps=[eq], xp=xp, section=SPINE,
+                     mirror=farmland[1], subtitle=f"Soil for tier {tier} crops", desc=[
+                         f"&eWhat:&r farmland infused with {t} essence. Inferium crops on it drop more essence, and the tier {tier} seeds on this page hang off it.",
+                         f"&eHow:&r {t} essence and farmland, shapeless (check JEI).",
+                         "&eTip:&r convert the soil under your inferium field first; that's where it pays."]))
+    if accel:
+        out.append(Q(accel[0], 0, 0, [item(MA + f"{t}_growth_accelerator")], nm + " Growth Accelerator", deps=[eq], xp=xp,
+                     section=SPINE, mirror=accel[1], subtitle="Faster crops from below", desc=[
+                         "&eWhat:&r a growth accelerator placed under farmland ticks the crops above it; higher tiers reach further.",
+                         f"&eHow:&r {t} essence around stone and the tier's gemstone (check JEI).",
+                         "&eTip:&r stack them in a column under the crop."]))
+    out.append(Q(armor[0], 0, 0, [item(MA + f"{t}_{p}") for p in ("helmet", "chestplate", "leggings", "boots")], nm + " Armour",
+                 deps=[eq], xp=xp * 2, section=SPINE, mirror=armor[1], subtitle="A full essence set", desc=[
+                     f"&eWhat:&r the {t} armour set. Each tier adds protection and augment slots.",
+                     "&eHow:&r upgrade the previous tier's pieces with this tier's ingots and gemstones (check JEI).",
+                     "&eTip:&r augments go in at the Tinkering Table."]))
+    out.append(Q(tools[0], 0, 0, [anyof(tier_tools(t))], nm + " Tools", deps=[eq], xp=xp, section=SPINE, mirror=tools[1],
+                 subtitle="Any one essence tool of this tier", desc=[
+                     f"&eWhat:&r any {t} tool: sword, pick, axe, shovel, hoe, sickle, scythe, shears, bow, crossbow, fishing rod or watering can.",
+                     "&eHow:&r upgrade the previous tier's tool with this tier's ingots and gemstones (check JEI).",
+                     "&eTip:&r the sickle and scythe harvest crops in an area and replant them."]))
+    return out
+

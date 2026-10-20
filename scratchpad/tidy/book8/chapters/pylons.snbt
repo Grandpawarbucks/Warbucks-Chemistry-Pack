@@ -1,0 +1,497 @@
+{
+	id: "6F5A0E5EF3B9E1BF"
+	group: "78721B1463D42BF6"
+	order_index: 2
+	filename: "pylons"
+	icon: {
+		id: "pylons:infusion_pylon"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "60BA26548880FCDF"
+			x: 0.0d
+			y: 0.0d
+			shape: "gear"
+			size: 2.0d
+			hide_dependent_lines: true
+			dependencies: [
+				"70E81EEF06F1E07B"
+			]
+			tasks: [
+				{
+					id: "32C0B30558616F48"
+					type: "item"
+					item: {
+						id: "minecraft:polished_blackstone"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "281851989CAC0AEB"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "02DEA3D840B6B8D4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "60D349276513B2BE"
+			x: 1.7999999999999998d
+			y: -1.7999999999999998d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"1C0254F397D306D0"
+			]
+			tasks: [
+				{
+					id: "34C231D076ACBDA8"
+					type: "item"
+					item: {
+						id: "pylons:expulsion_pylon"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1D57DCFEF6FF9CBE"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "0B9E8DB675DDFFE7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "51BEBD7764209CA7"
+			x: 1.7999999999999998d
+			y: 1.7999999999999998d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"0A13A4B12CEEADEC"
+				"542F34211E348C1A"
+			]
+			tasks: [
+				{
+					id: "7A379CFF5B8153B7"
+					type: "item"
+					item: {
+						id: "pylons:interdiction_pylon"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "241F98FF029CB533"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "3F3E0EF6ECE8DEBA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0EEBD82F0B57E5EF"
+			x: -1.7999999999999998d
+			y: 1.7999999999999998d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"303BE5FCB4509058"
+			]
+			tasks: [
+				{
+					id: "4A407B87CD3291CB"
+					type: "item"
+					item: {
+						id: "pylons:harvester_pylon"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "46A57EFD5159A8FA"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "79988C8ED6C54BA9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "147F437F62E7C586"
+			x: -1.7999999999999998d
+			y: -1.7999999999999998d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"5D3BBE0974D5D537"
+				"7033201713D3AEDC"
+			]
+			tasks: [
+				{
+					id: "6AAAEEF1CC158FF2"
+					type: "item"
+					item: {
+						id: "pylons:infusion_pylon"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6EFBFEAFD79915DD"
+					type: "xp"
+					xp: 80
+				}
+				{
+					id: "530752BC4D3413AE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "35BBCCB16F699629"
+			x: 0.0d
+			y: 2.0d
+			shape: "hexagon"
+			size: 1.5d
+			dependencies: [
+				"0A13A4B12CEEADEC"
+				"746432B234EE074D"
+			]
+			tasks: [
+				{
+					id: "284F337A9D15C981"
+					type: "item"
+					item: {
+						id: "pylons:protection_pylon"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7BA24B4DB716FF1E"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "28C71180650C16FF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1C0254F397D306D0"
+			x: 3.15d
+			y: -3.15d
+			shape: "rsquare"
+			size: 0.9d
+			dependencies: [
+				"60BA26548880FCDF"
+			]
+			tasks: [
+				{
+					id: "05046623FA51F5F8"
+					type: "item"
+					item: {
+						id: "pylons:player_filter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6E41C286F5EA5FEE"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "18F1C6852E2A23E9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0A13A4B12CEEADEC"
+			x: 1.3499999999999999d
+			y: 3.15d
+			shape: "square"
+			size: 0.9d
+			dependencies: [
+				"60BA26548880FCDF"
+			]
+			tasks: [
+				{
+					id: "0B3BBF3FACBA290C"
+					type: "item"
+					item: {
+						id: "pylons:mob_filter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "193B16872686FD7D"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "329E3F1CB8241F4B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5D3BBE0974D5D537"
+			x: -3.15d
+			y: -3.15d
+			shape: "square"
+			size: 0.9d
+			hide_dependency_lines: true
+			dependencies: [
+				"60BA26548880FCDF"
+			]
+			tasks: [
+				{
+					id: "01B2A582634FD1D3"
+					type: "item"
+					item: {
+						id: "pylons:potion_filter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "75A6CDC409B3DC96"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "7B3D9CAF39857F51"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "303BE5FCB4509058"
+			x: -3.15d
+			y: 3.15d
+			shape: "square"
+			size: 0.9d
+			hide_dependency_lines: true
+			icon: {
+				id: "minecraft:iron_hoe"
+				count: 1
+			}
+			dependencies: [
+				"60BA26548880FCDF"
+			]
+			tasks: [
+				{
+					id: "331948D7DD805499"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(minecraft:hoes)"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "29439AF3D59D2586"
+					type: "xp"
+					xp: 20
+				}
+				{
+					id: "0C894F8B2590F252"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "542F34211E348C1A"
+			x: 3.15d
+			y: 2.35d
+			shape: "square"
+			size: 0.9d
+			hide_dependency_lines: true
+			dependencies: [
+				"60BA26548880FCDF"
+			]
+			tasks: [
+				{
+					id: "31E76A1C7FCF6FDC"
+					type: "item"
+					item: {
+						id: "pylons:lifeless_filter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2C67EED9404DA8CA"
+					type: "xp"
+					xp: 60
+				}
+				{
+					id: "01977E943043ACF2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "746432B234EE074D"
+			x: 0.0d
+			y: 3.15d
+			shape: "square"
+			size: 0.9d
+			hide_dependency_lines: true
+			dependencies: [
+				"60BA26548880FCDF"
+			]
+			tasks: [
+				{
+					id: "00F0F568FD30F331"
+					type: "item"
+					item: {
+						id: "pylons:block_filter"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1F79389A7DEECF16"
+					type: "xp"
+					xp: 30
+				}
+				{
+					id: "3970D7B2372B64DC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "6246EF4A6785201A"
+			x: -3.860849056603773d
+			y: -5.1d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pylons.png"
+		}
+		{
+			id: "015821C3B85460D0"
+			x: -5.280424528301887d
+			y: 4.0d
+			width: 3.160849056603773d
+			height: 3.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/pictures/pylons_cap_filters_1.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "08E8A99DEFF43BD5"
+			linked_quest: "70E81EEF06F1E07B"
+			x: 3.5d
+			y: -1.5d
+			size: 1.0d
+		}
+		{
+			id: "27DB8D637439063D"
+			linked_quest: "2EE32733B83E0FCA"
+			x: 5.0d
+			y: -1.5d
+			size: 1.0d
+		}
+	]
+}

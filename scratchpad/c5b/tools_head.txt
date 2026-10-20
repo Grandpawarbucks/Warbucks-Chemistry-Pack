@@ -1,0 +1,24 @@
+from questlib import Q, Chapter, item, dim, tick, kill, anytag, anyof, MAIN, SIDE  # noqa: F401
+
+# ATM10 mirror (2026-10-20, user decision): this page follows ATM10's "basic_tools" chapter quest for quest where we
+# have the mod: a hub, a short ore ladder, then one optional quest per pickaxe and per sword family. Only its item
+# list, order and shape are used; every word here is ours. The older gear quests stay on the page as side quests.
+LADDER, PICKS, SWORDS = "The Ore Ladder", "Pickaxes", "Blades"
+MT, MA, JDT, UG, ATM = "mekanismtools:", "mysticalagriculture:", "justdirethings:", "undergarden:", "allthemodium:"
+
+
+def col(key, ids, title, subtitle, what, how, tip, mirror, section, xp=20):
+    """One optional collection quest off the hub: any one of `ids` counts."""
+    task = item(ids[0]) if len(ids) == 1 else anyof(ids)
+    return Q(key, 0, 0, [task], title, deps=["tc_hub"], xp=xp, optional=True, subtitle="Optional: " + subtitle,
+             section=section, mirror=mirror, desc=["&eWhat:&r " + what, "&eHow:&r " + how, "&eTip:&r " + tip])
+
+
+def pick(key, ids, title, subtitle, what, how, tip, mirror, xp=20):
+    return col(key, ids, title, subtitle, what, how, tip, mirror, PICKS, xp)
+
+
+def sword(key, ids, title, subtitle, what, how, tip, mirror, xp=20):
+    return col(key, ids, title, subtitle, what, how, tip, mirror, SWORDS, xp)
+
+

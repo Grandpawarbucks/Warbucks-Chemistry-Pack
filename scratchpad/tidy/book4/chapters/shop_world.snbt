@@ -1,0 +1,5433 @@
+{
+	id: "7CFD05AEFF6BB872"
+	group: "0BF9E0EEF61D9FC8"
+	order_index: 2
+	filename: "shop_world"
+	icon: {
+		id: "minecraft:grass_block"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	progression_mode: "linear"
+	quests: [
+		{
+			id: "1E808DD768B6E802"
+			x: 0.0d
+			y: -3.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"32306651C1085697"
+			]
+			tasks: [
+				{
+					id: "3BC6BADBF5ADB943"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "3F49B6C35C49A639"
+					type: "xp"
+					xp: 10
+				}
+			]
+		}
+		{
+			id: "330FB2AE7DC795DA"
+			x: 0.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"696474FC1863B20C"
+			]
+			tasks: [
+				{
+					id: "3085F9D22BFBD18B"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "61B6E30967BDCAE7"
+			x: 1.5d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"1E339D434FEA09CE"
+			]
+			tasks: [
+				{
+					id: "5811A1E5CC67EE6A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4E7FFB2CE63C5BAA"
+					type: "item"
+					item: {
+						id: "minecraft:cobblestone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "7D6CA682950A95C7"
+			x: 3.0d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"3D96DF2EBED7106F"
+			]
+			tasks: [
+				{
+					id: "7ABF2279DE2C8A85"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5AB6DA8DD0796F88"
+					type: "item"
+					item: {
+						id: "minecraft:stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "0E5B71C20C8F6957"
+			x: 4.5d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7DAB1CA1D0DC9E58"
+			]
+			tasks: [
+				{
+					id: "7CDAA331B7AFBEDC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0C4A9713374AF505"
+					type: "item"
+					item: {
+						id: "minecraft:oak_log"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "3263FC0F0ADA1961"
+			x: 6.0d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"602F11E333E93BCA"
+			]
+			tasks: [
+				{
+					id: "12EF5C4D564F5F13"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "192877CED001BAD8"
+					type: "item"
+					item: {
+						id: "minecraft:glass"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "5EC5BA8EAD9353A7"
+			x: 7.5d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"18FFF9220FA14F85"
+			]
+			tasks: [
+				{
+					id: "50C88149D8F82001"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6EBEE9C6193FB3F1"
+					type: "item"
+					item: {
+						id: "minecraft:clay_ball"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "41DEDE6E8B81804A"
+			x: 9.0d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"1EDDC44EC9C4E742"
+			]
+			tasks: [
+				{
+					id: "66412757B8FD9DE6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "57A7F43D8D2BDCE6"
+					type: "item"
+					item: {
+						id: "minecraft:bricks"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "564DA05B4095A221"
+			x: 10.5d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"58D18066FC360C5F"
+			]
+			tasks: [
+				{
+					id: "6167E8C4826C0F34"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "583799E050C6B2C0"
+					type: "item"
+					item: {
+						id: "minecraft:terracotta"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "1F8626BFA66847BA"
+			x: 12.0d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"58D18066FC360C5F"
+			]
+			tasks: [
+				{
+					id: "5CB932CB87A664AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4FD6F42E06F68A9C"
+					type: "item"
+					item: {
+						id: "minecraft:white_concrete_powder"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "34CACA48E05E3C64"
+			x: 13.5d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7884D09F7FBE7978"
+			]
+			tasks: [
+				{
+					id: "75D0FECEAC2EF35B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "60A5DFA8E1B763F3"
+					type: "item"
+					item: {
+						id: "minecraft:packed_ice"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "47B132B867A2588A"
+			x: 15.0d
+			y: 0.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"65382426023CF47F"
+			]
+			tasks: [
+				{
+					id: "182194BED8936B35"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4A988334622FD215"
+					type: "item"
+					item: {
+						id: "minecraft:dripstone_block"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "3A64E665E323560F"
+			x: 1.5d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"28C35CCC84851B27"
+			]
+			tasks: [
+				{
+					id: "283386BA4F826B2E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "474CCD8CFEDDADE9"
+					type: "item"
+					item: {
+						id: "regions_unexplored:chalk"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "24648F288B1ACE13"
+			x: 3.0d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"1C1D96F956C3898C"
+			]
+			tasks: [
+				{
+					id: "33D31CAFBD6E1D46"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "746BB2B5DB250A44"
+					type: "item"
+					item: {
+						id: "laboratoryblocks:laboratory_block"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "3BEB27405C9EF38C"
+			x: 4.5d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"17B2684DCFCAF116"
+			]
+			tasks: [
+				{
+					id: "2130C64B4FA4080A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "59A5FF2B9896D38D"
+					type: "item"
+					item: {
+						id: "framedblocks:framed_cube"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "6F891BE52DDA6F4B"
+			x: 6.0d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"5B6DEEA0E16717D8"
+			]
+			tasks: [
+				{
+					id: "4591122492AFE4FA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "61D1A0A9B6698352"
+					type: "item"
+					item: {
+						id: "minecraft:white_wool"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "51F86B0126D32EF5"
+			x: 7.5d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"648DEB4A88E62AB0"
+			]
+			tasks: [
+				{
+					id: "615AF088F4A5A1A4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0A1E97B570F4BD66"
+					type: "item"
+					item: {
+						id: "minecraft:ochre_froglight"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "236E507381D43305"
+			x: 9.0d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"648DEB4A88E62AB0"
+			]
+			tasks: [
+				{
+					id: "6F58FB9116502A45"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "346D07DE13952045"
+					type: "item"
+					item: {
+						id: "minecraft:verdant_froglight"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "4BD3FDD47532E706"
+			x: 10.5d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"648DEB4A88E62AB0"
+			]
+			tasks: [
+				{
+					id: "0DE7421C25D4BA96"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1DA2299B2A14033D"
+					type: "item"
+					item: {
+						id: "minecraft:pearlescent_froglight"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "2F7644C6D7C52D4A"
+			x: 12.0d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"502A6AE02C3F21B9"
+			]
+			tasks: [
+				{
+					id: "4A0200566B6DCF15"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7071316ACC74FB67"
+					type: "item"
+					item: {
+						id: "minecraft:prismarine_shard"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "7C22617CFC5A2E90"
+			x: 13.5d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2D328EFF89A3A160"
+			]
+			tasks: [
+				{
+					id: "6984D599EABBAAAA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "56764CD149C90AF1"
+					type: "item"
+					item: {
+						id: "minecraft:wet_sponge"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "070D3A1BCE9F24B6"
+			x: 15.0d
+			y: 1.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2181236B6834BFDF"
+			]
+			tasks: [
+				{
+					id: "2F2778CB2D419CC7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "171A82E794B9565E"
+					type: "item"
+					item: {
+						id: "minecraft:bread"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "61211F220AC14009"
+			x: 1.5d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0157B1B9C1096892"
+			]
+			tasks: [
+				{
+					id: "27FFEA7FB37EE3D8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "685A9A53B2E85043"
+					type: "item"
+					item: {
+						id: "minecraft:cooked_beef"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "7F239BF8DEA165B7"
+			x: 3.0d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"050738B186A5EEB8"
+			]
+			tasks: [
+				{
+					id: "72D9B5861E0726A0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "74BF91B1507F0449"
+					type: "item"
+					item: {
+						id: "minecraft:cooked_cod"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "5C8728E67107893D"
+			x: 4.5d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7F61136246AB9DEA"
+			]
+			tasks: [
+				{
+					id: "0FD8B5438FFD05AD"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3E05A722CB89073D"
+					type: "item"
+					item: {
+						id: "minecraft:wheat"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "08F4B956DB210A07"
+			x: 6.0d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"795662BF85103267"
+			]
+			tasks: [
+				{
+					id: "2C35EB095934C8DA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "42A8FC886E933C13"
+					type: "item"
+					item: {
+						id: "minecraft:potato"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "2CF847FDC6772F59"
+			x: 7.5d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"795662BF85103267"
+			]
+			tasks: [
+				{
+					id: "4982C08CD6002E40"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "19AB6ED29FC11384"
+					type: "item"
+					item: {
+						id: "minecraft:carrot"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "2BD06C4CC97D7F55"
+			x: 9.0d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"795662BF85103267"
+			]
+			tasks: [
+				{
+					id: "32B258C150FE0BF2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "40D2EEFBF1BA3CD1"
+					type: "item"
+					item: {
+						id: "minecraft:melon_slice"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "3F5A6A23506175C2"
+			x: 10.5d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"795662BF85103267"
+			]
+			tasks: [
+				{
+					id: "49B31A89401FB57F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6E1854A8245C95A6"
+					type: "item"
+					item: {
+						id: "minecraft:sweet_berries"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "1C785A160D61E050"
+			x: 12.0d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"26EAA1BDD3A1CE92"
+			]
+			tasks: [
+				{
+					id: "150E74F5EEB517F9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5E9B6A52866C66AB"
+					type: "item"
+					item: {
+						id: "minecraft:sugar_cane"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "0712F6D02BD594A9"
+			x: 13.5d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4001ABEC58F9F590"
+			]
+			tasks: [
+				{
+					id: "1155E256430F67A2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0BF26E481A32D1D8"
+					type: "item"
+					item: {
+						id: "minecraft:sugar"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "170C2E45DA1B3B43"
+			x: 15.0d
+			y: 3.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"707EBA33CCE0C439"
+			]
+			tasks: [
+				{
+					id: "2CA6E9F000891254"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "78EC43F2F80D7418"
+					type: "item"
+					item: {
+						id: "minecraft:egg"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "64A578E3E0C516C1"
+			x: 1.5d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"19B3E12AC6512111"
+			]
+			tasks: [
+				{
+					id: "1A50B8B6C23EA6FE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4518A759A22E7EB1"
+					type: "item"
+					item: {
+						id: "minecraft:milk_bucket"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "77A0F6E579570775"
+			x: 3.0d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "06C8EECD66F6DF1B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "57E09ED4C7E2CB0A"
+					type: "item"
+					item: {
+						id: "farmersdelight:tomato"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "7C8FC39DD579A115"
+			x: 4.5d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "69BB48A32C0A2E50"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "281EB25C8322D683"
+					type: "item"
+					item: {
+						id: "farmersdelight:onion"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "40007002DC842264"
+			x: 6.0d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "2545EC787126AACC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "510E158EA6F03392"
+					type: "item"
+					item: {
+						id: "farmersdelight:cabbage"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "52062D87CD99B567"
+			x: 7.5d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "2817BCB4A523CD95"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4FC5BC26B01EB4C6"
+					type: "item"
+					item: {
+						id: "farmersdelight:rice"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "4E7FD018A6F322BB"
+			x: 9.0d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2CFFEDC4683607CF"
+			]
+			tasks: [
+				{
+					id: "5B0AC013B404C979"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1846E59E5F606CBB"
+					type: "item"
+					item: {
+						id: "farmersdelight:vegetable_soup"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "6A064A45A74184E5"
+			x: 10.5d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6AAF559710229117"
+			]
+			tasks: [
+				{
+					id: "7D23800110EFA9E8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5898FCD16D5C8A40"
+					type: "item"
+					item: {
+						id: "farmersdelight:pasta_with_meatballs"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "64E0E96F6A2CBDB8"
+			x: 12.0d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"1DF7F1133046DEB1"
+			]
+			tasks: [
+				{
+					id: "6387D67449624D3F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4E0E7F4EA1D17381"
+					type: "item"
+					item: {
+						id: "farmersdelight:honey_glazed_ham_block"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1C4CF77063D22DD7"
+			x: 13.5d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0CEEB0EF247AFEE1"
+			]
+			tasks: [
+				{
+					id: "1C277D71EED11200"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "394A0480E0AF1FAE"
+					type: "item"
+					item: {
+						id: "minecraft:honeycomb"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "41A3573E8173B40B"
+			x: 15.0d
+			y: 4.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0CEEB0EF247AFEE1"
+			]
+			tasks: [
+				{
+					id: "7C0CC23B67EAE4D1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "211941391F1E3048"
+					type: "item"
+					item: {
+						id: "minecraft:honey_bottle"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "5AF9E6B8CB15F127"
+			x: 1.5d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4859615A20A98EB3"
+			]
+			tasks: [
+				{
+					id: "700BFF957FDE0C31"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6063CD3210FD197A"
+					type: "item"
+					item: {
+						id: "minecraft:cake"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "592F4DA7FB9B085C"
+			x: 3.0d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"10DB0AD9FC683E4A"
+			]
+			tasks: [
+				{
+					id: "7600DBADB58F7282"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7444BDEC73634F35"
+					type: "item"
+					item: {
+						id: "minecraft:kelp"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "025977FDED89CCA5"
+			x: 4.5d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4F51D89D9F8829D4"
+			]
+			tasks: [
+				{
+					id: "319E38C514083727"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1CCADD88F57CEC52"
+					type: "item"
+					item: {
+						id: "minecraft:hay_block"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6A4BA14EE9EAB8DB"
+			x: 6.0d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"26CA44769AF76A9D"
+			]
+			tasks: [
+				{
+					id: "691418D67D0D6EC6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "234A1CD3C4C539B3"
+					type: "item"
+					item: {
+						id: "farmersdelight:rich_soil"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "7A36222ACBB1B47B"
+			x: 7.5d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2C27F6E0A24ECFCC"
+			]
+			tasks: [
+				{
+					id: "38DEF5740205B4C0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "67A15FA2CE6D84B8"
+					type: "item"
+					item: {
+						id: "minecraft:bone_meal"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "5821091A19D82BC7"
+			x: 9.0d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"795662BF85103267"
+			]
+			tasks: [
+				{
+					id: "36EF66B62850A2EC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2D71170171D7CA13"
+					type: "item"
+					item: {
+						id: "minecraft:wheat_seeds"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "63767DE7DF41CCDA"
+			x: 10.5d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "5A5CE76BBD5433F7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2BD1DF389A2A9BD8"
+					type: "item"
+					item: {
+						id: "farmersdelight:tomato_seeds"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "572E94C0D35BA821"
+			x: 12.0d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6D7BCF15F3CF7687"
+			]
+			tasks: [
+				{
+					id: "5C2E5E1458AF35ED"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7E4DEF934B6D377D"
+					type: "item"
+					item: {
+						id: "farmersdelight:cabbage_seeds"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "0F00443736BE4409"
+			x: 13.5d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"316D014140DCB5D8"
+			]
+			tasks: [
+				{
+					id: "221C612E791C41E8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3B4A4C71876C19A0"
+					type: "item"
+					item: {
+						id: "silentgear:flax_seeds"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "6793469A8ABBDBF7"
+			x: 15.0d
+			y: 6.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "6A526993B607D8DB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7053717C0A6EAE79"
+					type: "item"
+					item: {
+						id: "minecraft:oak_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6952BF9AEC32D0D4"
+			x: 1.5d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "69B445F4F37FEB31"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "033042B49446966E"
+					type: "item"
+					item: {
+						id: "minecraft:spruce_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "60D7A6BFC17975FC"
+			x: 3.0d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "0835BCFD49F0F672"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1D13C188DF77BEE3"
+					type: "item"
+					item: {
+						id: "minecraft:birch_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "2CB92B8E6984E066"
+			x: 4.5d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "5F30D992F36D536D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6295EB12CC0EFCB4"
+					type: "item"
+					item: {
+						id: "minecraft:jungle_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "432AC6BB15F68193"
+			x: 6.0d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "0779447F08C7C8D9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4C95AE30FC7B454F"
+					type: "item"
+					item: {
+						id: "minecraft:acacia_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "42889E1E1604630E"
+			x: 7.5d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "03F5D32E04ED16F0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5117DDCEC9236148"
+					type: "item"
+					item: {
+						id: "minecraft:dark_oak_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "08FA63B99D40E000"
+			x: 9.0d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "1251A35A4ED112B4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3171A12C4711C89D"
+					type: "item"
+					item: {
+						id: "minecraft:cherry_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "46D9C4F858BD3CF4"
+			x: 10.5d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "7C11A2958867C503"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "03BE35C79E9D138B"
+					type: "item"
+					item: {
+						id: "minecraft:mangrove_propagule"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6D280675338834C9"
+			x: 12.0d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"411A88680C81A7BF"
+			]
+			tasks: [
+				{
+					id: "78B2B413E4D462F7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0AAD38F38D70D151"
+					type: "item"
+					item: {
+						id: "ars_nouveau:red_archwood_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "512E4DC88AAF2F3D"
+			x: 13.5d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"411A88680C81A7BF"
+			]
+			tasks: [
+				{
+					id: "772136B94C36D19A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "47B6868742FA5E5E"
+					type: "item"
+					item: {
+						id: "ars_nouveau:blue_archwood_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "65DCCB83F5218DF3"
+			x: 15.0d
+			y: 7.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"411A88680C81A7BF"
+			]
+			tasks: [
+				{
+					id: "18135310FB91A01B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3A0F19AB958F8CF5"
+					type: "item"
+					item: {
+						id: "ars_nouveau:green_archwood_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "557B4A329B123636"
+			x: 1.5d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"411A88680C81A7BF"
+			]
+			tasks: [
+				{
+					id: "69D84E366EC98F86"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "552D134184B40362"
+					type: "item"
+					item: {
+						id: "ars_nouveau:purple_archwood_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "1141664256D73707"
+			x: 3.0d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6289ECF868508BE4"
+			]
+			tasks: [
+				{
+					id: "1B55DD9E24322E06"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "12F4451161B0D851"
+					type: "item"
+					item: {
+						id: "minecraft:rotten_flesh"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "0EF96A3640315065"
+			x: 4.5d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0957B507E7B098AB"
+			]
+			tasks: [
+				{
+					id: "76CF0722B1A6BACF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1F435667170251C1"
+					type: "item"
+					item: {
+						id: "minecraft:bone"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "271C2AF048FE7CB4"
+			x: 6.0d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6FD9C1EAEB0CC958"
+			]
+			tasks: [
+				{
+					id: "656E46E50E9990DC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "096CF865CAA52FE8"
+					type: "item"
+					item: {
+						id: "minecraft:string"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "6F4A15F5C8A68436"
+			x: 7.5d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6FD9C1EAEB0CC958"
+			]
+			tasks: [
+				{
+					id: "758FCD5A5E166BAF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0CEB2789031B01A9"
+					type: "item"
+					item: {
+						id: "minecraft:spider_eye"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "3D0E91C49EDC50E9"
+			x: 9.0d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2575EE3D3B863D1D"
+			]
+			tasks: [
+				{
+					id: "5BAC31E075DD00D6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2AB7EA1E20F2C740"
+					type: "item"
+					item: {
+						id: "minecraft:leather"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "6B75FB3569CF89C9"
+			x: 10.5d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"707EBA33CCE0C439"
+			]
+			tasks: [
+				{
+					id: "1341FBD1697B98D4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2022AEE3F99E677C"
+					type: "item"
+					item: {
+						id: "minecraft:feather"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "74F565DB014B0328"
+			x: 12.0d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"3FA449155D4FEA25"
+			]
+			tasks: [
+				{
+					id: "24683D5BB71B42D8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "17CC1EFC5390BE03"
+					type: "item"
+					item: {
+						id: "minecraft:gunpowder"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "2D204778E2C9EDB3"
+			x: 13.5d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"3789F700DBDAA49F"
+			]
+			tasks: [
+				{
+					id: "501E45F8EBB841AF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0FB075741E389958"
+					type: "item"
+					item: {
+						id: "minecraft:slime_ball"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "01C6E17602A50AE2"
+			x: 15.0d
+			y: 9.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"209C0E4096417699"
+			]
+			tasks: [
+				{
+					id: "6689988F04308E34"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "38B03B967D84C44F"
+					type: "item"
+					item: {
+						id: "minecraft:armadillo_scute"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "2F4CF36B3AC985FC"
+			x: 1.5d
+			y: 10.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"5B7746A8D5C8363A"
+			]
+			tasks: [
+				{
+					id: "3163F2BAC9F35F3E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "545F46B4A0D2E9A2"
+					type: "item"
+					item: {
+						id: "minecraft:breeze_rod"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5C102D5D30A07211"
+			x: 0.0d
+			y: 13.5d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "5F8255B69FF8955E"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "06828BC339CF6C67"
+			x: 1.5d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "302E80601FC16CF7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3F2445F557C6F301"
+					type: "item"
+					item: {
+						id: "minecraft:netherrack"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "19A23C267DCD27AF"
+			x: 3.0d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "4489B7D7B2CDCEC3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6D0F49602A8F649D"
+					type: "item"
+					item: {
+						id: "minecraft:soul_sand"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "56080F6146160982"
+			x: 4.5d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"069E15B497A964D9"
+			]
+			tasks: [
+				{
+					id: "240B51C83C3F0670"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "138AC6E1DBDFD24A"
+					type: "item"
+					item: {
+						id: "minecraft:blackstone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "14A4B110F90F487B"
+			x: 6.0d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7543D8AB321711BF"
+			]
+			tasks: [
+				{
+					id: "16353F0627F7C613"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3EDADD4F2A0932F6"
+					type: "item"
+					item: {
+						id: "minecraft:nether_brick"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "0801B856789199BF"
+			x: 7.5d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"206E95EBFA840B9D"
+			]
+			tasks: [
+				{
+					id: "6F6EA055446FAADC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2263D4109D607CC3"
+					type: "item"
+					item: {
+						id: "minecraft:obsidian"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "12B646573D1FC300"
+			x: 9.0d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"75644D12ABEA0664"
+			]
+			tasks: [
+				{
+					id: "4D8DEED71B6B5FC2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "73CF44C2F6A7F5CE"
+					type: "item"
+					item: {
+						id: "minecraft:quartz"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "5C209A847A779ACA"
+			x: 10.5d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"452737A7575DCEAE"
+			]
+			tasks: [
+				{
+					id: "5A06CF99D6212E8A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "70638D537EA9F7F6"
+					type: "item"
+					item: {
+						id: "minecraft:glowstone_dust"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "36FA3DDFF79420CF"
+			x: 12.0d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7C9C1346FF3451C6"
+			]
+			tasks: [
+				{
+					id: "2DB6FBF5DB5DAC09"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3D42FCC5961498F4"
+					type: "item"
+					item: {
+						id: "minecraft:nether_wart"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "273E81B2963E1FEE"
+			x: 13.5d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0E68D7AE1C7DBBA0"
+			]
+			tasks: [
+				{
+					id: "59D26CDDFB83797B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0B28E1B9E5B1683A"
+					type: "item"
+					item: {
+						id: "minecraft:crimson_fungus"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "0987695EFDC5B566"
+			x: 15.0d
+			y: 13.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0E68D7AE1C7DBBA0"
+			]
+			tasks: [
+				{
+					id: "1826B88D6B36D00B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "320DAF1CBEDBD3B0"
+					type: "item"
+					item: {
+						id: "minecraft:warped_fungus"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "52C8E6A90A2EBEC6"
+			x: 1.5d
+			y: 15.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"324D521459A0712A"
+			]
+			tasks: [
+				{
+					id: "58BEE10D16F4BE8D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "412607BC400DB1E5"
+					type: "item"
+					item: {
+						id: "minecraft:blaze_rod"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "67D72C759859EBA2"
+			x: 3.0d
+			y: 15.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2BF8FDA92111B602"
+			]
+			tasks: [
+				{
+					id: "4141F8FA4460BAE3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0F2D9724825958A6"
+					type: "item"
+					item: {
+						id: "minecraft:magma_cream"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "2A8BF74DD7184DF7"
+			x: 4.5d
+			y: 15.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2A7CD7184FBD641A"
+			]
+			tasks: [
+				{
+					id: "6B0E3CE306BD7E8B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5495D33E8BA95060"
+					type: "item"
+					item: {
+						id: "minecraft:ghast_tear"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1CFAFC8DD18B4681"
+			x: 6.0d
+			y: 15.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"5BCAB5B85016C31D"
+			]
+			tasks: [
+				{
+					id: "71995CEFD8BCF389"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "78D5A5FBA5C834AE"
+					type: "item"
+					item: {
+						id: "minecraft:phantom_membrane"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "3C052AC619D65E2B"
+			x: 7.5d
+			y: 15.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"085504B6D2AE4F4C"
+			]
+			tasks: [
+				{
+					id: "4DCC7517ABD602E4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3B52E6526F862409"
+					type: "item"
+					item: {
+						id: "minecraft:ender_pearl"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "75E204EEA9A2EB50"
+			x: 0.0d
+			y: 18.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"392A7909301184E2"
+			]
+			tasks: [
+				{
+					id: "58CDD0D1887A1716"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "07C71E61D05E8413"
+			x: 1.5d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4A79D247060404DF"
+			]
+			tasks: [
+				{
+					id: "72705DE700DF8AAB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "35D606D60AFBA9A0"
+					type: "item"
+					item: {
+						id: "minecraft:end_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "018E62CDC4EB85C2"
+			x: 3.0d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4A79D247060404DF"
+			]
+			tasks: [
+				{
+					id: "7F9F77106DD5B879"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "678E9B21B6E5961B"
+					type: "item"
+					item: {
+						id: "minecraft:end_stone_bricks"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "4A72D9E1A7EC4A79"
+			x: 4.5d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"15F725E5C01D018A"
+			]
+			tasks: [
+				{
+					id: "54711BF06FC7D41C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6A504F0B112A4FAE"
+					type: "item"
+					item: {
+						id: "minecraft:chorus_fruit"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "6D4C817411FD550D"
+			x: 6.0d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"15F725E5C01D018A"
+			]
+			tasks: [
+				{
+					id: "785FB9CF504F1E2E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4850BFE74F36E922"
+					type: "item"
+					item: {
+						id: "minecraft:popped_chorus_fruit"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "02D03B116BBB2C3F"
+			x: 7.5d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"478C654ED802C25B"
+			]
+			tasks: [
+				{
+					id: "3FF8EE4EA4E59051"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2870670619A46E5E"
+					type: "item"
+					item: {
+						id: "minecraft:dragon_breath"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "7CED1BC4A9732FED"
+			x: 9.0d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"786DC9EAB0FB870A"
+			]
+			tasks: [
+				{
+					id: "4D23F34E06A75898"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 8L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0492E81CE66215E5"
+					type: "item"
+					item: {
+						id: "minecraft:shulker_shell"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "7A30D4EF810DF14E"
+			x: 10.5d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"3A447C1F1CEAD738"
+			]
+			tasks: [
+				{
+					id: "2F1ABBAD85399218"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5412F9D7868963C1"
+					type: "item"
+					item: {
+						id: "deeperdarker:sculk_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "0CBB8247BFCCF1E8"
+			x: 12.0d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"3A447C1F1CEAD738"
+			]
+			tasks: [
+				{
+					id: "30372D09EAFAFB85"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2F5E92B583B625D9"
+					type: "item"
+					item: {
+						id: "deeperdarker:gloomslate"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "792EB83B68FFCA62"
+			x: 13.5d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4358914CA70F20CE"
+			]
+			tasks: [
+				{
+					id: "6C6B46D11DDF4451"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4F2FA21325E72AD0"
+					type: "item"
+					item: {
+						id: "deeperdarker:resonarium"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "15D53CB065A62C84"
+			x: 15.0d
+			y: 18.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"646A8E1013D752E0"
+			]
+			tasks: [
+				{
+					id: "2BEC5BCE05920363"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6026C261E751058A"
+					type: "item"
+					item: {
+						id: "deeperdarker:echo_log"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "553ADC9E4020FD54"
+			x: 1.5d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"646A8E1013D752E0"
+			]
+			tasks: [
+				{
+					id: "0F5B1DB408A6C889"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "28669E4BACB88BD7"
+					type: "item"
+					item: {
+						id: "deeperdarker:echo_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "55E1200BA32A0CD1"
+			x: 3.0d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6122E89C29A24B28"
+			]
+			tasks: [
+				{
+					id: "5B492E3C05A27409"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0469F95C6BDC82A7"
+					type: "item"
+					item: {
+						id: "deeperdarker:blooming_stem"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "1CAD11922E307889"
+			x: 4.5d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6122E89C29A24B28"
+			]
+			tasks: [
+				{
+					id: "54014715B41C259B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0380C134C26F6F44"
+					type: "item"
+					item: {
+						id: "deeperdarker:bloom_berries"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "6E9B9F937162897B"
+			x: 6.0d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"60C684E7570FFD31"
+			]
+			tasks: [
+				{
+					id: "2B4D0E27C32B0F80"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "784766DB6BA586A5"
+					type: "item"
+					item: {
+						id: "deeperdarker:soul_dust"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "7F3E8025D6A8D40C"
+			x: 7.5d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"60C684E7570FFD31"
+			]
+			tasks: [
+				{
+					id: "13A971A1FB545B5E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "19D33347D87F0891"
+					type: "item"
+					item: {
+						id: "deeperdarker:sculk_bone"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "65F452A0FD7E22A6"
+			x: 9.0d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"3FF906041B74EDD8"
+			]
+			tasks: [
+				{
+					id: "4FAF6F4B047B799A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6CF752673C3B9FD7"
+					type: "item"
+					item: {
+						id: "deeperdarker:grime_brick"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "2BD1BC36E0A4357A"
+			x: 10.5d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"14A0BB33C07DFFB9"
+			]
+			tasks: [
+				{
+					id: "1297CF3B586C3BCF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "113A8B1EA7B993A7"
+					type: "item"
+					item: {
+						id: "deeperdarker:gloomslate_light"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "17C2A84FE0CBCF42"
+			x: 12.0d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"35E65938210C21EF"
+			]
+			tasks: [
+				{
+					id: "045BDCB6FF63F726"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0A9705701B30DDAD"
+					type: "item"
+					item: {
+						id: "deeperdarker:sculk_gleam"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "5CF9B3FAC21779CC"
+			x: 13.5d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"32856C975EB7A004"
+			]
+			tasks: [
+				{
+					id: "63C2557061F06A9A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2017AB341EE7BCA3"
+					type: "item"
+					item: {
+						id: "deeperdarker:echo_soil"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "7F312C36DDB48998"
+			x: 15.0d
+			y: 19.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7811592DAB04EC9B"
+			]
+			tasks: [
+				{
+					id: "7BBBADE7F3256A19"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "70040541B717B2F2"
+					type: "item"
+					item: {
+						id: "deeperdarker:cooked_angler_fish"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "02F3D302F9C2C732"
+			x: 0.0d
+			y: 22.5d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"17832D4C895DEFF7"
+			]
+			tasks: [
+				{
+					id: "079366E5EEEACC34"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "7E655B2DAD785559"
+			x: 1.5d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0EB52209EC2A14E4"
+			]
+			tasks: [
+				{
+					id: "44D96BAE2E3A3788"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5A9CF66A3CF32C3B"
+					type: "item"
+					item: {
+						id: "undergarden:depthrock"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "0D336E9D1EB52A7E"
+			x: 3.0d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"00C8D06724A3EA0F"
+			]
+			tasks: [
+				{
+					id: "6D6E9602CC45508E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0ADED06089EE0B4E"
+					type: "item"
+					item: {
+						id: "undergarden:smogstem_log"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "45A1069960685A54"
+			x: 4.5d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"00C8D06724A3EA0F"
+			]
+			tasks: [
+				{
+					id: "4D9114128B49B242"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0103B942635CBD03"
+					type: "item"
+					item: {
+						id: "undergarden:wigglewood_log"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "6A4CE88E9BC8A560"
+			x: 6.0d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"00C8D06724A3EA0F"
+			]
+			tasks: [
+				{
+					id: "21ED6CCF7B0698DB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "11FAFE0A8CFABF2D"
+					type: "item"
+					item: {
+						id: "undergarden:grongle_log"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "340A1DD53422070E"
+			x: 7.5d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"01EC8B2403704D6F"
+			]
+			tasks: [
+				{
+					id: "23CE005B094C22F4"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3B7C24DDD7A61C27"
+					type: "item"
+					item: {
+						id: "undergarden:smogstem_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "3BD9BFD339A0946B"
+			x: 9.0d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6F00F60AD2647605"
+			]
+			tasks: [
+				{
+					id: "15EEB06CB4171FAA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "3693178DD0F0EDD0"
+					type: "item"
+					item: {
+						id: "undergarden:wigglewood_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "03C1E1C67B31E52A"
+			x: 10.5d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7248546344592433"
+			]
+			tasks: [
+				{
+					id: "1010E4C38B4E57C2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "76C703AE40E2CAF8"
+					type: "item"
+					item: {
+						id: "undergarden:grongle_sapling"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "710374D82AA6324A"
+			x: 12.0d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"323AAE72767E5C67"
+			]
+			tasks: [
+				{
+					id: "14D04ADA174EF8D2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6FC6719688F4ACA3"
+					type: "item"
+					item: {
+						id: "undergarden:underbeans"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "0062D5E2F373331D"
+			x: 13.5d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"42C72B875161B03C"
+			]
+			tasks: [
+				{
+					id: "700E66DEB1B85E8C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "22C71697D2D909C7"
+					type: "item"
+					item: {
+						id: "undergarden:roasted_underbeans"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "5DB28BC88BE3F0D2"
+			x: 15.0d
+			y: 22.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"68D239C447F22CEC"
+			]
+			tasks: [
+				{
+					id: "2F8CDE59D8D296B6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0A6B8D6AAA30FB13"
+					type: "item"
+					item: {
+						id: "undergarden:gloomgourd"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "19586C0F53A35F34"
+			x: 1.5d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"68D239C447F22CEC"
+			]
+			tasks: [
+				{
+					id: "2FE3F0CDAA32E98E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2CACBC3EC5587E16"
+					type: "item"
+					item: {
+						id: "undergarden:gloomgourd_seeds"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "0BE8FD1795140C99"
+			x: 3.0d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"22A611C7FB2B9007"
+			]
+			tasks: [
+				{
+					id: "37D00646ED9DD9AA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "593F4857085C024E"
+					type: "item"
+					item: {
+						id: "undergarden:dweller_steak"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "75A79543ABCFF332"
+			x: 4.5d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"22A611C7FB2B9007"
+			]
+			tasks: [
+				{
+					id: "2D97A77DACCE2365"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0536CD664F341E2B"
+					type: "item"
+					item: {
+						id: "undergarden:gloomper_leg"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "433EDDAA87C0A7F9"
+			x: 6.0d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"271D393332A6196C"
+			]
+			tasks: [
+				{
+					id: "0147AA3B7DAC952C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "71A190BD1D178F56"
+					type: "item"
+					item: {
+						id: "undergarden:cooked_gwibling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "7B1F39DE91E83A9A"
+			x: 7.5d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7337CAB0B300E8DB"
+			]
+			tasks: [
+				{
+					id: "789AA6F3349CBFDE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5C9EE9F0D405CC0C"
+					type: "item"
+					item: {
+						id: "undergarden:blisterberry"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "5A6909B79FDCFC0D"
+			x: 9.0d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"5E25F12EBDA28EBD"
+			]
+			tasks: [
+				{
+					id: "1A2BD8AE8A390FBA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4B356647896FB627"
+					type: "item"
+					item: {
+						id: "undergarden:droopvine_item"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "6E4FF82621E29FB0"
+			x: 10.5d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"564E8DB3682690EC"
+			]
+			tasks: [
+				{
+					id: "7C7790BC4913B7B7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5E23F288AD8FDDB0"
+					type: "item"
+					item: {
+						id: "undergarden:glitterkelp"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "1A87DCA1C7EDFBBE"
+			x: 12.0d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2FBB36C42CBD1489"
+			]
+			tasks: [
+				{
+					id: "5473EDF94543AB0E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "75C088675B3A037E"
+					type: "item"
+					item: {
+						id: "undergarden:mogmoss"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "102B50197DAB89F6"
+			x: 13.5d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"5C2E01E20EAF6231"
+			]
+			tasks: [
+				{
+					id: "57C38CD85FE86F5B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0AA80670E7F93A97"
+					type: "item"
+					item: {
+						id: "undergarden:blood_mushroom"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "70F02DFC63F0A621"
+			x: 15.0d
+			y: 24.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"1FADDFB48CEFB23B"
+			]
+			tasks: [
+				{
+					id: "76E5DA9E808D27B0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "58CE7D719FD7CDCC"
+					type: "item"
+					item: {
+						id: "undergarden:indigo_mushroom"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "11DCAFD41A6AF78D"
+			x: 1.5d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"48BC5DBDCC5A0E5B"
+			]
+			tasks: [
+				{
+					id: "2D439B4DE145F3EA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2E377CE8EAFB71DC"
+					type: "item"
+					item: {
+						id: "undergarden:ink_mushroom"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "0C9EAA4B07603BF3"
+			x: 3.0d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7BB0454D7D200B62"
+			]
+			tasks: [
+				{
+					id: "0DF4A6EE297183E3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "25F50B6BBA7B231B"
+					type: "item"
+					item: {
+						id: "undergarden:veil_mushroom"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6C4750244F6EDCF8"
+			x: 4.5d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"71424F14C6F041A0"
+			]
+			tasks: [
+				{
+					id: "294346FED217F714"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 2L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "45FD4798F199456F"
+					type: "item"
+					item: {
+						id: "undergarden:shard_torch"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "3402893053383A91"
+			x: 6.0d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"26F4F461250D42A3"
+			]
+			tasks: [
+				{
+					id: "12D04645BC386276"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "784E0E4E9D598D72"
+					type: "item"
+					item: {
+						id: "undergarden:goo_ball"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "760061FC4114E731"
+			x: 7.5d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4803EAF3D5701D4D"
+			]
+			tasks: [
+				{
+					id: "5AF10618915E70D7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 3L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "38AA317CFBBE04DB"
+					type: "item"
+					item: {
+						id: "undergarden:brute_tusk"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "74A6AF694F84DA31"
+			x: 9.0d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2B2D7DD2918988F5"
+			]
+			tasks: [
+				{
+					id: "58EED8CC1A7C156F"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "296CD7D0F24BBD42"
+					type: "item"
+					item: {
+						id: "undergarden:rogdorium"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "696EC935380DDCC8"
+			x: 10.5d
+			y: 25.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"6CFE58493658BF8A"
+			]
+			tasks: [
+				{
+					id: "2CF9DE1415235A18"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "56EC33B98816E5CD"
+					type: "item"
+					item: {
+						id: "undergarden:utheric_shard"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "614B2D8B0AB8F21B"
+			x: 0.0d
+			y: 28.5d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "5067512A7F9BB182"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "3E2D221499360D5D"
+			x: 1.5d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4D231017F4253DCD"
+			]
+			tasks: [
+				{
+					id: "400556FB95398A77"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2EA7C80F3CF6DC47"
+					type: "item"
+					item: {
+						id: "twilightforest:twilight_oak_log"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "5119B7D8B955DA86"
+			x: 3.0d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4D231017F4253DCD"
+			]
+			tasks: [
+				{
+					id: "4D129DDB5A0A2893"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "2EF35629B7F6920E"
+					type: "item"
+					item: {
+						id: "twilightforest:twilight_oak_sapling"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "6BFE3348CC03C068"
+			x: 4.5d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7CFBB54ED187EDE0"
+			]
+			tasks: [
+				{
+					id: "3ACC852B2C9FC758"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7508314290188160"
+					type: "item"
+					item: {
+						id: "twilightforest:torchberries"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "3BECBAAF865CB3B6"
+			x: 6.0d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7CFBB54ED187EDE0"
+			]
+			tasks: [
+				{
+					id: "22F20EE8DA8F11E2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4863D37A64AFF845"
+					type: "item"
+					item: {
+						id: "twilightforest:raven_feather"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "0DCE34744D65CCB1"
+			x: 7.5d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"52D07DFAAE1958CD"
+			]
+			tasks: [
+				{
+					id: "7AC55027E7654A15"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 5L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7CA93ABDB04CBB99"
+					type: "item"
+					item: {
+						id: "twilightforest:liveroot"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "36DA233DFB67812B"
+			x: 9.0d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"31A10F1B06C351EA"
+			]
+			tasks: [
+				{
+					id: "7DEEEE7AF08E66B9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4DEAF5114B76A33E"
+					type: "item"
+					item: {
+						id: "twilightforest:raw_venison"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "7E419CE5992D6FEF"
+			x: 10.5d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"005D8A97125DC3EC"
+			]
+			tasks: [
+				{
+					id: "21BEBB319266638D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1CA3B53B016869D3"
+					type: "item"
+					item: {
+						id: "twilightforest:raw_meef"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "5A1C0C9B8D835BE1"
+			x: 12.0d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"52E4898C23EA212B"
+			]
+			tasks: [
+				{
+					id: "55C2614990964BAC"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7222FBE0248845EA"
+					type: "item"
+					item: {
+						id: "twilightforest:maze_wafer"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "696350741D156208"
+			x: 13.5d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2CC987541BBC6F25"
+			]
+			tasks: [
+				{
+					id: "388775E0702A82E9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 4L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "64BB6CC364F13199"
+					type: "item"
+					item: {
+						id: "twilightforest:thorn_rose"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "45045CE7477D6CCB"
+			x: 15.0d
+			y: 28.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"02D40EB8D976C22D"
+			]
+			tasks: [
+				{
+					id: "633C02F8E628F933"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 6L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "74CC1F6C9AD583EA"
+					type: "item"
+					item: {
+						id: "twilightforest:uberous_soil"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "270C04AA9B5F3A3D"
+			x: 1.5d
+			y: 30.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"66F9A1EE403567F1"
+			]
+			tasks: [
+				{
+					id: "590DA1BB5D10FDD8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 6L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "742BF2949108A7D4"
+					type: "item"
+					item: {
+						id: "twilightforest:castle_brick"
+						count: 32
+					}
+				}
+			]
+		}
+		{
+			id: "2B927204AC358F0E"
+			x: 3.0d
+			y: 30.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"7C52CA9E17D044E7"
+			]
+			tasks: [
+				{
+					id: "176E9ABA6AEF284A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 5L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "590FE481CA7266DE"
+					type: "item"
+					item: {
+						id: "twilightforest:arctic_fur"
+						count: 8
+					}
+				}
+			]
+		}
+		{
+			id: "5261E39D892D603C"
+			x: 4.5d
+			y: 30.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"2035D7BA15DF5C7D"
+			]
+			tasks: [
+				{
+					id: "152B242A560183F8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 6L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "1EECAD2C0E9F1BF0"
+					type: "item"
+					item: {
+						id: "twilightforest:armor_shard"
+						count: 9
+					}
+				}
+			]
+		}
+		{
+			id: "62CA2A2A0311E7BC"
+			x: 6.0d
+			y: 30.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"4C6364700FF784EF"
+			]
+			tasks: [
+				{
+					id: "658B66200F7A1ED1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 6L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "46D28EF2A1EE6068"
+					type: "item"
+					item: {
+						id: "twilightforest:carminite"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "4965C2A533DE5133"
+			x: 7.5d
+			y: 30.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"14B8FA65B7C3829D"
+			]
+			tasks: [
+				{
+					id: "703E6771B410ED11"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 8L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "64AA3F1583F3D077"
+					type: "item"
+					item: {
+						id: "twilightforest:naga_scale"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "018A52EB5E05756F"
+			x: 9.0d
+			y: 30.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"350ECB50DEF6DE63"
+			]
+			tasks: [
+				{
+					id: "0A6C8F5731F95D6E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+					count: 8L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5A0FEA5DF416498F"
+					type: "item"
+					item: {
+						id: "twilightforest:alpha_yeti_fur"
+						count: 4
+					}
+				}
+			]
+		}
+		{
+			id: "5BD4ED5AFB9E740A"
+			x: 0.0d
+			y: 33.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "613A38D8726FF51F"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			id: "180BB03EA23AF3AE"
+			x: 1.5d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0C1DD95BA033EAB3"
+			]
+			tasks: [
+				{
+					id: "36B19B874C412412"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4AE4B15610A567AA"
+					type: "item"
+					item: {
+						id: "ad_astra:moon_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "4FF405DE155210AF"
+			x: 3.0d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0C1DD95BA033EAB3"
+			]
+			tasks: [
+				{
+					id: "2A641FCB60006AAB"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "29A50856B6C59905"
+					type: "item"
+					item: {
+						id: "ad_astra:moon_sand"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "4666297CEB71FD2A"
+			x: 4.5d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"40442645A8B5A09C"
+			]
+			tasks: [
+				{
+					id: "642F9C5A572F303F"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4688926519B185F5"
+					type: "item"
+					item: {
+						id: "ad_astra:cheese"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "1581A0CECE98DD24"
+			x: 6.0d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"635A241489681170"
+			]
+			tasks: [
+				{
+					id: "673502E938C6EF8E"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5856AD1EC99C0211"
+					type: "item"
+					item: {
+						id: "ad_astra:mars_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "672727BB164DF403"
+			x: 7.5d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"635A241489681170"
+			]
+			tasks: [
+				{
+					id: "6E4DD232CDFFF604"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "5DE44B21BD3E1FAB"
+					type: "item"
+					item: {
+						id: "ad_astra:mars_sand"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "01CA499DFC0A849F"
+			x: 9.0d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"36C2163D475D5DD0"
+			]
+			tasks: [
+				{
+					id: "74118145372403F8"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7A264CE3AD4136D9"
+					type: "item"
+					item: {
+						id: "ad_astra:ice_shard"
+						count: 16
+					}
+				}
+			]
+		}
+		{
+			id: "5FFD75716BD61C4E"
+			x: 10.5d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "1F952822FC94FCD7"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "212D78D21C54581A"
+					type: "item"
+					item: {
+						id: "ad_astra:venus_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "64D3EDB2EBBDD233"
+			x: 12.0d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"0371D774272DB515"
+			]
+			tasks: [
+				{
+					id: "2C582EDC3A6F09B5"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "4D6FE84CD8F0E513"
+					type: "item"
+					item: {
+						id: "ad_astra:venus_sand"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "24E7B2254DA77625"
+			x: 13.5d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"72A1114536C4C6FA"
+			]
+			tasks: [
+				{
+					id: "07499D89A1F4DAFC"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "0472423D0A42006A"
+					type: "item"
+					item: {
+						id: "ad_astra:mercury_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "0FB1E793A8F93A00"
+			x: 15.0d
+			y: 33.0d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"537431DD08EA991F"
+			]
+			tasks: [
+				{
+					id: "7D70C8B225C1286F"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "6AF95C6460CE6D22"
+					type: "item"
+					item: {
+						id: "ad_astra:glacio_stone"
+						count: 64
+					}
+				}
+			]
+		}
+		{
+			id: "4C1DD7BEE15267BE"
+			x: 1.5d
+			y: 34.5d
+			optional: true
+			can_repeat: true
+			hide_until_deps_complete: true
+			dependencies: [
+				"537431DD08EA991F"
+			]
+			tasks: [
+				{
+					id: "1069A387659036E9"
+					type: "item"
+					item: {
+						id: "kubejs:greater_demigod_token"
+						count: 1
+					}
+					count: 1L
+					consume_items: true
+				}
+			]
+			rewards: [
+				{
+					id: "7C87F95523D283EB"
+					type: "item"
+					item: {
+						id: "ad_astra:permafrost"
+						count: 32
+					}
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "22DB48EB1D9BFF63"
+			x: 2.25d
+			y: -5.25d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/shop_world.png"
+		}
+	]
+	quest_links: [ ]
+}

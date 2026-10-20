@@ -492,10 +492,7 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
         "&eWhat:&r radioactive waste barrels hold spent waste and let it decay slowly instead of leaking.",
         "&eChemistry:&r every radioactive isotope halves on its own schedule. Real spent fuel is kept cool for years before it is moved anywhere.",
         "&eHow:&r 4 steel and 4 lead ingots."]),
-    Q("t6_logic_adapter", 0, 0, [item(GEN + "fission_reactor_logic_adapter")], "Reactor Logic", deps=["t6_fission"], xp=40,
-      optional=True, tokens=1, subtitle="Optional: an automatic SCRAM", desc=[
-        "&eWhat:&r a logic adapter outputs redstone on conditions like high temperature or damage, and can shut the reactor down.",
-        "&eHow:&r a fission casing with 4 redstone dust. Set it to 'activation' or a damage threshold in its GUI."]),
+    Q("t6_logic_adapter", 0, 0, [tick()], "Reactor Logic", deps=['t6_fission'], optional=True, tokens=0, xp=0, icon="mekanismgenerators:fission_reactor_logic_adapter", subtitle="Moved: see Fission Logic Adapter", desc=["&eMoved:&r this step is now \"Fission Logic Adapter\" on the Mekanism: Power page. Click to dismiss."]),
     Q("t6_nether_star", 0, 0, [item("minecraft:nether_star")], "A Nether Star", deps=["t6_reactor_parts"], xp=150,
       subtitle="The Fusion Chamber's heart", desc=[
         "&eWhat:&r the Fusion Chamber controller needs a Nether Star.",
@@ -510,9 +507,5 @@ CHAPTER = Chapter("t6", "VII. Materials and Nuclear", "mekanism:pellet_polonium"
       subtitle="Fuel, cut to length", desc=[
         "&eWhat:&r each MI uranium fuel rod is 18 of these.",
         "&eHow:&r Cutting Machine with lubricant: 1 uranium ingot → 2 rods."]),
-    Q("t5_large_diesel", 0, 0, [item(MI + "large_diesel_generator")], "Large Diesel Generator", deps=["t6_advmotor", "t5_diesel"], xp=80,
-      optional=True, tokens=1, subtitle="Optional: burn diesel in bulk", desc=[
-        "&eWhat:&r a multiblock generator that gets far more energy per bucket than the single-block ones.",
-        "&eHow:&r the controller needs advanced pumps, so it waits for the stainless motors of this chapter. Check JEI and the MI guidebook for the recipe and layout.",
-        "&eTip:&r boosted diesel (diesel + diethyl ether) burns even better."]),
+    Q("t5_large_diesel", 0, 0, [tick()], "Large Diesel Generator", deps=['t6_advmotor', 't5_diesel'], optional=True, tokens=0, xp=0, icon="modern_industrialization:large_diesel_generator", subtitle="Moved: see Large Diesel Generator", desc=["&eMoved:&r this step is now \"Large Diesel Generator\" on the Power page. Click to dismiss."]),
 ])

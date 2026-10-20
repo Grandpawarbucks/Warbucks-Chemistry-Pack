@@ -1,0 +1,32 @@
+{
+  "parent": "occultism:occultism/familiar/root",
+  "criteria": {
+    "devil_fire": {
+      "conditions": {
+        "type": "devil_fire"
+      },
+      "trigger": "occultism:familiar"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.occultism.familiar.devil.description"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_model_data": 3
+      },
+      "count": 1,
+      "id": "occultism:advancement_icon"
+    },
+    "title": {
+      "translate": "advancements.occultism.familiar.devil.title"
+    }
+  },
+  "requirements": [
+    [
+      "devil_fire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

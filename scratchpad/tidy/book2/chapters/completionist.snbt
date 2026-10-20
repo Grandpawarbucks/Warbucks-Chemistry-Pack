@@ -1,0 +1,4476 @@
+{
+	id: "452C93B72D978D1A"
+	group: ""
+	order_index: 6
+	filename: "completionist"
+	icon: {
+		id: "minecraft:item_frame"
+		count: 1
+	}
+	default_quest_shape: "circle"
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			id: "24914735614B7E05"
+			x: 8.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4D8BFEB75E87D5CA"
+			]
+			tasks: [
+				{
+					id: "0778B36471B3CB10"
+					type: "item"
+					item: {
+						id: "minecraft:white_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "243021DD154F3949"
+					type: "item"
+					item: {
+						id: "minecraft:orange_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5089B37725289E18"
+					type: "item"
+					item: {
+						id: "minecraft:magenta_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0F559EA91D9E49F4"
+					type: "item"
+					item: {
+						id: "minecraft:light_blue_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0B4275937E6DE797"
+					type: "item"
+					item: {
+						id: "minecraft:yellow_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5228E8D5DB3904F3"
+					type: "item"
+					item: {
+						id: "minecraft:lime_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "20D5ECDD7F4B5302"
+					type: "item"
+					item: {
+						id: "minecraft:pink_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "78C2D156C78BFA84"
+					type: "item"
+					item: {
+						id: "minecraft:gray_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "05E2E9C93135D6D5"
+					type: "item"
+					item: {
+						id: "minecraft:light_gray_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3C83203D5BD0B2C8"
+					type: "item"
+					item: {
+						id: "minecraft:cyan_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "256C3A5204243E77"
+					type: "item"
+					item: {
+						id: "minecraft:purple_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6DBF53E40924B24F"
+					type: "item"
+					item: {
+						id: "minecraft:blue_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4AC3ACBBE784FBCE"
+					type: "item"
+					item: {
+						id: "minecraft:brown_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "641420DC2632779B"
+					type: "item"
+					item: {
+						id: "minecraft:green_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0E51D147C9602599"
+					type: "item"
+					item: {
+						id: "minecraft:red_wool"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "23DE1F62EE8BA337"
+					type: "item"
+					item: {
+						id: "minecraft:black_wool"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3201570421E09730"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "45B7AD9961CC9531"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3C3A4C35AF19917F"
+			x: 10.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"24914735614B7E05"
+			]
+			tasks: [
+				{
+					id: "238756506F75A560"
+					type: "item"
+					item: {
+						id: "minecraft:white_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5F25E7E00997407C"
+					type: "item"
+					item: {
+						id: "minecraft:orange_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3CCE96D94C4A29BC"
+					type: "item"
+					item: {
+						id: "minecraft:magenta_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "40A0118C656013D4"
+					type: "item"
+					item: {
+						id: "minecraft:light_blue_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2FDCFCCB4DD8D5B7"
+					type: "item"
+					item: {
+						id: "minecraft:yellow_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2CA0C70B3F714F71"
+					type: "item"
+					item: {
+						id: "minecraft:lime_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5E4ED01DB68E5120"
+					type: "item"
+					item: {
+						id: "minecraft:pink_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0F6B8DB0420376DA"
+					type: "item"
+					item: {
+						id: "minecraft:gray_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5D73AAD6DAC6D47C"
+					type: "item"
+					item: {
+						id: "minecraft:light_gray_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2C643F9CCB27432C"
+					type: "item"
+					item: {
+						id: "minecraft:cyan_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "646AB170262080E1"
+					type: "item"
+					item: {
+						id: "minecraft:purple_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "61DD32B380BD228A"
+					type: "item"
+					item: {
+						id: "minecraft:blue_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4662348B7290974D"
+					type: "item"
+					item: {
+						id: "minecraft:brown_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "19D3D3CD9D45A01D"
+					type: "item"
+					item: {
+						id: "minecraft:green_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3BF4D6FA75EC6702"
+					type: "item"
+					item: {
+						id: "minecraft:red_dye"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7738371C3CA9D849"
+					type: "item"
+					item: {
+						id: "minecraft:black_dye"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "590BD1638A4FF590"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "46ABCC107361E298"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "05CCE3C3E12A4F47"
+			x: 10.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3C3A4C35AF19917F"
+			]
+			tasks: [
+				{
+					id: "1BE87EE4CA916791"
+					type: "item"
+					item: {
+						id: "minecraft:white_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "02CBA2751D3FF99A"
+					type: "item"
+					item: {
+						id: "minecraft:orange_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0DF9660D4506E3BF"
+					type: "item"
+					item: {
+						id: "minecraft:magenta_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "11E203D797E9B70F"
+					type: "item"
+					item: {
+						id: "minecraft:light_blue_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "12AC475DBBD5F0D8"
+					type: "item"
+					item: {
+						id: "minecraft:yellow_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0BBAC29452007053"
+					type: "item"
+					item: {
+						id: "minecraft:lime_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "72B88B1D0C0A6BE7"
+					type: "item"
+					item: {
+						id: "minecraft:pink_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "326B120862E386E8"
+					type: "item"
+					item: {
+						id: "minecraft:gray_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "77A9E6375A3C5EFF"
+					type: "item"
+					item: {
+						id: "minecraft:light_gray_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7EB718796B49E5AE"
+					type: "item"
+					item: {
+						id: "minecraft:cyan_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "33E3EDB846BD6491"
+					type: "item"
+					item: {
+						id: "minecraft:purple_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "19255B8592C6362B"
+					type: "item"
+					item: {
+						id: "minecraft:blue_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6631C428DE5C73D9"
+					type: "item"
+					item: {
+						id: "minecraft:brown_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "47E20C8CAAF6D6D7"
+					type: "item"
+					item: {
+						id: "minecraft:green_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "19453DD71712B74A"
+					type: "item"
+					item: {
+						id: "minecraft:red_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2452EBA3EAC978FD"
+					type: "item"
+					item: {
+						id: "minecraft:black_concrete"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "6B45890D786A5554"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "1775A93BD4E7C587"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "29FD9FD275EB8B42"
+			x: 10.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"310586A0CE86D7B4"
+			]
+			tasks: [
+				{
+					id: "48EBC985E01D5305"
+					type: "item"
+					item: {
+						id: "minecraft:oak_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1AD598C7555A3E05"
+					type: "item"
+					item: {
+						id: "minecraft:spruce_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6F7BC5E40CC818BE"
+					type: "item"
+					item: {
+						id: "minecraft:birch_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2B9C383DDB1F2483"
+					type: "item"
+					item: {
+						id: "minecraft:jungle_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "122A33D6347AC432"
+					type: "item"
+					item: {
+						id: "minecraft:acacia_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71B2168D7635AB35"
+					type: "item"
+					item: {
+						id: "minecraft:dark_oak_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "07679D1F34B1B664"
+					type: "item"
+					item: {
+						id: "minecraft:cherry_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1A64D4DCF3CBFAE8"
+					type: "item"
+					item: {
+						id: "minecraft:mangrove_propagule"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "26632CEB3477F76E"
+					type: "item"
+					item: {
+						id: "minecraft:azalea"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7EE7F4DF8BF012A6"
+					type: "item"
+					item: {
+						id: "minecraft:flowering_azalea"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A2B72E2DA473CE7"
+					type: "xp"
+					xp: 50
+				}
+				{
+					id: "57D1706C211BBA21"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "3E6E555D15E5618C"
+			x: 10.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"29FD9FD275EB8B42"
+			]
+			tasks: [
+				{
+					id: "4E9E93E5785A6033"
+					type: "item"
+					item: {
+						id: "biomesoplenty:redwood_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "377C89DF82F4A89F"
+					type: "item"
+					item: {
+						id: "biomesoplenty:jacaranda_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7A3170E01D15A2FF"
+					type: "item"
+					item: {
+						id: "biomesoplenty:magic_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6DF1987A5BFC6D8B"
+					type: "item"
+					item: {
+						id: "biomesoplenty:palm_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "321843B3FB58EBA7"
+					type: "item"
+					item: {
+						id: "biomesoplenty:snowblossom_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4BD97345BB4850A2"
+					type: "item"
+					item: {
+						id: "regions_unexplored:baobab_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5899753C4312BA18"
+					type: "item"
+					item: {
+						id: "regions_unexplored:eucalyptus_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "12910E1FE01F260F"
+					type: "item"
+					item: {
+						id: "regions_unexplored:joshua_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7BD37231BEE6B783"
+					type: "item"
+					item: {
+						id: "regions_unexplored:sky_wisteria_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2A3EE8B6D1074FEA"
+					type: "item"
+					item: {
+						id: "regions_unexplored:kapok_sapling"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "74E08920AB55F405"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "304CC0CD07978C1E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "5CF80E20FAD6CF13"
+			x: -4.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0A8F569FBAF9D8B1"
+			]
+			tasks: [
+				{
+					id: "3F7E20B7F12EAC3A"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_13"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0AD6EF5A1D7CBEE4"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_cat"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "12F5A5FED1D444C1"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_blocks"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "203CAB2B411FFDC7"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_chirp"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "093422A7419D43F5"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_far"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4DA7114047F97885"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_mall"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5EF8C613F4F6E140"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_mellohi"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "202B1DC185D8B08B"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_stal"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0401EB04673317DB"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_strad"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "12B0BF77B0723858"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_ward"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5A3222AA894491D7"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_11"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0FBB9E4A0BAECF1B"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_wait"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2697C4604ACEEEDB"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "748EB66FFE2E40DB"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "30EC54EB8A9DFD35"
+			x: -2.0d
+			y: -10.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5CF80E20FAD6CF13"
+				"1A42564839595307"
+			]
+			tasks: [
+				{
+					id: "2F98E385B0B4D391"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_pigstep"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6491C24218852321"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_otherside"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7BD70DFBBD8DE238"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_relic"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "43FEA63434BEABB0"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_5"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "53215200EC148040"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "68FCD19BEABD4F1B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "064638080B9AC1F3"
+			x: -4.0d
+			y: -12.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5CF80E20FAD6CF13"
+			]
+			tasks: [
+				{
+					id: "6B4FE82667214F00"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_creator"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4DDA218BD846E0EF"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_creator_music_box"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "011EA082E3A9C122"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_precipice"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1B7A62FC1BCA4B8F"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "111B83AA49389795"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "76E6697544E0D8BF"
+			x: 0.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "1075E321299A7D89"
+					type: "item"
+					item: {
+						id: "minecraft:coast_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "19303E1D3BB59AE8"
+					type: "item"
+					item: {
+						id: "minecraft:dune_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "720BA1D56752E8F6"
+					type: "item"
+					item: {
+						id: "minecraft:wild_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "16609E2DC9204EA4"
+					type: "item"
+					item: {
+						id: "minecraft:sentry_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "491FCF3A7EDC87D7"
+					type: "item"
+					item: {
+						id: "minecraft:vex_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1DE4792BECF0838C"
+					type: "item"
+					item: {
+						id: "minecraft:tide_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4A8FF68ED303F3F5"
+					type: "item"
+					item: {
+						id: "minecraft:eye_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "73DA8D84CF9B944B"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "7CAA88A5D6AF3C99"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "3A9524CD2B47B654"
+			x: 0.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"76E6697544E0D8BF"
+			]
+			tasks: [
+				{
+					id: "38139312C212128B"
+					type: "item"
+					item: {
+						id: "minecraft:wayfinder_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "29113C3689E2EC98"
+					type: "item"
+					item: {
+						id: "minecraft:raiser_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "10662407CC852CBF"
+					type: "item"
+					item: {
+						id: "minecraft:shaper_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "63F54CD0BFCCDFD2"
+					type: "item"
+					item: {
+						id: "minecraft:host_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2B5A62AEFF28A41D"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0B135168AD69637E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "71DF0C78D78D5E7B"
+			x: 2.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"76E6697544E0D8BF"
+				"1A42564839595307"
+			]
+			tasks: [
+				{
+					id: "7B074CEE867C3841"
+					type: "item"
+					item: {
+						id: "minecraft:ward_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2AA3B874E29D3354"
+					type: "item"
+					item: {
+						id: "minecraft:silence_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "4EB2CC92A6427F9A"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "11C50AC0711E8118"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "476FD0DDC043D665"
+			x: -2.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"76E6697544E0D8BF"
+				"786DC9EAB0FB870A"
+			]
+			tasks: [
+				{
+					id: "2869B4D838A43AE2"
+					type: "item"
+					item: {
+						id: "minecraft:rib_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "736C35BDE6CD9711"
+					type: "item"
+					item: {
+						id: "minecraft:snout_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0C01E276A0EFC0B2"
+					type: "item"
+					item: {
+						id: "minecraft:spire_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5AB069EAF3A8A624"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "533B6A9A0BE719B7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "6E25BE0980F1ED98"
+			x: 2.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"76E6697544E0D8BF"
+			]
+			tasks: [
+				{
+					id: "7A2D1A534D76DBF2"
+					type: "item"
+					item: {
+						id: "minecraft:flow_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4EE93D9B89A3AA20"
+					type: "item"
+					item: {
+						id: "minecraft:bolt_armor_trim_smithing_template"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5632B125134DA3FA"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "3667D59B02981DB0"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "3154336597FED77E"
+			x: 2.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "142EDF6A09744C22"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:coal_ore)item(minecraft:deepslate_coal_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "1BFCFDEFB05E2D21"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:iron_ore)item(minecraft:deepslate_iron_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "0886D0F45B2596AA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:copper_ore)item(minecraft:deepslate_copper_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "7C4EABC75709C128"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:gold_ore)item(minecraft:deepslate_gold_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "327DCF0FFE214B2F"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:redstone_ore)item(minecraft:deepslate_redstone_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "77F44CC9C5C23EFA"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:lapis_ore)item(minecraft:deepslate_lapis_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "0F3379429DECC007"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:diamond_ore)item(minecraft:deepslate_diamond_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "1309A943E70B1ACF"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(minecraft:emerald_ore)item(minecraft:deepslate_emerald_ore))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "795BEAF26DC292E5"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0BFB8AAC6A00F90C"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7AA71D0F3718C0F5"
+			x: 4.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3154336597FED77E"
+				"5162E347921E0863"
+			]
+			tasks: [
+				{
+					id: "6F8AC0426AE8A8B0"
+					type: "item"
+					item: {
+						id: "minecraft:nether_gold_ore"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0E8E1994B1A9684B"
+					type: "item"
+					item: {
+						id: "minecraft:nether_quartz_ore"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "38ACF50B1C5D4F29"
+					type: "item"
+					item: {
+						id: "minecraft:ancient_debris"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "2C520E3E4FB74972"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "089C673523D2DF51"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "17CB280131B353E2"
+			x: 4.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"3154336597FED77E"
+				"30FB6A2D6AE22741"
+			]
+			tasks: [
+				{
+					id: "7154E8E507A11F6C"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:tin_ore)item(modern_industrialization:deepslate_tin_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "2DDD7D75BBABB5E9"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:lead_ore)item(modern_industrialization:deepslate_lead_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "549FA91EFE5082E7"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:nickel_ore)item(modern_industrialization:deepslate_nickel_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "5FCC775EABB7DCC4"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:bauxite_ore)item(modern_industrialization:deepslate_bauxite_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "46CA18018DBF7199"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:antimony_ore)item(modern_industrialization:deepslate_antimony_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "4036C0F2129E2738"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:salt_ore)item(modern_industrialization:deepslate_salt_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "2B97065B35BB8D7D"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:lignite_coal_ore)item(modern_industrialization:deepslate_lignite_coal_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "26289457335D80B3"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:monazite_ore)item(modern_industrialization:deepslate_monazite_ore))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7AED4A9A1645EC99"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "3EA50909E62437B2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "56909AAC70A18B96"
+			x: 4.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"17CB280131B353E2"
+				"474137432EABE206"
+			]
+			tasks: [
+				{
+					id: "656C668877CE4E6A"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:uranium_ore)item(modern_industrialization:deepslate_uranium_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "72EA2A655607DED5"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(modern_industrialization:tungsten_ore)item(modern_industrialization:deepslate_tungsten_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "284B57D190728BFD"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism:osmium_ore)item(mekanism:deepslate_osmium_ore))"
+						}
+					}
+					count: 1L
+				}
+				{
+					id: "6F66DB50A580FA32"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism:fluorite_ore)item(mekanism:deepslate_fluorite_ore))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5D956873B3B1C595"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "7CD011BF352BC1D5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "65B54DE3A16529B1"
+			x: 6.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"17CB280131B353E2"
+			]
+			tasks: [
+				{
+					id: "2D05C90A5FEA17CB"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:ores)"
+						}
+					}
+					count: 256L
+				}
+			]
+			rewards: [
+				{
+					id: "3ACAAF5F07CBDD1F"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0173DC9C6A0073BF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "7C76F5D615A21CFD"
+			x: -6.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "25FF33E005F614A9"
+					type: "item"
+					item: {
+						id: "modern_industrialization:analog_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "32CA9EB1A7966385"
+					type: "item"
+					item: {
+						id: "modern_industrialization:electronic_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "17363353BE58197E"
+					type: "item"
+					item: {
+						id: "modern_industrialization:digital_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5B4037598A419A6C"
+					type: "item"
+					item: {
+						id: "modern_industrialization:processing_unit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "23FDCCF9A277754F"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "60954C8E0817A551"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "2FD7F1F49B2C90E4"
+			x: -6.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7C76F5D615A21CFD"
+				"170C5FC9F9808944"
+				"2C530BDB9215DABC"
+			]
+			tasks: [
+				{
+					id: "7C87F752CE07E3DF"
+					type: "item"
+					item: {
+						id: "modern_industrialization:quantum_circuit"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5FFB86F0378DDDD0"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "6EFAFE5739C0E392"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "46DBFE74EB369FB5"
+			x: -8.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"480FB3C55927F1A1"
+			]
+			tasks: [
+				{
+					id: "70317945592B4CE3"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism:basic_smelting_factory)item(mekanism:basic_enriching_factory)item(mekanism:basic_crushing_factory)item(mekanism:basic_compressing_factory)item(mekanism:basic_combining_factory)item(mekanism:basic_purifying_factory)item(mekanism:basic_injecting_factory)item(mekanism:basic_infusing_factory)item(mekanism:basic_sawing_factory))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1421560CBB1BA9DA"
+					type: "xp"
+					xp: 75
+				}
+				{
+					id: "19BC138A9775ED98"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "246D14A3AF1EEC26"
+			x: -8.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"46DBFE74EB369FB5"
+				"6C18ADE33F69C1A9"
+			]
+			tasks: [
+				{
+					id: "574B1971DC7FD592"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism:advanced_smelting_factory)item(mekanism:advanced_enriching_factory)item(mekanism:advanced_crushing_factory)item(mekanism:advanced_compressing_factory)item(mekanism:advanced_combining_factory)item(mekanism:advanced_purifying_factory)item(mekanism:advanced_injecting_factory)item(mekanism:advanced_infusing_factory)item(mekanism:advanced_sawing_factory))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "631B27963E38A4D8"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "46EF7BB4DD38667E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0D793D529C26B98B"
+			x: -8.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"246D14A3AF1EEC26"
+				"6D18179563EC6FB4"
+			]
+			tasks: [
+				{
+					id: "64BB19409E616C96"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism:elite_smelting_factory)item(mekanism:elite_enriching_factory)item(mekanism:elite_crushing_factory)item(mekanism:elite_compressing_factory)item(mekanism:elite_combining_factory)item(mekanism:elite_purifying_factory)item(mekanism:elite_injecting_factory)item(mekanism:elite_infusing_factory)item(mekanism:elite_sawing_factory))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "230353A3160B9D64"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "5362229C9F336C57"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1B2975F8496440C3"
+			x: -8.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0D793D529C26B98B"
+				"009FBA775299B910"
+			]
+			tasks: [
+				{
+					id: "1EC27238897031D1"
+					type: "item"
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						count: 1
+						components: {
+							"ftbfiltersystem:filter": "or(item(mekanism:ultimate_smelting_factory)item(mekanism:ultimate_enriching_factory)item(mekanism:ultimate_crushing_factory)item(mekanism:ultimate_compressing_factory)item(mekanism:ultimate_combining_factory)item(mekanism:ultimate_purifying_factory)item(mekanism:ultimate_injecting_factory)item(mekanism:ultimate_infusing_factory)item(mekanism:ultimate_sawing_factory))"
+						}
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "7072714AC2A8BEB6"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "294504388ACB7C21"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1B30AE1DEF39A277"
+			x: -10.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1B2975F8496440C3"
+			]
+			tasks: [
+				{
+					id: "56861581B62DF9A6"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_smelting_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0F11467AA21C0918"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_enriching_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "79BA62472BDD40A0"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_crushing_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3238A32018F381E4"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_compressing_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6A64C8B5FB66AD08"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_combining_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3287DE2506AECD3F"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_purifying_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "731E95A8C287417A"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_injecting_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "083815C0C7578D7D"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_infusing_factory"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4A232ED42BD1012E"
+					type: "item"
+					item: {
+						id: "mekanism:ultimate_sawing_factory"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "001AAA14DA3F8CA3"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "7FA9E6F78121059A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "4FE53067D8E11C2A"
+			x: 2.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"606688FB50C32212"
+			]
+			tasks: [
+				{
+					id: "60F8147D58578C5E"
+					type: "item"
+					item: {
+						id: "chemlib:hydrogen"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4A1DEED595A49B0B"
+					type: "item"
+					item: {
+						id: "chemlib:helium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "768224CF49FFE2D0"
+					type: "item"
+					item: {
+						id: "chemlib:lithium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "55A15F5E130402D8"
+					type: "item"
+					item: {
+						id: "chemlib:beryllium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4B44EEF9B75AC389"
+					type: "item"
+					item: {
+						id: "chemlib:sodium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "42D46716FE9650CF"
+					type: "item"
+					item: {
+						id: "chemlib:magnesium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1B3FCC667BCE8353"
+					type: "item"
+					item: {
+						id: "chemlib:potassium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "61D4A07B7F63BC89"
+					type: "item"
+					item: {
+						id: "chemlib:calcium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "425A396C67CF741D"
+					type: "item"
+					item: {
+						id: "chemlib:rubidium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "02F2FD55ECE232CB"
+					type: "item"
+					item: {
+						id: "chemlib:strontium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0541E33663BF730C"
+					type: "item"
+					item: {
+						id: "chemlib:cesium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0594274D893E1BBB"
+					type: "item"
+					item: {
+						id: "chemlib:barium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "110327FC882C0078"
+					type: "item"
+					item: {
+						id: "chemlib:francium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3053A3A19B17CD42"
+					type: "item"
+					item: {
+						id: "chemlib:radium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "5A685E4796BBC1F9"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "4842707B1AB1B20B"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1E660F2BA4576CE8"
+			x: 4.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4FE53067D8E11C2A"
+			]
+			tasks: [
+				{
+					id: "0397422CB2115189"
+					type: "item"
+					item: {
+						id: "chemlib:boron"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "34699A0AEB59E238"
+					type: "item"
+					item: {
+						id: "chemlib:carbon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71EB7908E8BC5037"
+					type: "item"
+					item: {
+						id: "chemlib:nitrogen"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5608BADF39DAC7AE"
+					type: "item"
+					item: {
+						id: "chemlib:oxygen"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4ADA016E12837DCA"
+					type: "item"
+					item: {
+						id: "chemlib:fluorine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5B976CB68B42FFC4"
+					type: "item"
+					item: {
+						id: "chemlib:neon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "437F3CED2912F5C1"
+					type: "item"
+					item: {
+						id: "chemlib:aluminum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2FE8BC018940E955"
+					type: "item"
+					item: {
+						id: "chemlib:silicon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "011E31F1DE0B0103"
+					type: "item"
+					item: {
+						id: "chemlib:phosphorus"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "406B5D35E6052696"
+					type: "item"
+					item: {
+						id: "chemlib:sulfur"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1464A6F1E755CCD2"
+					type: "item"
+					item: {
+						id: "chemlib:chlorine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "34CF63D8B8ECF062"
+					type: "item"
+					item: {
+						id: "chemlib:argon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6CE1C3AFF7BD00F1"
+					type: "item"
+					item: {
+						id: "chemlib:gallium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "262B4A6C8B363A3E"
+					type: "item"
+					item: {
+						id: "chemlib:germanium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5F51771DF3DDBD0B"
+					type: "item"
+					item: {
+						id: "chemlib:arsenic"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2AAC6772D37F0D49"
+					type: "item"
+					item: {
+						id: "chemlib:selenium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "57C20D2A659C77FA"
+					type: "item"
+					item: {
+						id: "chemlib:bromine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7D1D7392815EC591"
+					type: "item"
+					item: {
+						id: "chemlib:krypton"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "48461745CE99B823"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "657C7A47827BACC3"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "0F28C5F7ADC0D5D0"
+			x: 6.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1E660F2BA4576CE8"
+			]
+			tasks: [
+				{
+					id: "0E287523171D078A"
+					type: "item"
+					item: {
+						id: "chemlib:indium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6B643C9FE0D44DE8"
+					type: "item"
+					item: {
+						id: "chemlib:tin"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "56511BA72E9D909A"
+					type: "item"
+					item: {
+						id: "chemlib:antimony"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6972C345C4E7C2A0"
+					type: "item"
+					item: {
+						id: "chemlib:tellurium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6251BAFBC17C92B2"
+					type: "item"
+					item: {
+						id: "chemlib:iodine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "075DF139674D03FB"
+					type: "item"
+					item: {
+						id: "chemlib:xenon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4458B213BD3CD5F7"
+					type: "item"
+					item: {
+						id: "chemlib:thallium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1BCED22BC0796827"
+					type: "item"
+					item: {
+						id: "chemlib:lead"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3523F371329A20A1"
+					type: "item"
+					item: {
+						id: "chemlib:bismuth"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0A9FB6E043DCBE0B"
+					type: "item"
+					item: {
+						id: "chemlib:polonium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "75BA3CDF4B4E6B37"
+					type: "item"
+					item: {
+						id: "chemlib:astatine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "502BAE0A0554E986"
+					type: "item"
+					item: {
+						id: "chemlib:radon"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5C1928764D5D08EE"
+					type: "item"
+					item: {
+						id: "chemlib:nihonium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3CD23CCEFE769536"
+					type: "item"
+					item: {
+						id: "chemlib:flerovium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4C2CFCA4CE868A7F"
+					type: "item"
+					item: {
+						id: "chemlib:moscovium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6B9C4BDD2184CA11"
+					type: "item"
+					item: {
+						id: "chemlib:livermorium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "083B5DB30EB1BB15"
+					type: "item"
+					item: {
+						id: "chemlib:tennessine"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5BA12A2345A028F0"
+					type: "item"
+					item: {
+						id: "chemlib:oganesson"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "788EF3889D8748B9"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "4BE676A9C991D52A"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "525A2965171EDB91"
+			x: 8.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0F28C5F7ADC0D5D0"
+			]
+			tasks: [
+				{
+					id: "0E5B8E39355E7838"
+					type: "item"
+					item: {
+						id: "chemlib:scandium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "06AC2E1B66840ADD"
+					type: "item"
+					item: {
+						id: "chemlib:titanium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "50FCB4F75B4A61DF"
+					type: "item"
+					item: {
+						id: "chemlib:vanadium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6F8A060FF5138CBE"
+					type: "item"
+					item: {
+						id: "chemlib:chromium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "67D9438E7557A39D"
+					type: "item"
+					item: {
+						id: "chemlib:manganese"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "44E8F99C1877AFAD"
+					type: "item"
+					item: {
+						id: "chemlib:iron"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3B856AC0255CA019"
+					type: "item"
+					item: {
+						id: "chemlib:cobalt"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7A373375206CB217"
+					type: "item"
+					item: {
+						id: "chemlib:nickel"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0549891215AC3EB5"
+					type: "item"
+					item: {
+						id: "chemlib:copper"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6EFD70C23371ECA6"
+					type: "item"
+					item: {
+						id: "chemlib:zinc"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1A0246A8C953D7B9"
+					type: "xp"
+					xp: 250
+				}
+				{
+					id: "0AB0E442E8035254"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "0388D8B002BD2CC4"
+			x: 10.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"525A2965171EDB91"
+			]
+			tasks: [
+				{
+					id: "031A682CC8FBBD1F"
+					type: "item"
+					item: {
+						id: "chemlib:yttrium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2E937423A62792CF"
+					type: "item"
+					item: {
+						id: "chemlib:zirconium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "71179768BF7C15ED"
+					type: "item"
+					item: {
+						id: "chemlib:niobium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4F7DBF9001BE6436"
+					type: "item"
+					item: {
+						id: "chemlib:molybdenum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "30FB9EF950B54A3C"
+					type: "item"
+					item: {
+						id: "chemlib:technetium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "26DEB87213CBC7CC"
+					type: "item"
+					item: {
+						id: "chemlib:ruthenium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6F171AF4766760A7"
+					type: "item"
+					item: {
+						id: "chemlib:rhodium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2F4988091DA57317"
+					type: "item"
+					item: {
+						id: "chemlib:palladium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "669A807B7965D55E"
+					type: "item"
+					item: {
+						id: "chemlib:silver"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "3E3994B56345F7FC"
+					type: "item"
+					item: {
+						id: "chemlib:cadmium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "0D9637D563888EE2"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "702D7EA2189824A5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "40683E6E4778245E"
+			x: 12.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"0388D8B002BD2CC4"
+			]
+			tasks: [
+				{
+					id: "79A24E9B496FCA63"
+					type: "item"
+					item: {
+						id: "chemlib:hafnium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "010CEC68B80807E2"
+					type: "item"
+					item: {
+						id: "chemlib:tantalum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2F06189750FD8B74"
+					type: "item"
+					item: {
+						id: "chemlib:tungsten"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5FC8617CA3BEDBBE"
+					type: "item"
+					item: {
+						id: "chemlib:rhenium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "7621C106442F9A58"
+					type: "item"
+					item: {
+						id: "chemlib:osmium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4ED3C99884C159B0"
+					type: "item"
+					item: {
+						id: "chemlib:iridium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0CDCEF32324CDACD"
+					type: "item"
+					item: {
+						id: "chemlib:platinum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5233E8D852676F08"
+					type: "item"
+					item: {
+						id: "chemlib:gold"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "19D577C730B41A14"
+					type: "item"
+					item: {
+						id: "chemlib:mercury"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "1F07AD8629278138"
+					type: "xp"
+					xp: 350
+				}
+				{
+					id: "14E01E4F89D84BE7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "7509598E14623D37"
+			x: 18.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"156884A7119394CC"
+				"6092229653F9D8E1"
+			]
+			tasks: [
+				{
+					id: "4BCCAD3C6FC38B94"
+					type: "item"
+					item: {
+						id: "chemlib:rutherfordium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6C2DC16358367AA2"
+					type: "item"
+					item: {
+						id: "chemlib:dubnium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "57915ECBD0BF3DFA"
+					type: "item"
+					item: {
+						id: "chemlib:seaborgium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "70230D6B1459865D"
+					type: "item"
+					item: {
+						id: "chemlib:bohrium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "007F78BEE8CF6928"
+					type: "item"
+					item: {
+						id: "chemlib:hassium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "6C91254781F12445"
+					type: "item"
+					item: {
+						id: "chemlib:meitnerium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "22969DABA1D4B2AC"
+					type: "item"
+					item: {
+						id: "chemlib:darmstadtium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2B47680803A55D06"
+					type: "item"
+					item: {
+						id: "chemlib:roentgenium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "491457C0F28A1C65"
+					type: "item"
+					item: {
+						id: "chemlib:copernicium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "77DA1EF61F068204"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "2DD17E6918E5B19E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "418512B7873C1A28"
+			x: 14.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"40683E6E4778245E"
+				"4FDD1C7682843FC7"
+			]
+			tasks: [
+				{
+					id: "4D2CFDB0CCA65FAE"
+					type: "item"
+					item: {
+						id: "chemlib:lanthanum"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "211D27DF6EA1B744"
+					type: "item"
+					item: {
+						id: "chemlib:cerium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "4BFA74C901071C7F"
+					type: "item"
+					item: {
+						id: "chemlib:praseodymium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0D2F6B21455783A1"
+					type: "item"
+					item: {
+						id: "chemlib:neodymium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "253075ED0029D409"
+					type: "item"
+					item: {
+						id: "chemlib:promethium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "676E3DB80137154B"
+					type: "item"
+					item: {
+						id: "chemlib:samarium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "5975A284BB0DED27"
+					type: "item"
+					item: {
+						id: "chemlib:europium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "32C36CEB74403C05"
+					type: "item"
+					item: {
+						id: "chemlib:gadolinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1591421D2AA85384"
+					type: "item"
+					item: {
+						id: "chemlib:terbium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "020A7D8D194C3883"
+					type: "item"
+					item: {
+						id: "chemlib:dysprosium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2409E72F775DB6B4"
+					type: "item"
+					item: {
+						id: "chemlib:holmium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2AD5F33B5CB5980F"
+					type: "item"
+					item: {
+						id: "chemlib:erbium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2DB45C6F80A476FE"
+					type: "item"
+					item: {
+						id: "chemlib:thulium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1C291822CD470C7E"
+					type: "item"
+					item: {
+						id: "chemlib:ytterbium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1714970D233E52DF"
+					type: "item"
+					item: {
+						id: "chemlib:lutetium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "763840E4B1A7B16B"
+					type: "xp"
+					xp: 400
+				}
+				{
+					id: "404064461A8D0AA1"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "156884A7119394CC"
+			x: 16.0d
+			y: 0.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"418512B7873C1A28"
+				"28B0DD716F969942"
+			]
+			tasks: [
+				{
+					id: "652193AECDB3BA42"
+					type: "item"
+					item: {
+						id: "chemlib:actinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "2E54844A5FB870F1"
+					type: "item"
+					item: {
+						id: "chemlib:thorium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "74D865908EB9B034"
+					type: "item"
+					item: {
+						id: "chemlib:protactinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "74CA0F6BDFAB93A9"
+					type: "item"
+					item: {
+						id: "chemlib:uranium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "06F55C0B6FB717D9"
+					type: "item"
+					item: {
+						id: "chemlib:neptunium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "062042747D068BFB"
+					type: "item"
+					item: {
+						id: "chemlib:plutonium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "625613D1A0689BB3"
+					type: "item"
+					item: {
+						id: "chemlib:americium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "09D6A4BA9E2E0276"
+					type: "item"
+					item: {
+						id: "chemlib:curium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0D1DB79556A5D17B"
+					type: "item"
+					item: {
+						id: "chemlib:berkelium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0A30584BB30470B6"
+					type: "item"
+					item: {
+						id: "chemlib:californium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1978F784F879FFF5"
+					type: "item"
+					item: {
+						id: "chemlib:einsteinium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0C22D01DEB24D752"
+					type: "item"
+					item: {
+						id: "chemlib:fermium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "0055CB6E5D805052"
+					type: "item"
+					item: {
+						id: "chemlib:mendelevium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "74FE3D2639BFAE21"
+					type: "item"
+					item: {
+						id: "chemlib:nobelium"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "1B72CCF609A9812B"
+					type: "item"
+					item: {
+						id: "chemlib:lawrencium"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "00C0ACCA1DEB7BA3"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "4CCED1F6A343A2CE"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "48916F4FA6905695"
+			x: 20.0d
+			y: 0.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"7509598E14623D37"
+			]
+			tasks: [
+				{
+					id: "7E05222B95BEA497"
+					type: "checkmark"
+				}
+			]
+			rewards: [
+				{
+					id: "0F8E154827875C67"
+					type: "xp"
+					xp: 1000
+				}
+				{
+					id: "7DB665D814116DE5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "1DDE790728CC948C"
+			x: -2.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"7A1D323C6D2FA6FE"
+			]
+			tasks: [
+				{
+					id: "1180B2ECDE726280"
+					type: "biome"
+					biome: "minecraft:snowy_plains"
+				}
+				{
+					id: "2E4BAAB48C3B550E"
+					type: "biome"
+					biome: "minecraft:ice_spikes"
+				}
+				{
+					id: "17CB662880F5D323"
+					type: "biome"
+					biome: "minecraft:snowy_taiga"
+				}
+				{
+					id: "07697EF83EFE8D76"
+					type: "biome"
+					biome: "minecraft:grove"
+				}
+				{
+					id: "40F5283A47D18865"
+					type: "biome"
+					biome: "minecraft:snowy_slopes"
+				}
+				{
+					id: "5CD246CB06E4A4D9"
+					type: "biome"
+					biome: "minecraft:frozen_peaks"
+				}
+				{
+					id: "3FE19C6D39864329"
+					type: "biome"
+					biome: "minecraft:frozen_river"
+				}
+			]
+			rewards: [
+				{
+					id: "1BF179BEDE75DDF0"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0992111C0F56E5B6"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "5F230391BCAF5E21"
+			x: -4.0d
+			y: -2.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"1DDE790728CC948C"
+			]
+			tasks: [
+				{
+					id: "6E790030942AEA30"
+					type: "biome"
+					biome: "minecraft:desert"
+				}
+				{
+					id: "252FDD70823D09AE"
+					type: "biome"
+					biome: "minecraft:badlands"
+				}
+				{
+					id: "3C512AD27D5DE5E6"
+					type: "biome"
+					biome: "minecraft:eroded_badlands"
+				}
+				{
+					id: "03217C272C827313"
+					type: "biome"
+					biome: "minecraft:savanna"
+				}
+				{
+					id: "7A0D9891C81E2824"
+					type: "biome"
+					biome: "minecraft:jungle"
+				}
+				{
+					id: "21F00E4770B59AC4"
+					type: "biome"
+					biome: "minecraft:bamboo_jungle"
+				}
+				{
+					id: "689D288C9264D124"
+					type: "biome"
+					biome: "minecraft:mangrove_swamp"
+				}
+			]
+			rewards: [
+				{
+					id: "0E1D0322A46BAAEE"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "51DEC06780B85EC5"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "07A9CBB7D105660B"
+			x: -4.0d
+			y: -4.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"5F230391BCAF5E21"
+			]
+			tasks: [
+				{
+					id: "190C79D638BD8CF5"
+					type: "biome"
+					biome: "minecraft:mushroom_fields"
+				}
+				{
+					id: "4F70C3A8E2F83573"
+					type: "biome"
+					biome: "minecraft:cherry_grove"
+				}
+				{
+					id: "7F358F8A30AA919A"
+					type: "biome"
+					biome: "minecraft:lush_caves"
+				}
+				{
+					id: "2B15F3FFC4783F2D"
+					type: "biome"
+					biome: "minecraft:dripstone_caves"
+				}
+				{
+					id: "10C0FA4FE2EF1718"
+					type: "biome"
+					biome: "minecraft:deep_dark"
+				}
+				{
+					id: "65DD937A36B1D9D9"
+					type: "biome"
+					biome: "minecraft:old_growth_pine_taiga"
+				}
+			]
+			rewards: [
+				{
+					id: "48D576C136B00D9E"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "7DF6F9F1896E6828"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "63AC8473D812F00F"
+			x: -4.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"07A9CBB7D105660B"
+			]
+			tasks: [
+				{
+					id: "68E0F5C5160352B4"
+					type: "biome"
+					biome: "biomesoplenty:redwood_forest"
+				}
+				{
+					id: "3734A3F5A0A607A3"
+					type: "biome"
+					biome: "biomesoplenty:lavender_field"
+				}
+				{
+					id: "4BAFB820AEB3AFF2"
+					type: "biome"
+					biome: "biomesoplenty:volcano"
+				}
+				{
+					id: "34084C189337C476"
+					type: "biome"
+					biome: "biomesoplenty:mystic_grove"
+				}
+				{
+					id: "5157877C69999F21"
+					type: "biome"
+					biome: "regions_unexplored:bayou"
+				}
+				{
+					id: "160A376FE8D151ED"
+					type: "biome"
+					biome: "regions_unexplored:redwoods"
+				}
+				{
+					id: "12E5C9EA7A1C313C"
+					type: "biome"
+					biome: "regions_unexplored:prismachasm"
+				}
+			]
+			rewards: [
+				{
+					id: "2F784C3E41DB30FD"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "785EA3A970BB0219"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "628CBA274F9C5F97"
+			x: 4.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"04B2CA0DEFD9BEA6"
+			]
+			tasks: [
+				{
+					id: "091D85704BAA9B7E"
+					type: "biome"
+					biome: "minecraft:nether_wastes"
+				}
+				{
+					id: "16CD4004F5339B92"
+					type: "biome"
+					biome: "minecraft:crimson_forest"
+				}
+				{
+					id: "09898DF6EC7C3CF7"
+					type: "biome"
+					biome: "minecraft:warped_forest"
+				}
+				{
+					id: "66F827012C16F3F8"
+					type: "biome"
+					biome: "minecraft:soul_sand_valley"
+				}
+				{
+					id: "7FA1073491ADBDC9"
+					type: "biome"
+					biome: "minecraft:basalt_deltas"
+				}
+			]
+			rewards: [
+				{
+					id: "5C8D0FFB4AADFDD2"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "17720CAFE39D3488"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "086D64601C092565"
+			x: 6.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"628CBA274F9C5F97"
+			]
+			tasks: [
+				{
+					id: "3C27DEE328FD53C2"
+					type: "biome"
+					biome: "biomesoplenty:crystalline_chasm"
+				}
+				{
+					id: "33425CF24BB1D9F1"
+					type: "biome"
+					biome: "biomesoplenty:undergrowth"
+				}
+				{
+					id: "384365B6F2088397"
+					type: "biome"
+					biome: "biomesoplenty:visceral_heap"
+				}
+				{
+					id: "4B1CD3D45F5391F8"
+					type: "biome"
+					biome: "biomesoplenty:withered_abyss"
+				}
+				{
+					id: "283C4B3B7F789CD5"
+					type: "biome"
+					biome: "regions_unexplored:infernal_holt"
+				}
+				{
+					id: "707D2BA246528832"
+					type: "biome"
+					biome: "regions_unexplored:blackstone_basin"
+				}
+			]
+			rewards: [
+				{
+					id: "6259CE67A343340B"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "6004CF7918E43D6D"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "3D24912A6A30A85B"
+			x: -8.0d
+			y: -12.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			hide_dependency_lines: true
+			dependencies: [
+				"478C654ED802C25B"
+			]
+			tasks: [
+				{
+					id: "602E0341CF23E545"
+					type: "biome"
+					biome: "minecraft:the_end"
+				}
+				{
+					id: "2098690BB49322FA"
+					type: "biome"
+					biome: "minecraft:end_highlands"
+				}
+				{
+					id: "169BF1CE2688AE58"
+					type: "biome"
+					biome: "minecraft:end_midlands"
+				}
+				{
+					id: "49911E116EE8861C"
+					type: "biome"
+					biome: "minecraft:small_end_islands"
+				}
+				{
+					id: "2342D6D52DC1147A"
+					type: "biome"
+					biome: "minecraft:end_barrens"
+				}
+			]
+			rewards: [
+				{
+					id: "05B85D63857EE0DA"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "049E320A05CEB5D8"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "485ADC9463B35474"
+			x: 6.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"4B6B18DEE9511230"
+			]
+			tasks: [
+				{
+					id: "08DDCD7FD248C56C"
+					type: "biome"
+					biome: "twilightforest:forest"
+				}
+				{
+					id: "221915F543FAB08A"
+					type: "biome"
+					biome: "twilightforest:dense_forest"
+				}
+				{
+					id: "13FE2CC611EDA7F6"
+					type: "biome"
+					biome: "twilightforest:firefly_forest"
+				}
+				{
+					id: "6BAE6AC18483BE25"
+					type: "biome"
+					biome: "twilightforest:clearing"
+				}
+				{
+					id: "5CAB93EE52F08D1F"
+					type: "biome"
+					biome: "twilightforest:mushroom_forest"
+				}
+				{
+					id: "0E33280BC7AE96A9"
+					type: "biome"
+					biome: "twilightforest:enchanted_forest"
+				}
+				{
+					id: "604AAFEF4CD85E28"
+					type: "biome"
+					biome: "twilightforest:spooky_forest"
+				}
+				{
+					id: "3CDA2013364A020E"
+					type: "biome"
+					biome: "twilightforest:oak_savannah"
+				}
+				{
+					id: "59CA2D51DD5BC5EA"
+					type: "biome"
+					biome: "twilightforest:lake"
+				}
+			]
+			rewards: [
+				{
+					id: "08786780493964AE"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "0E39DA6C1F2AC3A2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "16F651F61CAD882E"
+			x: 8.0d
+			y: -6.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"485ADC9463B35474"
+				"24EB5B9F3C30D2F1"
+				"53A416978B641844"
+			]
+			tasks: [
+				{
+					id: "5DFE68C1559A941E"
+					type: "biome"
+					biome: "twilightforest:swamp"
+				}
+				{
+					id: "755FD2D79E6F9579"
+					type: "biome"
+					biome: "twilightforest:fire_swamp"
+				}
+				{
+					id: "0045996AA6B48594"
+					type: "biome"
+					biome: "twilightforest:dark_forest"
+				}
+				{
+					id: "614BC10AD07C8961"
+					type: "biome"
+					biome: "twilightforest:dark_forest_center"
+				}
+				{
+					id: "16A4AD47F04F1C2F"
+					type: "biome"
+					biome: "twilightforest:snowy_forest"
+				}
+				{
+					id: "34BA93399D4A30D1"
+					type: "biome"
+					biome: "twilightforest:glacier"
+				}
+				{
+					id: "6AD35F6B11FC5AC2"
+					type: "biome"
+					biome: "twilightforest:highlands"
+				}
+				{
+					id: "156DE21926534AA5"
+					type: "biome"
+					biome: "twilightforest:thornlands"
+				}
+				{
+					id: "4EB47938D299F730"
+					type: "biome"
+					biome: "twilightforest:final_plateau"
+				}
+			]
+			rewards: [
+				{
+					id: "74611734E8830956"
+					type: "xp"
+					xp: 300
+				}
+				{
+					id: "35EB5EDDBC4ACDD9"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "48F10386696CBC9B"
+			x: -2.0d
+			y: -8.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"6CD23CD722EC696F"
+			]
+			tasks: [
+				{
+					id: "29EB580B3CB987FC"
+					type: "biome"
+					biome: "undergarden:forgotten_field"
+				}
+				{
+					id: "4E3ED25EA25AC16A"
+					type: "biome"
+					biome: "undergarden:smogstem_forest"
+				}
+				{
+					id: "7824EC5FB82123CB"
+					type: "biome"
+					biome: "undergarden:wigglewood_forest"
+				}
+				{
+					id: "252FC6AA09323721"
+					type: "biome"
+					biome: "undergarden:gronglegrowth"
+				}
+				{
+					id: "4341C0DF482FCEE7"
+					type: "biome"
+					biome: "undergarden:frostfields"
+				}
+				{
+					id: "07129909D543B77B"
+					type: "biome"
+					biome: "undergarden:barren_abyss"
+				}
+				{
+					id: "09C4A891DF5BE8D5"
+					type: "biome"
+					biome: "undergarden:ancient_sea"
+				}
+				{
+					id: "7B674C5EE4CFE325"
+					type: "biome"
+					biome: "undergarden:indigo_mushroom_bog"
+				}
+			]
+			rewards: [
+				{
+					id: "471C9BB6E2CF6A0B"
+					type: "xp"
+					xp: 150
+				}
+				{
+					id: "6952E983E13BB274"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+			]
+		}
+		{
+			id: "1973AAD62BAC2C46"
+			x: 0.0d
+			y: -12.0d
+			shape: "circle"
+			size: 0.85d
+			optional: true
+			dependencies: [
+				"47E37212E3AD9C51"
+			]
+			tasks: [
+				{
+					id: "34159E0AED3008FD"
+					type: "biome"
+					biome: "deeperdarker:deeplands"
+				}
+				{
+					id: "6D19DBBC64BA8483"
+					type: "biome"
+					biome: "deeperdarker:echoing_forest"
+				}
+				{
+					id: "376251CFA6AD5468"
+					type: "biome"
+					biome: "deeperdarker:overcast_columns"
+				}
+				{
+					id: "676F1283AE936CB6"
+					type: "biome"
+					biome: "deeperdarker:blooming_caverns"
+				}
+			]
+			rewards: [
+				{
+					id: "1716E7C04CD223A2"
+					type: "xp"
+					xp: 200
+				}
+				{
+					id: "7A8D030BA1B527FA"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "01CF0FA12664D89A"
+			x: 2.0d
+			y: -12.0d
+			shape: "hexagon"
+			size: 1.5d
+			optional: true
+			dependencies: [
+				"537431DD08EA991F"
+				"72A1114536C4C6FA"
+			]
+			tasks: [
+				{
+					id: "17C21973821ED923"
+					type: "biome"
+					biome: "ad_astra:lunar_wastelands"
+				}
+				{
+					id: "42E7E9B82FCC8050"
+					type: "biome"
+					biome: "ad_astra:martian_wastelands"
+				}
+				{
+					id: "08E04E22BA1E86A0"
+					type: "biome"
+					biome: "ad_astra:martian_canyon_creek"
+				}
+				{
+					id: "032B8EC2D4C6D35C"
+					type: "biome"
+					biome: "ad_astra:martian_polar_caps"
+				}
+				{
+					id: "4AAB478247BD25E8"
+					type: "biome"
+					biome: "ad_astra:venus_wastelands"
+				}
+				{
+					id: "18D6117BE7306910"
+					type: "biome"
+					biome: "ad_astra:infernal_venus_barrens"
+				}
+				{
+					id: "06B06F95F3590D0A"
+					type: "biome"
+					biome: "ad_astra:mercury_deltas"
+				}
+				{
+					id: "1F765CA6111767CB"
+					type: "biome"
+					biome: "ad_astra:glacio_snowy_barrens"
+				}
+				{
+					id: "039B1690F38D5DAE"
+					type: "biome"
+					biome: "ad_astra:glacio_ice_peaks"
+				}
+			]
+			rewards: [
+				{
+					id: "5D5D8CFFD31F2219"
+					type: "xp"
+					xp: 500
+				}
+				{
+					id: "0877F74DADA091DF"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 2
+					}
+				}
+			]
+		}
+		{
+			id: "2AA63CC0780D5E5A"
+			x: -6.0d
+			y: -10.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"5CF80E20FAD6CF13"
+			]
+			tasks: [
+				{
+					id: "09B30EC0DED583D9"
+					type: "item"
+					item: {
+						id: "minecraft:music_disc_5"
+						count: 1
+					}
+					count: 1L
+				}
+				{
+					id: "219D0DB60F8F0928"
+					type: "item"
+					item: {
+						id: "chemlib:boron"
+						count: 1
+					}
+					count: 5L
+				}
+			]
+			rewards: [
+				{
+					id: "5CE96BA8F24E3EB2"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "27EA927A6C94C803"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "57F252721837BC8A"
+			x: 0.0d
+			y: -8.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"3A9524CD2B47B654"
+			]
+			tasks: [
+				{
+					id: "7C49642600AE775E"
+					type: "item"
+					item: {
+						id: "minecraft:sniffer_egg"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "06582701D384A8C7"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "1B34D2240D5815E3"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+		{
+			id: "12F7DBB03E253B15"
+			x: -6.0d
+			y: -12.0d
+			shape: "diamond"
+			size: 0.75d
+			optional: true
+			invisible: true
+			dependencies: [
+				"3D24912A6A30A85B"
+			]
+			tasks: [
+				{
+					id: "7C197A99F282ACBE"
+					type: "item"
+					item: {
+						id: "minecraft:dragon_egg"
+						count: 1
+					}
+					count: 1L
+				}
+			]
+			rewards: [
+				{
+					id: "3F1540C6982C6D0E"
+					type: "item"
+					item: {
+						id: "kubejs:demigod_token"
+						count: 1
+					}
+				}
+				{
+					id: "6CBB5ED3FDB9727E"
+					type: "random"
+					table_id: 8682264593899658817L
+				}
+			]
+		}
+	]
+	images: [
+		{
+			id: "374D6177BCEE97B4"
+			x: -7.425000000000001d
+			y: -15.25d
+			width: 6.0d
+			height: 1.0d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/completionist.png"
+		}
+		{
+			id: "7B210B24D94ECAAF"
+			x: -7.425000000000001d
+			y: -13.05d
+			width: 6.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/completionist_circuit_collection.png"
+		}
+		{
+			id: "7211B1E77F31F3C1"
+			x: 0.07500000000000018d
+			y: -13.375d
+			width: 5.0d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/completionist_tour_the_void.png"
+		}
+		{
+			id: "512E728205729F94"
+			x: 11.325d
+			y: -11.05d
+			width: 7.499999999999999d
+			height: 0.75d
+			rotation: 0.0d
+			image: "warbucks:textures/quests/sections/completionist_the_creeper_collection.png"
+		}
+	]
+	quest_links: [
+		{
+			id: "54F51151816601AF"
+			linked_quest: "7A1D323C6D2FA6FE"
+			x: 0.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "64C398D747A465EA"
+			linked_quest: "606688FB50C32212"
+			x: 0.0d
+			y: 0.0d
+			size: 1.0d
+		}
+		{
+			id: "68D6566DA4F7D349"
+			linked_quest: "04B2CA0DEFD9BEA6"
+			x: 2.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "6F7E501781A37AE3"
+			linked_quest: "4B6B18DEE9511230"
+			x: 6.0d
+			y: -4.0d
+			size: 1.0d
+		}
+		{
+			id: "04B3FE8693FA80F7"
+			linked_quest: "4D8BFEB75E87D5CA"
+			x: 8.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "724630303B6695F4"
+			linked_quest: "310586A0CE86D7B4"
+			x: 8.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "15AE9CEE00A2EBA6"
+			linked_quest: "0A8F569FBAF9D8B1"
+			x: -4.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "1DB5E22A00174B1A"
+			linked_quest: "009FBA775299B910"
+			x: -6.0d
+			y: -2.0d
+			size: 1.0d
+		}
+		{
+			id: "3A6B95136F564726"
+			linked_quest: "480FB3C55927F1A1"
+			x: -8.0d
+			y: -10.0d
+			size: 1.0d
+		}
+		{
+			id: "627FA3C6CEDC41E3"
+			linked_quest: "478C654ED802C25B"
+			x: -6.0d
+			y: -8.0d
+			size: 1.0d
+		}
+		{
+			id: "59DFE28D7022CE37"
+			linked_quest: "6CD23CD722EC696F"
+			x: -2.0d
+			y: -6.0d
+			size: 1.0d
+		}
+		{
+			id: "0BBB732F28F64A9E"
+			linked_quest: "47E37212E3AD9C51"
+			x: 0.0d
+			y: -10.0d
+			size: 1.0d
+		}
+		{
+			id: "773C6279E8D2F6AC"
+			linked_quest: "537431DD08EA991F"
+			x: 2.0d
+			y: -10.0d
+			size: 1.0d
+		}
+	]
+}
